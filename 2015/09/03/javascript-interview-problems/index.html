@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="hexo," />
+  <meta name="keywords" content="javascript, interview," />
 
 
 
@@ -37,16 +37,31 @@
   <link rel="shorticon icon" type="image/x-icon" href="/image.jpg?v=0.4.5.1" />
 
 
-<meta name="description" content="第一篇blog–献给自己">
+<meta name="description" content="javascript笔试题
+将一个长度不超过5位的正整数转换成对应的中文字符串，例如：20876返回“两万零八百七十六”
+function convert(i) {
+    var r, n, x = 0, zero = i % 10 === 0;
+    var unit = [&apos;&apos;, &apos;&apos;, &apos;十&apos;, &apos;百&apos;, &apos;千&apos;, &apos;万&apos;];
+    var n2c = [&apos;零&apos;, &apos;一&apos;, &apos;二&apos;,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hello hexo">
-<meta property="og:url" content="http://yoursite.com/2015/08/30/hello-hexo/index.html">
+<meta property="og:title" content="javascript interview problems">
+<meta property="og:url" content="http://yoursite.com/2015/09/03/javascript-interview-problems/index.html">
 <meta property="og:site_name" content="Jennifer's Blog">
-<meta property="og:description" content="第一篇blog–献给自己">
-<meta property="og:updated_time" content="2015-09-03T05:32:07.000Z">
+<meta property="og:description" content="javascript笔试题
+将一个长度不超过5位的正整数转换成对应的中文字符串，例如：20876返回“两万零八百七十六”
+function convert(i) {
+    var r, n, x = 0, zero = i % 10 === 0;
+    var unit = [&apos;&apos;, &apos;&apos;, &apos;十&apos;, &apos;百&apos;, &apos;千&apos;, &apos;万&apos;];
+    var n2c = [&apos;零&apos;, &apos;一&apos;, &apos;二&apos;,">
+<meta property="og:updated_time" content="2015-09-03T07:45:05.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hello hexo">
-<meta name="twitter:description" content="第一篇blog–献给自己">
+<meta name="twitter:title" content="javascript interview problems">
+<meta name="twitter:description" content="javascript笔试题
+将一个长度不超过5位的正整数转换成对应的中文字符串，例如：20876返回“两万零八百七十六”
+function convert(i) {
+    var r, n, x = 0, zero = i % 10 === 0;
+    var unit = [&apos;&apos;, &apos;&apos;, &apos;十&apos;, &apos;百&apos;, &apos;千&apos;, &apos;万&apos;];
+    var n2c = [&apos;零&apos;, &apos;一&apos;, &apos;二&apos;,">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -56,7 +71,7 @@
   };
 </script>
 
-  <title> hello hexo | Jennifer's Blog </title>
+  <title> javascript interview problems | Jennifer's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -189,7 +204,7 @@
           
           
             
-              hello hexo
+              javascript interview problems
             
           
         </h1>
@@ -198,8 +213,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-08-30T20:48:03+08:00" content="2015-08-30">
-            2015-08-30
+          <time itemprop="dateCreated" datetime="2015-09-03T15:28:14+08:00" content="2015-09-03">
+            2015-09-03
           </time>
         </span>
 
@@ -208,8 +223,8 @@
             &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/blog/" itemprop="url" rel="index">
-                  <span itemprop="name">blog</span>
+                <a href="/categories/前端/" itemprop="url" rel="index">
+                  <span itemprop="name">前端</span>
                 </a>
               </span>
 
@@ -224,8 +239,8 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/08/30/hello-hexo/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/30/hello-hexo/" itemprop="commentsCount"></span>
+              <a href="/2015/09/03/javascript-interview-problems/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/03/javascript-interview-problems/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -239,9 +254,34 @@
       
 
       
-        <span itemprop="articleBody"><p>第一篇blog–献给自己</p>
-<a id="more"></a>
-<h2 id="hexo">hexo</h2><p>这是一个使用github pages+hexo搭建的博客，我是谢晓君，来自北京邮电大学，目标是成为一名全栈工程师，目前是一个前端开发工程师~(≧▽≦)/~啦啦啦</p>
+        <span itemprop="articleBody"><h2 id="javascript笔试题">javascript笔试题</h2><ol>
+<li><p>将一个长度不超过5位的正整数转换成对应的中文字符串，例如：20876返回“两万零八百七十六”</p>
+<pre><code><span class="title">function</span> convert(i) {
+    <span class="title">var</span> r, n, x = <span class="number">0</span>, zero = i % <span class="number">10</span> === <span class="number">0</span>;
+    <span class="title">var</span> unit = [<span class="string">''</span>, <span class="string">''</span>, <span class="string">'十'</span>, <span class="string">'百'</span>, <span class="string">'千'</span>, <span class="string">'万'</span>];
+    <span class="title">var</span> n2c = [<span class="string">'零'</span>, <span class="string">'一'</span>, <span class="string">'二'</span>, <span class="string">'三'</span>, <span class="string">'四'</span>, <span class="string">'五'</span>, <span class="string">'六'</span>, <span class="string">'七'</span>, <span class="string">'八'</span>, <span class="string">'九'</span>];
+     <span class="title">while</span> (i &gt; <span class="number">0</span>) {
+        <span class="title">x</span> ++;
+        <span class="title">n</span> = i % <span class="number">10</span>;
+        <span class="title">i</span> = ~~(i /= <span class="number">10</span>);
+        <span class="title">if</span> (n === <span class="number">0</span> &amp;&amp; i % <span class="number">10</span> === <span class="number">0</span>) continue;
+        <span class="title">r</span> = (r ? n2c[n] + (n ? unit[x] : <span class="string">''</span>) + r : n2c[n]);
+     }
+     <span class="title">return</span> zero ? r.substr(<span class="number">0</span>, r.length-<span class="number">1</span>) : r;
+}
+</code></pre></li>
+<li><p>给定一个list，元素都是正整数，要求返回这些元素组成的最大数。例如：[5, 3, 31, 2]则返回53312。</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">compare</span><span class="params">(a, b)</span> </span>{
+    <span class="keyword">var</span> <span class="keyword">as</span> = a+<span class="string">''</span>, bs = b+<span class="string">''</span>;
+    <span class="keyword">return</span> (bs + <span class="keyword">as</span>) - (<span class="keyword">as</span> + bs);
+}
+
+<span class="function"><span class="keyword">function</span> <span class="title">f</span><span class="params">(i)</span> </span>{
+    <span class="keyword">return</span> +(i.sort(compare).join(<span class="string">''</span>))
+}
+</code></pre></li>
+</ol>
+<p>未完待续…</p>
 </span>
       
     </div>
@@ -250,7 +290,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag">#hexo</a>
+            <a href="/tags/javascript-interview/" rel="tag">#javascript, interview</a>
           
         </div>
       
@@ -259,11 +299,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/09/03/javascript-interview-problems/" rel="prev">javascript interview problems</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/08/30/hello-hexo/" rel="next">hello hexo</a>
             
           </div>
         </div>
@@ -315,8 +355,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/08/30/hello-hexo/"
-                   data-title="hello hexo" data-url="http://yoursite.com/2015/08/30/hello-hexo/">
+              <div class="ds-thread" data-thread-key="2015/09/03/javascript-interview-problems/"
+                   data-title="javascript interview problems" data-url="http://yoursite.com/2015/09/03/javascript-interview-problems/">
               </div>
             
           </div>
@@ -412,7 +452,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo"><span class="nav-number">1.</span> <span class="nav-text">hexo</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#javascript笔试题"><span class="nav-number">1.</span> <span class="nav-text">javascript笔试题</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
