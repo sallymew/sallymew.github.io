@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="interview,javascript," />
+  <meta name="keywords" content="娱乐," />
 
 
 
@@ -37,16 +37,19 @@
   <link rel="shorticon icon" type="image/x-icon" href="/image.jpg?v=0.4.5.1" />
 
 
-<meta name="description" content="javascript笔试题">
+<meta name="description" content="#walkr
+每天一万步，打造属于你的萌萌星球~">
 <meta property="og:type" content="article">
-<meta property="og:title" content="javascript interview problems">
-<meta property="og:url" content="http://www.xiaojunxie.com/2015/09/03/javascript-interview-problems/index.html">
+<meta property="og:title" content="walkr">
+<meta property="og:url" content="http://www.xiaojunxie.com/2015/09/05/walkr/index.html">
 <meta property="og:site_name" content="Jennifer's Blog">
-<meta property="og:description" content="javascript笔试题">
-<meta property="og:updated_time" content="2015-09-05T06:32:23.000Z">
+<meta property="og:description" content="#walkr
+每天一万步，打造属于你的萌萌星球~">
+<meta property="og:updated_time" content="2015-09-05T08:46:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="javascript interview problems">
-<meta name="twitter:description" content="javascript笔试题">
+<meta name="twitter:title" content="walkr">
+<meta name="twitter:description" content="#walkr
+每天一万步，打造属于你的萌萌星球~">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -56,7 +59,7 @@
   };
 </script>
 
-  <title> javascript interview problems | Jennifer's Blog </title>
+  <title> walkr | Jennifer's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -189,7 +192,7 @@
           
           
             
-              javascript interview problems
+              walkr
             
           
         </h1>
@@ -198,8 +201,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-09-03T15:28:14+08:00" content="2015-09-03">
-            2015-09-03
+          <time itemprop="dateCreated" datetime="2015-09-05T16:43:58+08:00" content="2015-09-05">
+            2015-09-05
           </time>
         </span>
 
@@ -208,8 +211,8 @@
             &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/frontend/" itemprop="url" rel="index">
-                  <span itemprop="name">前端</span>
+                <a href="/categories/other/" itemprop="url" rel="index">
+                  <span itemprop="name">其他</span>
                 </a>
               </span>
 
@@ -224,8 +227,8 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/09/03/javascript-interview-problems/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/03/javascript-interview-problems/" itemprop="commentsCount"></span>
+              <a href="/2015/09/05/walkr/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/05/walkr/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -239,35 +242,396 @@
       
 
       
-        <span itemprop="articleBody"><h2 id="javascript笔试题">javascript笔试题</h2><a id="more"></a>
-<ol>
-<li><p>将一个长度不超过5位的正整数转换成对应的中文字符串，例如：20876返回“两万零八百七十六”</p>
-<pre><code><span class="title">function</span> convert(i) {
-    <span class="title">var</span> r, n, x = <span class="number">0</span>, zero = i % <span class="number">10</span> === <span class="number">0</span>;
-    <span class="title">var</span> unit = [<span class="string">''</span>, <span class="string">''</span>, <span class="string">'十'</span>, <span class="string">'百'</span>, <span class="string">'千'</span>, <span class="string">'万'</span>];
-    <span class="title">var</span> n2c = [<span class="string">'零'</span>, <span class="string">'一'</span>, <span class="string">'二'</span>, <span class="string">'三'</span>, <span class="string">'四'</span>, <span class="string">'五'</span>, <span class="string">'六'</span>, <span class="string">'七'</span>, <span class="string">'八'</span>, <span class="string">'九'</span>];
-     <span class="title">while</span> (i &gt; <span class="number">0</span>) {
-        <span class="title">x</span> ++;
-        <span class="title">n</span> = i % <span class="number">10</span>;
-        <span class="title">i</span> = ~~(i /= <span class="number">10</span>);
-        <span class="title">if</span> (n === <span class="number">0</span> &amp;&amp; i % <span class="number">10</span> === <span class="number">0</span>) continue;
-        <span class="title">r</span> = (r ? n2c[n] + (n ? unit[x] : <span class="string">''</span>) + r : n2c[n]);
-     }
-     <span class="title">return</span> zero ? r.substr(<span class="number">0</span>, r.length-<span class="number">1</span>) : r;
-}
-</code></pre></li>
-<li><p>给定一个list，元素都是正整数，要求返回这些元素组成的最大数。例如：[5, 3, 31, 2]则返回53312。</p>
-<pre><code><span class="function"><span class="keyword">function</span> <span class="title">compare</span><span class="params">(a, b)</span> </span>{
-    <span class="keyword">var</span> <span class="keyword">as</span> = a+<span class="string">''</span>, bs = b+<span class="string">''</span>;
-    <span class="keyword">return</span> (bs + <span class="keyword">as</span>) - (<span class="keyword">as</span> + bs);
-}
-
-<span class="function"><span class="keyword">function</span> <span class="title">f</span><span class="params">(i)</span> </span>{
-    <span class="keyword">return</span> +(i.sort(compare).join(<span class="string">''</span>))
-}
-</code></pre></li>
-</ol>
-<p>未完待续…</p>
+        <span itemprop="articleBody"><p>#walkr</p>
+<p>每天一万步，打造属于你的萌萌星球~</p>
+<a id="more"></a>
+<p>##星球</p>
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>星球</th>
+<th>行星</th>
+<th>to match</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>电路之城</td>
+<td></td>
+<td>电池</td>
+</tr>
+<tr>
+<td>02</td>
+<td>宁静之河</td>
+<td></td>
+<td>符咒</td>
+</tr>
+<tr>
+<td>03</td>
+<td>柳橙果冻</td>
+<td></td>
+<td>棒冰</td>
+</tr>
+<tr>
+<td>04</td>
+<td>野猪部落</td>
+<td></td>
+<td>火腿</td>
+</tr>
+<tr>
+<td>05</td>
+<td>日落草原</td>
+<td></td>
+<td>稻草人</td>
+</tr>
+<tr>
+<td>06</td>
+<td>乳牛王</td>
+<td>乳酪</td>
+<td></td>
+</tr>
+<tr>
+<td>07</td>
+<td>焦糖苹果</td>
+<td></td>
+<td>棒棒糖</td>
+</tr>
+<tr>
+<td>08</td>
+<td>冰天雪地</td>
+<td>雪球</td>
+<td></td>
+</tr>
+<tr>
+<td>09</td>
+<td>平静草原</td>
+<td>绿宝石</td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td>隐形基地</td>
+<td>隐形walkr</td>
+<td></td>
+</tr>
+<tr>
+<td>11</td>
+<td>泡泡糖</td>
+<td>彩虹球</td>
+<td></td>
+</tr>
+<tr>
+<td>12</td>
+<td>黄金油矿</td>
+<td>橄榄树</td>
+<td></td>
+</tr>
+<tr>
+<td>13</td>
+<td>微风沙漠</td>
+<td>黄光球</td>
+<td></td>
+</tr>
+<tr>
+<td>14</td>
+<td>喵喵毛球</td>
+<td></td>
+<td>老鼠</td>
+</tr>
+<tr>
+<td>15</td>
+<td>红色深坑</td>
+<td>小熊软糖</td>
+<td></td>
+</tr>
+<tr>
+<td>16</td>
+<td>草莓饼干</td>
+<td>牛奶罐</td>
+<td></td>
+</tr>
+<tr>
+<td>17</td>
+<td>章鱼洞穴</td>
+<td>沉船</td>
+<td></td>
+</tr>
+<tr>
+<td>18</td>
+<td>灵感之源</td>
+<td>插头</td>
+<td></td>
+</tr>
+<tr>
+<td>19</td>
+<td>褐角山谷</td>
+<td>草球</td>
+<td></td>
+</tr>
+<tr>
+<td>20</td>
+<td>火山熔岩</td>
+<td>钻探机</td>
+<td></td>
+</tr>
+<tr>
+<td>21</td>
+<td>燃烧之心</td>
+<td></td>
+<td>火球</td>
+</tr>
+<tr>
+<td>22</td>
+<td>软绵绵山丘</td>
+<td>毛线球</td>
+<td></td>
+</tr>
+<tr>
+<td>23</td>
+<td>红色珊瑚</td>
+<td>珍珠</td>
+<td></td>
+</tr>
+<tr>
+<td>24</td>
+<td>糖果甜心</td>
+<td>拐杖糖</td>
+<td></td>
+</tr>
+<tr>
+<td>25</td>
+<td>遗落之门</td>
+<td>侦查舰</td>
+<td></td>
+</tr>
+<tr>
+<td>26</td>
+<td>水世界</td>
+<td>瓶中信</td>
+<td></td>
+</tr>
+<tr>
+<td>27</td>
+<td>甜心蜂巢</td>
+<td>蜂蜜棒</td>
+<td></td>
+</tr>
+<tr>
+<td>28</td>
+<td>僵尸脑袋</td>
+<td>点滴</td>
+<td></td>
+</tr>
+<tr>
+<td>29</td>
+<td>巫婆巢穴</td>
+<td>蝙蝠</td>
+<td></td>
+</tr>
+<tr>
+<td>30</td>
+<td>鹰巢</td>
+<td>羽毛球</td>
+<td></td>
+</tr>
+<tr>
+<td>31</td>
+<td>鳄鱼沼泽</td>
+<td>鱼眼斑点</td>
+<td></td>
+</tr>
+<tr>
+<td>32</td>
+<td>巨人甜椒</td>
+<td>红宝石</td>
+<td></td>
+</tr>
+<tr>
+<td>33</td>
+<td>远古凤尾蕨</td>
+<td>太空垃圾</td>
+<td></td>
+</tr>
+<tr>
+<td>34</td>
+<td>深海鱼缸</td>
+<td></td>
+<td>凤螺</td>
+</tr>
+<tr>
+<td>35</td>
+<td>洋芋巨塔</td>
+<td>零食</td>
+<td></td>
+</tr>
+<tr>
+<td>36</td>
+<td>忙碌城市</td>
+<td></td>
+<td>烟斗</td>
+</tr>
+<tr>
+<td>37</td>
+<td>甜甜圈</td>
+<td></td>
+<td>马卡龙</td>
+</tr>
+<tr>
+<td>38</td>
+<td>西瓜峡谷</td>
+<td></td>
+<td>红色果汁机</td>
+</tr>
+<tr>
+<td>39</td>
+<td>漂浮原石</td>
+<td>人造卫星</td>
+<td></td>
+</tr>
+<tr>
+<td>40</td>
+<td>提琴山谷</td>
+<td>铃铛</td>
+<td></td>
+</tr>
+<tr>
+<td>41</td>
+<td>迷雾基地</td>
+<td></td>
+<td>太空海盗战舰</td>
+</tr>
+<tr>
+<td>42</td>
+<td>汉堡山脉</td>
+<td></td>
+<td>可乐罐</td>
+</tr>
+<tr>
+<td>43</td>
+<td>罗马竞技场</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>44</td>
+<td>爆米花监狱</td>
+<td>DVD</td>
+<td></td>
+</tr>
+<tr>
+<td>45</td>
+<td>豆子的家</td>
+<td>狗碗</td>
+</tr>
+<tr>
+<td>46</td>
+<td>冰河时期</td>
+<td></td>
+<td>雪花</td>
+</tr>
+<tr>
+<td>47</td>
+<td>无尽赛道</td>
+<td></td>
+<td>轮胎</td>
+</tr>
+<tr>
+<td>48</td>
+<td>月影湖泊</td>
+<td></td>
+<td>月饼</td>
+</tr>
+</tbody>
+</table>
+<p>##卫星</p>
+<table>
+<thead>
+<tr>
+<th>卫星</th>
+<th>to match</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>哈勃望远镜</td>
+<td>万能</td>
+</tr>
+<tr>
+<td>浑天仪</td>
+<td>万能</td>
+</tr>
+<tr>
+<td>耐力皇冠</td>
+<td>万能</td>
+</tr>
+<tr>
+<td>蓝光球</td>
+<td>花朵庄园</td>
+</tr>
+<tr>
+<td>钻石</td>
+<td>宝藏矿机</td>
+</tr>
+<tr>
+<td>探测机</td>
+<td>工业时代</td>
+</tr>
+<tr>
+<td>圣诞星星</td>
+<td>雅典娜之月</td>
+</tr>
+<tr>
+<td>花球</td>
+<td>亚马逊森林</td>
+</tr>
+<tr>
+<td>魔法石</td>
+<td>荒漠沙原</td>
+</tr>
+<tr>
+<td>情书</td>
+<td>对望之山</td>
+</tr>
+<tr>
+<td>足球</td>
+<td>球状比赛</td>
+</tr>
+<tr>
+<td>棉花糖</td>
+<td>巧克力流域</td>
+</tr>
+<tr>
+<td>黄色果汁机</td>
+<td>凤梨丘陵</td>
+</tr>
+<tr>
+<td>绿色果汁机</td>
+<td>雪瓜之星</td>
+</tr>
+<tr>
+<td>彩蛋</td>
+<td>彩虹之石</td>
+</tr>
+<tr>
+<td>齿轮</td>
+<td>机械之心</td>
+</tr>
+<tr>
+<td>小雨伞</td>
+<td>香蕉船</td>
+</tr>
+<tr>
+<td>乌鸦</td>
+<td>泪水云</td>
+</tr>
+<tr>
+<td>圣诞礼物</td>
+<td>环状森林</td>
+</tr>
+</tbody>
+</table>
 </span>
       
     </div>
@@ -276,9 +640,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/interview/" rel="tag">#interview</a>
-          
-            <a href="/tags/javascript/" rel="tag">#javascript</a>
+            <a href="/tags/havafun/" rel="tag">#娱乐</a>
           
         </div>
       
@@ -287,13 +649,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/09/03/something-about-encode/" rel="prev">something about encode</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/08/30/hello-hexo/" rel="next">hello hexo</a>
+              <a href="/2015/09/05/todo/" rel="next">todo</a>
             
           </div>
         </div>
@@ -345,8 +705,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/09/03/javascript-interview-problems/"
-                   data-title="javascript interview problems" data-url="http://www.xiaojunxie.com/2015/09/03/javascript-interview-problems/">
+              <div class="ds-thread" data-thread-key="2015/09/05/walkr/"
+                   data-title="walkr" data-url="http://www.xiaojunxie.com/2015/09/05/walkr/">
               </div>
             
           </div>
@@ -442,7 +802,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#javascript笔试题"><span class="nav-number">1.</span> <span class="nav-text">javascript笔试题</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
