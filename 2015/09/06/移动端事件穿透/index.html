@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="hexo," />
+  <meta name="keywords" content="javascript,mobile web," />
 
 
 
@@ -37,16 +37,52 @@
   <link rel="shorticon icon" type="image/x-icon" href="/image_16X16.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="第一篇blog–献给自己">
+<meta name="description" content="WebApp事件穿透在WebApp中，当页面转场或硬切换或弹窗等界面变化的处理中，把初始界面触发界面变化事件的元素btnA相对屏幕的位置标为screenPoint，而切换的目标界面在screenPoint位置也存在一个元素btnB并绑定了事件处理，当btnA被出发时，btnB也会被触发，这里将这种现象称为事件穿透效应。
+测试场景
+
+
+
+btnA事件
+btnB事件
+是否触发透传
+
+
+
+
+touchs">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hello hexo">
-<meta property="og:url" content="http://www.xiaojunxie.com/2015/08/30/hello-hexo/index.html">
+<meta property="og:title" content="移动端事件穿透">
+<meta property="og:url" content="http://www.xiaojunxie.com/2015/09/06/移动端事件穿透/index.html">
 <meta property="og:site_name" content="Jennifer's Blog">
-<meta property="og:description" content="第一篇blog–献给自己">
-<meta property="og:updated_time" content="2015-09-03T05:32:07.000Z">
+<meta property="og:description" content="WebApp事件穿透在WebApp中，当页面转场或硬切换或弹窗等界面变化的处理中，把初始界面触发界面变化事件的元素btnA相对屏幕的位置标为screenPoint，而切换的目标界面在screenPoint位置也存在一个元素btnB并绑定了事件处理，当btnA被出发时，btnB也会被触发，这里将这种现象称为事件穿透效应。
+测试场景
+
+
+
+btnA事件
+btnB事件
+是否触发透传
+
+
+
+
+touchs">
+<meta property="og:updated_time" content="2015-09-06T03:20:23.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hello hexo">
-<meta name="twitter:description" content="第一篇blog–献给自己">
+<meta name="twitter:title" content="移动端事件穿透">
+<meta name="twitter:description" content="WebApp事件穿透在WebApp中，当页面转场或硬切换或弹窗等界面变化的处理中，把初始界面触发界面变化事件的元素btnA相对屏幕的位置标为screenPoint，而切换的目标界面在screenPoint位置也存在一个元素btnB并绑定了事件处理，当btnA被出发时，btnB也会被触发，这里将这种现象称为事件穿透效应。
+测试场景
+
+
+
+btnA事件
+btnB事件
+是否触发透传
+
+
+
+
+touchs">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -56,7 +92,7 @@
   };
 </script>
 
-  <title> hello hexo | Jennifer's Blog </title>
+  <title> 移动端事件穿透 | Jennifer's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -189,7 +225,7 @@
           
           
             
-              hello hexo
+              移动端事件穿透
             
           
         </h1>
@@ -198,8 +234,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-08-30T20:48:03+08:00" content="2015-08-30">
-            2015-08-30
+          <time itemprop="dateCreated" datetime="2015-09-06T09:32:11+08:00" content="2015-09-06">
+            2015-09-06
           </time>
         </span>
 
@@ -208,8 +244,8 @@
             &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/blog/" itemprop="url" rel="index">
-                  <span itemprop="name">blog</span>
+                <a href="/categories/frontend/" itemprop="url" rel="index">
+                  <span itemprop="name">前端</span>
                 </a>
               </span>
 
@@ -224,8 +260,8 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/08/30/hello-hexo/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/30/hello-hexo/" itemprop="commentsCount"></span>
+              <a href="/2015/09/06/移动端事件穿透/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/06/移动端事件穿透/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -239,9 +275,45 @@
       
 
       
-        <span itemprop="articleBody"><p>第一篇blog–献给自己</p>
-<a id="more"></a>
-<h2 id="hexo">hexo</h2><p>这是一个使用github pages+hexo搭建的博客，我是谢晓君，来自北京邮电大学，目标是成为一名全栈工程师，目前是一个前端开发工程师~(≧▽≦)/~啦啦啦</p>
+        <span itemprop="articleBody"><h2 id="WebApp事件穿透">WebApp事件穿透</h2><p>在WebApp中，当页面转场或硬切换或弹窗等界面变化的处理中，把<strong>初始界面触发界面变化事件的元素btnA</strong>相对屏幕的位置标为screenPoint，而切换的<strong>目标界面在screenPoint位置也存在一个元素btnB</strong>并绑定了事件处理，当btnA被出发时，btnB也会被触发，这里将这种现象称为<em>事件穿透效应</em>。</p>
+<p>测试场景</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">btnA事件</th>
+<th style="text-align:center">btnB事件</th>
+<th>是否触发透传</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">touchstart/touchend</td>
+<td style="text-align:center">touchstart/touchend</td>
+<td>未触发透传</td>
+</tr>
+<tr>
+<td style="text-align:center">touchstart/touchend</td>
+<td style="text-align:center">click</td>
+<td>触发透传</td>
+</tr>
+<tr>
+<td style="text-align:center">touchstart/touchend</td>
+<td style="text-align:center">input</td>
+<td>触发透传</td>
+</tr>
+<tr>
+<td style="text-align:center">click</td>
+<td style="text-align:center">touchstart/touchend</td>
+<td>未触发透传</td>
+</tr>
+<tr>
+<td style="text-align:center">click</td>
+<td style="text-align:center">click</td>
+<td>未触发透传</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Zepto_tap穿透bug">Zepto tap穿透bug</h2><p>当两个层叠加在一起时，使用zepto的tap事件时点击上面一个层时有时会触发下面层的事件，俗称穿透，原因是由于zepto的tap事件是绑定在document上的，由于click的延迟和事件冒泡到document上，从而触发了该位置元素的click事件。解决办法是延迟一定时间处理事件或是监听touched事件并在事件中使用preventDefault阻止冒泡，还有人提出来是使用css的<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events" target="_blank" rel="external">pointer-events</a>来避免，当然还可以使用<a href="http://www.cnblogs.com/lilyimage/p/3740668.html" target="_blank" rel="external">fast click</a>库来避免，实在不行的话就用click代替tap有时也能解决此问题。最好是自己通过touch start、touchmove、touchend来模拟tap事件。</p>
 </span>
       
     </div>
@@ -250,7 +322,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag">#hexo</a>
+            <a href="/tags/javascript/" rel="tag">#javascript</a>
+          
+            <a href="/tags/mobile-web/" rel="tag">#mobile web</a>
           
         </div>
       
@@ -259,11 +333,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/09/03/javascript-interview-problems/" rel="prev">javascript interview problems</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/09/05/logic-interview/" rel="next">logic interview</a>
             
           </div>
         </div>
@@ -315,8 +389,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/08/30/hello-hexo/"
-                   data-title="hello hexo" data-url="http://www.xiaojunxie.com/2015/08/30/hello-hexo/">
+              <div class="ds-thread" data-thread-key="2015/09/06/移动端事件穿透/"
+                   data-title="移动端事件穿透" data-url="http://www.xiaojunxie.com/2015/09/06/移动端事件穿透/">
               </div>
             
           </div>
@@ -412,7 +486,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo"><span class="nav-number">1.</span> <span class="nav-text">hexo</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#WebApp事件穿透"><span class="nav-number">1.</span> <span class="nav-text">WebApp事件穿透</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Zepto_tap穿透bug"><span class="nav-number">2.</span> <span class="nav-text">Zepto tap穿透bug</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
