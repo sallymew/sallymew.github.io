@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="css,html,javascript," />
+  <meta name="keywords" content="javascript," />
 
 
 
@@ -37,16 +37,16 @@
   <link rel="shorticon icon" type="image/x-icon" href="/image_16X16.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="todo前端学习长路漫漫，你我共勉~(≧▽≦)/~啦啦啦">
+<meta name="description" content="前言非原创，部分摘自jobbole的文章和之前的一些学习笔记，稍加整理所得，仅供参考~">
 <meta property="og:type" content="article">
-<meta property="og:title" content="todo">
-<meta property="og:url" content="http://www.xiaojunxie.com/2015/09/05/todo/index.html">
+<meta property="og:title" content="类和继承，从ES5到ES6">
+<meta property="og:url" content="http://www.xiaojunxie.com/2015/09/09/类和继承，从ES5到ES6/index.html">
 <meta property="og:site_name" content="Jennifer's Blog">
-<meta property="og:description" content="todo前端学习长路漫漫，你我共勉~(≧▽≦)/~啦啦啦">
-<meta property="og:updated_time" content="2015-09-06T03:20:16.000Z">
+<meta property="og:description" content="前言非原创，部分摘自jobbole的文章和之前的一些学习笔记，稍加整理所得，仅供参考~">
+<meta property="og:updated_time" content="2015-09-09T11:26:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="todo">
-<meta name="twitter:description" content="todo前端学习长路漫漫，你我共勉~(≧▽≦)/~啦啦啦">
+<meta name="twitter:title" content="类和继承，从ES5到ES6">
+<meta name="twitter:description" content="前言非原创，部分摘自jobbole的文章和之前的一些学习笔记，稍加整理所得，仅供参考~">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -56,7 +56,7 @@
   };
 </script>
 
-  <title> todo | Jennifer's Blog </title>
+  <title> 类和继承，从ES5到ES6 | Jennifer's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -189,7 +189,7 @@
           
           
             
-              todo
+              类和继承，从ES5到ES6
             
           
         </h1>
@@ -198,8 +198,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-09-05T16:38:28+08:00" content="2015-09-05">
-            2015-09-05
+          <time itemprop="dateCreated" datetime="2015-09-09T16:19:57+08:00" content="2015-09-09">
+            2015-09-09
           </time>
         </span>
 
@@ -224,8 +224,8 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/09/05/todo/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/05/todo/" itemprop="commentsCount"></span>
+              <a href="/2015/09/09/类和继承，从ES5到ES6/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/09/类和继承，从ES5到ES6/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -239,61 +239,217 @@
       
 
       
-        <span itemprop="articleBody"><h1 id="todo">todo</h1><p>前端学习长路漫漫，你我共勉~(≧▽≦)/~啦啦啦</p>
+        <span itemprop="articleBody"><h2 id="前言">前言</h2><p><strong>非原创</strong>，部分摘自jobbole的<a href="http://web.jobbole.com/83372/" target="_blank" rel="external">文章</a>和之前的一些学习笔记，稍加整理所得，仅供参考~</p>
 <a id="more"></a>
-<h2 id="网上简历">网上简历</h2><ol>
-<li><p><a href="https://github.com/joyeecheung/resume" target="_blank" rel="external">张秋怡</a></p>
-</li>
-<li><p><a href="http://zhangwenli.com/cv/" target="_blank" rel="external">张雯莉</a></p>
-</li>
-</ol>
-<h2 id="基础知识">基础知识</h2><p>把买的书籍全部消化掉</p>
+<h2 id="ES5中的类和继承">ES5中的类和继承</h2><p>Javascript是一种面向原型的语言，函数是javascript的一等公民，并在ECMAScript5中，能够模拟类和继承。</p>
+<h3 id="定义类">定义类</h3><p>在javascript中，灵活的函数允许我们模拟常用于处理类的封装。通过这个技巧，能够扩展对象的原型。</p>
+<pre><code>var <span class="keyword">Animal</span> = (function() {
+    function <span class="keyword">Animal</span>(name) {
+        this.name = name;
+    }
+
+    <span class="keyword">Animal</span>.prototype.doSomething = function() {
+        console.log(<span class="string">"I'm a "</span> + this.name);
+    };
+
+    return <span class="keyword">Animal</span>;
+})();
+
+var lion = new <span class="keyword">Animal</span>(<span class="string">"Lion"</span>);
+lion.doSomething();
+</code></pre><p>上面的代码中，定义了一个带有属性和方法的类，这个构造器通过函数（匿名函数Animal）定义，并能够实例化属性。通过使用原型，可定义被实例化的函数。而问题是，假设你了解原型继承和一些基于类继承的语言，你会感到很混乱。奇怪的是，javascript有class关键字，却不能做任何事，而现在ECMAScript 6用上了~</p>
+<h3 id="原型继承">原型继承</h3><pre><code><span class="keyword">var</span> ClassA = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+    <span class="keyword">this</span>.name = <span class="string">"class A"</span>;
+}
+ClassA.prototype.print = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);
+}
+<span class="keyword">var</span> a = <span class="keyword">new</span> ClassA();
+a.print();
+
+<span class="keyword">var</span> inheritFrom = <span class="function"><span class="keyword">function</span>(<span class="params">child, parent</span>) </span>{
+    child.prototype = <span class="built_in">Object</span>.create(parent.prototype);
+}
+
+<span class="keyword">var</span> ClassB = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+    <span class="keyword">this</span>.name = <span class="string">"class B"</span>;
+    <span class="keyword">this</span>.surname = <span class="string">"I'm the child"</span>;
+}
+inheritFrom(ClassB, ClassA);
+ClassB.prototype.print = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+    ClassA.prototype.print.call(<span class="keyword">this</span>);
+    <span class="built_in">console</span>.log(<span class="keyword">this</span>.surname);
+}
+<span class="keyword">var</span> b = <span class="keyword">new</span> ClassB();
+b.print();
+</code></pre><p>原型链：javascript中，每个构造函数都有一个prototype属性，指向另一个对象。这个对象的所有属性和方法，都会被构造函数的实例继承。这意味着，我们可以把那些<em>不变的属性和方法</em>直接定义在prototype对象上。在进行属性查找是，javascript会向上遍历原型链，直到找到给定名称的属性为止，到查找到达原型链的顶部，也就是<code>Object.prototype</code>。可以使用hasOwnProperty来判断对象是否包含该属性，使用in来判断对象和其原型链中是否包含。下面是一个完整的继承的实例：</p>
+<pre><code>function <span class="keyword">Person</span>(){} //空的构造函数
+<span class="keyword">Person</span>.prototype = {
+    init: function(name){
+        this.name = name;
+    },
+    getName: function(){
+        return this.name;
+    }
+    call: function(){
+        alert(<span class="string">"I am a person"</span>);
+    }
+}
+function Employee(){}
+Employee.prototype = new <span class="keyword">Person</span>();
+Employee.prototype.constructor = Employee; //显示指定constructor可以防止prototype改写带来的问题
+</code></pre><p>相关的笔试or面试题 </p>
 <ol>
-<li><p>css禅意花园</p>
-</li>
-<li><p>javascript dom编程艺术</p>
-</li>
-<li><p>javascript高级程序设计</p>
-</li>
-<li><p>单页web应用</p>
-</li>
-<li><p>react–引领未来的用户界面开发框架</p>
-</li>
-<li><p>webkit技术内幕</p>
-</li>
-<li><p>正念前端</p>
-</li>
+<li><p>new func和单纯的func</p>
+<pre><code>function <span class="keyword">Person</span>(){}
+var <span class="keyword">person</span> = <span class="keyword">Person</span>();//执行函数并将返回值赋值给<span class="keyword">person</span>，如果<span class="keyword">Person</span>是一个构造器，那么不会创建新的对象，this将绑定到全局对象上
+var <span class="keyword">person</span> = new <span class="keyword">person</span>();//使用构造函数<span class="keyword">Person</span>构造一个实例对象<span class="keyword">person</span>，this指向新创建的<span class="keyword">person</span>对象
+</code></pre></li>
+<li><p>看程序写答案</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>{
+    <span class="keyword">this</span>.add = <span class="function"><span class="keyword">function</span> (<span class="params">x, y</span>) </span>{
+        <span class="keyword">return</span> x + y;
+    }
+}
+
+foo.prototype.add = <span class="function"><span class="keyword">function</span> (<span class="params">x, y</span>) </span>{
+    <span class="keyword">return</span> x + y + <span class="number">10</span>;
+}
+
+<span class="built_in">Object</span>.prototype.subtract = <span class="function"><span class="keyword">function</span> (<span class="params">x, y</span>) </span>{
+    <span class="keyword">return</span> x - y;
+}
+
+<span class="keyword">var</span> f = <span class="keyword">new</span> foo();
+alert(f.add(<span class="number">1</span>, <span class="number">2</span>)); <span class="comment">//结果是3，而不是13</span>
+alert(f.subtract(<span class="number">1</span>, <span class="number">2</span>)); <span class="comment">//结果是-1</span>
+</code></pre></li>
+<li><p>看程序写答案</p>
+<pre><code>两个实例化的对象 obj1,   obj2
+obj1.a = <span class="number">1</span>;
+console.<span class="built_in">log</span> <span class="params">(obj1.a)</span>;
+console.<span class="built_in">log</span> <span class="params">(obj2.a)</span>;
+Ob.prototype.a = <span class="number">2</span>;
+console.<span class="built_in">log</span> <span class="params">(obj1.a)</span>;
+console.<span class="built_in">log</span> <span class="params">(obj2.a)</span>;
+
+<span class="comment">//答    1, undefined, 1, 2</span>
+<span class="comment">//解释   实例变量    原型中的变量什么的，原型链搜索</span>
+</code></pre></li>
 </ol>
-<h2 id="myapp维护">myapp维护</h2><ul>
-<li><p>react</p>
-</li>
-<li><p>webpack</p>
-</li>
-<li><p>node深入学习</p>
-</li>
-<li><p>es6/coffeescript</p>
-</li>
-</ul>
-<h2 id="工具">工具</h2><ol>
-<li><p>webstorm</p>
-</li>
-<li><p>fiddler+willow插件/charles</p>
-</li>
-<li><p>chrome开发者工具</p>
-</li>
-<li><p>js-sdk，调用微信接口，分享到微信，OAuth协议</p>
-</li>
-<li><p>基于hilojs的H5小游戏开发</p>
-</li>
-<li><p>PPT工具</p>
-<ul>
-<li><p><a href="http://www.cnblogs.com/darren_code/archive/2013/01/04/impressjs.html" target="_blank" rel="external">impress.js</a></p>
-</li>
-<li><p><a href="https://prezi.com/" target="_blank" rel="external">prezi</a></p>
-</li>
-</ul>
-</li>
-</ol>
+<h2 id="ES6中的类和继承">ES6中的类和继承</h2><h3 id="简单的ES6类">简单的ES6类</h3><pre><code><span class="keyword">class</span> AnimalES6 {
+    <span class="constructor"><span class="keyword">constructor</span>(name) </span>{
+        <span class="keyword">this</span>.name = name;
+    }
+
+    doSomething() {
+        <span class="built_in">console</span>.log(<span class="string">"I'm a "</span> + <span class="keyword">this</span>.name);
+    }
+}
+
+<span class="keyword">var</span> lionES6 = <span class="keyword">new</span> AnimalES6(<span class="string">"Lion"</span>);
+lionES6.doSomething();
+</code></pre><p>尽管运行结果和前面的一样，但是对于习惯写类的开发者来说，更易编写和阅读，因为这不需要原型，并且能够使用constructor关键字定义构造器。此外，ES6的类引入了一些ES5所没有的语法，例如，必须通过new调用构造函数，或者不能用new尝试去构造类方法，另一个改变是，方法都是不可枚举的（存疑？）。有趣的是，两个版本可同时共存使用。<em>归根结底，即使用new关键字实例化一个添加在原型的函数，“方法”在这里仅仅是对象的一个函数属性。</em>另一个基于类开发的核心特性是，getter和setter都在ES6中得到支持，这使得方法的用途变得更加明显：</p>
+<h3 id="ES6类包含私有属性–symbol">ES6类包含私有属性–symbol</h3><pre><code><span class="keyword">class</span>  AnimalES6 {
+    <span class="constructor"><span class="keyword">constructor</span>(name) </span>{
+        <span class="keyword">this</span>.name = name;
+        <span class="keyword">this</span>._age = <span class="number">0</span>;
+    }
+
+    <span class="keyword">get</span> age() {
+        <span class="keyword">return</span> <span class="keyword">this</span>._age;
+    }
+
+    <span class="keyword">set</span> age(value) {
+        <span class="keyword">if</span>(value &lt; <span class="number">0</span>) {
+            <span class="built_in">console</span>.log(<span class="string">"We do not support undead animals"</span>);
+        } <span class="keyword">else</span> {
+            <span class="keyword">this</span>._age = value;
+        }
+    }
+
+    doSomething() {
+        <span class="built_in">console</span>.log(<span class="string">"I'm a "</span> + <span class="keyword">this</span>.name);
+    }
+}
+
+<span class="keyword">var</span> lionES6 = <span class="keyword">new</span> AnimalES6(<span class="string">"Lion"</span>);
+lionES6.doSomething();
+lionES6.age = <span class="number">5</span>;
+</code></pre><p>这样写很方便，但是会看到一个javascript的常规警告：“不是真正私有的”私有成员（_age）。创建私有成员可以使用<code>closure space</code></p>
+<pre><code><span class="keyword">var</span> createProperty = <span class="function"><span class="keyword">function</span><span class="params">(obj, prop)</span> </span>{
+    <span class="keyword">var</span> currentValue = obj[prop];
+    Object.defineProperty(obj, prop, {
+        <span class="keyword">get</span>: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{ <span class="keyword">return</span> currentValue;},
+        <span class="keyword">set</span>: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{ currentValue = value;},
+        enumerable: <span class="literal">true</span>,
+        configurable: <span class="literal">true</span>
+    });
+}
+
+<span class="keyword">var</span> entity = {
+    property: <span class="string">"hello world"</span>
+}
+createProperty(entity, <span class="string">"property"</span>)
+</code></pre><p><a href="http://blogs.msdn.com/b/eternalcoding/archive/2014/08/05/javascript-using-closure-space-to-create-real-private-members.aspx?WT.mc_id=12834-DEV-noupe-othercontent" target="_blank" rel="external">与一般的get/set方式相比，这种方式貌似性能更优。</a>不过，现在有一个更好的、新的ECMAScript6特性来完成这个事情：symbols</p>
+<pre><code><span class="keyword">var</span> ageSymbol = Symbol();
+
+<span class="keyword">class</span>  AnimalES6 {
+    <span class="constructor"><span class="keyword">constructor</span>(name) </span>{
+        <span class="keyword">this</span>.name = name;
+        <span class="keyword">this</span>[ageSymbol] = <span class="number">0</span>;
+    }
+
+    <span class="keyword">get</span> age() {
+        <span class="keyword">return</span> <span class="keyword">this</span>[ageSymbol];
+    }
+
+    <span class="keyword">set</span> age(value) {
+        <span class="keyword">if</span>(value &lt; <span class="number">0</span>) {
+            <span class="built_in">console</span>.log(<span class="string">"We do not support undead animals"</span>);
+        } <span class="keyword">else</span> {
+            <span class="keyword">this</span>[ageSymbol] = value;
+        }
+    }
+
+    doSomething() {
+        <span class="built_in">console</span>.log(<span class="string">"I'm a "</span> + <span class="keyword">this</span>.name);
+    }
+}
+
+<span class="keyword">var</span> lionES6 = <span class="keyword">new</span> AnimalES6(<span class="string">"Lion"</span>);
+lionES6.doSomething();
+lionES6.age = <span class="number">5</span>;
+</code></pre><p>那么，什么是symbol呢？<strong>他是唯一且不可改变的数据类型，可用于标识对象属性</strong>。如果没有symbol，是不能获取该属性的。所以，这是一个可创建更私有的成员属性途径。或者，至少没那么容易访问到。symbol对于创建唯一的名字是很有用的，但唯一性不意味着私有性，唯一性只意味着，为一把钥匙添加一个新符号后，当你需要它的适合，肯定不会被其他钥匙所干扰。但这还不算真正的私有，因为通过Obje.getOwnPropertySymbols, downstream consumers能获取symbol属性。</p>
+<h3 id="继承">继承</h3><pre><code><span class="keyword">var</span> legsCountSymbol = Symbols();
+<span class="keyword">class</span> InsectES6 extends AnimalES6 {
+    <span class="constructor"><span class="keyword">constructor</span>(name) </span>{
+        <span class="keyword">super</span>(name);
+        <span class="keyword">this</span>[legsCountSymbol] = <span class="number">0</span>;
+    }
+
+    <span class="keyword">get</span> legsCount() {
+        <span class="keyword">return</span> <span class="keyword">this</span>[legsCountSymbol];
+    }
+
+    <span class="keyword">set</span> legsCount(value) {
+        <span class="keyword">if</span> (value &lt; <span class="number">0</span>) {
+            <span class="built_in">console</span>.log(<span class="string">"We do not support nether or interstellar insects"</span>);
+        } <span class="keyword">else</span> {
+            <span class="keyword">this</span>[legsCountSymbol] = value;
+        }
+    }
+
+    doSomething() {
+        <span class="keyword">super</span>.doSomething();
+        <span class="built_in">console</span>.log(<span class="string">"And I have "</span> + <span class="keyword">this</span>[legsCountSymbol] + <span class="string">"legs!"</span>);
+    }
+}
+
+<span class="keyword">var</span> spiderES6 = <span class="keyword">new</span> InsectES6(<span class="string">"Spider"</span>);
+spiderES6.legsCount = <span class="number">8</span>;
+spiderES6.doSomething();
+</code></pre><p>多亏了extends关键字，它能让你继承类而产生子类，并能使用super关键字保持对根类的引用。在这些新增且强大的特性下，无需再通过原型来创建类和实现继承了。</p>
 </span>
       
     </div>
@@ -301,10 +457,6 @@
     <footer class="post-footer">
       
         <div class="post-tags">
-          
-            <a href="/tags/css/" rel="tag">#css</a>
-          
-            <a href="/tags/html/" rel="tag">#html</a>
           
             <a href="/tags/javascript/" rel="tag">#javascript</a>
           
@@ -315,13 +467,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/09/05/walkr/" rel="prev">walkr</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/09/05/job-hunt-requirement/" rel="next">job hunt requirement</a>
+              <a href="/2015/09/06/移动端事件穿透/" rel="next">移动端事件穿透</a>
             
           </div>
         </div>
@@ -373,8 +523,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/09/05/todo/"
-                   data-title="todo" data-url="http://www.xiaojunxie.com/2015/09/05/todo/">
+              <div class="ds-thread" data-thread-key="2015/09/09/类和继承，从ES5到ES6/"
+                   data-title="类和继承，从ES5到ES6" data-url="http://www.xiaojunxie.com/2015/09/09/类和继承，从ES5到ES6/">
               </div>
             
           </div>
@@ -470,7 +620,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#todo"><span class="nav-number">1.</span> <span class="nav-text">todo</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#网上简历"><span class="nav-number">1.1.</span> <span class="nav-text">网上简历</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基础知识"><span class="nav-number">1.2.</span> <span class="nav-text">基础知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#myapp维护"><span class="nav-number">1.3.</span> <span class="nav-text">myapp维护</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工具"><span class="nav-number">1.4.</span> <span class="nav-text">工具</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ES5中的类和继承"><span class="nav-number">2.</span> <span class="nav-text">ES5中的类和继承</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义类"><span class="nav-number">2.1.</span> <span class="nav-text">定义类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原型继承"><span class="nav-number">2.2.</span> <span class="nav-text">原型继承</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ES6中的类和继承"><span class="nav-number">3.</span> <span class="nav-text">ES6中的类和继承</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简单的ES6类"><span class="nav-number">3.1.</span> <span class="nav-text">简单的ES6类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ES6类包含私有属性–symbol"><span class="nav-number">3.2.</span> <span class="nav-text">ES6类包含私有属性–symbol</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#继承"><span class="nav-number">3.3.</span> <span class="nav-text">继承</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
