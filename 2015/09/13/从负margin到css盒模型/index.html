@@ -58,7 +58,7 @@
 }
 喜欢臭显摆的前端小菜鸟我一眼就看出这个是为了实现多列等高布局，然后，接">
 <meta property="og:image" content="http://osmn00.com/d/file/blog/front-end/2010-10-16/23ed2c1db2a91fe6d080f8359b634fac.gif">
-<meta property="og:updated_time" content="2015-09-13T13:22:18.000Z">
+<meta property="og:updated_time" content="2015-09-13T13:27:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从负margin到css盒模型">
 <meta name="twitter:description" content="缘起今天在鬼懿IT-成长群（群号：181368696）看到一个关于负margin的问题
@@ -272,7 +272,7 @@
 <blockquote>
 <p>这样怎么就实现等高的呢？！</p>
 </blockquote>
-<p>矮油，( ⊙ o ⊙ )啊！不造啊！于是乎，本着追求真理（闲着也是闲着）的状态果断百度了下，得到如下答案</p>
+<p>矮油，不造啊！_(:з」∠)_于是乎，本着追求真理（闲着也是闲着）的状态果断百度了下，得到如下答案</p>
 <a id="more"></a>
 <blockquote>
 <p>使用正padding和负margin对冲实现多列等高布局时，所有列都设置相同的正的上下padding和负的上下margin，并在所有列外面添加一个容器，并设置overflow: hidden把溢出背景切掉。这种方法并不是自适应高度的实现，只是利用了overflow: hidden来隐藏每个列的多余部分。给所有列先设置了一个10000px的空白占位高度，把整个div往上挤了10000px，然后又通过负margin将所有列往下挪了10000px。</p>
@@ -629,14 +629,60 @@ window.onload = <span class="function"><span class="keyword">function</span><spa
     <span class="keyword">return</span> { width : e[ a+<span class="string">'Width'</span> ] , height : e[ a+<span class="string">'Height'</span> ] }
 }
 </code></pre></li>
-</ol>
-<ol>
 <li><p><a href="http://www.webhek.com/css-100-percent-height" target="_blank" rel="external">如何让height:100%起作用</a></p>
 <p> 根据W3C的规范，<strong>百分比的高度在设定时需要根据这个元素的父元素容器的高度去计算</strong>。当给元素设置宽度width:100%时元素的宽度会立刻扩展到窗口的整个横向宽度，但是当给一个div添加height:100%的css属性时，元素的高度并不能占满整个空间。这是因为，web浏览器在计算有效宽度时会考虑浏览器窗口的打开宽度，如果不给宽度设定任何缺省值，那浏览器会自动将页面内容平铺填满整个横向宽度，但是高度的计算方式完全不一样。事实上，浏览器根本不计算内容的高度，除非内容超出了视窗范围，导致滚动条的出现，或者给页面设置一个绝对宽度，否则，浏览器就会简单的让内容往下堆砌，页面的高度根本就无需考虑。因为页面没有缺省的高度值，所以，当你让一个元素的高度设定为百分比高度时，无法根据获取父元素的高度，也就无法计算自己的高度。换句话说，父元素的高度只是一个缺省值：height: auto;当你要求浏览器根据这一一个缺省值计算百分比高度时，只能得到undefined的结果，也就是一个null值，浏览器根本不会对这个值有任何反应。</p>
 <p> 所以如果想让元素的height:100%起作用，就要对他所有的祖先元素设置height:100%</p>
 <p> 高度自适应：绝对定位+top+bottom:0/Ie6：html:padding-top</p>
- <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">title</span>&gt;</span>高度自适应<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span><br><span class="line">		<span class="tag">html</span>, <span class="tag">body</span> <span class="rules">&#123;</span><br><span class="line">			<span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">100%</span></span></span>;</span><br><span class="line">		&#125;</span></span><br><span class="line">		<span class="tag">body</span>, <span class="tag">div</span> <span class="rules">&#123;</span><br><span class="line">			<span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#f00</span></span></span>;</span><br><span class="line">		&#125;</span></span><br><span class="line">		<span class="class">.top</span> <span class="rules">&#123;</span><br><span class="line">			<span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#36c</span></span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">100px</span></span></span>;</span><br><span class="line">		&#125;</span></span><br><span class="line">		<span class="class">.main</span> <span class="rules">&#123;</span><br><span class="line">			<span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#f90</span></span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100%</span></span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">top</span>:<span class="value"> <span class="number">100px</span></span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">bottom</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">overflow</span>:<span class="value"> auto</span></span>;</span><br><span class="line">		&#125;</span></span><br><span class="line">		<span class="comment">/*IE6中，html的增加了padding-top后，整个html元素的高度还是保持不变，即浏览器窗口的高度，变化的是body的高度减小了，用来抵消html的padding-top.而绝对定位的元素最终是参照html元素的。*/</span></span><br><span class="line">		* <span class="tag">html</span> <span class="rules">&#123;</span><br><span class="line">			<span class="rule"><span class="attribute">padding-top</span>:<span class="value"> <span class="number">100px</span></span></span>;</span><br><span class="line">		&#125;</span></span><br><span class="line">		* <span class="tag">html</span> <span class="class">.top</span> <span class="rules">&#123;</span><br><span class="line">			<span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#36c</span></span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">100px</span></span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">top</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100%</span></span></span>;</span><br><span class="line">		&#125;</span></span><br><span class="line">		* <span class="tag">html</span> <span class="class">.main</span> <span class="rules">&#123;</span><br><span class="line">			<span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#f90</span></span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">position</span>:<span class="value"> static</span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">100%</span></span></span>;</span><br><span class="line">		&#125;</span> </span><br><span class="line">	</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"top"</span>&gt;</span>我是顶层nav，高度固定<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"main"</span>&gt;</span>我是main，高度随浏览器视区大小变化而变化<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
+<pre><code><span class="doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span>
+<span class="tag">&lt;<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">title</span>&gt;</span>高度自适应<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
+        <span class="tag">html</span>, <span class="tag">body</span> <span class="rules">{
+            <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">100%</span></span></span>;
+        }</span>
+        <span class="tag">body</span>, <span class="tag">div</span> <span class="rules">{
+            <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span></span></span>;
+            <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">0</span></span></span>;
+            <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#f00</span></span></span>;
+        }</span>
+        <span class="class">.top</span> <span class="rules">{
+            <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#36c</span></span></span>;
+            <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">100px</span></span></span>;
+        }</span>
+        <span class="class">.main</span> <span class="rules">{
+            <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#f90</span></span></span>;
+            <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;
+            <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100%</span></span></span>;
+            <span class="rule"><span class="attribute">top</span>:<span class="value"> <span class="number">100px</span></span></span>;
+            <span class="rule"><span class="attribute">bottom</span>:<span class="value"> <span class="number">0</span></span></span>;
+            <span class="rule"><span class="attribute">overflow</span>:<span class="value"> auto</span></span>;
+        }</span>
+        <span class="comment">/*IE6中，html的增加了padding-top后，整个html元素的高度还是保持不变，即浏览器窗口的高度，变化的是body的高度减小了，用来抵消html的padding-top.而绝对定位的元素最终是参照html元素的。*/</span>
+        * <span class="tag">html</span> <span class="rules">{
+            <span class="rule"><span class="attribute">padding-top</span>:<span class="value"> <span class="number">100px</span></span></span>;
+        }</span>
+        * <span class="tag">html</span> <span class="class">.top</span> <span class="rules">{
+            <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#36c</span></span></span>;
+            <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">100px</span></span></span>;
+            <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;
+            <span class="rule"><span class="attribute">top</span>:<span class="value"> <span class="number">0</span></span></span>;
+            <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100%</span></span></span>;
+        }</span>
+        * <span class="tag">html</span> <span class="class">.main</span> <span class="rules">{
+            <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#f90</span></span></span>;
+            <span class="rule"><span class="attribute">position</span>:<span class="value"> static</span></span>;
+            <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">100%</span></span></span>;
+        }</span> 
+    </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+<span class="tag">&lt;<span class="title">body</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"top"</span>&gt;</span>我是顶层nav，高度固定<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"main"</span>&gt;</span>我是main，高度随浏览器视区大小变化而变化<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</code></pre></li>
 </ol>
 <h2 id="结语">结语</h2><p>至此，关于负边距和盒模型，已经有了一个初步的认识啦~(≧▽≦)/~啦啦啦~</p>
 <blockquote>
