@@ -43,7 +43,7 @@
 <meta property="og:url" content="http://www.xiaojunxie.com/2015/09/17/今日头条笔试题/index.html">
 <meta property="og:site_name" content="Jennifer's Blog">
 <meta property="og:description" content="总结下来，做得不是很好啊，有些问题应该答得更完善的，基础知识还是要复习啊">
-<meta property="og:updated_time" content="2015-09-17T11:31:25.000Z">
+<meta property="og:updated_time" content="2015-09-17T11:33:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="今日头条笔试题">
 <meta name="twitter:description" content="总结下来，做得不是很好啊，有些问题应该答得更完善的，基础知识还是要复习啊">
@@ -298,115 +298,125 @@ isString(<span class="string">"I am Jennifer"</span>);
 </ol>
 </li>
 <li><p>创建方法</p>
- <figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span>(obj)&#123;</span><br><span class="line">	<span class="comment">//对象闭包</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="comment">//函数闭包--匿名函数--可以立即执行，IIFE-Immediately Invoked Function Expression，可以用作回调函数执行，可以防止全局变量污染，是闭包的一种形式。-&gt; javascript防止全局变量污染可以通过命名空间或者IIFE来实现</span></span><br><span class="line">&#125;)()</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line"><span class="comment">//</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(e)&#123;</span><br><span class="line"><span class="comment">//catch闭包，IE中不行</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-</ol>
-<pre><code><span class="number">5.</span> 实例
+<pre><code><span class="keyword">with</span>(obj){
+    <span class="comment">//对象闭包</span>
+}
 
-        <span class="keyword">var</span> createCounter = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-            <span class="keyword">var</span> count = <span class="number">0</span>;
-            <span class="comment">/*这是一个闭包函数*/</span>
-            <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-                <span class="keyword">return</span> ++count;
-            };
-        };
-        <span class="keyword">var</span> counter1 = createCounter();
-        <span class="built_in">console</span>.log(counter1());
-        <span class="built_in">console</span>.log(counter1());
+(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
+    <span class="comment">//函数闭包--匿名函数--可以立即执行，IIFE-Immediately Invoked Function Expression，可以用作回调函数执行，可以防止全局变量污染，是闭包的一种形式。-&gt; javascript防止全局变量污染可以通过命名空间或者IIFE来实现</span>
+})()
 
-        <span class="keyword">var</span> counter2 = createCounter();
-        <span class="built_in">console</span>.log(counter2());
-        <span class="built_in">console</span>.log(counter1());
+<span class="keyword">try</span>{
+<span class="comment">//</span>
+}<span class="keyword">catch</span>(e){
+<span class="comment">//catch闭包，IE中不行</span>
+}
+</code></pre></li>
+<li><p>实例</p>
+<pre><code><span class="keyword">var</span> createCounter = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+    <span class="keyword">var</span> count = <span class="number">0</span>;
+    <span class="comment">/*这是一个闭包函数*/</span>
+    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+        <span class="keyword">return</span> ++count;
+    };
+};
+<span class="keyword">var</span> counter1 = createCounter();
+<span class="built_in">console</span>.log(counter1());
+<span class="built_in">console</span>.log(counter1());
 
-        创建一个函数，接受一个<span class="number">0</span>-<span class="number">9</span>数字，返回该数字对应的英文名称
-        <span class="keyword">var</span> digit_name = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-            <span class="comment">/*将names定义在函数内部，可以防止被意外修改*/</span>
-            <span class="keyword">var</span> names = [<span class="string">'zero'</span>, <span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>, <span class="string">'four'</span>, <span class="string">'five'</span>, <span class="string">'six'</span>, <span class="string">'seven'</span>, <span class="string">'eight'</span>, <span class="string">'nine'</span>];
-            <span class="comment">/*使用IIFE的闭包函数，仅实例化names一次，避免了每次调用带来的性能问题*/</span>
-            <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">n</span>)</span>{
-                <span class="keyword">return</span> names[n];
-            };
-        })();
+<span class="keyword">var</span> counter2 = createCounter();
+<span class="built_in">console</span>.log(counter2());
+<span class="built_in">console</span>.log(counter1());
 
-        <span class="keyword">var</span> nodes = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'button'</span>);
-        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, len = nodes.length; i &lt; len; i++) {
-            nodes[i].addEventListener(<span class="string">'click'</span>, (<span class="function"><span class="keyword">function</span>(<span class="params">i</span>)</span>{
-                <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-                    <span class="built_in">console</span>.log(<span class="string">"you clicked "</span> + i);
-                }
-            })(i));
-        };
+创建一个函数，接受一个<span class="number">0</span>-<span class="number">9</span>数字，返回该数字对应的英文名称
+<span class="keyword">var</span> digit_name = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+    <span class="comment">/*将names定义在函数内部，可以防止被意外修改*/</span>
+    <span class="keyword">var</span> names = [<span class="string">'zero'</span>, <span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>, <span class="string">'four'</span>, <span class="string">'five'</span>, <span class="string">'six'</span>, <span class="string">'seven'</span>, <span class="string">'eight'</span>, <span class="string">'nine'</span>];
+    <span class="comment">/*使用IIFE的闭包函数，仅实例化names一次，避免了每次调用带来的性能问题*/</span>
+    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">n</span>)</span>{
+        <span class="keyword">return</span> names[n];
+    };
+})();
 
-        <span class="keyword">var</span> i;
-        <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;<span class="number">10</span>; i++) {
-             setTimeout (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-                  <span class="built_in">console</span>.log (i);
-             }, <span class="number">0</span>);
-        }<span class="comment">//答案：10个10</span>
-
-        <span class="comment">//即可打印0-9</span>
-        <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;<span class="number">10</span>; i++) {
-             setTimeout ((<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-                  <span class="built_in">console</span>.log (i);
-             })(i), <span class="number">0</span>);
+<span class="keyword">var</span> nodes = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'button'</span>);
+<span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, len = nodes.length; i &lt; len; i++) {
+    nodes[i].addEventListener(<span class="string">'click'</span>, (<span class="function"><span class="keyword">function</span>(<span class="params">i</span>)</span>{
+        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+            <span class="built_in">console</span>.log(<span class="string">"you clicked "</span> + i);
         }
+    })(i));
+};
 
-        f = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{ <span class="keyword">return</span> <span class="literal">true</span>; };
-        g = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{ <span class="keyword">return</span> <span class="literal">false</span>; };
-        <span class="comment">//闭包内部有一个g函数，if会调用那个声明，也就将参数放到HTTP body中，是所谓的声明提前</span>
-        <span class="comment">//至于[] == ![] 后面那个!是因为[]不是0，null，false，只是一个空数组</span>
-        <span class="comment">//所以返回1 就变成了[] == 0, [] 转化成数字 确实是0 所以返回true</span>
-        <span class="comment">//内部函数f前面没有var，所以是全局的f</span>
-        <span class="comment">//真是纠结的一道题啊</span>
-        (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
-            <span class="keyword">if</span> (g() &amp;&amp; [] == ![]) {
-                f = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{ <span class="keyword">return</span> <span class="literal">false</span>; };
-                <span class="function"><span class="keyword">function</span>  <span class="title">g</span>(<span class="params"></span>) </span>{ <span class="keyword">return</span> <span class="literal">true</span>; }
-            }
-        })();
-        <span class="built_in">console</span>.info(f());<span class="comment">//false</span>
+<span class="keyword">var</span> i;
+<span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;<span class="number">10</span>; i++) {
+     setTimeout (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+          <span class="built_in">console</span>.log (i);
+     }, <span class="number">0</span>);
+}<span class="comment">//答案：10个10</span>
 
-        <span class="keyword">var</span> a = {
-            b : <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
-                alert(<span class="keyword">this</span>.c);
-            },
-            c : <span class="number">1</span>
-        };        
-        a.b();<span class="comment">//1</span>
-        (a.b)();<span class="comment">//1</span>
-        (a.b = a.b)();<span class="comment">//undefined</span>
+<span class="comment">//即可打印0-9</span>
+<span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;<span class="number">10</span>; i++) {
+     setTimeout ((<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+          <span class="built_in">console</span>.log (i);
+     })(i), <span class="number">0</span>);
+}
 
-        <span class="keyword">var</span> foo = {
-            bar: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{
-                <span class="keyword">return</span> <span class="keyword">this</span>.baz;
-            },
-            baz: <span class="number">1</span>
-        };
-        (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{
-            <span class="keyword">return</span> <span class="keyword">typeof</span> <span class="built_in">arguments</span>[<span class="number">0</span>]();
-        })(foo.bar);<span class="comment">//浅拷贝undefined</span>
+f = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{ <span class="keyword">return</span> <span class="literal">true</span>; };
+g = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{ <span class="keyword">return</span> <span class="literal">false</span>; };
+<span class="comment">//闭包内部有一个g函数，if会调用那个声明，也就将参数放到HTTP body中，是所谓的声明提前</span>
+<span class="comment">//至于[] == ![] 后面那个!是因为[]不是0，null，false，只是一个空数组</span>
+<span class="comment">//所以返回1 就变成了[] == 0, [] 转化成数字 确实是0 所以返回true</span>
+<span class="comment">//内部函数f前面没有var，所以是全局的f</span>
+<span class="comment">//真是纠结的一道题啊</span>
+(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+    <span class="keyword">if</span> (g() &amp;&amp; [] == ![]) {
+        f = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{ <span class="keyword">return</span> <span class="literal">false</span>; };
+        <span class="function"><span class="keyword">function</span>  <span class="title">g</span>(<span class="params"></span>) </span>{ <span class="keyword">return</span> <span class="literal">true</span>; }
+    }
+})();
+<span class="built_in">console</span>.info(f());<span class="comment">//false</span>
 
-        <span class="keyword">var</span> baz = <span class="string">'laruence'</span>;
-        <span class="keyword">var</span> foo = {
-            bar: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{
-                alert(<span class="keyword">this</span>.baz);
-            },
-            baz: <span class="string">'ll'</span>
-        };
-        (f = foo.bar)();<span class="comment">//laruence</span>
+<span class="keyword">var</span> a = {
+    b : <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+        alert(<span class="keyword">this</span>.c);
+    },
+    c : <span class="number">1</span>
+};        
+a.b();<span class="comment">//1</span>
+(a.b)();<span class="comment">//1</span>
+(a.b = a.b)();<span class="comment">//undefined</span>
 
-        $是封装好的jquery类，是jquery函数的别称，$.fn是$.prototype的简写，常用作给jquery实例扩展方法，在编写jquery插件时使用，$是对<span class="built_in">document</span>.getElementById的封装，性能上还是后者好，因为直接调用了Javascript引擎，$(<span class="keyword">this</span>)返回jquery对象，可以调用jquery方法，而<span class="keyword">this</span>表示当前元素，是javascript的关键字，表示上下文中的DOM元素，不能调用jquery方法，包括eq和get等。
-        (<span class="function"><span class="keyword">function</span>(<span class="params">$</span>)</span>{
-            $.fn.disableSelection = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-                <span class="keyword">return</span> <span class="keyword">this</span>
-                        .attr(<span class="string">'unselectable'</span>, <span class="string">'on'</span>)
-                        .css(<span class="string">'user-select'</span>, <span class="string">'none'</span>)
-                        .on(<span class="string">'selectstart'</span>, <span class="string">'false'</span>);
-            };
-        }(jQuery));
-</code></pre><ol>
+<span class="keyword">var</span> foo = {
+    bar: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{
+        <span class="keyword">return</span> <span class="keyword">this</span>.baz;
+    },
+    baz: <span class="number">1</span>
+};
+(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{
+    <span class="keyword">return</span> <span class="keyword">typeof</span> <span class="built_in">arguments</span>[<span class="number">0</span>]();
+})(foo.bar);<span class="comment">//浅拷贝undefined</span>
+
+<span class="keyword">var</span> baz = <span class="string">'laruence'</span>;
+<span class="keyword">var</span> foo = {
+    bar: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{
+        alert(<span class="keyword">this</span>.baz);
+    },
+    baz: <span class="string">'ll'</span>
+};
+(f = foo.bar)();<span class="comment">//laruence</span>
+
+$是封装好的jquery类，是jquery函数的别称，$.fn是$.prototype的简写，常用作给jquery实例扩展方法，在编写jquery插件时使用，$是对<span class="built_in">document</span>.getElementById的封装，性能上还是后者好，因为直接调用了Javascript引擎，$(<span class="keyword">this</span>)返回jquery对象，可以调用jquery方法，而<span class="keyword">this</span>表示当前元素，是javascript的关键字，表示上下文中的DOM元素，不能调用jquery方法，包括eq和get等。
+(<span class="function"><span class="keyword">function</span>(<span class="params">$</span>)</span>{
+    $.fn.disableSelection = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+        <span class="keyword">return</span> <span class="keyword">this</span>
+                .attr(<span class="string">'unselectable'</span>, <span class="string">'on'</span>)
+                .css(<span class="string">'user-select'</span>, <span class="string">'none'</span>)
+                .on(<span class="string">'selectstart'</span>, <span class="string">'false'</span>);
+    };
+}(jQuery));
+</code></pre></li>
+</ol>
+</li>
 <li><p>如何消除子元素浮动带来的父元素的高度塌陷</p>
 <p> 这是一个典型的闭合浮动的问题。清除浮动对应着CSS中的属性是 <code>clear：none|left|right|both</code> ，而闭合浮动是使浮动元素闭合，从而减少浮动带来的影响。</p>
  <figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.clearfix</span><span class="pseudo">:after</span> &#123;</span><br><span class="line">	<span class="attribute">clear</span>: both; </span><br><span class="line">	<span class="attribute">content</span>: <span class="string">"."</span>; <span class="comment">/*Firefox中为空仍然会产生额外的空隙，但是此值为空时不需要height：0和visibility：hidden*/</span></span><br><span class="line">	<span class="attribute">display</span>: block; </span><br><span class="line">	<span class="attribute">height</span>: <span class="number">0</span>; <span class="comment">/*避免生成内容对原有布局的高度产生影响*/</span></span><br><span class="line">	<span class="attribute">font-size</span>: <span class="number">0</span>;</span><br><span class="line">	<span class="attribute">line-height</span>: <span class="number">0</span>;</span><br><span class="line">	<span class="attribute">visibility</span>: hidden;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class">.clearfix</span> &#123;*<span class="attribute">zoom</span>: <span class="number">1</span>;&#125;<span class="comment">/*清除ie6-7下的浮动，作用大致是触发 hasLayout*/</span></span><br><span class="line"></span><br><span class="line"><span class="tag">CSS</span>定位机制：普通流（<span class="tag">normal</span> <span class="tag">flow</span>），浮动，绝对定位（<span class="tag">position</span>: <span class="tag">fixed</span> 是 <span class="tag">position</span>: <span class="tag">absolute</span> 的一个子类）</span><br><span class="line"></span><br><span class="line">清理浮动的各种方法类型：</span><br><span class="line"><span class="tag">1</span>）在浮动元素末尾添加空元素，设置<span class="tag">clear</span>: <span class="tag">both</span></span><br><span class="line"><span class="tag">2</span>) 触发<span class="tag">BFC</span>，<span class="tag">IE</span>下还要触发<span class="tag">hasLayout</span></span><br><span class="line"></span><br><span class="line">精益求精清除浮动	</span><br><span class="line"><span class="comment">/**</span><br><span class="line">* 在标准浏览器下使用</span><br><span class="line">* 1 content内容为空格用于修改opera下文档中出现contentEditable属性时在清理浮动元素上下的空白</span><br><span class="line">* 2 使用display:table可以防止容器和子元素top-margin折叠，这样能使清理效果与BFC，IE6/7下的zoom：1一致</span><br><span class="line">**/</span></span><br><span class="line"><span class="class">.clearfix</span><span class="pseudo">:before</span>,</span><br><span class="line"><span class="class">.clearfix</span><span class="pseudo">:after</span> &#123;</span><br><span class="line">	<span class="attribute">content</span>: <span class="string">" "</span>; <span class="comment">/* 1 */</span></span><br><span class="line">	<span class="attribute">display</span>: table; <span class="comment">/* 2*/</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="class">.clearfix</span><span class="pseudo">:after</span> &#123;</span><br><span class="line">	<span class="attribute">clear</span>: both;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span><br><span class="line">* IE6/7下使用</span><br><span class="line">* 通过触发hasLayout实现包含浮动</span><br><span class="line">**/</span></span><br><span class="line"><span class="class">.clearfix</span> &#123;</span><br><span class="line">	*<span class="attribute">zoom</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
