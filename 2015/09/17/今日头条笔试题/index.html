@@ -43,7 +43,7 @@
 <meta property="og:url" content="http://www.xiaojunxie.com/2015/09/17/今日头条笔试题/index.html">
 <meta property="og:site_name" content="Jennifer's Blog">
 <meta property="og:description" content="总结下来，做得不是很好啊，有些问题应该答得更完善的，基础知识还是要复习啊">
-<meta property="og:updated_time" content="2015-09-17T11:33:42.000Z">
+<meta property="og:updated_time" content="2015-09-17T11:39:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="今日头条笔试题">
 <meta name="twitter:description" content="总结下来，做得不是很好啊，有些问题应该答得更完善的，基础知识还是要复习啊">
@@ -419,8 +419,16 @@ $是封装好的jquery类，是jquery函数的别称，$.fn是$.prototype的简�
 </li>
 <li><p>如何消除子元素浮动带来的父元素的高度塌陷</p>
 <p> 这是一个典型的闭合浮动的问题。清除浮动对应着CSS中的属性是 <code>clear：none|left|right|both</code> ，而闭合浮动是使浮动元素闭合，从而减少浮动带来的影响。</p>
- <figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.clearfix</span><span class="pseudo">:after</span> &#123;</span><br><span class="line">	<span class="attribute">clear</span>: both; </span><br><span class="line">	<span class="attribute">content</span>: <span class="string">"."</span>; <span class="comment">/*Firefox中为空仍然会产生额外的空隙，但是此值为空时不需要height：0和visibility：hidden*/</span></span><br><span class="line">	<span class="attribute">display</span>: block; </span><br><span class="line">	<span class="attribute">height</span>: <span class="number">0</span>; <span class="comment">/*避免生成内容对原有布局的高度产生影响*/</span></span><br><span class="line">	<span class="attribute">font-size</span>: <span class="number">0</span>;</span><br><span class="line">	<span class="attribute">line-height</span>: <span class="number">0</span>;</span><br><span class="line">	<span class="attribute">visibility</span>: hidden;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class">.clearfix</span> &#123;*<span class="attribute">zoom</span>: <span class="number">1</span>;&#125;<span class="comment">/*清除ie6-7下的浮动，作用大致是触发 hasLayout*/</span></span><br><span class="line"></span><br><span class="line"><span class="tag">CSS</span>定位机制：普通流（<span class="tag">normal</span> <span class="tag">flow</span>），浮动，绝对定位（<span class="tag">position</span>: <span class="tag">fixed</span> 是 <span class="tag">position</span>: <span class="tag">absolute</span> 的一个子类）</span><br><span class="line"></span><br><span class="line">清理浮动的各种方法类型：</span><br><span class="line"><span class="tag">1</span>）在浮动元素末尾添加空元素，设置<span class="tag">clear</span>: <span class="tag">both</span></span><br><span class="line"><span class="tag">2</span>) 触发<span class="tag">BFC</span>，<span class="tag">IE</span>下还要触发<span class="tag">hasLayout</span></span><br><span class="line"></span><br><span class="line">精益求精清除浮动	</span><br><span class="line"><span class="comment">/**</span><br><span class="line">* 在标准浏览器下使用</span><br><span class="line">* 1 content内容为空格用于修改opera下文档中出现contentEditable属性时在清理浮动元素上下的空白</span><br><span class="line">* 2 使用display:table可以防止容器和子元素top-margin折叠，这样能使清理效果与BFC，IE6/7下的zoom：1一致</span><br><span class="line">**/</span></span><br><span class="line"><span class="class">.clearfix</span><span class="pseudo">:before</span>,</span><br><span class="line"><span class="class">.clearfix</span><span class="pseudo">:after</span> &#123;</span><br><span class="line">	<span class="attribute">content</span>: <span class="string">" "</span>; <span class="comment">/* 1 */</span></span><br><span class="line">	<span class="attribute">display</span>: table; <span class="comment">/* 2*/</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="class">.clearfix</span><span class="pseudo">:after</span> &#123;</span><br><span class="line">	<span class="attribute">clear</span>: both;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span><br><span class="line">* IE6/7下使用</span><br><span class="line">* 通过触发hasLayout实现包含浮动</span><br><span class="line">**/</span></span><br><span class="line"><span class="class">.clearfix</span> &#123;</span><br><span class="line">	*<span class="attribute">zoom</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p> <strong>BFC 块级格式化上下文</strong> 可以看做是隔离了的独立容器</p>
+<ol>
+<li><p>清除浮动的2种方法：</p>
+<ol>
+<li><p>在浮动元素末尾添加空元素，设置clear: both</p>
+</li>
+<li><p>触发BFC，IE下还要触发hasLayout</p>
+</li>
+</ol>
+</li>
+<li><p><strong>BFC 块级格式化上下文</strong> 可以看做是隔离了的独立容器</p>
 <ol>
 <li><p>如何触发BFC：</p>
 <ol>
@@ -445,10 +453,13 @@ $是封装好的jquery类，是jquery函数的别称，$.fn是$.prototype的简�
 <li><p>可以包含浮动元素</p>
 </li>
 </ul>
-<p>通俗的来说，触发了BFC的元素就是一个独立的盒子，里面的子元素不会在布局上影响外面的元素，反之亦然，同时，BFC仍属于普通流</p>
-<p>在IE6-7中显示引擎使用的是布局layout这个概念，当外面说一个元素拥有layout的时候，是指其hasLayout属性为true，拥有布局的元素负责本身和其子元素的尺寸设置和定位</p>
-<p>如何触发hasLayout：</p>
 </li>
+<li><p>通俗的来说，触发了BFC的元素就是一个独立的盒子，里面的子元素不会在布局上影响外面的元素，反之亦然，同时，BFC仍属于普通流</p>
+</li>
+</ol>
+</li>
+<li><p>在IE6-7中显示引擎使用的是布局layout这个概念，当外面说一个元素拥有layout的时候，是指其hasLayout属性为true，拥有布局的元素负责本身和其子元素的尺寸设置和定位</p>
+<ol>
 <li><p><code>position: absolute</code></p>
 </li>
 <li><p><code>float: left|right</code></p>
@@ -465,8 +476,45 @@ $是封装好的jquery类，是jquery函数的别称，$.fn是$.prototype的简�
 </li>
 </ol>
 </li>
+<li><p>清除浮动的代码</p>
+<pre><code>方法<span class="tag">1</span>
+
+<span class="class">.clearfix</span><span class="pseudo">:after</span> {
+    <span class="attribute">clear</span>: both; 
+    <span class="attribute">content</span>: <span class="string">"."</span>; <span class="comment">/*Firefox中为空仍然会产生额外的空隙，但是此值为空时不需要height：0和visibility：hidden*/</span>
+    <span class="attribute">display</span>: block; 
+    <span class="attribute">height</span>: <span class="number">0</span>; <span class="comment">/*避免生成内容对原有布局的高度产生影响*/</span>
+    <span class="attribute">font-size</span>: <span class="number">0</span>;
+    <span class="attribute">line-height</span>: <span class="number">0</span>;
+    <span class="attribute">visibility</span>: hidden;
+}
+<span class="class">.clearfix</span> {*<span class="attribute">zoom</span>: <span class="number">1</span>;}<span class="comment">/*清除ie6-7下的浮动，作用是触发hasLayout*/</span>
+
+方法<span class="tag">2</span>：精益求精清除浮动    
+<span class="comment">/**
+* 在标准浏览器下使用
+* 1 content内容为空格用于修改opera下文档中出现contentEditable属性时在清理浮动元素上下的空白
+* 2 使用display:table可以防止容器和子元素top-margin折叠，这样能使清理效果与BFC，IE6/7下的zoom：1一致
+**/</span>
+
+<span class="class">.clearfix</span><span class="pseudo">:before</span>,
+<span class="class">.clearfix</span><span class="pseudo">:after</span> {
+    <span class="attribute">content</span>: <span class="string">" "</span>; <span class="comment">/* 1 */</span>
+    <span class="attribute">display</span>: table; <span class="comment">/* 2*/</span>
+}
+<span class="class">.clearfix</span><span class="pseudo">:after</span> {
+    <span class="attribute">clear</span>: both;
+}
+<span class="comment">/**
+* IE6/7下使用
+* 通过触发hasLayout实现包含浮动
+**/</span>
+<span class="class">.clearfix</span> {
+    *<span class="attribute">zoom</span>: <span class="number">1</span>;
+}
+</code></pre></li>
 </ol>
-<ol>
+</li>
 <li><p>使用原生JS或Jquery实现一个下拉菜单，输入是一个数组，每个元素是一个包含name和id的object，下拉菜单显示的文本是name，点击后弹窗id</p>
  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> lists = [&#123;name: <span class="string">'sally'</span>, id: <span class="number">1</span>&#125;, &#123;name: <span class="string">'wlan'</span>, id: <span class="number">2</span>&#125;];</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">generateSelect</span>(<span class="params">lists</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> select = <span class="built_in">document</span>.createElement(<span class="string">"select"</span>);</span><br><span class="line">	<span class="keyword">var</span> html = <span class="string">''</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>, len = lists.length; i &lt; len; ++i) &#123;</span><br><span class="line">		html += <span class="string">'&lt;option id='</span> + lists[i].id + <span class="string">'&gt;'</span> + lists[i].name + <span class="string">'&lt;/option&gt;'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	select.innerHTML = html;</span><br><span class="line">	select.onchange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		alert(select.options[select.selectedIndex].id);</span><br><span class="line">	&#125;;</span><br><span class="line">	<span class="built_in">document</span>.body.appendChild(select);</span><br><span class="line">&#125;</span><br><span class="line">generateSelect(lists);</span><br></pre></td></tr></table></figure>
 </li>
