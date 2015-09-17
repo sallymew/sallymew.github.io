@@ -1,0 +1,841 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+
+
+    <meta name="description" content="Good artists copy, best artists steal." />
+
+
+
+  <meta name="keywords" content="面试," />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/image_16X16.ico?v=0.4.5.1" />
+
+
+<meta name="description" content="总结下来，做得不是很好啊，有些问题应该答得更完善的，基础知识还是要复习啊">
+<meta property="og:type" content="article">
+<meta property="og:title" content="今日头条笔试题">
+<meta property="og:url" content="http://www.xiaojunxie.com/2015/09/17/今日头条笔试题/index.html">
+<meta property="og:site_name" content="Jennifer's Blog">
+<meta property="og:description" content="总结下来，做得不是很好啊，有些问题应该答得更完善的，基础知识还是要复习啊">
+<meta property="og:updated_time" content="2015-09-17T11:28:35.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="今日头条笔试题">
+<meta name="twitter:description" content="总结下来，做得不是很好啊，有些问题应该答得更完善的，基础知识还是要复习啊">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'hide'
+  };
+</script>
+
+  <title> 今日头条笔试题 | Jennifer's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?aaeb08de6fdb9affd9d54c000b8b03e9";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-next-logo"></i>
+      </span>
+      <span class="site-title">Jennifer's Blog</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-next-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-next-archives"></i> <br />
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            <i class="menu-item-icon icon-next-categories"></i> <br />
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-next-tags"></i> <br />
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            <i class="menu-item-icon icon-next-about"></i> <br />
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-resume">
+          <a href="/resume" rel="section">
+            <i class="menu-item-icon icon-next-resume"></i> <br />
+            简历
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            <i class="menu-item-icon icon-next-commonweal"></i> <br />
+            公益404
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              今日头条笔试题
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-09-17T19:28:24+08:00" content="2015-09-17">
+            2015-09-17
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/frontend/" itemprop="url" rel="index">
+                  <span itemprop="name">前端</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/09/17/今日头条笔试题/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/17/今日头条笔试题/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><p>总结下来，做得不是很好啊，有些问题应该答得更完善的，基础知识还是要复习啊</p>
+<a id="more"></a>
+<ol>
+<li><p>typeof类型</p>
+<p> javascript中判断数据类型有以下几种方法：</p>
+<ol>
+<li><p>原型</p>
+<pre><code><span class="built_in">Object</span>.prototype.toString.call(a) === ‘[object <span class="built_in">String</span>]’
+<span class="built_in">Object</span>.prototype.toString.call(b) === ‘[object <span class="built_in">Number</span>]’
+<span class="built_in">Object</span>.prototype.toString.call(c) === ‘[object <span class="built_in">Array</span>]’
+<span class="built_in">Object</span>.prototype.toString.call(d) === ‘[object <span class="built_in">Date</span>]’
+<span class="built_in">Object</span>.prototype.toString.call(e) === ‘[object <span class="built_in">Function</span>]’
+<span class="built_in">Object</span>.prototype.toString.call(f) === ‘[object <span class="built_in">Function</span>]’
+
+语义化的javascript代码为：            
+<span class="function"><span class="keyword">function</span> <span class="title">isType</span>(<span class="params">type</span>)</span>{
+    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>)</span>{
+        <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(o) === <span class="string">'[Object'</span> + type + <span class="string">']'</span>;
+    }
+}
+
+<span class="keyword">var</span> isString = isType(<span class="string">'String'</span>);
+<span class="keyword">var</span> isObject = isType(<span class="string">'object'</span>);
+<span class="keyword">var</span> isArray = isType(<span class="string">'Array'</span>);
+
+isString(<span class="string">"I am Jennifer"</span>);
+</code></pre></li>
+<li><p>typeof是一个一元运算，房子一个运算数之前，运算数可以是任意类型，他的返回值是字符串，该字符串说明运算数的类型，包括 <em>undefined number boolean string function object</em> 等。我们可以使用typeof来判断一个对象是否存在，即 <code>typeof a ！= &quot;undefined&quot;</code> 。<strong>对于 array、null对象一律返回 object。</strong></p>
+</li>
+<li><p>instanceof用来判断一个变量是否是某个对象的实例，对于function的参数arguments它是一个伪数组。</p>
+ <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span> instanceof <span class="built_in">Object</span> =&gt; <span class="keyword">false</span></span><br><span class="line">typeof <span class="built_in">window</span> =&gt; object</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>闭包–IIFE执行</p>
+<ol>
+<li><p>定义</p>
+<p> 闭包就是由函数创造的一个词法作用域，里面创建的变量被引用后，可以在这个词法环境之外自由使用。简单来说，闭包就是能够读取其他函数内部变量的函数。在javascript语言中，只有父函数内部的子函数可以读取父函数的局部变量。因此可以把闭包简单理解成–定义在一个函数内部的函数。在本质上，闭包就是将函数内部和函数外部连接起来的一座桥梁。这就是javascript语言特有的<em>链式作用域</em>结构，子对象会一级一级地向上寻找所有父对象的变量。所以，父对象的所有变量，对子对象都是可见的，反之则不成立。内部函数一直拥有从父函数作用域取得的变量，这些值不会随着父函数的执行完成而被销毁。<a href="http://segmentfault.com/a/1190000002778015" target="_blank" rel="external">Segment Fault上关于闭包的总结</a></p>
+</li>
+<li><p>作用</p>
+<p> <em>闭包通常被用来创建内部变量，使得这些变量不能被外部对象随意修改，同时又可以通过指定的函数接口来操作</em></p>
+</li>
+<li><p>特点</p>
+<ol>
+<li><p>作为一个函数变量的一个引用，当函数返回时，其处于激活状态</p>
+</li>
+<li><p>一个闭包就是当一个函数返回时，一个没有释放资源的栈区</p>
+</li>
+</ol>
+</li>
+<li><p>创建方法</p>
+ <figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span>(obj)&#123;</span><br><span class="line">	<span class="comment">//对象闭包</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="comment">//函数闭包--匿名函数--可以立即执行，IIFE-Immediately Invoked Function Expression，可以用作回调函数执行，可以防止全局变量污染，是闭包的一种形式。-&gt; javascript防止全局变量污染可以通过命名空间或者IIFE来实现</span></span><br><span class="line">&#125;)()</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line"><span class="comment">//</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(e)&#123;</span><br><span class="line"><span class="comment">//catch闭包，IE中不行</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ol>
+<pre><code>5. 实例
+
+    <span class="comment"><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> createCounter = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line">	<span class="comment">/*这是一个闭包函数*/</span></span><br><span class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> ++count;</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> counter1 = createCounter();</span><br><span class="line"><span class="built_in">console</span>.log(counter1());</span><br><span class="line"><span class="built_in">console</span>.log(counter1());</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> counter2 = createCounter();</span><br><span class="line"><span class="built_in">console</span>.log(counter2());</span><br><span class="line"><span class="built_in">console</span>.log(counter1());</span><br><span class="line"></span><br><span class="line">创建一个函数，接受一个<span class="number">0</span>-<span class="number">9</span>数字，返回该数字对应的英文名称</span><br><span class="line"><span class="keyword">var</span> digit_name = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="comment">/*将names定义在函数内部，可以防止被意外修改*/</span></span><br><span class="line">	<span class="keyword">var</span> names = [<span class="string">'zero'</span>, <span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>, <span class="string">'four'</span>, <span class="string">'five'</span>, <span class="string">'six'</span>, <span class="string">'seven'</span>, <span class="string">'eight'</span>, <span class="string">'nine'</span>];</span><br><span class="line">	<span class="comment">/*使用IIFE的闭包函数，仅实例化names一次，避免了每次调用带来的性能问题*/</span></span><br><span class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">n</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> names[n];</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> nodes = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'button'</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, len = nodes.length; i &lt; len; i++) &#123;</span><br><span class="line">	nodes[i].addEventListener(<span class="string">'click'</span>, (<span class="function"><span class="keyword">function</span>(<span class="params">i</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">			<span class="built_in">console</span>.log(<span class="string">"you clicked "</span> + i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;)(i));</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> i;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;<span class="number">10</span>; i++) &#123;</span><br><span class="line">     setTimeout (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">          <span class="built_in">console</span>.log (i);</span><br><span class="line">     &#125;, <span class="number">0</span>);</span><br><span class="line">&#125;<span class="comment">//答案：10个10</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//即可打印0-9</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;<span class="number">10</span>; i++) &#123;</span><br><span class="line">     setTimeout ((<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">          <span class="built_in">console</span>.log (i);</span><br><span class="line">     &#125;)(i), <span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="literal">true</span>; &#125;;</span><br><span class="line">g = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="literal">false</span>; &#125;;</span><br><span class="line"><span class="comment">//闭包内部有一个g函数，if会调用那个声明，也就将参数放到HTTP body中，是所谓的声明提前</span></span><br><span class="line"><span class="comment">//至于[] == ![] 后面那个!是因为[]不是0，null，false，只是一个空数组</span></span><br><span class="line"><span class="comment">//所以返回1 就变成了[] == 0, [] 转化成数字 确实是0 所以返回true</span></span><br><span class="line"><span class="comment">//内部函数f前面没有var，所以是全局的f</span></span><br><span class="line"><span class="comment">//真是纠结的一道题啊</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (g() &amp;&amp; [] == ![]) &#123;</span><br><span class="line">        f = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="literal">false</span>; &#125;;</span><br><span class="line">        <span class="function"><span class="keyword">function</span>  <span class="title">g</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="literal">true</span>; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br><span class="line"><span class="built_in">console</span>.info(f());<span class="comment">//false</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">    b : <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(<span class="keyword">this</span>.c);</span><br><span class="line">    &#125;,</span><br><span class="line">    c : <span class="number">1</span></span><br><span class="line">&#125;;		</span><br><span class="line">a.b();<span class="comment">//1</span></span><br><span class="line">(a.b)();<span class="comment">//1</span></span><br><span class="line">(a.b = a.b)();<span class="comment">//undefined</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> foo = &#123;</span><br><span class="line">    bar: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.baz;</span><br><span class="line">    &#125;,</span><br><span class="line">    baz: <span class="number">1</span></span><br><span class="line">&#125;;</span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">typeof</span> <span class="built_in">arguments</span>[<span class="number">0</span>]();</span><br><span class="line">&#125;)(foo.bar);<span class="comment">//浅拷贝undefined</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> baz = <span class="string">'laruence'</span>;</span><br><span class="line"><span class="keyword">var</span> foo = &#123;</span><br><span class="line">    bar: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(<span class="keyword">this</span>.baz);</span><br><span class="line">    &#125;,</span><br><span class="line">    baz: <span class="string">'ll'</span></span><br><span class="line">&#125;;</span><br><span class="line">(f = foo.bar)();<span class="comment">//laruence</span></span><br><span class="line"></span><br><span class="line">$是封装好的jquery类，是jquery函数的别称，$.fn是$.prototype的简写，常用作给jquery实例扩展方法，在编写jquery插件时使用，$是对<span class="built_in">document</span>.getElementById的封装，性能上还是后者好，因为直接调用了Javascript引擎，$(<span class="keyword">this</span>)返回jquery对象，可以调用jquery方法，而<span class="keyword">this</span>表示当前元素，是javascript的关键字，表示上下文中的DOM元素，不能调用jquery方法，包括eq和get等。</span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">$</span>)</span>&#123;</span><br><span class="line">	$.fn.disableSelection = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span></span><br><span class="line">				.attr(<span class="string">'unselectable'</span>, <span class="string">'on'</span>)</span><br><span class="line">				.css(<span class="string">'user-select'</span>, <span class="string">'none'</span>)</span><br><span class="line">				.on(<span class="string">'selectstart'</span>, <span class="string">'false'</span>);</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;(jQuery));</span><br></pre></td></tr></table></figure></span>
+</code></pre><ol>
+<li><p>如何消除子元素浮动带来的父元素的高度塌陷</p>
+<p> 这是一个典型的闭合浮动的问题。清除浮动对应着CSS中的属性是 <code>clear：none|left|right|both</code> ，而闭合浮动是使浮动元素闭合，从而减少浮动带来的影响。</p>
+ <figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.clearfix</span><span class="pseudo">:after</span> &#123;</span><br><span class="line">	<span class="attribute">clear</span>: both; </span><br><span class="line">	<span class="attribute">content</span>: <span class="string">"."</span>; <span class="comment">/*Firefox中为空仍然会产生额外的空隙，但是此值为空时不需要height：0和visibility：hidden*/</span></span><br><span class="line">	<span class="attribute">display</span>: block; </span><br><span class="line">	<span class="attribute">height</span>: <span class="number">0</span>; <span class="comment">/*避免生成内容对原有布局的高度产生影响*/</span></span><br><span class="line">	<span class="attribute">font-size</span>: <span class="number">0</span>;</span><br><span class="line">	<span class="attribute">line-height</span>: <span class="number">0</span>;</span><br><span class="line">	<span class="attribute">visibility</span>: hidden;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class">.clearfix</span> &#123;*<span class="attribute">zoom</span>: <span class="number">1</span>;&#125;<span class="comment">/*清除ie6-7下的浮动，作用大致是触发 hasLayout*/</span></span><br><span class="line"></span><br><span class="line"><span class="tag">CSS</span>定位机制：普通流（<span class="tag">normal</span> <span class="tag">flow</span>），浮动，绝对定位（<span class="tag">position</span>: <span class="tag">fixed</span> 是 <span class="tag">position</span>: <span class="tag">absolute</span> 的一个子类）</span><br><span class="line"></span><br><span class="line">清理浮动的各种方法类型：</span><br><span class="line"><span class="tag">1</span>）在浮动元素末尾添加空元素，设置<span class="tag">clear</span>: <span class="tag">both</span></span><br><span class="line"><span class="tag">2</span>) 触发<span class="tag">BFC</span>，<span class="tag">IE</span>下还要触发<span class="tag">hasLayout</span></span><br><span class="line"></span><br><span class="line">精益求精清除浮动	</span><br><span class="line"><span class="comment">/**</span><br><span class="line">* 在标准浏览器下使用</span><br><span class="line">* 1 content内容为空格用于修改opera下文档中出现contentEditable属性时在清理浮动元素上下的空白</span><br><span class="line">* 2 使用display:table可以防止容器和子元素top-margin折叠，这样能使清理效果与BFC，IE6/7下的zoom：1一致</span><br><span class="line">**/</span></span><br><span class="line"><span class="class">.clearfix</span><span class="pseudo">:before</span>,</span><br><span class="line"><span class="class">.clearfix</span><span class="pseudo">:after</span> &#123;</span><br><span class="line">	<span class="attribute">content</span>: <span class="string">" "</span>; <span class="comment">/* 1 */</span></span><br><span class="line">	<span class="attribute">display</span>: table; <span class="comment">/* 2*/</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="class">.clearfix</span><span class="pseudo">:after</span> &#123;</span><br><span class="line">	<span class="attribute">clear</span>: both;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span><br><span class="line">* IE6/7下使用</span><br><span class="line">* 通过触发hasLayout实现包含浮动</span><br><span class="line">**/</span></span><br><span class="line"><span class="class">.clearfix</span> &#123;</span><br><span class="line">	*<span class="attribute">zoom</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> <strong>BFC 块级格式化上下文</strong> 可以看做是隔离了的独立容器</p>
+<ol>
+<li><p>如何触发BFC：</p>
+<ol>
+<li><p>根元素默认拥有BFC特性</p>
+</li>
+<li><p><code>float: left|right</code></p>
+</li>
+<li><p>overflow不为visible: <code>overflow: hidden|auto|scroll</code></p>
+</li>
+<li><p><code>display: table-cell|table-caption|inline-block</code></p>
+</li>
+<li><p><code>position: absolute|fixed</code></p>
+</li>
+</ol>
+</li>
+<li><p>作用：</p>
+<ul>
+<li><p>阻止父子元素的外边距margin折叠</p>
+</li>
+<li><p>不会重叠浮动元素</p>
+</li>
+<li><p>可以包含浮动元素</p>
+</li>
+</ul>
+<p>通俗的来说，触发了BFC的元素就是一个独立的盒子，里面的子元素不会在布局上影响外面的元素，反之亦然，同时，BFC仍属于普通流</p>
+<p>在IE6-7中显示引擎使用的是布局layout这个概念，当外面说一个元素拥有layout的时候，是指其hasLayout属性为true，拥有布局的元素负责本身和其子元素的尺寸设置和定位</p>
+<p>如何触发hasLayout：</p>
+</li>
+<li><p><code>position: absolute</code></p>
+</li>
+<li><p><code>float: left|right</code></p>
+</li>
+<li><p><code>display: inline-block</code></p>
+</li>
+<li><p>width除auto以外的任意值</p>
+</li>
+<li><p>height除auto以外的任意值，如height: 1%</p>
+</li>
+<li><p>zoom除normal以外的任意值</p>
+</li>
+<li><p>IE7中设置 <code>overflow: hidden|auto|scroll</code></p>
+</li>
+</ol>
+</li>
+</ol>
+<ol>
+<li><p>使用原生JS或Jquery实现一个下拉菜单，输入是一个数组，每个元素是一个包含name和id的object，下拉菜单显示的文本是name，点击后弹窗id</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> lists = [&#123;name: <span class="string">'sally'</span>, id: <span class="number">1</span>&#125;, &#123;name: <span class="string">'wlan'</span>, id: <span class="number">2</span>&#125;];</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">generateSelect</span>(<span class="params">lists</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> select = <span class="built_in">document</span>.createElement(<span class="string">"select"</span>);</span><br><span class="line">	<span class="keyword">var</span> html = <span class="string">''</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>, len = lists.length; i &lt; len; ++i) &#123;</span><br><span class="line">		html += <span class="string">'&lt;option id='</span> + lists[i].id + <span class="string">'&gt;'</span> + lists[i].name + <span class="string">'&lt;/option&gt;'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	select.innerHTML = html;</span><br><span class="line">	select.onchange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		alert(select.options[select.selectedIndex].id);</span><br><span class="line">	&#125;;</span><br><span class="line">	<span class="built_in">document</span>.body.appendChild(select);</span><br><span class="line">&#125;</span><br><span class="line">generateSelect(lists);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>从输入URL到整个网页加载完毕及显示在屏幕上的整个流程</p>
+<ol>
+<li><p>浏览器检测缓存，若缓存存在且足够新鲜则提供给客户端，否则组装一个HTTP报文</p>
+</li>
+<li><p>浏览器会利用DNS服务器查询到URL域名对应的IP地址，然后通过三次握手建立TCP连接之后，浏览器作为连接的发起方，会用服务器发送一个HTTP请求报文</p>
+</li>
+<li><p>服务器会一直监听HTTP所在的80号端口，在发现上面的请求之后，首先检测是否需要验证，无需验证或验证完毕后便会向浏览器发送HTTP响应报文，内容是URL对应的资源内容</p>
+</li>
+<li><p>浏览器收到来自服务器的响应之后，会根据不同的响应状态码（200 ok，403 forbidden， 404 not found）做出不同的处理，会使用渲染引擎将HTML页面、CSS源代码生成展示页面，同时下载页面中的JS、图片等文件并解析</p>
+</li>
+<li><p><strong>HTTP状态码</strong>小结：</p>
+<ul>
+<li><p>1XX 信息</p>
+</li>
+<li><p>2XX 成功：200 ok</p>
+</li>
+<li><p>3XX 重定向：301 永久重定向，302 临时重定向（ajax获取不到，见下面解释部分/HTTP1.1中302为Found，但也是一个别的地址），303 see other，304 not modified，原来缓存的文档还可以继续使用，未过期</p>
+</li>
+<li><p>4XX 客户端错误：400 bad request，401 unauthorized需要用户名和密码，403 forbidden，404 not found</p>
+</li>
+<li><p>5XX 服务器错误：500 Internal Server Error</p>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">当服务器将<span class="number">302</span>响应发给浏览器时，浏览器并不是直接进行ajax回调处理，而是先执行<span class="number">302</span>重定向——从Response Headers中读取Location信息，然后向Location中的Url发出请求，在收到这个请求的响应后才会进行ajax回调处理。大致流程如下：</span><br><span class="line">ajax <span class="subst">-&gt; </span>browser <span class="subst">-&gt; </span>server <span class="subst">-&gt; </span><span class="number">302</span> <span class="subst">-&gt; </span>browser(redirect) <span class="subst">-&gt; </span>server <span class="subst">-&gt; </span>browser <span class="subst">-&gt; </span>ajax callback</span><br><span class="line">而在我们的测试程序中，由于<span class="number">302</span>返回的重定向URL在服务器上没有相应的处理程序，所以在ajax回调函数中得到的是<span class="number">404</span>状态码；如果存在对应的URL，得到的状态码就是<span class="number">200</span>。</span><br><span class="line">所以，如果你想在ajax请求中根据<span class="number">302</span>响应通过location<span class="built_in">.</span>href进行重定向是不可行的。</span><br><span class="line"></span><br><span class="line">解决方法如下：</span><br><span class="line"><span class="number">1</span>、修改ajax代码：</span><br><span class="line">$<span class="built_in">.</span>ajax(&#123;</span><br><span class="line">    url: <span class="string">'/oauth/respond'</span>,</span><br><span class="line">    <span class="keyword">type</span>: <span class="string">'post'</span>,</span><br><span class="line">    <span class="built_in">data</span>: <span class="built_in">data</span>,</span><br><span class="line">    dataType: <span class="string">'json'</span>,</span><br><span class="line">    success: function (<span class="built_in">data</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">data</span><span class="built_in">.</span>status == <span class="number">302</span>) &#123;</span><br><span class="line">            location<span class="built_in">.</span>href = <span class="built_in">data</span><span class="built_in">.</span>location;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="number">2</span>、改用form：</span><br><span class="line">&lt;form method=<span class="string">"post"</span> action=<span class="string">"/oauth/respond"</span>&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<pre><code>HTTP1<span class="number">.0</span>和<span class="number">1.1</span>的区别：keepalive
+</code></pre></span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/interview/" rel="tag">#面试</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/09/17/前端求职/" rel="next">前端求职</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+ </div>
+
+        
+            <!-- 多说热评文章-->
+            <p>热评文章</p>
+            <div class="ds-top-threads" data-range="weekly" data-num-items="5"></div>
+        
+
+        
+          <div class="comments" id="comments">
+            
+              <div class="ds-thread" data-thread-key="2015/09/17/今日头条笔试题/"
+                   data-title="今日头条笔试题" data-url="http://www.xiaojunxie.com/2015/09/17/今日头条笔试题/">
+              </div>
+            
+          </div>
+        
+      </div>
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/image_128X128.ico" alt="谢晓君" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">谢晓君</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">Good artists copy, best artists steal.</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/sallymew" target="_blank">GitHub</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/sallymew" target="_blank">Weibo</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/jenniferxie" target="_blank">ZhiHu</a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <div class="copyright" >
+  
+  &copy; &nbsp; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-next-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">谢晓君</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"xiaojunxie"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+
+    
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"3","bdPos":"left","bdTop":"250"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
+</body>
+</html>
