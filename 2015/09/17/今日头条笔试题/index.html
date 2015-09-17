@@ -43,7 +43,7 @@
 <meta property="og:url" content="http://www.xiaojunxie.com/2015/09/17/今日头条笔试题/index.html">
 <meta property="og:site_name" content="Jennifer's Blog">
 <meta property="og:description" content="总结下来，做得不是很好啊，有些问题应该答得更完善的，基础知识还是要复习啊">
-<meta property="og:updated_time" content="2015-09-17T11:28:35.000Z">
+<meta property="og:updated_time" content="2015-09-17T11:31:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="今日头条笔试题">
 <meta name="twitter:description" content="总结下来，做得不是很好啊，有些问题应该答得更完善的，基础知识还是要复习啊">
@@ -303,9 +303,109 @@ isString(<span class="string">"I am Jennifer"</span>);
 </ol>
 </li>
 </ol>
-<pre><code>5. 实例
+<pre><code><span class="number">5.</span> 实例
 
-    <span class="comment"><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> createCounter = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line">	<span class="comment">/*这是一个闭包函数*/</span></span><br><span class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> ++count;</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> counter1 = createCounter();</span><br><span class="line"><span class="built_in">console</span>.log(counter1());</span><br><span class="line"><span class="built_in">console</span>.log(counter1());</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> counter2 = createCounter();</span><br><span class="line"><span class="built_in">console</span>.log(counter2());</span><br><span class="line"><span class="built_in">console</span>.log(counter1());</span><br><span class="line"></span><br><span class="line">创建一个函数，接受一个<span class="number">0</span>-<span class="number">9</span>数字，返回该数字对应的英文名称</span><br><span class="line"><span class="keyword">var</span> digit_name = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="comment">/*将names定义在函数内部，可以防止被意外修改*/</span></span><br><span class="line">	<span class="keyword">var</span> names = [<span class="string">'zero'</span>, <span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>, <span class="string">'four'</span>, <span class="string">'five'</span>, <span class="string">'six'</span>, <span class="string">'seven'</span>, <span class="string">'eight'</span>, <span class="string">'nine'</span>];</span><br><span class="line">	<span class="comment">/*使用IIFE的闭包函数，仅实例化names一次，避免了每次调用带来的性能问题*/</span></span><br><span class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">n</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> names[n];</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> nodes = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'button'</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, len = nodes.length; i &lt; len; i++) &#123;</span><br><span class="line">	nodes[i].addEventListener(<span class="string">'click'</span>, (<span class="function"><span class="keyword">function</span>(<span class="params">i</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">			<span class="built_in">console</span>.log(<span class="string">"you clicked "</span> + i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;)(i));</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> i;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;<span class="number">10</span>; i++) &#123;</span><br><span class="line">     setTimeout (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">          <span class="built_in">console</span>.log (i);</span><br><span class="line">     &#125;, <span class="number">0</span>);</span><br><span class="line">&#125;<span class="comment">//答案：10个10</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//即可打印0-9</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;<span class="number">10</span>; i++) &#123;</span><br><span class="line">     setTimeout ((<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">          <span class="built_in">console</span>.log (i);</span><br><span class="line">     &#125;)(i), <span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="literal">true</span>; &#125;;</span><br><span class="line">g = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="literal">false</span>; &#125;;</span><br><span class="line"><span class="comment">//闭包内部有一个g函数，if会调用那个声明，也就将参数放到HTTP body中，是所谓的声明提前</span></span><br><span class="line"><span class="comment">//至于[] == ![] 后面那个!是因为[]不是0，null，false，只是一个空数组</span></span><br><span class="line"><span class="comment">//所以返回1 就变成了[] == 0, [] 转化成数字 确实是0 所以返回true</span></span><br><span class="line"><span class="comment">//内部函数f前面没有var，所以是全局的f</span></span><br><span class="line"><span class="comment">//真是纠结的一道题啊</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (g() &amp;&amp; [] == ![]) &#123;</span><br><span class="line">        f = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="literal">false</span>; &#125;;</span><br><span class="line">        <span class="function"><span class="keyword">function</span>  <span class="title">g</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="literal">true</span>; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br><span class="line"><span class="built_in">console</span>.info(f());<span class="comment">//false</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">    b : <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(<span class="keyword">this</span>.c);</span><br><span class="line">    &#125;,</span><br><span class="line">    c : <span class="number">1</span></span><br><span class="line">&#125;;		</span><br><span class="line">a.b();<span class="comment">//1</span></span><br><span class="line">(a.b)();<span class="comment">//1</span></span><br><span class="line">(a.b = a.b)();<span class="comment">//undefined</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> foo = &#123;</span><br><span class="line">    bar: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.baz;</span><br><span class="line">    &#125;,</span><br><span class="line">    baz: <span class="number">1</span></span><br><span class="line">&#125;;</span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">typeof</span> <span class="built_in">arguments</span>[<span class="number">0</span>]();</span><br><span class="line">&#125;)(foo.bar);<span class="comment">//浅拷贝undefined</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> baz = <span class="string">'laruence'</span>;</span><br><span class="line"><span class="keyword">var</span> foo = &#123;</span><br><span class="line">    bar: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(<span class="keyword">this</span>.baz);</span><br><span class="line">    &#125;,</span><br><span class="line">    baz: <span class="string">'ll'</span></span><br><span class="line">&#125;;</span><br><span class="line">(f = foo.bar)();<span class="comment">//laruence</span></span><br><span class="line"></span><br><span class="line">$是封装好的jquery类，是jquery函数的别称，$.fn是$.prototype的简写，常用作给jquery实例扩展方法，在编写jquery插件时使用，$是对<span class="built_in">document</span>.getElementById的封装，性能上还是后者好，因为直接调用了Javascript引擎，$(<span class="keyword">this</span>)返回jquery对象，可以调用jquery方法，而<span class="keyword">this</span>表示当前元素，是javascript的关键字，表示上下文中的DOM元素，不能调用jquery方法，包括eq和get等。</span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">$</span>)</span>&#123;</span><br><span class="line">	$.fn.disableSelection = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span></span><br><span class="line">				.attr(<span class="string">'unselectable'</span>, <span class="string">'on'</span>)</span><br><span class="line">				.css(<span class="string">'user-select'</span>, <span class="string">'none'</span>)</span><br><span class="line">				.on(<span class="string">'selectstart'</span>, <span class="string">'false'</span>);</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;(jQuery));</span><br></pre></td></tr></table></figure></span>
+        <span class="keyword">var</span> createCounter = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+            <span class="keyword">var</span> count = <span class="number">0</span>;
+            <span class="comment">/*这是一个闭包函数*/</span>
+            <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+                <span class="keyword">return</span> ++count;
+            };
+        };
+        <span class="keyword">var</span> counter1 = createCounter();
+        <span class="built_in">console</span>.log(counter1());
+        <span class="built_in">console</span>.log(counter1());
+
+        <span class="keyword">var</span> counter2 = createCounter();
+        <span class="built_in">console</span>.log(counter2());
+        <span class="built_in">console</span>.log(counter1());
+
+        创建一个函数，接受一个<span class="number">0</span>-<span class="number">9</span>数字，返回该数字对应的英文名称
+        <span class="keyword">var</span> digit_name = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+            <span class="comment">/*将names定义在函数内部，可以防止被意外修改*/</span>
+            <span class="keyword">var</span> names = [<span class="string">'zero'</span>, <span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>, <span class="string">'four'</span>, <span class="string">'five'</span>, <span class="string">'six'</span>, <span class="string">'seven'</span>, <span class="string">'eight'</span>, <span class="string">'nine'</span>];
+            <span class="comment">/*使用IIFE的闭包函数，仅实例化names一次，避免了每次调用带来的性能问题*/</span>
+            <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">n</span>)</span>{
+                <span class="keyword">return</span> names[n];
+            };
+        })();
+
+        <span class="keyword">var</span> nodes = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'button'</span>);
+        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, len = nodes.length; i &lt; len; i++) {
+            nodes[i].addEventListener(<span class="string">'click'</span>, (<span class="function"><span class="keyword">function</span>(<span class="params">i</span>)</span>{
+                <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+                    <span class="built_in">console</span>.log(<span class="string">"you clicked "</span> + i);
+                }
+            })(i));
+        };
+
+        <span class="keyword">var</span> i;
+        <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;<span class="number">10</span>; i++) {
+             setTimeout (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+                  <span class="built_in">console</span>.log (i);
+             }, <span class="number">0</span>);
+        }<span class="comment">//答案：10个10</span>
+
+        <span class="comment">//即可打印0-9</span>
+        <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;<span class="number">10</span>; i++) {
+             setTimeout ((<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+                  <span class="built_in">console</span>.log (i);
+             })(i), <span class="number">0</span>);
+        }
+
+        f = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{ <span class="keyword">return</span> <span class="literal">true</span>; };
+        g = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{ <span class="keyword">return</span> <span class="literal">false</span>; };
+        <span class="comment">//闭包内部有一个g函数，if会调用那个声明，也就将参数放到HTTP body中，是所谓的声明提前</span>
+        <span class="comment">//至于[] == ![] 后面那个!是因为[]不是0，null，false，只是一个空数组</span>
+        <span class="comment">//所以返回1 就变成了[] == 0, [] 转化成数字 确实是0 所以返回true</span>
+        <span class="comment">//内部函数f前面没有var，所以是全局的f</span>
+        <span class="comment">//真是纠结的一道题啊</span>
+        (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+            <span class="keyword">if</span> (g() &amp;&amp; [] == ![]) {
+                f = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{ <span class="keyword">return</span> <span class="literal">false</span>; };
+                <span class="function"><span class="keyword">function</span>  <span class="title">g</span>(<span class="params"></span>) </span>{ <span class="keyword">return</span> <span class="literal">true</span>; }
+            }
+        })();
+        <span class="built_in">console</span>.info(f());<span class="comment">//false</span>
+
+        <span class="keyword">var</span> a = {
+            b : <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+                alert(<span class="keyword">this</span>.c);
+            },
+            c : <span class="number">1</span>
+        };        
+        a.b();<span class="comment">//1</span>
+        (a.b)();<span class="comment">//1</span>
+        (a.b = a.b)();<span class="comment">//undefined</span>
+
+        <span class="keyword">var</span> foo = {
+            bar: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{
+                <span class="keyword">return</span> <span class="keyword">this</span>.baz;
+            },
+            baz: <span class="number">1</span>
+        };
+        (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{
+            <span class="keyword">return</span> <span class="keyword">typeof</span> <span class="built_in">arguments</span>[<span class="number">0</span>]();
+        })(foo.bar);<span class="comment">//浅拷贝undefined</span>
+
+        <span class="keyword">var</span> baz = <span class="string">'laruence'</span>;
+        <span class="keyword">var</span> foo = {
+            bar: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{
+                alert(<span class="keyword">this</span>.baz);
+            },
+            baz: <span class="string">'ll'</span>
+        };
+        (f = foo.bar)();<span class="comment">//laruence</span>
+
+        $是封装好的jquery类，是jquery函数的别称，$.fn是$.prototype的简写，常用作给jquery实例扩展方法，在编写jquery插件时使用，$是对<span class="built_in">document</span>.getElementById的封装，性能上还是后者好，因为直接调用了Javascript引擎，$(<span class="keyword">this</span>)返回jquery对象，可以调用jquery方法，而<span class="keyword">this</span>表示当前元素，是javascript的关键字，表示上下文中的DOM元素，不能调用jquery方法，包括eq和get等。
+        (<span class="function"><span class="keyword">function</span>(<span class="params">$</span>)</span>{
+            $.fn.disableSelection = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+                <span class="keyword">return</span> <span class="keyword">this</span>
+                        .attr(<span class="string">'unselectable'</span>, <span class="string">'on'</span>)
+                        .css(<span class="string">'user-select'</span>, <span class="string">'none'</span>)
+                        .on(<span class="string">'selectstart'</span>, <span class="string">'false'</span>);
+            };
+        }(jQuery));
 </code></pre><ol>
 <li><p>如何消除子元素浮动带来的父元素的高度塌陷</p>
 <p> 这是一个典型的闭合浮动的问题。清除浮动对应着CSS中的属性是 <code>clear：none|left|right|both</code> ，而闭合浮动是使浮动元素闭合，从而减少浮动带来的影响。</p>
@@ -370,7 +470,7 @@ isString(<span class="string">"I am Jennifer"</span>);
 </li>
 <li><p>浏览器收到来自服务器的响应之后，会根据不同的响应状态码（200 ok，403 forbidden， 404 not found）做出不同的处理，会使用渲染引擎将HTML页面、CSS源代码生成展示页面，同时下载页面中的JS、图片等文件并解析</p>
 </li>
-<li><p><strong>HTTP状态码</strong>小结：</p>
+<li><p><strong>HTTP状态码</strong>小结（HTTP1.0和1.1的区别：keepalive）</p>
 <ul>
 <li><p>1XX 信息</p>
 </li>
@@ -381,15 +481,13 @@ isString(<span class="string">"I am Jennifer"</span>);
 <li><p>4XX 客户端错误：400 bad request，401 unauthorized需要用户名和密码，403 forbidden，404 not found</p>
 </li>
 <li><p>5XX 服务器错误：500 Internal Server Error</p>
-<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">当服务器将<span class="number">302</span>响应发给浏览器时，浏览器并不是直接进行ajax回调处理，而是先执行<span class="number">302</span>重定向——从Response Headers中读取Location信息，然后向Location中的Url发出请求，在收到这个请求的响应后才会进行ajax回调处理。大致流程如下：</span><br><span class="line">ajax <span class="subst">-&gt; </span>browser <span class="subst">-&gt; </span>server <span class="subst">-&gt; </span><span class="number">302</span> <span class="subst">-&gt; </span>browser(redirect) <span class="subst">-&gt; </span>server <span class="subst">-&gt; </span>browser <span class="subst">-&gt; </span>ajax callback</span><br><span class="line">而在我们的测试程序中，由于<span class="number">302</span>返回的重定向URL在服务器上没有相应的处理程序，所以在ajax回调函数中得到的是<span class="number">404</span>状态码；如果存在对应的URL，得到的状态码就是<span class="number">200</span>。</span><br><span class="line">所以，如果你想在ajax请求中根据<span class="number">302</span>响应通过location<span class="built_in">.</span>href进行重定向是不可行的。</span><br><span class="line"></span><br><span class="line">解决方法如下：</span><br><span class="line"><span class="number">1</span>、修改ajax代码：</span><br><span class="line">$<span class="built_in">.</span>ajax(&#123;</span><br><span class="line">    url: <span class="string">'/oauth/respond'</span>,</span><br><span class="line">    <span class="keyword">type</span>: <span class="string">'post'</span>,</span><br><span class="line">    <span class="built_in">data</span>: <span class="built_in">data</span>,</span><br><span class="line">    dataType: <span class="string">'json'</span>,</span><br><span class="line">    success: function (<span class="built_in">data</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">data</span><span class="built_in">.</span>status == <span class="number">302</span>) &#123;</span><br><span class="line">            location<span class="built_in">.</span>href = <span class="built_in">data</span><span class="built_in">.</span>location;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="number">2</span>、改用form：</span><br><span class="line">&lt;form method=<span class="string">"post"</span> action=<span class="string">"/oauth/respond"</span>&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">当服务器将<span class="number">302</span>响应发给浏览器时，浏览器并不是直接进行ajax回调处理，而是先执行<span class="number">302</span>重定向——从Response Headers中读取Location信息，然后向Location中的Url发出请求，在收到这个请求的响应后才会进行ajax回调处理。大致流程如下：</span><br><span class="line">ajax <span class="subst">-&gt; </span>browser <span class="subst">-&gt; </span>server <span class="subst">-&gt; </span><span class="number">302</span> <span class="subst">-&gt; </span>browser(redirect) <span class="subst">-&gt; </span>server <span class="subst">-&gt; </span>browser <span class="subst">-&gt; </span>ajax callback</span><br><span class="line">而在我们的测试程序中，由于<span class="number">302</span>返回的重定向URL在服务器上没有相应的处理程序，所以在ajax回调函数中得到的是<span class="number">404</span>状态码；如果存在对应的URL，得到的状态码就是<span class="number">200</span>。</span><br><span class="line">所以，如果你想在ajax请求中根据<span class="number">302</span>响应通过location<span class="built_in">.</span>href进行重定向是不可行的。</span><br><span class="line"></span><br><span class="line">解决方法如下：</span><br><span class="line"><span class="number">1</span>、修改ajax代码：</span><br><span class="line">$<span class="built_in">.</span>ajax(&#123;</span><br><span class="line">    url: <span class="string">'/oauth/respond'</span>,</span><br><span class="line">    <span class="keyword">type</span>: <span class="string">'post'</span>,</span><br><span class="line">    <span class="built_in">data</span>: <span class="built_in">data</span>,</span><br><span class="line">    dataType: <span class="string">'json'</span>,</span><br><span class="line">    success: function (<span class="built_in">data</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">data</span><span class="built_in">.</span>status == <span class="number">302</span>) &#123;</span><br><span class="line">            location<span class="built_in">.</span>href = <span class="built_in">data</span><span class="built_in">.</span>location;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="number">2</span>、改用form：</span><br><span class="line">&lt;form method=<span class="string">"post"</span> action=<span class="string">"/oauth/respond"</span>&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 </ol>
 </li>
 </ol>
-<pre><code>HTTP1<span class="number">.0</span>和<span class="number">1.1</span>的区别：keepalive
-</code></pre></span>
+</span>
       
     </div>
 
