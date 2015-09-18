@@ -1,0 +1,3209 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+
+
+    <meta name="description" content="Good artists copy, best artists steal." />
+
+
+
+  <meta name="keywords" content="css,html,javascript," />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/image_16X16.ico?v=0.4.5.1" />
+
+
+<meta name="description" content="##前端学习笔记-基础篇^1
+HTML–搭建结构
+语义化的HTML
+ header footer nav main section article这些语义化的元素可以方便自动程序的识别。（解决ie下不支持HTML5新特性的方法：html5shiv.js）
+ 包含语义的标签，恰当的表示文档结构
+ css语义化是指为html添加有意义的id、class等补充未表达的语义
+ web语义化的意义
+
+赋予标">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端学习笔记基础篇">
+<meta property="og:url" content="http://www.xiaojunxie.com/2015/09/18/前端学习笔记基础篇/index.html">
+<meta property="og:site_name" content="Jennifer's Blog">
+<meta property="og:description" content="##前端学习笔记-基础篇^1
+HTML–搭建结构
+语义化的HTML
+ header footer nav main section article这些语义化的元素可以方便自动程序的识别。（解决ie下不支持HTML5新特性的方法：html5shiv.js）
+ 包含语义的标签，恰当的表示文档结构
+ css语义化是指为html添加有意义的id、class等补充未表达的语义
+ web语义化的意义
+
+赋予标">
+<meta property="og:updated_time" content="2015-09-18T14:14:34.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端学习笔记基础篇">
+<meta name="twitter:description" content="##前端学习笔记-基础篇^1
+HTML–搭建结构
+语义化的HTML
+ header footer nav main section article这些语义化的元素可以方便自动程序的识别。（解决ie下不支持HTML5新特性的方法：html5shiv.js）
+ 包含语义的标签，恰当的表示文档结构
+ css语义化是指为html添加有意义的id、class等补充未表达的语义
+ web语义化的意义
+
+赋予标">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'always'
+  };
+</script>
+
+  <title> 前端学习笔记基础篇 | Jennifer's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?aaeb08de6fdb9affd9d54c000b8b03e9";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-next-logo"></i>
+      </span>
+      <span class="site-title">Jennifer's Blog</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu menu-left">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-next-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-next-archives"></i> <br />
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            <i class="menu-item-icon icon-next-categories"></i> <br />
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-next-tags"></i> <br />
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-resume">
+          <a href="/resume" rel="section">
+            <i class="menu-item-icon icon-next-resume"></i> <br />
+            简历
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <form class="site-search-form">
+    <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+  </form>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'ZkscG_mtxP6MWnAVkuLP','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              前端学习笔记基础篇
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-09-18T22:13:46+08:00" content="2015-09-18">
+            2015-09-18
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/frontend/" itemprop="url" rel="index">
+                  <span itemprop="name">前端</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/09/18/前端学习笔记基础篇/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/18/前端学习笔记基础篇/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><p>##前端学习笔记-基础篇<a href="[前端面试题](http://github.com/qiu-deqing/FE-interview)">^1</a></p>
+<h3 id="HTML–搭建结构">HTML–搭建结构</h3><ol>
+<li><p>语义化的HTML</p>
+<p> <em>header footer nav main section article</em>这些语义化的元素可以方便自动程序的识别。（解决ie下不支持HTML5新特性的方法：html5shiv.js）</p>
+<p> 包含语义的标签，恰当的表示文档结构</p>
+<p> <em>css语义化</em>是指为html添加有意义的id、class等补充未表达的语义</p>
+<p> <strong>web语义化</strong>的意义</p>
+<ul>
+<li><p>赋予标签含义，让代码结构更加清晰，虽然我们可以在标签上添加 class 来标识，但这种通过属性来表示本体的形式会显得不够直接，而且在一定程度上也有冗余。</p>
+</li>
+<li><p>优化搜索引擎（SEO），结构良好的网页对搜索引擎的亲和力是很高的，百度和 google 也给出了很多网页结构化的建议（规范），方便他们抓取网页。</p>
+</li>
+<li><p>利于设备解析，如盲人阅读器对页面的分析，目前淘宝很多网页都是支持盲人阅读的，这种体验上的优化得利于网页的良好结构和语义化表达。</p>
+</li>
+<li><p>便于开发者维护，在参加工作之前，很多程序员都是单人开发模式，单人开发无所谓代码结构，自己看得懂就差不多了，一旦走向工作岗位，会发现，以前的鄙习有点让自己捉襟见肘了，有利于团队项目的可持续运作与维护</p>
+</li>
+</ul>
+</li>
+<li><p><strong>doctype</strong>的作用</p>
+<p> 声明页面文档的类型，告诉浏览器应该使用哪种模式进行渲染。如：HTML5&lt;!DOCTYPE html&gt;</p>
+</li>
+<li><p>cookie、webStorage(sessionStorage、localStorage)、webSQL区别，从生存周期和持久化角度考虑</p>
+<ul>
+<li><p>cookie：容量受限，且不能跨域传输，解决可以参考jsonp</p>
+<ol>
+<li><p>每个域名存储量比较小（各浏览器不同，大致4K）</p>
+</li>
+<li><p>所有域名的存储量有限（各浏览器不同，大致4K）</p>
+</li>
+<li><p>有个数限制（各浏览器不同）</p>
+</li>
+<li><p><em>会随请求发送到服务器</em></p>
+</li>
+</ol>
+</li>
+<li><p>sessionStorage：sessionStorage用于本地存储一个会话（session）中的数据，这些数据只有在同一个会话中的页面才能访问并且当会话结束后数据也随之销毁。因此sessionStorage不是一种持久化的本地存储，仅仅是<em>会话级别</em>的存储。</p>
+<ol>
+<li><p>只在session内有效</p>
+</li>
+<li><p>存储量更大（推荐没有限制，但是各浏览器不同）</p>
+</li>
+</ol>
+</li>
+<li><p>localStorage：localStorage用于<em>持久化的本地存储</em>，除非主动删除数据，否则数据是永远不会过期的。</p>
+<ol>
+<li><p>永久存储</p>
+</li>
+<li><p>单个域名存储量比较大（推荐5MB，各浏览器不同）</p>
+</li>
+<li><p>总体数量无限制</p>
+</li>
+</ol>
+</li>
+<li><p><em>websqldatabase</em>本地数据库        </p>
+<ol>
+<li><p>用javascript写sql查询，数据库就在浏览器里面，Safari、chrome、opera已经支持啦。</p>
+</li>
+<li><p>数据库在本地，大大提高了web应用程序的性能，减轻了服务器的压力。</p>
+</li>
+<li><p>localStorage是KV结构，而websql是SQL（schema，NoSqL），性能不如webstorage，貌似已经面临被砍的囧境</p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>如何对网页添加多语言支持</p>
+<p> <strong><em>!+[1,]是世界上最短IE判断，但是在IE9及以上版本已经进行了修复，还可以使用!window.VBArray进行判定</em></strong></p>
+<pre><code><span class="keyword">var</span> lang = !+[<span class="number">1</span>,] ? navigator.uerlanguage : navigator.language;
+<span class="keyword">switch</span>(lang){
+    <span class="keyword">case</span> <span class="string">'zh-CN'</span>: <span class="comment">//显示中文操作</span>
+        <span class="keyword">break</span>;
+    ...
+}
+</code></pre></li>
+<li><p>HTTP method：<strong>GET和POST的区别</strong></p>
+<ul>
+<li><p>GET通常用于向服务器获取数据，将参数放到URL的query string中，有长度限制，只支持ASCII数据，存在信息泄露的危险</p>
+</li>
+<li><p>POST常用于向服务器输入数据，如提交表单，将参数放到HTTP body中</p>
+</li>
+</ul>
+</li>
+<li><p><strong>SVG</strong>可伸缩矢量图使用</p>
+<p> <a href="https://developer.mozilla.org/zh-CN/docs/Web/SVG/Tutorial" target="_blank" rel="external">SVG教程</a></p>
+<p> SVG图标实际上是一个服务于浏览器的XML文件，而不是一个字体或像素的位图。他是由浏览器直接渲染XML，在任何大小之下都会保持图像清晰，而且文件中的XML还提供了很多机会，可以直接在代码中使用动画或者修改颜色等。</p>
+</li>
+<li><p><a href="http://www.atatech.org/articles/26343" target="_blank" rel="external">响应式设计</a></p>
+<p> 媒体查询：@media query link的media属性</p>
+<p> 流式布局：使用em或百分比作单位；使用液态/弹性图片；css3(使用srcset属性根据屏幕大小引入源；column-count属性实现列布局；flexbox使用)，微软的网格grid布局，类似bootstrap的栅格系统</p>
+<pre><code>display: -ms-grid
+-ms-grid-columns: <span class="number">200</span>px <span class="number">20</span>px <span class="keyword">auto</span> <span class="number">20</span>px <span class="number">200</span>px;<span class="comment">//3列，间距为20px</span>
+-ms-grid-rows: <span class="keyword">auto</span> <span class="number">1f</span>r;<span class="comment">//2行，第2行占10%；</span>
+</code></pre></li>
+<li><p>HTML5新增元素</p>
+<ul>
+<li><p>datalist</p>
+<pre><code><span class="tag">&lt;<span class="title">input</span> <span class="attribute">list</span>=<span class="value">"country"</span>&gt;</span>
+<span class="tag">&lt;<span class="title">datalist</span> <span class="attribute">id</span>=<span class="value">"country"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">option</span> <span class="attribute">value</span>=<span class="value">""</span>&gt;</span>xxx<span class="tag">&lt;/<span class="title">option</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">datalist</span>&gt;</span>
+</code></pre></li>
+<li><p>canvas</p>
+<pre><code>var canvas = document.getElementById('canvas'),
+<span class="code">    ctx = canvas.getContext('2d');</span>
+ctx.beginPath();
+ctx.moveTo(xpos, ypos);
+ctx.lineTo(xpos, ypos);
+ctx.closePath();
+ctx.fill/stroke[<span class="link_label">style</span>](<span class="link_url"></span>);    
+</code></pre></li>
+</ul>
+</li>
+<li><p>HTML判断浏览器类型</p>
+<pre><code><span class="comment">&lt;!-- [if lte IE 9]&gt;
+    ...
+&lt;![end if]--&gt;</span>
+</code></pre></li>
+<li><p>img的title和alt</p>
+<p>title是一个<strong>全局属性</strong>，用于给图片附加信息，当鼠标滑动到元素上的时候显示；alt替代文本是img的特有属性，是图片内容的等价描述，用于图片无法加载时显示、读屏器阅读图片，可提高图片的访问性，除装饰图片外都必须设置有意义的值，搜索引擎会重点分析，有助于SEO</p>
+</li>
+<li><p><strong>HTML布局</strong></p>
+<ol>
+<li><p>div</p>
+</li>
+<li><p>table</p>
+</li>
+<li><p><strong>flexbox</strong>（css3弹性方框模型）</p>
+<ul>
+<li><p>如何正确使用flex-box弹性布局，配合media-query可用为响应式布局带来新的可能。其核心在于内含item的尺寸可用是弹性的，container可用根据本身尺寸的变化来动态地调整item的尺寸，当container中有空白空间时，item可用扩展尺寸以占据额外的空间，当容器中的空间不足时，item可用缩小尺寸，类似于table中的td，大大简化了因浏览器大小的变化对内容布局产生的影响。</p>
+<p><a href="http://www.w3cplus.com/css3/a-visual-guide-to-css3-flexbox-properties.html" target="_blank" rel="external">图解CSS3 flexbox</a></p>
+<pre><code>#flexbox{
+    <span class="variable">width</span>: <span class="number">500</span>px;
+    <span class="variable">height</span>: <span class="number">80</span>px;
+    border: <span class="number">1</span>px solid black;
+
+    display: -webkit-<span class="built_in">box</span>;
+    -webkit-<span class="built_in">box</span>-orient: horizontal;
+
+    display: -moz-<span class="built_in">box</span>;
+    -moz-<span class="built_in">box</span>-orient: horizontal;
+
+    display: <span class="built_in">box</span>;
+    <span class="built_in">box</span>-orient: horizontal;
+}
+#flexbox &gt; div{
+    -webkit-<span class="built_in">box</span>-flex: <span class="number">1</span>;
+    -moz-<span class="built_in">box</span>-flex: <span class="number">1</span>;
+    <span class="built_in">box</span>-flex: <span class="number">1</span>;
+
+    -webkit-transition: <span class="variable">width</span> <span class="number">0.7</span>s ease-out;
+    -moz-transition: <span class="variable">width</span> <span class="number">0.7</span>s ease-out;
+    -ms-transition: <span class="variable">width</span> <span class="number">0.7</span>s ease-out;
+    -o-transition: <span class="variable">width</span> <span class="number">0.7</span>s ease-out;
+    transition: <span class="variable">width</span> <span class="number">0.7</span>s ease-out;
+}
+#flexbox &gt; div:nth-child(<span class="number">1</span>){
+    <span class="built_in">background</span>-<span class="built_in">color</span>: <span class="built_in">red</span>;
+}
+#flexbox &gt; div:nth-child(<span class="number">2</span>){
+    <span class="built_in">background</span>-<span class="built_in">color</span>: <span class="built_in">green</span>;
+}
+#flexbox &gt; div:nth-child(<span class="number">3</span>){
+    <span class="built_in">background</span>-<span class="built_in">color</span>: <span class="built_in">blue</span>;
+}
+
+#flexbox &gt; div:hover{
+    <span class="variable">width</span>: <span class="number">200</span>px;
+}
+
+实现：div1 div3 是固定宽度 div2 是自适应宽度
+#flexbox{
+    <span class="variable">width</span>: <span class="number">100</span>%;
+    <span class="variable">height</span>: <span class="number">100</span>px;
+
+    display: -webkit-<span class="built_in">box</span>;
+    -webkit-<span class="built_in">box</span>-orient: horizontal;
+    display: -moz-<span class="built_in">box</span>;
+    -moz-<span class="built_in">box</span>-orient: horizontal;
+    display: <span class="built_in">box</span>;
+    <span class="built_in">box</span>-orient: horizontal;
+}
+#flexbox &gt; div:nth-child(<span class="number">1</span>){
+    <span class="built_in">background</span>-<span class="built_in">color</span>: <span class="built_in">red</span>;
+    <span class="variable">width</span>: <span class="number">400</span>px;
+}
+
+#flexbox &gt; div:nth-child(<span class="number">2</span>){
+    -webkit-<span class="built_in">box</span>-flex: <span class="number">1</span>;
+    -moz-<span class="built_in">box</span>-flex: <span class="number">1</span>;
+    <span class="built_in">box</span>-flex: <span class="number">1</span>;
+    <span class="built_in">background</span>-<span class="built_in">color</span>: <span class="built_in">green</span>;
+}
+
+#flexbox &gt; div:nth-child(<span class="number">3</span>){
+    <span class="built_in">background</span>-<span class="built_in">color</span>: <span class="built_in">blue</span>;
+    <span class="variable">width</span>: <span class="number">400</span>px;
+}
+
+&lt;div id=<span class="string">"flexbox"</span>&gt;
+    &lt;div&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+display: <span class="built_in">box</span> <span class="comment">//version of 2009</span>
+display: flexbox <span class="comment">//version of 2011</span>
+display: flex <span class="comment">//actual version</span>
+
+<span class="comment">//to use flex-box</span>
+display: -webkit-<span class="built_in">box</span>;
+display: -moz-<span class="built_in">box</span>;
+display: -ms-felxbox;
+display: -webkit-flex;
+display: flex;
+</code></pre></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>HTML5与页面显示相关的API</p>
+<p>page visibility在页面变为最小化或者用户将浏览器标签切换到其他标签时会触发</p>
+<pre><code>document<span class="class">.hidden</span>
+document<span class="class">.visibilityState</span>
+监听visibilityChange事件
+</code></pre><p>fullscreen是将页面整体或页面中某个局部区域设为全屏</p>
+<pre><code>document<span class="class">.documentElement</span><span class="class">.requestFullScreen</span>
+document.exitFullscreen/mozCancelFullScreen/webkitCancelFullScreen
+监听fullscreenChange事件
+</code></pre></li>
+</ol>
+<h3 id="CSS–设计样式">CSS–设计样式</h3><ol>
+<li><p><strong>CSS reset</strong>文件</p>
+<p> CSS reset文件可以重置浏览器对于HTML元素的默认样式，作用是<em>让各个浏览器的CSS样式有一个统一的基准</em>。<a href="http://www.cssreset.com/" target="_blank" rel="external">下载地址</a></p>
+<p> PC时代各种浏览器、各种标准，造成对于HTML的各个标签的默认样式不同，造成各个平台样式难以统一，引入reset对默认样式进行重置，方便在各个平台进行统一开发。跨入无线web时代后，依然存在碎片化问题，但是由于无线web上各个厂商对很多规范都进行了支持，不一定需要reset，只需要做个统一化处理，这就是reset和normalize之争。</p>
+</li>
+<li><p>display position float clear</p>
+<ul>
+<li><p>display：none/block/inline-block/inline(没有width、height属性)/table/list-item/<strong>flexbox</strong>弹性布局</p>
+<p>  display:none 文档不会渲染</p>
+<p>  visibility:hidden 文档会渲染(占空间)只是不显示，依然存在在文档流中</p>
+</li>
+<li><p>position:</p>
+<ul>
+<li><p>static 默认样式，不受TRBL影响，不会被特殊定位</p>
+</li>
+<li><p>fixed    相对于浏览器<strong>窗口</strong>固定，即使页面滚动位置也不变，返回顶部</p>
+<pre><code><span class="variable">$(</span><span class="string">'body,html'</span>).animate({<span class="symbol">scrollTop:</span><span class="number">0</span>},<span class="number">100</span>);
+</code></pre></li>
+<li><p>relative    位置相对于父元素，通常用来做absolute元素的内容块</p>
+</li>
+<li><p>absolute    相对于<strong>最近的已定位祖先元素</strong>位置固定，祖先元素都没有position属性时，同fixed</p>
+<p><em>使用CSS实现元素（包括文本、图片等）绝对居中</em></p>
+<ol>
+<li>inline元素为父元素设置text-align: center;</li>
+<li>block元素1)元素设置宽度,2)左右margin:auto,3)IE6下父元素设置text-align: center,再给子元素恢复需要的值</li>
+<li>float元素1)元素设置宽度,2)position: relative3)浮动偏移量left/right设置为50%4)margin设置为宽度一半乘以-1</li>
+<li><p>absolute元素<br><style><br> .absolute_center{</p>
+<pre><code><span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;
+<span class="rule"><span class="attribute">overflow</span>:<span class="value"> auto</span></span>;
+<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">800px</span></span></span>;
+<span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">600px</span></span></span>;
+<span class="comment">/*
+margin: auto;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+*/</span>
+<span class="rule"><span class="attribute">margin-left</span>:<span class="value"> -<span class="number">400px</span></span></span>;
+<span class="rule"><span class="attribute">left</span>:<span class="value"> <span class="number">50%</span></span></span>;
+
+<span class="rule"><span class="attribute">background</span>:<span class="value">pink <span class="function">url</span>(<span class="string">"background.png"</span>) no-repeat center</span></span>;
+</code></pre><p> }<br> p{</p>
+<pre><code><span class="rule"><span class="attribute">color</span>:<span class="value"> white</span></span>;
+<span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span></span>;
+<span class="comment">/*vertical-align: center;//针对行内可替换元素*/</span>
+<span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">600px</span></span></span>; 
+</code></pre><p> }<br> ::selection{</p>
+<pre><code><span class="rule"><span class="attribute">color</span>:<span class="value"> red</span></span>;
+</code></pre><p> }<br></style></p>
+<div class="absolute_center"><br> <p>完全居中</p><br></div></li>
+<li><p>flexbox实现绝对居中<br>.centerbox {<br> width: 350px;<br> height: 95px;<br> font-size: 14px;<br> border: 1px solid #555;<br> background: #CFC;</p>
+<p> display: box;//-webkit/moz-<br> box-orient: horizontal;<br> box-pack: center;<br> box-align: center;<br>}</p>
+</li>
+<li>使用transform属性<br>.center_horizontal {<br> position: relative;<br> left: 50%;<br> transform: translateX(-50%);<br>}<br>.center_vertical {<br> position: relative;<br> top: 50%;<br> transform: translateY(-50%);<br>}</li>
+<li><p>固定尺寸的img 在固定尺寸的div中怎么水平居中，竖直居中；引申：不定尺寸的img 在固定尺寸的div中怎么水平居中，竖直居中, 写出img 和 div的css规则<br>div{<br> width: 800px;<br> height: 600px;<br> border: 1px solid red;<br> position: relative;<br>}</p>
+<p>img{<br> /<em><br> width: 400px;<br> height: 400px;<br> margin-left: 200px;<br> margin-top: 100px;
+ </em>/<br> position: absolute;<br> margin: auto;<br> top: 0;<br> right: 0;<br> bottom: 0;<br> left: 0;<br>}</p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code>+ <span class="attribute">z-index</span>：设置重叠
+
++ <span class="attribute">float</span>：<span class="attribute">left</span>/<span class="attribute">right</span> 只可以水平浮动
+</code></pre><ol>
+<li><p><a href="http://alistapart.com/article/sprites" target="_blank" rel="external">CSS sprites（雪碧图）</a></p>
+<p> 将一些小图片整合到一张大图里面，来达到<em>减少HTTP请求</em>的目的。一般把单页需要的整合到一张，整站需要的整合到一张，可以避免加重当前页不需要的图片，还可以把色值相近的图片放到一起，让压缩的图片体积更小。早期的CSS Sprites使用的都是位图，而且为了适合web页面使用环境，采用的都是.png文件格式，但在现在只使用位图，会受到很多的限制，比如在r屏下，位图会模糊，也就是说，为了适配各种终端设备分辨，CSS Sprites将不再局限于位图，也可以将SVG这样的矢量图集合在一起。</p>
+<p> <a href="http://www.atatech.org/articles/37769" target="_blank" rel="external">web中的图标</a></p>
+<p> 随着时代的变迁与技术的不断地更新，在当今这个时代，web中的图标不再仅仅是局限于img，除了img直接调用icons文件之外，还有Sprites、Iconfont（字体图标）、SVG ICon等等。<strong>设计师不管分辨率和设备平台，他们追求的是像素完美和体验一致性，而前端工程师更为关心的是页面的可访问性、性能以及重构的灵活性、可复用性、可维护性等等</strong>。而当下这个互联网时代，设备多样化，显示分辨率层出不穷，对于web前端工程师来说可是灾难，碰到的难题也是越来越多：</p>
+<ol>
+<li><p>需要为高PPI显示设备准备1.5X、2X和3X的图标素材</p>
+</li>
+<li><p>需要针对不同分辨率来调整优化排版</p>
+</li>
+<li><p>需要考虑不同平台下图片加载的性能问题</p>
+</li>
+<li><p>需要考虑可访问性、可维护性问题</p>
+<p>下面，对几种web图标进行对比：</p>
+<p>|web图标|优点|缺点|<br>|—-|—-|—-|<br>|img|1.更换简单；<br>2.图标大小易掌握|1.增加HTTP请求数；<br>2.不易匹配各种终端和分辨率，可能会造成图标模糊；<br>3.不易修改图标样式，比如颜色、阴影等；<br>4.不易维护|<br>|sprites|1.减少HTTP请求数；<br>2.可以是任意图形、任意色彩；<br>3.兼容性好（just位图）|1.增加开发时间，需要人工进行各种图片的合成，图片的色彩对于web性能有直接的影响；<br>2.增加维护成本；<br>3.图片尺寸固定，无法通过CSS来修改图标大小，但SVG的Sprites可以配合CSS的background-size来调整图标的大小|<br>|Icon Font|1.减少HTTP请求；<br>2.很容易任意缩放（font-size）、改变颜色（color）、产生阴影（text-shadow）、透明效果等等；<br>3.兼容性好；<br>4.本身体积更小|1.只能被渲染成单色或者CSS3的渐变色；<br>2.使用限制性大，需要自己去创作；<br>3.在不同的设备浏览器字体的渲染会略有差别，在不同的浏览器或系统中对字体的渲染不同，其显示的位置和大小可能会受到font-size、line-height、word-spacing等CSS属性的影响，而且这种影响调整起来较为困难；<br>4.不兼容旧的手机浏览器|<br>|SVG|1.矢量图形文件，可以随意修改大小，而且不会影响图标质量；<br>2.可以使用CSS样式来定义图标颜色、尺寸等；<br>3.所以的SVG图标在一个SVG文件中，节省HTTP请求；<br>4.可以使用CSS或Javascript制作动画效果；<br>5.可以使用gzip压缩；<br>6.可以很精细的控制SVG图标的每一部分；|1.浏览器兼容性差；<br>2.需要了解制作SVG图形方法|<br>|Data Url|不增加请求数|1.通常比图片大10%；<br>2.每次加载都需要解码；<br>3.难于维护|</p>
+<p>那么，具体在使用时，如何选择呢：</p>
+</li>
+<li><p>如果需要的是信息丰富的图片，而不仅仅是图标，那么使用img</p>
+</li>
+<li><p>如果不是展示类图形，而是装饰性的图形，一般不随意改懂，可以考虑使用png Sprites</p>
+</li>
+<li><p>如果图标需要适配于高分辨率环境下，可以考虑使用SVG Sprites</p>
+</li>
+<li><p>仅仅是需要Icon这些小图标，并且可以做一些个性化样式，可以考虑使用Icon Font</p>
+</li>
+<li><p>仅仅需要图标更具扩展性，又不希望加载额外的图标，可以考虑在页面中直接使用SVG代码绘制的矢量图</p>
+<p>使用时参考<em>background-position</em>属性</p>
+</li>
+</ol>
+<ul>
+<li><p>(left, center, right)x(top, center, bottom)</p>
+</li>
+<li><p>x% y%</p>
+</li>
+<li><p>xpos ypos</p>
+</li>
+<li><p>inherit</p>
+</li>
+</ul>
+</li>
+<li><p><em>使用文字替换图片技术</em>→有利于SEO</p>
+<pre><code>&lt;h2&gt;&lt;span&gt;Hello world&lt;/span&gt;&lt;/h2&gt;
+h2{
+    background: url(image.gif) no-repeat<span class="comment">;</span>
+    width: 150px<span class="comment">;</span>
+    height: 35px<span class="comment">;</span>
+}
+span{
+    display: none<span class="comment">;</span>
+}            
+
+&lt;h1 class="nir"&gt;content&lt;/h1&gt;
+.nir{
+    height: 100px<span class="comment">;</span>
+    width: 400px<span class="comment">;</span>
+    overflow: hidden<span class="comment">;</span>
+}
+.nir:before{
+    content: url(image.gif)<span class="comment">;</span>
+    display: inline-block<span class="comment">;</span>
+    font-size: 0<span class="comment">;</span>
+    line-height: 0<span class="comment">;</span>
+}
+
+&lt;h2&gt;&lt;span&gt;&lt;/span&gt;Hello world&lt;/h2&gt;
+h2 {
+    width: 150px<span class="comment">;</span>
+    height: 35px<span class="comment">;</span>
+    position: relative<span class="comment">;</span>
+}
+h2 span{
+    background: url(image.gif) no-repeat<span class="comment">;</span>
+    position: absolute<span class="comment">;</span>
+    width: 100%<span class="comment">;</span>
+    height: 100%<span class="comment">;</span>
+}
+</code></pre></li>
+<li><p>CSS hacks <strong>浏览器兼容问题</strong></p>
+<ol>
+<li><p>属性hack</p>
+</li>
+<li><p>选择器hack</p>
+</li>
+<li><p>IE条件注释</p>
+<pre><code><span class="comment">&lt;!-- [if lte IE 9]&gt;
+    ...
+&lt;![end if]--&gt;</span>
+</code></pre><p><a href="http://blog.csdn.net/freshlover/article/details/12132801" target="_blank" rel="external">史上最全的CSS Hack方式一览</a></p>
+</li>
+</ol>
+</li>
+<li><p>CSS选择器 – 优化</p>
+<p> <a href="http://caniuse.com" target="_blank" rel="external">查看是否可用</a></p>
+<ol>
+<li><p>匹配顺序 <strong>从右向左</strong></p>
+</li>
+<li><p>匹配规则（根据主选择器进行划分）</p>
+<ul>
+<li><p>ID 规则</p>
+</li>
+<li><p>Class 规则</p>
+</li>
+<li><p>tag 规则</p>
+</li>
+<li><p>全局规则</p>
+</li>
+</ul>
+</li>
+<li><p>写法</p>
+<ul>
+<li><p>css组合选择器</p>
+<ul>
+<li><p>后代选择器 div p</p>
+</li>
+<li><p>子元素选择器 div&gt;p</p>
+</li>
+<li><p>相邻兄弟选择器 div+p 相邻的兄弟</p>
+</li>
+<li><p>普通兄弟选择器 div~p 返回一组值</p>
+</li>
+</ul>
+</li>
+<li><p>css伪类</p>
+<ul>
+<li><p>:link :visited :focus :hover :active(顺序很重要)</p>
+</li>
+<li><p>:first-child :nth-child(expression)</p>
+</li>
+<li><p>:focus :blur</p>
+</li>
+<li><p>:not :have</p>
+</li>
+</ul>
+</li>
+<li><p>css伪元素</p>
+<ul>
+<li><p>:first-letter :first-line</p>
+</li>
+<li><p>:before :after</p>
+</li>
+<li><p>::selection 匹配突出显示的文本 只接受2个属性：background和color</p>
+<pre><code><span class="number">1.</span> 注意伪元素和伪类的区别：first-letter vs first-child
+<span class="number">2.</span> nth-<span class="keyword">of</span>-<span class="typedef"><span class="keyword">type</span> vs nth-child</span>
+    ele:nth-<span class="keyword">of</span>-<span class="typedef"><span class="keyword">type</span><span class="container">(<span class="title">n</span>)</span>是指父元素下第n个ele子元素</span>
+    ele:nth-child(n)是指父元素下的第n个子元素，若类型为ele则命中，否则选择失败
+</code></pre></li>
+</ul>
+</li>
+<li><p>css属性选择器</p>
+<ul>
+<li><p>[attribute]</p>
+</li>
+<li><p>[attribute = value]</p>
+</li>
+<li><p>[attribute ~= value]包含</p>
+</li>
+<li><p>[attribute *= value]包含</p>
+</li>
+<li><p>[attribute |= value]以value开头且必须是一个单词</p>
+</li>
+<li><p>[attribute ^= value]以value开头</p>
+</li>
+<li><p>[attribute $= value]以value结尾</p>
+</li>
+<li><p>[:checked] [:selected]            </p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p><em>CSS盒模型</em></p>
+<p> TRBL规则 | margin | border | padding | content<br> ——- | ——- | ——- | ——- | ——-<br> ————| outer-width(true) | outer-width | inner-width | width</p>
+<p> CSS3中可以使用box-sizing改变盒模型</p>
+<ul>
+<li><p>content-box：默认值，标准盒模型，width和height是内容区的宽和高</p>
+</li>
+<li><p>padding-box：width和height包括内边距</p>
+</li>
+<li><p>border-box：wedth和height包括内边距和边框，这是<em>IE怪异模式</em>使用的盒模型</p>
+</li>
+</ul>
+</li>
+<li><p>什么是无样式内容闪烁<strong>FOUC</strong>，如何避免</p>
+<p> 使用import方式对CSS进行导入时，会导致某些页面在windows下的IE上出现一些奇怪的现象，以无样式显示页面内容的瞬间闪烁，这种现象被称为文档样式短暂失效（Flash Of Unstyled Content），解决方法有</p>
+<ul>
+<li><p>避免使用import引入CSS</p>
+</li>
+<li><p>使用link标签将样式文件放到head部分而不是页面底部</p>
+<pre><code>&lt;link <span class="preprocessor">rel</span>=<span class="string">"dns-prefetch"</span> href=<span class="string">""</span>/&gt;    
+默认情况下浏览器会对页面中和当前不在同一个域的页面进行预获取，并且缓存结果，这就是隐式的DNS <span class="keyword">Prefetch</span>。如果相对页面中没有出现的域进行预获取，那么就要使用显式的DNS <span class="keyword">Prefetch</span>。
+
+&lt;meta http-eqiv=<span class="string">"x-dns-prefetch-control"</span> content=<span class="string">"off"</span>&gt;
+禁止隐式DNS <span class="keyword">Prefetch</span> 
+</code></pre></li>
+</ul>
+</li>
+<li><p>link和@import的区别</p>
+<ul>
+<li><p>link是HTML方式，@import是CSS方式</p>
+</li>
+<li><p>link最大限度支持并下载，@import<strong>过度嵌套</strong>导致串行下载，出现9中所示FOUC</p>
+</li>
+<li><p>link可以通过rel=”reference stylesheet”指定候选样式</p>
+</li>
+<li><p>浏览器对link支持早于@import，可以在CSS文件中引用其他文件</p>
+</li>
+</ul>
+<p>-&gt;总体来说link优于@import</p>
+</li>
+<li><p><em>CSS预处理器</em>（SASS Compass Stylus <em>LESS</em>）</p>
+<ul>
+<li><p>出现原因</p>
+<p>  css作为一门标记性语言，语法相对简单，对使用者要求较低，但是也带来一些问题：css需要书写大量看似没有逻辑的代码，不方便维护及扩展，不利于复用，尤其对于非前端工程师来讲，往往会因为缺少css编写经验而很难<em>写出组织良好且易于维护的css代码</em>，造成这些困难的很大原因源于css是一门非程序式语言，没有变量、函数、作用域等概念。</p>
+</li>
+<li><p>优点</p>
+<ol>
+<li><p>解决传统CSS无法使用变量、算数计算、条件判断等缺陷</p>
+</li>
+<li><p>Mixin混入技术</p>
+</li>
+<li><p>提高代码开发效率</p>
+</li>
+</ol>
+</li>
+<li><p>缺点–需要额外学习成本</p>
+</li>
+<li><p>less–css框架</p>
+<ul>
+<li><p>基本概念：less为web开发者带来了福音，他在css的语法基础上，引入了<strong>变量、mixin、运算以及函数、命名空间、嵌套@变量&amp;伪类</strong>等功能，大大简化了css的编写，并且降低了css的维护成本，就像他的名称所说的那样，<em>less可以让我们用更少的代码做更多的事情</em>。方便css的书写和维护，但是less更接近css语法</p>
+</li>
+<li><p>使用：</p>
+<pre><code><span class="number">1.</span> sudo <span class="built_in">npm</span> install -g less
+
+<span class="number">2.</span> vim styles.less
+
+    <span class="property">@base</span>: <span class="comment">#f938ab;</span>
+
+    .box-shadow(<span class="property">@style</span>, <span class="property">@c</span>) <span class="keyword">when</span> (iscolor(<span class="property">@c</span>)) {
+        -webkit-box-<span class="attribute">shadow</span>: <span class="property">@style</span> <span class="property">@c</span>;
+        box-<span class="attribute">shadow</span>: <span class="property">@style</span> <span class="property">@c</span>;
+    }
+
+    .box-shadow(<span class="property">@style</span>, <span class="property">@alpha</span>: <span class="number">50</span>%) <span class="keyword">when</span> (isnumber(<span class="property">@alpha</span>)) {
+        .box-shadow(<span class="property">@style</span>, rgba(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="property">@alpha</span>));
+    }
+
+    .box {
+        <span class="attribute">color</span>: saturate(<span class="property">@base</span>, <span class="number">5</span>%);
+        border-<span class="attribute">color</span>: lighten(<span class="property">@base</span>, <span class="number">30</span>%);
+        div {.box-shadow(<span class="number">0</span> <span class="number">0</span> <span class="number">5</span>px, <span class="number">30</span>%)}
+    }
+
+<span class="number">3.</span> lessc styles.less -x(对css进行压缩) &gt; styles.css <span class="keyword">or</span> cleancss -o styles.min.css styles.css
+
+    .box {
+      <span class="attribute">color</span>: <span class="comment">#fe33ac;</span>
+      border-<span class="attribute">color</span>: <span class="comment">#fdcdea;</span>
+    }
+    .box div {
+      -webkit-box-<span class="attribute">shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">5</span>px rgba(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.3</span>);
+      box-<span class="attribute">shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">5</span>px rgba(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.3</span>);
+    }
+
+<span class="number">4.</span> &lt;link rel=<span class="string">"stylesheet/less"</span> type=<span class="string">"text/css"</span> href=<span class="string">"styles.less"</span>&gt; 
+    &lt;script src=<span class="string">"less.js"</span> type=<span class="string">"text/javascript"</span>&gt;&lt;/script&gt;
+
+<span class="number">5.</span> 下载less.js 或者 bower install less 或者 使用CDN加速
+    &lt;script src=<span class="string">"http://cdn.bootcss.com/less.js/2.4.0/less.min.js"</span>&gt;&lt;/script&gt;        
+</code></pre></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>CSS3实现英文单词完美显示</p>
+<pre><code><span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en-US"</span>&gt;</span>//支持hyphens
+    <span class="tag">&lt;<span class="title">head</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
+            <span class="tag">div</span><span class="rules">{
+                <span class="rule"><span class="attribute">-moz-hyphens</span>:<span class="value"> auto</span></span>;
+                <span class="rule"><span class="attribute">-ms-hyphens</span>:<span class="value"> auto</span></span>;
+                <span class="rule"><span class="attribute">-webkit-hyphens</span>:<span class="value"> auto</span></span>;
+                <span class="rule"><span class="attribute">hyphens</span>:<span class="value"> auto</span></span>;
+                <span class="rule"><span class="attribute">word-wrap</span>:<span class="value"> break-word</span></span>;
+                //<span class="rule"><span class="attribute">word-break</span>:<span class="value"> break-all</span></span>;
+            }</span>
+        </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</code></pre><ul>
+<li><p>word-wrap: 允许长单词或URL地址换到下一行，取值有normal/break-word</p>
+</li>
+<li><p>word-break: 自动换行处理方法，取值有normal/break-all/keep-all(只在半角空格或者连字符处换行)</p>
+</li>
+</ul>
+</li>
+<li><p>CSS3新增元素</p>
+<ul>
+<li><p>transform    转换</p>
+<ul>
+<li><p>前缀 ms(IE9)/webkit(chrome/Safari)</p>
+</li>
+<li><p>取值 translate/rotate/scale/skew/matrix</p>
+</li>
+</ul>
+</li>
+<li><p>transition    过渡</p>
+<ul>
+<li><p>前缀 webkit(Safari)/IE9及更早不支持</p>
+</li>
+<li><p>取值 [property duration timing-function delay], property duration timing-function delay</p>
+</li>
+</ul>
+</li>
+<li><p>animation &amp;&amp; @keyframes 动画</p>
+<ul>
+<li><p><strong>前缀</strong> webkit(chrome/safari)</p>
+</li>
+<li><p>实例</p>
+<pre><code>div{
+    animation: name duration timing-<span class="function"><span class="keyword">function</span> <span class="title">delay</span> <span class="title">iteration</span>-<span class="title">count</span> <span class="title">direction</span> <span class="title">play</span>-<span class="title">state</span>;</span>
+}
+@keyframes name{
+    //from {css <span class="keyword">property</span>}
+    //<span class="keyword">to</span> {css <span class="keyword">property</span>}
+    <span class="number">0</span>% {css <span class="keyword">property</span>}
+    <span class="number">25</span>% {css <span class="keyword">property</span>}
+    <span class="number">50</span>% {css <span class="keyword">property</span>}
+    <span class="number">75</span>% {css <span class="keyword">property</span>}
+    <span class="number">100</span>% {css <span class="keyword">property</span>}
+}
+</code></pre></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>BFC 块级格式化上下文</strong> 可以看做是隔离了的独立容器</p>
+<p>如何触发BFC：</p>
+<ol>
+<li><p>根元素默认拥有BFC特性</p>
+</li>
+<li><p>float: left | right</p>
+</li>
+<li><p>overflow: hidden | auto | scroll</p>
+</li>
+<li><p>display: table-cell | table-caption | inline-block</p>
+</li>
+<li><p>position: absolute | fixed</p>
+<pre><code>子元素不会溢出：
+&lt;<span class="keyword">div</span> <span class="property">id</span>=<span class="string">"a"</span>&gt;
+    &lt;<span class="keyword">div</span> <span class="property">id</span>=<span class="string">"b"</span>&gt;...&lt;/<span class="keyword">div</span>&gt;
+    ...
+&lt;/<span class="keyword">div</span>&gt;
+<span class="comment">#a{</span>
+    overflow: hidden;
+}
+<span class="comment">#b{</span>
+    max-width: <span class="number">100</span>%;
+}
+</code></pre></li>
+</ol>
+<p>作用：</p>
+<ul>
+<li><p>阻止<strong>父子元素的外边距margin折叠</strong>，见14</p>
+</li>
+<li><p>不会重叠浮动元素</p>
+</li>
+<li><p>可以包含浮动元素</p>
+</li>
+</ul>
+<p>通俗的来说，触发了BFC的元素就是一个独立的盒子，里面的子元素不会在布局上影响外面的元素，反之亦然，同时，BFC仍属于普通流</p>
+<p>在IE6-7中显示引擎使用的是布局layout这个概念，当外面说一个元素拥有layout的时候，是指其hasLayout属性为true，拥有布局的元素负责本身和其子元素的尺寸设置和定位</p>
+<p>如何触发hasLayout：</p>
+<ol>
+<li><p>position: absolute</p>
+</li>
+<li><p>float: left | right</p>
+</li>
+<li><p>display: inline-block</p>
+</li>
+<li><p>width: 除auto以外的任意值</p>
+</li>
+<li><p>height: 除auto以外的任意值，如height: 1%</p>
+</li>
+<li><p>zoom: 除normal以外的任意值</p>
+</li>
+<li><p>IE7中—overflow: hidden | auto | scroll</p>
+</li>
+</ol>
+</li>
+<li><p>margin折叠</p>
+<ul>
+<li><p>两个或多个毗邻的普通流中的块元素垂直方向上的margin折叠</p>
+</li>
+<li><p>浮动元素/inline-block/绝对定位元素的margin不会和垂直方向上的其他元素折叠</p>
+</li>
+<li><p>创建了BFC的元素不会和他的子元素发生margin折叠</p>
+</li>
+<li><p>元素自身的margin-top和margin-bottom相临时也会折叠</p>
+</li>
+</ul>
+</li>
+<li><p>使用1、2、3、5个标签画红十字150px×150px</p>
+<pre><code><span class="doctype">&lt;!DOCTYPE&gt;</span>
+<span class="tag">&lt;<span class="title">html</span>&gt;</span>
+<span class="tag">&lt;<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">style</span> <span class="attribute">type</span>=<span class="value">"text/css"</span>&gt;</span><span class="css">
+        <span class="comment">/**包裹div样式*/</span>
+        <span class="tag">div</span><span class="class">.container</span><span class="rules">{        
+            <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">150px</span></span></span>;        
+            <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">150px</span></span></span>;        
+            <span class="rule"><span class="attribute">float</span>:<span class="value">left</span></span>;        
+            <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">10px</span> <span class="number">0px</span> <span class="number">0px</span> <span class="number">10px</span></span></span>;    
+        }</span>    
+        <span class="comment">/**用1个div标签实现*/</span>    
+        <span class="class">.cross</span><span class="rules">{        
+            <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">150px</span></span></span>;        
+            <span class="rule"><span class="attribute">background</span>:<span class="value">red</span></span>;        
+            <span class="rule"><span class="attribute">vertical-align</span>:<span class="value"> middle</span></span>;        
+            <span class="rule"><span class="attribute">position</span>:<span class="value">relative</span></span>;        
+            <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">50px</span></span></span>;    
+        }</span>    
+        <span class="rule"><span class="attribute">.cross</span>:<span class="value">before{        
+            position: absolute</span></span>;        
+            <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">left</span>:<span class="value">-<span class="number">50px</span></span></span>;                
+            <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">background</span>:<span class="value">red</span></span>;        
+            <span class="rule"><span class="attribute">vertical-align</span>:<span class="value"> middle</span></span>;        
+            <span class="rule"><span class="attribute">content</span>:<span class="value"><span class="string">""</span></span></span>;    
+        }    
+        <span class="rule"><span class="attribute">.cross</span>:<span class="value">after{        
+            position: absolute</span></span>;        
+            <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">50px</span></span></span>;                
+            <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">background</span>:<span class="value">red</span></span>;        
+            <span class="rule"><span class="attribute">vertical-align</span>:<span class="value"> middle</span></span>;        
+            <span class="rule"><span class="attribute">content</span>:<span class="value"><span class="string">""</span></span></span>;    
+        }    
+        <span class="comment">/**用2个div标签实现*/</span>    
+        <span class="tag">div</span><span class="class">.s_first</span><span class="rules">{        
+            <span class="rule"><span class="attribute">position</span>:<span class="value">relative</span></span>;        
+            <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">0px</span></span></span>;        
+            <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">150px</span></span></span>;        
+            <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">background</span>:<span class="value">red</span></span>;    
+        }</span>    
+        <span class="tag">div</span><span class="class">.s_second</span><span class="rules">{        
+            <span class="rule"><span class="attribute">position</span>:<span class="value">relative</span></span>;        
+            <span class="rule"><span class="attribute">top</span>:<span class="value">-<span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">150px</span></span></span>;        
+            <span class="rule"><span class="attribute">background</span>:<span class="value">red</span></span>;    
+        }</span>    
+        <span class="comment">/**用3个div标签实现*/</span>    
+        <span class="tag">div</span><span class="class">.t_first</span><span class="rules">{        
+            <span class="rule"><span class="attribute">position</span>:<span class="value">relative</span></span>;        
+            <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">0px</span></span></span>;        
+            <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">150px</span></span></span>;        
+            <span class="rule"><span class="attribute">background</span>:<span class="value">red</span></span>;    
+        }</span>    
+        <span class="tag">div</span><span class="class">.t_second</span><span class="rules">{        
+            <span class="rule"><span class="attribute">position</span>:<span class="value">relative</span></span>;        
+            <span class="rule"><span class="attribute">top</span>:<span class="value">-<span class="number">100px</span></span></span>;        
+            <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">0px</span></span></span>;        
+            <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">background</span>:<span class="value">red</span></span>;    
+        }</span>    
+        <span class="tag">div</span><span class="class">.t_third</span><span class="rules">{        
+            <span class="rule"><span class="attribute">position</span>:<span class="value">relative</span></span>;        
+            <span class="rule"><span class="attribute">top</span>:<span class="value">-<span class="number">150px</span></span></span>;        
+            <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">100px</span></span></span>;        
+            <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">background</span>:<span class="value">red</span></span>;    
+        }</span>    
+        <span class="comment">/**用5个div标签实现*/</span>    
+        <span class="tag">div</span><span class="class">.f_first</span><span class="rules">{        
+            <span class="rule"><span class="attribute">position</span>:<span class="value">relative</span></span>;        
+            <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">0px</span></span></span>;        
+            <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">background</span>:<span class="value">red</span></span>;    
+        }</span>    
+        <span class="tag">div</span><span class="class">.f_second</span><span class="rules">{        
+            <span class="rule"><span class="attribute">position</span>:<span class="value">relative</span></span>;        
+            <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">0px</span></span></span>;        
+            <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">0px</span></span></span>;        
+            <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">background</span>:<span class="value">red</span></span>;    
+        }</span>    
+        <span class="tag">div</span><span class="class">.f_third</span><span class="rules">{        
+            <span class="rule"><span class="attribute">position</span>:<span class="value">relative</span></span>;        
+            <span class="rule"><span class="attribute">top</span>:<span class="value">-<span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">background</span>:<span class="value">red</span></span>;    
+        }</span>    
+        <span class="tag">div</span><span class="class">.f_fourth</span><span class="rules">{        
+            <span class="rule"><span class="attribute">position</span>:<span class="value">relative</span></span>;        
+            <span class="rule"><span class="attribute">top</span>:<span class="value">-<span class="number">100px</span></span></span>;        
+            <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">100px</span></span></span>;        
+            <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">background</span>:<span class="value">red</span></span>;    
+        }</span>    
+        <span class="tag">div</span><span class="class">.f_fifth</span><span class="rules">{        
+            <span class="rule"><span class="attribute">position</span>:<span class="value">relative</span></span>;        
+            <span class="rule"><span class="attribute">top</span>:<span class="value">-<span class="number">100px</span></span></span>;        
+            <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">background</span>:<span class="value">red</span></span>;    
+        }</span>
+    </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+<span class="tag">&lt;<span class="title">body</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"container"</span>&gt;</span>    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cross"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"container"</span>&gt;</span>    
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"s_first"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>    
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"s_second"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"container"</span>&gt;</span>    
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"t_first"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>    
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"t_second"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>    
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"t_third"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"container"</span>&gt;</span>    
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"f_first"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>    
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"f_second"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>    
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"f_third"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>    
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"f_fourth"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>    
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"f_fifth"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</code></pre></li>
+</ol>
+<ol>
+<li><p>css绘制箭头</p>
+<pre><code><span class="comment">/* 向上的箭头,类似于A,只有三个边，不能指定上边框 */</span> 
+<span class="tag">div</span><span class="class">.arrow-up</span> <span class="rules">{ 
+<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">0</span></span></span>; 
+<span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">0</span></span></span>; 
+<span class="rule"><span class="attribute">border-left</span>:<span class="value"> <span class="number">5px</span> solid transparent</span></span>; <span class="comment">/* 左边框的宽 */</span> 
+<span class="rule"><span class="attribute">border-right</span>:<span class="value"> <span class="number">5px</span> solid transparent</span></span>; <span class="comment">/* 右边框的宽 */</span> 
+<span class="rule"><span class="attribute">border-bottom</span>:<span class="value"> <span class="number">5px</span> solid <span class="hexcolor">#2f2f2f</span></span></span>; <span class="comment">/* 下边框的长度|高,以及背景色 */</span> 
+<span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">0</span></span></span>; 
+<span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">0</span></span></span>;}</span> 
+<span class="comment">/* 向下的箭头 类似于 V */</span> 
+<span class="tag">div</span><span class="class">.arrow-down</span> <span class="rules">{ 
+<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">0</span></span></span>; 
+<span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">0</span></span></span>; 
+<span class="rule"><span class="attribute">border-left</span>:<span class="value"> <span class="number">20px</span> solid transparent</span></span>; 
+<span class="rule"><span class="attribute">border-right</span>:<span class="value"> <span class="number">20px</span> solid transparent</span></span>; 
+<span class="rule"><span class="attribute">border-top</span>:<span class="value"> <span class="number">20px</span> solid <span class="hexcolor">#f00</span></span></span>; 
+<span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">0</span></span></span>; 
+<span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">0</span></span></span>; 
+}</span> 
+<span class="comment">/* 向左的箭头: 只有三个边：上、下、右。而 &lt;| 总体来看，向左三角形的高=上+下边框的长度。 宽=右边框的长度 */</span> 
+<span class="tag">div</span><span class="class">.arrow-left</span> <span class="rules">{ 
+<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">0</span></span></span>; 
+<span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">0</span></span></span>; 
+<span class="rule"><span class="attribute">border-bottom</span>:<span class="value"> <span class="number">15px</span> solid transparent</span></span>; <span class="comment">/* 下边框的高 */</span> 
+<span class="rule"><span class="attribute">border-top</span>:<span class="value"> <span class="number">15px</span> solid transparent</span></span>; <span class="comment">/* 上方边框的高 */</span> 
+<span class="rule"><span class="attribute">border-right</span>:<span class="value"> <span class="number">15px</span> solid yellow</span></span>; <span class="comment">/* 右边框的长度|宽度，以及背景色 */</span> 
+<span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">0</span></span></span>; 
+<span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">0</span></span></span>; 
+}</span> 
+<span class="comment">/* 向右的箭头: 只有三个边：上、下、左。而 |&gt; 总体来看，向右三角形的高=上+下边框的长度。 宽=左边框的长度 */</span> 
+<span class="tag">div</span><span class="class">.arrow-right</span> <span class="rules">{ 
+<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">0</span></span></span>; 
+<span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">0</span></span></span>; 
+<span class="rule"><span class="attribute">border-bottom</span>:<span class="value"> <span class="number">15px</span> solid transparent</span></span>; <span class="comment">/* 下边框的高 */</span> 
+<span class="rule"><span class="attribute">border-top</span>:<span class="value"> <span class="number">15px</span> solid transparent</span></span>; <span class="comment">/* 上方边框的高 */</span> 
+<span class="rule"><span class="attribute">border-left</span>:<span class="value"> <span class="number">15px</span> solid green</span></span>; <span class="comment">/* 左边框的长度|宽度，以及背景色  */</span>
+<span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">0</span></span></span>; 
+<span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">0</span></span></span>; 
+}</span>
+</code></pre></li>
+<li><p>CSS+JS制作轮播</p>
+<pre><code><span class="doctype">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;</span>
+<span class="tag">&lt;<span class="title">html</span> <span class="attribute">xmlns</span>=<span class="value">"http://www.w3.org/1999/xhtml"</span>&gt;</span>
+<span class="tag">&lt;<span class="title">head</span>&gt;</span>
+<span class="tag">&lt;<span class="title">title</span>&gt;</span>carousel<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"content-type"</span> <span class="attribute">content</span>=<span class="value">"text/html;charset=gb2312"</span>&gt;</span>
+<span class="comment">&lt;!--把下面代码加到&lt;head&gt;与&lt;/head&gt;之间--&gt;</span>
+<span class="tag">&lt;<span class="title">style</span> <span class="attribute">type</span>=<span class="value">"text/css"</span>&gt;</span><span class="css">
+* <span class="rules">{
+ <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">0</span></span></span>;
+ <span class="rule"><span class="attribute">padding</span>:<span class="value"><span class="number">0</span></span></span>;
+}</span>
+<span class="tag">html</span>,<span class="tag">body</span> <span class="rules">{
+ <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">100%</span></span></span>;
+ <span class="rule"><span class="attribute">text-align</span>:<span class="value">center</span></span>;
+}</span>
+<span class="tag">img</span> <span class="rules">{
+ <span class="rule"><span class="attribute">border</span>:<span class="value"><span class="number">0</span></span></span>;
+}</span>
+<span class="comment">/*【————————————Ad show parts of the beginning————————————*/</span>
+<span class="class">.ad_show</span> <span class="rules">{
+ <span class="rule"><span class="attribute">position</span>:<span class="value">absolute</span></span>;
+ <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">270px</span></span></span>;
+ <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">350px</span></span></span>;
+ <span class="rule"><span class="attribute">top</span>:<span class="value"> <span class="number">0</span></span></span>;
+ <span class="rule"><span class="attribute">right</span>:<span class="value"> <span class="number">0</span></span></span>;
+ <span class="rule"><span class="attribute">left</span>:<span class="value"> <span class="number">0</span></span></span>;
+ <span class="rule"><span class="attribute">bottom</span>:<span class="value"> <span class="number">0</span></span></span>;
+ <span class="rule"><span class="attribute">margin</span>:<span class="value"> auto</span></span>;
+ <span class="rule"><span class="attribute">overflow</span>:<span class="value">hidden</span></span>;
+}</span>
+<span class="class">.ad_show</span> <span class="class">.cover_b</span> <span class="rules">{
+ <span class="rule"><span class="attribute">bottom</span>:<span class="value"><span class="number">0</span></span></span>;
+ <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">55px</span></span></span>;
+ <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">160px</span></span></span>;
+ <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">20px</span></span></span>;
+ <span class="rule"><span class="attribute">font</span>:<span class="value"><span class="number">11px</span> Arial</span></span>;
+ <span class="rule"><span class="attribute">position</span>:<span class="value">absolute</span></span>;
+ <span class="rule"><span class="attribute">z-index</span>:<span class="value"><span class="number">999</span></span></span>;
+ <span class="rule"><span class="attribute">overflow</span>:<span class="value">hidden</span></span>;
+ <span class="rule"><span class="attribute">background</span>:<span class="value"> white</span></span>;
+}</span>
+<span class="class">.ad_show</span> <span class="class">.cover_b</span> <span class="tag">img</span> <span class="rules">{
+ <span class="rule"><span class="attribute">cursor</span>:<span class="value">pointer</span></span>;
+ <span class="rule"><span class="attribute">cursor</span>:<span class="value">hand</span></span>;
+ <span class="rule"><span class="attribute">margin-top</span>:<span class="value"><span class="number">7px</span></span></span>;
+ <span class="rule"><span class="attribute">float</span>:<span class="value">left</span></span>;
+}</span>
+<span class="class">.ad_show</span> <span class="class">.cover_b</span> <span class="tag">img</span><span class="id">#adShowPre</span> <span class="rules">{
+ <span class="rule"><span class="attribute">margin-left</span>:<span class="value"><span class="number">16px</span></span></span>;
+}</span>
+<span class="class">.ad_show</span> <span class="class">.cover_b</span> <span class="tag">span</span> <span class="rules">{
+ <span class="rule"><span class="attribute">display</span>:<span class="value">block</span></span>;
+ <span class="rule"><span class="attribute">padding-top</span>:<span class="value"><span class="number">5px</span></span></span>;
+ <span class="rule"><span class="attribute">float</span>:<span class="value">left</span></span>;
+}</span>
+<span class="class">.ad_show</span> <span class="class">.cover_b</span> <span class="tag">span</span><span class="id">#adShowNow</span>,<span class="class">.ad_show</span> <span class="class">.cover_b</span> <span class="tag">span</span><span class="id">#adShowAll</span> <span class="rules">{
+ <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">27px</span></span></span>;
+ <span class="rule"><span class="attribute">text-align</span>:<span class="value">left</span></span>;
+}</span>
+<span class="class">.ad_show</span> <span class="class">.cover_b</span> <span class="tag">span</span><span class="id">#adShowNow</span> <span class="rules">{
+ <span class="rule"><span class="attribute">color</span>:<span class="value"><span class="hexcolor">#f00</span></span></span>;
+ <span class="rule"><span class="attribute">text-align</span>:<span class="value">right</span></span>;
+}</span>
+<span class="class">.ad_show</span> <span class="id">#adShowImg</span> <span class="rules">{
+ <span class="rule"><span class="attribute">position</span>:<span class="value">static</span></span>;
+ <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">270px</span></span></span>;
+ <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">350px</span></span></span>;
+ <span class="rule"><span class="attribute">overflow</span>:<span class="value">hidden</span></span>;
+}</span>
+<span class="class">.ad_show</span> <span class="id">#adShowImg</span> <span class="tag">div</span> <span class="rules">{
+ <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">99999px</span></span></span>;
+ <span class="rule"><span class="attribute">margin-top</span>:<span class="value"><span class="number">0</span></span></span>;
+ <span class="rule"><span class="attribute">margin-left</span>:<span class="value"><span class="number">0</span></span></span>;
+}</span>
+<span class="class">.ad_show</span> <span class="id">#adShowImg</span> <span class="tag">div</span> <span class="tag">img</span> <span class="rules">{
+ <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">270px</span></span></span>;
+ <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">350px</span></span></span>;
+ <span class="rule"><span class="attribute">float</span>:<span class="value">left</span></span>;
+}</span>
+
+<span class="comment">/*【————————————Ad show parts of the end————————————*/</span>
+</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+<span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript">
+  <span class="function"><span class="keyword">function</span> <span class="title">$</span>(<span class="params">element</span>) </span>{
+   <span class="keyword">if</span>(!<span class="built_in">document</span>.getElementById) { <span class="keyword">return</span> <span class="literal">false</span>; }
+   <span class="keyword">if</span> (<span class="built_in">arguments</span>.length &gt; <span class="number">1</span>) {
+    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, elements = [], length = <span class="built_in">arguments</span>.length; i &lt; length; i++) {
+     elements.push($(<span class="built_in">arguments</span>[i]));
+     <span class="keyword">return</span> elements;
+    }
+   }
+   <span class="keyword">if</span> (<span class="keyword">typeof</span> element == <span class="string">"string"</span>) {
+    element = <span class="built_in">document</span>.getElementById(element);
+    <span class="keyword">return</span> element;
+   }
+  }
+
+  <span class="function"><span class="keyword">function</span> <span class="title">addOnloadEvent</span>(<span class="params">func</span>) </span>{
+   <span class="keyword">var</span> oldOnload = <span class="built_in">window</span>.onload;
+   <span class="keyword">if</span>(<span class="keyword">typeof</span> oldOnload != <span class="string">"function"</span>) {
+    <span class="built_in">window</span>.onload = func;
+   }
+   <span class="keyword">else</span> {
+    <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+     oldOnload();
+     func();
+    }
+   }
+  }
+
+  <span class="comment">//取得外部class的属性值</span>
+  <span class="function"><span class="keyword">function</span> <span class="title">getCurrentStyle</span>(<span class="params">o</span>) </span>{
+   <span class="keyword">if</span> (o.currentStyle) {
+    <span class="keyword">return</span> o.currentStyle;
+   }
+   <span class="keyword">else</span> {
+    <span class="keyword">return</span> <span class="built_in">document</span>.defaultView.getComputedStyle(o,<span class="literal">null</span>);
+   }
+  }
+
+  <span class="comment">//取得第一个元素子节点</span>
+  <span class="function"><span class="keyword">function</span> <span class="title">getFirstElementNode</span>(<span class="params">o</span>) </span>{
+   <span class="keyword">if</span>(o.firstChild.nodeType == <span class="number">1</span>) {
+    <span class="keyword">return</span> o.firstChild;
+   }
+   <span class="keyword">if</span>(o.firstChild.nextSibling.nodeType == <span class="number">1</span>) {
+    <span class="keyword">return</span> o.firstChild.nextSibling;
+   }
+   <span class="keyword">return</span> <span class="literal">null</span>;
+  }
+
+  <span class="comment">//将对象定时移动到某个位置</span>
+  <span class="function"><span class="keyword">function</span> <span class="title">moveElement</span>(<span class="params">elementID,final_x,final_y,interval,speed</span>) </span>{
+   <span class="keyword">if</span>(!$(elementID)) <span class="keyword">return</span> <span class="literal">false</span>;
+   <span class="keyword">var</span> o = getFirstElementNode($(elementID));
+   <span class="keyword">if</span>(o.movement) {
+    clearTimeout(o.movement);
+   }
+   <span class="keyword">var</span> ypos = <span class="built_in">parseInt</span>(o.style.marginTop);
+   <span class="keyword">var</span> xpos = <span class="built_in">parseInt</span>(o.style.marginLeft);
+   <span class="keyword">if</span>(xpos == final_x &amp;&amp; ypos == final_y) {
+    <span class="keyword">return</span> <span class="literal">true</span>;
+   }
+   <span class="keyword">if</span>(xpos &lt; final_x) {
+    <span class="keyword">var</span> dist = <span class="built_in">Math</span>.ceil((final_x - xpos)/speed);
+    xpos += dist;
+   }
+   <span class="keyword">if</span>(xpos &gt; final_x) {
+    <span class="keyword">var</span> dist = <span class="built_in">Math</span>.ceil((xpos - final_x)/speed);
+    xpos -= dist;
+   }
+   <span class="keyword">if</span>(ypos &lt; final_y) {
+    <span class="keyword">var</span> dist = <span class="built_in">Math</span>.ceil((final_y - ypos)/speed);
+    ypos += dist;
+   }
+   <span class="keyword">if</span>(ypos &gt; final_y) {
+    <span class="keyword">var</span> dist = <span class="built_in">Math</span>.ceil((ypos - final_y)/speed);
+    ypos -= dist;
+   }
+   o.style.marginLeft = xpos + <span class="string">"px"</span>;
+   o.style.marginTop = ypos + <span class="string">"px"</span>;
+   <span class="keyword">var</span> again = <span class="string">"moveElement('"</span> + elementID + <span class="string">"',"</span> + final_x + <span class="string">","</span> + final_y + <span class="string">","</span> + interval + <span class="string">","</span> + speed + <span class="string">")"</span>;
+   o.movement = setTimeout(again,interval);
+  }
+
+  <span class="comment">//对被移动对象的属性进行设置</span>
+  <span class="function"><span class="keyword">function</span> <span class="title">positionMessage</span>(<span class="params">oo,oWidth,x</span>) </span>{
+   <span class="keyword">var</span> o1 = getFirstElementNode($(oo));
+   <span class="keyword">var</span> oStyles = getCurrentStyle(o1);
+   o1.style.marginLeft = oStyles.marginLeft;
+   o1.style.marginTop = oStyles.marginTop;
+   <span class="keyword">var</span> xposNow = -oWidth*x;
+   moveElement(oo,xposNow,<span class="number">0</span>,<span class="number">10</span>,<span class="number">12</span>);
+  }
+
+  <span class="function"><span class="keyword">function</span> <span class="title">autoShow</span>(<span class="params"></span>) </span>{
+   <span class="keyword">var</span> oMover = getFirstElementNode($(<span class="string">"adShowImg"</span>));
+   <span class="keyword">var</span> adShowNow = $(<span class="string">"adShowNow"</span>);
+   <span class="keyword">var</span> adShowAll = $(<span class="string">"adShowAll"</span>);
+   <span class="keyword">var</span> allA = oMover.getElementsByTagName(<span class="string">"a"</span>);
+   <span class="keyword">var</span> allALen = allA.length;
+   <span class="keyword">var</span> allALenSub = allALen - <span class="number">1</span>;
+   <span class="keyword">if</span> (opp &lt; allALenSub &amp;&amp; opp2 == <span class="number">0</span>) {
+    positionMessage(<span class="string">"adShowImg"</span>,<span class="number">270</span>,opp + <span class="number">1</span>);
+    adShowNow.innerHTML = <span class="built_in">parseInt</span>(adShowNow.innerHTML) + <span class="number">1</span>;
+    opp++;
+    opp2 = <span class="number">0</span>;
+   }
+   <span class="keyword">else</span> {
+    <span class="keyword">if</span>(opp != <span class="number">0</span>) {
+     positionMessage(<span class="string">"adShowImg"</span>,<span class="number">270</span>,opp - <span class="number">1</span>);
+     adShowNow.innerHTML = <span class="built_in">parseInt</span>(adShowNow.innerHTML) - <span class="number">1</span>;
+     opp--;
+     opp2 = <span class="number">1</span>;
+    }
+    <span class="keyword">else</span> {
+     positionMessage(<span class="string">"adShowImg"</span>,<span class="number">270</span>,<span class="number">0</span>);
+     adShowNow.innerHTML = <span class="number">1</span>;
+     opp = <span class="number">0</span>;
+     opp2 = <span class="number">0</span>;
+    }
+   }
+   oMover.orepeat = setTimeout(autoShow,<span class="number">3000</span>);
+   oMover.onmouseover = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+    clearTimeout(<span class="keyword">this</span>.orepeat);
+   }
+   oMover.onmouseout = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+    <span class="keyword">this</span>.orepeat = setTimeout(autoShow,<span class="number">3000</span>);
+   }
+  }
+
+  <span class="function"><span class="keyword">function</span> <span class="title">clickShow</span>(<span class="params"></span>) </span>{
+   opp = <span class="number">0</span>;
+   opp2 = <span class="number">0</span>;
+   <span class="keyword">var</span> oMover = getFirstElementNode($(<span class="string">"adShowImg"</span>));
+   <span class="keyword">var</span> adShowPre = $(<span class="string">"adShowPre"</span>);
+   <span class="keyword">var</span> adShowNext = $(<span class="string">"adShowNext"</span>);
+   <span class="keyword">var</span> adShowNow = $(<span class="string">"adShowNow"</span>);
+   <span class="keyword">var</span> adShowAll = $(<span class="string">"adShowAll"</span>);
+   <span class="keyword">var</span> allA = oMover.getElementsByTagName(<span class="string">"a"</span>);
+   <span class="keyword">var</span> allALen = allA.length;
+   <span class="keyword">var</span> allALenSub = allALen - <span class="number">1</span>;
+   adShowNow.innerHTML = <span class="number">1</span>;
+   adShowAll.innerHTML = allALenSub + <span class="number">1</span>;
+   adShowPre.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+    <span class="keyword">if</span> (opp != <span class="number">0</span>) {
+     positionMessage(<span class="string">"adShowImg"</span>,<span class="number">270</span>,opp - <span class="number">1</span>);
+     adShowNow.innerHTML = <span class="built_in">parseInt</span>(adShowNow.innerHTML) - <span class="number">1</span>;
+     opp--;
+    }
+    <span class="keyword">else</span> {
+     positionMessage(<span class="string">"adShowImg"</span>,<span class="number">270</span>, allALenSub);
+     adShowNow.innerHTML = allALen;
+     opp = allALenSub;
+    }
+   }
+   adShowNext.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+    <span class="keyword">if</span> (opp != allALenSub) {
+     positionMessage(<span class="string">"adShowImg"</span>,<span class="number">270</span>,opp + <span class="number">1</span>);
+     adShowNow.innerHTML = <span class="built_in">parseInt</span>(adShowNow.innerHTML) + <span class="number">1</span>;
+     opp++;
+    }
+    <span class="keyword">else</span> {
+     positionMessage(<span class="string">"adShowImg"</span>,<span class="number">270</span>, <span class="number">0</span>);
+     adShowNow.innerHTML = <span class="number">1</span>;
+     opp = <span class="number">0</span>;
+    }
+   }
+  }
+
+  <span class="function"><span class="keyword">function</span> <span class="title">autoShowAll</span>(<span class="params"></span>) </span>{
+   clickShow();
+   setTimeout(autoShow,<span class="number">3000</span>);
+  }
+</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+<span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="undefined">
+ addOnloadEvent(autoShowAll);
+</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+<span class="tag">&lt;<span class="title">body</span>&gt;</span>
+<span class="comment">&lt;!--把下面代码加到&lt;body&gt;与&lt;/body&gt;之间--&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"ad_show"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cover_b"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"b.jpg"</span> <span class="attribute">id</span>=<span class="value">"adShowPre"</span> <span class="attribute">style</span>=<span class="value">"width: 35px;"</span> /&gt;</span>
+    <span class="tag">&lt;<span class="title">span</span> <span class="attribute">id</span>=<span class="value">"adShowNow"</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">span</span>&gt;</span>/<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">span</span> <span class="attribute">id</span>=<span class="value">"adShowAll"</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"b.jpg"</span> <span class="attribute">id</span>=<span class="value">"adShowNext"</span> <span class="attribute">style</span>=<span class="value">"width: 35px;"</span>/&gt;</span> 
+  <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"adShowImg"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span> <span class="attribute">target</span>=<span class="value">"_blank"</span>&gt;</span><span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"1.jpg"</span> /&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span> <span class="attribute">target</span>=<span class="value">"_blank"</span>&gt;</span><span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"2.jpg"</span> /&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span> <span class="attribute">target</span>=<span class="value">"_blank"</span>&gt;</span><span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"3.jpg"</span> /&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span> <span class="attribute">target</span>=<span class="value">"_blank"</span>&gt;</span><span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"4.jpg"</span> /&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span> <span class="attribute">target</span>=<span class="value">"_blank"</span>&gt;</span><span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"5.jpg"</span> /&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</code></pre></li>
+<li><p>bootstrap实现轮播</p>
+<pre><code><span class="doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;<span class="title">html</span>&gt;</span>
+<span class="tag">&lt;<span class="title">head</span>&gt;</span>
+   <span class="tag">&lt;<span class="title">title</span>&gt;</span>Carousel<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+   <span class="tag">&lt;<span class="title">link</span> <span class="attribute">href</span>=<span class="value">"bootstrap.min.css"</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span>&gt;</span>
+   <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"jquery-1.11.1.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+   <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"bootstrap.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+<span class="tag">&lt;<span class="title">body</span>&gt;</span>
+
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"myCarousel"</span> <span class="attribute">class</span>=<span class="value">"carousel slide"</span> <span class="attribute">style</span>=<span class="value">"width: 400px; height: 500px; overflow: hidden; top: 0; right: 0; bottom: 0; left: 0; margin: auto; position: absolute;"</span>&gt;</span>
+   <span class="comment">&lt;!-- 轮播（Carousel）指标 --&gt;</span>
+   <span class="tag">&lt;<span class="title">ol</span> <span class="attribute">class</span>=<span class="value">"carousel-indicators"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">li</span> <span class="attribute">data-target</span>=<span class="value">"#myCarousel"</span> <span class="attribute">data-slide-to</span>=<span class="value">"0"</span> <span class="attribute">class</span>=<span class="value">"active"</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">li</span> <span class="attribute">data-target</span>=<span class="value">"#myCarousel"</span> <span class="attribute">data-slide-to</span>=<span class="value">"1"</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">li</span> <span class="attribute">data-target</span>=<span class="value">"#myCarousel"</span> <span class="attribute">data-slide-to</span>=<span class="value">"2"</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+   <span class="tag">&lt;/<span class="title">ol</span>&gt;</span>   
+   <span class="comment">&lt;!-- 轮播（Carousel）项目 --&gt;</span>
+   <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"carousel-inner"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"item active"</span>&gt;</span>
+         <span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"1.jpg"</span> <span class="attribute">alt</span>=<span class="value">"First slide"</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"item"</span>&gt;</span>
+         <span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"2.jpg"</span> <span class="attribute">alt</span>=<span class="value">"Second slide"</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"item"</span>&gt;</span>
+         <span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"3.jpg"</span> <span class="attribute">alt</span>=<span class="value">"Third slide"</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+   <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+   <span class="comment">&lt;!-- 轮播（Carousel）导航 --&gt;</span>
+   <span class="tag">&lt;<span class="title">a</span> <span class="attribute">class</span>=<span class="value">"carousel-control left"</span> <span class="attribute">href</span>=<span class="value">"#myCarousel"</span> 
+      <span class="attribute">data-slide</span>=<span class="value">"prev"</span>&gt;</span>&amp;lsaquo;<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+   <span class="tag">&lt;<span class="title">a</span> <span class="attribute">class</span>=<span class="value">"carousel-control right"</span> <span class="attribute">href</span>=<span class="value">"#myCarousel"</span> 
+      <span class="attribute">data-slide</span>=<span class="value">"next"</span>&gt;</span>&amp;rsaquo;<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span> 
+
+<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</code></pre></li>
+<li><p>实现浮层</p>
+<pre><code>&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"modal"</span> <span class="property">id</span>=<span class="string">"zero"</span>&gt;
+   &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"inner_modal"</span>&gt;
+     &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"close"</span>&gt;x&lt;/<span class="keyword">div</span>&gt;
+     &lt;img src=<span class="string">"images/div_by_zero.jpg"</span>&gt;
+     &lt;h1&gt;Oh crap! Did you divide <span class="keyword">by</span> zero?&lt;/h1&gt;
+   &lt;/<span class="keyword">div</span>&gt;
+ &lt;/<span class="keyword">div</span>&gt;
+ .modal {
+    position: absolute;
+    top: <span class="number">70</span>px;
+    left: <span class="number">0</span>;
+    right: <span class="number">0</span>;
+}
+
+.inner_modal {
+    position: relative;
+    width: <span class="number">700</span>px;
+    margin: auto;
+    padding: <span class="number">30</span>px;
+    background-color: <span class="comment">#17171a;</span>
+}
+
+<span class="comment">#zero {</span>
+    display: none;
+}
+
+.close {
+    position: absolute;
+    top: <span class="number">5</span>px;
+    right: <span class="number">10</span>px;
+    padding: <span class="number">5</span>px;
+    font-size: <span class="number">22</span>px;
+    color: <span class="comment">#ffa200;</span>
+    cursor: pointer;
+}
+</code></pre></li>
+<li><p><strong>文本溢出显示…</strong></p>
+<ul>
+<li><p>单行文本</p>
+<pre><code><span class="rule"><span class="attribute">overflow</span>:<span class="value"> hidden</span></span>;
+<span class="rule"><span class="attribute">text-overflow</span>:<span class="value"> ellipsis</span></span>;
+<span class="rule"><span class="attribute">white-space</span>:<span class="value"> nowrap</span></span>;
+</code></pre></li>
+<li><p>多行文本: line-clamp</p>
+<p>  <a href="http://www.css88.com/archives/tag/line-clamp" target="_blank" rel="external">多行文本溢出显示…</a></p>
+<pre><code><span class="rule"><span class="attribute">text-overflow</span>:<span class="value"> ellipsis</span></span>;
+<span class="rule"><span class="attribute">display</span>:<span class="value"> -webkit-box</span></span>;
+<span class="rule"><span class="attribute">-webkit-line-clamp</span>:<span class="value"> <span class="number">2</span></span></span>;
+<span class="rule"><span class="attribute">-webkit-box-orient</span>:<span class="value"> vertical</span></span>;
+</code></pre></li>
+</ul>
+</li>
+<li><p><a href="http://www.webhek.com/css-100-percent-height" target="_blank" rel="external">如何让height:100%起作用</a></p>
+<p>根据W3C的规范，<strong>百分比的高度在设定时需要根据这个元素的父元素容器的高度去计算</strong>。当给元素设置宽度width:100%时元素的宽度会立刻扩展到窗口的整个横向宽度，但是当给一个div添加height:100%的css属性时，元素的高度并不能占满整个空间。这是因为，web浏览器在计算有效宽度时会考虑浏览器窗口的打开宽度，如果不给宽度设定任何缺省值，那浏览器会自动将页面内容平铺填满整个横向宽度，但是高度的计算方式完全不一样。事实上，浏览器根本不计算内容的高度，除非内容超出了视窗范围，导致滚动条的出现，或者给页面设置一个绝对宽度，否则，浏览器就会简单的让内容往下堆砌，页面的高度根本就无需考虑。因为页面没有缺省的高度值，所以，当你让一个元素的高度设定为百分比高度时，无法根据获取父元素的高度，也就无法计算自己的高度。换句话说，父元素的高度只是一个缺省值：height: auto;当你要求浏览器根据这一一个缺省值计算百分比高度时，只能得到undefined的结果，也就是一个null值，浏览器根本不会对这个值有任何反应。</p>
+<p>所以如果想让元素的height:100%起作用，就要对他所有的祖先元素设置height:100%</p>
+<p>高度自适应：绝对定位+top+bottom:0/Ie6：html:padding-top</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">title</span>&gt;</span>高度自适应<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span><br><span class="line">		<span class="tag">html</span>, <span class="tag">body</span> <span class="rules">&#123;</span><br><span class="line">			<span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">100%</span></span></span>;</span><br><span class="line">		&#125;</span></span><br><span class="line">		<span class="tag">body</span>, <span class="tag">div</span> <span class="rules">&#123;</span><br><span class="line">			<span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#f00</span></span></span>;</span><br><span class="line">		&#125;</span></span><br><span class="line">		<span class="class">.top</span> <span class="rules">&#123;</span><br><span class="line">			<span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#36c</span></span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">100px</span></span></span>;</span><br><span class="line">		&#125;</span></span><br><span class="line">		<span class="class">.main</span> <span class="rules">&#123;</span><br><span class="line">			<span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#f90</span></span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100%</span></span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">top</span>:<span class="value"> <span class="number">100px</span></span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">bottom</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">overflow</span>:<span class="value"> auto</span></span>;</span><br><span class="line">		&#125;</span></span><br><span class="line">		<span class="comment">/*IE6中，html的增加了padding-top后，整个html元素的高度还是保持不变，即浏览器窗口的高度，变化的是body的高度减小了，用来抵消html的padding-top.而绝对定位的元素最终是参照html元素的。*/</span></span><br><span class="line">		* <span class="tag">html</span> <span class="rules">&#123;</span><br><span class="line">			<span class="rule"><span class="attribute">padding-top</span>:<span class="value"> <span class="number">100px</span></span></span>;</span><br><span class="line">		&#125;</span></span><br><span class="line">		* <span class="tag">html</span> <span class="class">.top</span> <span class="rules">&#123;</span><br><span class="line">			<span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#36c</span></span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">100px</span></span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">top</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100%</span></span></span>;</span><br><span class="line">		&#125;</span></span><br><span class="line">		* <span class="tag">html</span> <span class="class">.main</span> <span class="rules">&#123;</span><br><span class="line">			<span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#f90</span></span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">position</span>:<span class="value"> static</span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">100%</span></span></span>;</span><br><span class="line">		&#125;</span> </span><br><span class="line">	</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"top"</span>&gt;</span>我是顶层nav，高度固定<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"main"</span>&gt;</span>我是main，高度随浏览器视区大小变化而变化<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><a href="http://www.zhangxinxu.com/wordpress/2011/03/css-css3-unit-units/" target="_blank" rel="external">CSS的一些单位</a></p>
+</li>
+<li><p>资源汇总</p>
+<ul>
+<li><p><a href="http://www.wzsky.net/html/Website/Experience/118822.html" target="_blank" rel="external">css制作面包屑导航</a></p>
+</li>
+<li><p><a href="http://top.jobbole.com/5394" target="_blank" rel="external">css绘制多国国旗</a></p>
+</li>
+<li><p><a href="http://www.uisdc.com/20-registered-and-login-psd" target="_blank" rel="external">20个注册登录界面psd</a></p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="Javascript–定义行为">Javascript–定义行为</h3><ol>
+<li><p><em>事件代理or事件委托</em></p>
+<p> 当页面中存在大量元素，而且每一个都要一次或多次绑定事件处理器时，每绑定一个事件处理器都是有代价的，这种情况会随着dom元素的增多而严重影响页面性能。</p>
+<p> 事件代理机制是基于事件逐层冒泡并能被父级元素捕获的原理，使用事件代理机制，仅需要给外层元素绑定一个处理器，就可以处理在其子元素上触发的所有事件。</p>
+<pre><code><span class="tag">&lt;<span class="title">ul</span> <span class="attribute">id</span>=<span class="value">"nav"</span>&gt;</span>    
+    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>    
+    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>    
+    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>    
+    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>    
+    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>    
+<span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+
+<span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">
+
+    <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{    
+        <span class="keyword">var</span> nav = <span class="built_in">document</span>.getElementById(<span class="string">"nav"</span>);
+        <span class="comment">/*var links = nav.getElementsByTagName("a");
+        for(var i=0, l=links.length; i &lt; l; i++){
+            links[i].onclick =  function(){
+                alert(this.innerHTML);
+                return false;
+            }    
+        }*/</span>
+
+        <span class="comment">// 利用了dom事件冒泡特性    </span>
+        nav.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{    
+            <span class="keyword">var</span> e = <span class="built_in">arguments</span>[<span class="number">0</span>] || <span class="built_in">window</span>.event, target = e.srcElement ? e.srcElement : e.target；                    alert(target.innerHTML);
+            <span class="keyword">return</span> <span class="literal">false</span>;
+        }
+
+        <span class="function"><span class="keyword">function</span> <span class="title">addListener</span>(<span class="params">element, event, function</span>)</span>{
+            <span class="keyword">if</span>(element.addEventListener){<span class="comment">//FF个小婊砸</span>
+                element.addEventListener(event, <span class="function"><span class="keyword">function</span>, <span class="title">false</span>);//是否使用捕获
+            }
+            <span class="title">else</span></span>{
+                element.attachEvent(<span class="string">"on"</span>+event, <span class="function"><span class="keyword">function</span>);
+            }
+        }    
+    }
+</span></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+</code></pre></li>
+<li><p>ES5和ES6：ES6中新增元素<em>越来越接近python</em></p>
+<ul>
+<li><p>箭头操作符</p>
+<pre><code><span class="keyword">array</span>.<span class="keyword">forEach</span>(fucntion(v, i, a){
+    console.log(v);
+});
+=&gt;
+<span class="keyword">array</span>.<span class="keyword">forEach</span>(v =&gt; console.log(v));
+</code></pre></li>
+<li><p>class关键字</p>
+</li>
+<li><p>增强的对象字面量</p>
+</li>
+<li><p>字符串模板：`${num}`</p>
+</li>
+<li><p>解构：返回值可以为数组</p>
+</li>
+<li><p>参数可以省略，可以设置默认值</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">add</span><span class="params">(<span class="rest_arg">...x</span>)</span></span>{
+    <span class="keyword">return</span> x.reduce((m, n) =&gt; m+n);
+};    
+</code></pre></li>
+</ul>
+</li>
+<li><p>Javascript中<strong>this</strong>的工作机制-函数在哪里调用this指向哪里</p>
+<p> javascript有一套不同于其他语言的对this的处理机制，在五种不同的情况下，this指向的各不相同</p>
+<ol>
+<li><p>全局范围内this指向全局对象，默认是window</p>
+</li>
+<li><p>函数调用时，this指向全局对象</p>
+</li>
+<li><p>方法调用时，this指向的是调用此方法的对象</p>
+</li>
+<li><p>调用构造函数时，在函数内部，this指向新创建的对象</p>
+</li>
+<li><p>显示设置this<strong>使用Function.prototype的call和apply时，函数内的this会被显式设置为函数调用的第一个参数</strong></p>
+<pre><code><span class="keyword">var</span> n = <span class="number">0</span>;
+<span class="function"><span class="keyword">function</span> <span class="title">output</span>(<span class="params"></span>)</span>{
+    alert(<span class="keyword">this</span>.n);
+}
+<span class="keyword">var</span> bar = {};
+bar.n = <span class="number">1</span>;
+bar.s = output;
+bar.s.apply();<span class="comment">//0</span>
+bar.s.call(bar, arg1, arg2, ...);
+bar.s.apply(bar, [<span class="built_in">arguments</span>]); <span class="comment">// 1</span>
+</code></pre></li>
+</ol>
+</li>
+<li><p>javascript中的原型<strong><em>继承</em></strong> </p>
+<p> 工厂模式 构造函数 原型方法</p>
+<p> C++继承public private protect，多态是基类和子类拥有相同的函数，这就涉及到一个概念–虚函数。delete基类指针时，若基类析构函数不是虚函数，那么只把基类部分的内存进行析构，而不会析构子类，从而导致内存泄露。如果将基类的析构函数改成虚函数，就可以避免这种情况，因为虚函数是后绑定的，析构函数将基类析构函数用实际对象的一组析构函数替换掉，先执行子类析构函数再执行父类虚函数。但是如果delete的是子类指针，那么在调用子类析构函数后会自动调用父类的析构函数。虚函数是为了重载和多态的需要，在基类中有定义，即便定义为空，子类中可以重写，纯虚函数是基类中没有定义，必须在子类中实现，相当于一个接口，拥有纯虚函数的类叫做虚基类，不能直接生成对象。</p>
+<p> <strong>原型链</strong>:</p>
+<ul>
+<li><p>每一个构造函数都有一个prototype属性，指向另一个对象。这个对象的所有属性和方法，都会被构造函数的实例继承。这意味着，我们可以把那些不变的属性和方法，直接定义在prototype对象上。</p>
+</li>
+<li><p>hasOwnProperty：是用来判断一个对象是否有你给出名称的属性或对象。不过需要注意的是，此方法无法检查该对象的原型链中是否具有该属性，该属性必须是对象本身的一个成员，in可以判断一个对象和他的原型链是否有属性或对象。isPrototypeOf是用来判断要检查其原型链的对象是否存在于指定对象实例中，是则返回true，否则返回false</p>
+</li>
+<li><p>属性查找：当查找一个对象的属性时，Javascript会向上遍历原型链，直到找到给定名称的属性为止，到查找到达原型链的顶部，也就是Object.prototype时，仍然没有找到时，会返回undefined</p>
+<pre><code>A.prototype.__proto__ = B.prototype;
+
+function <span class="keyword">Person</span>(){} //空的构造函数
+<span class="keyword">Person</span>.prototype = {
+    init: function(name){
+        this.name = name;
+    },
+    getName: function(){
+        return this.name;
+    },
+    call: function(){
+        alert(<span class="string">"I am a person"</span>);
+    }
+};
+function Employee(){}
+Employee.prototype = new <span class="keyword">Person</span>();
+Employee.prototype.constructor = Employee;//显示指定constructor可以防止prototype改写带来的问题
+Employee.prototype.init = function(name, employeeID){
+    this.name = name;
+    this.employeeID = employeeID;
+};
+Employee.prototype.getEmployeeID = function(){
+    return this.employeeID;
+};
+Employee.prototype.call =function(){
+    alert(<span class="string">"I am an employee"</span>);
+}
+
+function <span class="keyword">Person</span>(){}//定义一个函数
+var <span class="keyword">person</span> = <span class="keyword">Person</span>();//执行函数并将返回值赋值给<span class="keyword">person</span>，如果<span class="keyword">Person</span>是一个构造器的话，新的对象不会被创建，this将绑定到全局对象上
+var <span class="keyword">person</span> = new <span class="keyword">Person</span>();//使用构造函数<span class="keyword">Person</span>构造一个实例对象<span class="keyword">person</span>
+
+//属性查找展示 原型链
+function foo() {
+    this.add = function (x, y) {
+        return x + y;
+    }
+}
+
+foo.prototype.add = function (x, y) {
+    return x + y + 10;
+}
+
+Object.prototype.subtract = function (x, y) {
+    return x - y;
+}
+
+var f = new foo();
+alert(f.add(1, 2)); //结果是3，而不是13
+alert(f.subtract(1, 2)); //结果是-1
+
+定义<span class="string">"类"</span>  Ob
+两个实例化的对象 obj1,   obj2
+obj1.a = 1;
+console.log (obj1.a);
+console.log (obj2.a);
+Ob.prototype.a = 2;
+console.log (obj1.a);
+console.log (obj2.a);
+
+//答    1, undefined, 1, 2
+//解释   实例变量    原型中的变量什么的，原型链搜索
+
+ES6 class extends constructor
+
+var <span class="keyword">Animal</span> = class <span class="keyword">Animal</span> {
+    constructor(name) {
+        this.name = name;
+    }
+
+    speak() {
+        console.log(this.name + 'speaks');
+    }
+}
+
+var Dog = class Dog extends <span class="keyword">Animal</span> {
+    speak() {
+        console.log(this.name + 'barks');
+    }
+} 
+</code></pre></li>
+</ul>
+</li>
+<li><p>javascript<strong><em>数据类型</em></strong></p>
+<ul>
+<li><p>null 表示没有对象，即该处不应有值，典型的用法是作为函数的参数或对象原型链的终点</p>
+</li>
+<li><p>undefined 表示缺少值，此处应该有值，只是未定义，典型的用法是</p>
+<ol>
+<li><p>变量已经被声明，但是没有赋值</p>
+</li>
+<li><p>调用函数时，应该提供的参数没有被提供</p>
+</li>
+<li><p>对象没有赋值的属性</p>
+</li>
+<li><p>函数没有返回值时，默认返回undefined</p>
+</li>
+</ol>
+</li>
+<li><p>boolean</p>
+</li>
+<li><p>number–<a href="http://www.cnblogs.com/gushen/archive/2012/11/20/2778324.html" target="_blank" rel="external">js中toFixed解决办法</a></p>
+<pre><code>toFixed在ie6下存在bug
+<span class="built_in">Number</span>.prototype.toFixed = <span class="function"><span class="keyword">function</span>(<span class="params">s</span>) </span>{
+    <span class="keyword">return</span> (<span class="built_in">parseInt</span>(<span class="keyword">this</span> * <span class="built_in">Math</span>.pow(<span class="number">10</span>, s) + <span class="number">0.5</span>) / <span class="built_in">Math</span>.pow(<span class="number">10</span>, s)).toString();
+}
+</code></pre></li>
+<li><p>string</p>
+</li>
+<li><p>array/symbol</p>
+</li>
+<li><p>object</p>
+<ol>
+<li><p>var obj = {}</p>
+</li>
+<li><p>var obj = new Object();</p>
+</li>
+<li><p>var obj = Object.create(Object.prototype);</p>
+<pre><code>使用<span class="keyword">new</span>关键字调用构造函数时：
+<span class="number">1.</span> 会首先创建一个空对象，并且<span class="keyword">this</span>变量引用该对象，同时还继承了函数的原型；
+<span class="number">2.</span> 属性和方法被加入到<span class="keyword">this</span>引用的对象中；
+<span class="number">3.</span> 新创建的对象由<span class="keyword">this</span>所引用，并且最后隐式返回<span class="keyword">this</span>。
+</code></pre></li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>javascript<strong>反射</strong></p>
+<p> 反射定义：计算机程序在运行时可以访问、修改和检测他本身状态或行为的一种能力=》能够观察并修改自己的行为。对于javascript而言，简单来说，就是对类的成员进行修改等操作。javascript可以通过for(…in…)来实现反射。</p>
+<p> javascript中没有专门的机制来实现类的继承，但可以通过赋值一个类的prototype到另外一个类来实现继承。但是，这种方式并非严格的继承，两个类是同一prototype的引用，重写一个类的成员或方法会影响另一个。可以使用反射机制来继承，利用for(…in…)语句枚举出所有的基类prototype的成员，并将其赋值给prototype对象。进一步，可以为每个类添加一个共有的方法用来实现类的继承。</p>
+<pre><code><span class="function"><span class="keyword">function</span>.<span class="title">prototype</span>.<span class="title">inherit</span> = <span class="title">function</span>(<span class="params">baseClass</span>)</span>{
+    <span class="keyword">for</span>(<span class="keyword">var</span> p <span class="keyword">in</span> baseClass.prototype){
+        <span class="keyword">this</span>.prototype[p] = baseClass.prototype[p];
+    }
+}
+</code></pre><p> 可以看出，所谓的反射机制，从简单方面来讲，就是对类中成员进行枚举、修改等操作的能力。如果存在一种机制，在不知道某一个类中到底有什么函数，或者成员变量的情况下就可以对其操作（例如，javascript可以对类成员进行枚举），这种机制就可以称为反射。在实现继承机制时，只需要通过反射机制逐一复制，然后再修改需要覆盖的成员，就可以达到继承的效果。这也是反射机制的一个应用。</p>
+</li>
+</ol>
+<ol>
+<li><p><strong>javascript闭包</strong></p>
+</li>
+<li><p>javascript模块化管理</p>
+<ol>
+<li><p>为什么需要模块化</p>
+<ol>
+<li><p>恼人的命名冲突</p>
+</li>
+<li><p>繁琐的文件依赖</p>
+</li>
+</ol>
+</li>
+<li><p>模块化编程：定义封装的模块 + 定义新模块对其他模块的依赖 + 对其他模块的引入支持</p>
+</li>
+<li><p>种类</p>
+<ul>
+<li><p>commonjs：require()引入外部模块，exports对象用于导出当前模块的方法或变量，module对象表示模块本身，是一种<em>同步</em>加载方式，不适合浏览器环境→nodejs</p>
+<pre><code>var <span class="built_in">math</span> = <span class="built_in">require</span>(<span class="string">"math"</span>);
+<span class="built_in">math</span>.add(<span class="number">2</span>, <span class="number">3</span>);//<span class="built_in">math</span>模块加载完毕才能执行
+</code></pre></li>
+<li><p>AMD：<em>异步</em>模块定义，自由变量/全局变量define函数，define(id?,dependencies?,factory)→requirejs，<em>依赖前置or依赖注入？！</em></p>
+<pre><code>define(<span class="string">"alpha"</span>, [<span class="string">"require"</span>, <span class="string">"exports"</span>, <span class="string">"beta"</span>], funtion(<span class="built_in">require</span>, exports, beta){
+    exports.verb = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+        <span class="comment">//return beta.verb();</span>
+        <span class="keyword">return</span> <span class="built_in">require</span>(<span class="string">"beta"</span>).verb();
+    };
+});
+</code></pre></li>
+<li><p>CMD：define(function(<strong>require,exports,module</strong>){…})→seajs，<em>依赖就近</em></p>
+<pre><code>define(id?, reps?, factory)
+                       |
+            <span class="built_in">require</span>, exports, <span class="built_in">module</span>
+define(funtion(<span class="built_in">require</span>, exports, <span class="built_in">module</span>){
+    <span class="keyword">var</span> verb = <span class="built_in">require</span>(<span class="string">"verb"</span>);
+    <span class="built_in">module</span>.eports.verb = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+        <span class="comment">//return beta.verb();</span>
+        <span class="keyword">return</span> <span class="built_in">require</span>(<span class="string">"beta"</span>).verb();
+    }
+});
+</code></pre><p>  coolie//nodejs部分一个模块化开发工具</p>
+</li>
+</ul>
+</li>
+<li><p>seajs–为前端开发提供简单、极致的模块化开发体验的一个<strong>模块加载器</strong></p>
+<ol>
+<li><p>通过exports暴露接口，这意味着不需要命名空间了，更不需要全局变量，这是一种彻底的命名冲突解决方案</p>
+</li>
+<li><p>通过require引入依赖，可以让依赖内置，开发者只需要关心当前模块的依赖，其他事情seajs都会自动处理好，对模块开发者来说，这是一种很好的关注度分离，能让程序媛更多地享受编码的乐趣</p>
+</li>
+<li><p>模块的版本管理，通过别名等配置，配合构建工具，可以比较轻松地实现模块的版本管理</p>
+</li>
+<li><p>提高可维护性，模块化可以让每个文件的职责单一，非常有利于代码的维护，seajs还提供了nocache、debug等插件，拥有在线调试等功能，能比较明显地提升效率。</p>
+</li>
+<li><p>前端性能优化，seaj通过异步加载模块，这对页面性能非常有益，seajs还提供了combo、flush等插件，配合服务端，可以很好地对页面性能进行调优</p>
+</li>
+<li><p>跨环境共享模块，CMD模块定义规范与nodejs的模块规范费仓相近，通过seajs的nodejs版本，可以很方便地实现模块的跨服务器和浏览器共享</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>变量声明提升，<em>定义还在原来的地方</em>，函数声明提前，变量声明提前，但是函数优先级高，同名时意义为函数-<strong>javascript中变量的作用域由函数决定</strong></p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">()</span>{</span>
+    console.<span class="built_in">log</span><span class="params">(a)</span>;            <span class="comment">//undefined</span>
+    console.<span class="built_in">log</span><span class="params">(foo<span class="params">()</span>)</span>;        <span class="comment">//2</span>
+    var a = <span class="number">1</span>;
+    <span class="function"><span class="keyword">function</span> <span class="title">foo</span><span class="params">()</span>{</span>
+        return <span class="number">2</span>;
+    }
+}
+</code></pre></li>
+<li><p>window.onload和$(document).ready区别</p>
+<p>ready表示文档的dom已经加载完毕，但不包括图片、视频等资源，而onload事件是DOM树创建完毕并且网页所依赖的资源都加载完成后发生，ready发生在onload之前；onload需要页面上所有的资源都加载上之后执行，而ready是DOM文档树已经解析完成时，说ready比onload快最显著的是比如一个页面上有一个很大的图片，加载要好久，onload只有在图片加载完成之后执行，而ready不必等图片加载完成。</p>
+</li>
+<li><p><strong>javascript同源策略</strong></p>
+<p>同源策略<em>SOP</em>限制了一个源中加载文本或脚本与来自其他源中资源的交互方式。同源策略出于<strong>安全</strong>考虑，不允许源A的脚本读取源B的资源内容，但却允许执行源B的资源。</p>
+<p>来自源点 A 的 Web 页面可以：</p>
+<ul>
+<li><p>从源点 B 获取脚本、CSS 样式表或图像</p>
+</li>
+<li><p>包含一个指向源点 B 中页面的 iframe/frame</p>
+</li>
+<li><p>使用 HTML 元素的 src 属性（比如iframe 或img）将信息发送到源点 B 。</p>
+</li>
+</ul>
+<p>来自源点 A 的 Web 页面不可以：</p>
+<ul>
+<li><p>对源点 B 进行 Ajax 调用</p>
+</li>
+<li><p>读取或操纵 iframe/frame 中指向页面 B 的内容</p>
+</li>
+</ul>
+<p>要求：协议相同、域名相同、端口相同</p>
+<p><em>跨域通信</em>：</p>
+<ul>
+<li><p>img、script、link、iframe（慎用），使用CDN库</p>
+</li>
+<li><p>请求json数据/jsonp</p>
+</li>
+<li><p>window.postMessage</p>
+</li>
+<li><p>内部服务器代理</p>
+</li>
+<li><p>HTML5规范重点CORS功能： Access-Control-Allow-Origin:</p>
+</li>
+<li><p><a href="https://www.ibm.com/developerworks/cn/web/wa-crossdomaincomm/" target="_blank" rel="external">利用客户端解决方案改进跨域通信</a>：</p>
+<p>  mashup 是一种将不同供应商的数据或组件集成起来，使之更加有用或更用户化的 Web 应用程序</p>
+<ol>
+<li><p>跨子域解决方案：document.domain</p>
+ <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span><br><span class="line">	<span class="built_in">document</span>.domain = <span class="string">"css88.com"</span>;<span class="comment">//document.write(document.domain)</span></span><br><span class="line">	<span class="keyword">var</span> createAjaxIframe=&#123;</span><br><span class="line">		appIframe: <span class="function"><span class="keyword">function</span>(<span class="params">iframeId, iframeSrc</span>)</span>&#123;</span><br><span class="line">			<span class="keyword">var</span> iframe = <span class="built_in">document</span>.createElement(<span class="string">"iframe"</span>);</span><br><span class="line">			iframe.src = iframeSrc;<span class="comment">//"http://css88.com/demo/domain/iframe.html"</span></span><br><span class="line">			iframe.id = iframeId;</span><br><span class="line">			iframe.style.display = <span class="string">"none"</span>;</span><br><span class="line">			<span class="keyword">if</span> (iframe.attachEvent) &#123;</span><br><span class="line">				iframe.attachEvent(<span class="string">"onload"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">					createAjaxIframe.domainAjax(iframeId);</span><br><span class="line">				&#125;);</span><br><span class="line">			&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">				iframe.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">					createAjaxIframe.domainAjax(iframeId);</span><br><span class="line">				&#125;;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">document</span>.body.appendChild(iframe);</span><br><span class="line">		&#125;,</span><br><span class="line">		domainAjax: <span class="function"><span class="keyword">function</span>(<span class="params">iframeId</span>)</span>&#123;</span><br><span class="line">			<span class="keyword">var</span> iframeDom = <span class="built_in">document</span>.getElementById(iframeId).contentWindow.$;<span class="comment">//获得iframe的window对象</span></span><br><span class="line">			iframeDom.getJSON(<span class="string">"http://css88.com/demo/iframe-domain/city.html"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">date</span>)</span>&#123;</span><br><span class="line">				<span class="keyword">var</span> cityOption = <span class="string">""</span>;</span><br><span class="line">				<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; date.length; i++) &#123;</span><br><span class="line">					cityOption += date[i].c_name + <span class="string">"--"</span> + date[i].c_value + <span class="string">"&lt;br /&gt;"</span></span><br><span class="line">				&#125;</span><br><span class="line">				$(<span class="string">"#test"</span>).html(cityOption);</span><br><span class="line">			&#125;);</span><br><span class="line">		&#125;	</span><br><span class="line">	&#125;;</span><br><span class="line">	createAjaxIframe.appIframe(<span class="string">"iframe"</span>,<span class="string">"http://css88.com/demo/iframe-domain/iframe.html"</span>);</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code><span class="number">2</span>. URL.hash解决方案：URL的任何更改都会导致加载新的页面。唯一的例外是 hash 值的变化。任何 URL 的 hash 更改都不会导致页面刷新。许多 Web <span class="number">2.0</span> 网站中都已经开始广泛使用 Hash，以标记部分刷新页面时的每一个步骤。在跨域通信中，hash 是一笔宝贵的资产。虽然在获取对方 hash 值方面有一些限制，但来自不同源点的文件可以设置对方的 URL，包括 hash 值。文档相互之间可以使用 hash 传送信息。
+
+<span class="number">3</span>. <span class="built_in">cross</span>-fragment技术，使用了iframe。当 A 想要与 iframe B 进行通信时，会先在其自身中创建一个 iframe。这个 iframe 指向与 B 位于同一域中的 “代理” C。代理 URL 中包含参数、数据以及 B 的框架标识符。当 C 加载信息时，它会从 A 中获取请求和数据并调用 B 中相应的方法。由于 B 和 C 在相同的域中，所以可以通过另一个窗口的处理程序直接调用对方的方法。A 可以成功地向 B 发送信息，B 也可以用同样的方式进行响应。
+
+<span class="number">4</span>. postMessage方案
+
+        http:<span class="comment">//www.otherapp.com/index.html</span>
+        <span class="function"><span class="keyword">function</span> <span class="title">postMessage</span><span class="params">(msg)</span>{</span>
+             var targetWindow = parent.window;
+              targetWindow.postMessage<span class="params">(msg,<span class="string">"*"</span>)</span>;
+        }
+        <span class="function"><span class="keyword">function</span> <span class="title">handleReceive</span><span class="params">(msg)</span>{</span>
+         var object = dojo.fromJson<span class="params">(msg)</span>;
+         <span class="keyword">if</span><span class="params">(object.status == “ok”)</span>{
+            <span class="comment">//continue to do other things</span>
+            ……
+         }<span class="keyword">else</span>{
+            <span class="comment">//retry sending msg</span>
+            ……
+         }
+        }
+        window.addEventListener<span class="params">(<span class="string">"message"</span>, handleReceive, <span class="literal">false</span>)</span>;
+        window.onLoad = <span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>
+            postMessage<span class="params">(<span class="string">"already loaded"</span>)</span>;
+        }
+
+        http:<span class="comment">//www.myapp.com/index.html</span>
+        <span class="function"><span class="keyword">function</span> <span class="title">handleReceive</span><span class="params">(event)</span>{</span> 
+            <span class="keyword">if</span><span class="params">(event.origin != <span class="string">"http://www.otherapp.com"</span>)</span>
+                return; 
+             <span class="comment">//process data</span>
+             ……
+             var otherAppFrame = document.getElementById<span class="params">(“otherApp”)</span> 
+             otherAppFrame.postMessage<span class="params">(“{status:’ok’}”,”http://www.otherapp.com”)</span>;
+        }
+        window.addEventListener<span class="params">(<span class="string">"message"</span>, handleReceive, <span class="literal">false</span>)</span>;
+</code></pre><ol>
+<li><p>重写javascript内置代码</p>
+<p>利用arguments对象（伪数组）可以实现重载，利用arguments.length可以获取函数的参数个数，typeof判断类型，Object.prototype.toString.call()</p>
+</li>
+</ol>
+<pre><code><span class="built_in">Array</span>.prototype.duplicator = <span class="built_in">Array</span>.prototype.duplicator || <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+    <span class="keyword">return</span> <span class="keyword">this</span>.concat(<span class="keyword">this</span>);
+}
+
+<span class="comment">//函数内部的特殊参数对象arguments，添加前缀(app)，注意的是arguments是一个伪数组，需要转化成标准数组后才能使用unshift方法</span>
+<span class="keyword">var</span> log = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+    <span class="keyword">var</span> args = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>);
+    args.unshift(<span class="string">'(app)'</span>);
+    <span class="built_in">console</span>.log.apply(<span class="built_in">console</span>, args);
+}
+
+<span class="function"><span class="keyword">function</span> <span class="title">stringconcat</span>(<span class="params"></span>)</span>{
+    <span class="keyword">var</span> result = [];
+    stringconcat.merge.call(<span class="literal">null</span>, result, <span class="built_in">arguments</span>);
+    <span class="keyword">return</span> result.join(<span class="string">"+"</span>);
+}
+stringconcat.prefix = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+    <span class="keyword">var</span> _arguments = [], _this = <span class="keyword">this</span>;
+    _this.merge.call(<span class="literal">null</span>, _arguments, <span class="built_in">arguments</span>);
+    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+        <span class="keyword">var</span> _args = _arguments.slice(<span class="number">0</span>);<span class="comment">//选择全部</span>
+        _this.merge.call(<span class="literal">null</span>, _args, <span class="built_in">arguments</span>);
+        <span class="keyword">return</span> _this.apply(<span class="literal">null</span>, _args);
+    };
+};
+stringconcat.merge = <span class="function"><span class="keyword">function</span>(<span class="params">array, arrayLike</span>)</span>{
+    <span class="keyword">var</span> i = <span class="number">0</span>, len = <span class="number">0</span>;
+    <span class="keyword">for</span>(i = <span class="number">0</span>, len = arrayLike.length; i &lt; len; i++){
+        array.push(arrayLike[i]);
+    }
+}
+
+<span class="function"><span class="keyword">function</span> <span class="title">repeat</span>(<span class="params">func, times, wait</span>)</span>{
+    <span class="function"><span class="keyword">function</span> <span class="title">repeatImpl</span>(<span class="params"></span>)</span>{
+        <span class="keyword">var</span> handler, _arguments = <span class="built_in">arguments</span>, i = <span class="number">0</span>;
+        handler = setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+            i = i+<span class="number">1</span>;
+            <span class="keyword">if</span>(i &gt; times){
+                clearInterval(handler);
+                <span class="keyword">return</span>;
+            }
+            func.apply(<span class="literal">null</span>, _arguments);
+        }, wait);
+    }
+    <span class="keyword">return</span> repeatImpl;
+}
+<span class="keyword">var</span> repeatFun = repeat(alert, <span class="number">4</span>, <span class="number">3000</span>);
+repeatFun(<span class="string">"helloword"</span>);
+</code></pre><ol>
+<li><p>‘use strict’</p>
+<p>使javascript代码以严格模式运行，其设立目的为：</p>
+<ol>
+<li><p>消除javascript语法的不合理不严谨之处，减少一些怪异行为</p>
+</li>
+<li><p>消除代码允许的不安全之处，保证代码运行的安全</p>
+</li>
+<li><p>提高编译器效率，增加运行速度</p>
+</li>
+<li><p>为未来新版本的javascript做铺垫</p>
+</li>
+</ol>
+</li>
+<li><p><strong>AJAX</strong></p>
+<ul>
+<li><p>工作原理</p>
+<p>  异步javascript和xml，是一种创建交互式网页应用的网页开发技术。其工作原理相当于在用户和服务器之间加了一个中间ajax引擎，使用户操作和服务器响应异步化。通过<strong><em>XMLHttpRequest</em></strong>或者<strong>ACtiveXObject</strong>对象来向服务器发异步请求，从服务器获得数据，然后用javascript来操作dom从而更新页面。</p>
+<p>  ajax好处是<strong>无刷新更新数据、异步与服务器通信、前后端负载平衡、数据与呈现分离</strong>，结合angularjs。<a href="http://m.baidu.com/from=1099b/bd_page_type=1/ssid=0/uid=0/pu=usm%400%2Csz%401321_2001%2Cta%40utouch_1_8.1_3_600/baiduid=93CE25ED7C3279A8595C592724F2DB72/w=0_10_ajax工作原理/t=wap/l=3/tc?ref=www_utouch&amp;lid=7784803104100688478&amp;order=1&amp;vit=osres&amp;tj=www_normal_1_0_10_title&amp;m=8&amp;srd=1&amp;dict=20&amp;sec=2078&amp;di=636f8a3d787881d8&amp;bdenc=1&amp;nsrc=IlPT2AEptyoA_yixCFOxXnANedT62v3IEQGG_ytK1DK6mlrte4viZQRAMT06TXaN1FXsx7P0sqdUgiPzRiBzzBAxrqxpsH9hbX8fgPq3ghCLHqIOfgBjOgaSFiowz3C" target="_blank" rel="external">参考</a></p>
+</li>
+<li><p>用法</p>
+<pre><code>var xmlhttp = new window.XMLHttpRequest ? XMLHttpRequest<span class="params">()</span> : ActiveXObject<span class="params">(<span class="string">"Microsoft.XMLHTTP"</span>)</span>;
+xmlhtp.onreadystatechange = <span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>
+    <span class="keyword">if</span><span class="params">(xmlhttp.readystate == <span class="number">4</span> &amp;&amp; xmlhttp.status == <span class="number">200</span>)</span>{
+        <span class="comment">//0 请求未初始化</span>
+        <span class="comment">//1 服务器连接已建立</span>
+        <span class="comment">//2 请求已接收</span>
+        <span class="comment">//3 请求处理中</span>
+        <span class="comment">//4 请求已完成，且响应已就绪</span>
+        <span class="comment">//readyState 有五种取值：</span>
+        <span class="comment">//“uninitialized”：默认状态</span>
+        <span class="comment">//“loading”：下载开始</span>
+        <span class="comment">//“loaded”：下载完成</span>
+        <span class="comment">//“interactive”：下载完成但尚不可用</span>
+        <span class="comment">//“complete”：所有数据已经准备好</span>
+    }
+};
+<span class="comment">//get方法</span>
+xmlhttp.open<span class="params">(“GET”, <span class="string">"url"</span>, <span class="literal">true</span>)</span>;
+xmlhttp.send<span class="params">()</span>;
+<span class="comment">//post方法</span>
+xmlhttp.open<span class="params">(“POST”, <span class="string">"url"</span>, <span class="literal">true</span>)</span>;
+xmlhttp.sendRequestHeader<span class="params">(<span class="string">"Content-type"</span>, <span class="string">"application/x-www-form-urlencode"</span>)</span>;
+xmlhttp.send<span class="params">(<span class="string">"param1=value1&amp;param2=value2"</span>)</span>
+
+<span class="comment">// 从服务端获取当前的时间</span>
+getCurrentTime: <span class="function"><span class="keyword">function</span> <span class="params">(callback)</span> {</span>
+  var xmlhttp = new XMLHttpRequest;
+  xmlhttp.onreadystatechange = <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span>
+    <span class="keyword">if</span> <span class="params">(xmlhttp.readyState != <span class="number">4</span>)</span> {
+      return;
+    }
+    var now = new Date<span class="params">(xmlhttp.getResponseHeader<span class="params">('date')</span>)</span>;
+    <span class="keyword">if</span> <span class="params">(!now)</span> {
+      now = new Date;
+    }
+    xmlhttp.onreadystatechange = null;
+    callback<span class="params">(now)</span>;
+  };
+  xmlhttp.open<span class="params">(<span class="string">"HEAD"</span>, location.href, <span class="literal">true</span>)</span>;
+  xmlhttp.send<span class="params">(null)</span>;
+}
+</code></pre></li>
+</ul>
+</li>
+<li><p><strong>JSONP</strong></p>
+<p>可执行的javascript数据，利用了script的跨域能力，通过<em>插入script和调用回调函数</em>来实现跨域通信，可以被调用并使用动态脚本注入技术插入到任何网站，解决了ajax的跨域问题</p>
+<p>jsonp是一种简单高效的跨域方式，html中的script标签可以加载并执行其他域的js，于是我们可以通过script标记来动态加载其他域的脚本。jsonp易于实现，但也存在安全隐患，若第三方脚本随意执行，那么他就可以任意修改页面内容，获得敏感数据。但在信任的双方传递数据，还是非常合适的。</p>
+<pre><code>$<span class="params">(<span class="string">"#getJsonpByJquery"</span>)</span>.click<span class="params">(function <span class="params">()</span> {
+    $.ajax<span class="params">({
+        url: 'http://localhost:<span class="number">2701</span>/home/somejsonp',
+        dataType: <span class="string">"jsonp"</span>,
+        jsonp: <span class="string">"callback"</span>,
+        success: function <span class="params">(data)</span> { console.log<span class="params">(data)</span>; } 
+    })</span>;
+})</span>;
+<span class="comment">//原生JS</span>
+&lt;button id=<span class="string">"btn"</span>&gt;click&lt;/button&gt;
+&lt;script type=<span class="string">"text/javascript"</span>&gt;
+    <span class="function"><span class="keyword">function</span> $<span class="params">(str)</span>{</span>
+        return document.getElementById<span class="params">(str)</span>;
+    }
+    <span class="function"><span class="keyword">function</span> <span class="title">CreateScript</span><span class="params">(src)</span> {</span>
+        var Scrip=document.createElement<span class="params">('script')</span>;
+        Scrip.src=src;
+        document.body.appendChild<span class="params">(Scrip)</span>;
+    }
+    <span class="function"><span class="keyword">function</span> <span class="title">jsonpcallback</span><span class="params">(json)</span> {</span>
+        console.<span class="built_in">log</span><span class="params">(json)</span>;<span class="comment">//Object { email="中国", email2="中国222"}</span>
+    }
+    $<span class="params">('#btn')</span>.onclick=<span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>
+      CreateScript<span class="params">(<span class="string">"http://localhost:51335/somejson?callback=jsonpcallback"</span>)</span>    
+    };
+&lt;/script&gt;
+</code></pre><p>json数据是javascript对象表示法，与javascript中对象很类似，但是json中key必须使用双引号，value只能取数字、字符串、布尔值、数组、对象和null</p>
+<pre><code><span class="keyword">var</span> jsonStr = <span class="string">'{"name": "Sally", "age": 18}'</span>;
+<span class="built_in">eval</span>(<span class="string">'('</span>+jsonStr+<span class="string">')'</span>);
+<span class="built_in">JSON</span>.parse(jsonStr, <span class="function"><span class="keyword">function</span>(<span class="params">key, value</span>)</span>{});
+<span class="keyword">var</span> obj = {name: <span class="string">"Sally"</span>, age: <span class="number">18</span>};
+<span class="built_in">JSON</span>.stringify(obj, <span class="function"><span class="keyword">function</span>(<span class="params">key, value</span>)</span>{});
+</code></pre></li>
+</ol>
+<ol>
+<li><p>小知识</p>
+<ul>
+<li><p>javascript和css属性对照    </p>
+<ul>
+<li><p>-webkit-column-count webkitColumnCount/-moz-column-count MozColumnCount/-ms-transform msTransform</p>
+</li>
+<li><p>不变：border clear margin padding background color display font</p>
+</li>
+<li><p>不一致：float→floatStyle </p>
+</li>
+<li><p>驼峰：含有-的        </p>
+</li>
+</ul>
+</li>
+<li><p>href=”#”和href=”javascript: void(0)”区别：<strong>前者是位置信息，后者是一个死链</strong></p>
+</li>
+<li><p>focus和focusin</p>
+<ul>
+<li><p>前者不冒泡，后者冒泡</p>
+</li>
+<li><p>前者兼容性好，后者除Firefox外都很好</p>
+</li>
+<li><p>可获得焦点的元素：window，链接被点击或键盘操作，表单空间被点击或键盘操作，设置<em>tabindex</em>属性的元素被点击或键盘操作</p>
+</li>
+</ul>
+</li>
+<li><p>===和==区别</p>
+<pre><code>===比较过程
+<span class="number">1.</span> 类型 不同 <span class="literal">false</span>
+<span class="number">2.</span> 值都是null或者undefined <span class="literal">true</span>
+<span class="number">3.</span> 都是<span class="keyword">bool</span>类型<span class="literal">true</span>或者<span class="literal">false</span> <span class="literal">true</span>
+<span class="number">4.</span> 有一个是NaN <span class="literal">false</span>
+<span class="number">5.</span> 都是number且值相等 -<span class="number">0</span>=<span class="number">0</span> <span class="literal">true</span>
+<span class="number">6.</span> 都是字符串，且相同位置包含相同的<span class="number">16</span>位值 <span class="literal">true</span> 长度或者内容或者编码不同 <span class="literal">false</span>
+<span class="number">7.</span> 指向相同对象、数组、函数 <span class="literal">true</span>
+
+==比较过程
+<span class="number">1.</span> 类型相同，转===比较
+<span class="number">2.</span> null和undefined相等
+<span class="number">3.</span> 数值和字符串转数字相等
+<span class="number">4.</span> <span class="keyword">bool</span>类型<span class="literal">true</span>-<span class="number">1</span> <span class="literal">false</span>-<span class="number">0</span>
+<span class="number">5.</span> 对象和数字/字符串比较，将对象转换为原始值用==继续比较
+</code></pre></li>
+<li><p>ToPrimitive</p>
+<pre><code>在javascript中，一共有<span class="number">2</span>种数据类型：原始值和对象值，原始值又包括undefined，null，<span class="keyword">bool</span>、number和<span class="built_in">string</span>，其他所有都是对象值，包括<span class="built_in">array</span>和function
+
+<span class="number">1.</span> 如果输入值是原始值，则返回自身
+<span class="number">2.</span> 调用对象转数字过程（undefined=&gt;NaN）
+    <span class="number">1.</span> valueOf 返回值作数字
+    <span class="number">2.</span> toString返回原始值，用结果作数字
+    <span class="number">3.</span> <span class="keyword">throw</span> a TypeError
+<span class="number">3.</span> 调用对象转字符串过程
+    <span class="number">1.</span> toSting 若返回原始值，则用结果作字符串
+    <span class="number">2.</span> 没有toSting或返回值不是原始值，调用valueOf方法
+    <span class="number">3.</span> <span class="keyword">throw</span> a TypeError
+
+计算value1+value2时
+<span class="number">1.</span> 执行ToPrimitive过程
+<span class="number">2.</span> 任意为字符串，则两者都转换为字符串，否则为数字加
+    &gt; []+[]
+    &lt; <span class="string">""</span>
+    &gt; []+{}
+    &lt; <span class="string">"[object Object]"</span>
+    &gt; {}+[]
+    &lt; <span class="number">0</span>
+    &gt; {}+{}
+    &lt; NaN <span class="comment">//JavaScript引擎将第一个{}解释成了一个空的代码块并忽略了它.NaN其实是后面的表达式+{}计算的结果 (加号以及后面的{}).这里的加号并不是代表加法的二元运算符,而是一个一元运算符,作用是将它后面的操作数转换成数字,和Number()函数完全一样.</span>
+</code></pre></li>
+<li><p>判断是否第一次点进<strong>isPostBack</strong></p>
+</li>
+<li><p>判断一个对象是否为数组</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">isArray</span>(<span class="params">arg</span>)</span>{
+    <span class="keyword">if</span>(<span class="keyword">typeof</span> arg === <span class="string">"object"</span>){
+        <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(arg) === <span class="string">"[Object Array]"</span>;
+    }
+    <span class="keyword">return</span> <span class="literal">false</span>;
+}
+</code></pre></li>
+<li><p>判断一个对象是否为函数</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">isFunction</span>(<span class="params">arg</span>)</span>{
+    <span class="keyword">if</span>(arg){
+        <span class="keyword">if</span>(<span class="keyword">typeof</span>(<span class="string">"/./"</span>) !== <span class="string">"function"</span>){
+            <span class="keyword">return</span> <span class="keyword">typeof</span> arg === <span class="string">"function"</span>;
+        }
+        <span class="keyword">else</span>{
+            <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(arg) === <span class="string">"[Object Function]"</span>;
+        }
+    }
+    <span class="keyword">return</span> <span class="literal">false</span>;
+}
+</code></pre></li>
+<li><p>getViewportSize</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">getViewportSize</span>(<span class="params">w</span>)</span>{
+    w = w | <span class="built_in">window</span>;
+    <span class="keyword">if</span>(<span class="string">"innerHeight"</span> <span class="keyword">in</span> w){<span class="comment">//IE9及标准浏览器 pageXOffset</span>
+        <span class="keyword">return</span> {
+            width: w.innerWidth,
+            height: w.innerHeight
+        };
+    }
+    <span class="keyword">var</span> d = w.document;
+    <span class="keyword">if</span>(<span class="built_in">document</span>.compatMode === <span class="string">"CSS1Compat"</span>){<span class="comment">//IE8及以下浏览器在标准模式下</span>
+        <span class="keyword">return</span> {
+            width: d.documentElement.innerWidth,<span class="comment">//scrollLeft</span>
+            height: d.documentElement.innerHeight
+        };
+    }
+    <span class="keyword">return</span> {<span class="comment">//IE8及以下浏览器在怪异模式下</span>
+        width: d.body.innerWidth,
+        height: d.body.innerHeight
+    };
+}
+
+<span class="function"><span class="keyword">function</span> <span class="title">viewport</span>(<span class="params"></span>)</span>{
+    <span class="keyword">var</span> e = <span class="built_in">window</span> , a = <span class="string">'inner'</span>;
+    <span class="keyword">if</span> ( !( <span class="string">'innerWidth'</span> <span class="keyword">in</span> <span class="built_in">window</span> ) ) {
+        a = <span class="string">'client'</span>;
+        e = <span class="built_in">document</span>.documentElement || <span class="built_in">document</span>.body;
+    }
+    <span class="keyword">return</span> { width : e[ a+<span class="string">'Width'</span> ] , height : e[ a+<span class="string">'Height'</span> ] }
+}
+</code></pre></li>
+<li><p>createElement(tagName)/createTextNode(text)包含文本的文本节点/createDocumentFragment()文档碎片节点</p>
+</li>
+<li><p>js的<a href="https://developer.mozilla.org/en-US/docs/Web/API/Event" target="_blank" rel="external">event</a>对象</p>
+</li>
+</ul>
+</li>
+<li><p>DOM遍历</p>
+<ul>
+<li><p>获取父亲节点 parentNode/parentElement(IE)</p>
+</li>
+<li><p>获取子节点 childNodes/children(IE)</p>
+</li>
+<li><p>兄弟节点 previousSibling/nextSibling <em>nodeType(1.元素2.属性3.文本8.注释9.文档)</em></p>
+</li>
+</ul>
+</li>
+<li><p>Javascript异步IO    </p>
+<p>setTimeout/setInterval,ajax,<strong>web worker</strong></p>
+<ol>
+<li><p><em>web worker</em></p>
+<p> 是html5提供的一个javascript多线程解决方案，其基本原理是在当前javascript主线程中，使用worker类加载一个javascript文件来开辟一个新的线程，起到互不阻塞执行的效果，并且提供主线程和新线程之间数据交换的接口：postmessage，onmessage。利用web worker我们可以在执行一些复杂的大量运算而不会影响页面的展示，并且不会弹出恶心的脚本正忙提示，但是web worker不支持跨域加载js，内部不能访问dom，不是每个浏览器都支持这个新特性。</p>
+<pre><code>//worker.js
+var i=0;
+
+function timedCount(){
+    i=i+1;
+    postMessage(i);
+    setTimeout("timedCount()",500);
+}
+timedCount();
+
+//web_worker.html
+<span class="doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;<span class="title">html</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">head</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">title</span>&gt;</span>Sallymew is great!<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"Content-Type"</span> <span class="attribute">content</span>=<span class="value">"text/html; charset=gb2312"</span> /&gt;</span>
+        <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"Content-Language"</span> <span class="attribute">content</span>=<span class="value">"zh-cn"</span> /&gt;</span>
+    <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">body</span>&gt;</span>
+        <span class="comment">&lt;!--要死 为什么chrome不能正常执行啊！！！--&gt;</span>
+        <span class="tag">&lt;<span class="title">p</span>&gt;</span>计数: <span class="tag">&lt;<span class="title">output</span> <span class="attribute">id</span>=<span class="value">"result"</span>&gt;</span><span class="tag">&lt;/<span class="title">output</span>&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">button</span> <span class="attribute">onclick</span>=<span class="value">"startWorker()"</span>&gt;</span>开始 Worker<span class="tag">&lt;/<span class="title">button</span>&gt;</span> 
+        <span class="tag">&lt;<span class="title">button</span> <span class="attribute">onclick</span>=<span class="value">"stopWorker()"</span>&gt;</span>停止 Worker<span class="tag">&lt;/<span class="title">button</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">br</span> /&gt;</span><span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+
+        <span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">
+            <span class="keyword">var</span> w;
+            <span class="function"><span class="keyword">function</span> <span class="title">startWorker</span>(<span class="params"></span>)</span>{
+                <span class="keyword">if</span>(<span class="keyword">typeof</span>(Worker) !== <span class="string">"undefined"</span>){
+                    <span class="keyword">if</span>(<span class="keyword">typeof</span>(w) == <span class="string">"undefined"</span>){
+                        w = <span class="keyword">new</span> Worker(<span class="string">"worker.js"</span>);
+                    }
+                    w.postMessage(<span class="string">"hello"</span>);
+                    w.onmessage = <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>{
+                        <span class="built_in">document</span>.getElementById(<span class="string">"result"</span>).innerHTML = event.data;
+                    };
+                }
+                <span class="keyword">else</span>{
+                    <span class="built_in">document</span>.getElementById(<span class="string">"result"</span>).innerHTML=<span class="string">"Sorry, your browser does not support Web Workers..."</span>;
+                }
+            }
+
+            <span class="function"><span class="keyword">function</span> <span class="title">stopWorker</span>(<span class="params"></span>)</span>{ 
+                w.terminate();
+            }
+        </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</code></pre></li>
+</ol>
+</li>
+<li><p>javascript事件队列</p>
+<pre><code><span class="keyword">var</span> QueueEnginer = funtion(){
+    <span class="keyword">this</span>.Queue = [];
+}
+QueueEnginer.prototype = {
+    processTime: <span class="number">20</span>,
+    add: <span class="function"><span class="keyword">function</span><span class="params">(fn, context, arrParam)</span></span>{
+        <span class="keyword">this</span>.Queue.push{
+            fn: fn,
+            context: context,
+            param: arrParam
+        }
+    },
+    start: <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
+        <span class="keyword">var</span> that = <span class="keyword">this</span>;
+        setTimeout(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{that.process();}, that.processTime);
+    },
+    process: <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
+        <span class="keyword">var</span> queue = <span class="keyword">this</span>.Queue.shift();
+        <span class="keyword">if</span>(!queue) <span class="keyword">return</span>;
+        queue.fn.apply(queue.context, queue.param);
+        queue = <span class="literal">null</span>;<span class="comment">//垃圾回收</span>
+        <span class="keyword">this</span>.start;
+    }
+}
+</code></pre></li>
+<li><p>javascript垃圾回收机制</p>
+<ul>
+<li><p>变量生命周期</p>
+</li>
+<li><p>标记清除</p>
+</li>
+<li><p>引用计数</p>
+</li>
+</ul>
+</li>
+<li><p><strong>一些宽度值意义</strong></p>
+<ul>
+<li><p>offsetWidth: content+padding+border==getBoundingClientRect()</p>
+</li>
+<li><p>clientWidth: content+padding</p>
+</li>
+<li><p>scrollWidth: content+padding+溢出尺寸==就是真实的width</p>
+</li>
+</ul>
+</li>
+<li><p><strong>事件模型</strong></p>
+<ul>
+<li><p>DOM事件模型</p>
+<ol>
+<li><p>首先它的事件模型中引入了传播过程：1）先由document向目标对象传播称之为：捕捉阶段；2）目标对象的事件处理程序运行，3）从目标对象向document起泡。Event.stopPropagation()可以停止传播，preventDefault()可以阻止事件的默认动作（想想以前的return false）。</p>
+</li>
+<li><p>事件处理程序注册：EventTarget.addEventListener(String type,EventListener listener,boolean useCapure)。其中第三个参数决定<strong>注册程序在传播的哪个过程被调用</strong>，true:在捕捉阶段调用，false:在后两个阶段被调用</p>
+</li>
+</ol>
+</li>
+<li><p>IE事件模型</p>
+<ol>
+<li><p>首先执目标元素的处理函数,然后向上传播（冒泡）到达document,ie中只能捕捉鼠标事件,而DOM2中可以捕捉所有的事件</p>
+</li>
+<li><p>Event对象不是事件处理程序的函数参数，而是window的全局变量</p>
+</li>
+<li><p>事件注册函数:attachEvent( “eventType”,”handler”) and detachEvent(“eventType”,”handler” ),与dom2不同的是eventType有on前缀</p>
+</li>
+</ol>
+</li>
+<li><p>两者的区别是：IE没有捕捉阶段，只能捕捉鼠标事件，而DOM事件中所有事件都可以捕捉；event在IE中是window的全局对象，而在DOM中是第一个参数；target在IE中是event.SrcElement在DOM中是event.target；IE事件类型有on前缀，DOM中没有；事件注册函数参数不同</p>
+</li>
+</ul>
+</li>
+<li><p><strong>事件代理和事件绑定跨浏览器版</strong>利用了事件冒泡特性，避免了批量绑定事件，提高了网站的性能</p>
+<ol>
+<li><p>知识点1</p>
+<ul>
+<li><p>preventDefault()    阻止默认行为 →returnValue</p>
+</li>
+<li><p>stopPropagation()    阻止冒泡    →cancelBubble</p>
+</li>
+<li><p>return false        js阻止默认行为，jquery中阻止默认行为&amp;&amp;阻止冒泡</p>
+</li>
+</ul>
+</li>
+<li><p>知识点2</p>
+<ul>
+<li><p>innerText    FF不支持</p>
+</li>
+<li><p>textContent    W3C标准API（推荐） 文本内容    可以避免XSS攻击</p>
+</li>
+<li><p>innerHTML    HTML内容</p>
+</li>
+</ul>
+</li>
+<li><p>代码</p>
+<pre><code>var EventUtil = {
+    getEvent: <span class="function"><span class="keyword">function</span><span class="params">(event)</span>{</span>
+        return event || window.event;
+    },
+    getTarget: <span class="function"><span class="keyword">function</span><span class="params">(event)</span>{</span>
+        return event.target || event.srcElement;
+    },
+    on: <span class="function"><span class="keyword">function</span><span class="params">(elem, type, handler)</span>{</span>
+        <span class="keyword">if</span><span class="params">(elem.addEventListener)</span>{
+            elem.addEventListener<span class="params">(type, handler, <span class="literal">false</span>)</span>;
+            return handler;
+        }<span class="keyword">else</span> <span class="keyword">if</span><span class="params">(elem.attachEvent)</span>{
+            fucntion wrapper<span class="params">(event)</span>{
+                return handler.call<span class="params">(elem, event)</span>;
+            }
+            elem.attachEvent<span class="params">(<span class="string">"on"</span> + type, wrapper)</span>;
+            return wrapper;
+        }
+    },
+    off: <span class="function"><span class="keyword">function</span><span class="params">(elem, type, handler)</span>{</span>
+        <span class="keyword">if</span><span class="params">(elem.removeEventListener)</span>{
+            elem.removeEventListener<span class="params">(type, handler, <span class="literal">false</span>)</span>;
+        }<span class="keyword">else</span> <span class="keyword">if</span><span class="params">(elem.detachEvent)</span>{
+            elem.detachEvent<span class="params">(<span class="string">"on"</span> + type, handler)</span>;
+        }
+    },
+    preventDefault: <span class="function"><span class="keyword">function</span><span class="params">(event)</span>{</span>
+        <span class="keyword">if</span><span class="params">(event.preventDefault)</span>{
+            event.preventDefault<span class="params">()</span>;
+        }<span class="keyword">else</span> <span class="keyword">if</span><span class="params">(<span class="string">"returnValue"</span> in event)</span>{
+            event.returnValue = <span class="literal">false</span>;
+        }
+    },
+    stopPropagation: <span class="function"><span class="keyword">function</span><span class="params">(event)</span>{</span>
+        <span class="keyword">if</span><span class="params">(event.stopPropagation)</span>{
+            event.stopPropagation<span class="params">()</span>;
+        }<span class="keyword">else</span> <span class="keyword">if</span><span class="params">(<span class="string">"cancelBubble"</span> in event)</span>{
+            event.cancelBubble = <span class="literal">true</span>;
+        }
+    }
+}
+var DOMUtil = {
+    <span class="built_in">text</span>: <span class="function"><span class="keyword">function</span><span class="params">(elem)</span>{</span>
+        <span class="keyword">if</span><span class="params">(<span class="string">"textContent"</span> in elem)</span>{
+            return elem.textContent;
+        }<span class="keyword">else</span> <span class="keyword">if</span><span class="params">(<span class="string">"innerText"</span> in elem)</span>{
+            return elem.innerText;
+        }
+    },
+    prop: <span class="function"><span class="keyword">function</span><span class="params">(elem, propName)</span>{</span>
+        return elem.getAttribute<span class="params">(propName)</span>;
+    }
+};
+var nav = document.getElementById<span class="params">(<span class="string">"nav"</span>)</span>;
+EventUtil.on<span class="params">(nav, <span class="string">"click"</span>, function<span class="params">(event)</span>{
+    var event = EventUtil.getEvent<span class="params">(event)</span>;
+    var target = EventUtil.getTarget<span class="params">(event)</span>;
+    var children = this.children;
+    var i, len, anchor, obj={};
+    for<span class="params">(i=<span class="number">0</span>, len=children.length; i&lt;len; i++)</span>{
+        if<span class="params">(children[i] === target)</span>{
+            obj.index = i;
+            anchor = target.getElementsByTagName<span class="params">(<span class="string">"a"</span>)</span>[<span class="number">0</span>];
+            obj.name = DOMUtil.text<span class="params">(anchor)</span>;
+            obj.link = DOMUtil.prop<span class="params">(anchor, <span class="string">"href"</span>)</span>;
+            break;
+        }
+    }
+})</span>;
+</code></pre></li>
+</ol>
+<p><a href="http://weizhifeng.net/javascript-the-core" target="_blank" rel="external">javascript核心</a></p>
+</li>
+</ol>
+<ol>
+<li><p>javasctipt数组</p>
+<ul>
+<li><p>length</p>
+</li>
+<li><p>concat()    合并数组，可以有多个参数</p>
+</li>
+<li><p>join()    用数组的元素组成字符串    split()    字符串拆成数组</p>
+</li>
+<li><p>pop()        删除最后一个元素</p>
+</li>
+<li><p>push()    末尾添加新的元素</p>
+</li>
+<li><p>reverse()    顺序反转</p>
+</li>
+<li><p>slice(start, end)    start-end-1    选取元素 原数组不会改变，会创建新的数组</p>
+</li>
+<li><p>splice()    修改数组    删除：arr.splice(1, 2)    插入：arr.splice(2,0,”black”)    替换：arr.splice(2,1,”black”)</p>
+</li>
+<li><p>shift()    删除第一个元素</p>
+</li>
+<li><p>unshift()    开头添加元素</p>
+</li>
+<li><p>sort()</p>
+<pre><code><span class="comment">/*** 数组去重**/</span>
+<span class="function"><span class="keyword">function</span> <span class="title">normalize</span>(<span class="params">arr</span>) </span>{
+    <span class="keyword">if</span> (arr &amp;&amp; <span class="built_in">Array</span>.isArray(arr)) {
+        <span class="keyword">var</span> i, map = {};
+        <span class="keyword">for</span> (i = arr.length; i &gt;= <span class="number">0</span>; --i) {
+            <span class="keyword">if</span> (arr[i] <span class="keyword">in</span> map) {
+                arr.splice(i, <span class="number">1</span>);
+            } <span class="keyword">else</span> {
+                map[arr[i]] = <span class="literal">true</span>;
+            }
+        }
+    }
+    <span class="keyword">return</span> arr;
+}
+
+<span class="comment">/*** 用10个随机整数对应的字符串填充数组。**/</span>
+<span class="function"><span class="keyword">function</span> <span class="title">fillArray</span>(<span class="params">arr, start, end, num</span>) </span>{
+    start = start == <span class="literal">undefined</span> ? <span class="number">1</span> : start;
+    end = end == <span class="literal">undefined</span> ?  <span class="number">100</span> : end;
+    num = num == <span class="literal">undefined</span> ? <span class="number">10</span> : num;
+
+    <span class="keyword">if</span> (end &lt;= start) {
+        end = start + <span class="number">100</span>;
+    }
+
+    <span class="keyword">var</span> i, width = end - start;
+    <span class="keyword">for</span> (i = num; i &gt;= <span class="number">1</span>; --i) {
+        arr.push(<span class="string">''</span> + (<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * width) + start));
+    }
+    <span class="keyword">return</span> arr;
+}
+
+<span class="keyword">var</span> input = [];
+fillArray(input, <span class="number">1</span>, <span class="number">100</span>, <span class="number">10</span>);
+input.sort(<span class="function"><span class="keyword">function</span> (<span class="params">a, b</span>) </span>{
+    <span class="keyword">return</span> a - b;
+});
+<span class="built_in">console</span>.log(input);
+
+normalize(input);
+<span class="built_in">console</span>.log(input);    
+</code></pre></li>
+</ul>
+</li>
+<li><p>javascript正则表达式</p>
+<p>var patt=new RegExp(pattern,modifiers);</p>
+<p>var patt=/pattern/modifiers;    </p>
+<p>i - 修饰符是用来执行不区分大小写的匹配。</p>
+<p>g - 修饰符是用于执行全文的搜索（而不是在找到第一个就停止查找,而是找到所有的匹配）。</p>
+<p>patt.test()</p>
+<p>patt.exec()</p>
+<pre><code>.    任意单个字符
+<span class="command">\w</span>    查找单词字符
+<span class="command">\W</span>    查找非单词字符
+<span class="command">\d</span>    查找数字
+<span class="command">\D</span>    查找非数字字符
+<span class="command">\s</span>    查找空白字符
+<span class="command">\S</span>    查找非空白字符
+<span class="command">\b</span>    单词边界
+<span class="command">\B</span>    非单词边界
+\0    null字符
+<span class="command">\n</span>    查找换行符
+<span class="command">\f</span>    换页符
+<span class="command">\r</span>    回车符
+<span class="command">\t</span>    制表符
+<span class="command">\v</span>    垂直制表符
+<span class="command">\xxx</span>    八进制数
+<span class="command">\xdd</span>    16进制数
+<span class="command">\uxxxx</span>    unicode字符
+n?    0次或1次
+?=n    其后紧跟n的字符串
+?!n    没有其后紧跟n的字符串
+?:匹配pattern，但不捕获匹配结果，用做存在性检查
+
+匹配中文字符的正则表达式：<span class="special">[</span><span class="command">\u</span>4e00-<span class="command">\u</span>9fa5<span class="command">\uF</span>900-<span class="command">\uFA</span>2D<span class="special">]</span>
+
+匹配特殊字符：(<span class="special">[</span>.*+?^<span class="formula">$<span class="special">{</span><span class="special">}</span>()|<span class="special">[</span><span class="command">\]</span><span class="command">\/</span><span class="command">\\</span><span class="special">]</span>)
+
+匹配空行的正则表达式：<span class="command">\n</span><span class="special">[</span><span class="command">\s</span>| <span class="special">]</span>*<span class="command">\r</span>
+
+匹配HTML标记的正则表达式：/&lt;(.*)&gt;.*&lt;<span class="command">\/</span>\1&gt;|&lt;(.*) <span class="command">\/</span>?&gt;/ or /^&lt;(<span class="command">\w</span>+)<span class="command">\s*</span><span class="command">\/</span>?&gt;(?:&lt;<span class="command">\/</span>\1&gt;|)$</span>/
+
+匹配首尾空格的正则表达式：(^<span class="command">\s*</span>)|(<span class="command">\s*</span><span class="formula">$)
+
+匹配Email地址的正则表达式：<span class="command">\w</span>+(<span class="special">[</span>-+.<span class="special">]</span><span class="command">\w</span>+)*@<span class="command">\w</span>+(<span class="special">[</span>-.<span class="special">]</span><span class="command">\w</span>+)*<span class="command">\.</span><span class="command">\w</span>+(<span class="special">[</span>-.<span class="special">]</span><span class="command">\w</span>+)*
+
+匹配网址URL的正则表达式：http://(<span class="special">[</span><span class="command">\w</span>-<span class="special">]</span>+<span class="command">\.</span>)+<span class="special">[</span><span class="command">\w</span>-<span class="special">]</span>+(/<span class="special">[</span><span class="command">\w</span>- ./?%<span class="special">&amp;</span>=<span class="special">]</span>*)?
+
+匹配帐号是否合法(字母开头，允许5-16字节，允许字母数字下划线)：^<span class="special">[</span>a-zA-Z<span class="special">]</span><span class="special">[</span>a-zA-Z0-9_<span class="special">]</span><span class="special">{</span>4,15<span class="special">}</span>$</span>
+
+匹配国内电话号码：<span class="command">\d</span><span class="special">{</span>3<span class="special">}</span>-<span class="command">\d</span><span class="special">{</span>8<span class="special">}</span>|<span class="command">\d</span><span class="special">{</span>4<span class="special">}</span>-<span class="command">\d</span><span class="special">{</span>7<span class="special">}</span>
+
+匹配腾讯QQ号：<span class="special">[</span>1-9<span class="special">]</span><span class="special">[</span><span class="command">\d</span><span class="special">]</span><span class="special">{</span>4,<span class="special">}</span>
+
+匹配中国邮政编码：<span class="special">[</span>1-9<span class="special">]</span><span class="command">\d</span><span class="special">{</span>5<span class="special">}</span>(?!<span class="command">\d</span>)
+
+匹配身份证：d<span class="special">{</span>15<span class="special">}</span>|d<span class="special">{</span>18<span class="special">}</span>
+
+匹配ip地址：(<span class="command">\d</span>+).(<span class="command">\d</span>+).(<span class="command">\d</span>+).(<span class="command">\d</span>+)，对<span class="formula">$1$</span>2<span class="formula">$3$</span>4进行分别验证
+
+用正则表达式限制只能输入数字：
+onkeyup="value=value.replace(/<span class="special">[</span>^<span class="command">\d</span><span class="special">]</span>/g,'')"
+onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/<span class="special">[</span>^<span class="command">\d</span><span class="special">]</span>/g,''))"
+
+匹配文件后缀名
+var pos = str.lastIndexOf(".");
+if(pos != -1)<span class="special">{</span>
+    return str.slice(pos+1);
+<span class="special">}</span>
+var pattern = /<span class="special">[</span>^<span class="command">\.</span><span class="special">]</span>*<span class="formula">$/;
+return pattern.exec(str);
+return str.match(pattern);
+
+判断是否是CSS文件
+var isCss = /.*<span class="command">\.</span>css(?=<span class="command">\?</span>|$</span>)/
+</code></pre><p><strong>关于非捕获性分组</strong></p>
+<pre><code>非捕获性分组：
+
+创建反向引用的分组，这种分组一般称为捕获性分组。同时也存在一种非捕获性分组。它不会创建反向引用，因为在比较长的正则表达式中，分组多了会很影响效率。所以使用非捕获性分组。
+
+创建非捕获性分组是这样的(?<span class="symbol">:</span>开始然后写表达式。例如<span class="symbol">:</span>
+
+var str=<span class="string">'#123456'</span>;
+
+<span class="regexp">//var</span> oReg=<span class="regexp">/#(\w+)/g</span>; 　　<span class="regexp">//</span>()的作用有多种，其中一咱就是捕获性分组，有些书上也称做“反向引用”，
+</code></pre></li>
+</ol>
+<pre><code>var oReg=<span class="regexp">/#(?:\w+)/</span>;　　<span class="regexp">//</span>非捕获性分组 ，在()左边添加 ?<span class="symbol">:</span>
+
+alert(oReg.test(str));　　 <span class="regexp">//true</span>
+
+alert(<span class="constant">RegExp.</span><span class="variable">$1</span>);　　<span class="regexp">//</span>　　<span class="string">''</span>  返回空值，由此可以它虽然满足了我们的要求但却并没有创建引用，而如果使用捕获性分组，这里就会返回一个 <span class="number">123456</span> ，因为<span class="constant">RegExp.</span><span class="variable">$1</span> “记忆”下了匹配的字符。
+
+注意：在<span class="constant">JavaScript中</span>，分组匹配的结果是存储在<span class="constant">RegExp中</span>的，如果我们使用的是捕获性分组，那么就都可以通过<span class="constant">RegExp.</span><span class="variable">$1</span>,<span class="constant">RegExp.</span><span class="variable">$2</span>...来取得相应的分组匹配结果，第一个()表示<span class="constant">RegExp.</span><span class="variable">$1</span>,第二个()表示<span class="constant">RegExp.</span><span class="variable">$2</span>,依此类推。。。
+</code></pre><ol>
+<li><p>javascript判断数据类型</p>
+<ol>
+<li><p>原型</p>
+<pre><code><span class="built_in">Object</span>.prototype.toString.call(a) === ‘[object <span class="built_in">String</span>]’
+<span class="built_in">Object</span>.prototype.toString.call(b) === ‘[object <span class="built_in">Number</span>]’
+<span class="built_in">Object</span>.prototype.toString.call(c) === ‘[object <span class="built_in">Array</span>]’
+<span class="built_in">Object</span>.prototype.toString.call(d) === ‘[object <span class="built_in">Date</span>]’
+<span class="built_in">Object</span>.prototype.toString.call(e) === ‘[object <span class="built_in">Function</span>]’
+<span class="built_in">Object</span>.prototype.toString.call(f) === ‘[object <span class="built_in">Function</span>]’
+
+语义化的javascript代码为：
+
+<span class="function"><span class="keyword">function</span> <span class="title">isType</span>(<span class="params">type</span>)</span>{
+    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>)</span>{
+        <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(o) === <span class="string">'[Object'</span> + type + <span class="string">']'</span>;
+    }
+}
+
+<span class="keyword">var</span> isString = isType(<span class="string">'String'</span>);
+<span class="keyword">var</span> isObject = isType(<span class="string">'object'</span>);
+<span class="keyword">var</span> isArray = isType(<span class="string">'Array'</span>);
+
+isString(<span class="string">"I am Jennifer"</span>);
+</code></pre></li>
+<li><p>typeof用以获取一个变量或者表达式的类型，typeof一般只能返回如下几个结果：number,boolean,string,function（函数）,object（NULL,数组，对象）,undefined</p>
+</li>
+<li><p>instanceof考察A.__proto__ === B.prototype?</p>
+</li>
+<li><p>constructor</p>
+</li>
+<li><p>hasOwnProperty判断是否是对象自己的方法</p>
+</li>
+<li><p>in判断是否是对象或者原型的方法</p>
+</li>
+</ol>
+</li>
+<li><p>如何使用URL拆分出protocol， host，port， query等</p>
+<pre><code>URL即统一资源定位符 (Uniform Resource Locator, URL)，完整的URL由这几个部分构成：
+scheme:<span class="comment">//host:port/path?query#fragment</span>
+scheme:通信协议，常用的http,ftp,maito等。
+host:主机，服务器(计算机)域名系统 (DNS) 主机名或 IP 地址。
+port:端口号，整数，可选，省略时使用方案的默认端口，如http的默认端口为80。
+path:路径，由零或多个<span class="string">"/"</span>符号隔开的字符串，一般用来表示主机上的一个目录或文件地址。
+<span class="keyword">query</span>:查询，可选，用于给动态网页（如使用CGI、ISAPI、PHP/JSP/ASP/ASP.<span class="keyword">NET</span>等技术制作的网页）传递参数，可有多个参数，用<span class="string">"&amp;"</span>符号隔开，每个参数的名和值用<span class="string">"="</span>符号隔开。
+fragment:信息片断，字符串，用于指定网络资源中的片断。例如一个网页中有多个名词解释，可使用fragment直接定位到某一名词解释。(也称为锚点)
+下面我们举例一个URL，然后获得它的各个组成部分。
+
+http:<span class="comment">//www.nowamagic.net/newsDetail.php?id=65</span>
+<span class="keyword">window</span>.location.href
+可以获得整个URL字符串（在浏览器中就是完整的地址栏）
+<span class="keyword">var</span> <span class="keyword">test</span> = <span class="keyword">window</span>.location.href;
+alert(<span class="keyword">test</span>);
+程序返回 http:<span class="comment">//www.nowamagic.net/newsDetail.php?id=65</span>
+
+<span class="keyword">window</span>.location.protocol
+可以获得 URL 的协议部分
+<span class="keyword">var</span> <span class="keyword">test</span> = <span class="keyword">window</span>.location.protocol;
+alert(<span class="keyword">test</span>);
+程序返回 http:
+
+<span class="keyword">window</span>.location.host
+可以获得 URL 的主机部分
+<span class="keyword">var</span> <span class="keyword">test</span> = <span class="keyword">window</span>.location.host;
+alert(<span class="keyword">test</span>);
+程序返回 www.nowamagic.<span class="keyword">net</span>
+
+<span class="keyword">window</span>.location.port
+可以获得 URL 的端口部分
+<span class="keyword">var</span> <span class="keyword">test</span> = <span class="keyword">window</span>.location.port;
+alert(<span class="keyword">test</span>);
+如果采用默认的80端口(<span class="keyword">update</span>:即使添加了:80)，那么返回值并不是默认的80而是空字符。
+
+<span class="keyword">window</span>.location.pathname
+获得 URL 的路径部分（就是文件地址）
+<span class="keyword">var</span> <span class="keyword">test</span> = <span class="keyword">window</span>.location.pathname;
+alert(<span class="keyword">test</span>);
+
+<span class="keyword">window</span>.location.<span class="keyword">search</span>
+获得查询（参数）部分，除了给动态语言赋值以外，我们同样可以给静态页面，并使用javascript来获得相信应的参数值。
+<span class="keyword">var</span> <span class="keyword">test</span> = <span class="keyword">window</span>.location.<span class="keyword">search</span>;
+alert(<span class="keyword">test</span>);
+
+<span class="keyword">window</span>.location.hash
+获得锚点。
+<span class="keyword">var</span> <span class="keyword">test</span> = <span class="keyword">window</span>.location.hash;
+alert(<span class="keyword">test</span>);
+</code></pre></li>
+<li><p>javascript函数式编程</p>
+<p>在javascript中</p>
+<ol>
+<li><p>函数是第一等公民</p>
+</li>
+<li><p>函数可以返回函数</p>
+</li>
+<li><p>词法上支持闭包</p>
+</li>
+</ol>
+<p>如何有效利用闭包和作用域是成为一个伟大的javascript开发者的关键</p>
+<p><strong>函数柯里化</strong></p>
+<p>柯里化是这样的一个转换过程，把接受多个参数的函数变换成接受一个单一参数的函数，如果其他的函数是必要时，返回接受余下的参数且返回结果的新函数</p>
+<p>函数柯里化允许和鼓励分隔复杂功能变成更小更容易分析的部分。这些小的逻辑单元显然是更容易理解和测试的，然后你的应用就会变成干净而整洁的组合，由一些小单元组成的组合。</p>
+<ul>
+<li><p>柯里化是将多个参数合成一个object参数，这个object字段不是固定的，对于同一个函数来说，无论后期参数的顺序、数量、类型如何变化，接口部分是不变的，所以适合作为构造方法来用；</p>
+</li>
+<li><p>柯里化可以解决动态参数的问题，在不需要改变接口的情况下可以新增不同特性，且对调用端透明，解决了js里面没有重载带来的一些麻烦；</p>
+</li>
+<li><p>柯里化有3个典型应用：参数复用，提前返回、延迟计算</p>
+</li>
+<li><p>柯里化：把参数数组首个砍掉；反柯里化：把某个参数塞到参数数组的第一个。柯里化跟反柯里化都可以返回新函数，相比原函数，他们接受的参数一个是被砍头过的，一个是接头过的</p>
+</li>
+<li><p><a href="http://www.zhangxinxu.com/wordpress/2013/02/js-currying/" target="_blank" rel="external">参考</a></p>
+</li>
+</ul>
+</li>
+<li><p>内存泄露/垃圾回收</p>
+<p>垃圾回收 garbage collector–GC</p>
+<p>内存泄露 memory leak</p>
+</li>
+</ol>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/css/" rel="tag">#css</a>
+          
+            <a href="/tags/html/" rel="tag">#html</a>
+          
+            <a href="/tags/javascript/" rel="tag">#javascript</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/09/18/前端求职/" rel="next">前端求职</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+ </div>
+
+        
+            <!-- 多说热评文章-->
+            <p>热评文章</p>
+            <div class="ds-top-threads" data-range="monthly" data-num-items="5"></div>
+        
+
+        
+          <div class="comments" id="comments">
+            
+              <div class="ds-thread" data-thread-key="2015/09/18/前端学习笔记基础篇/"
+                   data-title="前端学习笔记基础篇" data-url="http://www.xiaojunxie.com/2015/09/18/前端学习笔记基础篇/">
+              </div>
+            
+          </div>
+        
+      </div>
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/image_128X128.ico" alt="谢晓君" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">谢晓君</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">Good artists copy, best artists steal.</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/sallymew" target="_blank">GitHub</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/sallymew" target="_blank">Weibo</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/jenniferxie" target="_blank">ZhiHu</a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML–搭建结构"><span class="nav-number">1.</span> <span class="nav-text">HTML–搭建结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS–设计样式"><span class="nav-number">2.</span> <span class="nav-text">CSS–设计样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Javascript–定义行为"><span class="nav-number">3.</span> <span class="nav-text">Javascript–定义行为</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <div class="copyright" >
+  
+  &copy; &nbsp; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-next-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">谢晓君</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"xiaojunxie"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+
+    
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"3","bdPos":"left","bdTop":"250"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
+</body>
+</html>
