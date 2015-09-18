@@ -40,10 +40,10 @@
 <meta name="description" content="javascript笔试题">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Javascript面试题">
-<meta property="og:url" content="http://www.xiaojunxie.com/2015/09/03/Javascript面试题/index.html">
+<meta property="og:url" content="http://www.xiaojunxie.com/2015/09/18/Javascript面试题/index.html">
 <meta property="og:site_name" content="Jennifer's Blog">
 <meta property="og:description" content="javascript笔试题">
-<meta property="og:updated_time" content="2015-09-16T14:06:37.000Z">
+<meta property="og:updated_time" content="2015-09-18T10:31:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript面试题">
 <meta name="twitter:description" content="javascript笔试题">
@@ -211,8 +211,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-09-03T15:28:14+08:00" content="2015-09-03">
-            2015-09-03
+          <time itemprop="dateCreated" datetime="2015-09-18T18:32:14+08:00" content="2015-09-18">
+            2015-09-18
           </time>
         </span>
 
@@ -237,8 +237,8 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/09/03/Javascript面试题/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/03/Javascript面试题/" itemprop="commentsCount"></span>
+              <a href="/2015/09/18/Javascript面试题/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/18/Javascript面试题/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -297,6 +297,8 @@ setTimeout(<span class="function"><span class="keyword">function</span>(<span cl
 }, <span class="number">100</span>);
 </code></pre><p> 答案是 4×3 3×3 1+2+3</p>
 </li>
+<li><p>tofixed，IE6下0.009=&gt;0.00 bug</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Number</span>.prototype.toFixed = <span class="function"><span class="keyword">function</span>(<span class="params">s</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> (<span class="built_in">parseInt</span>(<span class="keyword">this</span> * <span class="built_in">Math</span>.pow(<span class="number">10</span>, s) + <span class="number">0.5</span>) / <span class="built_in">Math</span>.pow(<span class="number">10</span>, s)).toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ol>
 </span>
       
@@ -317,13 +319,11 @@ setTimeout(<span class="function"><span class="keyword">function</span>(<span cl
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/09/03/something-about-encode/" rel="prev">something about encode</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/08/30/hello-hexo/" rel="next">hello hexo</a>
+              <a href="/2015/09/18/Javascript事件循环/" rel="next">Javascript事件循环</a>
             
           </div>
         </div>
@@ -375,8 +375,8 @@ setTimeout(<span class="function"><span class="keyword">function</span>(<span cl
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/09/03/Javascript面试题/"
-                   data-title="Javascript面试题" data-url="http://www.xiaojunxie.com/2015/09/03/Javascript面试题/">
+              <div class="ds-thread" data-thread-key="2015/09/18/Javascript面试题/"
+                   data-title="Javascript面试题" data-url="http://www.xiaojunxie.com/2015/09/18/Javascript面试题/">
               </div>
             
           </div>
