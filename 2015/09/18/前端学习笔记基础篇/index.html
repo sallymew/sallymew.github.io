@@ -37,40 +37,16 @@
   <link rel="shorticon icon" type="image/x-icon" href="/image_16X16.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="##前端学习笔记-基础篇^1
-HTML–搭建结构
-语义化的HTML
- header footer nav main section article这些语义化的元素可以方便自动程序的识别。（解决ie下不支持HTML5新特性的方法：html5shiv.js）
- 包含语义的标签，恰当的表示文档结构
- css语义化是指为html添加有意义的id、class等补充未表达的语义
- web语义化的意义
-
-赋予标">
+<meta name="description" content="##前端学习笔记-基础篇参考">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端学习笔记基础篇">
 <meta property="og:url" content="http://www.xiaojunxie.com/2015/09/18/前端学习笔记基础篇/index.html">
 <meta property="og:site_name" content="Jennifer's Blog">
-<meta property="og:description" content="##前端学习笔记-基础篇^1
-HTML–搭建结构
-语义化的HTML
- header footer nav main section article这些语义化的元素可以方便自动程序的识别。（解决ie下不支持HTML5新特性的方法：html5shiv.js）
- 包含语义的标签，恰当的表示文档结构
- css语义化是指为html添加有意义的id、class等补充未表达的语义
- web语义化的意义
-
-赋予标">
-<meta property="og:updated_time" content="2015-09-18T14:14:34.000Z">
+<meta property="og:description" content="##前端学习笔记-基础篇参考">
+<meta property="og:updated_time" content="2015-09-18T14:37:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端学习笔记基础篇">
-<meta name="twitter:description" content="##前端学习笔记-基础篇^1
-HTML–搭建结构
-语义化的HTML
- header footer nav main section article这些语义化的元素可以方便自动程序的识别。（解决ie下不支持HTML5新特性的方法：html5shiv.js）
- 包含语义的标签，恰当的表示文档结构
- css语义化是指为html添加有意义的id、class等补充未表达的语义
- web语义化的意义
-
-赋予标">
+<meta name="twitter:description" content="##前端学习笔记-基础篇参考">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -276,7 +252,8 @@ HTML–搭建结构
       
 
       
-        <span itemprop="articleBody"><p>##前端学习笔记-基础篇<a href="[前端面试题](http://github.com/qiu-deqing/FE-interview)">^1</a></p>
+        <span itemprop="articleBody"><p>##前端学习笔记-基础篇<a href="http://github.com/qiu-deqing/FE-interview" target="_blank" rel="external">参考</a></p>
+<a id="more"></a>
 <h3 id="HTML–搭建结构">HTML–搭建结构</h3><ol>
 <li><p>语义化的HTML</p>
 <p> <em>header footer nav main section article</em>这些语义化的元素可以方便自动程序的识别。（解决ie下不支持HTML5新特性的方法：html5shiv.js）</p>
@@ -528,44 +505,7 @@ document.exitFullscreen/mozCancelFullScreen/webkitCancelFullScreen
 </li>
 <li><p>absolute    相对于<strong>最近的已定位祖先元素</strong>位置固定，祖先元素都没有position属性时，同fixed</p>
 <p><em>使用CSS实现元素（包括文本、图片等）绝对居中</em></p>
-<ol>
-<li>inline元素为父元素设置text-align: center;</li>
-<li>block元素1)元素设置宽度,2)左右margin:auto,3)IE6下父元素设置text-align: center,再给子元素恢复需要的值</li>
-<li>float元素1)元素设置宽度,2)position: relative3)浮动偏移量left/right设置为50%4)margin设置为宽度一半乘以-1</li>
-<li><p>absolute元素<br><style><br> .absolute_center{</p>
-<pre><code><span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;
-<span class="rule"><span class="attribute">overflow</span>:<span class="value"> auto</span></span>;
-<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">800px</span></span></span>;
-<span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">600px</span></span></span>;
-<span class="comment">/*
-margin: auto;
-top: 0;
-right: 0;
-bottom: 0;
-left: 0;
-*/</span>
-<span class="rule"><span class="attribute">margin-left</span>:<span class="value"> -<span class="number">400px</span></span></span>;
-<span class="rule"><span class="attribute">left</span>:<span class="value"> <span class="number">50%</span></span></span>;
-
-<span class="rule"><span class="attribute">background</span>:<span class="value">pink <span class="function">url</span>(<span class="string">"background.png"</span>) no-repeat center</span></span>;
-</code></pre><p> }<br> p{</p>
-<pre><code><span class="rule"><span class="attribute">color</span>:<span class="value"> white</span></span>;
-<span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span></span>;
-<span class="comment">/*vertical-align: center;//针对行内可替换元素*/</span>
-<span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">600px</span></span></span>; 
-</code></pre><p> }<br> ::selection{</p>
-<pre><code><span class="rule"><span class="attribute">color</span>:<span class="value"> red</span></span>;
-</code></pre><p> }<br></style></p>
-<div class="absolute_center"><br> <p>完全居中</p><br></div></li>
-<li><p>flexbox实现绝对居中<br>.centerbox {<br> width: 350px;<br> height: 95px;<br> font-size: 14px;<br> border: 1px solid #555;<br> background: #CFC;</p>
-<p> display: box;//-webkit/moz-<br> box-orient: horizontal;<br> box-pack: center;<br> box-align: center;<br>}</p>
-</li>
-<li>使用transform属性<br>.center_horizontal {<br> position: relative;<br> left: 50%;<br> transform: translateX(-50%);<br>}<br>.center_vertical {<br> position: relative;<br> top: 50%;<br> transform: translateY(-50%);<br>}</li>
-<li><p>固定尺寸的img 在固定尺寸的div中怎么水平居中，竖直居中；引申：不定尺寸的img 在固定尺寸的div中怎么水平居中，竖直居中, 写出img 和 div的css规则<br>div{<br> width: 800px;<br> height: 600px;<br> border: 1px solid red;<br> position: relative;<br>}</p>
-<p>img{<br> /<em><br> width: 400px;<br> height: 400px;<br> margin-left: 200px;<br> margin-top: 100px;
- </em>/<br> position: absolute;<br> margin: auto;<br> top: 0;<br> right: 0;<br> bottom: 0;<br> left: 0;<br>}</p>
-</li>
-</ol>
+  <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line">1. inline元素为父元素设置text-align: center;</span><br><span class="line">2. block元素1)元素设置宽度,2)左右margin:auto,3)IE6下父元素设置text-align: center,再给子元素恢复需要的值</span><br><span class="line">3. float元素1)元素设置宽度,2)position: relative3)浮动偏移量left/right设置为50%4)margin设置为宽度一半乘以-1</span><br><span class="line">4. absolute元素</span><br><span class="line"><span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span><br><span class="line">	<span class="class">.absolute_center</span><span class="rules">&#123;</span><br><span class="line">		<span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;</span><br><span class="line">		<span class="rule"><span class="attribute">overflow</span>:<span class="value"> auto</span></span>;</span><br><span class="line">		<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">800px</span></span></span>;</span><br><span class="line">		<span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">600px</span></span></span>;</span><br><span class="line">		<span class="comment">/*</span><br><span class="line">		margin: auto;</span><br><span class="line">		top: 0;</span><br><span class="line">		right: 0;</span><br><span class="line">		bottom: 0;</span><br><span class="line">		left: 0;</span><br><span class="line">		*/</span></span><br><span class="line">		<span class="rule"><span class="attribute">margin-left</span>:<span class="value"> -<span class="number">400px</span></span></span>;</span><br><span class="line">		<span class="rule"><span class="attribute">left</span>:<span class="value"> <span class="number">50%</span></span></span>;</span><br><span class="line"></span><br><span class="line">		<span class="rule"><span class="attribute">background</span>:<span class="value">pink <span class="function">url</span>(<span class="string">"background.png"</span>) no-repeat center</span></span>;</span><br><span class="line">	&#125;</span></span><br><span class="line">	<span class="tag">p</span><span class="rules">&#123;</span><br><span class="line">		<span class="rule"><span class="attribute">color</span>:<span class="value"> white</span></span>;</span><br><span class="line">		<span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span></span>;</span><br><span class="line">		<span class="comment">/*vertical-align: center;//针对行内可替换元素*/</span></span><br><span class="line">		<span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">600px</span></span></span>; </span><br><span class="line">	&#125;</span></span><br><span class="line">	<span class="pseudo">::selection</span><span class="rules">&#123;</span><br><span class="line">		<span class="rule"><span class="attribute">color</span>:<span class="value"> red</span></span>;</span><br><span class="line">	&#125;</span></span><br><span class="line"></span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"absolute_center"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">p</span>&gt;</span>完全居中<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">5. flexbox实现绝对居中</span><br><span class="line">.centerbox &#123;</span><br><span class="line">	width: 350px;</span><br><span class="line">	height: 95px;</span><br><span class="line">	font-size: 14px;</span><br><span class="line">	border: 1px solid #555;</span><br><span class="line">	background: #CFC;</span><br><span class="line">	</span><br><span class="line">	display: box;//-webkit/moz-</span><br><span class="line">	box-orient: horizontal;</span><br><span class="line">	box-pack: center;</span><br><span class="line">	box-align: center;</span><br><span class="line">&#125;</span><br><span class="line">6. 使用transform属性</span><br><span class="line">.center_horizontal &#123;</span><br><span class="line">	position: relative;</span><br><span class="line">	left: 50%;</span><br><span class="line">	transform: translateX(-50%);</span><br><span class="line">&#125;</span><br><span class="line">.center_vertical &#123;</span><br><span class="line">	position: relative;</span><br><span class="line">	top: 50%;</span><br><span class="line">	transform: translateY(-50%);</span><br><span class="line">&#125;</span><br><span class="line">7. 固定尺寸的img 在固定尺寸的div中怎么水平居中，竖直居中；引申：不定尺寸的img 在固定尺寸的div中怎么水平居中，竖直居中, 写出img 和 div的css规则</span><br><span class="line">div&#123;</span><br><span class="line">	width: 800px;</span><br><span class="line">	height: 600px;</span><br><span class="line">	border: 1px solid red;</span><br><span class="line">	position: relative;</span><br><span class="line">&#125;	</span><br><span class="line">img&#123;</span><br><span class="line">	/*</span><br><span class="line">	width: 400px;</span><br><span class="line">	height: 400px;</span><br><span class="line">	margin-left: 200px;</span><br><span class="line">	margin-top: 100px;</span><br><span class="line">	*/</span><br><span class="line">	position: absolute;</span><br><span class="line">	margin: auto;</span><br><span class="line">	top: 0;			</span><br><span class="line">	right: 0;</span><br><span class="line">	bottom: 0;</span><br><span class="line">	left: 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -1914,54 +1854,83 @@ define(funtion(<span class="built_in">require</span>, exports, <span class="buil
 <p>  mashup 是一种将不同供应商的数据或组件集成起来，使之更加有用或更用户化的 Web 应用程序</p>
 <ol>
 <li><p>跨子域解决方案：document.domain</p>
- <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span><br><span class="line">	<span class="built_in">document</span>.domain = <span class="string">"css88.com"</span>;<span class="comment">//document.write(document.domain)</span></span><br><span class="line">	<span class="keyword">var</span> createAjaxIframe=&#123;</span><br><span class="line">		appIframe: <span class="function"><span class="keyword">function</span>(<span class="params">iframeId, iframeSrc</span>)</span>&#123;</span><br><span class="line">			<span class="keyword">var</span> iframe = <span class="built_in">document</span>.createElement(<span class="string">"iframe"</span>);</span><br><span class="line">			iframe.src = iframeSrc;<span class="comment">//"http://css88.com/demo/domain/iframe.html"</span></span><br><span class="line">			iframe.id = iframeId;</span><br><span class="line">			iframe.style.display = <span class="string">"none"</span>;</span><br><span class="line">			<span class="keyword">if</span> (iframe.attachEvent) &#123;</span><br><span class="line">				iframe.attachEvent(<span class="string">"onload"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">					createAjaxIframe.domainAjax(iframeId);</span><br><span class="line">				&#125;);</span><br><span class="line">			&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">				iframe.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">					createAjaxIframe.domainAjax(iframeId);</span><br><span class="line">				&#125;;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">document</span>.body.appendChild(iframe);</span><br><span class="line">		&#125;,</span><br><span class="line">		domainAjax: <span class="function"><span class="keyword">function</span>(<span class="params">iframeId</span>)</span>&#123;</span><br><span class="line">			<span class="keyword">var</span> iframeDom = <span class="built_in">document</span>.getElementById(iframeId).contentWindow.$;<span class="comment">//获得iframe的window对象</span></span><br><span class="line">			iframeDom.getJSON(<span class="string">"http://css88.com/demo/iframe-domain/city.html"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">date</span>)</span>&#123;</span><br><span class="line">				<span class="keyword">var</span> cityOption = <span class="string">""</span>;</span><br><span class="line">				<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; date.length; i++) &#123;</span><br><span class="line">					cityOption += date[i].c_name + <span class="string">"--"</span> + date[i].c_value + <span class="string">"&lt;br /&gt;"</span></span><br><span class="line">				&#125;</span><br><span class="line">				$(<span class="string">"#test"</span>).html(cityOption);</span><br><span class="line">			&#125;);</span><br><span class="line">		&#125;	</span><br><span class="line">	&#125;;</span><br><span class="line">	createAjaxIframe.appIframe(<span class="string">"iframe"</span>,<span class="string">"http://css88.com/demo/iframe-domain/iframe.html"</span>);</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">
+    <span class="built_in">document</span>.domain = <span class="string">"css88.com"</span>;<span class="comment">//document.write(document.domain)</span>
+    <span class="keyword">var</span> createAjaxIframe={
+        appIframe: <span class="function"><span class="keyword">function</span>(<span class="params">iframeId, iframeSrc</span>)</span>{
+            <span class="keyword">var</span> iframe = <span class="built_in">document</span>.createElement(<span class="string">"iframe"</span>);
+            iframe.src = iframeSrc;<span class="comment">//"http://css88.com/demo/domain/iframe.html"</span>
+            iframe.id = iframeId;
+            iframe.style.display = <span class="string">"none"</span>;
+            <span class="keyword">if</span> (iframe.attachEvent) {
+                iframe.attachEvent(<span class="string">"onload"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+                    createAjaxIframe.domainAjax(iframeId);
+                });
+            }<span class="keyword">else</span> {
+                iframe.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+                    createAjaxIframe.domainAjax(iframeId);
+                };
+            }
+            <span class="built_in">document</span>.body.appendChild(iframe);
+        },
+        domainAjax: <span class="function"><span class="keyword">function</span>(<span class="params">iframeId</span>)</span>{
+            <span class="keyword">var</span> iframeDom = <span class="built_in">document</span>.getElementById(iframeId).contentWindow.$;<span class="comment">//获得iframe的window对象</span>
+            iframeDom.getJSON(<span class="string">"http://css88.com/demo/iframe-domain/city.html"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">date</span>)</span>{
+                <span class="keyword">var</span> cityOption = <span class="string">""</span>;
+                <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; date.length; i++) {
+                    cityOption += date[i].c_name + <span class="string">"--"</span> + date[i].c_value + <span class="string">"&lt;br /&gt;"</span>
+                }
+                $(<span class="string">"#test"</span>).html(cityOption);
+            });
+        }    
+    };
+    createAjaxIframe.appIframe(<span class="string">"iframe"</span>,<span class="string">"http://css88.com/demo/iframe-domain/iframe.html"</span>);
+</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+</code></pre></li>
+<li><p>URL.hash解决方案：URL的任何更改都会导致加载新的页面。唯一的例外是 hash 值的变化。任何 URL 的 hash 更改都不会导致页面刷新。许多 Web 2.0 网站中都已经开始广泛使用 Hash，以标记部分刷新页面时的每一个步骤。在跨域通信中，hash 是一笔宝贵的资产。虽然在获取对方 hash 值方面有一些限制，但来自不同源点的文件可以设置对方的 URL，包括 hash 值。文档相互之间可以使用 hash 传送信息。</p>
 </li>
+<li><p>cross-fragment技术，使用了iframe。当 A 想要与 iframe B 进行通信时，会先在其自身中创建一个 iframe。这个 iframe 指向与 B 位于同一域中的 “代理” C。代理 URL 中包含参数、数据以及 B 的框架标识符。当 C 加载信息时，它会从 A 中获取请求和数据并调用 B 中相应的方法。由于 B 和 C 在相同的域中，所以可以通过另一个窗口的处理程序直接调用对方的方法。A 可以成功地向 B 发送信息，B 也可以用同样的方式进行响应。</p>
+</li>
+<li><p>postMessage方案</p>
+<pre><code>http:<span class="comment">//www.otherapp.com/index.html</span>
+<span class="function"><span class="keyword">function</span> <span class="title">postMessage</span>(<span class="params">msg</span>)</span>{
+     <span class="keyword">var</span> targetWindow = parent.window;
+      targetWindow.postMessage(msg,<span class="string">"*"</span>);
+}
+<span class="function"><span class="keyword">function</span> <span class="title">handleReceive</span>(<span class="params">msg</span>)</span>{
+ <span class="keyword">var</span> object = dojo.fromJson(msg);
+ <span class="keyword">if</span>(object.status == “ok”){
+    <span class="comment">//continue to do other things</span>
+    ……
+ }<span class="keyword">else</span>{
+    <span class="comment">//retry sending msg</span>
+    ……
+ }
+}
+<span class="built_in">window</span>.addEventListener(<span class="string">"message"</span>, handleReceive, <span class="literal">false</span>);
+<span class="built_in">window</span>.onLoad = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+    postMessage(<span class="string">"already loaded"</span>);
+}
+
+http:<span class="comment">//www.myapp.com/index.html</span>
+<span class="function"><span class="keyword">function</span> <span class="title">handleReceive</span>(<span class="params">event</span>)</span>{ 
+    <span class="keyword">if</span>(event.origin != <span class="string">"http://www.otherapp.com"</span>)
+        <span class="keyword">return</span>; 
+     <span class="comment">//process data</span>
+     ……
+     <span class="keyword">var</span> otherAppFrame = <span class="built_in">document</span>.getElementById(“otherApp”) 
+     otherAppFrame.postMessage(“{status:’ok’}”,”http:<span class="comment">//www.otherapp.com”);</span>
+}
+<span class="built_in">window</span>.addEventListener(<span class="string">"message"</span>, handleReceive, <span class="literal">false</span>);
+</code></pre></li>
 </ol>
 </li>
 </ul>
 </li>
 </ol>
-<pre><code><span class="number">2</span>. URL.hash解决方案：URL的任何更改都会导致加载新的页面。唯一的例外是 hash 值的变化。任何 URL 的 hash 更改都不会导致页面刷新。许多 Web <span class="number">2.0</span> 网站中都已经开始广泛使用 Hash，以标记部分刷新页面时的每一个步骤。在跨域通信中，hash 是一笔宝贵的资产。虽然在获取对方 hash 值方面有一些限制，但来自不同源点的文件可以设置对方的 URL，包括 hash 值。文档相互之间可以使用 hash 传送信息。
-
-<span class="number">3</span>. <span class="built_in">cross</span>-fragment技术，使用了iframe。当 A 想要与 iframe B 进行通信时，会先在其自身中创建一个 iframe。这个 iframe 指向与 B 位于同一域中的 “代理” C。代理 URL 中包含参数、数据以及 B 的框架标识符。当 C 加载信息时，它会从 A 中获取请求和数据并调用 B 中相应的方法。由于 B 和 C 在相同的域中，所以可以通过另一个窗口的处理程序直接调用对方的方法。A 可以成功地向 B 发送信息，B 也可以用同样的方式进行响应。
-
-<span class="number">4</span>. postMessage方案
-
-        http:<span class="comment">//www.otherapp.com/index.html</span>
-        <span class="function"><span class="keyword">function</span> <span class="title">postMessage</span><span class="params">(msg)</span>{</span>
-             var targetWindow = parent.window;
-              targetWindow.postMessage<span class="params">(msg,<span class="string">"*"</span>)</span>;
-        }
-        <span class="function"><span class="keyword">function</span> <span class="title">handleReceive</span><span class="params">(msg)</span>{</span>
-         var object = dojo.fromJson<span class="params">(msg)</span>;
-         <span class="keyword">if</span><span class="params">(object.status == “ok”)</span>{
-            <span class="comment">//continue to do other things</span>
-            ……
-         }<span class="keyword">else</span>{
-            <span class="comment">//retry sending msg</span>
-            ……
-         }
-        }
-        window.addEventListener<span class="params">(<span class="string">"message"</span>, handleReceive, <span class="literal">false</span>)</span>;
-        window.onLoad = <span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>
-            postMessage<span class="params">(<span class="string">"already loaded"</span>)</span>;
-        }
-
-        http:<span class="comment">//www.myapp.com/index.html</span>
-        <span class="function"><span class="keyword">function</span> <span class="title">handleReceive</span><span class="params">(event)</span>{</span> 
-            <span class="keyword">if</span><span class="params">(event.origin != <span class="string">"http://www.otherapp.com"</span>)</span>
-                return; 
-             <span class="comment">//process data</span>
-             ……
-             var otherAppFrame = document.getElementById<span class="params">(“otherApp”)</span> 
-             otherAppFrame.postMessage<span class="params">(“{status:’ok’}”,”http://www.otherapp.com”)</span>;
-        }
-        window.addEventListener<span class="params">(<span class="string">"message"</span>, handleReceive, <span class="literal">false</span>)</span>;
-</code></pre><ol>
+<ol>
 <li><p>重写javascript内置代码</p>
 <p>利用arguments对象（伪数组）可以实现重载，利用arguments.length可以获取函数的参数个数，typeof判断类型，Object.prototype.toString.call()</p>
-</li>
-</ol>
 <pre><code><span class="built_in">Array</span>.prototype.duplicator = <span class="built_in">Array</span>.prototype.duplicator || <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
     <span class="keyword">return</span> <span class="keyword">this</span>.concat(<span class="keyword">this</span>);
 }
@@ -2010,7 +1979,7 @@ stringconcat.merge = <span class="function"><span class="keyword">function</span
 }
 <span class="keyword">var</span> repeatFun = repeat(alert, <span class="number">4</span>, <span class="number">3000</span>);
 repeatFun(<span class="string">"helloword"</span>);
-</code></pre><ol>
+</code></pre></li>
 <li><p>‘use strict’</p>
 <p>使javascript代码以严格模式运行，其设立目的为：</p>
 <ol>
@@ -2469,12 +2438,10 @@ EventUtil.on<span class="params">(nav, <span class="string">"click"</span>, func
         }
     }
 })</span>;
-</code></pre></li>
-</ol>
-<p><a href="http://weizhifeng.net/javascript-the-core" target="_blank" rel="external">javascript核心</a></p>
+</code></pre><p> <a href="http://weizhifeng.net/javascript-the-core" target="_blank" rel="external">javascript核心</a></p>
 </li>
 </ol>
-<ol>
+</li>
 <li><p>javasctipt数组</p>
 <ul>
 <li><p>length</p>
@@ -2613,16 +2580,18 @@ return str.match(pattern);
 
 判断是否是CSS文件
 var isCss = /.*<span class="command">\.</span>css(?=<span class="command">\?</span>|$</span>)/
-</code></pre><p><strong>关于非捕获性分组</strong></p>
-<pre><code>非捕获性分组：
+
+**关于非捕获性分组**
+
+非捕获性分组：
 
 创建反向引用的分组，这种分组一般称为捕获性分组。同时也存在一种非捕获性分组。它不会创建反向引用，因为在比较长的正则表达式中，分组多了会很影响效率。所以使用非捕获性分组。
 
-创建非捕获性分组是这样的(?<span class="symbol">:</span>开始然后写表达式。例如<span class="symbol">:</span>
+创建非捕获性分组是这样的(?:开始然后写表达式。例如:
 
-var str=<span class="string">'#123456'</span>;
+var str='<span class="special">#</span>123456';
 
-<span class="regexp">//var</span> oReg=<span class="regexp">/#(\w+)/g</span>; 　　<span class="regexp">//</span>()的作用有多种，其中一咱就是捕获性分组，有些书上也称做“反向引用”，
+//var oReg=/<span class="special">#</span>(<span class="command">\w</span>+)/g; 　　//()的作用有多种，其中一咱就是捕获性分组，有些书上也称做“反向引用”，
 </code></pre></li>
 </ol>
 <pre><code>var oReg=<span class="regexp">/#(?:\w+)/</span>;　　<span class="regexp">//</span>非捕获性分组 ，在()左边添加 ?<span class="symbol">:</span>
