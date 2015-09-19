@@ -37,16 +37,16 @@
   <link rel="shorticon icon" type="image/x-icon" href="/image_16X16.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="2015-09-18惊闻同天笔试的前端同学已经收到面试通知了，而我还一点儿消息都没有，总结下来，前端笔试题做得很不好，每个问题都只是对一点点，很多知识点已经不记得了，基础知识还是要复习啊╮(╯▽╰)╭。从杭州回来后，一直很懈怠，再加上实验室的一些事情，感觉真的很差，要加油了！">
+<meta name="description" content="今日头条前端笔试题">
 <meta property="og:type" content="article">
 <meta property="og:title" content="今日头条前端笔试题">
 <meta property="og:url" content="http://www.xiaojunxie.com/2015/09/18/今日头条前端笔试题/index.html">
 <meta property="og:site_name" content="Jennifer's Blog">
-<meta property="og:description" content="2015-09-18惊闻同天笔试的前端同学已经收到面试通知了，而我还一点儿消息都没有，总结下来，前端笔试题做得很不好，每个问题都只是对一点点，很多知识点已经不记得了，基础知识还是要复习啊╮(╯▽╰)╭。从杭州回来后，一直很懈怠，再加上实验室的一些事情，感觉真的很差，要加油了！">
-<meta property="og:updated_time" content="2015-09-19T09:28:17.000Z">
+<meta property="og:description" content="今日头条前端笔试题">
+<meta property="og:updated_time" content="2015-09-19T09:33:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="今日头条前端笔试题">
-<meta name="twitter:description" content="2015-09-18惊闻同天笔试的前端同学已经收到面试通知了，而我还一点儿消息都没有，总结下来，前端笔试题做得很不好，每个问题都只是对一点点，很多知识点已经不记得了，基础知识还是要复习啊╮(╯▽╰)╭。从杭州回来后，一直很懈怠，再加上实验室的一些事情，感觉真的很差，要加油了！">
+<meta name="twitter:description" content="今日头条前端笔试题">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -252,13 +252,8 @@
       
 
       
-        <span itemprop="articleBody"><blockquote>
-<p>2015-09-18惊闻同天笔试的前端同学已经收到面试通知了，而我还一点儿消息都没有，总结下来，前端笔试题做得很不好，每个问题都只是对一点点，很多知识点已经不记得了，基础知识还是要复习啊╮(╯▽╰)╭。从杭州回来后，一直很懈怠，再加上实验室的一些事情，感觉真的很差，要加油了！</p>
-</blockquote>
-<a id="more"></a>
-<ol>
-<li><p>typeof类型</p>
-<p> javascript中判断数据类型有以下几种方法：</p>
+        <span itemprop="articleBody"><h2 id="今日头条前端笔试题">今日头条前端笔试题</h2><a id="more"></a>
+<h3 id="typeof">typeof</h3><p>javascript中判断数据类型有以下几种方法：</p>
 <ol>
 <li><p>原型</p>
 <pre><code><span class="built_in">Object</span>.prototype.toString.call(a) === ‘[object <span class="built_in">String</span>]’
@@ -287,9 +282,7 @@ isString(<span class="string">"I am Jennifer"</span>);
  <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span> instanceof <span class="built_in">Object</span> =&gt; <span class="keyword">false</span></span><br><span class="line">typeof <span class="built_in">window</span> =&gt; object</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-</li>
-<li><p>闭包–IIFE执行</p>
-<ol>
+<h3 id="闭包">闭包</h3><ol>
 <li><p>定义</p>
 <p> 闭包就是由函数创造的一个词法作用域，里面创建的变量被引用后，可以在这个词法环境之外自由使用。简单来说，闭包就是能够读取其他函数内部变量的函数。在javascript语言中，只有父函数内部的子函数可以读取父函数的局部变量。因此可以把闭包简单理解成–定义在一个函数内部的函数。在本质上，闭包就是将函数内部和函数外部连接起来的一座桥梁。这就是javascript语言特有的<em>链式作用域</em>结构，子对象会一级一级地向上寻找所有父对象的变量。所以，父对象的所有变量，对子对象都是可见的，反之则不成立。内部函数一直拥有从父函数作用域取得的变量，这些值不会随着父函数的执行完成而被销毁。<a href="http://segmentfault.com/a/1190000002778015" target="_blank" rel="external">Segment Fault上关于闭包的总结</a></p>
 </li>
@@ -426,9 +419,7 @@ $是封装好的jquery类，是jquery函数的别称，$.fn是$.prototype的简�
  <figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span><span class="params">()</span><span class="comment">&#123;</span><br><span class="line">	var a = b = 3;</span><br><span class="line">&#125;</span>)<span class="params">()</span></span><br><span class="line"><span class="title">console</span>.<span class="title">log</span><span class="params">(a, b)</span>;</span>		</span><br><span class="line">答案：</span><br><span class="line">a是局部变量，b是全局变量，所以结果是 a是ReferenceError，b输出<span class="number">3</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-</li>
-<li><p>如何消除子元素浮动带来的父元素的高度塌陷</p>
-<p> 这是一个典型的闭合浮动的问题。清除浮动对应着CSS中的属性是 <code>clear：none|left|right|both</code> ，而闭合浮动是使浮动元素闭合，从而减少浮动带来的影响。</p>
+<h3 id="闭合浮动">闭合浮动</h3><p>如何消除子元素浮动带来的父元素的高度塌陷–这是一个典型的闭合浮动的问题。清除浮动对应着CSS中的属性是 <code>clear：none|left|right|both</code> ，而闭合浮动是使浮动元素闭合，从而减少浮动带来的影响。</p>
 <ol>
 <li><p>清除浮动的2种方法：</p>
 <ol>
@@ -524,11 +515,9 @@ $是封装好的jquery类，是jquery函数的别称，$.fn是$.prototype的简�
 }
 </code></pre></li>
 </ol>
-</li>
-<li><p>使用原生JS或Jquery实现一个下拉菜单，输入是一个数组，每个元素是一个包含name和id的object，下拉菜单显示的文本是name，点击后弹窗id</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> lists = [&#123;name: <span class="string">'sally'</span>, id: <span class="number">1</span>&#125;, &#123;name: <span class="string">'wlan'</span>, id: <span class="number">2</span>&#125;];</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">generateSelect</span>(<span class="params">lists</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> select = <span class="built_in">document</span>.createElement(<span class="string">"select"</span>);</span><br><span class="line">	<span class="keyword">var</span> html = <span class="string">''</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>, len = lists.length; i &lt; len; ++i) &#123;</span><br><span class="line">		html += <span class="string">'&lt;option id='</span> + lists[i].id + <span class="string">'&gt;'</span> + lists[i].name + <span class="string">'&lt;/option&gt;'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	select.innerHTML = html;</span><br><span class="line">	select.onchange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		alert(select.options[select.selectedIndex].id);</span><br><span class="line">	&#125;;</span><br><span class="line">	<span class="built_in">document</span>.body.appendChild(select);</span><br><span class="line">&#125;</span><br><span class="line">generateSelect(lists);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>从输入URL到整个网页加载完毕及显示在屏幕上的整个流程</p>
+<h3 id="手写js代码">手写js代码</h3><p>使用原生JS或Jquery实现一个下拉菜单，输入是一个数组，每个元素是一个包含name和id的object，下拉菜单显示的文本是name，点击后弹窗id</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> lists = [&#123;name: <span class="string">'sally'</span>, id: <span class="number">1</span>&#125;, &#123;name: <span class="string">'wlan'</span>, id: <span class="number">2</span>&#125;];</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">generateSelect</span>(<span class="params">lists</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> select = <span class="built_in">document</span>.createElement(<span class="string">"select"</span>);</span><br><span class="line">	<span class="keyword">var</span> html = <span class="string">''</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>, len = lists.length; i &lt; len; ++i) &#123;</span><br><span class="line">		html += <span class="string">'&lt;option id='</span> + lists[i].id + <span class="string">'&gt;'</span> + lists[i].name + <span class="string">'&lt;/option&gt;'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	select.innerHTML = html;</span><br><span class="line">	select.onchange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		alert(select.options[select.selectedIndex].id);</span><br><span class="line">	&#125;;</span><br><span class="line">	<span class="built_in">document</span>.body.appendChild(select);</span><br><span class="line">&#125;</span><br><span class="line">generateSelect(lists);</span><br></pre></td></tr></table></figure>
+<h3 id="基本原理考察">基本原理考察</h3><p>从输入URL到整个网页加载完毕及显示在屏幕上的整个流程</p>
 <ol>
 <li><p>浏览器检测缓存，若缓存存在且足够新鲜则提供给客户端，否则组装一个HTTP报文</p>
 </li>
@@ -551,8 +540,6 @@ $是封装好的jquery类，是jquery函数的别称，$.fn是$.prototype的简�
 <li><p>5XX 服务器错误：500 Internal Server Error</p>
 <figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">当服务器将<span class="number">302</span>响应发给浏览器时，浏览器并不是直接进行ajax回调处理，而是先执行<span class="number">302</span>重定向——从Response Headers中读取Location信息，然后向Location中的Url发出请求，在收到这个请求的响应后才会进行ajax回调处理。大致流程如下：</span><br><span class="line">ajax <span class="subst">-&gt; </span>browser <span class="subst">-&gt; </span>server <span class="subst">-&gt; </span><span class="number">302</span> <span class="subst">-&gt; </span>browser(redirect) <span class="subst">-&gt; </span>server <span class="subst">-&gt; </span>browser <span class="subst">-&gt; </span>ajax callback</span><br><span class="line">而在我们的测试程序中，由于<span class="number">302</span>返回的重定向URL在服务器上没有相应的处理程序，所以在ajax回调函数中得到的是<span class="number">404</span>状态码；如果存在对应的URL，得到的状态码就是<span class="number">200</span>。</span><br><span class="line">所以，如果你想在ajax请求中根据<span class="number">302</span>响应通过location<span class="built_in">.</span>href进行重定向是不可行的。</span><br><span class="line"></span><br><span class="line">解决方法如下：</span><br><span class="line"><span class="number">1</span>、修改ajax代码：</span><br><span class="line">$<span class="built_in">.</span>ajax(&#123;</span><br><span class="line">    url: <span class="string">'/oauth/respond'</span>,</span><br><span class="line">    <span class="keyword">type</span>: <span class="string">'post'</span>,</span><br><span class="line">    <span class="built_in">data</span>: <span class="built_in">data</span>,</span><br><span class="line">    dataType: <span class="string">'json'</span>,</span><br><span class="line">    success: function (<span class="built_in">data</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">data</span><span class="built_in">.</span>status == <span class="number">302</span>) &#123;</span><br><span class="line">            location<span class="built_in">.</span>href = <span class="built_in">data</span><span class="built_in">.</span>location;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="number">2</span>、改用form：</span><br><span class="line">&lt;form method=<span class="string">"post"</span> action=<span class="string">"/oauth/respond"</span>&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure></li>
 </ul>
-</li>
-</ol>
 </li>
 </ol>
 </span>
@@ -671,7 +658,7 @@ $是封装好的jquery类，是jquery函数的别称，$.fn是$.prototype的简�
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -727,7 +714,7 @@ $是封装好的jquery类，是jquery函数的别称，$.fn是$.prototype的简�
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#今日头条前端笔试题"><span class="nav-number">1.</span> <span class="nav-text">今日头条前端笔试题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#typeof"><span class="nav-number">1.1.</span> <span class="nav-text">typeof</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#闭包"><span class="nav-number">1.2.</span> <span class="nav-text">闭包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#闭合浮动"><span class="nav-number">1.3.</span> <span class="nav-text">闭合浮动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#手写js代码"><span class="nav-number">1.4.</span> <span class="nav-text">手写js代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本原理考察"><span class="nav-number">1.5.</span> <span class="nav-text">基本原理考察</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
