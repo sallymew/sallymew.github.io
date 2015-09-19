@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="css,html,javascript,异步," />
+  <meta name="keywords" content="encode,html,javascript," />
 
 
 
@@ -37,26 +37,26 @@
   <link rel="shorticon icon" type="image/x-icon" href="/image_16X16.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="非原创，仅摘录(from：知乎 金戈铁马)：）">
+<meta name="description" content="非原创，仅总结：）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="something about TTI">
-<meta property="og:url" content="http://www.xiaojunxie.com/2015/09/05/something-about-TTI/index.html">
+<meta property="og:title" content="中文编码如何才能不乱码">
+<meta property="og:url" content="http://www.xiaojunxie.com/2015/09/03/中文编码如何才能不乱码/index.html">
 <meta property="og:site_name" content="Jennifer's Blog">
-<meta property="og:description" content="非原创，仅摘录(from：知乎 金戈铁马)：）">
-<meta property="og:updated_time" content="2015-09-05T06:32:46.000Z">
+<meta property="og:description" content="非原创，仅总结：）">
+<meta property="og:updated_time" content="2015-09-19T01:11:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="something about TTI">
-<meta name="twitter:description" content="非原创，仅摘录(from：知乎 金戈铁马)：）">
+<meta name="twitter:title" content="中文编码如何才能不乱码">
+<meta name="twitter:description" content="非原创，仅总结：）">
 
 
 <script type="text/javascript" id="hexo.configuration">
   var CONFIG = {
     scheme: 'Mist',
-    sidebar: 'always'
+    sidebar: 'hide'
   };
 </script>
 
-  <title> something about TTI | Jennifer's Blog </title>
+  <title> 中文编码如何才能不乱码 | Jennifer's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -202,7 +202,7 @@
           
           
             
-              something about TTI
+              中文编码如何才能不乱码
             
           
         </h1>
@@ -211,8 +211,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-09-05T10:23:51+08:00" content="2015-09-05">
-            2015-09-05
+          <time itemprop="dateCreated" datetime="2015-09-03T19:04:32+08:00" content="2015-09-03">
+            2015-09-03
           </time>
         </span>
 
@@ -237,8 +237,8 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/09/05/something-about-TTI/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/05/something-about-TTI/" itemprop="commentsCount"></span>
+              <a href="/2015/09/03/中文编码如何才能不乱码/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/03/中文编码如何才能不乱码/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -252,14 +252,47 @@
       
 
       
-        <span itemprop="articleBody"><h2 id="非原创，仅摘录(from：知乎_金戈铁马)">非原创，仅摘录(from：知乎 金戈铁马)</h2><p>：）</p>
+        <span itemprop="articleBody"><h2 id="非原创，仅总结">非原创，仅总结</h2><p>：）</p>
 <a id="more"></a>
-<h2 id="什么是TTI">什么是TTI</h2><p>TTI: Time To Interact指的是页面可交互时间，这个应该越早越好，如果页面因为需要等待异步请求的结果才能计算，而异步的数据可能是回不来的，那么就不要让用户可以这么快地看到可交互的元素，因为它会吸引人去点击，但却没有响应，投诉就必然。当然，这个问题发生在我们的网站很多地方，比如详情页、购物车以及生成订单的页面，要知道这些页面的交互分分钟对转化率产生影响的。</p>
-<h2 id="TTI产生原因">TTI产生原因</h2><p>当页面采用异步加载模块时，TTI问题就更加突出。因为页面首次渲染会发生在css加载完成之后，如果不做任何处理，加入购物车的按钮就会很快呈现在用户面前而触发用户去点击，但是由于页面一方面要等待异步js处理完成，还要等待js发起的ajax请求返回的数据做进一步处理，即便是我们对按钮做loading状态处理，异步js仍可能发生很多意外，页面的购物车按钮区域一直在loading，而导致用户无法点击加入购物车。</p>
-<h2 id="解决异步加载引起的TTI问题">解决异步加载引起的TTI问题</h2><p>要使用前端模块化方案，只要是异步加载js的，都会出现这种问题，包括seajs。</p>
-<p>可以先将TTI问题严重的页面做loading状态处理让用户等待。但是，这也只是过渡方案，更优化的解决方案是对前端开发构建流程做优化调整，把异步的模块在发布生产时合并（combo），作为同步加载的模块，房子页面最底部，而且合并的文件应尽可能降低代码的冗余。</p>
-<p>但是页面js资源不仅仅是优化一个页面，将页面combo成一个模块就完事了，应该像服务端模板一样，js也要分层，将最底层最核心的类库抽离出来单独combo，多个页面之间共用的模块也要单独combo（这种形式的combo结果可能又多个，因为如果共用模块过多，按一定的大小来合并，我们的原则是mini化之后一个文件不能超过200K），前面两者在页面之间是可以相互继承的，而只有当期页面私有逻辑的js模块则应该是一个单独的模块。</p>
-<h2 id="结语">结语</h2><p><strong>前端开发的难点不在于某个业务逻辑的本身实现，而在于规模化生产的前端工程化问题的解决。</strong></p>
+<h2 id="编码">编码</h2><ul>
+<li>编码是一种规则，同样的01组成，不同队则下对应的字符不相同</li>
+<li>编码01可以转换，因为规则和规则之间是由对应转换规则的</li>
+<li>只有当底层编码01与展现规则对应时，才能正确展现，否则<strong>乱码</strong></li>
+<li>有几大体系，每个体系又有建立在其上的具体编码，如unicode与UTF-8之间的关系，他们之间又有具体的转换规则</li>
+<li>Unicode定长2个字节，utf-8变长1-4字节，中文3个字节，英文1个字节</li>
+</ul>
+<h2 id="产生乱码的原因">产生乱码的原因</h2><p>浏览器获取编码规则有3种方式</p>
+<ol>
+<li><p>响应头</p>
+<pre><code>response.<span class="function"><span class="title">setContentType</span><span class="params">(<span class="string">"text/html"</span>)</span></span>
+response.<span class="function"><span class="title">setCharactorEncoding</span><span class="params">(<span class="string">"UTF-8"</span>)</span></span>
+</code></pre></li>
+<li><p>html文件meta标签<code>&lt;meta charset=&quot;utf-8&quot;&gt;</code></p>
+</li>
+<li><p>script标签<code>&lt;script charset=&quot;utf-8&quot;&gt;&lt;/script&gt;</code></p>
+</li>
+</ol>
+<p>这三种方式的优先级是3&gt;1&gt;2</p>
+<h2 id="中文如何不乱码">中文如何不乱码</h2><ol>
+<li><p>post请求</p>
+<ol>
+<li><p>后端不需要处理，使用jquery的<code>$.ajax()</code>，默认在请求头上加了编码，告诉服务器底层使用utf-8解码读取数据</p>
+</li>
+<li><p>后端添加<code>request.setCharactorEncoding(&quot;UTF-8&quot;)</code></p>
+</li>
+</ol>
+</li>
+<li><p>get请求</p>
+<ol>
+<li><p>后端重新编码<code>object.getBytes(&quot;ISO-8859-1&quot;, &quot;UTF-8&quot;)</code></p>
+</li>
+<li><p>前端手动编码，后端手动解码</p>
+<pre><code><span class="tag">object</span> = <span class="function"><span class="title">encoudeURIComponent</span><span class="params">(<span class="string">"XXXX"</span>)</span></span>
+newObj = URLDecoder.<span class="function"><span class="title">decode</span><span class="params">(object, <span class="string">"UTF-8"</span>)</span></span>
+</code></pre></li>
+</ol>
+</li>
+</ol>
 </span>
       
     </div>
@@ -268,13 +301,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/css/" rel="tag">#css</a>
+            <a href="/tags/encode/" rel="tag">#encode</a>
           
             <a href="/tags/html/" rel="tag">#html</a>
           
             <a href="/tags/javascript/" rel="tag">#javascript</a>
-          
-            <a href="/tags/async/" rel="tag">#异步</a>
           
         </div>
       
@@ -283,13 +314,13 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/09/05/todo/" rel="prev">todo</a>
+              <a href="/2015/09/05/页面可交互时间小谈/" rel="prev">页面可交互时间小谈</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/09/03/something-about-encode/" rel="next">something about encode</a>
+              <a href="/2015/08/30/hello-hexo/" rel="next">hello hexo</a>
             
           </div>
         </div>
@@ -341,8 +372,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/09/05/something-about-TTI/"
-                   data-title="something about TTI" data-url="http://www.xiaojunxie.com/2015/09/05/something-about-TTI/">
+              <div class="ds-thread" data-thread-key="2015/09/03/中文编码如何才能不乱码/"
+                   data-title="中文编码如何才能不乱码" data-url="http://www.xiaojunxie.com/2015/09/03/中文编码如何才能不乱码/">
               </div>
             
           </div>
@@ -438,7 +469,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#非原创，仅摘录(from：知乎_金戈铁马)"><span class="nav-number">1.</span> <span class="nav-text">非原创，仅摘录(from：知乎 金戈铁马)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是TTI"><span class="nav-number">2.</span> <span class="nav-text">什么是TTI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TTI产生原因"><span class="nav-number">3.</span> <span class="nav-text">TTI产生原因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决异步加载引起的TTI问题"><span class="nav-number">4.</span> <span class="nav-text">解决异步加载引起的TTI问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结语"><span class="nav-number">5.</span> <span class="nav-text">结语</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#非原创，仅总结"><span class="nav-number">1.</span> <span class="nav-text">非原创，仅总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编码"><span class="nav-number">2.</span> <span class="nav-text">编码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#产生乱码的原因"><span class="nav-number">3.</span> <span class="nav-text">产生乱码的原因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中文如何不乱码"><span class="nav-number">4.</span> <span class="nav-text">中文如何不乱码</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
