@@ -256,7 +256,7 @@
 
       
         
-          <h1 id="网易游戏雷火盘古前端笔试题">网易游戏雷火盘古前端笔试题</h1>
+          <h1 id="SSH框架">SSH框架</h1>
           <div class="post-more-link text-center">
             <a class="btn" href="/2015/09/19/网易游戏雷火盘古前端笔试题/#more" rel="contents">
               阅读全文 &raquo;
@@ -520,7 +520,7 @@
 
       
         
-          <h1 id="今日头条前端笔试题">今日头条前端笔试题</h1>
+          <h1 id="javascript中判断数据类型">javascript中判断数据类型</h1><h2 id="原型">原型</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.prototype.toString.call(a) === ‘[object <span class="built_in">String</span>]’</span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(b) === ‘[object <span class="built_in">Number</span>]’</span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(c) === ‘[object <span class="built_in">Array</span>]’</span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(d) === ‘[object <span class="built_in">Date</span>]’</span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(e) === ‘[object <span class="built_in">Function</span>]’</span><br><span class="line">语义化的javascript代码为：			</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isType</span>(<span class="params">type</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(o) === <span class="string">'[Object'</span> + type + <span class="string">']'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> isString = isType(<span class="string">'String'</span>);</span><br><span class="line"><span class="keyword">var</span> isObject = isType(<span class="string">'object'</span>);</span><br><span class="line"><span class="keyword">var</span> isArray = isType(<span class="string">'Array'</span>);</span><br><span class="line">isString(<span class="string">"I am Jennifer"</span>);</span><br></pre></td></tr></table></figure>
           <div class="post-more-link text-center">
             <a class="btn" href="/2015/09/18/今日头条前端笔试题/#more" rel="contents">
               阅读全文 &raquo;
