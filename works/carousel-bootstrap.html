@@ -37,16 +37,58 @@
   <link rel="shorticon icon" type="image/x-icon" href="/image_16X16.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="&amp;lt;!DOCTYPE HTML&amp;gt;">
+<meta name="description" content="&amp;lt;!DOCTYPE html&amp;gt;
+
+
+   Carousel
+   
+   
+   
+
+   
+      #myCarousel {
+         width: 400px;
+         height: 500px; 
+         overflow: hidden; 
+         top: 0; right: 0; bottom: 0; left: 0;">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Jennifer's Blog">
-<meta property="og:url" content="http://www.xiaojunxie.com/404.html">
+<meta property="og:url" content="http://www.xiaojunxie.com/works/carousel-bootstrap.html">
 <meta property="og:site_name" content="Jennifer's Blog">
-<meta property="og:description" content="&amp;lt;!DOCTYPE HTML&amp;gt;">
-<meta property="og:updated_time" content="2015-09-05T06:41:11.000Z">
+<meta property="og:description" content="&amp;lt;!DOCTYPE html&amp;gt;
+
+
+   Carousel
+   
+   
+   
+
+   
+      #myCarousel {
+         width: 400px;
+         height: 500px; 
+         overflow: hidden; 
+         top: 0; right: 0; bottom: 0; left: 0;">
+<meta property="og:image" content="http://www.xiaojunxie.com/1.jpg">
+<meta property="og:image" content="http://www.xiaojunxie.com/2.jpg">
+<meta property="og:image" content="http://www.xiaojunxie.com/3.jpg">
+<meta property="og:updated_time" content="2015-03-20T06:12:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Jennifer's Blog">
-<meta name="twitter:description" content="&amp;lt;!DOCTYPE HTML&amp;gt;">
+<meta name="twitter:description" content="&amp;lt;!DOCTYPE html&amp;gt;
+
+
+   Carousel
+   
+   
+   
+
+   
+      #myCarousel {
+         width: 400px;
+         height: 500px; 
+         overflow: hidden; 
+         top: 0; right: 0; bottom: 0; left: 0;">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -207,17 +249,50 @@
   <div id="posts" class="posts-expand">
     
     
-      <!DOCTYPE HTML>
+      <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="content-type" content="text/html;charset=utf-8;">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="robots" content="all">
-    <meta name="robots" content="index,follow">
+   <title>Carousel</title>
+   <link href="bootstrap.min.css" rel="stylesheet">
+   <script src="jquery-1.11.1.min.js"></script>
+   <script src="bootstrap.min.js"></script>
+
+   <style>
+      #myCarousel {
+         width: 400px;
+         height: 500px; 
+         overflow: hidden; 
+         top: 0; right: 0; bottom: 0; left: 0; 
+         margin: auto; 
+         position: absolute;
+      }
+   </style>
 </head>
 <body>
 
-<script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8" homepageurl="http://www.xiaojunxie.com" homepagename="回到我的主页"></script>
+<div id="myCarousel" class="carousel slide">
+   <!-- 轮播（Carousel）指标 -->
+   <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+   </ol>   
+   <!-- 轮播（Carousel）项目 -->
+   <div class="carousel-inner">
+      <div class="item active">
+         <img src="1.jpg" alt="First slide">
+      </div>
+      <div class="item">
+         <img src="2.jpg" alt="Second slide">
+      </div>
+      <div class="item">
+         <img src="3.jpg" alt="Third slide">
+      </div>
+   </div>
+   <!-- 轮播（Carousel）导航 -->
+   <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+   <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+</div> 
 
 </body>
 </html>
@@ -231,8 +306,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="404.html"
-                   data-title="" data-url="http://www.xiaojunxie.com/404.html">
+              <div class="ds-thread" data-thread-key="works/carousel-bootstrap.html"
+                   data-title="" data-url="http://www.xiaojunxie.com/works/carousel-bootstrap.html">
               </div>
             
           </div>

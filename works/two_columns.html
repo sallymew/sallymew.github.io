@@ -37,16 +37,67 @@
   <link rel="shorticon icon" type="image/x-icon" href="/image_16X16.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="&amp;lt;!DOCTYPE HTML&amp;gt;">
+<meta name="description" content="&amp;lt;!DOCTYPE html&amp;gt;
+
+
+	
+	两列等高布局
+	
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		header, footer {
+			background-color: blue;
+			text-align: center;
+		}
+		#container1 {
+			overflow: hidden;
+		}
+		#left1 {">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Jennifer's Blog">
-<meta property="og:url" content="http://www.xiaojunxie.com/404.html">
+<meta property="og:url" content="http://www.xiaojunxie.com/works/two_columns.html">
 <meta property="og:site_name" content="Jennifer's Blog">
-<meta property="og:description" content="&amp;lt;!DOCTYPE HTML&amp;gt;">
-<meta property="og:updated_time" content="2015-09-05T06:41:11.000Z">
+<meta property="og:description" content="&amp;lt;!DOCTYPE html&amp;gt;
+
+
+	
+	两列等高布局
+	
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		header, footer {
+			background-color: blue;
+			text-align: center;
+		}
+		#container1 {
+			overflow: hidden;
+		}
+		#left1 {">
+<meta property="og:updated_time" content="2015-04-17T06:53:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Jennifer's Blog">
-<meta name="twitter:description" content="&amp;lt;!DOCTYPE HTML&amp;gt;">
+<meta name="twitter:description" content="&amp;lt;!DOCTYPE html&amp;gt;
+
+
+	
+	两列等高布局
+	
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		header, footer {
+			background-color: blue;
+			text-align: center;
+		}
+		#container1 {
+			overflow: hidden;
+		}
+		#left1 {">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -207,18 +258,66 @@
   <div id="posts" class="posts-expand">
     
     
-      <!DOCTYPE HTML>
-<html>
+      <!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta http-equiv="content-type" content="text/html;charset=utf-8;">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="robots" content="all">
-    <meta name="robots" content="index,follow">
+	<meta charset="UTF-8">
+	<title>两列等高布局</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		header, footer {
+			background-color: blue;
+			text-align: center;
+		}
+		#container1 {
+			overflow: hidden;
+		}
+		#left1 {
+			float: left;
+			width: 100px;
+			background-color: red;
+			padding-bottom: 2000px;/*实现等高*/
+			margin-bottom: -2000px;
+		}
+		#right1 {
+			width: 100%;
+			margin-left: 100px;
+			background-color: green;
+			padding-bottom: 2000px;
+			margin-bottom: -2000px;
+		}
+		#container2 {
+			display: -webkit-box;
+			-webkit-box-orient: horizontal;
+		}
+		#left2 {
+			width: 100px;
+			background-color: red;
+		}
+		#right2 {
+			-webkit-box-flex: 1;
+			background-color: green;
+		}
+	</style>
 </head>
 <body>
+	<header>页面顶部</header>
 
-<script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8" homepageurl="http://www.xiaojunxie.com" homepagename="回到我的主页"></script>
+	<h2>使用float实现两列布局，左侧宽度固定，右侧部分随着浏览器宽度变化而自适应变化</h2>
+	<div id="container1">
+		<div id="left1">我是left</div>
+		<div id="right1">我是right <br> <br> <br> 现在我的高度比left高 <br> <br> <br> 我又长高了</div>
+	</div>
 
+	<h2>使用flexbox实现两列布局</h2>
+	<div id="container2">
+		<div id="left2">我是left</div>
+		<div id="right2">我是right <br> <br> <br> 现在我的高度比left高 <br> <br> <br> 我又长高了</div>
+	</div>
+	<footer>页面底部</footer>
 </body>
 </html>
     
@@ -231,8 +330,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="404.html"
-                   data-title="" data-url="http://www.xiaojunxie.com/404.html">
+              <div class="ds-thread" data-thread-key="works/two_columns.html"
+                   data-title="" data-url="http://www.xiaojunxie.com/works/two_columns.html">
               </div>
             
           </div>
