@@ -43,7 +43,7 @@
 <meta property="og:url" content="http://www.xiaojunxie.com/2015/09/18/前端学习笔记/index.html">
 <meta property="og:site_name" content="Jennifer's Blog">
 <meta property="og:description" content="前言这篇文章是我自己的前端学习笔记，平日学习+面试总结所得，部分参考">
-<meta property="og:updated_time" content="2015-09-20T15:23:05.000Z">
+<meta property="og:updated_time" content="2015-09-20T15:27:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端学习笔记">
 <meta name="twitter:description" content="前言这篇文章是我自己的前端学习笔记，平日学习+面试总结所得，部分参考">
@@ -491,44 +491,283 @@
 * word-wrap: 允许长单词或URL地址换到下一行，取值有normal/break-word
 
 * word-break: 自动换行处理方法，取值有normal/break-all/keep-all(只在半角空格或者连字符处换行)
-</code></pre><h2 id="CSS3_donghua">CSS3 donghua</h2><ul>
+</code></pre><h2 id="CSS3_动画">CSS3 动画</h2><ul>
 <li><p>transform: translate/rotate/scale/skew/matrix</p>
 </li>
 <li><p>transition: property duration timing-function</p>
 </li>
 <li><p>animation: name duration timing-function delay iteration-count direction play-state</p>
-  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">  	<span class="class">.cylon_eye</span> <span class="rules">&#123;</span><br><span class="line">	  <span class="rule"><span class="attribute">-webkit-animation</span>:<span class="value"> move_eye <span class="number">4s</span> linear <span class="number">0s</span> infinite alternate</span></span>;</span><br><span class="line">	     <span class="rule"><span class="attribute">-moz-animation</span>:<span class="value"> move_eye <span class="number">4s</span> linear <span class="number">0s</span> infinite alternate</span></span>;</span><br><span class="line">	       <span class="rule"><span class="attribute">-o-animation</span>:<span class="value"> move_eye <span class="number">4s</span> linear <span class="number">0s</span> infinite alternate</span></span>;</span><br><span class="line">	          <span class="rule"><span class="attribute">animation</span>:<span class="value"> move_eye <span class="number">4s</span> linear <span class="number">0s</span> infinite alternate</span></span>;</span><br><span class="line">	&#125;</span></span><br><span class="line">	<span class="at_rule">@<span class="keyword">-webkit-keyframes</span> move_eye </span>&#123;</span><br><span class="line">		<span class="tag">from</span> <span class="rules">&#123; <span class="rule"><span class="attribute">margin-left</span>:<span class="value">-<span class="number">20%</span></span></span>; &#125;</span> </span><br><span class="line">		<span class="tag">to</span> <span class="rules">&#123; <span class="rule"><span class="attribute">margin-left</span>:<span class="value"><span class="number">100%</span></span></span>; &#125;</span></span><br><span class="line">	&#125;</span><br><span class="line">    <span class="at_rule">@<span class="keyword">-moz-keyframes</span> move_eye </span>&#123; </span><br><span class="line">    	<span class="tag">from</span> <span class="rules">&#123; <span class="rule"><span class="attribute">margin-left</span>:<span class="value">-<span class="number">20%</span></span></span>; &#125;</span> </span><br><span class="line">    	<span class="tag">to</span> <span class="rules">&#123; <span class="rule"><span class="attribute">margin-left</span>:<span class="value"><span class="number">100%</span></span></span>; &#125;</span>  </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="at_rule">@<span class="keyword">-o-keyframes</span> move_eye </span>&#123; </span><br><span class="line">    	<span class="tag">from</span> <span class="rules">&#123; <span class="rule"><span class="attribute">margin-left</span>:<span class="value">-<span class="number">20%</span></span></span>; &#125;</span> </span><br><span class="line">    	<span class="tag">to</span> <span class="rules">&#123; <span class="rule"><span class="attribute">margin-left</span>:<span class="value"><span class="number">100%</span></span></span>; &#125;</span>  </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="at_rule">@<span class="keyword">keyframes</span> move_eye </span>&#123; </span><br><span class="line">    	<span class="tag">from</span> <span class="rules">&#123; <span class="rule"><span class="attribute">margin-left</span>:<span class="value">-<span class="number">20%</span></span></span>; &#125;</span> </span><br><span class="line">    	<span class="tag">to</span> <span class="rules">&#123; <span class="rule"><span class="attribute">margin-left</span>:<span class="value"><span class="number">100%</span></span></span>; &#125;</span>  </span><br><span class="line">    &#125;</span><br><span class="line">  	``` </span><br><span class="line">  	</span><br><span class="line">##  <span class="attr_selector">[使用1、2、3、5个标签画红十字]</span>(<span class="rule"><span class="attribute">http</span>:<span class="value">//www.xiaojunxie.com/works/red10.html)</span></span></span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>  <span class="class">.cylon_eye</span> <span class="rules">{
+  <span class="rule"><span class="attribute">-webkit-animation</span>:<span class="value"> move_eye <span class="number">4s</span> linear <span class="number">0s</span> infinite alternate</span></span>;
+     <span class="rule"><span class="attribute">-moz-animation</span>:<span class="value"> move_eye <span class="number">4s</span> linear <span class="number">0s</span> infinite alternate</span></span>;
+       <span class="rule"><span class="attribute">-o-animation</span>:<span class="value"> move_eye <span class="number">4s</span> linear <span class="number">0s</span> infinite alternate</span></span>;
+          <span class="rule"><span class="attribute">animation</span>:<span class="value"> move_eye <span class="number">4s</span> linear <span class="number">0s</span> infinite alternate</span></span>;
+}</span>
+<span class="at_rule">@<span class="keyword">-webkit-keyframes</span> move_eye </span>{
+    <span class="tag">from</span> <span class="rules">{ <span class="rule"><span class="attribute">margin-left</span>:<span class="value">-<span class="number">20%</span></span></span>; }</span> 
+    <span class="tag">to</span> <span class="rules">{ <span class="rule"><span class="attribute">margin-left</span>:<span class="value"><span class="number">100%</span></span></span>; }</span>
+}
+<span class="at_rule">@<span class="keyword">-moz-keyframes</span> move_eye </span>{ 
+    <span class="tag">from</span> <span class="rules">{ <span class="rule"><span class="attribute">margin-left</span>:<span class="value">-<span class="number">20%</span></span></span>; }</span> 
+    <span class="tag">to</span> <span class="rules">{ <span class="rule"><span class="attribute">margin-left</span>:<span class="value"><span class="number">100%</span></span></span>; }</span>  
+}
+<span class="at_rule">@<span class="keyword">-o-keyframes</span> move_eye </span>{ 
+    <span class="tag">from</span> <span class="rules">{ <span class="rule"><span class="attribute">margin-left</span>:<span class="value">-<span class="number">20%</span></span></span>; }</span> 
+    <span class="tag">to</span> <span class="rules">{ <span class="rule"><span class="attribute">margin-left</span>:<span class="value"><span class="number">100%</span></span></span>; }</span>  
+}
+<span class="at_rule">@<span class="keyword">keyframes</span> move_eye </span>{ 
+    <span class="tag">from</span> <span class="rules">{ <span class="rule"><span class="attribute">margin-left</span>:<span class="value">-<span class="number">20%</span></span></span>; }</span> 
+    <span class="tag">to</span> <span class="rules">{ <span class="rule"><span class="attribute">margin-left</span>:<span class="value"><span class="number">100%</span></span></span>; }</span>  
+}
+</code></pre></li>
 </ul>
-<p>&lt;!DOCTYPE&gt;</p>
-<p><html></html></p>
-<p><head><br>    <style type="text/css"><br>        /<strong>包裹div样式*/<br>        div.container{<br>            width: 150px;<br>            height:150px;<br>            float:left;<br>            margin:10px 0px 0px 10px;<br>        }<br>        /</strong>用1个div标签实现<em>/<br>        .cross{<br>            width:50px;<br>            height:150px;<br>            background:red;<br>            vertical-align: middle;<br>            position:relative;<br>            left:50px;<br>        }<br>        .cross:before{<br>            position: absolute;<br>            top:50px;<br>            left:-50px;<br>            width:50px;<br>            height:50px;<br>            background:red;<br>            vertical-align: middle;<br>            content:””;<br>        }<br>        .cross:after{<br>            position: absolute;<br>            top:50px;<br>            left:50px;<br>            width:50px;<br>            height:50px;<br>            background:red;<br>            vertical-align: middle;<br>            content:””;<br>        }<br>        /**用2个div标签实现</em>/<br>        div.s_first{<br>            position:relative;<br>            top:50px;<br>            left:0px;<br>            width:150px;<br>            height:50px;<br>            background:red;<br>        }<br>        div.s_second{<br>            position:relative;<br>            top:-50px;<br>            left:50px;<br>            width:50px;<br>            height:150px;<br>            background:red;<br>        }<br>        /<strong>用3个div标签实现*/<br>        div.t_first{<br>            position:relative;<br>            top:0px;<br>            left:50px;<br>            width:50px;<br>            height:150px;<br>            background:red;<br>        }<br>        div.t_second{<br>            position:relative;<br>            top:-100px;<br>            left:0px;<br>            width:50px;<br>            height:50px;<br>            background:red;<br>        }<br>        div.t_third{<br>            position:relative;<br>            top:-150px;<br>            left:100px;<br>            width:50px;<br>            height:50px;<br>            background:red;<br>        }<br>        /</strong>用5个div标签实现*/<br>        div.f_first{<br>            position:relative;<br>            top:0px;<br>            left:50px;<br>            width:50px;<br>            height:50px;<br>            background:red;<br>        }<br>        div.f_second{<br>            position:relative;<br>            top:0px;<br>            left:0px;<br>            width:50px;<br>            height:50px;<br>            background:red;<br>        }<br>        div.f_third{<br>            position:relative;<br>            top:-50px;<br>            left:50px;<br>            width:50px;<br>            height:50px;<br>            background:red;<br>        }<br>        div.f_fourth{<br>            position:relative;<br>            top:-100px;<br>            left:100px;<br>            width:50px;<br>            height:50px;<br>            background:red;<br>        }<br>        div.f_fifth{<br>            position:relative;<br>            top:-100px;<br>            left:50px;<br>            width:50px;<br>            height:50px;<br>            background:red;<br>        }<br>    </style><br></head></p>
-<p><body><br>    <div class="container">    <div class="cross"></div></div><br>    <div class="container"><br>        <div class="s_first"></div><br>        <div class="s_second"></div><br>    </div><br>    <div class="container"><br>        <div class="t_first"></div><br>        <div class="t_second"></div><br>        <div class="t_third"></div><br>    </div><br>    <div class="container"><br>        <div class="f_first"></div><br>        <div class="f_second"></div><br>        <div class="f_third"></div><br>        <div class="f_fourth"></div><br>        <div class="f_fifth"></div><br>    </div><br></body><br><br><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="preprocessor">## CSS 绘制箭头</span></span><br></pre></td></tr></table></figure></p>
-<p>.arrow-up {<br>    width: 0;<br>    height: 0;<br>    font-size: 0;<br>    line-height: 0;<br>    border-left: 5px solid transparent;<br>    border-right: 5px solid transparent;<br>    border-bottom: 5px solid red;<br>}<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## <span class="attr_selector">[CSS+JS制作轮播]</span>(<span class="rule"><span class="attribute">http</span>:<span class="value">//www.xiaojunxie.com/works/carousel.html)</span><br><span class="line"></span><br><span class="line">## [bootstrap实现轮播](http://www.xiaojunxie.com/works/carousel-bootstrap.html)</span><br><span class="line"></span><br><span class="line">## CSS 实现浮层</span><br><span class="line"></span><br><span class="line">		&lt;div class=<span class="string">"modal"</span> id=<span class="string">"zero"</span>&gt;</span><br><span class="line">		   &lt;div class=<span class="string">"inner_modal"</span>&gt;</span><br><span class="line">		     &lt;div class=<span class="string">"close"</span>&gt;x&lt;/div&gt;</span><br><span class="line">		     &lt;img src=<span class="string">"images/div_by_zero.jpg"</span>&gt;</span><br><span class="line">		     &lt;h1&gt;Oh crap! Did you divide by zero?&lt;/h1&gt;</span><br><span class="line">		   &lt;/div&gt;</span><br><span class="line">		 &lt;/div&gt;</span><br><span class="line">		 .modal &#123;</span><br><span class="line">		    position: absolute</span></span>;</span><br><span class="line">		    <span class="rule"><span class="attribute">top</span>:<span class="value"> <span class="number">70px</span></span></span>;</span><br><span class="line">		    <span class="rule"><span class="attribute">left</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line">		    <span class="rule"><span class="attribute">right</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line">		&#125;		</span><br><span class="line">		<span class="class">.inner_modal</span> <span class="rules">&#123;</span><br><span class="line">		    <span class="rule"><span class="attribute">position</span>:<span class="value"> relative</span></span>;</span><br><span class="line">		    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">700px</span></span></span>;</span><br><span class="line">		    <span class="rule"><span class="attribute">margin</span>:<span class="value"> auto</span></span>;</span><br><span class="line">		    <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">30px</span></span></span>;</span><br><span class="line">		    <span class="rule"><span class="attribute">background-color</span>:<span class="value"> <span class="hexcolor">#17171a</span></span></span>;</span><br><span class="line">		&#125;</span>		</span><br><span class="line">		<span class="id">#zero</span> <span class="rules">&#123;</span><br><span class="line">		    <span class="rule"><span class="attribute">display</span>:<span class="value"> none</span></span>;</span><br><span class="line">		&#125;</span>		</span><br><span class="line">		<span class="class">.close</span> <span class="rules">&#123;</span><br><span class="line">		    <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;</span><br><span class="line">		    <span class="rule"><span class="attribute">top</span>:<span class="value"> <span class="number">5px</span></span></span>;</span><br><span class="line">		    <span class="rule"><span class="attribute">right</span>:<span class="value"> <span class="number">10px</span></span></span>;</span><br><span class="line">		    <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">5px</span></span></span>;</span><br><span class="line">		    <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">22px</span></span></span>;</span><br><span class="line">		    <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#ffa200</span></span></span>;</span><br><span class="line">		    <span class="rule"><span class="attribute">cursor</span>:<span class="value"> pointer</span></span>;</span><br><span class="line">		&#125;</span></span><br><span class="line"></span><br><span class="line">## <span class="tag">CSS</span> 文本溢出显示</span><br><span class="line"></span><br><span class="line">### 单行文本</span><br></pre></td></tr></table></figure></p>
-<p>overflow: hidden;<br>text-overflow: ellipsis;<br>white-space: nowrap;<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">	</span><br><span class="line">### <span class="attr_selector">[多行文本]</span>(<span class="attribute">http</span>:<span class="comment">//www.css88.com/archives/tag/line-clamp)</span></span><br></pre></td></tr></table></figure></p>
-<p>text-overflow: hidden;<br>display: -webkit-box;<br>display: box;<br>-webkit-box-orient: vertical;<br>box-orient: vertical;<br>-webkit-line-clamp: 2;<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">## [如何让height:100%起作用](http://www.webhek.com/css-100-percent-height)</span></span><br><span class="line"></span><br><span class="line">根据W3C的规范，百分比的宽度<span class="regexp">/高度在设定时需要根据这个元素的父容器的宽度/</span>高度去计算。如果不给宽度设置缺省值，设置`<span class="javascript">width: <span class="number">100</span>%</span>`会占满整个横向宽度。而高度的计算却不是这样，浏览器根本不计算内容区的高度，除非内容超出了视窗范围，导致滚动条出现。换句话说，设置元素`<span class="javascript">height: <span class="number">100</span>%</span>`时，父元素`<span class="javascript">height: auto</span>`，计算时只会出现<span class="literal">undefined</span>结果，并没有任何卵用。想要使其起作用，就要对其所有的祖先元素设置`<span class="javascript">height: <span class="number">100</span>%</span>`。</span><br><span class="line">	</span><br><span class="line">高度自适应：绝对定位+top+`<span class="javascript">bottom:<span class="number">0</span></span>` / Ie6：html设置`<span class="javascript">padding-top</span>`</span><br></pre></td></tr></table></figure></p>
-<p>&lt;!DOCTYPE html&gt;</p>
-<p><html lang="en"></html></p>
-<p><head><br>    <meta charset="UTF-8"><br>    <title>高度自适应</title><br>    <style><br>        html, body {<br>            height: 100%;<br>        }<br>        body, div {<br>            margin: 0;<br>            padding: 0;<br>            color: #f00;<br>        }<br>        .top {<br>            background: #36c;<br>            height: 100px;<br>        }<br>        .main {<br>            background: #f90;<br>            position: absolute;<br>            width: 100%;<br>            top: 100px;<br>            bottom: 0;<br>            overflow: auto;<br>        }<br>        /<em>IE6中，html的增加了padding-top后，整个html元素的高度还是保持不变，即浏览器窗口的高度，变化的是body的高度减小了，用来抵消html的padding-top.而绝对定位的元素最终是参照html元素的。</em>/</p>
-<pre><code>    * html {
-        padding-top: 100px<span class="comment">;</span>
-    }
-    * html .top {
-        background: #36c<span class="comment">;</span>
-        height: 100px<span class="comment">;</span>
-        position: absolute<span class="comment">;</span>
-        top: 0<span class="comment">;</span>
-        width: 100%<span class="comment">;</span>
-    }
-    * html .main {
-        background: #f90<span class="comment">;</span>
-        position: static<span class="comment">;</span>
-        height: 100%<span class="comment">;</span>
-    } 
-&lt;/style&gt;
-</code></pre><p></head></p>
-<p><body><br>    <div class="top">我是顶层nav，高度固定</div><br>    <div class="main">我是main，高度随浏览器视区大小变化而变化</div><br></body><br></html><br>```</p>
-<h1 id="Javascript–定义行为">Javascript–定义行为</h1><h2 id="数据类型">数据类型</h2><h2 id="继承">继承</h2><h2 id="事件模型">事件模型</h2><h2 id="事件代理">事件代理</h2><h2 id="闭包">闭包</h2><h2 id="this">this</h2><h2 id="JSONP">JSONP</h2><h2 id="AJAX">AJAX</h2><h2 id="跨域">跨域</h2><h2 id="安全">安全</h2><h2 id="数组">数组</h2><h2 id="字符串">字符串</h2><h2 id="日期">日期</h2><h2 id="正则">正则</h2><h2 id="函数">函数</h2><h2 id="模块化">模块化</h2><h2 id="ES6">ES6</h2></style></head></p></span>
+<h2 id="使用1、2、3、5个标签画红十字"><a href="http://www.xiaojunxie.com/works/red10.html">使用1、2、3、5个标签画红十字</a></h2><pre><code><span class="doctype">&lt;!DOCTYPE&gt;</span>
+<span class="tag">&lt;<span class="title">html</span>&gt;</span>
+<span class="tag">&lt;<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">style</span> <span class="attribute">type</span>=<span class="value">"text/css"</span>&gt;</span><span class="css">
+        <span class="comment">/**包裹div样式*/</span>
+        <span class="tag">div</span><span class="class">.container</span><span class="rules">{        
+            <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">150px</span></span></span>;        
+            <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">150px</span></span></span>;        
+            <span class="rule"><span class="attribute">float</span>:<span class="value">left</span></span>;        
+            <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">10px</span> <span class="number">0px</span> <span class="number">0px</span> <span class="number">10px</span></span></span>;    
+        }</span>    
+        <span class="comment">/**用1个div标签实现*/</span>    
+        <span class="class">.cross</span><span class="rules">{        
+            <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">150px</span></span></span>;        
+            <span class="rule"><span class="attribute">background</span>:<span class="value">red</span></span>;        
+            <span class="rule"><span class="attribute">vertical-align</span>:<span class="value"> middle</span></span>;        
+            <span class="rule"><span class="attribute">position</span>:<span class="value">relative</span></span>;        
+            <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">50px</span></span></span>;    
+        }</span>    
+        <span class="rule"><span class="attribute">.cross</span>:<span class="value">before{        
+            position: absolute</span></span>;        
+            <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">left</span>:<span class="value">-<span class="number">50px</span></span></span>;                
+            <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">background</span>:<span class="value">red</span></span>;        
+            <span class="rule"><span class="attribute">vertical-align</span>:<span class="value"> middle</span></span>;        
+            <span class="rule"><span class="attribute">content</span>:<span class="value"><span class="string">""</span></span></span>;    
+        }    
+        <span class="rule"><span class="attribute">.cross</span>:<span class="value">after{        
+            position: absolute</span></span>;        
+            <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">50px</span></span></span>;                
+            <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">background</span>:<span class="value">red</span></span>;        
+            <span class="rule"><span class="attribute">vertical-align</span>:<span class="value"> middle</span></span>;        
+            <span class="rule"><span class="attribute">content</span>:<span class="value"><span class="string">""</span></span></span>;    
+        }    
+        <span class="comment">/**用2个div标签实现*/</span>    
+        <span class="tag">div</span><span class="class">.s_first</span><span class="rules">{        
+            <span class="rule"><span class="attribute">position</span>:<span class="value">relative</span></span>;        
+            <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">0px</span></span></span>;        
+            <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">150px</span></span></span>;        
+            <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">background</span>:<span class="value">red</span></span>;    
+        }</span>    
+        <span class="tag">div</span><span class="class">.s_second</span><span class="rules">{        
+            <span class="rule"><span class="attribute">position</span>:<span class="value">relative</span></span>;        
+            <span class="rule"><span class="attribute">top</span>:<span class="value">-<span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">150px</span></span></span>;        
+            <span class="rule"><span class="attribute">background</span>:<span class="value">red</span></span>;    
+        }</span>    
+        <span class="comment">/**用3个div标签实现*/</span>    
+        <span class="tag">div</span><span class="class">.t_first</span><span class="rules">{        
+            <span class="rule"><span class="attribute">position</span>:<span class="value">relative</span></span>;        
+            <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">0px</span></span></span>;        
+            <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">150px</span></span></span>;        
+            <span class="rule"><span class="attribute">background</span>:<span class="value">red</span></span>;    
+        }</span>    
+        <span class="tag">div</span><span class="class">.t_second</span><span class="rules">{        
+            <span class="rule"><span class="attribute">position</span>:<span class="value">relative</span></span>;        
+            <span class="rule"><span class="attribute">top</span>:<span class="value">-<span class="number">100px</span></span></span>;        
+            <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">0px</span></span></span>;        
+            <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">background</span>:<span class="value">red</span></span>;    
+        }</span>    
+        <span class="tag">div</span><span class="class">.t_third</span><span class="rules">{        
+            <span class="rule"><span class="attribute">position</span>:<span class="value">relative</span></span>;        
+            <span class="rule"><span class="attribute">top</span>:<span class="value">-<span class="number">150px</span></span></span>;        
+            <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">100px</span></span></span>;        
+            <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">background</span>:<span class="value">red</span></span>;    
+        }</span>    
+        <span class="comment">/**用5个div标签实现*/</span>    
+        <span class="tag">div</span><span class="class">.f_first</span><span class="rules">{        
+            <span class="rule"><span class="attribute">position</span>:<span class="value">relative</span></span>;        
+            <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">0px</span></span></span>;        
+            <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">background</span>:<span class="value">red</span></span>;    
+        }</span>    
+        <span class="tag">div</span><span class="class">.f_second</span><span class="rules">{        
+            <span class="rule"><span class="attribute">position</span>:<span class="value">relative</span></span>;        
+            <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">0px</span></span></span>;        
+            <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">0px</span></span></span>;        
+            <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">background</span>:<span class="value">red</span></span>;    
+        }</span>    
+        <span class="tag">div</span><span class="class">.f_third</span><span class="rules">{        
+            <span class="rule"><span class="attribute">position</span>:<span class="value">relative</span></span>;        
+            <span class="rule"><span class="attribute">top</span>:<span class="value">-<span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">background</span>:<span class="value">red</span></span>;    
+        }</span>    
+        <span class="tag">div</span><span class="class">.f_fourth</span><span class="rules">{        
+            <span class="rule"><span class="attribute">position</span>:<span class="value">relative</span></span>;        
+            <span class="rule"><span class="attribute">top</span>:<span class="value">-<span class="number">100px</span></span></span>;        
+            <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">100px</span></span></span>;        
+            <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">background</span>:<span class="value">red</span></span>;    
+        }</span>    
+        <span class="tag">div</span><span class="class">.f_fifth</span><span class="rules">{        
+            <span class="rule"><span class="attribute">position</span>:<span class="value">relative</span></span>;        
+            <span class="rule"><span class="attribute">top</span>:<span class="value">-<span class="number">100px</span></span></span>;        
+            <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">50px</span></span></span>;        
+            <span class="rule"><span class="attribute">background</span>:<span class="value">red</span></span>;    
+        }</span>
+    </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+<span class="tag">&lt;<span class="title">body</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"container"</span>&gt;</span>    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cross"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"container"</span>&gt;</span>    
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"s_first"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>    
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"s_second"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"container"</span>&gt;</span>    
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"t_first"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>    
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"t_second"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>    
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"t_third"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"container"</span>&gt;</span>    
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"f_first"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>    
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"f_second"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>    
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"f_third"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>    
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"f_fourth"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>    
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"f_fifth"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</code></pre><h2 id="CSS_绘制箭头">CSS 绘制箭头</h2><pre><code><span class="class">.arrow-up</span> <span class="rules">{
+    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">0</span></span></span>;
+    <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">0</span></span></span>;
+    <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">0</span></span></span>;
+    <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">0</span></span></span>;
+    <span class="rule"><span class="attribute">border-left</span>:<span class="value"> <span class="number">5px</span> solid transparent</span></span>;
+    <span class="rule"><span class="attribute">border-right</span>:<span class="value"> <span class="number">5px</span> solid transparent</span></span>;
+    <span class="rule"><span class="attribute">border-bottom</span>:<span class="value"> <span class="number">5px</span> solid red</span></span>;
+}</span>
+</code></pre><h2 id="CSS+JS制作轮播"><a href="http://www.xiaojunxie.com/works/carousel.html">CSS+JS制作轮播</a></h2><h2 id="bootstrap实现轮播"><a href="http://www.xiaojunxie.com/works/carousel-bootstrap.html">bootstrap实现轮播</a></h2><h2 id="CSS_实现浮层">CSS 实现浮层</h2><pre><code>&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"modal"</span> <span class="property">id</span>=<span class="string">"zero"</span>&gt;
+   &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"inner_modal"</span>&gt;
+     &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"close"</span>&gt;x&lt;/<span class="keyword">div</span>&gt;
+     &lt;img src=<span class="string">"images/div_by_zero.jpg"</span>&gt;
+     &lt;h1&gt;Oh crap! Did you divide <span class="keyword">by</span> zero?&lt;/h1&gt;
+   &lt;/<span class="keyword">div</span>&gt;
+ &lt;/<span class="keyword">div</span>&gt;
+ .modal {
+    position: absolute;
+    top: <span class="number">70</span>px;
+    left: <span class="number">0</span>;
+    right: <span class="number">0</span>;
+}        
+.inner_modal {
+    position: relative;
+    width: <span class="number">700</span>px;
+    margin: auto;
+    padding: <span class="number">30</span>px;
+    background-color: <span class="comment">#17171a;</span>
+}        
+<span class="comment">#zero {</span>
+    display: none;
+}        
+.close {
+    position: absolute;
+    top: <span class="number">5</span>px;
+    right: <span class="number">10</span>px;
+    padding: <span class="number">5</span>px;
+    font-size: <span class="number">22</span>px;
+    color: <span class="comment">#ffa200;</span>
+    cursor: pointer;
+}
+</code></pre><h2 id="CSS_文本溢出显示">CSS 文本溢出显示</h2><h3 id="单行文本">单行文本</h3><pre><code><span class="rule"><span class="attribute">overflow</span>:<span class="value"> hidden</span></span>;
+<span class="rule"><span class="attribute">text-overflow</span>:<span class="value"> ellipsis</span></span>;
+<span class="rule"><span class="attribute">white-space</span>:<span class="value"> nowrap</span></span>;
+</code></pre><h3 id="多行文本"><a href="http://www.css88.com/archives/tag/line-clamp" target="_blank" rel="external">多行文本</a></h3><pre><code><span class="rule"><span class="attribute">text-overflow</span>:<span class="value"> hidden</span></span>;
+<span class="rule"><span class="attribute">display</span>:<span class="value"> -webkit-box</span></span>;
+<span class="rule"><span class="attribute">display</span>:<span class="value"> box</span></span>;
+<span class="rule"><span class="attribute">-webkit-box-orient</span>:<span class="value"> vertical</span></span>;
+<span class="rule"><span class="attribute">box-orient</span>:<span class="value"> vertical</span></span>;
+<span class="rule"><span class="attribute">-webkit-line-clamp</span>:<span class="value"> <span class="number">2</span></span></span>;
+</code></pre><h2 id="如何让height:100%起作用"><a href="http://www.webhek.com/css-100-percent-height" target="_blank" rel="external">如何让height:100%起作用</a></h2><p>根据W3C的规范，百分比的宽度/高度在设定时需要根据这个元素的父容器的宽度/高度去计算。如果不给宽度设置缺省值，设置<code>width: 100%</code>会占满整个横向宽度。而高度的计算却不是这样，浏览器根本不计算内容区的高度，除非内容超出了视窗范围，导致滚动条出现。换句话说，设置元素<code>height: 100%</code>时，父元素<code>height: auto</code>，计算时只会出现undefined结果，并没有任何卵用。想要使其起作用，就要对其所有的祖先元素设置<code>height: 100%</code>。</p>
+<p>高度自适应：绝对定位+top+<code>bottom:0</code> / Ie6：html设置<code>padding-top</code></p>
+<pre><code><span class="doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span>
+<span class="tag">&lt;<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">title</span>&gt;</span>高度自适应<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
+        <span class="tag">html</span>, <span class="tag">body</span> <span class="rules">{
+            <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">100%</span></span></span>;
+        }</span>
+        <span class="tag">body</span>, <span class="tag">div</span> <span class="rules">{
+            <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span></span></span>;
+            <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">0</span></span></span>;
+            <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#f00</span></span></span>;
+        }</span>
+        <span class="class">.top</span> <span class="rules">{
+            <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#36c</span></span></span>;
+            <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">100px</span></span></span>;
+        }</span>
+        <span class="class">.main</span> <span class="rules">{
+            <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#f90</span></span></span>;
+            <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;
+            <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100%</span></span></span>;
+            <span class="rule"><span class="attribute">top</span>:<span class="value"> <span class="number">100px</span></span></span>;
+            <span class="rule"><span class="attribute">bottom</span>:<span class="value"> <span class="number">0</span></span></span>;
+            <span class="rule"><span class="attribute">overflow</span>:<span class="value"> auto</span></span>;
+        }</span>
+        <span class="comment">/*IE6中，html的增加了padding-top后，整个html元素的高度还是保持不变，即浏览器窗口的高度，变化的是body的高度减小了，用来抵消html的padding-top.而绝对定位的元素最终是参照html元素的。*/</span>
+        * <span class="tag">html</span> <span class="rules">{
+            <span class="rule"><span class="attribute">padding-top</span>:<span class="value"> <span class="number">100px</span></span></span>;
+        }</span>
+        * <span class="tag">html</span> <span class="class">.top</span> <span class="rules">{
+            <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#36c</span></span></span>;
+            <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">100px</span></span></span>;
+            <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;
+            <span class="rule"><span class="attribute">top</span>:<span class="value"> <span class="number">0</span></span></span>;
+            <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100%</span></span></span>;
+        }</span>
+        * <span class="tag">html</span> <span class="class">.main</span> <span class="rules">{
+            <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#f90</span></span></span>;
+            <span class="rule"><span class="attribute">position</span>:<span class="value"> static</span></span>;
+            <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">100%</span></span></span>;
+        }</span> 
+    </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+<span class="tag">&lt;<span class="title">body</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"top"</span>&gt;</span>我是顶层nav，高度固定<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"main"</span>&gt;</span>我是main，高度随浏览器视区大小变化而变化<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</code></pre><h1 id="Javascript–定义行为">Javascript–定义行为</h1><h2 id="数据类型">数据类型</h2><h2 id="继承">继承</h2><h2 id="事件模型">事件模型</h2><h2 id="事件代理">事件代理</h2><h2 id="闭包">闭包</h2><h2 id="this">this</h2><h2 id="JSONP">JSONP</h2><h2 id="AJAX">AJAX</h2><h2 id="跨域">跨域</h2><h2 id="安全">安全</h2><h2 id="数组">数组</h2><h2 id="字符串">字符串</h2><h2 id="日期">日期</h2><h2 id="正则">正则</h2><h2 id="函数">函数</h2><h2 id="模块化">模块化</h2><h2 id="ES6">ES6</h2></span>
       
     </div>
 
@@ -704,7 +943,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML–搭建结构"><span class="nav-number">2.</span> <span class="nav-text">HTML–搭建结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#从输入URL到整个网页加载完毕及显示在屏幕上的整个流程"><span class="nav-number">2.1.</span> <span class="nav-text">从输入URL到整个网页加载完毕及显示在屏幕上的整个流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP状态码小结"><span class="nav-number">2.2.</span> <span class="nav-text">HTTP状态码小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WEB语义化"><span class="nav-number">2.3.</span> <span class="nav-text">WEB语义化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搜索引擎优化：内部优化，保证链接可跳转，提升用户体验"><span class="nav-number">2.4.</span> <span class="nav-text">搜索引擎优化：内部优化，保证链接可跳转，提升用户体验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOCTYPE"><span class="nav-number">2.5.</span> <span class="nav-text">DOCTYPE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#客户端存储"><span class="nav-number">2.6.</span> <span class="nav-text">客户端存储</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cookie"><span class="nav-number">2.6.1.</span> <span class="nav-text">cookie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sessionStorage"><span class="nav-number">2.6.2.</span> <span class="nav-text">sessionStorage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#localStorage"><span class="nav-number">2.6.3.</span> <span class="nav-text">localStorage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#websql_database"><span class="nav-number">2.6.4.</span> <span class="nav-text">websql database</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cookie和session"><span class="nav-number">2.7.</span> <span class="nav-text">cookie和session</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是cookie"><span class="nav-number">2.7.1.</span> <span class="nav-text">什么是cookie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是session"><span class="nav-number">2.7.2.</span> <span class="nav-text">什么是session</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#session和cookie谁更安全"><span class="nav-number">2.7.3.</span> <span class="nav-text">session和cookie谁更安全</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP_method：POST_和_GET"><span class="nav-number">2.8.</span> <span class="nav-text">HTTP method：POST 和 GET</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用URL拆分出protocol、host、port、query等"><span class="nav-number">2.9.</span> <span class="nav-text">使用URL拆分出protocol、host、port、query等</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">2.9.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解释"><span class="nav-number">2.9.2.</span> <span class="nav-text">解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取"><span class="nav-number">2.9.3.</span> <span class="nav-text">获取</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#canvas"><span class="nav-number">2.10.</span> <span class="nav-text">canvas</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS3_donghua"><span class="nav-number">2.11.</span> <span class="nav-text">CSS3 donghua</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML–搭建结构"><span class="nav-number">2.</span> <span class="nav-text">HTML–搭建结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#从输入URL到整个网页加载完毕及显示在屏幕上的整个流程"><span class="nav-number">2.1.</span> <span class="nav-text">从输入URL到整个网页加载完毕及显示在屏幕上的整个流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP状态码小结"><span class="nav-number">2.2.</span> <span class="nav-text">HTTP状态码小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WEB语义化"><span class="nav-number">2.3.</span> <span class="nav-text">WEB语义化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搜索引擎优化：内部优化，保证链接可跳转，提升用户体验"><span class="nav-number">2.4.</span> <span class="nav-text">搜索引擎优化：内部优化，保证链接可跳转，提升用户体验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOCTYPE"><span class="nav-number">2.5.</span> <span class="nav-text">DOCTYPE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#客户端存储"><span class="nav-number">2.6.</span> <span class="nav-text">客户端存储</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cookie"><span class="nav-number">2.6.1.</span> <span class="nav-text">cookie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sessionStorage"><span class="nav-number">2.6.2.</span> <span class="nav-text">sessionStorage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#localStorage"><span class="nav-number">2.6.3.</span> <span class="nav-text">localStorage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#websql_database"><span class="nav-number">2.6.4.</span> <span class="nav-text">websql database</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cookie和session"><span class="nav-number">2.7.</span> <span class="nav-text">cookie和session</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是cookie"><span class="nav-number">2.7.1.</span> <span class="nav-text">什么是cookie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是session"><span class="nav-number">2.7.2.</span> <span class="nav-text">什么是session</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#session和cookie谁更安全"><span class="nav-number">2.7.3.</span> <span class="nav-text">session和cookie谁更安全</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP_method：POST_和_GET"><span class="nav-number">2.8.</span> <span class="nav-text">HTTP method：POST 和 GET</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用URL拆分出protocol、host、port、query等"><span class="nav-number">2.9.</span> <span class="nav-text">使用URL拆分出protocol、host、port、query等</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">2.9.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解释"><span class="nav-number">2.9.2.</span> <span class="nav-text">解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取"><span class="nav-number">2.9.3.</span> <span class="nav-text">获取</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#canvas"><span class="nav-number">2.10.</span> <span class="nav-text">canvas</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS3_动画"><span class="nav-number">2.11.</span> <span class="nav-text">CSS3 动画</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用1、2、3、5个标签画红十字"><span class="nav-number">2.12.</span> <span class="nav-text">使用1、2、3、5个标签画红十字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_绘制箭头"><span class="nav-number">2.13.</span> <span class="nav-text">CSS 绘制箭头</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS+JS制作轮播"><span class="nav-number">2.14.</span> <span class="nav-text">CSS+JS制作轮播</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bootstrap实现轮播"><span class="nav-number">2.15.</span> <span class="nav-text">bootstrap实现轮播</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_实现浮层"><span class="nav-number">2.16.</span> <span class="nav-text">CSS 实现浮层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_文本溢出显示"><span class="nav-number">2.17.</span> <span class="nav-text">CSS 文本溢出显示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单行文本"><span class="nav-number">2.17.1.</span> <span class="nav-text">单行文本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多行文本"><span class="nav-number">2.17.2.</span> <span class="nav-text">多行文本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何让height:100%起作用"><span class="nav-number">2.18.</span> <span class="nav-text">如何让height:100%起作用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Javascript–定义行为"><span class="nav-number">3.</span> <span class="nav-text">Javascript–定义行为</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">3.1.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承"><span class="nav-number">3.2.</span> <span class="nav-text">继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件模型"><span class="nav-number">3.3.</span> <span class="nav-text">事件模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件代理"><span class="nav-number">3.4.</span> <span class="nav-text">事件代理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#闭包"><span class="nav-number">3.5.</span> <span class="nav-text">闭包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#this"><span class="nav-number">3.6.</span> <span class="nav-text">this</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSONP"><span class="nav-number">3.7.</span> <span class="nav-text">JSONP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AJAX"><span class="nav-number">3.8.</span> <span class="nav-text">AJAX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跨域"><span class="nav-number">3.9.</span> <span class="nav-text">跨域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安全"><span class="nav-number">3.10.</span> <span class="nav-text">安全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组"><span class="nav-number">3.11.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串"><span class="nav-number">3.12.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#日期"><span class="nav-number">3.13.</span> <span class="nav-text">日期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则"><span class="nav-number">3.14.</span> <span class="nav-text">正则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">3.15.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模块化"><span class="nav-number">3.16.</span> <span class="nav-text">模块化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ES6"><span class="nav-number">3.17.</span> <span class="nav-text">ES6</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
