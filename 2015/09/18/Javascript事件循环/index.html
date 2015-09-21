@@ -48,7 +48,7 @@ Javascript API文档明确定义：setTimeout的第二个参数意义为隔多�
 从一段代码开始12345a. onclick = function() &amp;#123;	setTimeout(function() &amp;#123;		//do something...	&amp;#125;, 0);&amp;#125;;
 Javascript API文档明确定义：setTimeout的第二个参数意义为隔多少ms后，回调方法就会被执行。那么可以推断出，这里设置成0ms，应该被立">
 <meta property="og:image" content="http://blogread.cn/it/plugins/ueditor/php/upload/29771354773840.png">
-<meta property="og:updated_time" content="2015-09-18T10:21:14.000Z">
+<meta property="og:updated_time" content="2015-09-21T10:45:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript事件循环">
 <meta name="twitter:description" content="备注非原创，仅总结：）
@@ -300,7 +300,7 @@ setInterval(<span class="function"><span class="keyword">function</span>(<span c
 </li>
 <li><p>ajax异步请求是否真的异步</p>
 <blockquote>
-<p>XMLHTTPRequest异步请求是由浏览器新开一个线程请求，当请求的状态变更时，如果先前已经设置回调，那么异步线程就产生状态变更事件放到javascript引擎的处理队列中等的处理。所以，当任务处理时，javascript引擎始终是单线程运行回调函数。</p>
+<p>XMLHTTPRequest异步请求是由浏览器新开一个线程请求，当请求的状态变更时，如果先前已经设置回调，那么异步线程就产生状态变更事件放到javascript引擎的处理队列中等待处理。所以，当任务处理时，javascript引擎始终是单线程运行回调函数。</p>
 </blockquote>
 </li>
 <li><p>倒计时实现</p>
@@ -521,7 +521,7 @@ setInterval(<span class="function"><span class="keyword">function</span>(<span c
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

@@ -45,7 +45,7 @@
 <meta property="og:description" content="前言这篇文章是我自己的前端学习笔记，平日学习+面试总结所得，部分参考">
 <meta property="og:image" content="http://osmn00.com/d/file/blog/front-end/2010-10-16/23ed2c1db2a91fe6d080f8359b634fac.gif">
 <meta property="og:image" content="http://www.xiaojunxie.com/event.png">
-<meta property="og:updated_time" content="2015-09-21T08:13:24.000Z">
+<meta property="og:updated_time" content="2015-09-21T11:29:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端学习笔记">
 <meta name="twitter:description" content="前言这篇文章是我自己的前端学习笔记，平日学习+面试总结所得，部分参考">
@@ -288,6 +288,18 @@
 </li>
 </ul>
 <figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">当服务器将<span class="number">302</span>响应发给浏览器时，浏览器并不是直接进行ajax回调处理，而是先执行<span class="number">302</span>重定向——从Response Headers中读取Location信息，然后向Location中的Url发出请求，在收到这个请求的响应后才会进行ajax回调处理。大致流程如下：</span><br><span class="line">ajax <span class="subst">-&gt; </span>browser <span class="subst">-&gt; </span>server <span class="subst">-&gt; </span><span class="number">302</span> <span class="subst">-&gt; </span>browser(redirect) <span class="subst">-&gt; </span>server <span class="subst">-&gt; </span>browser <span class="subst">-&gt; </span>ajax callback</span><br><span class="line">而在我们的测试程序中，由于<span class="number">302</span>返回的重定向URL在服务器上没有相应的处理程序，所以在ajax回调函数中得到的是<span class="number">404</span>状态码；如果存在对应的URL，得到的状态码就是<span class="number">200</span>。</span><br><span class="line">所以，如果你想在ajax请求中根据<span class="number">302</span>响应通过location<span class="built_in">.</span>href进行重定向是不可行的。</span><br><span class="line"></span><br><span class="line">解决方法如下：</span><br><span class="line"><span class="number">1</span>、修改ajax代码：</span><br><span class="line">$<span class="built_in">.</span>ajax(&#123;</span><br><span class="line">    url: <span class="string">'/oauth/respond'</span>,</span><br><span class="line">    <span class="keyword">type</span>: <span class="string">'post'</span>,</span><br><span class="line">    <span class="built_in">data</span>: <span class="built_in">data</span>,</span><br><span class="line">    dataType: <span class="string">'json'</span>,</span><br><span class="line">    success: function (<span class="built_in">data</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">data</span><span class="built_in">.</span>status == <span class="number">302</span>) &#123;</span><br><span class="line">            location<span class="built_in">.</span>href = <span class="built_in">data</span><span class="built_in">.</span>location;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="number">2</span>、改用form：</span><br><span class="line">&lt;form method=<span class="string">"post"</span> action=<span class="string">"/oauth/respond"</span>&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="HTTP_readystate">HTTP readystate</h2><ol>
+<li><p>0-uninitialized：请求未初始化</p>
+</li>
+<li><p>1-loading：已经开始下载</p>
+</li>
+<li><p>2-loaded：下载完成</p>
+</li>
+<li><p>3-interactive：下载已完成但是尚不可用</p>
+</li>
+<li><p>4-complete：所有数据已经准备好</p>
+</li>
+</ol>
 <h2 id="WEB语义化">WEB语义化</h2><ul>
 <li><p>HTML语义化：使用包含语义的标签（<code>header footer nav main section article</code>等），恰当地表示文档结构，可以方便自动程序的识别</p>
 </li>
@@ -1531,40 +1543,468 @@ EventUtil.on(ul, <span class="string">"click"</span>, function(<span class="keyw
         }
     }
 });
-</code></pre><h2 id="闭包">闭包</h2><h2 id="this">this</h2><pre><code>javascript有一套不同于其他语言的对<span class="keyword">this</span>的处理机制，在五种不同的情况下，<span class="keyword">this</span>指向的各不相同。通俗来说，函数在哪里调用<span class="keyword">this</span>指向哪里。
-
-<span class="number">1.</span> 全局范围内<span class="keyword">this</span>指向全局对象，默认是window
-
-<span class="number">2.</span> 函数调用时，<span class="keyword">this</span>指向全局对象
-
-<span class="number">3.</span> 方法调用时，<span class="keyword">this</span>指向的是调用此方法的对象
-
-<span class="number">4.</span> 调用构造函数时，在函数内部，<span class="keyword">this</span>指向新创建的对象
-
-<span class="number">5.</span> 显示设置<span class="keyword">this</span>**使用Function.prototype的call和apply时，函数内的<span class="keyword">this</span>会被显式设置为函数调用的第一个参数**
-
-        var n = <span class="number">0</span>;
-        <span class="function">function <span class="title">output</span><span class="params">()</span></span>{
-            alert(<span class="keyword">this</span>.n);
+</code></pre><h2 id="闭包">闭包</h2><h3 id="定义-2">定义</h3><p>闭包就是由函数创造的一个词法作用域，里面创建的变量被饮用后，可以在这个词法环境之外自由使用。简单来说，闭包就是能够读取其他函数内部变量的函数。在javascript中，只有父函数内部的子函数可以读取父函数内的局部变量。因此，可以把闭包简单理解成<strong>定义在函数内部的函数</strong>。内部函数将一直拥有从外部函数作用域获取的变量，这些值不会随着外部函数的执行完成而销毁，存在内存泄露的危险。在本质上，闭包就是将内部函数和外部函数连接起来的桥梁。这就是javascript语言特有的链式作用域结构，子对象会一级一级地向上寻找所以父对象的变量。所以，父对象的所有变量，对于子对象都是可见的，反之则不成立。</p>
+<h3 id="作用">作用</h3><p>创建内部变量，使变量不会被外部对象随意修改，但同时又可以通过指定的函数接口来操作</p>
+<h3 id="创建方法">创建方法</h3><pre><code>with(obj) {
+    ...
+}
+(<span class="keyword">function</span>($) {
+    IIFE，立即执行函数，匿名闭包函数，可以用作回调函数执行，防止全局变量污染，jquery中常用来添加组件
+})(jQuery)
+<span class="keyword">try</span> {
+    ...
+} <span class="keyword">catch</span>(e) {
+    闭包
+}
+</code></pre><h3 id="实例">实例</h3><h4 id="计数器">计数器</h4><pre><code><span class="keyword">var</span> Counter = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+    <span class="keyword">var</span> count = <span class="number">0</span>;
+    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+        <span class="keyword">return</span> ++count;
+    };
+}
+<span class="keyword">var</span> counter1 = Counter();
+<span class="built_in">console</span>.log(counter1); <span class="comment">// 1</span>
+<span class="built_in">console</span>.log(counter1); <span class="comment">// 2</span>
+<span class="keyword">var</span> counter2 = Counter();
+<span class="built_in">console</span>.log(counter2); <span class="comment">// 1</span>
+<span class="built_in">console</span>.log(counter1); <span class="comment">// 3</span>
+</code></pre><h4 id="实现数字到英文转换，0-&gt;zero">实现数字到英文转换，0-&gt;zero</h4><pre><code><span class="keyword">var</span> digit_name = (<span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{
+    <span class="keyword">var</span> names = [<span class="string">"zero"</span>, <span class="string">"one"</span>, <span class="string">"two"</span>, <span class="string">"three"</span>, <span class="string">"four"</span>, <span class="string">"five"</span>, <span class="string">"six"</span>, <span class="string">"seven"</span>, <span class="string">"eight"</span>, <span class="string">"nine"</span>];
+    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span><span class="params">(n)</span> </span>{
+        n = ~~n;
+        <span class="keyword">if</span>(n &gt;= <span class="number">0</span> &amp;&amp; n &lt;= <span class="number">9</span>) {
+            <span class="keyword">return</span> names[n];
         }
-        var bar = {};
-        bar.n = <span class="number">1</span>;
-        bar.s = output;
-        bar.s.apply();<span class="comment">//0</span>
-        bar.s.call(bar, arg1, arg2, ...);
-        bar.s.apply(bar, [arguments]); <span class="comment">// 1</span>
-</code></pre><h2 id="反射">反射</h2><p>反射定义：计算机程序在运行时可以访问、修改和检测他本身状态或行为的一种能力=》能够观察并修改自己的行为。对于javascript而言，简单来说，就是对类的成员进行修改等操作。javascript可以通过for(…in…)来实现反射。</p>
-<pre><code>javascript中没有专门的机制来实现类的继承，但可以通过赋值一个类的<span class="keyword">prototype</span>到另外一个类来实现继承。但是，这种方式并非严格的继承，两个类是同一<span class="keyword">prototype</span>的引用，重写一个类的成员或方法会影响另一个。可以使用反射机制来继承，利用<span class="keyword">for</span>(...in...)语句枚举出所有的基类<span class="keyword">prototype</span>的成员，并将其赋值给<span class="keyword">prototype</span>对象。进一步，可以为每个类添加一个共有的方法用来实现类的继承。
-
-    function.<span class="keyword">prototype</span>.inherit = function(baseClass){
-        <span class="keyword">for</span>(var p in baseClass.<span class="keyword">prototype</span>){
-            this.<span class="keyword">prototype</span>[p] = baseClass.<span class="keyword">prototype</span>[p];
+        <span class="keyword">return</span> <span class="string">"argument error"</span>;
+    };
+})();
+</code></pre><h4 id="点击button，打印编号">点击button，打印编号</h4><pre><code><span class="keyword">var</span> buttons = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"button"</span>);
+<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>, len = buttons.length; i &lt; len; ++i) {
+    buttons[i].addEventListener(<span class="string">"click"</span>, (<span class="function"><span class="keyword">function</span>(<span class="params">i</span>)</span>{
+        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+            <span class="built_in">console</span>.log(i);
         }
+    })(i));
+}
+</code></pre><h4 id="看代码写结果">看代码写结果</h4><pre><code><span class="keyword">for</span>(var i=<span class="number">0</span>; i &lt; <span class="number">10</span>; ++i) {
+    setTimeout(function(){
+        console.<span class="built_in">log</span>(i);
+    }, <span class="number">0</span>);
+}
+答案：<span class="number">10</span>个<span class="number">10</span>
+-&gt; 进阶版
+var value1 = <span class="number">0</span>, value2 = <span class="number">0</span>, value3 =<span class="number">0</span>;
+<span class="keyword">for</span>(var i = <span class="number">1</span>; i &lt;= <span class="number">3</span>; ++i) {
+    var i2 = i;
+    (function(){
+        var i3 = i;
+        setTimeout(function() {
+            value1 += i;
+            value2 += i2;
+            value3 += i3;
+        }, <span class="number">1</span>);
+    })();
+}
+setTimeout(function() {
+    console.<span class="built_in">log</span>(value1, value2, value3);
+}, <span class="number">100</span>);
+答案：<span class="number">12</span>(<span class="number">4</span>*<span class="number">3</span>) <span class="number">9</span>(<span class="number">3</span>*<span class="number">3</span>) <span class="number">6</span>(<span class="number">1</span>+<span class="number">2</span>+<span class="number">3</span>)
+</code></pre><h2 id="this">this</h2><h3 id="javascript中this的处理机制">javascript中this的处理机制</h3><p>javascript中有一套不同于其他语言的this的处理机制，在5种不同的情况下，this的指向各不相同。一般来说，函数在哪里调用this指哪里，唯一需要注意的就是new和call/apply。</p>
+<ol>
+<li><p>全局范围内this指的是window</p>
+</li>
+<li><p>函数调用时，this指的是window</p>
+</li>
+<li><p>方法调用时，this指的是调用此方法的对象</p>
+</li>
+<li><p>使用new调用构造函数创建对象时，函数内部的this指的是新创建的对象</p>
+</li>
+<li><p>使用apply和call显示指定this时，this指的是函数的第一个参数</p>
+</li>
+</ol>
+<h3 id="实例-1">实例</h3><pre><code>var n = <span class="number">0</span>;
+<span class="function"><span class="keyword">function</span> <span class="title">output</span><span class="params">()</span>{</span>
+    console.<span class="built_in">log</span><span class="params">(this.n)</span>;
+}
+var bar = {};
+bar.n = <span class="number">1</span>;
+bar.s = output;
+bar.s.apply<span class="params">()</span>;<span class="comment">//0</span>
+bar.s.call<span class="params">(bar, arg1, arg2, ...)</span>;
+bar.s.apply<span class="params">(bar, [arguments])</span>; <span class="comment">// 1</span>
+
+var a = {
+    b: <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+        console.<span class="built_in">log</span><span class="params">(this.c)</span>;
+    },
+    c: <span class="number">1</span>
+}
+a.b<span class="params">()</span>;             <span class="comment">// 1</span>
+<span class="params">(a.b)</span><span class="params">()</span>;             <span class="comment">// 1</span>
+<span class="params">(a.b = a.b)</span><span class="params">()</span>;        <span class="comment">// undefined</span>
+
+var baz = 'sally';
+var foo = {
+    bar: <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+        console.<span class="built_in">log</span><span class="params">(this.baz)</span>;
+    },
+    baz: 'wlan'
+};
+<span class="params">(f=foo.bar)</span><span class="params">()</span>; <span class="comment">// sally</span>
+</code></pre><h2 id="反射">反射</h2><h3 id="定义-3">定义</h3><p>反射是计算机程序在运行时可以访问、修改和检测自身状态或行为的一种能力。在javascript中，反射是指对类的成员进行操作，通过<code>for(key in obj)</code>实现。</p>
+<h3 id="实例-2">实例</h3><pre><code>javascript中没有专门的机制来实现类的继承，但可以通过赋值一个类的<span class="keyword">prototype</span>到另外一个类来实现继承。但是，这种方式并非严格的继承，两个类是同一<span class="keyword">prototype</span>的引用，重写一个类的成员或方法会影响另一个。可以使用反射机制来继承，利用<span class="keyword">for</span>(...in...)语句枚举出所有的基类<span class="keyword">prototype</span>的成员，并将其赋值给<span class="keyword">prototype</span>对象。进一步，可以为每个类添加一个共有的方法用来实现类的继承。
+
+function.<span class="keyword">prototype</span>.inherit = function(baseClass){
+    <span class="keyword">for</span>(var p in baseClass.<span class="keyword">prototype</span>){
+        this.<span class="keyword">prototype</span>[p] = baseClass.<span class="keyword">prototype</span>[p];
     }
+}
 
 可以看出，所谓的反射机制，从简单方面来讲，就是对类中成员进行枚举、修改等操作的能力。如果存在一种机制，在不知道某一个类中到底有什么函数，或者成员变量的情况下就可以对其操作（例如，javascript可以对类成员进行枚举），这种机制就可以称为反射。在实现继承机制时，只需要通过反射机制逐一复制，然后再修改需要覆盖的成员，就可以达到继承的效果。这也是反射机制的一个应用。
-</code></pre><h2 id="JSONP">JSONP</h2><h2 id="AJAX">AJAX</h2><h2 id="跨域">跨域</h2><h2 id="安全">安全</h2><h2 id="数组">数组</h2><h2 id="字符串">字符串</h2><h2 id="日期">日期</h2><h2 id="正则">正则</h2><h2 id="函数">函数</h2><h2 id="声明提升">声明提升</h2><p>变量声明提升，<em>定义还在原来的地方</em>，函数声明提前，变量声明提前，但是函数优先级高，同名时意义为函数-&gt;<strong>javascript中变量的作用域由函数决定</strong></p>
-<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">()</span>&#123;</span></span><br><span class="line">	console.<span class="built_in">log</span><span class="params">(a)</span>;			<span class="comment">//undefined</span></span><br><span class="line">	console.<span class="built_in">log</span><span class="params">(foo<span class="params">()</span>)</span>;		<span class="comment">//2</span></span><br><span class="line">	var a = <span class="number">1</span>;</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">foo</span><span class="params">()</span>&#123;</span></span><br><span class="line">		return <span class="number">2</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h2 id="AJAX">AJAX</h2><h3 id="定义-4"><a href="http://www.cnblogs.com/mingmingruyuedlut/archive/2011/10/18/2216553.html" target="_blank" rel="external">定义</a></h3><p>异步javascript和xml，是一种创建交互式网页应用的网页开发技术，其工作原理是在用户和服务器之间加了一个中间ajax引擎，使用户操作和服务器响应异步化。好处是<em>无刷新更新数据、异步与服务器通信、前后端负载均衡、数据和呈现分离</em>。但是，ajax其实是浏览器新开的一个线程请求，当请求状态变更时，将回调事件放到javascript引擎的处理队列中等待处理。</p>
+<h3 id="原生js实现ajax">原生js实现ajax</h3><pre><code>var xhr = new window.XMLHttpRequest ? XMLHttpRequest<span class="params">()</span> : ActiveObject<span class="params">(<span class="string">"Microsoft.XMLHTTP"</span>)</span>;
+xhr.onreadystatechange =  <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+    <span class="keyword">if</span><span class="params">(xhr.readyState == <span class="number">4</span> &amp;&amp; xhr.status == <span class="number">200</span>)</span> {
+        ...
+    }
+}
+xhr.open<span class="params">(<span class="string">"HEAD"</span>, location.href, <span class="literal">true</span>)</span>;
+xhr.send<span class="params">(null)</span>;
+xhr.open<span class="params">(<span class="string">"GET"</span>, location.href, <span class="literal">true</span>)</span>;
+xhr.send<span class="params">(null)</span>;
+xhr.open<span class="params">(<span class="string">"POST"</span>, location.href, <span class="literal">true</span>)</span>;
+xhr.setRequestHeader<span class="params">(<span class="string">"Content-type"</span>, <span class="string">"application/x-www-form-urlencode"</span>)</span>;
+var params = {key1: value1, key2: value2};
+xhr.send<span class="params">(JSON.stringify<span class="params">(params)</span>)</span>;    
+</code></pre><h3 id="异步加载js并执行回调函数"><a href="http://www.ibm.com/developerworks/cn/web/1308_caiys_jsload/" target="_blank" rel="external">异步加载js并执行回调函数</a></h3><pre><code>var xhr = new XMLHttpRequest<span class="params">()</span>;
+xhr.onreadystatechange = <span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>
+    <span class="keyword">if</span> <span class="params">(xhr.readyState == <span class="number">4</span>)</span>{
+        <span class="keyword">if</span> <span class="params">(xhr.status &gt;= <span class="number">200</span> &amp;&amp; xhr.status &lt; <span class="number">300</span> || xhr.status == <span class="number">304</span>)</span>{
+            var script = document.createElement<span class="params">(<span class="string">"script"</span>)</span>;
+            script.type = <span class="string">"text/javascript"</span>;
+            script.<span class="built_in">text</span> = xhr.responseText;
+            document.body.appendChild<span class="params">(script)</span>;
+        }
+    }
+};
+xhr.open<span class="params">(<span class="string">"GET"</span>, <span class="string">"script.js"</span>, <span class="literal">true</span>)</span>;
+xhr.send<span class="params">(null)</span>;
+</code></pre><h2 id="跨域&amp;&amp;安全">跨域&amp;&amp;安全</h2><h3 id="javascript同源策略SOP">javascript同源策略SOP</h3><p>同源策略处于安全考虑，限制了一个源中加载文本或脚本与来自其他源中资源的交互方式。同源指的是<em>域名 协议 端口</em>相同。前端只能解决由域名造成的跨域问题，<code>location.protocol</code>和<code>location.host</code>必须相同。</p>
+<h3 id="跨子域解决方案：document-domain+iframe">跨子域解决方案：document.domain+iframe</h3><pre><code>www.a.com/a.html-&gt;script.a.com/b.html
+a.html:
+<span class="built_in">document</span>.domain = <span class="string">"a.com"</span>; <span class="comment">// 默认等于window.location.host</span>
+<span class="keyword">var</span> iframe = <span class="built_in">document</span>.createElement(<span class="string">"iframe"</span>);
+iframe.src = <span class="string">"script.a.com/b.html"</span>;
+iframe.style.display = <span class="string">"none"</span>;
+<span class="keyword">if</span>(iframe.attachEvent) {
+    iframe.attachEvent(<span class="string">"onload"</span>, handler);
+} <span class="keyword">else</span> {
+    iframe.onload = handler;
+}
+<span class="built_in">document</span>.body.appendChild(iframe);
+</code></pre><h3 id="动态创建script">动态创建script</h3><pre><code><span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);
+script.src = src;
+script.onload = script.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+    <span class="keyword">if</span>(!<span class="keyword">this</span>.readyState || <span class="keyword">this</span>.readyState===<span class="string">"loaded"</span> || <span class="keyword">this</span>.readyState===<span class="string">"complete"</span>) {
+        handler();
+        script.onload = script.onreadystatechange = <span class="literal">null</span>;
+    }
+}
+</code></pre><h3 id="iframe+loaction-hash">iframe+loaction.hash</h3><p>使用location.hash进行数据传递</p>
+<h3 id="JSONP">JSONP</h3><h4 id="JSON">JSON</h4><p>JSON 是javascript对象表示法，与对象很相似，但是JSON中的key必须使用双引号，value可以是数字、字符串、布尔值、数组、对象和null</p>
+<pre><code><span class="built_in">JSON</span>-&gt;<span class="built_in">Object</span>
+<span class="keyword">var</span> jsonStr = <span class="string">'{"name": "sally", "age": 18}'</span>;
+<span class="keyword">var</span> obj1 = <span class="built_in">eval</span>(<span class="string">'('</span>+jsonStr+<span class="string">')'</span>); <span class="comment">// Object {name: "sally", age: 18}</span>
+<span class="keyword">var</span> obj2 = <span class="built_in">JSON</span>.parse(jsonStr);   <span class="comment">// Object {name: "sally", age: 18}</span>
+<span class="built_in">Object</span>-&gt;<span class="built_in">JSON</span>
+<span class="keyword">var</span> obj = {name: <span class="string">"sally"</span>, age: <span class="number">18</span>};
+<span class="keyword">var</span> jsonStr2 = <span class="built_in">JSON</span>.stringify(obj); <span class="comment">// '{"name":"sally","age":18}'</span>
+</code></pre><h4 id="跨域实现">跨域实现</h4><pre><code>$.ajax({
+    url: <span class="string">""</span>,
+    <span class="typedef"><span class="keyword">type</span>: "<span class="type">GET</span>",</span>
+    dataType: <span class="string">"jsonp"</span>,
+    jsonp: callback,
+    success: function(<span class="typedef"><span class="keyword">data</span>) <span class="container">{
+        ...
+    }</span></span>
+});
+</code></pre><h3 id="HTML5_postMessage">HTML5 postMessage</h3><pre><code>//a.com/index.html
+<span class="tag">&lt;<span class="title">iframe</span> <span class="attribute">id</span>=<span class="value">"ifr"</span> <span class="attribute">src</span>=<span class="value">"b.com/index.html"</span>&gt;</span><span class="tag">&lt;/<span class="title">iframe</span>&gt;</span>
+<span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">
+    <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+        <span class="keyword">var</span> ifr = <span class="built_in">document</span>.getElementById(<span class="string">"ifr"</span>);
+        vat targetOrigin = <span class="string">"http://b.com"</span>;
+        ifr.contentWindow.postMessage(<span class="string">"Hello"</span>, targetOrigin);
+    };
+</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+
+//b.com/index.html
+<span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">
+    <span class="built_in">window</span>.addEventListener(<span class="string">"message"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>{
+        <span class="keyword">if</span>(e.origin == <span class="string">"http://a.com"</span>) {
+            <span class="built_in">console</span>.log(e.data); <span class="comment">// Hello</span>
+        }
+    });
+</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+</code></pre><h3 id="CORS">CORS</h3><pre><code><span class="type">Header</span> <span class="type">set</span> <span class="type">Access</span>-<span class="type">Control</span>-<span class="type">Allow</span>-<span class="type">Origin</span> *
+function createCORSRequest(<span class="keyword">method</span>, url) {
+    <span class="keyword">var</span> xhr = new <span class="type">XMLHttpRequest</span>();
+    <span class="keyword">if</span> (<span class="string">"withCredentials"</span> <span class="keyword">in</span> xhr) {
+        // 此时即支持<span class="type">CORS</span>的情况
+        // 检查<span class="type">XMLHttpRequest</span>对象是否有“withCredentials”属性
+        // “withCredentials”仅存在于<span class="type">XMLHTTPRequest2</span>对象里
+    xhr.open(<span class="keyword">method</span>, url, <span class="literal">true</span>);
+    } <span class="keyword">else</span> <span class="keyword">if</span> (typeof <span class="type">XDomainRequest</span>!= <span class="string">"undefined"</span>) {
+        // 否则检查是否支持<span class="type">XDomainRequest</span>，<span class="type">IE8</span>和<span class="type">IE9</span>支持
+        // <span class="type">XDomainRequest</span>仅存在于<span class="type">IE</span>中，是<span class="type">IE</span>用于支持<span class="type">CORS</span>请求的方式
+        xhr = new <span class="type">XDomainRequest</span>();
+        xhr.open(<span class="keyword">method</span>, url);
+      } <span class="keyword">else</span> {
+        // 否则，浏览器不支持<span class="type">CORS</span>
+           xhr = null;
+    }
+  <span class="keyword">return</span> xhr;
+}
+<span class="keyword">var</span> xhr = createCORSRequest('<span class="type">GET</span>', url);
+</code></pre><h3 id="JSONP_vs_CORS">JSONP vs CORS</h3><ul>
+<li><p>JSONP只能实现GET请求，而CORS支持所有类型的HTTP请求。</p>
+</li>
+<li><p>使用CORS，开发者可以使用普通的XMLHttpRequest发起请求和获得数据，比起JSONP有更好的错误处理</p>
+</li>
+<li><p>JSONP主要被老的浏览器支持，它们往往不支持CORS，而绝大多数现代浏览器都已经支持了CORS</p>
+</li>
+</ul>
+<h3 id="安全">安全</h3><p>安全性：永远不要信任用户的输入，对所有提交的信息都进行匹配检查，在需要的地方做校验检验，避免XSS漏洞（trim→stripslashes→htmlspecialchars）。</p>
+<pre><code>CSRF实现机制：跨站请求伪造，修改用户密码，解决方式有验证码等
+
+XSS是指攻击者利用网站程序对用户输入过滤不足，输入可以对其他用户造成影响的代码，从而盗取用户资料等攻击行为
+
+安全性方面：cookie和session
+
+<span class="number">1.</span> cookie数据存放在客户的浏览器上，session数据放在服务器上
+<span class="number">2.</span> cookie不是很安全，别人可以分析存放在本地的cookie并进行cookie欺骗，考虑到安全性时应当使用session
+<span class="number">3.</span> session会在一定时间内保存到服务器上，当访问增多时，会比较占用服务器的性能，考虑到性能的时候，应该使用cookie
+<span class="number">4.</span> cookie保存的数据不能超过<span class="number">4</span>K，很多浏览器都限制一个站点最多保存<span class="number">20</span>个cookie
+<span class="number">5.</span> 登陆信息等安全性要求高的存放为session，个人样式、偏好设置等信息可以放在cookie中
+</code></pre><h2 id="数组">数组</h2><ul>
+<li><p>length</p>
+</li>
+<li><p>concat()：合并数组，可以有多个参数</p>
+</li>
+<li><p>join()：数组-&gt;字符串，字符串-&gt;数组：split()</p>
+</li>
+<li><p>pop()：删除最后一个元素</p>
+</li>
+<li><p>shift()：删除第一个元素</p>
+</li>
+<li><p>push()：末尾插入元素</p>
+</li>
+<li><p>unshift()：头部插入元素</p>
+</li>
+<li><p>reverse()：数组逆序</p>
+</li>
+<li><p>slice(start, end)：返回一个[start, end)的新数组，原数组不变</p>
+</li>
+<li><p>splice()</p>
+<pre><code>var arr1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];
+var arr2 = arr1.splice(<span class="number">0</span>, <span class="number">3</span>);
+console.<span class="built_in">log</span>(arr1, arr2);    <span class="comment">// [4] [1, 2, 3]</span>
+var arr3 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];
+arr3.splice(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);
+console.<span class="built_in">log</span>(arr3);            <span class="comment">// [0, 1, 2, 3, 4]</span>
+var arr4 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];
+arr4.splice(<span class="number">0</span>, <span class="number">1</span>, <span class="number">5</span>);
+console.<span class="built_in">log</span>(arr4);            <span class="comment">// [5, 2, 3, 4]</span>
+var arr5 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];
+arr5.splice(<span class="number">1</span>, <span class="number">3</span>);
+console.<span class="built_in">log</span>(arr5);            <span class="comment">// [5, 2, 3, 4]</span>
+</code></pre></li>
+<li><p>sort()：排序</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">fillArray</span><span class="params">(arr, start, end, num)</span></span> {
+    start = start | <span class="number">1</span>;
+    <span class="keyword">end</span> = <span class="keyword">end</span> | <span class="number">100</span>;
+    num = num | <span class="number">10</span>;
+    <span class="keyword">if</span>(<span class="keyword">end</span> &lt; start) {
+        [<span class="keyword">end</span>, start] = [start, <span class="keyword">end</span>];
+    }
+    var width = <span class="keyword">end</span> - start;
+    <span class="keyword">for</span>(var i = num; i &gt; <span class="number">0</span>; <span class="comment">--i) {</span>
+        arr.push((~~(Math.random()*width)+start));
+    }
+    <span class="keyword">return</span> arr;
+}
+<span class="function"><span class="keyword">function</span> <span class="title">normalize</span><span class="params">(arr)</span></span> {
+    <span class="keyword">if</span>(arr &amp;&amp; Array.isArray(arr)) {
+        var map = {};
+        <span class="keyword">for</span>(var i = arr.length; i &gt;= <span class="number">0</span>; <span class="comment">--i) {</span>
+            <span class="keyword">if</span>(arr[i] <span class="keyword">in</span> map) {
+                arr.splice(i, <span class="number">1</span>);
+            } <span class="keyword">else</span> {
+                map[arr[i]] = <span class="keyword">true</span>;
+            }
+        }
+    }
+    <span class="keyword">return</span> arr;
+}
+var input = [];
+fillArray(input, <span class="number">1</span>, <span class="number">100</span>, <span class="number">10</span>);
+input.sort(<span class="function"><span class="keyword">function</span><span class="params">(a, b)</span></span> {
+    <span class="keyword">return</span> a-b;
+});
+normalize(input);
+</code></pre></li>
+</ul>
+<h2 id="字符串">字符串</h2><h2 id="日期">日期</h2><h2 id="正则">正则</h2><h2 id="函数">函数</h2><h2 id="声明提升">声明提升</h2><p>变量声明提升，<em>定义还在原来的地方</em>，函数声明提前，变量声明提前，但是函数优先级高，同名时意义为函数-&gt;<strong>javascript中变量的作用域由函数决定</strong></p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>{
+    <span class="built_in">console</span>.log(a);            <span class="comment">//undefined</span>
+    <span class="built_in">console</span>.log(foo());        <span class="comment">//2</span>
+    <span class="keyword">var</span> a = <span class="number">1</span>;
+    <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>{
+        <span class="keyword">return</span> <span class="number">2</span>;
+    }
+}
+
+(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+    <span class="keyword">if</span>(g() &amp;&amp; [] == ![]) {
+        f = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{<span class="keyword">return</span> <span class="literal">false</span>;}
+        <span class="function"><span class="keyword">function</span> <span class="title">g</span>(<span class="params"></span>) </span>{<span class="keyword">return</span> <span class="literal">true</span>;}
+    }
+})();
+<span class="built_in">console</span>.log(f()); <span class="comment">// false</span>
+<span class="number">1.</span> g声明提前
+<span class="number">2.</span> ![]由于[]不是<span class="number">0</span>/<span class="literal">null</span>/<span class="literal">false</span>，所以返回<span class="number">0</span>, []转化成数字是<span class="number">0</span>
+<span class="number">3.</span> f前面没有<span class="keyword">var</span>，所以是全局的f 
+</code></pre><h2 id="重写javascript内置代码">重写javascript内置代码</h2><pre><code><span class="built_in">Array</span>.prototype.duplicator = <span class="built_in">Array</span>.prototype.duplicator || <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+    <span class="keyword">return</span> <span class="keyword">this</span>.concat(<span class="keyword">this</span>);
+}
+
+<span class="comment">//函数内部的特殊参数对象arguments，添加前缀(app)，注意的是arguments是一个伪数组，需要转化成标准数组后才能使用unshift方法</span>
+<span class="keyword">var</span> log = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+    <span class="keyword">var</span> args = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>);
+    args.unshift(<span class="string">'(app)'</span>);
+    <span class="built_in">console</span>.log.apply(<span class="built_in">console</span>, args);
+}
+
+<span class="function"><span class="keyword">function</span> <span class="title">stringconcat</span>(<span class="params"></span>)</span>{
+    <span class="keyword">var</span> result = [];
+    stringconcat.merge.call(<span class="literal">null</span>, result, <span class="built_in">arguments</span>);
+    <span class="keyword">return</span> result.join(<span class="string">"+"</span>);
+}
+stringconcat.prefix = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+    <span class="keyword">var</span> _arguments = [], _this = <span class="keyword">this</span>;
+    _this.merge.call(<span class="literal">null</span>, _arguments, <span class="built_in">arguments</span>);
+    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+        <span class="keyword">var</span> _args = _arguments.slice(<span class="number">0</span>);<span class="comment">//选择全部</span>
+        _this.merge.call(<span class="literal">null</span>, _args, <span class="built_in">arguments</span>);
+        <span class="keyword">return</span> _this.apply(<span class="literal">null</span>, _args);
+    };
+};
+stringconcat.merge = <span class="function"><span class="keyword">function</span>(<span class="params">array, arrayLike</span>)</span>{
+    <span class="keyword">var</span> i = <span class="number">0</span>, len = <span class="number">0</span>;
+    <span class="keyword">for</span>(i = <span class="number">0</span>, len = arrayLike.length; i &lt; len; i++){
+        array.push(arrayLike[i]);
+    }
+}
+
+<span class="function"><span class="keyword">function</span> <span class="title">repeat</span>(<span class="params">func, times, wait</span>)</span>{
+    <span class="function"><span class="keyword">function</span> <span class="title">repeatImpl</span>(<span class="params"></span>)</span>{
+        <span class="keyword">var</span> handler, _arguments = <span class="built_in">arguments</span>, i = <span class="number">0</span>;
+        handler = setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+            i = i+<span class="number">1</span>;
+            <span class="keyword">if</span>(i &gt; times){
+                clearInterval(handler);
+                <span class="keyword">return</span>;
+            }
+            func.apply(<span class="literal">null</span>, _arguments);
+        }, wait);
+    }
+    <span class="keyword">return</span> repeatImpl;
+}
+<span class="keyword">var</span> repeatFun = repeat(alert, <span class="number">4</span>, <span class="number">3000</span>);
+repeatFun(<span class="string">"helloword"</span>);
+</code></pre><h2 id="小知识">小知识</h2><h3 id="javascript和css属性对照">javascript和css属性对照</h3><ul>
+<li><p>-webkit-column-count webkitColumnCount/-moz-column-count MozColumnCount/-ms-transform msTransform</p>
+</li>
+<li><p>不变：border clear margin padding background color display font</p>
+</li>
+<li><p>不一致：float→floatStyle</p>
+</li>
+<li><p>驼峰：含有-的        </p>
+</li>
+</ul>
+<h3 id="href=&quot;#&quot;和href=&quot;javascript:_void(0)&quot;区别"><code>href=&quot;#&quot;</code>和<code>href=&quot;javascript: void(0)&quot;</code>区别</h3><p>前者是位置信息，后者是一个死链**</p>
+<h3 id="===和==">===和==</h3><h4 id="===比较过程">===比较过程</h4><ol>
+<li>类型 不同 false</li>
+<li>值都是null或者undefined true</li>
+<li>都是bool类型true或者false true</li>
+<li>有一个是NaN false</li>
+<li>都是number且值相等 -0=0 true</li>
+<li>都是字符串，且相同位置包含相同的16位值 true 长度或者内容或者编码不同 false</li>
+<li>指向相同对象、数组、函数 true</li>
+</ol>
+<h4 id="==比较过程">==比较过程</h4><ol>
+<li>类型相同，转===比较</li>
+<li>null和undefined相等</li>
+<li>数值和字符串转数字相等</li>
+<li>bool类型true-1 false-0</li>
+<li>对象和数字/字符串比较，将对象转换为原始值用==继续比较</li>
+</ol>
+<h3 id="ToPrimitive">ToPrimitive</h3><p>在javascript中，一共有2种数据类型：原始值和对象值，原始值又包括undefined，null，bool、number和string，其他所有都是对象值，包括array和function</p>
+<ol>
+<li><p>如果输入值是原始值，则返回自身</p>
+</li>
+<li><p>调用对象转数字过程(undefined=&gt;NaN)</p>
+<ol>
+<li><p>valueOf 返回值作数字</p>
+</li>
+<li><p>toString返回原始值，用结果作数字</p>
+</li>
+<li><p>throw a TypeError</p>
+</li>
+</ol>
+</li>
+<li><p>调用对象转字符串过程</p>
+<ol>
+<li><p>toSting 若返回原始值，则用结果作字符串</p>
+</li>
+<li><p>没有toSting或返回值不是原始值，调用valueOf方法</p>
+</li>
+<li><p>throw a TypeError</p>
+<pre><code>计算value1+value2时
+<span class="number">1.</span> 执行ToPrimitive过程
+<span class="number">2.</span> 任意为字符串，则两者都转换为字符串，否则为数字加
+    &gt; []+[]
+    &lt; <span class="string">""</span>
+    &gt; []+<span class="list">{}</span>
+    &lt; <span class="string">"[object Object]"</span>
+    &gt; <span class="list">{}</span>+[]
+    &lt; <span class="number">0</span>
+    &gt; <span class="list">{}</span>+<span class="list">{}</span>
+    &lt; NaN //JavaScript引擎将第一个<span class="list">{}</span>解释成了一个空的代码块并忽略了它.NaN其实是后面的表达式+<span class="list">{}</span>计算的结果 (加号以及后面的<span class="list">{}</span>).这里的加号并不是代表加法的二元运算符,而是一个一元运算符,作用是将它后面的操作数转换成数字,和<span class="keyword">Number</span>()函数完全一样。
+</code></pre></li>
+</ol>
+</li>
+</ol>
+<h3 id="getViewportSize">getViewportSize</h3><pre><code><span class="function"><span class="keyword">function</span> <span class="title">viewport</span>(<span class="params"></span>)</span>{
+    <span class="keyword">var</span> e = <span class="built_in">window</span> , a = <span class="string">'inner'</span>;
+    <span class="keyword">if</span> ( !( <span class="string">'innerWidth'</span> <span class="keyword">in</span> <span class="built_in">window</span> ) ) {
+        a = <span class="string">'client'</span>;
+        e = <span class="built_in">document</span>.documentElement || <span class="built_in">document</span>.body;
+    }
+    <span class="keyword">return</span> { width : e[ a+<span class="string">'Width'</span> ] , height : e[ a+<span class="string">'Height'</span> ] }
+}
+
+* offsetWidth: content+padding+border==getBoundingClientRect()
+* clientWidth: content+padding
+* scrollWidth: content+padding+溢出尺寸==就是真实的width
+</code></pre><h3 id="创建节点">创建节点</h3><ul>
+<li><p>createElement(tagName)</p>
+</li>
+<li><p>createTextNode(text)包含文本的文本节点</p>
+</li>
+<li><p>createDocumentFragment()文档碎片节点</p>
+</li>
+</ul>
 <h2 id="模块化">模块化</h2><pre><code><span class="number">1.</span> 为什么需要模块化
 
     <span class="number">1.</span> 恼人的命名冲突
@@ -1735,7 +2175,7 @@ EventUtil.on(ul, <span class="string">"click"</span>, function(<span class="keyw
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1791,7 +2231,7 @@ EventUtil.on(ul, <span class="string">"click"</span>, function(<span class="keyw
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML–搭建结构"><span class="nav-number">2.</span> <span class="nav-text">HTML–搭建结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#从输入URL到整个网页加载完毕及显示在屏幕上的整个流程"><span class="nav-number">2.1.</span> <span class="nav-text">从输入URL到整个网页加载完毕及显示在屏幕上的整个流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP状态码小结"><span class="nav-number">2.2.</span> <span class="nav-text">HTTP状态码小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WEB语义化"><span class="nav-number">2.3.</span> <span class="nav-text">WEB语义化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搜索引擎优化：内部优化，保证链接可跳转，提升用户体验"><span class="nav-number">2.4.</span> <span class="nav-text">搜索引擎优化：内部优化，保证链接可跳转，提升用户体验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOCTYPE"><span class="nav-number">2.5.</span> <span class="nav-text">DOCTYPE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#客户端存储"><span class="nav-number">2.6.</span> <span class="nav-text">客户端存储</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cookie"><span class="nav-number">2.6.1.</span> <span class="nav-text">cookie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sessionStorage"><span class="nav-number">2.6.2.</span> <span class="nav-text">sessionStorage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#localStorage"><span class="nav-number">2.6.3.</span> <span class="nav-text">localStorage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#websql_database"><span class="nav-number">2.6.4.</span> <span class="nav-text">websql database</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cookie和session"><span class="nav-number">2.7.</span> <span class="nav-text">cookie和session</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是cookie"><span class="nav-number">2.7.1.</span> <span class="nav-text">什么是cookie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是session"><span class="nav-number">2.7.2.</span> <span class="nav-text">什么是session</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#session和cookie谁更安全"><span class="nav-number">2.7.3.</span> <span class="nav-text">session和cookie谁更安全</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP_method：POST_和_GET"><span class="nav-number">2.8.</span> <span class="nav-text">HTTP method：POST 和 GET</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用URL拆分出protocol、host、port、query等"><span class="nav-number">2.9.</span> <span class="nav-text">使用URL拆分出protocol、host、port、query等</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">2.9.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解释"><span class="nav-number">2.9.2.</span> <span class="nav-text">解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取"><span class="nav-number">2.9.3.</span> <span class="nav-text">获取</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#canvas"><span class="nav-number">2.10.</span> <span class="nav-text">canvas</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS–设计样式"><span class="nav-number">3.</span> <span class="nav-text">CSS–设计样式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#flexbox"><span class="nav-number">3.1.</span> <span class="nav-text">flexbox</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法1"><span class="nav-number">3.1.1.</span> <span class="nav-text">方法1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法2"><span class="nav-number">3.1.2.</span> <span class="nav-text">方法2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_reset"><span class="nav-number">3.2.</span> <span class="nav-text">CSS reset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_display、position、float属性"><span class="nav-number">3.3.</span> <span class="nav-text">CSS display、position、float属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#display属性"><span class="nav-number">3.3.1.</span> <span class="nav-text">display属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#position属性"><span class="nav-number">3.3.2.</span> <span class="nav-text">position属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#float元素"><span class="nav-number">3.3.3.</span> <span class="nav-text">float元素</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web中的图标"><span class="nav-number">3.4.</span> <span class="nav-text">web中的图标</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#图片"><span class="nav-number">3.4.1.</span> <span class="nav-text">图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#雪碧图_Sprites"><span class="nav-number">3.4.2.</span> <span class="nav-text">雪碧图 Sprites</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字体图标_iconfont"><span class="nav-number">3.4.3.</span> <span class="nav-text">字体图标 iconfont</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SVG"><span class="nav-number">3.4.4.</span> <span class="nav-text">SVG</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Data_URL"><span class="nav-number">3.4.5.</span> <span class="nav-text">Data URL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择"><span class="nav-number">3.4.6.</span> <span class="nav-text">选择</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用文字替换图片技术→有利于SEO"><span class="nav-number">3.5.</span> <span class="nav-text">使用文字替换图片技术→有利于SEO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_hack技术"><span class="nav-number">3.6.</span> <span class="nav-text">CSS hack技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_选择器"><span class="nav-number">3.7.</span> <span class="nav-text">CSS 选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#匹配顺序"><span class="nav-number">3.7.1.</span> <span class="nav-text">匹配顺序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#匹配规则"><span class="nav-number">3.7.2.</span> <span class="nav-text">匹配规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写法"><span class="nav-number">3.7.3.</span> <span class="nav-text">写法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS盒模型"><span class="nav-number">3.8.</span> <span class="nav-text">CSS盒模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#W3C盒模型"><span class="nav-number">3.8.1.</span> <span class="nav-text">W3C盒模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IE_quirks_mode"><span class="nav-number">3.8.2.</span> <span class="nav-text">IE quirks mode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css3:_box-sizing"><span class="nav-number">3.8.3.</span> <span class="nav-text">css3: box-sizing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#margin折叠"><span class="nav-number">3.8.4.</span> <span class="nav-text">margin折叠</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BFC"><span class="nav-number">3.8.5.</span> <span class="nav-text">BFC</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#无样式内容闪烁_FOUC"><span class="nav-number">3.9.</span> <span class="nav-text">无样式内容闪烁 FOUC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-1"><span class="nav-number">3.9.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何避免"><span class="nav-number">3.9.2.</span> <span class="nav-text">如何避免</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#link和@import"><span class="nav-number">3.9.3.</span> <span class="nav-text">link和@import</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS预处理器和CSS后处理器"><span class="nav-number">3.10.</span> <span class="nav-text">CSS预处理器和CSS后处理器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_hyphens实现英文单词完美展示"><span class="nav-number">3.11.</span> <span class="nav-text">CSS hyphens实现英文单词完美展示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS3_动画"><span class="nav-number">3.12.</span> <span class="nav-text">CSS3 动画</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用1、2、3、5个标签画红十字"><span class="nav-number">3.13.</span> <span class="nav-text">使用1、2、3、5个标签画红十字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_绘制箭头"><span class="nav-number">3.14.</span> <span class="nav-text">CSS 绘制箭头</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS+JS制作轮播"><span class="nav-number">3.15.</span> <span class="nav-text">CSS+JS制作轮播</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bootstrap实现轮播"><span class="nav-number">3.16.</span> <span class="nav-text">bootstrap实现轮播</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_实现浮层"><span class="nav-number">3.17.</span> <span class="nav-text">CSS 实现浮层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_文本溢出显示"><span class="nav-number">3.18.</span> <span class="nav-text">CSS 文本溢出显示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单行文本"><span class="nav-number">3.18.1.</span> <span class="nav-text">单行文本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多行文本"><span class="nav-number">3.18.2.</span> <span class="nav-text">多行文本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何让height:100%起作用"><span class="nav-number">3.19.</span> <span class="nav-text">如何让height:100%起作用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Javascript–定义行为"><span class="nav-number">4.</span> <span class="nav-text">Javascript–定义行为</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据"><span class="nav-number">4.1.</span> <span class="nav-text">数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#javascript数据类型"><span class="nav-number">4.1.1.</span> <span class="nav-text">javascript数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#判断数据类型"><span class="nav-number">4.1.2.</span> <span class="nav-text">判断数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#typeof"><span class="nav-number">4.1.2.1.</span> <span class="nav-text">typeof</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#instanceof"><span class="nav-number">4.1.2.2.</span> <span class="nav-text">instanceof</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判断一个对象是否为数组"><span class="nav-number">4.1.2.3.</span> <span class="nav-text">判断一个对象是否为数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判断一个对象是否为函数"><span class="nav-number">4.1.2.4.</span> <span class="nav-text">判断一个对象是否为函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通用代码"><span class="nav-number">4.1.2.5.</span> <span class="nav-text">通用代码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类和继承"><span class="nav-number">4.2.</span> <span class="nav-text">类和继承</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Javascript类"><span class="nav-number">4.2.1.</span> <span class="nav-text">Javascript类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ES5_类"><span class="nav-number">4.2.1.1.</span> <span class="nav-text">ES5 类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ES6_类"><span class="nav-number">4.2.1.2.</span> <span class="nav-text">ES6 类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ES6类包含私有属性–Symbol"><span class="nav-number">4.2.1.3.</span> <span class="nav-text">ES6类包含私有属性–Symbol</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#比较"><span class="nav-number">4.2.1.4.</span> <span class="nav-text">比较</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Javascript继承"><span class="nav-number">4.2.2.</span> <span class="nav-text">Javascript继承</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ES5_继承"><span class="nav-number">4.2.2.1.</span> <span class="nav-text">ES5 继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ES6_继承"><span class="nav-number">4.2.2.2.</span> <span class="nav-text">ES6 继承</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相关题目"><span class="nav-number">4.2.3.</span> <span class="nav-text">相关题目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性查找"><span class="nav-number">4.2.3.1.</span> <span class="nav-text">属性查找</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实例化对象"><span class="nav-number">4.2.3.2.</span> <span class="nav-text">实例化对象</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ES6新增功能"><span class="nav-number">4.2.4.</span> <span class="nav-text">ES6新增功能</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件模型"><span class="nav-number">4.3.</span> <span class="nav-text">事件模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM事件"><span class="nav-number">4.3.1.</span> <span class="nav-text">DOM事件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#冒泡型事件"><span class="nav-number">4.3.1.1.</span> <span class="nav-text">冒泡型事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#捕获型事件"><span class="nav-number">4.3.1.2.</span> <span class="nav-text">捕获型事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DOM标准事件模型"><span class="nav-number">4.3.1.3.</span> <span class="nav-text">DOM标准事件模型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标准事件模型和IE事件模型的区别"><span class="nav-number">4.3.2.</span> <span class="nav-text">标准事件模型和IE事件模型的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件注册跨浏览器版"><span class="nav-number">4.3.3.</span> <span class="nav-text">事件注册跨浏览器版</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件代理"><span class="nav-number">4.3.4.</span> <span class="nav-text">事件代理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#闭包"><span class="nav-number">4.4.</span> <span class="nav-text">闭包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#this"><span class="nav-number">4.5.</span> <span class="nav-text">this</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反射"><span class="nav-number">4.6.</span> <span class="nav-text">反射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSONP"><span class="nav-number">4.7.</span> <span class="nav-text">JSONP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AJAX"><span class="nav-number">4.8.</span> <span class="nav-text">AJAX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跨域"><span class="nav-number">4.9.</span> <span class="nav-text">跨域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安全"><span class="nav-number">4.10.</span> <span class="nav-text">安全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组"><span class="nav-number">4.11.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串"><span class="nav-number">4.12.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#日期"><span class="nav-number">4.13.</span> <span class="nav-text">日期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则"><span class="nav-number">4.14.</span> <span class="nav-text">正则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">4.15.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#声明提升"><span class="nav-number">4.16.</span> <span class="nav-text">声明提升</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模块化"><span class="nav-number">4.17.</span> <span class="nav-text">模块化</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML–搭建结构"><span class="nav-number">2.</span> <span class="nav-text">HTML–搭建结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#从输入URL到整个网页加载完毕及显示在屏幕上的整个流程"><span class="nav-number">2.1.</span> <span class="nav-text">从输入URL到整个网页加载完毕及显示在屏幕上的整个流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP状态码小结"><span class="nav-number">2.2.</span> <span class="nav-text">HTTP状态码小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP_readystate"><span class="nav-number">2.3.</span> <span class="nav-text">HTTP readystate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WEB语义化"><span class="nav-number">2.4.</span> <span class="nav-text">WEB语义化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搜索引擎优化：内部优化，保证链接可跳转，提升用户体验"><span class="nav-number">2.5.</span> <span class="nav-text">搜索引擎优化：内部优化，保证链接可跳转，提升用户体验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOCTYPE"><span class="nav-number">2.6.</span> <span class="nav-text">DOCTYPE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#客户端存储"><span class="nav-number">2.7.</span> <span class="nav-text">客户端存储</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cookie"><span class="nav-number">2.7.1.</span> <span class="nav-text">cookie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sessionStorage"><span class="nav-number">2.7.2.</span> <span class="nav-text">sessionStorage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#localStorage"><span class="nav-number">2.7.3.</span> <span class="nav-text">localStorage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#websql_database"><span class="nav-number">2.7.4.</span> <span class="nav-text">websql database</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cookie和session"><span class="nav-number">2.8.</span> <span class="nav-text">cookie和session</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是cookie"><span class="nav-number">2.8.1.</span> <span class="nav-text">什么是cookie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是session"><span class="nav-number">2.8.2.</span> <span class="nav-text">什么是session</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#session和cookie谁更安全"><span class="nav-number">2.8.3.</span> <span class="nav-text">session和cookie谁更安全</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP_method：POST_和_GET"><span class="nav-number">2.9.</span> <span class="nav-text">HTTP method：POST 和 GET</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用URL拆分出protocol、host、port、query等"><span class="nav-number">2.10.</span> <span class="nav-text">使用URL拆分出protocol、host、port、query等</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">2.10.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解释"><span class="nav-number">2.10.2.</span> <span class="nav-text">解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取"><span class="nav-number">2.10.3.</span> <span class="nav-text">获取</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#canvas"><span class="nav-number">2.11.</span> <span class="nav-text">canvas</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS–设计样式"><span class="nav-number">3.</span> <span class="nav-text">CSS–设计样式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#flexbox"><span class="nav-number">3.1.</span> <span class="nav-text">flexbox</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法1"><span class="nav-number">3.1.1.</span> <span class="nav-text">方法1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法2"><span class="nav-number">3.1.2.</span> <span class="nav-text">方法2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_reset"><span class="nav-number">3.2.</span> <span class="nav-text">CSS reset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_display、position、float属性"><span class="nav-number">3.3.</span> <span class="nav-text">CSS display、position、float属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#display属性"><span class="nav-number">3.3.1.</span> <span class="nav-text">display属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#position属性"><span class="nav-number">3.3.2.</span> <span class="nav-text">position属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#float元素"><span class="nav-number">3.3.3.</span> <span class="nav-text">float元素</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web中的图标"><span class="nav-number">3.4.</span> <span class="nav-text">web中的图标</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#图片"><span class="nav-number">3.4.1.</span> <span class="nav-text">图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#雪碧图_Sprites"><span class="nav-number">3.4.2.</span> <span class="nav-text">雪碧图 Sprites</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字体图标_iconfont"><span class="nav-number">3.4.3.</span> <span class="nav-text">字体图标 iconfont</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SVG"><span class="nav-number">3.4.4.</span> <span class="nav-text">SVG</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Data_URL"><span class="nav-number">3.4.5.</span> <span class="nav-text">Data URL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择"><span class="nav-number">3.4.6.</span> <span class="nav-text">选择</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用文字替换图片技术→有利于SEO"><span class="nav-number">3.5.</span> <span class="nav-text">使用文字替换图片技术→有利于SEO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_hack技术"><span class="nav-number">3.6.</span> <span class="nav-text">CSS hack技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_选择器"><span class="nav-number">3.7.</span> <span class="nav-text">CSS 选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#匹配顺序"><span class="nav-number">3.7.1.</span> <span class="nav-text">匹配顺序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#匹配规则"><span class="nav-number">3.7.2.</span> <span class="nav-text">匹配规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写法"><span class="nav-number">3.7.3.</span> <span class="nav-text">写法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS盒模型"><span class="nav-number">3.8.</span> <span class="nav-text">CSS盒模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#W3C盒模型"><span class="nav-number">3.8.1.</span> <span class="nav-text">W3C盒模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IE_quirks_mode"><span class="nav-number">3.8.2.</span> <span class="nav-text">IE quirks mode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css3:_box-sizing"><span class="nav-number">3.8.3.</span> <span class="nav-text">css3: box-sizing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#margin折叠"><span class="nav-number">3.8.4.</span> <span class="nav-text">margin折叠</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BFC"><span class="nav-number">3.8.5.</span> <span class="nav-text">BFC</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#无样式内容闪烁_FOUC"><span class="nav-number">3.9.</span> <span class="nav-text">无样式内容闪烁 FOUC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-1"><span class="nav-number">3.9.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何避免"><span class="nav-number">3.9.2.</span> <span class="nav-text">如何避免</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#link和@import"><span class="nav-number">3.9.3.</span> <span class="nav-text">link和@import</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS预处理器和CSS后处理器"><span class="nav-number">3.10.</span> <span class="nav-text">CSS预处理器和CSS后处理器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_hyphens实现英文单词完美展示"><span class="nav-number">3.11.</span> <span class="nav-text">CSS hyphens实现英文单词完美展示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS3_动画"><span class="nav-number">3.12.</span> <span class="nav-text">CSS3 动画</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用1、2、3、5个标签画红十字"><span class="nav-number">3.13.</span> <span class="nav-text">使用1、2、3、5个标签画红十字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_绘制箭头"><span class="nav-number">3.14.</span> <span class="nav-text">CSS 绘制箭头</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS+JS制作轮播"><span class="nav-number">3.15.</span> <span class="nav-text">CSS+JS制作轮播</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bootstrap实现轮播"><span class="nav-number">3.16.</span> <span class="nav-text">bootstrap实现轮播</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_实现浮层"><span class="nav-number">3.17.</span> <span class="nav-text">CSS 实现浮层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_文本溢出显示"><span class="nav-number">3.18.</span> <span class="nav-text">CSS 文本溢出显示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单行文本"><span class="nav-number">3.18.1.</span> <span class="nav-text">单行文本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多行文本"><span class="nav-number">3.18.2.</span> <span class="nav-text">多行文本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何让height:100%起作用"><span class="nav-number">3.19.</span> <span class="nav-text">如何让height:100%起作用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Javascript–定义行为"><span class="nav-number">4.</span> <span class="nav-text">Javascript–定义行为</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据"><span class="nav-number">4.1.</span> <span class="nav-text">数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#javascript数据类型"><span class="nav-number">4.1.1.</span> <span class="nav-text">javascript数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#判断数据类型"><span class="nav-number">4.1.2.</span> <span class="nav-text">判断数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#typeof"><span class="nav-number">4.1.2.1.</span> <span class="nav-text">typeof</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#instanceof"><span class="nav-number">4.1.2.2.</span> <span class="nav-text">instanceof</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判断一个对象是否为数组"><span class="nav-number">4.1.2.3.</span> <span class="nav-text">判断一个对象是否为数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判断一个对象是否为函数"><span class="nav-number">4.1.2.4.</span> <span class="nav-text">判断一个对象是否为函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通用代码"><span class="nav-number">4.1.2.5.</span> <span class="nav-text">通用代码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类和继承"><span class="nav-number">4.2.</span> <span class="nav-text">类和继承</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Javascript类"><span class="nav-number">4.2.1.</span> <span class="nav-text">Javascript类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ES5_类"><span class="nav-number">4.2.1.1.</span> <span class="nav-text">ES5 类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ES6_类"><span class="nav-number">4.2.1.2.</span> <span class="nav-text">ES6 类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ES6类包含私有属性–Symbol"><span class="nav-number">4.2.1.3.</span> <span class="nav-text">ES6类包含私有属性–Symbol</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#比较"><span class="nav-number">4.2.1.4.</span> <span class="nav-text">比较</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Javascript继承"><span class="nav-number">4.2.2.</span> <span class="nav-text">Javascript继承</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ES5_继承"><span class="nav-number">4.2.2.1.</span> <span class="nav-text">ES5 继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ES6_继承"><span class="nav-number">4.2.2.2.</span> <span class="nav-text">ES6 继承</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相关题目"><span class="nav-number">4.2.3.</span> <span class="nav-text">相关题目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性查找"><span class="nav-number">4.2.3.1.</span> <span class="nav-text">属性查找</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实例化对象"><span class="nav-number">4.2.3.2.</span> <span class="nav-text">实例化对象</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ES6新增功能"><span class="nav-number">4.2.4.</span> <span class="nav-text">ES6新增功能</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件模型"><span class="nav-number">4.3.</span> <span class="nav-text">事件模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM事件"><span class="nav-number">4.3.1.</span> <span class="nav-text">DOM事件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#冒泡型事件"><span class="nav-number">4.3.1.1.</span> <span class="nav-text">冒泡型事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#捕获型事件"><span class="nav-number">4.3.1.2.</span> <span class="nav-text">捕获型事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DOM标准事件模型"><span class="nav-number">4.3.1.3.</span> <span class="nav-text">DOM标准事件模型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标准事件模型和IE事件模型的区别"><span class="nav-number">4.3.2.</span> <span class="nav-text">标准事件模型和IE事件模型的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件注册跨浏览器版"><span class="nav-number">4.3.3.</span> <span class="nav-text">事件注册跨浏览器版</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件代理"><span class="nav-number">4.3.4.</span> <span class="nav-text">事件代理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#闭包"><span class="nav-number">4.4.</span> <span class="nav-text">闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-2"><span class="nav-number">4.4.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作用"><span class="nav-number">4.4.2.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建方法"><span class="nav-number">4.4.3.</span> <span class="nav-text">创建方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例"><span class="nav-number">4.4.4.</span> <span class="nav-text">实例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#计数器"><span class="nav-number">4.4.4.1.</span> <span class="nav-text">计数器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现数字到英文转换，0->zero"><span class="nav-number">4.4.4.2.</span> <span class="nav-text">实现数字到英文转换，0->zero</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#点击button，打印编号"><span class="nav-number">4.4.4.3.</span> <span class="nav-text">点击button，打印编号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#看代码写结果"><span class="nav-number">4.4.4.4.</span> <span class="nav-text">看代码写结果</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#this"><span class="nav-number">4.5.</span> <span class="nav-text">this</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#javascript中this的处理机制"><span class="nav-number">4.5.1.</span> <span class="nav-text">javascript中this的处理机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-1"><span class="nav-number">4.5.2.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反射"><span class="nav-number">4.6.</span> <span class="nav-text">反射</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-3"><span class="nav-number">4.6.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-2"><span class="nav-number">4.6.2.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AJAX"><span class="nav-number">4.7.</span> <span class="nav-text">AJAX</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-4"><span class="nav-number">4.7.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原生js实现ajax"><span class="nav-number">4.7.2.</span> <span class="nav-text">原生js实现ajax</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异步加载js并执行回调函数"><span class="nav-number">4.7.3.</span> <span class="nav-text">异步加载js并执行回调函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跨域&&安全"><span class="nav-number">4.8.</span> <span class="nav-text">跨域&&安全</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#javascript同源策略SOP"><span class="nav-number">4.8.1.</span> <span class="nav-text">javascript同源策略SOP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#跨子域解决方案：document-domain+iframe"><span class="nav-number">4.8.2.</span> <span class="nav-text">跨子域解决方案：document.domain+iframe</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态创建script"><span class="nav-number">4.8.3.</span> <span class="nav-text">动态创建script</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iframe+loaction-hash"><span class="nav-number">4.8.4.</span> <span class="nav-text">iframe+loaction.hash</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSONP"><span class="nav-number">4.8.5.</span> <span class="nav-text">JSONP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JSON"><span class="nav-number">4.8.5.1.</span> <span class="nav-text">JSON</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#跨域实现"><span class="nav-number">4.8.5.2.</span> <span class="nav-text">跨域实现</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML5_postMessage"><span class="nav-number">4.8.6.</span> <span class="nav-text">HTML5 postMessage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CORS"><span class="nav-number">4.8.7.</span> <span class="nav-text">CORS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSONP_vs_CORS"><span class="nav-number">4.8.8.</span> <span class="nav-text">JSONP vs CORS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安全"><span class="nav-number">4.8.9.</span> <span class="nav-text">安全</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组"><span class="nav-number">4.9.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串"><span class="nav-number">4.10.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#日期"><span class="nav-number">4.11.</span> <span class="nav-text">日期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则"><span class="nav-number">4.12.</span> <span class="nav-text">正则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">4.13.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#声明提升"><span class="nav-number">4.14.</span> <span class="nav-text">声明提升</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重写javascript内置代码"><span class="nav-number">4.15.</span> <span class="nav-text">重写javascript内置代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小知识"><span class="nav-number">4.16.</span> <span class="nav-text">小知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#javascript和css属性对照"><span class="nav-number">4.16.1.</span> <span class="nav-text">javascript和css属性对照</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#href="#"和href="javascript:_void(0)"区别"><span class="nav-number">4.16.2.</span> <span class="nav-text">href="#"和href="javascript: void(0)"区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#===和=="><span class="nav-number">4.16.3.</span> <span class="nav-text">===和==</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#===比较过程"><span class="nav-number">4.16.3.1.</span> <span class="nav-text">===比较过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#==比较过程"><span class="nav-number">4.16.3.2.</span> <span class="nav-text">==比较过程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ToPrimitive"><span class="nav-number">4.16.4.</span> <span class="nav-text">ToPrimitive</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getViewportSize"><span class="nav-number">4.16.5.</span> <span class="nav-text">getViewportSize</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建节点"><span class="nav-number">4.16.6.</span> <span class="nav-text">创建节点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模块化"><span class="nav-number">4.17.</span> <span class="nav-text">模块化</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

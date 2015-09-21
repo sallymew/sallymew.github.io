@@ -1,0 +1,1257 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+
+
+    <meta name="description" content="Good artists copy, best artists steal." />
+
+
+
+  <meta name="keywords" content="面试," />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/image_16X16.ico?v=0.4.5.1" />
+
+
+<meta name="description" content="#TST腾讯地图1面
+
+CDN如何实现资源同步
+ CDN加速技术是通过缓存技术，将网站文字、图片等静态资源（CDN对实时性要求不高，动态资源经常变化，不建议使用CDN加速策略）分部到各地的节点服务器上，通过DNS解析CNAME到节点控制页面，通过CDN控制自动分辨用户所在地区和网络实现终端用户就近访问，从而提高访问速度。
+ 好处是：分布式架构减轻源站点负载，提高网站响应速度，可以轻松应对突发流量。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="腾讯暑期实习面经">
+<meta property="og:url" content="http://www.xiaojunxie.com/2015/04/22/腾讯暑期实习面经/index.html">
+<meta property="og:site_name" content="Jennifer's Blog">
+<meta property="og:description" content="#TST腾讯地图1面
+
+CDN如何实现资源同步
+ CDN加速技术是通过缓存技术，将网站文字、图片等静态资源（CDN对实时性要求不高，动态资源经常变化，不建议使用CDN加速策略）分部到各地的节点服务器上，通过DNS解析CNAME到节点控制页面，通过CDN控制自动分辨用户所在地区和网络实现终端用户就近访问，从而提高访问速度。
+ 好处是：分布式架构减轻源站点负载，提高网站响应速度，可以轻松应对突发流量。">
+<meta property="og:updated_time" content="2015-09-21T10:52:38.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="腾讯暑期实习面经">
+<meta name="twitter:description" content="#TST腾讯地图1面
+
+CDN如何实现资源同步
+ CDN加速技术是通过缓存技术，将网站文字、图片等静态资源（CDN对实时性要求不高，动态资源经常变化，不建议使用CDN加速策略）分部到各地的节点服务器上，通过DNS解析CNAME到节点控制页面，通过CDN控制自动分辨用户所在地区和网络实现终端用户就近访问，从而提高访问速度。
+ 好处是：分布式架构减轻源站点负载，提高网站响应速度，可以轻松应对突发流量。">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'hide'
+  };
+</script>
+
+  <title> 腾讯暑期实习面经 | Jennifer's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?aaeb08de6fdb9affd9d54c000b8b03e9";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-next-logo"></i>
+      </span>
+      <span class="site-title">Jennifer's Blog</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu menu-left">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-next-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-next-archives"></i> <br />
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            <i class="menu-item-icon icon-next-categories"></i> <br />
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-next-tags"></i> <br />
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-works">
+          <a href="/works" rel="section">
+            <i class="menu-item-icon icon-next-works"></i> <br />
+            作品
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-resume">
+          <a href="/resume" rel="section">
+            <i class="menu-item-icon icon-next-resume"></i> <br />
+            简历
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <form class="site-search-form">
+    <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+  </form>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'ZkscG_mtxP6MWnAVkuLP','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              腾讯暑期实习面经
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-04-22T22:13:46+08:00" content="2015-04-22">
+            2015-04-22
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/frontend/" itemprop="url" rel="index">
+                  <span itemprop="name">前端</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/04/22/腾讯暑期实习面经/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/04/22/腾讯暑期实习面经/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><p>#TST腾讯地图1面</p>
+<ol>
+<li><p>CDN如何实现资源同步</p>
+<p> CDN加速技术是通过缓存技术，将网站文字、图片等静态资源（CDN对实时性要求不高，动态资源经常变化，不建议使用CDN加速策略）分部到各地的节点服务器上，通过DNS解析CNAME到节点控制页面，通过CDN控制自动分辨用户所在地区和网络实现终端用户就近访问，从而提高访问速度。</p>
+<p> 好处是：分布式架构减轻源站点负载，提高网站响应速度，可以轻松应对突发流量。</p>
+<p> CDN如何实现内容的更新和同步：在CDN服务中，节点上的内容和源网站内容的同步主要是靠<strong>设置刷新时间</strong>策略来实现的。针对不同的内容设置不同的刷新时间，可以根据内容的更新程度，也可以按照目录设置，也可以根据具体的url来设置。</p>
+</li>
+<li><p>SPA有哪些优缺点</p>
+<p> 什么是单页应用：单页应用是指在浏览器中运行的应用，他所有的活动局限于一个web页面中，仅在该web页面初始化时加载相应的html、js、css等，一旦页面加载完成，<strong>在使用期间不会重新加载页面</strong>，页面只需要加载一次，取而代之的是利用js动态地变换html的内容，从而实现UI和用户的交互。像所有应用一样，他旨在帮助用户完成任务，比如编写文档或者管理web服务器，可以认为单页应用是一种从web服务器加载的富客户端。</p>
+<p> 单页应用结构很简单，首先传递html文档框架，然后使用js修改页面，再从服务器传递更多的数据然后再修改页面，如此循环。</p>
+<p> 优点是：</p>
+<ol>
+<li>具有很好的桌面应用的即时性，内容的改变不需要加载整个页面（只加载一次），可以提供较为流畅的用户体验</li>
+<li>分离了前后端的关注点，前端负责界面展示，后端负责数据存储和计算，各司其职</li>
+<li>服务器只需要向前台输出数据，不用管展示逻辑和页面合成，减轻了服务器的压力</li>
+<li>同一套后端代码，不需要修改就可以用于web界面、手机、平板等多种客户端</li>
+<li><p>符合RESTful规范，以资源为导向</p>
+<p>缺点是：</p>
+</li>
+<li><p>首次加载耗时较长</p>
+</li>
+<li><p>由于是单页，后退前进地址栏等存在问题，可以使用URI中的散列+iframe实现or使用pushState</p>
+<pre><code>pushState的提出是为了实现局部刷新，又同时改变浏览器的URL，可以很友好的支持浏览器前进后退功能
+$.get('./Handler.ashx', {id: el.attr('data-key') }, function (data) {
+    var <span class="keyword">state</span>={};
+    <span class="keyword">state</span>.title = data;
+    document.title = data;
+    history.pushState(<span class="keyword">state</span>, data, location.href.split(<span class="string">"?"</span>)[<span class="number">0</span>] + ...);
+});
+window.addEventListener(<span class="string">"popstate"</span>, function(e){
+    var <span class="keyword">state</span> = history.<span class="keyword">state</span>;
+    ...
+})
+</code></pre></li>
+<li>SEO存在问题–做些静态页面供搜索引擎or使用prerender技术</li>
+</ol>
+</li>
+<li><p><a href="http://www.php100.com/html/it/qianduan/2015/0116/8389.html" target="_blank" rel="external">前端编码规范之HTML</a></p>
+<ul>
+<li><p>原则</p>
+<ol>
+<li>规范。保证代码规范，趋HTML5，远XHTML，保证结构表现行为相互分离</li>
+<li>简洁。保证代码的最简化，避免过多的空格、空行，保持代码的语义化，尽量使用具有语义的元素，避免使用样式属性和行为属性。任何时候都要用尽量简单、尽量少的元素解决问题。</li>
+<li>实用。遵循标准，但是不能以牺牲实用性为代价。</li>
+<li>忠诚。选择一套规范，然后始终遵循。不管代码由多少人参与，都应该看起来像一个人写的一样。</li>
+</ol>
+</li>
+<li><p>语法</p>
+<ol>
+<li>小写。html标签、html属性全部小写</li>
+<li>嵌套。所有元素必须正确嵌套</li>
+<li>闭合。双标签必须闭合，单标签（自关闭标签）不闭合</li>
+</ol>
+</li>
+<li><p>注释</p>
+<ol>
+<li>详尽注释。解释代码解决问题、解决思路、是否为新鲜方案等</li>
+<li>模块注释。github建议不使用模块结束注释</li>
+<li>待办注释</li>
+</ol>
+</li>
+<li><p>文档</p>
+<ol>
+<li>文档类型使用html5标准文档类型，文档类型声明之前，不允许出现任何非空字符，不允许添加<meta>强制改变文档模式</li>
+<li>html元素上指定lang属性。显示页面语言，有助于语言合成工具来确定怎样发音，以及翻译工具决定使用的规则，等待。</li>
+<li>指定明确的字符编码。让浏览器轻松、快速的确定适合网页内容的渲染方式。</li>
+<li><p>IE兼容模式。</p>
+<pre><code><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"X-UA-Compatible"</span> <span class="attribute">content</span>=<span class="value">"IE=Edge"</span>&gt;</span>
+</code></pre></li>
+<li><p>head部分的顺序：meta 需要的js文件（html5 shiv）title 样式表</p>
+</li>
+<li><p>可以使用IE条件注释的方式兼容IE，但是不要添加额外的样式表</p>
+<pre><code><span class="comment">&lt;!--[if IE8]&gt;&lt;html class="ie8" lang="zh-cn"&gt;&lt;![endif]--&gt;</span>
+<span class="comment">&lt;!--[if IE7]&gt;&lt;html class="ie7" lang="zh-cn"&gt;&lt;![endif]--&gt;</span>
+</code></pre></li>
+</ol>
+</li>
+<li><p>属性</p>
+<ol>
+<li>双引号属性值，不要使用单引号</li>
+<li>省略type属性。使用style、link、script，不用指定type属性</li>
+<li>省略boolean属性值，如disabled，checked，selected等</li>
+<li>省略url类属性资源协议头</li>
+<li>属性顺序。html属性应该按照特定的顺序出现以保证易读性。class→id，name→data-*→src，for，type，href→title，alt→aria-*，role</li>
+<li>多媒体元素添加替代属性。图像增加alt属性，音视频增加替代文字。</li>
+<li>不手动设置tabindex属性，让浏览器自动设置</li>
+</ol>
+</li>
+<li><p>元素</p>
+<ol>
+<li>避免冗余标签</li>
+<li>避免js生成标签</li>
+<li>段落文字应该用<p>，避免使用<br></p></li>
+<li>列表项放ul、ol、dl，不要使用一系列的div或p</li>
+<li>input使用for属性绑定label</li>
+<li>使用label标签包裹radio或checkbox和他们的文字，不再使用for属性</li>
+<li>使用单选、复选替代下拉菜单</li>
+<li>form button应制定type类型，使用type=”submit”、type=”reset”或type=”button”</li>
+<li>首要的表单按钮首先出现，尤其是适用于多个提交按钮的场合，视图中显示的顺序可以利用css修改</li>
+<li>有效使用thead、tfoot、tbody、th，可以把tfoot放在tbody之前提高加载速度</li>
+</ol>
+</li>
+<li><p>格式</p>
+<ol>
+<li>soft tab</li>
+<li>嵌套缩进</li>
+<li>删除行尾空格</li>
+<li>块元素、列表元素、表格元素都放在新行</li>
+<li>inline元素视情况换行</li>
+<li><p>努力保持每行长度小于80列，如果太长可换行</p>
+<pre><code>这是Python编码风格指导（PEP8）中的规定，由于标准的linux终端是<span class="number">24</span>行<span class="number">80</span>列的，接近或大于<span class="number">80</span>个字符的较长语句都要折行写。但是，现在我们已经有了更大、更高分辨率的屏幕，完全不需要强迫自己去遵守这个限制，但是，如果做到了这个<span class="number">80</span>列，会让我们的代码更紧凑、更可读
+</code></pre></li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<p>#TST腾讯地图2面</p>
+<ol>
+<li><p>实现登陆验证时，用户提交之后重复点击怎么办？用户名密码错误怎么办？服务器失联怎么办</p>
+<p> jquery-validator插件</p>
+</li>
+<li><p>写正则表达式</p>
+<p> var patt = new RegExp(pattern, modifiers)<br> var patt = /pattern/modifiers</p>
+<p> 匹配email地址：\w+([<em>-+.]\w+)*@\w+([</em>+-.]\w+)*.\w+([_+-.]\w+)*</p>
+</li>
+<li><p>单页应用</p>
+</li>
+<li>前端模块化</li>
+<li>性能优化</li>
+<li>自动化工具 grunt</li>
+<li>使用js实现将一个数组随机平均分成N组</li>
+</ol>
+<p>#TST腾讯地图3面</p>
+<ol>
+<li><p>shell脚本实现统计文件夹下所有js文件的单词出现次数，展示频率最高的10个</p>
+<pre><code><span class="shebang">#!/bin/bash
+</span>
+<span class="keyword">function</span> <span class="function"><span class="title">ergodic</span></span>() {
+    <span class="keyword">for</span> file <span class="keyword">in</span> `ls <span class="variable">$1</span>`
+    <span class="keyword">do</span>
+        <span class="keyword">if</span> [ <span class="operator">-d</span> <span class="variable">$1</span><span class="string">"/"</span><span class="variable">$file</span> ]
+        <span class="keyword">then</span> ergodic <span class="variable">$1</span><span class="string">"/"</span><span class="variable">$file</span>
+        <span class="keyword">else</span>
+            <span class="keyword">if</span> [ <span class="string">"<span class="variable">${file##*.}</span>"</span> = <span class="string">"js"</span> ]; <span class="keyword">then</span>
+                cat <span class="variable">$1</span><span class="string">"/"</span><span class="variable">$file</span> | tr -cs <span class="string">"[a-z][A-Z]"</span> <span class="string">"[\012*]"</span> &gt;&gt; /Users/Sallymew/Desktop/fighting/front-end/worker/test.txt
+            <span class="keyword">fi</span>
+        <span class="keyword">fi</span>
+    <span class="keyword">done</span>
+}
+
+INIT_PATH=<span class="string">"."</span>
+ergodic <span class="variable">$INIT_PATH</span>
+
+cat /Users/Sallymew/Desktop/fighting/front-end/worker/test.txt | sort -b | uniq -c | sort -k1nr -k2 | head -n <span class="number">5</span>
+
+rm /Users/Sallymew/Desktop/fighting/front-end/worker/test.txt
+</code></pre></li>
+<li><p>做项目遇到的困难</p>
+</li>
+<li>最有成就感的事情</li>
+</ol>
+<p>#腾讯校招SNG前端工程师1面-2015.04.21</p>
+<ol>
+<li><p>原型链</p>
+<ul>
+<li>每一个构造函数都有一个prototype属性，指向另一个对象。这个对象的所有属性和方法，都会被构造函数的实例继承。这意味着，我们可以把那些不变的属性和方法，直接定义在prototype对象上。</li>
+<li>hasOwnProperty：是用来判断一个对象是否有你给出名称的属性或对象。不过需要注意的是，此方法无法检查该对象的原型链中是否具有该属性，该属性必须是对象本身的一个成员，in可以判断一个对象和他的原型链是否有属性或对象。isPrototypeOf是用来判断要检查其原型链的对象是否存在于指定对象实例中，是则返回true，否则返回false</li>
+<li><p>属性查找：当查找一个对象的属性时，Javascript会向上遍历原型链，直到找到给定名称的属性为止，到查找到达原型链的顶部，也就是Object.prototype时，仍然没有找到时，会返回undefined</p>
+<pre><code>function <span class="keyword">Person</span>(){} //空的构造函数
+<span class="keyword">Person</span>.prototype = {
+    init: function(name){
+        this.name = name;
+    },
+    getName: function(){
+        return this.name;
+    },
+    call: function(){
+        alert(<span class="string">"I am a person"</span>);
+    }
+};
+function Employee(){}
+Employee.prototype = new <span class="keyword">Person</span>();
+Employee.prototype.constructor = Employee;//显示指定constructor可以防止prototype改写带来的问题
+Employee.prototype.init = function(name, employeeID){
+    this.name = name;
+    this.employeeID = employeeID;
+};
+Employee.prototype.getEmployeeID = function(){
+    return this.employeeID;
+};
+Employee.prototype.call =function(){
+    alert(<span class="string">"I am an employee"</span>);
+}
+
+function <span class="keyword">Person</span>(){}//定义一个函数
+var <span class="keyword">person</span> = <span class="keyword">Person</span>();//执行函数并将返回值赋值给<span class="keyword">person</span>，如果<span class="keyword">Person</span>是一个构造器的话，新的对象不会被创建，this将绑定到全局对象上
+var <span class="keyword">person</span> = new <span class="keyword">Person</span>();//使用构造函数<span class="keyword">Person</span>构造一个实例对象<span class="keyword">person</span>
+
+//属性查找展示 原型链
+function foo() {
+    this.add = function (x, y) {
+        return x + y;
+    }
+}
+
+foo.prototype.add = function (x, y) {
+    return x + y + 10;
+}
+
+Object.prototype.subtract = function (x, y) {
+    return x - y;
+}
+
+var f = new foo();
+alert(f.add(1, 2)); //结果是3，而不是13
+alert(f.subtract(1, 2)); //结果是-1
+
+定义<span class="string">"类"</span>  Ob
+两个实例化的对象 obj1,   obj2
+obj1.a = 1;
+console.log (obj1.a);
+console.log (obj2.a);
+Ob.prototype.a = 2;
+console.log (obj1.a);
+console.log (obj2.a);
+
+//答    1, undefined, 1, 2
+//解释   实例变量    原型中的变量什么的，原型链搜索
+</code></pre></li>
+</ul>
+</li>
+<li><p>作用域</p>
+<p> 闭包：函数内部定义的函数。由于js特有的链式作用域结果，内部函数一直拥有从父函数作用域取得的变量，这些值是不会随着父函数的执行完成而被销毁。闭包通常被用来创建内部变量，使得这些变量不能被外部对象任意修改，同时又可以通过制定的函数接口来操作。</p>
+<pre><code>递归打印<span class="number">0</span>-<span class="number">9</span>，间隔<span class="number">2</span><span class="function">s
+<span class="title">for</span><span class="params">(var i = <span class="number">0</span>; i &lt; <span class="number">10</span>; ++i)</span> </span>{
+    setTimeout((function(){
+        console.<span class="built_in">log</span>(i);
+    })(i), <span class="number">2000</span>);
+}
+</code></pre><p> 声明提升</p>
+</li>
+<li><p>事件代理</p>
+<p> IE事件模型和普通的DOM事件模型</p>
+<p> 事件绑定</p>
+</li>
+<li><p>如何实现服务器推的过程</p>
+<p> 长连接、长轮询就是客户端不停地向服务器发送请求以获取最新的数据消息。这里的不停其实是有停止的，只是我们人眼无法分辨是否停止。他只是一种快速的停下然后又立即开始连接自己。</p>
+<p> 长连接、长轮询一般应用于一些需要即时交互的网站应用中。</p>
+<p> 轮询：客户端定时向服务器发送ajax请求，服务器接到请求后马上返回响应信息并关闭连接。优点是后端程序编写比较容易；缺点是请求中有大半是无用，浪费带宽和服务器资源，主要适用于小型应用。</p>
+<p> 长轮询：客户端向服务器发送ajax请求，服务器接到请求后hold住连接，直到有新消息才返回响应信息并关闭连接，客户端处理完响应信息后再向服务器发送新的请求。优点是在无消息的状态下不会频繁的请求，耗费资源小；缺点是服务器hold连接会消耗资源，返回数据顺序无保证，难于管理维护。<strong>由前端定时发起ajax请求，实时性要求不高，但是对连接数要求很高</strong></p>
+<p> 长连接：在页面里嵌入一个隐藏的iframe，将这个隐藏iframe的src属性设为对一个长连接的请求或是采用xhr请求，服务器端就能源源不断的往客户端输入数据。优点是消息即时到达，不发无用请求，管理起来也相对方便；缺点是服务器维护一个长连接会增加开销。<strong>comet方式是由客户端和服务器端发起一个长连接，然后客户端通过监听事件的方式，来对服务器端返回的数据作出响应和处理，实时性要求较高</strong></p>
+<pre><code>iframe+setInterval方式实现长轮询，每个请求都有自己独立的一个iframe，当这个iframe得到响应的数据后就把数据<span class="keyword">push</span>到当前页面上，但是不能保证顺序、比较耗费资源，但客户端实现起来比较简单。
+</code></pre><p> websocket技术：轮询是在特定的时间间隔由浏览器自动发送请求，将服务器的消息主动拉回来，在这种情况下，我们需要不断地向服务器发送请求，然而HTTP request的header是非常长的，里面包含的数据可能知识一个很小的值，这样会占用很多的带宽和服务器资源，会占用大量的带宽和服务器资源。websocket的伟大之处在于服务器和客户端可以在给定的时间范围内的任意时刻，相互推送消息，在建立连接之后，服务器可以主动传送数据给客户端。</p>
+<p> HTML5的SSE：<a href="http://www.cnblogs.com/wintersun/p/3735160.html" target="_blank" rel="external">Server-sent-event技术</a>。与Comet、Ajax、websocket推送不同的是，sse最大的优势是低延迟，可以用于web应用刷新数据，不需要用户做任何动作。websocket是实现服务器端推送的更加复杂的技术，但是他真的是全双工的socket。</p>
+<pre><code>EventSource
+</code></pre></li>
+<li><p>跨域实现</p>
+<p> javascript出于安全方面的考虑，不允许跨域调用其他页面的对象。但在安全限制的同时也给注入iframe或者ajax应用上带来了不少麻烦。</p>
+<p> 协议、主机、端口相同，否则叫跨域</p>
+<p> HTML5 post message等</p>
+<p> JSONP利用了script的跨域能力，通过动态创建script+回调函数来实现跨域通信。</p>
+<p> CORS跨域资源共享</p>
+</li>
+<li><p>几种攻击方式及实现原理</p>
+<p> 安全性：永远不要信任用户的输入，对所有提交的信息都进行匹配检查，在需要的地方做校验检验，避免XSS漏洞（trim→stripslashes→htmlspecialchars）。</p>
+<p> CSRF实现机制：跨站请求伪造，修改用户密码，解决方式有验证码</p>
+<p> XSS是指攻击者利用网站程序对用户输入过滤不足，输入可以对其他用户造成影响的代码，从而盗取用户资料等攻击行为</p>
+<p> 安全性方面：cookie和session</p>
+<ol>
+<li>cookie数据存放在客户的浏览器上，session数据放在服务器上</li>
+<li>cookie不是很安全，别人可以分析存放在本地的cookie并进行cookie欺骗，考虑到安全性时应当使用session</li>
+<li>session会在一定时间内保存到服务器上，当访问增多时，会比较占用服务器的性能，考虑到性能的时候，应该使用cookie</li>
+<li>cookie保存的数据不能超过4K，很多浏览器都限制一个站点最多保存20个cookie</li>
+<li>登陆信息等安全性要求高的存放为session，个人样式、偏好设置等信息可以放在cookie中</li>
+</ol>
+</li>
+<li><p>性能优化</p>
+<ol>
+<li><p>加载优化</p>
+<ul>
+<li>减少HTTP请求：合并CSS、Javascript，合并小图片（css3&gt;svg&gt;canvas&gt;<strong>CSS spirit</strong>&gt;按需加载合适大小的图片)，使用inline image</li>
+<li>缓存：所有静态资源都要在服务器端设置缓存，并且尽可能使用长<strong>Cache</strong></li>
+<li>使用外联式引用CSS、Javascript</li>
+<li>压缩HTML、CSS、Javascript、图片<br>（grunt-contrib-cssmin/grunt-contrib-imagemin/grunt-contrib-ugnify 或者服务器端启用http GZip)</li>
+<li><p>无阻塞：CSS放在页面头部并使用Link方式引入，避免在HTML标签中写style，javascript放在页面尾部或使用异步方式加载（非阻塞方式script的defer、async属性），使用第三方<em>CDN</em>资源</p>
+<pre><code><span class="comment">// 异步加载2009 不阻止加载，只是在解析执行阶段阻止渲染</span>
+<span class="keyword">var</span> se = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);
+se.src = <span class="string">'XXXXXX.js'</span>;
+<span class="built_in">document</span>.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>].appendChild(se);
+</code></pre></li>
+<li><p>使用首屏加载：<em>3秒钟渲染首屏</em>，联通3G网络平均338KBps，所以首屏资源加载不应超过1014KB</p>
+</li>
+<li>按需加载：将不影响首屏的资源和当前屏幕不用的资源放到用户需要时才加载，lazyload/<em>scrollLoading</em>/media query/预加载：可感知的loading（进入空间游戏的loading），不可感知的loading（提前加载下一页）</li>
+<li>减少cookie 避免重定向    </li>
+</ul>
+</li>
+<li>脚本执行优化<ul>
+<li>CSS写在头部，javascript写在尾部或异步</li>
+<li>避免图片和iframe等空src</li>
+<li>避免重设图片大小图片尽量避免使用<em>dataurl</em>（巧妙的将图片嵌入HTML中的方法，但是这种方法没有使用图片的压缩算法，文件会变大，并且要解码后再渲染，加载慢耗时长）</li>
+</ul>
+</li>
+<li>CSS优化——css lint代码检测工具<ul>
+<li>避免在HTML中写style属性</li>
+<li>避免CSS表达式（<em>expression</em>），优化css选择器</li>
+<li>移除空的CSS规则</li>
+<li>正确使用display属性</li>
+<li>不要滥用float、web字体</li>
+<li>不要声明过多的font-size</li>
+<li>值为0时不需要任何单位</li>
+<li><em>标准化各种浏览器前缀</em>（CSS动画只有-webkit 和无前缀2种，其他顺序为-webkit,-moz,-ms,无）</li>
+<li>避免使用@import，防止无样式内容闪烁（@import过度嵌套导致FOUC）</li>
+</ul>
+</li>
+<li><p>javascript执行优化</p>
+<ul>
+<li>减少重绘和回流：避免不必要的dom操作，尽量改变class避免style，缓存dom选择或计算结果、缓存length</li>
+<li><p>尽量使用<em>事件代理/事件委托，避免批量绑定事件</em></p>
+<pre><code><span class="tag">&lt;<span class="title">ul</span> <span class="attribute">id</span>=<span class="value">"nav"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+<span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">
+    <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+        <span class="keyword">var</span> nav = <span class="built_in">document</span>.getElementById(<span class="string">"nav"</span>);
+        <span class="comment">/*
+        var links = nav.getElementsByTagName("a");
+        for(var i=0, l=links.length; i &lt; l; i++){
+            links[i].onclick =  function(){
+                alert(this.innerHTML);
+                return false;
+            }
+        }
+        */</span>
+        <span class="comment">// 利用了dom事件冒泡特性</span>
+
+        nav.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+            <span class="keyword">var</span> e = <span class="built_in">arguments</span>[<span class="number">0</span>] || <span class="built_in">window</span>.event, target = e.srcElement || e.target;
+            alert(target.innerHTML);
+            <span class="keyword">return</span> <span class="literal">false</span>;
+        }
+    }
+</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+</code></pre></li>
+<li><strong>尽量使用ID选择器</strong></li>
+<li>touch事件优化：使用touchstart、touchend代替click，<em>由于touch响应过快，易引发误操作</em></li>
+</ul>
+</li>
+<li><p>渲染优化</p>
+<ul>
+<li><p>HTML使用viewport：手机浏览器是把页面放在一个虚拟的“窗口”（viewport）中，通常这个虚拟的“窗口”（viewport）比屏幕宽，这样就不用把每个网页挤到很小的窗口中（这样会破坏没有针对手机浏览器优化的网页的布局），用户可以通过平移和缩放来看网页的不同部分。移动版的 Safari 浏览器最新引进了 viewport 这个 meta tag，让网页开发者来控制 viewport 的大小和缩放，其他手机浏览器也基本支持。</p>
+<pre><code>&lt;meta <span class="property">name</span>=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;
+</code></pre></li>
+<li>减少dom节点</li>
+<li><p>动画优化：CSS3&gt;<em>requestAnimationFrame</em>&gt;SVG&gt;canvas&gt;CSS spirit</p>
+<blockquote>
+<p>相当一部分显示器的显示频率是16.7ms（1000/60<strong>每秒60帧</strong>），如果setTimeOut事件的间隔小于这个数值，那么将出现<em>帧丢失</em>的问题，不仅如此，这种计时器频率的降低也会对电池使用寿命造成负面影响，并会降低其他应用的性能。requestAnimationFrame就是为了这个而出现的，根据浏览设备的绘制间隔走，不会出现<strong>过度绘制</strong>问题，动画不会掉帧，自然流畅。<br>其内部运作机制是：浏览器需要重绘时通知requestAnimationFrame，这是资源非常高效的一种利用方式，当存在若干个requestAnimationFrame时，浏览器只需要通知一次即可，当页面最小化或者tab切换时，页面不会重绘，从而实现资源的高效利用。</p>
+</blockquote>
+<pre><code><span class="comment">//requestAnimationFrame.js</span>
+(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+    <span class="keyword">var</span> lastTime = <span class="number">0</span>;
+    <span class="keyword">var</span> vendors = [<span class="string">'webkit'</span>, <span class="string">'moz'</span>];
+    <span class="keyword">for</span>(<span class="keyword">var</span> x=<span class="number">0</span>; x &lt; vendors.length &amp;&amp; !<span class="built_in">window</span>.requestAnimationFrame; ++x){
+        <span class="built_in">window</span>.requestAnimationFrame = <span class="built_in">window</span>[vendors[x] + <span class="string">'RequestAnimationFrame'</span>];
+        <span class="built_in">window</span>.cancelAnimationFrame = <span class="built_in">window</span>[vendors[x] + <span class="string">'CancelAnimationFrame'</span>] || <span class="built_in">window</span>[vendors[x] + <span class="string">'CancelRequestAnimationFrame'</span>];
+    }
+
+    <span class="keyword">if</span> (!<span class="built_in">window</span>.requestAnimationFrame) {
+        <span class="built_in">window</span>.requestAnimationFrame = <span class="function"><span class="keyword">function</span>(<span class="params">callback, element</span>)</span>{
+            <span class="keyword">var</span> currTime = <span class="keyword">new</span> <span class="built_in">Date</span>().getTime();
+            <span class="keyword">var</span> timeToCall = Max.max(<span class="number">0</span>, <span class="number">16.7</span> - (currTime - lastTime));
+            <span class="keyword">var</span> id = <span class="built_in">window</span>.setTimeOut(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+                callback(currTime + timeToCall);
+            }, timeToCall);
+            lastTime = currTime + timeToCall;
+            <span class="keyword">return</span> id;
+        };
+    }
+
+    <span class="keyword">if</span>(!<span class="built_in">window</span>.cancelAnimationFrame){
+        <span class="built_in">window</span>.cancelAnimationFrame = <span class="function"><span class="keyword">function</span>(<span class="params">d</span>)</span>{
+            clearTimeout(id);
+        };
+    }
+}());
+</code></pre></li>
+<li><p>高频事件优化，使用requestAnimationFrame监听帧变化，增加响应变化的时间间隔，减少重绘次数</p>
+</li>
+<li>CPU加速：transitions、transform、opacity、canvas、webGL、video过度使用会引发手机耗电增加</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>CDN的作用</p>
+<p> CDN加速技术是通过缓存技术，将网站文字、图片等静态资源（CDN对实时性要求不高，动态资源经常变化，不建议使用CDN加速策略）分部到各地的节点服务器上，通过DNS解析CNAME到节点控制页面，通过CDN控制自动分辨用户所在地区和网络实现终端用户就近访问，从而提高访问速度。</p>
+<p> 好处是：分布式架构减轻源站点负载，提高网站响应速度，可以轻松应对突发流量。</p>
+<p> CDN如何实现内容的更新和同步：在CDN服务中，节点上的内容和源网站内容的同步主要是靠<strong>设置刷新时间</strong>策略来实现的。针对不同的内容设置不同的刷新时间，可以根据内容的更新程度，也可以按照目录设置，也可以根据具体的url来设置。</p>
+</li>
+<li><p>内存泄露</p>
+<p> 闭包内部的循环引用导致的内存泄露    </p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">iememery</span>(<span class="params"></span>)</span>{ 
+    <span class="keyword">var</span> js_obj = <span class="built_in">document</span>.createElement(<span class="string">"div"</span>); 
+    js_obj.oncontextmenu = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{ <span class="keyword">return</span> <span class="literal">false</span>;} 
+    <span class="comment">//解决方法</span>
+    js_obj.oncontextmenu = <span class="literal">null</span>;
+} 
+&lt;body onload=<span class="string">"iememery()"</span>&gt; 
+</code></pre><p> 可以使用chrome开发者工具的profiles来进行内存泄露检测</p>
+</li>
+<li><p>chrome检查网站性能</p>
+<p> <a href="http://lusongsong.com/reed/362.html" target="_blank" rel="external">YSlow</a>？雅虎黄金14条。</p>
+<p> Yslow是雅虎开发的基于网页性能分析的浏览器插件。</p>
+</li>
+<li><p>如何解决js到处callback的问题</p>
+<p>defer技术</p>
+<p>promise技术</p>
+<p>deferreds：是jquery回调函数的解决方案，他解决了如何处理耗时操作的问题，对那些操作提供了很好的控制，以及统一的编程接口</p>
+<p>这两种技术的最大意义在于将嵌套的回调变成了链式调用</p>
+<p><a href="http://www.w3ctech.com/topic/721" target="_blank" rel="external">用promise技术阻止代码</a></p>
+<pre><code><span class="comment">//指定同一个对象的多个回调函数</span>
+$.ajax<span class="params">(<span class="string">"test.html"</span>)</span>
+    .done<span class="params">(function<span class="params">()</span>{alert<span class="params">(<span class="string">"success"</span>)</span>;})</span>
+    .fail<span class="params">(function<span class="params">()</span>{alert<span class="params">(<span class="string">"error"</span>)</span>;})</span>
+    .done<span class="params">(function<span class="params">()</span>{alert<span class="params">(<span class="string">"success twice"</span>)</span>;})</span>;
+<span class="comment">//为多个操作指定回调函数</span>
+$.when<span class="params">($.ajax<span class="params">(<span class="string">"test1.html"</span>)</span>, $.ajax<span class="params">(<span class="string">"test2.html"</span>)</span>)</span>
+    .done<span class="params">(function<span class="params">()</span>{alert<span class="params">(<span class="string">"success"</span>)</span>;})</span>
+    .fail<span class="params">(function<span class="params">()</span>{alert<span class="params">(<span class="string">"error"</span>)</span>;})</span>
+<span class="comment">//针对耗时操作怎么办</span>
+var dtd = $.Deferred<span class="params">()</span>;<span class="comment">//创建新的deferred对象，全局的，其状态可以被任意改变</span>
+var wait = <span class="function"><span class="keyword">function</span><span class="params">(dtd)</span>{</span>
+    var tasks = <span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>
+        alert<span class="params">(<span class="string">"success"</span>)</span>;
+        dtd.resolve<span class="params">()</span>;<span class="comment">//改变deferred对象的执行状态，有3种：未完成(继续等待或调用progress方法)，已完成(done方法)和已失败(fail方法)</span>
+        <span class="comment">// dtd.reject();//调用fail方法</span>
+    }
+    setTimeout<span class="params">(tasks, <span class="number">5000</span>)</span>;
+    <span class="comment">// return dtd;</span>
+    return dtd.promise<span class="params">()</span>;<span class="comment">//返回promise对象，只开放与改变状态无关(done/fail)的方法，避免对执行状态的更改</span>
+}
+var d = wait<span class="params">(dtd)</span>;
+$.when<span class="params">(d)</span>
+    .done<span class="params">(function<span class="params">()</span>{alert<span class="params">(<span class="string">"success"</span>)</span>;})</span>
+    .fail<span class="params">(function<span class="params">()</span>{alert<span class="params">(<span class="string">"error"</span>)</span>;})</span>;
+d.resolve<span class="params">()</span>;<span class="comment">//语句无效</span>
+<span class="comment">//第二种方法</span>
+var wait = <span class="function"><span class="keyword">function</span><span class="params">(dtd)</span>{</span>
+    var dtd = $.Deferred<span class="params">()</span>;<span class="comment">//在函数内部创建</span>
+    var tasks = <span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>
+        alert<span class="params">(<span class="string">"success"</span>)</span>;
+        dtd.resolve<span class="params">()</span>;<span class="comment">//改变deferred对象的执行状态</span>
+    }
+    setTimeout<span class="params">(tasks, <span class="number">5000</span>)</span>;
+    <span class="comment">// return dtd;</span>
+    return dtd.promise<span class="params">()</span>;<span class="comment">//返回promise对象</span>
+}
+<span class="comment">// $.when(wait())</span>
+<span class="comment">//     .done(function(){alert("success");})</span>
+<span class="comment">//     .fail(function(){alert("error");});</span>
+$.Deferred<span class="params">(wait)</span>
+    .done<span class="params">(function<span class="params">()</span>{alert<span class="params">(<span class="string">"success"</span>)</span>;})</span>
+    .fail<span class="params">(function<span class="params">()</span>{alert<span class="params">(<span class="string">"error"</span>)</span>;})</span>;
+<span class="comment">//第三种方法</span>
+var dtd = $.Deferred<span class="params">()</span>;
+var wait = <span class="function"><span class="keyword">function</span><span class="params">(dtd)</span>{</span>    
+    var tasks = <span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>
+        alert<span class="params">(<span class="string">"success"</span>)</span>;
+        dtd.resolve<span class="params">()</span>;<span class="comment">//改变deferred对象的执行状态</span>
+    }
+    setTimeout<span class="params">(tasks, <span class="number">5000</span>)</span>;
+    <span class="comment">// return dtd;    </span>
+}
+dtd.promise<span class="params">(wait)</span>;<span class="comment">//返回promise对象</span>
+wait.done<span class="params">(function<span class="params">()</span>{alert<span class="params">(<span class="string">"success"</span>)</span>;})</span>
+    .fail<span class="params">(function<span class="params">()</span>{alert<span class="params">(<span class="string">"error"</span>)</span>;})</span>;
+wait<span class="params">(dtd)</span>;
+</code></pre></li>
+</ol>
+<p>#腾讯校招SNG前端工程师2面-2015.04.23</p>
+<ol>
+<li><p>线程和进程的区别</p>
+<ul>
+<li>基本单位：在引入线程的操作系统中，通常把进城作为资源分配的基本单位，把线程作为独立运行和调度的基本单位</li>
+<li>地址空间和其他资源：子进程和父进程拥有不同的代码和数据空间，而多个进程则共享数据空间，每个线程有自己的执行堆栈和程序计数器为其执行上下文</li>
+<li>通信：进程间通信IPC有多种机制，线程间可以直接读写进程数据段（如全局变量）来进行通信–需要进程同步和呼哧手段的辅助，以保证数据的一致性</li>
+<li>调度和切换：线程上下文切换比进程上下文切换要快得多</li>
+</ul>
+</li>
+<li><p>使用UDP协议的应用</p>
+<p> |应用|应用层协议|传输层协议|<br> |:—:|:—:|:——–:|<br> |名字转换|DNS|UDP|<br> |文件传送|TFTP|UDP|<br> |路由选择协议|RIP|UDP|<br> |IP地址配置|BOOTP,DHCP|UDP|<br> |网络管理|SNMP|UDP|<br> |远程文件服务器|NFS|UDP|<br> |IP电话|专用协议|UDP|<br> |流式多媒体通信|专用协议|UDP|<br> |多播|IGMP|UDP|<br> |电子邮件|SMTP|TCP|<br> |远程终端输入|TELNET|TCP|<br> |万维网|HTTP|TCP|<br> |文件传送|FTP|TCP|</p>
+</li>
+<li><p>使用ICMP协议的应用</p>
+<p> Internet控制信息协议，ping命令，traceroute应用</p>
+</li>
+<li><p>堆和栈的区别</p>
+<ul>
+<li>管理方式：对于栈来讲，是由编译器自动管理，无需我们手动控制；对于堆来说，释放工作由程序员控制。</li>
+<li>空间大小：一般来讲在32位系统下，堆内存可以达到4G空间，从这个角度来看堆内存几乎是没有什么限制的。但是对于栈来讲，一般都是有一定的空间大小的，例如，在VC6下面，默认的堆空间大小是1M</li>
+<li>碎片问题：对于堆来讲，频繁的new/delete势必会造成内存空间的不连续，从而造成大量的碎片，使程序效率降低。对于栈来讲，则不会存在这个问题，因为栈是先进后出的队列</li>
+<li>生长方式：在windows下，栈是向低地址扩展的数据结构，是一块连续的内存区域，栈顶的地址和栈的最大容量是系统预先规定好的。堆是向高地址扩展的数据结构，是不连续的内存区域，用链表表示</li>
+<li>分配方式：堆都是动态分配的，没有静态分配的堆。栈有2种分配方式：静态分配和动态分配。静态分配是编译器完成的，比如局部变量的分配。动态分配由allocation函数进行分配，但是栈的动态分配和对是不同的，他的动态分配是由编译器进行释放，无需我们手工实现</li>
+<li>分配效率：栈内存分配运算内置于处理器的指令集中，效率很高。堆则是C/C++函数库提供的，机制比较复杂</li>
+</ul>
+</li>
+<li><p>malloc和new</p>
+<p> malloc函数，中文叫动态内存分配，如果分配成功则返回指向被分配内存的指针，分配失败返回空指针NULL，当内存不再使用时，应使用free函数将内存块释放</p>
+<p> new运算符，返回指向该新创建对象的指针，我们可以通过指针来访问此对象，delete表达式释放指针指向的地址空间，如果指针指向的不是new分配的内存地址，则使用delete是不合法的，delete只有要重设指针的值，new失败，抛出std::bad_alloc异常</p>
+<p> 区别：</p>
+<ul>
+<li>new返回指定类型的指针，并且可以自动计算所需要大小，malloc则必须要由我们计算字节数，并且在返回后强行转换为实际类型的指针</li>
+<li>malloc只管分配内存，并不能对所得的内存进行初始化，所以得到的一片新内存中，其值将是随机的。new可以提供显示的初始化，例如string *ps=new string(10, ‘9’);</li>
+<li>malloc与free是<strong>C++/C</strong>语言的标准库函数，new/delete是C++的<strong>运算符</strong></li>
+<li>出错的时候，malloc返回NULL，而new则是抛出异常</li>
+<li><p>malloc神奇的是heap区的内存空间，而new则是神奇的free store区的内存空间</p>
+<p>既然new/delete已经完全覆盖了malloc/free，为什么不把malloc/free淘汰呢？这是因为C++chengxu经常要调用C函数，而C程序只能用malloc/free管理动态内存</p>
+</li>
+</ul>
+</li>
+</ol>
+<ol>
+<li>使用js提取url的query string部分，并返回一个JSON对象</li>
+</ol>
+<p>#腾讯校招SNG前端工程师3面-2015.04.24</p>
+<ol>
+<li>自我介绍</li>
+<li>家乡，希望的工作地</li>
+<li>谈谈最满意的项目</li>
+</ol>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/interview/" rel="tag">#面试</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/08/30/hello-hexo/" rel="prev">hello hexo</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+ </div>
+
+        
+            <!-- 多说热评文章-->
+            <p>热评文章</p>
+            <div class="ds-top-threads" data-range="monthly" data-num-items="5"></div>
+        
+
+        
+          <div class="comments" id="comments">
+            
+              <div class="ds-thread" data-thread-key="2015/04/22/腾讯暑期实习面经/"
+                   data-title="腾讯暑期实习面经" data-url="http://www.xiaojunxie.com/2015/04/22/腾讯暑期实习面经/">
+              </div>
+            
+          </div>
+        
+      </div>
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/image_128X128.ico" alt="谢晓君" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">谢晓君</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">Good artists copy, best artists steal.</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/sallymew" target="_blank">GitHub</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/sallymew" target="_blank">Weibo</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/jenniferxie" target="_blank">ZhiHu</a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <div class="copyright" >
+  
+  &copy; &nbsp; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-next-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">谢晓君</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"xiaojunxie"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+
+    
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"3","bdPos":"left","bdTop":"250"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
+</body>
+</html>

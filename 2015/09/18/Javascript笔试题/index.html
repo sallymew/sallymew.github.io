@@ -43,7 +43,7 @@
 <meta property="og:url" content="http://www.xiaojunxie.com/2015/09/18/Javascript笔试题/index.html">
 <meta property="og:site_name" content="Jennifer's Blog">
 <meta property="og:description" content="javascript笔试题">
-<meta property="og:updated_time" content="2015-09-18T13:50:37.000Z">
+<meta property="og:updated_time" content="2015-09-21T10:44:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript笔试题">
 <meta name="twitter:description" content="javascript笔试题">
@@ -308,9 +308,13 @@ setTimeout(<span class="function"><span class="keyword">function</span>(<span cl
 <li><p>tofixed，IE6下0.009=&gt;0.00 bug</p>
  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Number</span>.prototype.toFixed = <span class="function"><span class="keyword">function</span>(<span class="params">s</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> (<span class="built_in">parseInt</span>(<span class="keyword">this</span> * <span class="built_in">Math</span>.pow(<span class="number">10</span>, s) + <span class="number">0.5</span>) / <span class="built_in">Math</span>.pow(<span class="number">10</span>, s)).toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
+</ol>
+<ol>
 <li><p>给基本数据类型添加属性时，不报错，但是取值为undefined</p>
- <figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = 10;</span><br><span class="line">a.<span class="keyword">pro</span> = 10;</span><br><span class="line">console.<span class="literal">log</span>(a.<span class="keyword">pro</span> + a);<span class="comment">//NaN</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> s = <span class="string">"hello"</span>;</span><br><span class="line">s.<span class="keyword">pro</span> = <span class="string">"world"</span>;</span><br><span class="line">console.<span class="literal">log</span>(s.<span class="keyword">pro</span> + s);<span class="comment">//undefinedhello</span></span><br></pre></td></tr></table></figure>
+ <figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = 10;</span><br><span class="line">a.<span class="keyword">pro</span> = 10;</span><br><span class="line">console.<span class="literal">log</span>(a.<span class="keyword">pro</span> + a);<span class="comment">//NaN</span></span><br><span class="line"><span class="keyword">var</span> s = <span class="string">"hello"</span>;</span><br><span class="line">s.<span class="keyword">pro</span> = <span class="string">"world"</span>;</span><br><span class="line">console.<span class="literal">log</span>(s.<span class="keyword">pro</span> + s);<span class="comment">//undefinedhello</span></span><br></pre></td></tr></table></figure>
 </li>
+</ol>
+<ol>
 <li><p>简单的变量替换</p>
  <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a = 1, b = 2;</span><br><span class="line">a = [<span class="link_label">b, b = a</span>][<span class="link_reference">0</span>];</span><br></pre></td></tr></table></figure>
 </li>
@@ -319,6 +323,8 @@ setTimeout(<span class="function"><span class="keyword">function</span>(<span cl
 <li><p>setTimeout</p>
  <figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">var</span> a=<span class="number">1</span>;</span><br><span class="line">	setTimeout(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">		alert(a);</span><br><span class="line">		a=<span class="number">3</span>;</span><br><span class="line">		<span class="comment">//var a= 3;</span></span><br><span class="line">	&#125;,<span class="number">1000</span>);</span><br><span class="line">	a=<span class="number">2</span>;</span><br><span class="line">	setTimeout(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">		alert(a);</span><br><span class="line">		a=<span class="number">4</span>;</span><br><span class="line">		<span class="comment">//var a= 4;</span></span><br><span class="line">	&#125;,<span class="number">3000</span>);</span><br><span class="line">&#125;</span><br><span class="line">test();</span><br><span class="line">答案是：<span class="number">2</span> <span class="number">3</span> 使用<span class="keyword">var</span>赋值时：<span class="literal">undefined</span> <span class="literal">undefined</span></span><br></pre></td></tr></table></figure>
 </li>
+</ol>
+<ol>
 <li><p>对象引用</p>
 <pre><code><span class="function">function <span class="title">tr42</span><span class="params">()</span></span>{
     var a2,b2;
@@ -596,7 +602,7 @@ xhr.send<span class="params">(null)</span>;
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
