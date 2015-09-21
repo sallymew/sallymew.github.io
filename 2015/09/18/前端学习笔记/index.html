@@ -37,18 +37,18 @@
   <link rel="shorticon icon" type="image/x-icon" href="/image_16X16.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="前言这篇文章是我自己的前端学习笔记，平日学习+面试总结所得，部分参考">
+<meta name="description" content="前言这篇文章是我自己的前端学习笔记，平日学习+面试总结 所得，部分参考">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端学习笔记">
 <meta property="og:url" content="http://www.xiaojunxie.com/2015/09/18/前端学习笔记/index.html">
 <meta property="og:site_name" content="Jennifer's Blog">
-<meta property="og:description" content="前言这篇文章是我自己的前端学习笔记，平日学习+面试总结所得，部分参考">
+<meta property="og:description" content="前言这篇文章是我自己的前端学习笔记，平日学习+面试总结 所得，部分参考">
 <meta property="og:image" content="http://osmn00.com/d/file/blog/front-end/2010-10-16/23ed2c1db2a91fe6d080f8359b634fac.gif">
 <meta property="og:image" content="http://www.xiaojunxie.com/event.png">
-<meta property="og:updated_time" content="2015-09-21T11:49:26.000Z">
+<meta property="og:updated_time" content="2015-09-21T14:56:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端学习笔记">
-<meta name="twitter:description" content="前言这篇文章是我自己的前端学习笔记，平日学习+面试总结所得，部分参考">
+<meta name="twitter:description" content="前言这篇文章是我自己的前端学习笔记，平日学习+面试总结 所得，部分参考">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -262,12 +262,12 @@
       
 
       
-        <span itemprop="articleBody"><h1 id="前言">前言</h1><p>这篇文章是我自己的前端学习笔记，平日学习+面试总结所得，<a href="http://github.com/qiu-deqing/FE-interview" target="_blank" rel="external">部分参考</a></p>
+        <span itemprop="articleBody"><h1 id="前言">前言</h1><p>这篇文章是我自己的前端学习笔记，平日学习+面试总结 所得，<a href="http://github.com/qiu-deqing/FE-interview" target="_blank" rel="external">部分参考</a></p>
 <a id="more"></a>
 <h1 id="HTML–搭建结构">HTML–搭建结构</h1><h2 id="从输入URL到整个网页加载完毕及显示在屏幕上的整个流程">从输入URL到整个网页加载完毕及显示在屏幕上的整个流程</h2><ol>
 <li><p>浏览器检测缓存，若缓存存在且足够新鲜则提供给客户端，否则组装一个HTTP报文</p>
 </li>
-<li><p>浏览器会利用DNS服务器查询到URL域名对应的IP地址，然后通过三次握手建立TCP连接之后，浏览器作为连接的发起方，会用服务器发送一个HTTP请求报文</p>
+<li><p>浏览器会利用DNS服务器查询到URL域名对应的IP地址，然后通过三次握手建立TCP连接之后，浏览器作为连接的发起方，会向服务器发送一个HTTP请求报文</p>
 </li>
 <li><p>服务器会一直监听HTTP所在的80号端口，在发现上面的请求之后，首先检测是否需要验证，无需验证或验证完毕后便会向浏览器发送HTTP响应报文，内容是URL对应的资源内容</p>
 </li>
@@ -280,7 +280,7 @@
 </li>
 <li><p>2XX 成功：200 ok</p>
 </li>
-<li><p>3XX 重定向：301 永久重定向，302 临时重定向（ajax获取不到，见下面解释部分/HTTP1.1中302为Found，但也是一个别的地址），303 see other，304 not modified，原来缓存的文档还可以继续使用，未过期</p>
+<li><p>3XX 重定向：301 永久重定向，302 临时重定向（ajax获取不到，见下面解释部分/HTTP1.1中302为Found，但也是一个别的地址），303 see other，304 not modified（原来缓存的文档还可以继续使用，未过期）</p>
 </li>
 <li><p>4XX 客户端错误：400 bad request，401 unauthorized需要用户名和密码，403 forbidden，404 not found</p>
 </li>
@@ -320,17 +320,15 @@
 </ul>
 <h2 id="搜索引擎优化：内部优化，保证链接可跳转，提升用户体验">搜索引擎优化：内部优化，保证链接可跳转，提升用户体验</h2><ul>
 <li><p>合理的title、description、keywords：搜索对这三项的权重逐个减小，title值强调重点即可，重要关键词出现不要超过2次，而且要靠前，不同页面title要有所不同；description把页面内容高度概括，长度合适，不可过分堆砌关键字，不同页面title要有所不同；keywords列举出重要关键词即可</p>
-<ul>
+</li>
 <li><p>语义化的html代码，符合W3C规范：语义化代码让搜索引擎更容易理解网页</p>
 </li>
-<li><p>重要的html代码放在前面：搜索引擎抓HTML顺序是从上往下的，有点搜索引擎对抓取长度有限制，保证重要内容一定会被抓取</p>
+<li><p>重要的html代码放在前面：搜索引擎抓HTML顺序是从上往下的，有的搜索引擎对抓取长度有限制，保证重要内容一定会被抓取</p>
 </li>
 <li><p>重要内容不要用js输出：爬虫不会执行js获取内容</p>
 </li>
 <li><p>少用iframe：搜索引擎不会抓取iframe中的内容</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">iframe通常用于代替长连接（comet），实现跨域通信或者历史记录的管理</span><br><span class="line"><span class="number">1.</span> 沙箱隔离--fusebox</span><br><span class="line">var iframe = document.createElement(<span class="string">"iframe"</span>);</span><br><span class="line">iframe.style.display = <span class="string">"none"</span>;</span><br><span class="line">document.body.appendChild(iframe);</span><br><span class="line">frames[frames.length-<span class="number">1</span>].document.write(</span><br><span class="line">	<span class="string">"&lt;script&gt; parent.Array2 = Array; &lt;\/script&gt;"</span></span><br><span class="line">);</span><br><span class="line"><span class="number">2.</span> 引用第三方内容</span><br><span class="line"><span class="number">3.</span> 独立的带交互内容</span><br><span class="line"><span class="number">4.</span> 保持独立焦点和历史记录管理的子窗口</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+ <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">iframe通常用于代替长连接（comet），实现跨域通信或者历史记录的管理</span><br><span class="line"><span class="number">1.</span> 沙箱隔离--fusebox</span><br><span class="line">var iframe = document.createElement(<span class="string">"iframe"</span>);</span><br><span class="line">iframe.style.display = <span class="string">"none"</span>;</span><br><span class="line">document.body.appendChild(iframe);</span><br><span class="line">frames[frames.length-<span class="number">1</span>].document.write(</span><br><span class="line">	<span class="string">"&lt;script&gt; parent.Array2 = Array; &lt;\/script&gt;"</span></span><br><span class="line">);</span><br><span class="line"><span class="number">2.</span> 引用第三方内容</span><br><span class="line"><span class="number">3.</span> 独立的带交互内容</span><br><span class="line"><span class="number">4.</span> 保持独立焦点和历史记录管理的子窗口</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>非装饰性图片必须加alt：img的title是一个全局属性，用于给图片添加附加信息，鼠标滑动到图片上时显示；而alt是img的特有属性，是<strong>图片内容的等价描述</strong>，用于图片无法加载时展示、读屏器阅读图片，可以提高图片的可访问性，搜索引擎会重点分析</p>
 </li>
@@ -339,7 +337,7 @@
 </ul>
 <h2 id="DOCTYPE">DOCTYPE</h2><p>声明页面文档类型，告诉浏览器使用那种模式渲染，HTML5中<code>&lt;!DOCTYPE html&gt;</code></p>
 <h2 id="客户端存储">客户端存储</h2><h3 id="cookie">cookie</h3><p>容量有限，个数有限，会随着HTTP请求发送到服务器，存在安全隐患</p>
-<h3 id="sessionStorage">sessionStorage</h3><p>用于本地存储一个会话中的数据，这些数据只有在同一个会话中的页面才能访问，并且当会话接受后数据会随之销毁，因此，不是一个持久化的本地存储，存储量很大（各浏览器要求不同）</p>
+<h3 id="sessionStorage">sessionStorage</h3><p>用于本地存储一个会话中的数据，这些数据只有在同一个会话中的页面才能访问，并且当会话结束后数据会随之销毁，因此，不是一个持久化的本地存储，存储量很大（各浏览器要求不同）</p>
 <h3 id="localStorage">localStorage</h3><p>用于本地持久化存储，除非用户主动删除数据，否则永远不会过期，单个域名存储量大，总体数量没有限制</p>
 <h3 id="websql_database">websql database</h3><p>一个本地数据库，大大提高了web应用程序的性能，减轻了服务器的压力。存储的数据是SQL，本地存储使用的是key-value结构，性能上不如webstorage</p>
 <h2 id="cookie和session">cookie和session</h2><h3 id="什么是cookie">什么是cookie</h3><p>cookie分为二种：以文件方式存储在硬盘空间上的长期性的cookie，停留在浏览器所占内存中的临时性的cookie。在浏览网站时，常会有提示，询问是否要记住登陆状态，这种情况下，登录时填写的信息会以文件的形式存放在客户端的硬盘上。在用户登陆后，session会在cookie端产生一个<code>session_id</code>，这个session_id是存在于浏览器所占用的内存中，关闭浏览器时会消失。而cookie采用的是<em>客户端保持状态</em>的方案，是一种客户端会话状态的存储机制，<strong>是服务器在本地机器上存储的小段文本或者内存中的一段数据，并随着每一个请求发送到同一个服务器</strong>。网络服务器使用HTTP头消息将cookie信息发送到客户端，在客户端，浏览器解析这些cookie并将他们保存成一个本地文件，他会自动为同一个服务器上的请求附上这些cookie。由于采用服务端保持状态的机制，客户端也需要保存一个标识，所以session机制借助于cookie来保存标识以解决HTTP协议无状态的缺陷。</p>
@@ -509,7 +507,7 @@
 <h2 id="CSS_display、position、float属性">CSS display、position、float属性</h2><h3 id="display属性">display属性</h3><ul>
 <li><p>取值为<code>none block inline-block inline table list-item box</code></p>
 </li>
-<li><p><code>display: none;</code>和<code>visibility: hidden</code>区别，前者不会渲染，后者会渲染但是不显示</p>
+<li><p><code>display: none;</code>和<code>visibility: hidden</code>区别：前者不会渲染，后者会渲染但是不显示</p>
 </li>
 </ul>
 <h3 id="position属性">position属性</h3><ul>
@@ -628,7 +626,7 @@
 }
 </code></pre></li>
 </ul>
-<h2 id="web中的图标">web中的图标</h2><p>随着时代的变迁和技术的不断革新，在当今这个时代，web中的图标不再仅仅是局限于图片，还要雪碧图，字体图标、SVG图标等。对于设计师而言，他们关心的是像素的完美和体验的一致性，而前端开发工程师则更为关心页面的可访问性、性能重构灵活性、可复用性、可维护性等。如何根据不同的DPI展示不同规格的图标素材也是个难题。</p>
+<h2 id="web中的图标">web中的图标</h2><p>随着时代的变迁和技术的不断革新，在当今这个时代，web中的图标不再仅仅是局限于图片，还有雪碧图、字体图标、SVG图标等。对于设计师而言，他们关心的是像素的完美和体验的一致性，而前端开发工程师则更为关心页面的可访问性、性能重构灵活性、可复用性、可维护性等。如何根据不同的DPI展示不同规格的图标素材也是个难题。</p>
 <h3 id="图片">图片</h3><ul>
 <li><p>优点</p>
 <ol>
@@ -642,7 +640,7 @@
 <ol>
 <li><p>增加HTTP请求数</p>
 </li>
-<li><p>不易适配各种终端盒分辨率，可能会造成图标模糊</p>
+<li><p>不易适配各种终端和分辨率，可能会造成图标模糊</p>
 </li>
 <li><p>不易修改图标样式，比如颜色、阴影等</p>
 </li>
@@ -710,7 +708,7 @@
 <ol>
 <li><p>兼容性差</p>
 </li>
-<li><p>需要学习成本</p>
+<li><p>需要额外的学习成本</p>
 </li>
 </ol>
 </li>
@@ -730,15 +728,15 @@
 </li>
 </ul>
 <h3 id="选择">选择</h3><ol>
-<li><p>如果需要的是信息丰富的图片，而不仅仅是图标，那么使用<strong>图片</strong></p>
+<li><p>如果需要的是信息丰富的图片，而不仅仅是图标，那么使用 <strong>图片</strong></p>
 </li>
-<li><p>如果不是展示类图形，而是装饰性的图形，一般不随意改懂，可以考虑使用<strong>png 雪碧图</strong></p>
+<li><p>如果不是展示类图形，而是装饰性的图形，一般不随意改动，可以考虑使用 <strong>png 雪碧图</strong></p>
 </li>
-<li><p>如果图标需要适配于高分辨率环境下，可以考虑使用<strong>SVG 雪碧图</strong></p>
+<li><p>如果图标需要适配于高分辨率环境下，可以考虑使用 <strong>SVG 雪碧图</strong></p>
 </li>
-<li><p>仅仅是需要Icon这些小图标，并且可以做一些个性化样式，可以考虑使用<strong>Icon Font</strong></p>
+<li><p>仅仅是需要Icon这些小图标，并且可以做一些个性化样式，可以考虑使用 <strong>Icon Font</strong></p>
 </li>
-<li><p>仅仅需要图标更具扩展性，又不希望加载额外的图标，可以考虑在页面中直接使用SVG代码绘制的矢量图</p>
+<li><p>仅仅需要图标更具扩展性，又不希望加载额外的图标，可以考虑在页面中直接使用 SVG代码绘制的矢量图</p>
 </li>
 </ol>
 <h2 id="使用文字替换图片技术→有利于SEO">使用文字替换图片技术→有利于SEO</h2><pre><code>&lt;h2&gt;&lt;span&gt;Hello world&lt;/span&gt;&lt;/h2&gt;
@@ -851,8 +849,8 @@ h2 span{
 <h2 id="CSS盒模型">CSS盒模型</h2><p><img src="http://osmn00.com/d/file/blog/front-end/2010-10-16/23ed2c1db2a91fe6d080f8359b634fac.gif" alt="image"></p>
 <h3 id="W3C盒模型">W3C盒模型</h3><pre><code>总宽度 = <span class="attribute">margin-left</span> + <span class="attribute">border-left</span> + <span class="attribute">padding-left</span> + <span class="attribute">width</span> + <span class="attribute">padding-right</span> + <span class="attribute">border-right</span> + <span class="attribute">margin-right</span>
 内容宽度 = <span class="attribute">width</span>
-</code></pre><h3 id="IE_quirks_mode">IE quirks mode</h3><pre><code>总宽度 = <span class="attribute">width</span>
-内容宽度 = <span class="attribute">width</span> - (<span class="attribute">margin-left</span> +<span class="attribute">margin-right</span> + <span class="attribute">padding-left</span> + <span class="attribute">padding-right</span> + <span class="attribute">border-left</span> +<span class="attribute">border-right</span>)
+</code></pre><h3 id="IE_quirks_mode">IE quirks mode</h3><pre><code>总宽度 = <span class="attribute">margin-left</span> + <span class="attribute">width</span> + <span class="attribute">margin-right</span>
+内容宽度 = <span class="attribute">width</span> - (<span class="attribute">border-left</span> + <span class="attribute">padding-left</span> + <span class="attribute">padding-right</span> + <span class="attribute">border-right</span>)
 </code></pre><h3 id="css3:_box-sizing">css3: box-sizing</h3><p>CSS3中可以使用box-sizing改变盒模型</p>
 <ul>
 <li><p>content-box：默认值，这是标准的盒模型，width和height是内容区的宽和高</p>
@@ -873,6 +871,14 @@ h2 span{
 <li><p>创建了BFC的元素不会和他的子元素发生margin折叠</p>
 </li>
 <li><p>元素自身的margin-top和margin-bottom相临时也会折叠</p>
+</li>
+</ul>
+<h4 id="计算">计算</h4><ul>
+<li><p>都是正值，取绝对值最大的</p>
+</li>
+<li><p>都是负值，取绝对值最大的</p>
+</li>
+<li><p>有正有负，取绝对值最大的正合绝对值最大的负相加</p>
 </li>
 </ul>
 <h3 id="BFC">BFC</h3><p>BFC：块级格式化上下文，可以看做是隔离了的独立容器</p>
@@ -914,7 +920,7 @@ h2 span{
 </ul>
 </li>
 <li><p>IE6-7</p>
-<p> 在IE6-7中显示引擎使用的是布局layout这个概念，当外面说一个元素拥有layout的时候，是指其hasLayout属性为true，拥有布局的元素负责本身和其子元素的尺寸设置和定位</p>
+<p> 在IE6-7中显示引擎使用的是布局layout这个概念，当我们说一个元素拥有layout的时候，是指其hasLayout属性为true，拥有布局的元素负责本身和其子元素的尺寸设置和定位</p>
 <p> 如何触发hasLayout：</p>
 <ul>
 <li><p><code>position: absolute</code></p>
@@ -970,7 +976,7 @@ h2 span{
 </code></pre><h2 id="CSS_hyphens实现英文单词完美展示">CSS hyphens实现英文单词完美展示</h2><ul>
 <li><p><code>word-wrap</code>: 允许长单词或url地址转换到下一行，取值有 <code>normal/break-word</code>;</p>
 </li>
-<li><p><code>word-break</code>: 自动换行处理方法，取值有 <code>normal/break-all/keep-all</code></p>
+<li><p><code>word-break</code>: 自动换行处理方法，取值有 <code>normal/break-all/keep-all</code>，(只在半角空格或者连字符处换行)</p>
 </li>
 <li><p>代码</p>
 <pre><code><span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en-US"</span>&gt;</span>//支持hyphens
@@ -987,13 +993,7 @@ h2 span{
         </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
     <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
 <span class="tag">&lt;/<span class="title">html</span>&gt;</span>
-</code></pre><ul>
-<li><p>word-wrap: 允许长单词或URL地址换到下一行，取值有normal/break-word</p>
-</li>
-<li><p>word-break: 自动换行处理方法，取值有normal/break-all/keep-all(只在半角空格或者连字符处换行)</p>
-</li>
-</ul>
-</li>
+</code></pre></li>
 </ul>
 <h2 id="CSS3_动画">CSS3 动画</h2><ul>
 <li><p>transform: translate/rotate/scale/skew/matrix</p>
@@ -1214,14 +1214,15 @@ h2 span{
 </code></pre><h2 id="CSS_文本溢出显示">CSS 文本溢出显示</h2><h3 id="单行文本">单行文本</h3><pre><code><span class="rule"><span class="attribute">overflow</span>:<span class="value"> hidden</span></span>;
 <span class="rule"><span class="attribute">text-overflow</span>:<span class="value"> ellipsis</span></span>;
 <span class="rule"><span class="attribute">white-space</span>:<span class="value"> nowrap</span></span>;
-</code></pre><h3 id="多行文本"><a href="http://www.css88.com/archives/tag/line-clamp" target="_blank" rel="external">多行文本</a></h3><pre><code><span class="rule"><span class="attribute">text-overflow</span>:<span class="value"> hidden</span></span>;
+</code></pre><h3 id="多行文本"><a href="http://www.css88.com/archives/tag/line-clamp" target="_blank" rel="external">多行文本</a></h3><pre><code><span class="rule"><span class="attribute">overflow</span>:<span class="value"> hidden</span></span>;
+<span class="rule"><span class="attribute">text-overflow</span>:<span class="value"> ellipsis</span></span>;
 <span class="rule"><span class="attribute">display</span>:<span class="value"> -webkit-box</span></span>;
 <span class="rule"><span class="attribute">display</span>:<span class="value"> box</span></span>;
 <span class="rule"><span class="attribute">-webkit-box-orient</span>:<span class="value"> vertical</span></span>;
 <span class="rule"><span class="attribute">box-orient</span>:<span class="value"> vertical</span></span>;
 <span class="rule"><span class="attribute">-webkit-line-clamp</span>:<span class="value"> <span class="number">2</span></span></span>;
 </code></pre><h2 id="如何让height:100%起作用"><a href="http://www.webhek.com/css-100-percent-height" target="_blank" rel="external">如何让height:100%起作用</a></h2><p>根据W3C的规范，百分比的宽度/高度在设定时需要根据这个元素的父容器的宽度/高度去计算。如果不给宽度设置缺省值，设置<code>width: 100%</code>会占满整个横向宽度。而高度的计算却不是这样，浏览器根本不计算内容区的高度，除非内容超出了视窗范围，导致滚动条出现。换句话说，设置元素<code>height: 100%</code>时，父元素<code>height: auto</code>，计算时只会出现undefined结果，并没有任何卵用。想要使其起作用，就要对其所有的祖先元素设置<code>height: 100%</code>。</p>
-<p>高度自适应：绝对定位+top+<code>bottom:0</code> / Ie6：html设置<code>padding-top</code></p>
+<p>高度自适应：绝对定位+top+<code>bottom:0</code> / IE6：html设置<code>padding-top</code></p>
 <pre><code><span class="doctype">&lt;!DOCTYPE html&gt;</span>
 <span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span>
 <span class="tag">&lt;<span class="title">head</span>&gt;</span>
@@ -1248,7 +1249,7 @@ h2 span{
             <span class="rule"><span class="attribute">bottom</span>:<span class="value"> <span class="number">0</span></span></span>;
             <span class="rule"><span class="attribute">overflow</span>:<span class="value"> auto</span></span>;
         }</span>
-        <span class="comment">/*IE6中，html的增加了padding-top后，整个html元素的高度还是保持不变，即浏览器窗口的高度，变化的是body的高度减小了，用来抵消html的padding-top.而绝对定位的元素最终是参照html元素的。*/</span>
+        <span class="comment">/*IE6中，html增加了padding-top后，整个html元素的高度还是保持不变，即浏览器窗口的高度，变化的是body的高度减小了，用来抵消html的padding-top.而绝对定位的元素最终是参照html元素的。*/</span>
         * <span class="tag">html</span> <span class="rules">{
             <span class="rule"><span class="attribute">padding-top</span>:<span class="value"> <span class="number">100px</span></span></span>;
         }</span>
@@ -1312,7 +1313,7 @@ h2 span{
 </ul>
 </li>
 </ul>
-<h3 id="判断数据类型">判断数据类型</h3><h4 id="typeof">typeof</h4><p>typeof 是一个一元运算符，放在一个运算数之前，运算数可以任意类型，返回值是一个字符串，说明运算数的类型，包括<code>undefined boolean number string function object</code>，对于array类型会返回<code>object</code>，null类型会返回<code>undefined</code>。我们可以使用typeof来判断对象是否存在，即<code>typeof a !== &#39;undefined&#39;</code></p>
+<h3 id="判断数据类型">判断数据类型</h3><h4 id="typeof">typeof</h4><p>typeof 是一个一元运算符，放在一个运算数之前，运算数可以是任意类型，返回值是一个字符串，说明运算数的类型，包括<code>undefined boolean number string function object</code>，对于array类型会返回<code>object</code>，null类型会返回<code>undefined</code>。我们可以使用typeof来判断对象是否存在，即<code>typeof a !== &#39;undefined&#39;</code></p>
 <h4 id="instanceof">instanceof</h4><p>instanceof 是用来判断对象是否是另一个对象的实例，实际上是<code>instance.__proto__ === object</code>（function参数arguments是一个伪数组，需要使用<code>Array.prototype.slice.call(arguments)</code>转换成标准数组才能使用数组的一些函数）</p>
 <h4 id="判断一个对象是否为数组">判断一个对象是否为数组</h4><pre><code><span class="function"><span class="keyword">function</span> <span class="title">isArray</span>(<span class="params">arg</span>) </span>{
     <span class="keyword">if</span>(<span class="keyword">typeof</span> arg === <span class="string">"object"</span>) {
@@ -1353,8 +1354,8 @@ lion.name = <span class="string">"Lion"</span>;
 lion.call();
 // 关于new
 function <span class="keyword">Person</span>(){}//定义一个函数
-var <span class="keyword">person</span> = <span class="keyword">Person</span>();//执行函数并将返回值赋值给<span class="keyword">person</span>，如果<span class="keyword">Person</span>是一个类的话，新的对象不会被创建，this将绑定到全局对象上
-var <span class="keyword">person</span> = new <span class="keyword">Person</span>();//使用构造函数<span class="keyword">Person</span>构造一个实例对象<span class="keyword">person</span>，this指向新创建的对象<span class="keyword">person</span>
+var <span class="keyword">person</span> = <span class="keyword">Person</span>();//执行函数并将返回值赋值给<span class="keyword">person</span>，如果<span class="keyword">Person</span>是一个类的话，新的对象不会被创建，函数内部的this将绑定到全局对象上
+var <span class="keyword">person</span> = new <span class="keyword">Person</span>();//使用构造函数<span class="keyword">Person</span>构造一个实例对象<span class="keyword">person</span>，函数内部的this指向新创建的对象<span class="keyword">person</span>
 </code></pre><h4 id="ES6_类">ES6 类</h4><p>在ES6中，使用class关键字定义类</p>
 <pre><code><span class="keyword">class</span> Animal {
     <span class="constructor"><span class="keyword">constructor</span>(name) </span>{
@@ -1457,10 +1458,10 @@ console.<span class="built_in">log</span> <span class="params">(obj2.a)</span>;
 </li>
 </ul>
 <h2 id="事件模型">事件模型</h2><h3 id="DOM事件">DOM事件</h3><p>事件是javascript应用跳动的心脏，事件的传播顺序有两种：事件捕捉和事件冒泡。</p>
-<h4 id="冒泡型事件">冒泡型事件</h4><p>这是IE浏览器对事件模型的实现。顾名思义，事件由叶子节点沿祖先节点一直向上传递直到根节点。冒泡型事件的基本思想：事件按照从特定的事件目标开始到罪不确定的事件目标。</p>
+<h4 id="冒泡型事件">冒泡型事件</h4><p>这是IE浏览器对事件模型的实现。顾名思义，事件由叶子节点沿祖先节点一直向上传递直到根节点。冒泡型事件的基本思想：事件按照从特定的事件目标开始到最不确定的事件目标。</p>
 <h4 id="捕获型事件">捕获型事件</h4><p>NetSpace的实现，与冒泡型相反，由DOM树最顶层元素一直到最精确的元素。</p>
 <h4 id="DOM标准事件模型">DOM标准事件模型</h4><p>同时支持上面两种事件模型，从document对象开始捕获事件，直到目标元素，然后再向上冒泡到document对象。（并非所有的事件都会经过冒泡阶段，例如focus事件和blur事件，都不会冒泡）</p>
-<p><img src="http://www.xiaojunxie.com/event.png" alt="image"></p>
+<p><img src="/event.png" alt="image"></p>
 <h3 id="标准事件模型和IE事件模型的区别">标准事件模型和IE事件模型的区别</h3><ol>
 <li><p>IE事件模型没有捕获阶段</p>
 </li>
@@ -1517,8 +1518,8 @@ console.<span class="built_in">log</span> <span class="params">(obj2.a)</span>;
 
 var DOMUtil = {
     <span class="built_in">text</span>: <span class="function"><span class="keyword">function</span><span class="params">(ele)</span> {</span>
-        <span class="keyword">if</span><span class="params">(<span class="string">"textContent"</span> in lee)</span> {
-            return <span class="keyword">else</span>.textContent;
+        <span class="keyword">if</span><span class="params">(<span class="string">"textContent"</span> in ele)</span> {
+            return ele.textContent;
         }
         return ele.innerText;
     },
@@ -1543,7 +1544,7 @@ EventUtil.on(ul, <span class="string">"click"</span>, function(<span class="keyw
         }
     }
 });
-</code></pre><h2 id="闭包">闭包</h2><h3 id="定义-2">定义</h3><p>闭包就是由函数创造的一个词法作用域，里面创建的变量被饮用后，可以在这个词法环境之外自由使用。简单来说，闭包就是能够读取其他函数内部变量的函数。在javascript中，只有父函数内部的子函数可以读取父函数内的局部变量。因此，可以把闭包简单理解成<strong>定义在函数内部的函数</strong>。内部函数将一直拥有从外部函数作用域获取的变量，这些值不会随着外部函数的执行完成而销毁，存在内存泄露的危险。在本质上，闭包就是将内部函数和外部函数连接起来的桥梁。这就是javascript语言特有的链式作用域结构，子对象会一级一级地向上寻找所以父对象的变量。所以，父对象的所有变量，对于子对象都是可见的，反之则不成立。</p>
+</code></pre><h2 id="闭包">闭包</h2><h3 id="定义-2">定义</h3><p>闭包就是由函数创造的一个词法作用域，里面创建的变量被引用后，可以在这个词法环境之外自由使用。简单来说，闭包就是能够读取其他函数内部变量的函数。在javascript中，只有父函数内部的子函数可以读取父函数内的局部变量。因此，可以把闭包简单理解成<strong>定义在函数内部的函数</strong>。内部函数将一直拥有从外部函数作用域获取的变量，这些值不会随着外部函数的执行完成而销毁，存在内存泄露的危险。在本质上，闭包就是将内部函数和外部函数连接起来的桥梁。这就是javascript语言特有的链式作用域结构，子对象会一级一级地向上寻找所有父对象的变量。所以，父对象的所有变量，对于子对象都是可见的，反之则不成立。</p>
 <h3 id="作用">作用</h3><p>创建内部变量，使变量不会被外部对象随意修改，但同时又可以通过指定的函数接口来操作</p>
 <h3 id="创建方法">创建方法</h3><pre><code>with(obj) {
     ...
@@ -1753,7 +1754,7 @@ function createCORSRequest(<span class="keyword">method</span>, url) {
         // 此时即支持<span class="type">CORS</span>的情况
         // 检查<span class="type">XMLHttpRequest</span>对象是否有“withCredentials”属性
         // “withCredentials”仅存在于<span class="type">XMLHTTPRequest2</span>对象里
-    xhr.open(<span class="keyword">method</span>, url, <span class="literal">true</span>);
+        xhr.open(<span class="keyword">method</span>, url, <span class="literal">true</span>);
     } <span class="keyword">else</span> <span class="keyword">if</span> (typeof <span class="type">XDomainRequest</span>!= <span class="string">"undefined"</span>) {
         // 否则检查是否支持<span class="type">XDomainRequest</span>，<span class="type">IE8</span>和<span class="type">IE9</span>支持
         // <span class="type">XDomainRequest</span>仅存在于<span class="type">IE</span>中，是<span class="type">IE</span>用于支持<span class="type">CORS</span>请求的方式
@@ -1820,137 +1821,176 @@ arr5.splice(<span class="number">1</span>, <span class="number">3</span>);
 console.<span class="built_in">log</span>(arr5);            <span class="comment">// [5, 2, 3, 4]</span>
 </code></pre></li>
 <li><p>sort()：排序</p>
-<pre><code><span class="function"><span class="keyword">function</span> <span class="title">fillArray</span><span class="params">(arr, start, end, num)</span></span> {
-    start = start | <span class="number">1</span>;
-    <span class="keyword">end</span> = <span class="keyword">end</span> | <span class="number">100</span>;
-    num = num | <span class="number">10</span>;
-    <span class="keyword">if</span>(<span class="keyword">end</span> &lt; start) {
-        [<span class="keyword">end</span>, start] = [start, <span class="keyword">end</span>];
-    }
-    var width = <span class="keyword">end</span> - start;
-    <span class="keyword">for</span>(var i = num; i &gt; <span class="number">0</span>; <span class="comment">--i) {</span>
-        arr.push((~~(Math.random()*width)+start));
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">fillArray</span>(<span class="params">arr, start, end, num</span>) </span>{
+    start = start || <span class="number">1</span>;
+    end = end || <span class="number">100</span>;
+    num = num || <span class="number">10</span>;
+    <span class="keyword">var</span> width = end - start;
+    <span class="keyword">for</span>(<span class="keyword">var</span> i = num; i &gt; <span class="number">0</span>; --i) {
+        arr.push((~~(<span class="built_in">Math</span>.random()*width)+start));
     }
     <span class="keyword">return</span> arr;
 }
-<span class="function"><span class="keyword">function</span> <span class="title">normalize</span><span class="params">(arr)</span></span> {
-    <span class="keyword">if</span>(arr &amp;&amp; Array.isArray(arr)) {
-        var map = {};
-        <span class="keyword">for</span>(var i = arr.length; i &gt;= <span class="number">0</span>; <span class="comment">--i) {</span>
+<span class="function"><span class="keyword">function</span> <span class="title">normalize</span>(<span class="params">arr</span>) </span>{
+    <span class="keyword">if</span>(arr &amp;&amp; <span class="built_in">Array</span>.isArray(arr)) {
+        <span class="keyword">var</span> map = {};
+        <span class="keyword">for</span>(<span class="keyword">var</span> i = arr.length; i &gt;= <span class="number">0</span>; --i) {
             <span class="keyword">if</span>(arr[i] <span class="keyword">in</span> map) {
                 arr.splice(i, <span class="number">1</span>);
             } <span class="keyword">else</span> {
-                map[arr[i]] = <span class="keyword">true</span>;
+                map[arr[i]] = <span class="literal">true</span>;
             }
         }
     }
     <span class="keyword">return</span> arr;
 }
-var input = [];
+<span class="keyword">var</span> input = [];
 fillArray(input, <span class="number">1</span>, <span class="number">100</span>, <span class="number">10</span>);
-input.sort(<span class="function"><span class="keyword">function</span><span class="params">(a, b)</span></span> {
+input.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>{
     <span class="keyword">return</span> a-b;
 });
 normalize(input);
 </code></pre></li>
 </ul>
-<h2 id="字符串">字符串</h2><h2 id="日期">日期</h2><h2 id="正则">正则</h2><pre><code>var patt=new RegExp(pattern,modifiers);
+<h2 id="字符串">字符串</h2><ul>
+<li><p>length</p>
+</li>
+<li><p>charAt()</p>
+</li>
+<li><p>concat()</p>
+</li>
+<li><p>indexOf()</p>
+</li>
+<li><p>match()：正则匹配</p>
+</li>
+<li><p>repeat()</p>
+</li>
+<li><p>replact()：正则替换</p>
+</li>
+<li><p>search()：正则查找，同indexOf</p>
+</li>
+<li><p>slice()</p>
+</li>
+<li><p>split()：字符串-&gt;数组</p>
+</li>
+<li><p>startsWith()</p>
+</li>
+<li><p>substr(loc)</p>
+</li>
+<li><p>substring(start, end)</p>
+</li>
+<li><p>toLowerCase()</p>
+</li>
+<li><p>trim()</p>
+</li>
+</ul>
+<h2 id="日期">日期</h2><h3 id="创建">创建</h3><pre><code><span class="built_in">var</span> <span class="built_in">date</span> = <span class="literal">new</span> <span class="built_in">Date</span>();
+<span class="built_in">var</span> <span class="built_in">date</span> = <span class="literal">new</span> <span class="built_in">Date</span>(<span class="string">'December 11, 1990 19:30:00'</span>);
+<span class="built_in">var</span> <span class="built_in">date</span> = <span class="literal">new</span> <span class="built_in">Date</span>(<span class="string">'1990-12-11T19:30:00'</span>);
+<span class="built_in">var</span> <span class="built_in">date</span> = <span class="literal">new</span> <span class="built_in">Date</span>(<span class="number">1990</span>, <span class="number">12</span>, <span class="number">11</span>, <span class="number">19</span>, <span class="number">30</span>, <span class="number">0</span>);
 
-var patt=/pattern/modifiers;    
-
+<span class="built_in">var</span> unixTimeStamp = <span class="built_in">Date</span><span class="built_in">.</span>now();
+<span class="built_in">var</span> unixTimeStamp = <span class="built_in">Date</span><span class="built_in">.</span>parse(<span class="built_in">date</span>);
+<span class="built_in">var</span> unixTimeStamp = +<span class="built_in">date</span>;
+</code></pre><h3 id="方法">方法</h3><ul>
+<li><p>getDate(): 一个月的第几天</p>
+</li>
+<li><p>getDay(): 一个星期第几天 0-6</p>
+</li>
+<li><p>getFullYear(): 4位年</p>
+</li>
+<li><p>getHours(): 0-23</p>
+</li>
+<li><p>getMinutes(): 0-59</p>
+</li>
+<li><p>getMonth(): 0-11</p>
+</li>
+<li><p>getSeconds(): 0-59</p>
+</li>
+</ul>
+<h2 id="正则">正则</h2><h3 id="创建-1">创建</h3><pre><code><span class="keyword">var</span> patt = <span class="keyword">new</span> <span class="built_in">RegExp</span>(pattern, modifiers);
+<span class="keyword">var</span> patt = <span class="regexp">/pattern/m</span>odifiers;        
 i - 修饰符是用来执行不区分大小写的匹配。
-
 g - 修饰符是用于执行全文的搜索（而不是在找到第一个就停止查找,而是找到所有的匹配）。
+</code></pre><h3 id="方法-1">方法</h3><ul>
+<li><p>exec 匹配正则，返回数组，未匹配返回null</p>
+</li>
+<li><p>test 匹配返回true</p>
+</li>
+<li><p>match 同exec</p>
+</li>
+</ul>
+<h3 id="特殊字符">特殊字符</h3><pre><code>.    任意单个字符
+<span class="string">\w</span>    查找单词字符
+<span class="string">\W</span>    查找非单词字符
+<span class="string">\d</span>    查找数字
+<span class="string">\D</span>    查找非数字字符
+<span class="string">\s</span>    查找空白字符
+<span class="string">\S</span>    查找非空白字符
+<span class="string">\b</span>    单词边界
+<span class="string">\B</span>    非单词边界
+<span class="string">\0</span>    <span class="literal">null</span>字符
+<span class="string">\n</span>    查找换行符
+<span class="string">\f</span>    换页符
+<span class="string">\r</span>    回车符
+<span class="string">\t</span>    制表符
+<span class="string">\v</span>    垂直制表符
+<span class="string">\xxx</span>    八进制数
+<span class="string">\xdd</span>    <span class="number">16</span>进制数
+<span class="string">\uxxxx</span>    unicode字符
+n?    <span class="number">0</span>次或<span class="number">1</span>次
+?=n    其后紧跟n的字符串
+?!n    没有其后紧跟n的字符串
+?:匹配pattern，但不捕获匹配结果，用做存在性检查
+</code></pre><h3 id="实例-3">实例</h3><pre><code>匹配中文字符的正则表达式：<span class="special">[</span><span class="command">\u</span>4e00-<span class="command">\u</span>9fa5<span class="command">\uF</span>900-<span class="command">\uFA</span>2D<span class="special">]</span>
 
-patt.test()
+匹配特殊字符：(<span class="special">[</span>.*+?^<span class="formula">$<span class="special">{</span><span class="special">}</span>()|<span class="special">[</span><span class="command">\]</span><span class="command">\/</span><span class="command">\\</span><span class="special">]</span>)
 
-patt.exec()
+匹配空行的正则表达式：<span class="command">\n</span><span class="special">[</span><span class="command">\s</span>| <span class="special">]</span>*<span class="command">\r</span>
 
-        .    任意单个字符
-        <span class="command">\w</span>    查找单词字符
-        <span class="command">\W</span>    查找非单词字符
-        <span class="command">\d</span>    查找数字
-        <span class="command">\D</span>    查找非数字字符
-        <span class="command">\s</span>    查找空白字符
-        <span class="command">\S</span>    查找非空白字符
-        <span class="command">\b</span>    单词边界
-        <span class="command">\B</span>    非单词边界
-        \0    null字符
-        <span class="command">\n</span>    查找换行符
-        <span class="command">\f</span>    换页符
-        <span class="command">\r</span>    回车符
-        <span class="command">\t</span>    制表符
-        <span class="command">\v</span>    垂直制表符
-        <span class="command">\xxx</span>    八进制数
-        <span class="command">\xdd</span>    16进制数
-        <span class="command">\uxxxx</span>    unicode字符
-        n?    0次或1次
-        ?=n    其后紧跟n的字符串
-        ?!n    没有其后紧跟n的字符串
-        ?:匹配pattern，但不捕获匹配结果，用做存在性检查
+匹配HTML标记的正则表达式：/&lt;(.*)&gt;.*&lt;<span class="command">\/</span>\1&gt;|&lt;(.*) <span class="command">\/</span>?&gt;/ or /^&lt;(<span class="command">\w</span>+)<span class="command">\s*</span><span class="command">\/</span>?&gt;(?:&lt;<span class="command">\/</span>\1&gt;|)$</span>/
 
-        匹配中文字符的正则表达式：<span class="special">[</span><span class="command">\u</span>4e00-<span class="command">\u</span>9fa5<span class="command">\uF</span>900-<span class="command">\uFA</span>2D<span class="special">]</span>
+匹配首尾空格的正则表达式：(^<span class="command">\s*</span>)|(<span class="command">\s*</span><span class="formula">$)
 
-        匹配特殊字符：(<span class="special">[</span>.*+?^<span class="formula">$<span class="special">{</span><span class="special">}</span>()|<span class="special">[</span><span class="command">\]</span><span class="command">\/</span><span class="command">\\</span><span class="special">]</span>)
+匹配Email地址的正则表达式：<span class="command">\w</span>+(<span class="special">[</span>-+.<span class="special">]</span><span class="command">\w</span>+)*@<span class="command">\w</span>+(<span class="special">[</span>-.<span class="special">]</span><span class="command">\w</span>+)*<span class="command">\.</span><span class="command">\w</span>+(<span class="special">[</span>-.<span class="special">]</span><span class="command">\w</span>+)*
 
-        匹配空行的正则表达式：<span class="command">\n</span><span class="special">[</span><span class="command">\s</span>| <span class="special">]</span>*<span class="command">\r</span>
+匹配网址URL的正则表达式：http://(<span class="special">[</span><span class="command">\w</span>-<span class="special">]</span>+<span class="command">\.</span>)+<span class="special">[</span><span class="command">\w</span>-<span class="special">]</span>+(/<span class="special">[</span><span class="command">\w</span>- ./?%<span class="special">&amp;</span>=<span class="special">]</span>*)?
 
-        匹配HTML标记的正则表达式：/&lt;(.*)&gt;.*&lt;<span class="command">\/</span>\1&gt;|&lt;(.*) <span class="command">\/</span>?&gt;/ or /^&lt;(<span class="command">\w</span>+)<span class="command">\s*</span><span class="command">\/</span>?&gt;(?:&lt;<span class="command">\/</span>\1&gt;|)$</span>/
+匹配帐号是否合法(字母开头，允许5-16字节，允许字母数字下划线)：^<span class="special">[</span>a-zA-Z<span class="special">]</span><span class="special">[</span>a-zA-Z0-9_<span class="special">]</span><span class="special">{</span>4,15<span class="special">}</span>$</span>
 
-        匹配首尾空格的正则表达式：(^<span class="command">\s*</span>)|(<span class="command">\s*</span><span class="formula">$)
+匹配国内电话号码：<span class="command">\d</span><span class="special">{</span>3<span class="special">}</span>-<span class="command">\d</span><span class="special">{</span>8<span class="special">}</span>|<span class="command">\d</span><span class="special">{</span>4<span class="special">}</span>-<span class="command">\d</span><span class="special">{</span>7<span class="special">}</span>
 
-        匹配Email地址的正则表达式：<span class="command">\w</span>+(<span class="special">[</span>-+.<span class="special">]</span><span class="command">\w</span>+)*@<span class="command">\w</span>+(<span class="special">[</span>-.<span class="special">]</span><span class="command">\w</span>+)*<span class="command">\.</span><span class="command">\w</span>+(<span class="special">[</span>-.<span class="special">]</span><span class="command">\w</span>+)*
+匹配腾讯QQ号：<span class="special">[</span>1-9<span class="special">]</span><span class="special">[</span><span class="command">\d</span><span class="special">]</span><span class="special">{</span>4,<span class="special">}</span>
 
-        匹配网址URL的正则表达式：http://(<span class="special">[</span><span class="command">\w</span>-<span class="special">]</span>+<span class="command">\.</span>)+<span class="special">[</span><span class="command">\w</span>-<span class="special">]</span>+(/<span class="special">[</span><span class="command">\w</span>- ./?%<span class="special">&amp;</span>=<span class="special">]</span>*)?
+匹配中国邮政编码：<span class="special">[</span>1-9<span class="special">]</span><span class="command">\d</span><span class="special">{</span>5<span class="special">}</span>(?!<span class="command">\d</span>)
 
-        匹配帐号是否合法(字母开头，允许5-16字节，允许字母数字下划线)：^<span class="special">[</span>a-zA-Z<span class="special">]</span><span class="special">[</span>a-zA-Z0-9_<span class="special">]</span><span class="special">{</span>4,15<span class="special">}</span>$</span>
+匹配身份证：<span class="command">\d</span><span class="special">{</span>15<span class="special">}</span>|<span class="command">\d</span><span class="special">{</span>18<span class="special">}</span>
 
-        匹配国内电话号码：<span class="command">\d</span><span class="special">{</span>3<span class="special">}</span>-<span class="command">\d</span><span class="special">{</span>8<span class="special">}</span>|<span class="command">\d</span><span class="special">{</span>4<span class="special">}</span>-<span class="command">\d</span><span class="special">{</span>7<span class="special">}</span>
+匹配ip地址：(<span class="command">\d</span>+).(<span class="command">\d</span>+).(<span class="command">\d</span>+).(<span class="command">\d</span>+)，对<span class="formula">$1$</span>2<span class="formula">$3$</span>4进行分别验证
 
-        匹配腾讯QQ号：<span class="special">[</span>1-9<span class="special">]</span><span class="special">[</span><span class="command">\d</span><span class="special">]</span><span class="special">{</span>4,<span class="special">}</span>
+用正则表达式限制只能输入数字：
+onkeyup="value=value.replace(/<span class="special">[</span>^<span class="command">\d</span><span class="special">]</span>/g,'')"
+onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/<span class="special">[</span>^<span class="command">\d</span><span class="special">]</span>/g,''))"
 
-        匹配中国邮政编码：<span class="special">[</span>1-9<span class="special">]</span><span class="command">\d</span><span class="special">{</span>5<span class="special">}</span>(?!<span class="command">\d</span>)
+匹配文件后缀名
+var pos = str.lastIndexOf(".");
+if(pos != -1)<span class="special">{</span>
+    return str.slice(pos+1);
+<span class="special">}</span>
+var pattern = /<span class="special">[</span>^<span class="command">\.</span><span class="special">]</span>*<span class="formula">$/;
+return pattern.exec(str);
+return str.match(pattern);
 
-        匹配身份证：d<span class="special">{</span>15<span class="special">}</span>|d<span class="special">{</span>18<span class="special">}</span>
-
-        匹配ip地址：(<span class="command">\d</span>+).(<span class="command">\d</span>+).(<span class="command">\d</span>+).(<span class="command">\d</span>+)，对<span class="formula">$1$</span>2<span class="formula">$3$</span>4进行分别验证
-
-        用正则表达式限制只能输入数字：
-        onkeyup="value=value.replace(/<span class="special">[</span>^<span class="command">\d</span><span class="special">]</span>/g,'')"
-        onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/<span class="special">[</span>^<span class="command">\d</span><span class="special">]</span>/g,''))"
-
-        匹配文件后缀名
-        var pos = str.lastIndexOf(".");
-        if(pos != -1)<span class="special">{</span>
-            return str.slice(pos+1);
-        <span class="special">}</span>
-        var pattern = /<span class="special">[</span>^<span class="command">\.</span><span class="special">]</span>*<span class="formula">$/;
-        return pattern.exec(str);
-        return str.match(pattern);
-
-        判断是否是CSS文件
-        var isCss = /.*<span class="command">\.</span>css(?=<span class="command">\?</span>|$</span>)/
-
-        **关于非捕获性分组**
-
-        非捕获性分组：
-
-        创建反向引用的分组，这种分组一般称为捕获性分组。同时也存在一种非捕获性分组。它不会创建反向引用，因为在比较长的正则表达式中，分组多了会很影响效率。所以使用非捕获性分组。
-
-        创建非捕获性分组是这样的(?:开始然后写表达式。例如:
-
-        var str='<span class="special">#</span>123456';
-
-        //var oReg=/<span class="special">#</span>(<span class="command">\w</span>+)/g; 　　//()的作用有多种，其中一咱就是捕获性分组，有些书上也称做“反向引用”，
-
-
-        var oReg=/<span class="special">#</span>(?:<span class="command">\w</span>+)/;　　//非捕获性分组 ，在()左边添加 ?:
-
-        alert(oReg.test(str));　　 //true
-
-        alert(RegExp.<span class="formula">$1);　　//　　''  返回空值，由此可以它虽然满足了我们的要求但却并没有创建引用，而如果使用捕获性分组，这里就会返回一个 123456 ，因为RegExp.$</span>1 “记忆”下了匹配的字符。
-
-        注意：在JavaScript中，分组匹配的结果是存储在RegExp中的，如果我们使用的是捕获性分组，那么就都可以通过RegExp.<span class="formula">$1,RegExp.$</span>2...来取得相应的分组匹配结果，第一个()表示RegExp.<span class="formula">$1,第二个()表示RegExp.$</span>2,依此类推。。。
+判断是否是CSS文件
+var isCss = /.*<span class="command">\.</span>css(?=<span class="command">\?</span>|$</span>)/
+</code></pre><h3 id="非捕获型分组">非捕获型分组</h3><p>创建反向引用的分组，一般称为捕获型分组。反之，不会创建反向引用的分组就是非捕获型分组，分组多了会影响效率。</p>
+<pre><code><span class="keyword">var</span> str = <span class="string">"#123456"</span>;
+<span class="keyword">var</span> <span class="keyword">cap</span> = /#(\w+)/<span class="keyword">g</span>;
+<span class="keyword">var</span> nocap = /#(?:\w)/<span class="keyword">g</span>
+console.<span class="literal">log</span>(<span class="keyword">cap</span>.<span class="keyword">test</span>(str));     <span class="comment">// true</span>
+console.<span class="literal">log</span>(RegExp.<span class="label">$1</span>);            <span class="comment">// 123456</span>
+console.<span class="literal">log</span>(nocap.<span class="keyword">test</span>(str));    <span class="comment">// true</span>
+console.<span class="literal">log</span>(RegExp.<span class="label">$1</span>);            <span class="comment">// 空</span>
 </code></pre><h2 id="函数">函数</h2><p>在javascript中，函数是第一等公民，函数可以返回函数，词法上支持闭包。如何有效利用闭包和作用域是成为一个伟大的javascript开发者的关键。</p>
 <h3 id="函数柯里化"><a href="http://www.zhangxinxu.com/wordpress/2013/02/js-currying/" target="_blank" rel="external">函数柯里化</a></h3><p>柯里化是这样的一个转换过程，把接受多个参数的函数变换成接受一个单一参数的函数，如果其他的函数是必要时，返回接受余下的参数且返回结果的新函数。函数柯里化允许和鼓励分隔复杂功能变成更小更容易分析的部分。这些小的逻辑单元显然是更容易理解和测试的，然后你的应用就会变成干净而整洁的组合，由一些小单元组成的组合。</p>
 <ul>
@@ -2058,7 +2098,7 @@ repeatFun(<span class="string">"helloword"</span>);
 <li>bool类型true-1 false-0</li>
 <li>对象和数字/字符串比较，将对象转换为原始值用==继续比较</li>
 </ol>
-<h3 id="ToPrimitive">ToPrimitive</h3><p>在javascript中，一共有2种数据类型：原始值和对象值，原始值又包括undefined，null，bool、number和string，其他所有都是对象值，包括array和function</p>
+<h3 id="ToPrimitive">ToPrimitive</h3><p>在javascript中，一共有2种数据类型：原始值和对象值，原始值又包括undefined，null，boolean、number和string，其他所有都是对象值，包括array和function</p>
 <ol>
 <li><p>如果输入值是原始值，则返回自身</p>
 </li>
@@ -2094,7 +2134,7 @@ repeatFun(<span class="string">"helloword"</span>);
 </ol>
 </li>
 </ol>
-<h3 id="getViewportSize">getViewportSize</h3><pre><code><span class="function"><span class="keyword">function</span> <span class="title">viewport</span>(<span class="params"></span>)</span>{
+<h3 id="getViewportSize">getViewportSize</h3><pre><code><span class="function"><span class="keyword">function</span> <span class="title">getViewport</span>(<span class="params"></span>)</span>{
     <span class="keyword">var</span> e = <span class="built_in">window</span> , a = <span class="string">'inner'</span>;
     <span class="keyword">if</span> ( !( <span class="string">'innerWidth'</span> <span class="keyword">in</span> <span class="built_in">window</span> ) ) {
         a = <span class="string">'client'</span>;
@@ -2114,56 +2154,44 @@ repeatFun(<span class="string">"helloword"</span>);
 <li><p>createDocumentFragment()文档碎片节点</p>
 </li>
 </ul>
-<h2 id="模块化">模块化</h2><pre><code><span class="number">1.</span> 为什么需要模块化
-
-    <span class="number">1.</span> 恼人的命名冲突
-
-    <span class="number">2.</span> 繁琐的文件依赖
-
-<span class="number">2.</span> 模块化编程：定义封装的模块 + 定义新模块对其他模块的依赖 + 对其他模块的引入支持
-
-<span class="number">3.</span> 种类
-
-    * commonjs：<span class="built_in">require</span>()引入外部模块，exports对象用于导出当前模块的方法或变量，<span class="built_in">module</span>对象表示模块本身，是一种*同步*加载方式，不适合浏览器环境→nodejs
-
-            var <span class="built_in">math</span> = <span class="built_in">require</span>(<span class="string">"math"</span>);
-            <span class="built_in">math</span>.add(<span class="number">2</span>, <span class="number">3</span>);//<span class="built_in">math</span>模块加载完毕才能执行
-    * AMD：*异步*模块定义，自由变量/全局变量define函数，define(id?,dependencies?,factory)→requirejs，*依赖前置<span class="keyword">or</span>依赖注入？！*
-
-            define(<span class="string">"alpha"</span>, [<span class="string">"require"</span>, <span class="string">"exports"</span>, <span class="string">"beta"</span>], funtion(<span class="built_in">require</span>, exports, beta){
-                exports.verb = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
-                    //<span class="keyword">return</span> beta.verb();
-                    <span class="keyword">return</span> <span class="built_in">require</span>(<span class="string">"beta"</span>).verb();
-                };
-            });
-    * CMD：define(<span class="function"><span class="keyword">function</span><span class="params">(**require,exports,module**)</span></span>{...})→seajs，*依赖就近*
-
-            define(id?, reps?, factory)
-                                   |
-                        <span class="built_in">require</span>, exports, <span class="built_in">module</span>
-            define(funtion(<span class="built_in">require</span>, exports, <span class="built_in">module</span>){
-                var verb = <span class="built_in">require</span>(<span class="string">"verb"</span>);
-                <span class="built_in">module</span>.eports.verb = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
-                    //<span class="keyword">return</span> beta.verb();
-                    <span class="keyword">return</span> <span class="built_in">require</span>(<span class="string">"beta"</span>).verb();
-                }
-            });
-
-        coolie//nodejs部分一个模块化开发工具
-
-<span class="number">4.</span> seajs<span class="comment">--为前端开发提供简单、极致的模块化开发体验的一个**模块加载器**</span>
-
-    <span class="number">1.</span> 通过exports暴露接口，这意味着不需要命名空间了，更不需要全局变量，这是一种彻底的命名冲突解决方案
-
-    <span class="number">2.</span> 通过<span class="built_in">require</span>引入依赖，可以让依赖内置，开发者只需要关心当前模块的依赖，其他事情seajs都会自动处理好，对模块开发者来说，这是一种很好的关注度分离，能让程序媛更多地享受编码的乐趣
-
-    <span class="number">3.</span> 模块的版本管理，通过别名等配置，配合构建工具，可以比较轻松地实现模块的版本管理
-
-    <span class="number">4.</span> 提高可维护性，模块化可以让每个文件的职责单一，非常有利于代码的维护，seajs还提供了nocache、<span class="built_in">debug</span>等插件，拥有在线调试等功能，能比较明显地提升效率。
-
-    <span class="number">5.</span> 前端性能优化，seaj通过异步加载模块，这对页面性能非常有益，seajs还提供了combo、flush等插件，配合服务端，可以很好地对页面性能进行调优
-
-    <span class="number">6.</span> 跨环境共享模块，CMD模块定义规范与nodejs的模块规范费仓相近，通过seajs的nodejs版本，可以很方便地实现模块的跨服务器和浏览器共享
+<h2 id="模块化">模块化</h2><h2 id="起源">起源</h2><p>恼人的命名冲突+繁琐的文件依赖</p>
+<h2 id="重点">重点</h2><p>定义封装的模块，引入依赖，提供引入支持</p>
+<h2 id="几种规范">几种规范</h2><h3 id="commonjs">commonjs</h3><p>require()引入外部模块，exports对象用于导出当前模块的方法或变量，module对象表示模块本身，是一种<em>同步</em>加载方式，不适合浏览器环境→nodejs</p>
+<pre><code>var <span class="built_in">math</span> = <span class="built_in">require</span>(<span class="string">"math"</span>);
+<span class="built_in">math</span>.add(<span class="number">2</span>, <span class="number">3</span>);//<span class="built_in">math</span>模块加载完毕才能执行
+</code></pre><h3 id="AMD">AMD</h3><p><em>异步</em>模块定义，<code>define(id?,dependencies?,factory)</code>→requirejs，<em>依赖前置</em>–require是一个全局函数，所有的 require 都提前了，所有依赖这个模块的语句，都定义在一个回调函数中，等到加载完成之后，这个回调函数才会运行。</p>
+<pre><code>define(<span class="string">"alpha"</span>, [<span class="string">"require"</span>, <span class="string">"exports"</span>, <span class="string">"beta"</span>], funtion(<span class="built_in">require</span>, exports, beta){
+    exports.verb = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+        <span class="comment">//return beta.verb();</span>
+        <span class="keyword">return</span> <span class="built_in">require</span>(<span class="string">"beta"</span>).verb();
+    };
+});
+</code></pre><h3 id="CMD">CMD</h3><p><code>define(function(**require,exports,module**){...})</code>→seajs，<em>依赖就近</em>–没有全局 require，想什么时候 require 就什么时候加载，实现了 <strong>懒加载</strong>，延迟执行 (as lazy as possible)</p>
+<h4 id="seajs">seajs</h4><p>seajs–为前端开发提供简单、极致的模块化开发体验的一个<strong>模块加载器</strong></p>
+<ol>
+<li><p>通过exports暴露接口，这意味着不需要命名空间了，更不需要全局变量，这是一种彻底的命名冲突解决方案</p>
+</li>
+<li><p>通过require引入依赖，可以让依赖内置，开发者只需要关心当前模块的依赖，其他事情seajs都会自动处理好，对模块开发者来说，这是一种很好的关注度分离，能让程序媛更多地享受编码的乐趣</p>
+</li>
+<li><p>模块的版本管理，通过别名等配置，配合构建工具，可以比较轻松地实现模块的版本管理</p>
+</li>
+<li><p>提高可维护性，模块化可以让每个文件的职责单一，非常有利于代码的维护，seajs还提供了nocache、debug等插件，拥有在线调试等功能，能比较明显地提升效率。</p>
+</li>
+<li><p>前端性能优化，seaj通过异步加载模块，这对页面性能非常有益，seajs还提供了combo、flush等插件，配合服务端，可以很好地对页面性能进行调优</p>
+</li>
+<li><p>跨环境共享模块，CMD模块定义规范与nodejs的模块规范非常相近，通过seajs的nodejs版本，可以很方便地实现模块的跨服务器和浏览器共享</p>
+</li>
+</ol>
+<h4 id="实例-4">实例</h4><pre><code>define(id?, reps?, factory)
+                       |
+            <span class="built_in">require</span>, exports, <span class="built_in">module</span>
+define(funtion(<span class="built_in">require</span>, exports, <span class="built_in">module</span>){
+    <span class="keyword">var</span> verb = <span class="built_in">require</span>(<span class="string">"verb"</span>);
+    <span class="built_in">module</span>.eports.verb = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+        <span class="comment">//return beta.verb();</span>
+        <span class="keyword">return</span> <span class="built_in">require</span>(<span class="string">"beta"</span>).verb();
+    }
+});
 </code></pre></span>
       
     </div>
@@ -2340,7 +2368,7 @@ repeatFun(<span class="string">"helloword"</span>);
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML–搭建结构"><span class="nav-number">2.</span> <span class="nav-text">HTML–搭建结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#从输入URL到整个网页加载完毕及显示在屏幕上的整个流程"><span class="nav-number">2.1.</span> <span class="nav-text">从输入URL到整个网页加载完毕及显示在屏幕上的整个流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP状态码小结"><span class="nav-number">2.2.</span> <span class="nav-text">HTTP状态码小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP_readystate"><span class="nav-number">2.3.</span> <span class="nav-text">HTTP readystate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WEB语义化"><span class="nav-number">2.4.</span> <span class="nav-text">WEB语义化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搜索引擎优化：内部优化，保证链接可跳转，提升用户体验"><span class="nav-number">2.5.</span> <span class="nav-text">搜索引擎优化：内部优化，保证链接可跳转，提升用户体验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOCTYPE"><span class="nav-number">2.6.</span> <span class="nav-text">DOCTYPE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#客户端存储"><span class="nav-number">2.7.</span> <span class="nav-text">客户端存储</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cookie"><span class="nav-number">2.7.1.</span> <span class="nav-text">cookie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sessionStorage"><span class="nav-number">2.7.2.</span> <span class="nav-text">sessionStorage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#localStorage"><span class="nav-number">2.7.3.</span> <span class="nav-text">localStorage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#websql_database"><span class="nav-number">2.7.4.</span> <span class="nav-text">websql database</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cookie和session"><span class="nav-number">2.8.</span> <span class="nav-text">cookie和session</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是cookie"><span class="nav-number">2.8.1.</span> <span class="nav-text">什么是cookie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是session"><span class="nav-number">2.8.2.</span> <span class="nav-text">什么是session</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#session和cookie谁更安全"><span class="nav-number">2.8.3.</span> <span class="nav-text">session和cookie谁更安全</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP_method：POST_和_GET"><span class="nav-number">2.9.</span> <span class="nav-text">HTTP method：POST 和 GET</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用URL拆分出protocol、host、port、query等"><span class="nav-number">2.10.</span> <span class="nav-text">使用URL拆分出protocol、host、port、query等</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">2.10.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解释"><span class="nav-number">2.10.2.</span> <span class="nav-text">解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取"><span class="nav-number">2.10.3.</span> <span class="nav-text">获取</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#canvas"><span class="nav-number">2.11.</span> <span class="nav-text">canvas</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS–设计样式"><span class="nav-number">3.</span> <span class="nav-text">CSS–设计样式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#flexbox"><span class="nav-number">3.1.</span> <span class="nav-text">flexbox</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法1"><span class="nav-number">3.1.1.</span> <span class="nav-text">方法1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法2"><span class="nav-number">3.1.2.</span> <span class="nav-text">方法2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_reset"><span class="nav-number">3.2.</span> <span class="nav-text">CSS reset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_display、position、float属性"><span class="nav-number">3.3.</span> <span class="nav-text">CSS display、position、float属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#display属性"><span class="nav-number">3.3.1.</span> <span class="nav-text">display属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#position属性"><span class="nav-number">3.3.2.</span> <span class="nav-text">position属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#float元素"><span class="nav-number">3.3.3.</span> <span class="nav-text">float元素</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web中的图标"><span class="nav-number">3.4.</span> <span class="nav-text">web中的图标</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#图片"><span class="nav-number">3.4.1.</span> <span class="nav-text">图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#雪碧图_Sprites"><span class="nav-number">3.4.2.</span> <span class="nav-text">雪碧图 Sprites</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字体图标_iconfont"><span class="nav-number">3.4.3.</span> <span class="nav-text">字体图标 iconfont</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SVG"><span class="nav-number">3.4.4.</span> <span class="nav-text">SVG</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Data_URL"><span class="nav-number">3.4.5.</span> <span class="nav-text">Data URL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择"><span class="nav-number">3.4.6.</span> <span class="nav-text">选择</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用文字替换图片技术→有利于SEO"><span class="nav-number">3.5.</span> <span class="nav-text">使用文字替换图片技术→有利于SEO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_hack技术"><span class="nav-number">3.6.</span> <span class="nav-text">CSS hack技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_选择器"><span class="nav-number">3.7.</span> <span class="nav-text">CSS 选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#匹配顺序"><span class="nav-number">3.7.1.</span> <span class="nav-text">匹配顺序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#匹配规则"><span class="nav-number">3.7.2.</span> <span class="nav-text">匹配规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写法"><span class="nav-number">3.7.3.</span> <span class="nav-text">写法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS盒模型"><span class="nav-number">3.8.</span> <span class="nav-text">CSS盒模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#W3C盒模型"><span class="nav-number">3.8.1.</span> <span class="nav-text">W3C盒模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IE_quirks_mode"><span class="nav-number">3.8.2.</span> <span class="nav-text">IE quirks mode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css3:_box-sizing"><span class="nav-number">3.8.3.</span> <span class="nav-text">css3: box-sizing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#margin折叠"><span class="nav-number">3.8.4.</span> <span class="nav-text">margin折叠</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BFC"><span class="nav-number">3.8.5.</span> <span class="nav-text">BFC</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#无样式内容闪烁_FOUC"><span class="nav-number">3.9.</span> <span class="nav-text">无样式内容闪烁 FOUC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-1"><span class="nav-number">3.9.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何避免"><span class="nav-number">3.9.2.</span> <span class="nav-text">如何避免</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#link和@import"><span class="nav-number">3.9.3.</span> <span class="nav-text">link和@import</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS预处理器和CSS后处理器"><span class="nav-number">3.10.</span> <span class="nav-text">CSS预处理器和CSS后处理器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_hyphens实现英文单词完美展示"><span class="nav-number">3.11.</span> <span class="nav-text">CSS hyphens实现英文单词完美展示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS3_动画"><span class="nav-number">3.12.</span> <span class="nav-text">CSS3 动画</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用1、2、3、5个标签画红十字"><span class="nav-number">3.13.</span> <span class="nav-text">使用1、2、3、5个标签画红十字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_绘制箭头"><span class="nav-number">3.14.</span> <span class="nav-text">CSS 绘制箭头</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS+JS制作轮播"><span class="nav-number">3.15.</span> <span class="nav-text">CSS+JS制作轮播</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bootstrap实现轮播"><span class="nav-number">3.16.</span> <span class="nav-text">bootstrap实现轮播</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_实现浮层"><span class="nav-number">3.17.</span> <span class="nav-text">CSS 实现浮层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_文本溢出显示"><span class="nav-number">3.18.</span> <span class="nav-text">CSS 文本溢出显示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单行文本"><span class="nav-number">3.18.1.</span> <span class="nav-text">单行文本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多行文本"><span class="nav-number">3.18.2.</span> <span class="nav-text">多行文本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何让height:100%起作用"><span class="nav-number">3.19.</span> <span class="nav-text">如何让height:100%起作用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Javascript–定义行为"><span class="nav-number">4.</span> <span class="nav-text">Javascript–定义行为</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据"><span class="nav-number">4.1.</span> <span class="nav-text">数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#javascript数据类型"><span class="nav-number">4.1.1.</span> <span class="nav-text">javascript数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#判断数据类型"><span class="nav-number">4.1.2.</span> <span class="nav-text">判断数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#typeof"><span class="nav-number">4.1.2.1.</span> <span class="nav-text">typeof</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#instanceof"><span class="nav-number">4.1.2.2.</span> <span class="nav-text">instanceof</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判断一个对象是否为数组"><span class="nav-number">4.1.2.3.</span> <span class="nav-text">判断一个对象是否为数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判断一个对象是否为函数"><span class="nav-number">4.1.2.4.</span> <span class="nav-text">判断一个对象是否为函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通用代码"><span class="nav-number">4.1.2.5.</span> <span class="nav-text">通用代码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类和继承"><span class="nav-number">4.2.</span> <span class="nav-text">类和继承</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Javascript类"><span class="nav-number">4.2.1.</span> <span class="nav-text">Javascript类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ES5_类"><span class="nav-number">4.2.1.1.</span> <span class="nav-text">ES5 类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ES6_类"><span class="nav-number">4.2.1.2.</span> <span class="nav-text">ES6 类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ES6类包含私有属性–Symbol"><span class="nav-number">4.2.1.3.</span> <span class="nav-text">ES6类包含私有属性–Symbol</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#比较"><span class="nav-number">4.2.1.4.</span> <span class="nav-text">比较</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Javascript继承"><span class="nav-number">4.2.2.</span> <span class="nav-text">Javascript继承</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ES5_继承"><span class="nav-number">4.2.2.1.</span> <span class="nav-text">ES5 继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ES6_继承"><span class="nav-number">4.2.2.2.</span> <span class="nav-text">ES6 继承</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相关题目"><span class="nav-number">4.2.3.</span> <span class="nav-text">相关题目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性查找"><span class="nav-number">4.2.3.1.</span> <span class="nav-text">属性查找</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实例化对象"><span class="nav-number">4.2.3.2.</span> <span class="nav-text">实例化对象</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ES6新增功能"><span class="nav-number">4.2.4.</span> <span class="nav-text">ES6新增功能</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件模型"><span class="nav-number">4.3.</span> <span class="nav-text">事件模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM事件"><span class="nav-number">4.3.1.</span> <span class="nav-text">DOM事件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#冒泡型事件"><span class="nav-number">4.3.1.1.</span> <span class="nav-text">冒泡型事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#捕获型事件"><span class="nav-number">4.3.1.2.</span> <span class="nav-text">捕获型事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DOM标准事件模型"><span class="nav-number">4.3.1.3.</span> <span class="nav-text">DOM标准事件模型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标准事件模型和IE事件模型的区别"><span class="nav-number">4.3.2.</span> <span class="nav-text">标准事件模型和IE事件模型的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件注册跨浏览器版"><span class="nav-number">4.3.3.</span> <span class="nav-text">事件注册跨浏览器版</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件代理"><span class="nav-number">4.3.4.</span> <span class="nav-text">事件代理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#闭包"><span class="nav-number">4.4.</span> <span class="nav-text">闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-2"><span class="nav-number">4.4.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作用"><span class="nav-number">4.4.2.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建方法"><span class="nav-number">4.4.3.</span> <span class="nav-text">创建方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例"><span class="nav-number">4.4.4.</span> <span class="nav-text">实例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#计数器"><span class="nav-number">4.4.4.1.</span> <span class="nav-text">计数器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现数字到英文转换，0->zero"><span class="nav-number">4.4.4.2.</span> <span class="nav-text">实现数字到英文转换，0->zero</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#点击button，打印编号"><span class="nav-number">4.4.4.3.</span> <span class="nav-text">点击button，打印编号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#看代码写结果"><span class="nav-number">4.4.4.4.</span> <span class="nav-text">看代码写结果</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#this"><span class="nav-number">4.5.</span> <span class="nav-text">this</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#javascript中this的处理机制"><span class="nav-number">4.5.1.</span> <span class="nav-text">javascript中this的处理机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-1"><span class="nav-number">4.5.2.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反射"><span class="nav-number">4.6.</span> <span class="nav-text">反射</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-3"><span class="nav-number">4.6.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-2"><span class="nav-number">4.6.2.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AJAX"><span class="nav-number">4.7.</span> <span class="nav-text">AJAX</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-4"><span class="nav-number">4.7.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原生js实现ajax"><span class="nav-number">4.7.2.</span> <span class="nav-text">原生js实现ajax</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异步加载js并执行回调函数"><span class="nav-number">4.7.3.</span> <span class="nav-text">异步加载js并执行回调函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跨域&&安全"><span class="nav-number">4.8.</span> <span class="nav-text">跨域&&安全</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#javascript同源策略SOP"><span class="nav-number">4.8.1.</span> <span class="nav-text">javascript同源策略SOP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#跨子域解决方案：document-domain+iframe"><span class="nav-number">4.8.2.</span> <span class="nav-text">跨子域解决方案：document.domain+iframe</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态创建script"><span class="nav-number">4.8.3.</span> <span class="nav-text">动态创建script</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iframe+loaction-hash"><span class="nav-number">4.8.4.</span> <span class="nav-text">iframe+loaction.hash</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSONP"><span class="nav-number">4.8.5.</span> <span class="nav-text">JSONP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JSON"><span class="nav-number">4.8.5.1.</span> <span class="nav-text">JSON</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#跨域实现"><span class="nav-number">4.8.5.2.</span> <span class="nav-text">跨域实现</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML5_postMessage"><span class="nav-number">4.8.6.</span> <span class="nav-text">HTML5 postMessage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CORS"><span class="nav-number">4.8.7.</span> <span class="nav-text">CORS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSONP_vs_CORS"><span class="nav-number">4.8.8.</span> <span class="nav-text">JSONP vs CORS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安全"><span class="nav-number">4.8.9.</span> <span class="nav-text">安全</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组"><span class="nav-number">4.9.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串"><span class="nav-number">4.10.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#日期"><span class="nav-number">4.11.</span> <span class="nav-text">日期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则"><span class="nav-number">4.12.</span> <span class="nav-text">正则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">4.13.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数柯里化"><span class="nav-number">4.13.1.</span> <span class="nav-text">函数柯里化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#声明提升"><span class="nav-number">4.14.</span> <span class="nav-text">声明提升</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重写javascript内置代码"><span class="nav-number">4.15.</span> <span class="nav-text">重写javascript内置代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小知识"><span class="nav-number">4.16.</span> <span class="nav-text">小知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#javascript和css属性对照"><span class="nav-number">4.16.1.</span> <span class="nav-text">javascript和css属性对照</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#href="#"和href="javascript:_void(0)"区别"><span class="nav-number">4.16.2.</span> <span class="nav-text">href="#"和href="javascript: void(0)"区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#===和=="><span class="nav-number">4.16.3.</span> <span class="nav-text">===和==</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#===比较过程"><span class="nav-number">4.16.3.1.</span> <span class="nav-text">===比较过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#==比较过程"><span class="nav-number">4.16.3.2.</span> <span class="nav-text">==比较过程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ToPrimitive"><span class="nav-number">4.16.4.</span> <span class="nav-text">ToPrimitive</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getViewportSize"><span class="nav-number">4.16.5.</span> <span class="nav-text">getViewportSize</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建节点"><span class="nav-number">4.16.6.</span> <span class="nav-text">创建节点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模块化"><span class="nav-number">4.17.</span> <span class="nav-text">模块化</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML–搭建结构"><span class="nav-number">2.</span> <span class="nav-text">HTML–搭建结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#从输入URL到整个网页加载完毕及显示在屏幕上的整个流程"><span class="nav-number">2.1.</span> <span class="nav-text">从输入URL到整个网页加载完毕及显示在屏幕上的整个流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP状态码小结"><span class="nav-number">2.2.</span> <span class="nav-text">HTTP状态码小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP_readystate"><span class="nav-number">2.3.</span> <span class="nav-text">HTTP readystate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WEB语义化"><span class="nav-number">2.4.</span> <span class="nav-text">WEB语义化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搜索引擎优化：内部优化，保证链接可跳转，提升用户体验"><span class="nav-number">2.5.</span> <span class="nav-text">搜索引擎优化：内部优化，保证链接可跳转，提升用户体验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOCTYPE"><span class="nav-number">2.6.</span> <span class="nav-text">DOCTYPE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#客户端存储"><span class="nav-number">2.7.</span> <span class="nav-text">客户端存储</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cookie"><span class="nav-number">2.7.1.</span> <span class="nav-text">cookie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sessionStorage"><span class="nav-number">2.7.2.</span> <span class="nav-text">sessionStorage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#localStorage"><span class="nav-number">2.7.3.</span> <span class="nav-text">localStorage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#websql_database"><span class="nav-number">2.7.4.</span> <span class="nav-text">websql database</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cookie和session"><span class="nav-number">2.8.</span> <span class="nav-text">cookie和session</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是cookie"><span class="nav-number">2.8.1.</span> <span class="nav-text">什么是cookie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是session"><span class="nav-number">2.8.2.</span> <span class="nav-text">什么是session</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#session和cookie谁更安全"><span class="nav-number">2.8.3.</span> <span class="nav-text">session和cookie谁更安全</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP_method：POST_和_GET"><span class="nav-number">2.9.</span> <span class="nav-text">HTTP method：POST 和 GET</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用URL拆分出protocol、host、port、query等"><span class="nav-number">2.10.</span> <span class="nav-text">使用URL拆分出protocol、host、port、query等</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">2.10.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解释"><span class="nav-number">2.10.2.</span> <span class="nav-text">解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取"><span class="nav-number">2.10.3.</span> <span class="nav-text">获取</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#canvas"><span class="nav-number">2.11.</span> <span class="nav-text">canvas</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS–设计样式"><span class="nav-number">3.</span> <span class="nav-text">CSS–设计样式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#flexbox"><span class="nav-number">3.1.</span> <span class="nav-text">flexbox</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法1"><span class="nav-number">3.1.1.</span> <span class="nav-text">方法1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法2"><span class="nav-number">3.1.2.</span> <span class="nav-text">方法2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_reset"><span class="nav-number">3.2.</span> <span class="nav-text">CSS reset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_display、position、float属性"><span class="nav-number">3.3.</span> <span class="nav-text">CSS display、position、float属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#display属性"><span class="nav-number">3.3.1.</span> <span class="nav-text">display属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#position属性"><span class="nav-number">3.3.2.</span> <span class="nav-text">position属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#float元素"><span class="nav-number">3.3.3.</span> <span class="nav-text">float元素</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web中的图标"><span class="nav-number">3.4.</span> <span class="nav-text">web中的图标</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#图片"><span class="nav-number">3.4.1.</span> <span class="nav-text">图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#雪碧图_Sprites"><span class="nav-number">3.4.2.</span> <span class="nav-text">雪碧图 Sprites</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字体图标_iconfont"><span class="nav-number">3.4.3.</span> <span class="nav-text">字体图标 iconfont</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SVG"><span class="nav-number">3.4.4.</span> <span class="nav-text">SVG</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Data_URL"><span class="nav-number">3.4.5.</span> <span class="nav-text">Data URL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择"><span class="nav-number">3.4.6.</span> <span class="nav-text">选择</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用文字替换图片技术→有利于SEO"><span class="nav-number">3.5.</span> <span class="nav-text">使用文字替换图片技术→有利于SEO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_hack技术"><span class="nav-number">3.6.</span> <span class="nav-text">CSS hack技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_选择器"><span class="nav-number">3.7.</span> <span class="nav-text">CSS 选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#匹配顺序"><span class="nav-number">3.7.1.</span> <span class="nav-text">匹配顺序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#匹配规则"><span class="nav-number">3.7.2.</span> <span class="nav-text">匹配规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写法"><span class="nav-number">3.7.3.</span> <span class="nav-text">写法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS盒模型"><span class="nav-number">3.8.</span> <span class="nav-text">CSS盒模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#W3C盒模型"><span class="nav-number">3.8.1.</span> <span class="nav-text">W3C盒模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IE_quirks_mode"><span class="nav-number">3.8.2.</span> <span class="nav-text">IE quirks mode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css3:_box-sizing"><span class="nav-number">3.8.3.</span> <span class="nav-text">css3: box-sizing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#margin折叠"><span class="nav-number">3.8.4.</span> <span class="nav-text">margin折叠</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#计算"><span class="nav-number">3.8.4.1.</span> <span class="nav-text">计算</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BFC"><span class="nav-number">3.8.5.</span> <span class="nav-text">BFC</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#无样式内容闪烁_FOUC"><span class="nav-number">3.9.</span> <span class="nav-text">无样式内容闪烁 FOUC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-1"><span class="nav-number">3.9.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何避免"><span class="nav-number">3.9.2.</span> <span class="nav-text">如何避免</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#link和@import"><span class="nav-number">3.9.3.</span> <span class="nav-text">link和@import</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS预处理器和CSS后处理器"><span class="nav-number">3.10.</span> <span class="nav-text">CSS预处理器和CSS后处理器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_hyphens实现英文单词完美展示"><span class="nav-number">3.11.</span> <span class="nav-text">CSS hyphens实现英文单词完美展示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS3_动画"><span class="nav-number">3.12.</span> <span class="nav-text">CSS3 动画</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用1、2、3、5个标签画红十字"><span class="nav-number">3.13.</span> <span class="nav-text">使用1、2、3、5个标签画红十字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_绘制箭头"><span class="nav-number">3.14.</span> <span class="nav-text">CSS 绘制箭头</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS+JS制作轮播"><span class="nav-number">3.15.</span> <span class="nav-text">CSS+JS制作轮播</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bootstrap实现轮播"><span class="nav-number">3.16.</span> <span class="nav-text">bootstrap实现轮播</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_实现浮层"><span class="nav-number">3.17.</span> <span class="nav-text">CSS 实现浮层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_文本溢出显示"><span class="nav-number">3.18.</span> <span class="nav-text">CSS 文本溢出显示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单行文本"><span class="nav-number">3.18.1.</span> <span class="nav-text">单行文本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多行文本"><span class="nav-number">3.18.2.</span> <span class="nav-text">多行文本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何让height:100%起作用"><span class="nav-number">3.19.</span> <span class="nav-text">如何让height:100%起作用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Javascript–定义行为"><span class="nav-number">4.</span> <span class="nav-text">Javascript–定义行为</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据"><span class="nav-number">4.1.</span> <span class="nav-text">数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#javascript数据类型"><span class="nav-number">4.1.1.</span> <span class="nav-text">javascript数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#判断数据类型"><span class="nav-number">4.1.2.</span> <span class="nav-text">判断数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#typeof"><span class="nav-number">4.1.2.1.</span> <span class="nav-text">typeof</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#instanceof"><span class="nav-number">4.1.2.2.</span> <span class="nav-text">instanceof</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判断一个对象是否为数组"><span class="nav-number">4.1.2.3.</span> <span class="nav-text">判断一个对象是否为数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判断一个对象是否为函数"><span class="nav-number">4.1.2.4.</span> <span class="nav-text">判断一个对象是否为函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通用代码"><span class="nav-number">4.1.2.5.</span> <span class="nav-text">通用代码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类和继承"><span class="nav-number">4.2.</span> <span class="nav-text">类和继承</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Javascript类"><span class="nav-number">4.2.1.</span> <span class="nav-text">Javascript类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ES5_类"><span class="nav-number">4.2.1.1.</span> <span class="nav-text">ES5 类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ES6_类"><span class="nav-number">4.2.1.2.</span> <span class="nav-text">ES6 类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ES6类包含私有属性–Symbol"><span class="nav-number">4.2.1.3.</span> <span class="nav-text">ES6类包含私有属性–Symbol</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#比较"><span class="nav-number">4.2.1.4.</span> <span class="nav-text">比较</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Javascript继承"><span class="nav-number">4.2.2.</span> <span class="nav-text">Javascript继承</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ES5_继承"><span class="nav-number">4.2.2.1.</span> <span class="nav-text">ES5 继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ES6_继承"><span class="nav-number">4.2.2.2.</span> <span class="nav-text">ES6 继承</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相关题目"><span class="nav-number">4.2.3.</span> <span class="nav-text">相关题目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性查找"><span class="nav-number">4.2.3.1.</span> <span class="nav-text">属性查找</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实例化对象"><span class="nav-number">4.2.3.2.</span> <span class="nav-text">实例化对象</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ES6新增功能"><span class="nav-number">4.2.4.</span> <span class="nav-text">ES6新增功能</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件模型"><span class="nav-number">4.3.</span> <span class="nav-text">事件模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM事件"><span class="nav-number">4.3.1.</span> <span class="nav-text">DOM事件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#冒泡型事件"><span class="nav-number">4.3.1.1.</span> <span class="nav-text">冒泡型事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#捕获型事件"><span class="nav-number">4.3.1.2.</span> <span class="nav-text">捕获型事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DOM标准事件模型"><span class="nav-number">4.3.1.3.</span> <span class="nav-text">DOM标准事件模型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标准事件模型和IE事件模型的区别"><span class="nav-number">4.3.2.</span> <span class="nav-text">标准事件模型和IE事件模型的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件注册跨浏览器版"><span class="nav-number">4.3.3.</span> <span class="nav-text">事件注册跨浏览器版</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件代理"><span class="nav-number">4.3.4.</span> <span class="nav-text">事件代理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#闭包"><span class="nav-number">4.4.</span> <span class="nav-text">闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-2"><span class="nav-number">4.4.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作用"><span class="nav-number">4.4.2.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建方法"><span class="nav-number">4.4.3.</span> <span class="nav-text">创建方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例"><span class="nav-number">4.4.4.</span> <span class="nav-text">实例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#计数器"><span class="nav-number">4.4.4.1.</span> <span class="nav-text">计数器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现数字到英文转换，0->zero"><span class="nav-number">4.4.4.2.</span> <span class="nav-text">实现数字到英文转换，0->zero</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#点击button，打印编号"><span class="nav-number">4.4.4.3.</span> <span class="nav-text">点击button，打印编号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#看代码写结果"><span class="nav-number">4.4.4.4.</span> <span class="nav-text">看代码写结果</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#this"><span class="nav-number">4.5.</span> <span class="nav-text">this</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#javascript中this的处理机制"><span class="nav-number">4.5.1.</span> <span class="nav-text">javascript中this的处理机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-1"><span class="nav-number">4.5.2.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反射"><span class="nav-number">4.6.</span> <span class="nav-text">反射</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-3"><span class="nav-number">4.6.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-2"><span class="nav-number">4.6.2.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AJAX"><span class="nav-number">4.7.</span> <span class="nav-text">AJAX</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-4"><span class="nav-number">4.7.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原生js实现ajax"><span class="nav-number">4.7.2.</span> <span class="nav-text">原生js实现ajax</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异步加载js并执行回调函数"><span class="nav-number">4.7.3.</span> <span class="nav-text">异步加载js并执行回调函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跨域&&安全"><span class="nav-number">4.8.</span> <span class="nav-text">跨域&&安全</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#javascript同源策略SOP"><span class="nav-number">4.8.1.</span> <span class="nav-text">javascript同源策略SOP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#跨子域解决方案：document-domain+iframe"><span class="nav-number">4.8.2.</span> <span class="nav-text">跨子域解决方案：document.domain+iframe</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态创建script"><span class="nav-number">4.8.3.</span> <span class="nav-text">动态创建script</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iframe+loaction-hash"><span class="nav-number">4.8.4.</span> <span class="nav-text">iframe+loaction.hash</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSONP"><span class="nav-number">4.8.5.</span> <span class="nav-text">JSONP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JSON"><span class="nav-number">4.8.5.1.</span> <span class="nav-text">JSON</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#跨域实现"><span class="nav-number">4.8.5.2.</span> <span class="nav-text">跨域实现</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML5_postMessage"><span class="nav-number">4.8.6.</span> <span class="nav-text">HTML5 postMessage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CORS"><span class="nav-number">4.8.7.</span> <span class="nav-text">CORS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSONP_vs_CORS"><span class="nav-number">4.8.8.</span> <span class="nav-text">JSONP vs CORS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安全"><span class="nav-number">4.8.9.</span> <span class="nav-text">安全</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组"><span class="nav-number">4.9.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串"><span class="nav-number">4.10.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#日期"><span class="nav-number">4.11.</span> <span class="nav-text">日期</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建"><span class="nav-number">4.11.1.</span> <span class="nav-text">创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法"><span class="nav-number">4.11.2.</span> <span class="nav-text">方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则"><span class="nav-number">4.12.</span> <span class="nav-text">正则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建-1"><span class="nav-number">4.12.1.</span> <span class="nav-text">创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法-1"><span class="nav-number">4.12.2.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特殊字符"><span class="nav-number">4.12.3.</span> <span class="nav-text">特殊字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-3"><span class="nav-number">4.12.4.</span> <span class="nav-text">实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#非捕获型分组"><span class="nav-number">4.12.5.</span> <span class="nav-text">非捕获型分组</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">4.13.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数柯里化"><span class="nav-number">4.13.1.</span> <span class="nav-text">函数柯里化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#声明提升"><span class="nav-number">4.14.</span> <span class="nav-text">声明提升</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重写javascript内置代码"><span class="nav-number">4.15.</span> <span class="nav-text">重写javascript内置代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小知识"><span class="nav-number">4.16.</span> <span class="nav-text">小知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#javascript和css属性对照"><span class="nav-number">4.16.1.</span> <span class="nav-text">javascript和css属性对照</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#href="#"和href="javascript:_void(0)"区别"><span class="nav-number">4.16.2.</span> <span class="nav-text">href="#"和href="javascript: void(0)"区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#===和=="><span class="nav-number">4.16.3.</span> <span class="nav-text">===和==</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#===比较过程"><span class="nav-number">4.16.3.1.</span> <span class="nav-text">===比较过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#==比较过程"><span class="nav-number">4.16.3.2.</span> <span class="nav-text">==比较过程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ToPrimitive"><span class="nav-number">4.16.4.</span> <span class="nav-text">ToPrimitive</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getViewportSize"><span class="nav-number">4.16.5.</span> <span class="nav-text">getViewportSize</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建节点"><span class="nav-number">4.16.6.</span> <span class="nav-text">创建节点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模块化"><span class="nav-number">4.17.</span> <span class="nav-text">模块化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#起源"><span class="nav-number">4.18.</span> <span class="nav-text">起源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重点"><span class="nav-number">4.19.</span> <span class="nav-text">重点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#几种规范"><span class="nav-number">4.20.</span> <span class="nav-text">几种规范</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#commonjs"><span class="nav-number">4.20.1.</span> <span class="nav-text">commonjs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AMD"><span class="nav-number">4.20.2.</span> <span class="nav-text">AMD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CMD"><span class="nav-number">4.20.3.</span> <span class="nav-text">CMD</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#seajs"><span class="nav-number">4.20.3.1.</span> <span class="nav-text">seajs</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实例-4"><span class="nav-number">4.20.3.2.</span> <span class="nav-text">实例</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
