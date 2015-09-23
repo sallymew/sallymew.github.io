@@ -37,16 +37,25 @@
   <link rel="shorticon icon" type="image/x-icon" href="/image_16X16.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="javascript笔试题">
+<meta name="description" content="将一个长度不超过5位的正整数转换成对应的中文字符串，例如：20876返回“两万零八百七十六”function convert(i) {
+    var r, n, x = 0, zero = i % 10 === 0;
+    var unit = [&apos;&apos;, &apos;&apos;, &apos;十&apos;, &apos;百&apos;, &apos;千&apos;, &apos;万&apos;];
+    var n2c = [&apos;零&apos;, &apos;一&apos;, &apos;二&apos;, &apos;三&apos;, &apos;四&apos;, &apos;五&apos;,">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Javascript笔试题">
 <meta property="og:url" content="http://www.xiaojunxie.com/2015/09/18/Javascript笔试题/index.html">
 <meta property="og:site_name" content="Jennifer's Blog">
-<meta property="og:description" content="javascript笔试题">
-<meta property="og:updated_time" content="2015-09-21T10:44:58.000Z">
+<meta property="og:description" content="将一个长度不超过5位的正整数转换成对应的中文字符串，例如：20876返回“两万零八百七十六”function convert(i) {
+    var r, n, x = 0, zero = i % 10 === 0;
+    var unit = [&apos;&apos;, &apos;&apos;, &apos;十&apos;, &apos;百&apos;, &apos;千&apos;, &apos;万&apos;];
+    var n2c = [&apos;零&apos;, &apos;一&apos;, &apos;二&apos;, &apos;三&apos;, &apos;四&apos;, &apos;五&apos;,">
+<meta property="og:updated_time" content="2015-09-22T04:31:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript笔试题">
-<meta name="twitter:description" content="javascript笔试题">
+<meta name="twitter:description" content="将一个长度不超过5位的正整数转换成对应的中文字符串，例如：20876返回“两万零八百七十六”function convert(i) {
+    var r, n, x = 0, zero = i % 10 === 0;
+    var unit = [&apos;&apos;, &apos;&apos;, &apos;十&apos;, &apos;百&apos;, &apos;千&apos;, &apos;万&apos;];
+    var n2c = [&apos;零&apos;, &apos;一&apos;, &apos;二&apos;, &apos;三&apos;, &apos;四&apos;, &apos;五&apos;,">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -260,10 +269,7 @@
       
 
       
-        <span itemprop="articleBody"><h2 id="javascript笔试题">javascript笔试题</h2><a id="more"></a>
-<ol>
-<li><p>将一个长度不超过5位的正整数转换成对应的中文字符串，例如：20876返回“两万零八百七十六”</p>
-<pre><code><span class="title">function</span> convert(i) {
+        <span itemprop="articleBody"><h1 id="将一个长度不超过5位的正整数转换成对应的中文字符串，例如：20876返回“两万零八百七十六”">将一个长度不超过5位的正整数转换成对应的中文字符串，例如：20876返回“两万零八百七十六”</h1><pre><code><span class="title">function</span> convert(i) {
     <span class="title">var</span> r, n, x = <span class="number">0</span>, zero = i % <span class="number">10</span> === <span class="number">0</span>;
     <span class="title">var</span> unit = [<span class="string">''</span>, <span class="string">''</span>, <span class="string">'十'</span>, <span class="string">'百'</span>, <span class="string">'千'</span>, <span class="string">'万'</span>];
     <span class="title">var</span> n2c = [<span class="string">'零'</span>, <span class="string">'一'</span>, <span class="string">'二'</span>, <span class="string">'三'</span>, <span class="string">'四'</span>, <span class="string">'五'</span>, <span class="string">'六'</span>, <span class="string">'七'</span>, <span class="string">'八'</span>, <span class="string">'九'</span>];
@@ -276,9 +282,8 @@
      }
      <span class="title">return</span> zero ? r.substr(<span class="number">0</span>, r.length-<span class="number">1</span>) : r;
 }
-</code></pre></li>
-<li><p>给定一个list，元素都是正整数，要求返回这些元素组成的最大数。例如：[5, 3, 31, 2]则返回53312。</p>
-<pre><code><span class="function"><span class="keyword">function</span> <span class="title">compare</span><span class="params">(a, b)</span> </span>{
+</code></pre><a id="more"></a>
+<h1 id="给定一个list，元素都是正整数，要求返回这些元素组成的最大数。例如：[5,_3,_31,_2]则返回53312。">给定一个list，元素都是正整数，要求返回这些元素组成的最大数。例如：[5, 3, 31, 2]则返回53312。</h1><pre><code><span class="function"><span class="keyword">function</span> <span class="title">compare</span><span class="params">(a, b)</span> </span>{
     <span class="keyword">var</span> <span class="keyword">as</span> = a+<span class="string">''</span>, bs = b+<span class="string">''</span>;
     <span class="keyword">return</span> (bs + <span class="keyword">as</span>) - (<span class="keyword">as</span> + bs);
 }
@@ -286,47 +291,28 @@
 <span class="function"><span class="keyword">function</span> <span class="title">f</span><span class="params">(i)</span> </span>{
     <span class="keyword">return</span> +(i.sort(compare).join(<span class="string">''</span>))
 }
-</code></pre></li>
-<li><p>考察闭包</p>
-<pre><code><span class="keyword">var</span> value1 = <span class="number">0</span>, value2 = <span class="number">0</span>, value3 = <span class="number">0</span>;
-<span class="keyword">for</span> ( <span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= <span class="number">3</span>; i++) {
-    <span class="keyword">var</span> i2 = i;
-    (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
-        <span class="keyword">var</span> i3 = i;
-        setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+</code></pre><h1 id="考察闭包">考察闭包</h1><pre><code>var value1 = <span class="number">0</span>, value2 = <span class="number">0</span>, value3 = <span class="number">0</span>;
+<span class="keyword">for</span> ( var i = <span class="number">1</span>; i &lt;= <span class="number">3</span>; i++) {
+    var i2 = i;
+    (function() {
+        var i3 = i;
+        setTimeout(function() {
             value1 += i;
             value2 += i2;
             value3 += i3;
         }, <span class="number">1</span>);
     })();
 }
-setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
-    <span class="built_in">console</span>.log(value1, value2, value3);
+setTimeout(function() {
+    console.<span class="built_in">log</span>(value1, value2, value3);
 }, <span class="number">100</span>);
-</code></pre><p> 答案是 4×3 3×3 1+2+3</p>
-</li>
-<li><p>tofixed，IE6下0.009=&gt;0.00 bug</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Number</span>.prototype.toFixed = <span class="function"><span class="keyword">function</span>(<span class="params">s</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> (<span class="built_in">parseInt</span>(<span class="keyword">this</span> * <span class="built_in">Math</span>.pow(<span class="number">10</span>, s) + <span class="number">0.5</span>) / <span class="built_in">Math</span>.pow(<span class="number">10</span>, s)).toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<ol>
-<li><p>给基本数据类型添加属性时，不报错，但是取值为undefined</p>
- <figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = 10;</span><br><span class="line">a.<span class="keyword">pro</span> = 10;</span><br><span class="line">console.<span class="literal">log</span>(a.<span class="keyword">pro</span> + a);<span class="comment">//NaN</span></span><br><span class="line"><span class="keyword">var</span> s = <span class="string">"hello"</span>;</span><br><span class="line">s.<span class="keyword">pro</span> = <span class="string">"world"</span>;</span><br><span class="line">console.<span class="literal">log</span>(s.<span class="keyword">pro</span> + s);<span class="comment">//undefinedhello</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<ol>
-<li><p>简单的变量替换</p>
- <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a = 1, b = 2;</span><br><span class="line">a = [<span class="link_label">b, b = a</span>][<span class="link_reference">0</span>];</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<ol>
-<li><p>setTimeout</p>
- <figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">var</span> a=<span class="number">1</span>;</span><br><span class="line">	setTimeout(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">		alert(a);</span><br><span class="line">		a=<span class="number">3</span>;</span><br><span class="line">		<span class="comment">//var a= 3;</span></span><br><span class="line">	&#125;,<span class="number">1000</span>);</span><br><span class="line">	a=<span class="number">2</span>;</span><br><span class="line">	setTimeout(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">		alert(a);</span><br><span class="line">		a=<span class="number">4</span>;</span><br><span class="line">		<span class="comment">//var a= 4;</span></span><br><span class="line">	&#125;,<span class="number">3000</span>);</span><br><span class="line">&#125;</span><br><span class="line">test();</span><br><span class="line">答案是：<span class="number">2</span> <span class="number">3</span> 使用<span class="keyword">var</span>赋值时：<span class="literal">undefined</span> <span class="literal">undefined</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<ol>
-<li><p>对象引用</p>
-<pre><code><span class="function">function <span class="title">tr42</span><span class="params">()</span></span>{
+
+答案是 <span class="number">4</span>×<span class="number">3</span> <span class="number">3</span>×<span class="number">3</span> <span class="number">1</span>+<span class="number">2</span>+<span class="number">3</span>
+</code></pre><h1 id="tofixed，IE6下0-009=&gt;0-00_bug">tofixed，IE6下0.009=&gt;0.00 bug</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Number</span>.prototype.toFixed = <span class="function"><span class="keyword">function</span>(<span class="params">s</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> (<span class="built_in">parseInt</span>(<span class="keyword">this</span> * <span class="built_in">Math</span>.pow(<span class="number">10</span>, s) + <span class="number">0.5</span>) / <span class="built_in">Math</span>.pow(<span class="number">10</span>, s)).toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="给基本数据类型添加属性时，不报错，但是取值为undefined">给基本数据类型添加属性时，不报错，但是取值为undefined</h1><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = 10;</span><br><span class="line">a.<span class="keyword">pro</span> = 10;</span><br><span class="line">console.<span class="literal">log</span>(a.<span class="keyword">pro</span> + a);<span class="comment">//NaN</span></span><br><span class="line"><span class="keyword">var</span> s = <span class="string">"hello"</span>;</span><br><span class="line">s.<span class="keyword">pro</span> = <span class="string">"world"</span>;</span><br><span class="line">console.<span class="literal">log</span>(s.<span class="keyword">pro</span> + s);<span class="comment">//undefinedhello</span></span><br></pre></td></tr></table></figure>
+<h1 id="简单的变量替换">简单的变量替换</h1><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a = 1, b = 2;</span><br><span class="line">a = [<span class="link_label">b, b = a</span>][<span class="link_reference">0</span>];</span><br></pre></td></tr></table></figure>
+<h1 id="setTimeout">setTimeout</h1><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">var</span> a=<span class="number">1</span>;</span><br><span class="line">	setTimeout(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">		alert(a);</span><br><span class="line">		a=<span class="number">3</span>;</span><br><span class="line">		<span class="comment">//var a= 3;</span></span><br><span class="line">	&#125;,<span class="number">1000</span>);</span><br><span class="line">	a=<span class="number">2</span>;</span><br><span class="line">	setTimeout(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">		alert(a);</span><br><span class="line">		a=<span class="number">4</span>;</span><br><span class="line">		<span class="comment">//var a= 4;</span></span><br><span class="line">	&#125;,<span class="number">3000</span>);</span><br><span class="line">&#125;</span><br><span class="line">test();</span><br><span class="line">答案是：<span class="number">2</span> <span class="number">3</span> 使用<span class="keyword">var</span>赋值时：<span class="literal">undefined</span> <span class="literal">undefined</span></span><br></pre></td></tr></table></figure>
+<h1 id="对象引用">对象引用</h1><pre><code><span class="function">function <span class="title">tr42</span><span class="params">()</span></span>{
     var a2,b2;
     a2 = {<span class="string">"c"</span>:<span class="number">1</span>};
     b2 = a2;
@@ -379,9 +365,7 @@ b: [Object Object]
 &gt; b
 &lt; [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]
 &gt; a = [<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]
-</code></pre></li>
-<li><p>考察this</p>
-<pre><code>var foo=<span class="number">1</span>;
+</code></pre><h1 id="考察this">考察this</h1><pre><code>var foo=<span class="number">1</span>;
 <span class="function">function <span class="title">main</span><span class="params">()</span></span>{
     <span class="keyword">this</span>.a =<span class="number">4</span>;
     console.<span class="built_in">log</span>(<span class="string">"foo: "</span> + foo);<span class="comment">// undefined</span>
@@ -424,67 +408,56 @@ main
 foo: <span class="number">2</span>
 <span class="keyword">this</span>.a: <span class="number">4</span>
 <span class="keyword">this</span>.foo: undefined<span class="comment">//浅拷贝</span>
-</code></pre></li>
-<li><p>随机生成颜色</p>
-<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">[].forEach.call<span class="list">(<span class="keyword">$$</span><span class="list">(<span class="string">""</span>)</span>, function<span class="list">(<span class="keyword">a</span>)</span>&#123;</span><br><span class="line">	a.style.outline = <span class="string">"1px solid #"</span> + <span class="list">(<span class="keyword">~~</span><span class="list">(<span class="keyword">Math.random</span><span class="list">()</span>*<span class="list">(<span class="keyword">1&lt;&lt;24</span>)</span>)</span>)</span>.toString<span class="list">(<span class="keyword">16</span>)</span><span class="comment">;</span></span><br><span class="line">&#125;)</span><span class="comment">;</span></span><br><span class="line">| <span class="number">0</span> 和 ~~都能实现取整功能，比parseInt和Math.round<span class="list">()</span>要快</span><br><span class="line">!!object可以实现把object转换成布尔值</span><br><span class="line">$$实现了document.querySelectorAll功能</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<ol>
-<li><p><a href="http://www.ibm.com/developerworks/cn/web/1308_caiys_jsload/" target="_blank" rel="external">异步加载js并执行回调函数</a></p>
-<pre><code><span class="function"><span class="keyword">function</span> <span class="title">loadScript</span><span class="params">(url,callback)</span>{</span> 
-   var script = document.createElement<span class="params">(<span class="string">"script"</span>)</span> 
+</code></pre><h1 id="随机生成颜色">随机生成颜色</h1><figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">[].forEach.call<span class="list">(<span class="keyword">$$</span><span class="list">(<span class="string">""</span>)</span>, function<span class="list">(<span class="keyword">a</span>)</span>&#123;</span><br><span class="line">	a.style.outline = <span class="string">"1px solid #"</span> + <span class="list">(<span class="keyword">~~</span><span class="list">(<span class="keyword">Math.random</span><span class="list">()</span>*<span class="list">(<span class="keyword">1&lt;&lt;24</span>)</span>)</span>)</span>.toString<span class="list">(<span class="keyword">16</span>)</span><span class="comment">;</span></span><br><span class="line">&#125;)</span><span class="comment">;</span></span><br><span class="line">| <span class="number">0</span> 和 ~~都能实现取整功能，比parseInt和Math.round<span class="list">()</span>要快</span><br><span class="line">!!object可以实现把object转换成布尔值</span><br><span class="line">$$实现了document.querySelectorAll功能</span></span><br></pre></td></tr></table></figure>
+<h1 id="异步加载js并执行回调函数"><a href="http://www.ibm.com/developerworks/cn/web/1308_caiys_jsload/" target="_blank" rel="external">异步加载js并执行回调函数</a></h1><pre><code><span class="function"><span class="keyword">function</span> <span class="title">loadScript</span>(<span class="params">url,callback</span>)</span>{ 
+   <span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">"script"</span>) 
    script.type = <span class="string">"text/javascript"</span>; 
    script.async = <span class="literal">true</span>;
    script.defer = <span class="literal">true</span>;
-   <span class="keyword">if</span> <span class="params">(script.readyState)</span>{<span class="comment">//IE </span>
-      script.onreadystatechange = <span class="function"><span class="keyword">function</span><span class="params">()</span>{</span> 
-         <span class="keyword">if</span> <span class="params">(script.readyState ==  <span class="string">"loaded"</span> || script.readyState == <span class="string">"complete"</span>)</span>{ 
-            script.onreadystatechange = null;
+   <span class="keyword">if</span> (script.readyState){<span class="comment">//IE </span>
+      script.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{ 
+         <span class="keyword">if</span> (script.readyState ==  <span class="string">"loaded"</span> || script.readyState == <span class="string">"complete"</span>){ 
+            script.onreadystatechange = <span class="literal">null</span>;
 
-            callback<span class="params">()</span>; 
+            callback(); 
          } 
       }; 
    } <span class="keyword">else</span> { <span class="comment">//Others: Firefox, Safari, Chrome, and Opera </span>
-      script.onload = <span class="function"><span class="keyword">function</span><span class="params">()</span>{</span> 
-          callback<span class="params">()</span>; 
+      script.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{ 
+          callback(); 
       }; 
    } 
    script.src = url; 
-   document.body.appendChild<span class="params">(script)</span>;
+   <span class="built_in">document</span>.body.appendChild(script);
    <span class="comment">//document.getElementsByTagName("head")[0].appendChild(script);</span>
 }
 
-var xhr = new XMLHttpRequest<span class="params">()</span>;
-xhr.open<span class="params">(<span class="string">"get"</span>, <span class="string">"script1.js"</span>, <span class="literal">true</span>)</span>;
-xhr.onreadystatechange = <span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>
-    <span class="keyword">if</span> <span class="params">(xhr.readyState == <span class="number">4</span>)</span>{
-        <span class="keyword">if</span> <span class="params">(xhr.status &gt;= <span class="number">200</span> &amp;&amp; xhr.status &lt; <span class="number">300</span> || xhr.status == <span class="number">304</span>)</span>{
-            var script = document.createElement <span class="params">(<span class="string">"script"</span>)</span>;
+<span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();
+xhr.open(<span class="string">"get"</span>, <span class="string">"script1.js"</span>, <span class="literal">true</span>);
+xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+    <span class="keyword">if</span> (xhr.readyState == <span class="number">4</span>){
+        <span class="keyword">if</span> (xhr.status &gt;= <span class="number">200</span> &amp;&amp; xhr.status &lt; <span class="number">300</span> || xhr.status == <span class="number">304</span>){
+            <span class="keyword">var</span> script = <span class="built_in">document</span>.createElement (<span class="string">"script"</span>);
             script.type = <span class="string">"text/javascript"</span>;
-            script.<span class="built_in">text</span> = xhr.responseText;
-            document.body.appendChild<span class="params">(script)</span>;
+            script.text = xhr.responseText;
+            <span class="built_in">document</span>.body.appendChild(script);
         }
     }
 };
-xhr.send<span class="params">(null)</span>;
-</code></pre><p>减少 JavaScript 对性能的影响有以下几种方法：</p>
-<ol>
-<li><p>将所有的<code>&lt;script&gt;</code>标签放到页面底部，也就是<code>&lt;/body&gt;</code>闭合标签之前，这能确保在脚本执行前页面已经完成了渲染。</p>
-</li>
-<li><p>尽可能地合并脚本。页面中的<code>&lt;script&gt;</code>标签越少，加载也就越快，响应也越迅速。无论是外链脚本还是内嵌脚本都是如此。</p>
-</li>
-<li><p>采用无阻塞下载 JavaScript 脚本的方法：使用<code>&lt;script&gt;</code>标签的 defer 属性（仅适用于 IE 和 Firefox 3.5 以上版本）或者HTML5<code>&lt;script&gt;</code>标签的async属性</p>
-</li>
-<li><p>使用动态创建的<code>&lt;script&gt;</code>元素来下载并执行代码；</p>
-</li>
-<li><p>使用 XHR 对象下载 JavaScript 代码并注入页面中。</p>
-</li>
-</ol>
-</li>
-<li><p>格式化定义对象–javascript语义化</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> repos = [];</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">register</span><span class="params">(obj)</span></span>&#123;</span><br><span class="line">	repos[obj.name] = obj;</span><br><span class="line">&#125;</span><br><span class="line">register(&#123;</span><br><span class="line">	name: <span class="string">"a"</span>,</span><br><span class="line">	content: &#123;&#125;</span><br><span class="line">&#125;）</span><br></pre></td></tr></table></figure></li>
-</ol>
-</span>
+xhr.send(<span class="literal">null</span>);
+
+减少 JavaScript 对性能的影响有以下几种方法：
+
+<span class="number">1.</span> 将所有的<span class="string">`&lt;script&gt;`</span>标签放到页面底部，也就是<span class="string">`&lt;/body&gt;`</span>闭合标签之前，这能确保在脚本执行前页面已经完成了渲染。
+
+<span class="number">2.</span> 尽可能地合并脚本。页面中的<span class="string">`&lt;script&gt;`</span>标签越少，加载也就越快，响应也越迅速。无论是外链脚本还是内嵌脚本都是如此。
+
+<span class="number">3.</span> 采用无阻塞下载 JavaScript 脚本的方法：使用<span class="string">`&lt;script&gt;`</span>标签的 defer 属性（仅适用于 IE 和 Firefox <span class="number">3.5</span> 以上版本）或者HTML5<span class="string">`&lt;script&gt;`</span>标签的<span class="keyword">async</span>属性
+
+<span class="number">4.</span> 使用动态创建的<span class="string">`&lt;script&gt;`</span>元素来下载并执行代码；
+
+<span class="number">5.</span> 使用 XHR 对象下载 JavaScript 代码并注入页面中。
+</code></pre><h1 id="格式化定义对象–javascript语义化">格式化定义对象–javascript语义化</h1><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> repos = [];</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">register</span><span class="params">(obj)</span></span>&#123;</span><br><span class="line">	repos[obj.name] = obj;</span><br><span class="line">&#125;</span><br><span class="line">register(&#123;</span><br><span class="line">	name: <span class="string">"a"</span>,</span><br><span class="line">	content: &#123;&#125;</span><br><span class="line">&#125;）</span><br></pre></td></tr></table></figure></span>
       
     </div>
 
@@ -503,7 +476,7 @@ xhr.send<span class="params">(null)</span>;
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/09/18/前端工具/" rel="prev">前端工具</a>
+              <a href="/2015/09/18/2015前端工具总结/" rel="prev">2015前端工具总结</a>
             
           </div>
 
@@ -602,7 +575,7 @@ xhr.send<span class="params">(null)</span>;
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-count">18</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -616,7 +589,7 @@ xhr.send<span class="params">(null)</span>;
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -658,7 +631,7 @@ xhr.send<span class="params">(null)</span>;
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#javascript笔试题"><span class="nav-number">1.</span> <span class="nav-text">javascript笔试题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#将一个长度不超过5位的正整数转换成对应的中文字符串，例如：20876返回“两万零八百七十六”"><span class="nav-number">1.</span> <span class="nav-text">将一个长度不超过5位的正整数转换成对应的中文字符串，例如：20876返回“两万零八百七十六”</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#给定一个list，元素都是正整数，要求返回这些元素组成的最大数。例如：[5,_3,_31,_2]则返回53312。"><span class="nav-number">2.</span> <span class="nav-text">给定一个list，元素都是正整数，要求返回这些元素组成的最大数。例如：[5, 3, 31, 2]则返回53312。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考察闭包"><span class="nav-number">3.</span> <span class="nav-text">考察闭包</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#tofixed，IE6下0-009=>0-00_bug"><span class="nav-number">4.</span> <span class="nav-text">tofixed，IE6下0.009=>0.00 bug</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#给基本数据类型添加属性时，不报错，但是取值为undefined"><span class="nav-number">5.</span> <span class="nav-text">给基本数据类型添加属性时，不报错，但是取值为undefined</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单的变量替换"><span class="nav-number">6.</span> <span class="nav-text">简单的变量替换</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#setTimeout"><span class="nav-number">7.</span> <span class="nav-text">setTimeout</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对象引用"><span class="nav-number">8.</span> <span class="nav-text">对象引用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考察this"><span class="nav-number">9.</span> <span class="nav-text">考察this</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#随机生成颜色"><span class="nav-number">10.</span> <span class="nav-text">随机生成颜色</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异步加载js并执行回调函数"><span class="nav-number">11.</span> <span class="nav-text">异步加载js并执行回调函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#格式化定义对象–javascript语义化"><span class="nav-number">12.</span> <span class="nav-text">格式化定义对象–javascript语义化</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
