@@ -43,7 +43,7 @@
 <meta property="og:url" content="http://www.xiaojunxie.com/2015/09/03/中文编码如何才能不乱码/index.html">
 <meta property="og:site_name" content="Jennifer's Blog">
 <meta property="og:description" content="非原创，仅总结：）">
-<meta property="og:updated_time" content="2015-09-19T01:11:02.000Z">
+<meta property="og:updated_time" content="2015-09-23T08:19:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="中文编码如何才能不乱码">
 <meta name="twitter:description" content="非原创，仅总结：）">
@@ -260,16 +260,16 @@
       
 
       
-        <span itemprop="articleBody"><h2 id="非原创，仅总结">非原创，仅总结</h2><p>：）</p>
+        <span itemprop="articleBody"><h1 id="非原创，仅总结">非原创，仅总结</h1><p>：）</p>
 <a id="more"></a>
-<h2 id="编码">编码</h2><ul>
+<h1 id="编码">编码</h1><ul>
 <li>编码是一种规则，同样的01组成，不同队则下对应的字符不相同</li>
 <li>编码01可以转换，因为规则和规则之间是由对应转换规则的</li>
 <li>只有当底层编码01与展现规则对应时，才能正确展现，否则<strong>乱码</strong></li>
 <li>有几大体系，每个体系又有建立在其上的具体编码，如unicode与UTF-8之间的关系，他们之间又有具体的转换规则</li>
 <li>Unicode定长2个字节，utf-8变长1-4字节，中文3个字节，英文1个字节</li>
 </ul>
-<h2 id="产生乱码的原因">产生乱码的原因</h2><p>浏览器获取编码规则有3种方式</p>
+<h1 id="产生乱码的原因">产生乱码的原因</h1><p>浏览器获取编码规则有3种方式</p>
 <ol>
 <li><p>响应头</p>
 <pre><code>response.<span class="function"><span class="title">setContentType</span><span class="params">(<span class="string">"text/html"</span>)</span></span>
@@ -281,7 +281,7 @@ response.<span class="function"><span class="title">setCharactorEncoding</span><
 </li>
 </ol>
 <p>这三种方式的优先级是3&gt;1&gt;2</p>
-<h2 id="中文如何不乱码">中文如何不乱码</h2><ol>
+<h1 id="中文如何不乱码">中文如何不乱码</h1><ol>
 <li><p>post请求</p>
 <ol>
 <li><p>后端不需要处理，使用jquery的<code>$.ajax()</code>，默认在请求头上加了编码，告诉服务器底层使用utf-8解码读取数据</p>
@@ -301,7 +301,7 @@ newObj = URLDecoder.<span class="function"><span class="title">decode</span><spa
 </ol>
 </li>
 </ol>
-</span>
+<h1 id="未完待续">未完待续</h1></span>
       
     </div>
 
@@ -435,7 +435,7 @@ newObj = URLDecoder.<span class="function"><span class="title">decode</span><spa
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -477,7 +477,7 @@ newObj = URLDecoder.<span class="function"><span class="title">decode</span><spa
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#非原创，仅总结"><span class="nav-number">1.</span> <span class="nav-text">非原创，仅总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编码"><span class="nav-number">2.</span> <span class="nav-text">编码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#产生乱码的原因"><span class="nav-number">3.</span> <span class="nav-text">产生乱码的原因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中文如何不乱码"><span class="nav-number">4.</span> <span class="nav-text">中文如何不乱码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#非原创，仅总结"><span class="nav-number">1.</span> <span class="nav-text">非原创，仅总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#编码"><span class="nav-number">2.</span> <span class="nav-text">编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#产生乱码的原因"><span class="nav-number">3.</span> <span class="nav-text">产生乱码的原因</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#中文如何不乱码"><span class="nav-number">4.</span> <span class="nav-text">中文如何不乱码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#未完待续"><span class="nav-number">5.</span> <span class="nav-text">未完待续</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
