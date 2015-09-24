@@ -363,7 +363,44 @@
 
       
         
-          <h1 id="从移动端事件穿透到javascript事件处理模型">从移动端事件穿透到javascript事件处理模型</h1>
+          <h1 id="WebApp事件穿透">WebApp事件穿透</h1><p>在WebApp中，当页面转场或硬切换或弹窗等界面变化的处理中，把<strong>初始界面触发界面变化事件的元素btnA</strong>相对屏幕的位置标为screenPoint，而切换的<strong>目标界面在screenPoint位置也存在一个元素btnB</strong>并绑定了事件处理，当btnA被出发时，btnB也会被触发，这里将这种现象称为<em>事件穿透效应</em>。</p>
+<p>测试场景</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">btnA事件</th>
+<th style="text-align:center">btnB事件</th>
+<th>是否触发透传</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">touchstart/touchend</td>
+<td style="text-align:center">touchstart/touchend</td>
+<td>未触发透传</td>
+</tr>
+<tr>
+<td style="text-align:center">touchstart/touchend</td>
+<td style="text-align:center">click</td>
+<td>触发透传</td>
+</tr>
+<tr>
+<td style="text-align:center">touchstart/touchend</td>
+<td style="text-align:center">input</td>
+<td>触发透传</td>
+</tr>
+<tr>
+<td style="text-align:center">click</td>
+<td style="text-align:center">touchstart/touchend</td>
+<td>未触发透传</td>
+</tr>
+<tr>
+<td style="text-align:center">click</td>
+<td style="text-align:center">click</td>
+<td>未触发透传</td>
+</tr>
+</tbody>
+</table>
           <div class="post-more-link text-center">
             <a class="btn" href="/2015/09/06/移动端事件穿透/#more" rel="contents">
               阅读全文 &raquo;

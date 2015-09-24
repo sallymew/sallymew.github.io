@@ -37,16 +37,16 @@
   <link rel="shorticon icon" type="image/x-icon" href="/image_16X16.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="类和继承">
+<meta name="description" content="类和继承javascript类javascript是一种面向原型的语言，函数是javascript的一等公民。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2016美团校招前端面经">
 <meta property="og:url" content="http://www.xiaojunxie.com/2015/09/23/2016美团校招前端面经/index.html">
 <meta property="og:site_name" content="Jennifer's Blog">
-<meta property="og:description" content="类和继承">
-<meta property="og:updated_time" content="2015-09-23T05:23:43.000Z">
+<meta property="og:description" content="类和继承javascript类javascript是一种面向原型的语言，函数是javascript的一等公民。">
+<meta property="og:updated_time" content="2015-09-24T12:54:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2016美团校招前端面经">
-<meta name="twitter:description" content="类和继承">
+<meta name="twitter:description" content="类和继承javascript类javascript是一种面向原型的语言，函数是javascript的一等公民。">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -260,8 +260,121 @@
       
 
       
-        <span itemprop="articleBody"><h1 id="类和继承">类和继承</h1><a id="more"></a>
-<h1 id="ajax">ajax</h1><h2 id="js实现ajax">js实现ajax</h2><h2 id="js实现向后台上传图片">js实现向后台上传图片</h2><h1 id="跨域">跨域</h1><h1 id="前端模块化">前端模块化</h1><h1 id="事件绑定">事件绑定</h1><h2 id="DOM实现满足兼容性的事件绑定">DOM实现满足兼容性的事件绑定</h2><h2 id="zepto事件逻辑">zepto事件逻辑</h2><h2 id="对象实现事件绑定">对象实现事件绑定</h2><h1 id="正则表达式">正则表达式</h1><h1 id="输入URL到显示的过程">输入URL到显示的过程</h1><h1 id="软技能">软技能</h1><h2 id="平时兴趣">平时兴趣</h2><h2 id="最有成就感的事情">最有成就感的事情</h2><h2 id="做项目遇到的困难">做项目遇到的困难</h2></span>
+        <span itemprop="articleBody"><h1 id="类和继承">类和继承</h1><h2 id="javascript类">javascript类</h2><p>javascript是一种面向原型的语言，函数是javascript的一等公民。</p>
+<a id="more"></a>
+<h3 id="ES5类">ES5类</h3><pre><code>function <span class="keyword">Animal</span>(name) {
+    this.name = name;
+}
+<span class="keyword">Animal</span>.prototype.call = function() {
+    console.log(<span class="string">"I'm a"</span>, this.name);
+}
+var lion = new <span class="keyword">Animal</span>(<span class="string">"Lion"</span>);
+lion.call();
+lion.name = 'new lion';
+lion.call();
+</code></pre><h3 id="ES6类">ES6类</h3><pre><code><span class="keyword">class</span> Animal {
+    <span class="constructor"><span class="keyword">constructor</span>(name) </span>{
+        <span class="keyword">this</span>.name = name;
+    }
+    call() {
+        <span class="built_in">console</span>.log(<span class="string">"I'm a"</span>, <span class="keyword">this</span>.name);
+    }
+    <span class="keyword">set</span> name(name) {
+        <span class="keyword">this</span>.name = name;
+    }
+    <span class="keyword">get</span> name() {
+        <span class="keyword">return</span> <span class="keyword">this</span>.name;
+    }
+}
+<span class="keyword">var</span> lion = <span class="keyword">new</span> Animal(<span class="string">"lion"</span>);
+lion.call();
+lion.name = <span class="string">'new lion'</span>;
+lion.call();
+</code></pre><h2 id="javascript继承">javascript继承</h2><p>javascript采用原型链方式实现继承，每个类都有一个<code>prototype/__proto__</code>属性指向其构造函数，<code>prototype.__proto__</code>指向其继承的父类的构造函数，默认每个类的父类都是Object类。</p>
+<pre><code>&gt; <span class="built_in">Function</span>.prototype
+&lt; <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{}
+&gt; <span class="built_in">Function</span>.prototype.__proto__
+&lt; <span class="built_in">Object</span> {}
+&gt; <span class="built_in">Function</span>.__proto__
+&lt; <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{}
+&gt; <span class="built_in">Object</span>.prototype
+&lt; <span class="built_in">Object</span> {}
+&gt; <span class="built_in">Object</span>.__proto__
+&lt; <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{}
+</code></pre><h3 id="ES5继承">ES5继承</h3><pre><code>Child.<span class="keyword">prototype</span> = Object.create(Parent.<span class="keyword">prototype</span>);
+Child.<span class="keyword">prototype</span> = new Parent();
+Child.<span class="keyword">prototype</span>.__proto_<span class="number">_</span> = Parent.<span class="keyword">prototype</span>;
+</code></pre><h3 id="ES6继承">ES6继承</h3><pre><code><span class="class"><span class="keyword">class</span> <span class="title">Child</span> <span class="keyword"><span class="keyword">extends</span></span> <span class="title">Parent</span> {</span>
+    constructor(name) {
+        <span class="keyword">super</span>(name);
+        <span class="comment">// this name</span>
+    }
+    call() {
+        <span class="keyword">super</span>.call();
+    }
+}
+</code></pre><h1 id="ajax">ajax</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var xmlhttp = <span class="keyword">new</span> XMLHttpRequest() || <span class="keyword">new</span> ActiveObject(<span class="string">"Microsoft.XMLHTTP"</span>);</span><br><span class="line">xmlhttp.onreadystatechange = function() &#123;</span><br><span class="line">	<span class="keyword">if</span>(xmlhttp.readyState == <span class="number">4</span> &amp;&amp; xmlhttp.status == <span class="number">200</span>) &#123;</span><br><span class="line">		readyState: <span class="number">0</span> 未初始化 <span class="number">1</span> 下载 <span class="number">2</span> 下载完成 <span class="number">3</span> 渲染 <span class="number">4</span> 渲染完毕</span><br><span class="line">		status: <span class="number">1</span>XX 信息 <span class="number">2</span>XX 成功(<span class="number">200</span> ok) <span class="number">3</span>XX 重定向(<span class="number">301</span> 临时重定向 <span class="number">302</span> 永久重定向 <span class="number">303</span> see other <span class="number">304</span> not modified) <span class="number">4</span>XX 客户端错误(<span class="number">400</span> bad request <span class="number">401</span> unauthorized <span class="number">403</span> forbidden <span class="number">404</span> not found) <span class="number">5</span>XX 服务器错误(<span class="number">500</span> Internal Server Error)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line">xmlhttp.open(<span class="string">"POST"</span>, url, <span class="literal">true</span>);<span class="comment">//第三个参数表示是否异步</span></span><br><span class="line">xmlhttp.setRequestHeader(<span class="string">"Content-type"</span>, <span class="string">"application/x-www-form-urlencode"</span>);</span><br><span class="line">xmlhttp.send(JSON.stringify(obj));</span><br></pre></td></tr></table></figure>
+<h1 id="nodejs实现向后台上传图片">nodejs实现向后台上传图片</h1><p>参考<a href="http://www.jb51.net/article/50595.htm" target="_blank" rel="external">node.js实现多图片上传实例</a></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//app.js</span></span><br><span class="line">app.all(<span class="string">'/add'</span>, users.add);</span><br><span class="line"><span class="comment">//addPics.html</span></span><br><span class="line">&lt;form method=<span class="string">"post"</span> action=<span class="string">"/add"</span> enctype=<span class="string">"multipart/form-data"</span>&gt;</span><br><span class="line">	&lt;input type=<span class="string">"file"</span> name=<span class="string">"pics"</span> id=<span class="string">"pics"</span> /&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line"><span class="comment">//user.js</span></span><br><span class="line">exports.add = <span class="function"><span class="keyword">function</span><span class="params">(req, res)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(req.method == <span class="string">'POST'</span>) &#123;</span><br><span class="line">		<span class="keyword">var</span> files = req.files.pics;</span><br><span class="line">		<span class="keyword">var</span> length = files.length;</span><br><span class="line">		<span class="keyword">var</span> pics = <span class="string">''</span>;</span><br><span class="line">		files.<span class="keyword">forEach</span>(<span class="function"><span class="keyword">function</span><span class="params">(item, index)</span></span>&#123;</span><br><span class="line">			<span class="keyword">var</span> tmpPath = item.path;</span><br><span class="line">			<span class="keyword">var</span> type = item.type;</span><br><span class="line">			<span class="keyword">var</span> extension_name = <span class="string">'jpg'</span></span><br><span class="line">			<span class="keyword">switch</span> (type) &#123;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'image/pjpeg'</span>:</span><br><span class="line">				extension_name = <span class="string">'jpg'</span>;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'image/jpeg'</span>:</span><br><span class="line">				extension_name = <span class="string">'jpg'</span>;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'image/gif'</span>:</span><br><span class="line">				extension_name = <span class="string">'gif'</span>;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'image/png'</span>:</span><br><span class="line">				extension_name = <span class="string">'png'</span>;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'image/x-png'</span>:</span><br><span class="line">				extension_name = <span class="string">'png'</span>;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'image/bmp'</span>:</span><br><span class="line">				extension_name = <span class="string">'bmp'</span>;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">var</span> tmp_name = (Date.parse(<span class="keyword">new</span> Date())/<span class="number">1000</span>) + <span class="string">''</span> + (Math.round(Math.random()*<span class="number">9999</span>)) + <span class="string">'.'</span> + extension_name;</span><br><span class="line">			<span class="keyword">var</span> targetPath = <span class="string">'imgs/'</span> + tmp_name;</span><br><span class="line">			fs.rename(tmpPath, targetPath, <span class="function"><span class="keyword">function</span><span class="params">(err)</span></span>&#123;</span><br><span class="line">				<span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</span><br><span class="line">				<span class="keyword">if</span>(pics) &#123;</span><br><span class="line">					pics += <span class="string">','</span>+tmp_name;</span><br><span class="line">				&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">					pics = tmp_name;</span><br><span class="line">				&#125;</span><br><span class="line">				fs.unlink(tmpPath, <span class="function"><span class="keyword">function</span><span class="params">(err)</span></span>&#123;</span><br><span class="line">					<span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</span><br><span class="line">					<span class="keyword">if</span>(index == length-<span class="number">1</span>) &#123;</span><br><span class="line">						<span class="comment">// 图片上传完成</span></span><br><span class="line">					&#125;</span><br><span class="line">				&#125;);</span><br><span class="line">			&#125;);</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="跨域">跨域</h1><ol>
+<li>document.domain+iframe: 跨子域</li>
+<li>iframe+location.hash</li>
+<li>JSONP</li>
+<li>iframe+window.postMessage</li>
+<li>CORS: Header set Access-Control-Allow-Origin *</li>
+</ol>
+<h1 id="前端模块化">前端模块化</h1><ol>
+<li>commonjs-&gt;nodejs     模块同步加载</li>
+<li>AMD-&gt;requires        模块异步加载，依赖前置</li>
+<li>CMD-&gt;seajs            模块异步加载，依赖就近，依赖懒加载</li>
+</ol>
+<h1 id="事件绑定">事件绑定</h1><h2 id="DOM实现满足兼容性的事件绑定">DOM实现满足兼容性的事件绑定</h2><pre><code><span class="keyword">function</span> addEvent(ele, <span class="class"><span class="keyword">type</span>, <span class="title">handler</span>) {</span>
+    <span class="keyword">if</span>(ele.addEventListener) {
+        ele.addEventListener(<span class="class"><span class="keyword">type</span>, <span class="title">handler</span>, <span class="title">false</span>);</span>
+    } <span class="keyword">else</span> <span class="keyword">if</span>(ele.attachEvent) {
+        ele.attachEvent(<span class="string">"on"</span>+<span class="class"><span class="keyword">type</span>, <span class="title">handler</span>);</span>
+    } <span class="keyword">else</span> {
+        ele[<span class="string">"on"</span>+<span class="class"><span class="keyword">type</span>] </span>= handler;
+    }
+}
+</code></pre><h2 id="对象实现事件绑定">对象实现事件绑定</h2><pre><code><span class="keyword">var</span> obj = {
+    on: function(<span class="class"><span class="keyword">type</span>, <span class="title">handler</span>) {</span>
+        <span class="keyword">if</span>(!<span class="keyword">this</span>[<span class="class"><span class="keyword">type</span>]) {</span>
+            <span class="keyword">this</span>[<span class="class"><span class="keyword">type</span>] =</span> [];
+        }
+        <span class="keyword">this</span>[<span class="class"><span class="keyword">type</span>].<span class="title">push</span>(</span>handler);
+    },
+    trigger: function(<span class="class"><span class="keyword">type</span>) {</span>
+        <span class="keyword">if</span>(<span class="keyword">this</span>[<span class="class"><span class="keyword">type</span>]) {</span>
+            <span class="keyword">this</span>[<span class="class"><span class="keyword">type</span>].<span class="title">forEach</span>(</span>function(fn){
+                fn();
+            });
+        }
+    }
+};
+</code></pre><h2 id="获取对象属性：点操作和中括号操作">获取对象属性：点操作和中括号操作</h2><p><code>var obj = {name: &#39;sally&#39;}</code>，用点操作的时候，后面需要制定一个属性名称，例如<code>obj.name</code>，但是如果想要动态添加属性时，<code>var age = &quot;age&quot;</code>，<code>obj.age</code>就是不正确的，这时age会被当做一个数字，而不是变量；使用中括号操作时，括号里面可以是变量也可以是字符串，比较随意，中括号会计算第一次生成字符串访问。其实，在执行<code>obj.name</code>操作时，最终也会按照<code>obj[&quot;name&quot;]</code>去执行的。</p>
+<h1 id="正则表达式">正则表达式</h1><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">function getQuerys(string) &#123;</span><br><span class="line">	<span class="keyword">var</span> str = string || window.location.href;</span><br><span class="line">	<span class="keyword">var</span> patt1 = /[^\?]*$/;</span><br><span class="line">	<span class="keyword">var</span> patt2 = /[^\d]/;</span><br><span class="line">	<span class="keyword">var</span> querys = &#123;&#125;;</span><br><span class="line">	patt1.exec(str)[<span class="number">0</span>].split('&amp;').forEach(function(item)&#123;</span><br><span class="line">		<span class="keyword">var</span> query = item.split('=');</span><br><span class="line">		<span class="keyword">var</span> key = query[<span class="number">0</span>];</span><br><span class="line">		<span class="keyword">var</span> <span class="function"><span class="keyword">val</span> =</span> query[<span class="number">1</span>];</span><br><span class="line">		console.log(key, <span class="function"><span class="keyword">val</span>);</span></span><br><span class="line">		<span class="keyword">if</span>(!patt2.test(<span class="function"><span class="keyword">val</span>)) &#123;</span></span><br><span class="line">			<span class="function"><span class="keyword">val</span> =</span> +<span class="function"><span class="keyword">val</span>;</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(querys[key]) &#123;</span><br><span class="line">			<span class="keyword">if</span>(<span class="type">Array</span>.isArray(querys[key])) &#123;</span><br><span class="line">				querys[key].push(<span class="function"><span class="keyword">val</span>);</span></span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				querys[key] = [querys[key], <span class="function"><span class="keyword">val</span>];</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			querys[key] = <span class="function"><span class="keyword">val</span>;</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;);</span><br><span class="line">	<span class="keyword">return</span> querys;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="从地址栏输入URL开始到显示的过程">从地址栏输入URL开始到显示的过程</h1><p>参考<a href="http://www.guokr.com/question/554991/" target="_blank" rel="external">从输入 URL 到页面加载完的过程中都发生了什么事情？</a></p>
+<p>1）把URL分割成几个部分：协议、主机地址、资源路径、查询、hash。其中主机地址指示该连接网络上哪一台计算机，可以是域名或者IP地址，可以包括端口号；<strong>协议是从该计算机获取资源的方式</strong>，常见的是HTTP、FTP，不同协议有不同的通讯内容格式；资源路径指示从服务器上获取哪一项资源。例如：</p>
+<pre><code>http:<span class="comment">//www.guokr.com/question/554991/</span>
+协议部分：http
+主机地址：www<span class="class">.guokr</span><span class="class">.com</span>
+资源路径：/question/<span class="number">554991</span>/
+</code></pre><p>2）如果主机地址不是一个IP地址，通过DNS（域名系统）将该地址解析成IP地址。IP地址对应着网络上一台计算机，DNS服务器本身也有IP，你的网络设置包含DNS服务器的IP。例如：<code>www.guokr.com</code>不是一个IP，向DNS询问请求<code>www.guokr.com</code>对应的IP，获得IP： 111.13.57.142。这个过程里，你的电脑直接询问的DNS服务器可能没有对应的IP，就会向它的上级服务器询问，上级服务器同样可能没有，就依此一层层向上找，最高可达根节点，找到或者全部找不到为止。</p>
+<p>3）如果地址不包含端口号，根据协议的默认端口号确定一个。端口号之于计算机就像窗口号之于银行，一家银行有多个窗口，每个窗口都有个号码，不同窗口可以负责不同的服务。端口只是一个逻辑概念，和计算机硬件没有关系。例如：<code>www.guokr.com</code>不包含端口号，http协议默认端口号是80，ftp协议默认端口号是21。如果你输入的url是<code>http://www.guokr.com:8080/</code>，那表示不使用默认的端口号，而使用指定的端口号8080。</p>
+<p>4）检查浏览器缓存，缓存存在且未过期则渲染，否则向2和3确定的IP和端口号发起网络连接，通过三次握手建立TCP连接。例如：向111.13.57.142的80端口发起连接</p>
+<p>5）根据http协议要求，组织一个请求的数据包，里面包含大量请求信息，包括请求的资源路径、你的身份等。例如：用自然语言来表达这个数据包，大概就是：请求 /question/554991/ ，我的身份是xxxxxxx。</p>
+<p>6）服务器响应请求，将数据返回给浏览器。数据可能是根据HTML协议组织的网页，里面包含页面的布局、文字。数据也可能是图片、脚本程序等。现在你可以用浏览器的“查看源代码”功能，感受一下服务器返回的是什么东东。如果资源路径指示的资源不存在，服务器就会返回著名的404错误。</p>
+<p>7）如果（6）返回的是一个页面，根据页面里一些外链的URL，例如图片的地址，按照（1）－（6）再次获取。通过cookie里面的session_id建立会话，或者新启动一个session。</p>
+<p>8）根据资源的类型，将资源组织成屏幕上显示的图像，这个过程叫渲染，网页渲染是浏览器最复杂、最核心的功能。下载HTML文件解析成DOM树，CSS文件解析成CSSOM树，进一步结合JS生成Render树，由JS渲染引擎渲染。</p>
+<p>9）将渲染好的页面图像显示出来，并开始响应用户的操作。</p>
+<h1 id="TCP三次握手">TCP三次握手</h1><p>参考<a href="http://www.cnblogs.com/cy568searchx/p/3711670.html" target="_blank" rel="external">TCP通信的三次握手和四次撒手的详细流程（顿悟）</a></p>
+<h2 id="流程">流程</h2><p>第一次握手：建立连接时，客户端发送syn包(syn=j)到服务器，并进入SYN_SEND状态，等待服务器确认； </p>
+<p>第二次握手：服务器收到syn包，必须确认客户的SYN（ack=j+1），同时自己也发送一个SYN包（syn=k），即SYN+ACK包，此时服务器进入SYN_RECV状态；</p>
+<p>第三次握手：客户端收到服务器的SYN＋ACK包，向服务器发送确认包ACK(ack=k+1)，此包发送完毕，客户端和服务器进入ESTABLISHED状态，完成三次握手。完成三次握手，客户端与服务器开始传送数据</p>
+<h2 id="为什么建立连接协议是三次握手，而关闭连接却是四次握手呢？">为什么建立连接协议是三次握手，而关闭连接却是四次握手呢？</h2><p>这是因为服务端的LISTEN状态下的SOCKET当收到SYN报文的建立连接请求后，它可以把ACK和SYN（ACK起应答作用，而SYN起同步作用）放在一个报文里来发送。但关闭连接时，当收到对方的FIN报文通知时，它仅仅表示对方没有数据发送给你了；但未必你所有的数据都全部发送给对方了，所以你可以未必会马上会关闭SOCKET,也即你可能还需要发送一些数据给对方之后，再发送FIN报文给对方来表示你同意现在可以关闭连接了，所以它这里的ACK报文和FIN报文多数情况下都是分开发送的.</p>
+<h2 id="为什么TIME_WAIT状态还需要等2MSL后才能返回到CLOSED状态？">为什么TIME_WAIT状态还需要等2MSL后才能返回到CLOSED状态？</h2><p>这是因为虽然双方都同意关闭连接了，而且握手的4个报文也都协调和发送完毕，按理可以直接回到CLOSED状态（就好比从SYN_SEND状态到ESTABLISH状态那样）；但是因为我们必须要假想网络是不可靠的，你无法保证你最后发送的ACK报文会一定被对方收到，因此对方处于LAST_ACK状态下的SOCKET可能会因为超时未收到ACK报文，而重发FIN报文，所以这个TIME_WAIT状态的作用就是用来重发可能丢失的ACK报文。</p>
+</span>
       
     </div>
 
@@ -433,7 +546,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#类和继承"><span class="nav-number">1.</span> <span class="nav-text">类和继承</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ajax"><span class="nav-number">2.</span> <span class="nav-text">ajax</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#js实现ajax"><span class="nav-number">2.1.</span> <span class="nav-text">js实现ajax</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js实现向后台上传图片"><span class="nav-number">2.2.</span> <span class="nav-text">js实现向后台上传图片</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#跨域"><span class="nav-number">3.</span> <span class="nav-text">跨域</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#前端模块化"><span class="nav-number">4.</span> <span class="nav-text">前端模块化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#事件绑定"><span class="nav-number">5.</span> <span class="nav-text">事件绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM实现满足兼容性的事件绑定"><span class="nav-number">5.1.</span> <span class="nav-text">DOM实现满足兼容性的事件绑定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#zepto事件逻辑"><span class="nav-number">5.2.</span> <span class="nav-text">zepto事件逻辑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象实现事件绑定"><span class="nav-number">5.3.</span> <span class="nav-text">对象实现事件绑定</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正则表达式"><span class="nav-number">6.</span> <span class="nav-text">正则表达式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输入URL到显示的过程"><span class="nav-number">7.</span> <span class="nav-text">输入URL到显示的过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#软技能"><span class="nav-number">8.</span> <span class="nav-text">软技能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#平时兴趣"><span class="nav-number">8.1.</span> <span class="nav-text">平时兴趣</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最有成就感的事情"><span class="nav-number">8.2.</span> <span class="nav-text">最有成就感的事情</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#做项目遇到的困难"><span class="nav-number">8.3.</span> <span class="nav-text">做项目遇到的困难</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#类和继承"><span class="nav-number">1.</span> <span class="nav-text">类和继承</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#javascript类"><span class="nav-number">1.1.</span> <span class="nav-text">javascript类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ES5类"><span class="nav-number">1.1.1.</span> <span class="nav-text">ES5类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ES6类"><span class="nav-number">1.1.2.</span> <span class="nav-text">ES6类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#javascript继承"><span class="nav-number">1.2.</span> <span class="nav-text">javascript继承</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ES5继承"><span class="nav-number">1.2.1.</span> <span class="nav-text">ES5继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ES6继承"><span class="nav-number">1.2.2.</span> <span class="nav-text">ES6继承</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ajax"><span class="nav-number">2.</span> <span class="nav-text">ajax</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nodejs实现向后台上传图片"><span class="nav-number">3.</span> <span class="nav-text">nodejs实现向后台上传图片</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#跨域"><span class="nav-number">4.</span> <span class="nav-text">跨域</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#前端模块化"><span class="nav-number">5.</span> <span class="nav-text">前端模块化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#事件绑定"><span class="nav-number">6.</span> <span class="nav-text">事件绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM实现满足兼容性的事件绑定"><span class="nav-number">6.1.</span> <span class="nav-text">DOM实现满足兼容性的事件绑定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象实现事件绑定"><span class="nav-number">6.2.</span> <span class="nav-text">对象实现事件绑定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取对象属性：点操作和中括号操作"><span class="nav-number">6.3.</span> <span class="nav-text">获取对象属性：点操作和中括号操作</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正则表达式"><span class="nav-number">7.</span> <span class="nav-text">正则表达式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#从地址栏输入URL开始到显示的过程"><span class="nav-number">8.</span> <span class="nav-text">从地址栏输入URL开始到显示的过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TCP三次握手"><span class="nav-number">9.</span> <span class="nav-text">TCP三次握手</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#流程"><span class="nav-number">9.1.</span> <span class="nav-text">流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么建立连接协议是三次握手，而关闭连接却是四次握手呢？"><span class="nav-number">9.2.</span> <span class="nav-text">为什么建立连接协议是三次握手，而关闭连接却是四次握手呢？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么TIME_WAIT状态还需要等2MSL后才能返回到CLOSED状态？"><span class="nav-number">9.3.</span> <span class="nav-text">为什么TIME_WAIT状态还需要等2MSL后才能返回到CLOSED状态？</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

@@ -48,7 +48,7 @@ Javascript API文档明确定义：setTimeout的第二个参数意义为隔多�
 从一段代码开始12345a. onclick = function() &amp;#123;	setTimeout(function() &amp;#123;		//do something...	&amp;#125;, 0);&amp;#125;;
 Javascript API文档明确定义：setTimeout的第二个参数意义为隔多少ms后，回调方法就会被执行。那么可以推断出，这里设置成0ms，应该被立">
 <meta property="og:image" content="http://blogread.cn/it/plugins/ueditor/php/upload/29771354773840.png">
-<meta property="og:updated_time" content="2015-09-23T08:20:41.000Z">
+<meta property="og:updated_time" content="2015-09-24T12:41:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript事件循环">
 <meta name="twitter:description" content="备注非原创，仅总结：）
@@ -274,7 +274,7 @@ Javascript API文档明确定义：setTimeout的第二个参数意义为隔多�
 <a id="more"></a>
 <p>在javascript权威指南中有阐述：当setTimeout的延迟时间设置为0的时候，回调函数不会马上执行，而是进入 <strong>事件队列</strong>。</p>
 <blockquote>
-<p>Javascript引擎是单线程模式运行的，浏览器无论在什么时候都只且只有一个javascript线程在运行程序。</p>
+<p>Javascript引擎是单线程模式运行的，浏览器无论在什么时候都有且只有一个javascript线程在运行程序。</p>
 </blockquote>
 <h1 id="浏览器事件处理">浏览器事件处理</h1><p>浏览器内核实现允许多个线程异步执行，这些线程在内核控制下相互配合以保持同步。假设某一浏览器内核的实现至少有3个常驻线程：<strong>javascript引擎线程、界面渲染线程、浏览器事件触发线程</strong>。除此之外，也有一些执行完就终止的线程，如HTTP请求线程等，这些异步线程都会产生不同的异步事件。</p>
 <p><img src="http://blogread.cn/it/plugins/ueditor/php/upload/29771354773840.png" alt="image"></p>
