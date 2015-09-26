@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="javascript,mobile web," />
+  <meta name="keywords" content="javascript,异步," />
 
 
 
@@ -37,52 +37,16 @@
   <link rel="shorticon icon" type="image/x-icon" href="/image_16X16.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="WebApp事件穿透在WebApp中，当页面转场或硬切换或弹窗等界面变化的处理中，把初始界面触发界面变化事件的元素btnA相对屏幕的位置标为screenPoint，而切换的目标界面在screenPoint位置也存在一个元素btnB并绑定了事件处理，当btnA被出发时，btnB也会被触发，这里将这种现象称为事件穿透效应。
-测试场景
-
-
-
-btnA事件
-btnB事件
-是否触发透传
-
-
-
-
-touchs">
+<meta name="description" content="javascript单线程javascript是单线程的，所谓单线程，是指一次只能完成一件任务，如果有多个任务就必须排队。这种排队机制的好处是实现比较简单，坏处是只要任务在执行，后面的任务就必须排队。常见的浏览器无响应，往往就是因为某个js代码长时间运行。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="移动端事件穿透">
-<meta property="og:url" content="http://www.xiaojunxie.com/2015/09/06/移动端事件穿透/index.html">
+<meta property="og:title" content="javascript异步编程">
+<meta property="og:url" content="http://www.xiaojunxie.com/2015/09/26/javascript异步编程/index.html">
 <meta property="og:site_name" content="Jennifer's Blog">
-<meta property="og:description" content="WebApp事件穿透在WebApp中，当页面转场或硬切换或弹窗等界面变化的处理中，把初始界面触发界面变化事件的元素btnA相对屏幕的位置标为screenPoint，而切换的目标界面在screenPoint位置也存在一个元素btnB并绑定了事件处理，当btnA被出发时，btnB也会被触发，这里将这种现象称为事件穿透效应。
-测试场景
-
-
-
-btnA事件
-btnB事件
-是否触发透传
-
-
-
-
-touchs">
-<meta property="og:updated_time" content="2015-09-24T12:51:10.000Z">
+<meta property="og:description" content="javascript单线程javascript是单线程的，所谓单线程，是指一次只能完成一件任务，如果有多个任务就必须排队。这种排队机制的好处是实现比较简单，坏处是只要任务在执行，后面的任务就必须排队。常见的浏览器无响应，往往就是因为某个js代码长时间运行。">
+<meta property="og:updated_time" content="2015-09-26T14:56:34.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="移动端事件穿透">
-<meta name="twitter:description" content="WebApp事件穿透在WebApp中，当页面转场或硬切换或弹窗等界面变化的处理中，把初始界面触发界面变化事件的元素btnA相对屏幕的位置标为screenPoint，而切换的目标界面在screenPoint位置也存在一个元素btnB并绑定了事件处理，当btnA被出发时，btnB也会被触发，这里将这种现象称为事件穿透效应。
-测试场景
-
-
-
-btnA事件
-btnB事件
-是否触发透传
-
-
-
-
-touchs">
+<meta name="twitter:title" content="javascript异步编程">
+<meta name="twitter:description" content="javascript单线程javascript是单线程的，所谓单线程，是指一次只能完成一件任务，如果有多个任务就必须排队。这种排队机制的好处是实现比较简单，坏处是只要任务在执行，后面的任务就必须排队。常见的浏览器无响应，往往就是因为某个js代码长时间运行。">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -92,7 +56,7 @@ touchs">
   };
 </script>
 
-  <title> 移动端事件穿透 | Jennifer's Blog </title>
+  <title> javascript异步编程 | Jennifer's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -246,7 +210,7 @@ touchs">
           
           
             
-              移动端事件穿透
+              javascript异步编程
             
           
         </h1>
@@ -255,8 +219,8 @@ touchs">
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-09-06T09:32:11+08:00" content="2015-09-06">
-            2015-09-06
+          <time itemprop="dateCreated" datetime="2015-09-26T20:45:16+08:00" content="2015-09-26">
+            2015-09-26
           </time>
         </span>
 
@@ -281,8 +245,8 @@ touchs">
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/09/06/移动端事件穿透/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/06/移动端事件穿透/" itemprop="commentsCount"></span>
+              <a href="/2015/09/26/javascript异步编程/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/26/javascript异步编程/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -296,143 +260,67 @@ touchs">
       
 
       
-        <span itemprop="articleBody"><h1 id="WebApp事件穿透">WebApp事件穿透</h1><p>在WebApp中，当页面转场或硬切换或弹窗等界面变化的处理中，把<strong>初始界面触发界面变化事件的元素btnA</strong>相对屏幕的位置标为screenPoint，而切换的<strong>目标界面在screenPoint位置也存在一个元素btnB</strong>并绑定了事件处理，当btnA被出发时，btnB也会被触发，这里将这种现象称为<em>事件穿透效应</em>。</p>
-<p>测试场景</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">btnA事件</th>
-<th style="text-align:center">btnB事件</th>
-<th>是否触发透传</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">touchstart/touchend</td>
-<td style="text-align:center">touchstart/touchend</td>
-<td>未触发透传</td>
-</tr>
-<tr>
-<td style="text-align:center">touchstart/touchend</td>
-<td style="text-align:center">click</td>
-<td>触发透传</td>
-</tr>
-<tr>
-<td style="text-align:center">touchstart/touchend</td>
-<td style="text-align:center">input</td>
-<td>触发透传</td>
-</tr>
-<tr>
-<td style="text-align:center">click</td>
-<td style="text-align:center">touchstart/touchend</td>
-<td>未触发透传</td>
-</tr>
-<tr>
-<td style="text-align:center">click</td>
-<td style="text-align:center">click</td>
-<td>未触发透传</td>
-</tr>
-</tbody>
-</table>
+        <span itemprop="articleBody"><h1 id="javascript单线程">javascript单线程</h1><p>javascript是单线程的，所谓单线程，是指一次只能完成一件任务，如果有多个任务就必须排队。这种排队机制的好处是实现比较简单，坏处是只要任务在执行，后面的任务就必须排队。常见的浏览器无响应，往往就是因为某个js代码长时间运行。</p>
 <a id="more"></a>
-<h1 id="Zepto_tap穿透bug">Zepto tap穿透bug</h1><p>当两个层叠加在一起时，使用zepto的tap事件时点击上面一个层时有时会触发下面层的事件，俗称穿透，原因是由于zepto的tap事件是绑定在document上的，由于click300ms延迟（<em>手机要确定是不是双击放大页面内容</em>）和事件冒泡到document上，从而触发了该位置元素的click事件。解决办法是延迟一定时间处理事件或是监听touched事件并在事件中使用preventDefault阻止冒泡，还有人提出来是使用css的<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events" target="_blank" rel="external">pointer-events</a>来避免，当然还可以使用<a href="http://www.cnblogs.com/lilyimage/p/3740668.html" target="_blank" rel="external">fast click</a>库来避免，实在不行的话就用click代替tap有时也能解决此问题。最好是自己通过touch start、touchmove、touchend来模拟tap事件。</p>
-<h1 id="javascript事件基础">javascript事件基础</h1><p>我们的网页之所以丰富多彩并具有交互功能，是因为我们有javascript脚本语言，而javascript与html之间的交互又是通过事件机制实现的。所以，事件是javascript的一大核心，深入了解事件机制在我们遇到困难的时候十分有帮助。所谓事件，就是网页发生的一些瞬间（比如点击、滑动），在这些瞬间我们使用事件监听器，也就是回调函数来订阅（监听）事件，在事件发生时，我们的回调函数就会被触发。<strong>观察者模式</strong>是javascript事件机制的基石，这种异步事件编程模型，就是用户产生特定的操作，浏览器就会产生特定的事件，我们若是订阅了事件，回调就会触发。</p>
-<h2 id="事件捕获/冒泡">事件捕获/冒泡</h2><p>事件捕获会由最先接收到事件的元素然后传向最里边（我们可以将元素想象成一个盒子装一个盒子，而不是一个个积木堆积）</p>
-<p>事件冒泡即由最具体的元素（文档嵌套最深节点）接收，然后逐步上传至document</p>
-<h3 id="DOM2事件模型">DOM2事件模型</h3><ol>
-<li><p>首先它的事件模型中引入了传播过程：1）先由document向目标对象传播称之为：捕获阶段；2）目标对象的事件处理程序运行，3）从目标对象向document起泡。Event.stopPropagation()可以停止传播，preventDefault()可以阻止事件的默认动作（想想以前的return false）。</p>
-</li>
-<li><p>事件处理程序注册：EventTarget.addEventListener(String type,EventListener listener,boolean useCapure)。其中第三个参数决定<strong>注册程序在传播的哪个过程被调用</strong>，true:在捕获阶段调用，false:在后两个阶段被调用</p>
-</li>
-</ol>
-<h3 id="IE事件模型">IE事件模型</h3><ol>
-<li><p>首先执目标元素的处理函数,然后向上传播（冒泡）到达document,ie中只能捕捉鼠标事件,而DOM2中可以捕捉所有的事件</p>
-</li>
-<li><p>Event对象不是事件处理程序的函数参数，而是window的全局变量</p>
-</li>
-<li><p>事件注册函数:attachEvent( “eventType”,”handler”) and detachEvent(“eventType”,”handler” ),与dom2不同的是eventType有on前缀</p>
-</li>
-</ol>
-<h3 id="区别">区别</h3><p>IE没有捕捉阶段，只能捕捉鼠标事件，而DOM2事件中所有事件都可以捕捉；event在IE中是window的全局对象，而在DOM中是第一个参数；target在IE中是event.srcElement在DOM中是event.target；IE事件类型有on前缀，DOM中没有；事件注册函数参数不同</p>
-<h2 id="事件代理">事件代理</h2><p>利用了事件冒泡特性，避免了批量绑定事件，提高了网站的性能</p>
-<pre><code>+ preventDefault<span class="params">()</span>    阻止默认行为 →returnValue
-+ stopPropagation<span class="params">()</span>    阻止冒泡    →cancelBubble
-+ return <span class="literal">false</span>        js阻止默认行为，jquery中阻止默认行为&amp;&amp;阻止冒泡
-
-- innerText    FF不支持
-- textContent    W3C标准API（推荐） 文本内容    可以避免XSS攻击
-- innerHTML    HTML内容
-
-var EventUtil = {
-    getEvent: <span class="function"><span class="keyword">function</span><span class="params">(event)</span>{</span>
-        return event || window.event;
-    },
-    getTarget: <span class="function"><span class="keyword">function</span><span class="params">(event)</span>{</span>
-        return event.target || event.srcElement;
-    },
-    on: <span class="function"><span class="keyword">function</span><span class="params">(elem, type, handler)</span>{</span>
-        <span class="keyword">if</span><span class="params">(elem.addEventListener)</span>{
-            elem.addEventListener<span class="params">(type, handler, <span class="literal">false</span>)</span>;
-            return handler;
-        }<span class="keyword">else</span> <span class="keyword">if</span><span class="params">(elem.attachEvent)</span>{
-            fucntion wrapper<span class="params">(event)</span>{
-                return handler.call<span class="params">(elem, event)</span>;
-            }
-            elem.attachEvent<span class="params">(<span class="string">"on"</span> + type, wrapper)</span>;
-            return wrapper;
-        }
-    },
-    off: <span class="function"><span class="keyword">function</span><span class="params">(elem, type, handler)</span>{</span>
-        <span class="keyword">if</span><span class="params">(elem.removeEventListener)</span>{
-            elem.removeEventListener<span class="params">(type, handler, <span class="literal">false</span>)</span>;
-        }<span class="keyword">else</span> <span class="keyword">if</span><span class="params">(elem.detachEvent)</span>{
-            elem.detachEvent<span class="params">(<span class="string">"on"</span> + type, handler)</span>;
-        }
-    },
-    preventDefault: <span class="function"><span class="keyword">function</span><span class="params">(event)</span>{</span>
-        <span class="keyword">if</span><span class="params">(event.preventDefault)</span>{
-            event.preventDefault<span class="params">()</span>;
-        }<span class="keyword">else</span> <span class="keyword">if</span><span class="params">(<span class="string">"returnValue"</span> in event)</span>{
-            event.returnValue = <span class="literal">false</span>;
-        }
-    },
-    stopPropagation: <span class="function"><span class="keyword">function</span><span class="params">(event)</span>{</span>
-        <span class="keyword">if</span><span class="params">(event.stopPropagation)</span>{
-            event.stopPropagation<span class="params">()</span>;
-        }<span class="keyword">else</span> <span class="keyword">if</span><span class="params">(<span class="string">"cancelBubble"</span> in event)</span>{
-            event.cancelBubble = <span class="literal">true</span>;
-        }
-    }
+<h1 id="javascript事件模式">javascript事件模式</h1><p>为了解决单线程带来的问题，javascript将任务的执行模式分为两种：同步和异步。</p>
+<h2 id="javascript同步模式">javascript同步模式</h2><p>同步模式中，后一个任务等待前一个任务结束，然后再执行，程序执行和任务顺序是一致的、同步的。</p>
+<h2 id="javascript异步模式">javascript异步模式</h2><p>异步模式中，每一个任务都有一个或者多个回调函数，前一个任务结束后，不是去执行后一个任务，而是执行回调函数，后一个任务不是等前一个任务结束就执行，所以，程序的执行顺序与任务的排列顺序是不一致的、异步的。</p>
+<h1 id="javascript异步模式编程">javascript异步模式编程</h1><h2 id="回调函数">回调函数</h2><p>这是异步编程的最基本的方法，假设有2个函数f1和f2，后者等待前者的执行结果。假如f1是一个很耗时的任务，可以考虑将f2当做f1的回调函数来执行。</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">f1</span><span class="params">(callback)</span></span>{
+    setTimeout(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
+        <span class="comment">//f1 的任务代码</span>
+        <span class="keyword">callback</span>();
+    }, <span class="number">1000</span>);
 }
-var DOMUtil = {
-    <span class="built_in">text</span>: <span class="function"><span class="keyword">function</span><span class="params">(elem)</span>{</span>
-        <span class="keyword">if</span><span class="params">(<span class="string">"textContent"</span> in elem)</span>{
-            return elem.textContent;
-        }<span class="keyword">else</span> <span class="keyword">if</span><span class="params">(<span class="string">"innerText"</span> in elem)</span>{
-            return elem.innerText;
-        }
-    },
-    prop: <span class="function"><span class="keyword">function</span><span class="params">(elem, propName)</span>{</span>
-        return elem.getAttribute<span class="params">(propName)</span>;
-    }
-};
-var nav = document.getElementById<span class="params">(<span class="string">"nav"</span>)</span>;
-EventUtil.on<span class="params">(nav, <span class="string">"click"</span>, function<span class="params">(event)</span>{
-    var event = EventUtil.getEvent<span class="params">(event)</span>;
-    var target = EventUtil.getTarget<span class="params">(event)</span>;
-    var children = this.children;
-    var i, len, anchor, obj={};
-    for<span class="params">(i=<span class="number">0</span>, len=children.length; i&lt;len; i++)</span>{
-        if<span class="params">(children[i] === target)</span>{
-            obj.index = i;
-            anchor = target.getElementsByTagName<span class="params">(<span class="string">"a"</span>)</span>[<span class="number">0</span>];
-            obj.name = DOMUtil.text<span class="params">(anchor)</span>;
-            obj.link = DOMUtil.prop<span class="params">(anchor, <span class="string">"href"</span>)</span>;
-            break;
-        }
-    }
-})</span>;
-</code></pre></span>
+f1(f2);
+</code></pre><p>使用回调函数撰写异步编程方法简单、容易理解和部署，缺点是不利于代码的阅读和维护，各个部分之间高度耦合，而且，每个任务只能制定一个回调函数，很容易形成回调金字塔。</p>
+<h2 id="事件监听">事件监听</h2><p>这种方式采用事件驱动模式，任务的执行不取决于代码的顺序，而取决于某个事件是否发生。</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">f1</span><span class="params">()</span> </span>{
+    setTimeout(<span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{
+        <span class="comment">//f1 的任务代码</span>
+        f1.trigger(<span class="string">'done'</span>);
+    }, <span class="number">1000</span>);
+}
+f1.on(<span class="string">'done'</span>, f2);
+</code></pre><p>这是jquery/zepto中事件监听的模式，优点是比较容易理解，可以绑定多个事件，每个事件可以指定多个回调函数，而且可以去解耦合，有利于实现模块化，缺点是整个程序都变成事件驱动型，运行流程会变得很不清晰。</p>
+<h2 id="发布/订阅">发布/订阅</h2><p>我们假定，存在一个信号中心，某个任务执行完成，就向信号中心发布一个信号，其他任务向信号中心订阅这个信号，从而知道自己神马时候可以开始执行。这也是一种<strong>观察者模式</strong>。</p>
+<pre><code>jQuery.subscribe(<span class="string">"done"</span>, f2);
+<span class="function"><span class="keyword">function</span> <span class="title">f1</span><span class="params">()</span></span>{
+    setTimeout(<span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{
+        <span class="comment">//f1 的任务代码</span>
+        jQuery.publish(<span class="string">"done"</span>);
+    }, <span class="number">1000</span>);
+}
+</code></pre><blockquote>
+<p>这种方式性质与事件监听类似，但是明显优于后者，因为我们可以通过查看消息中心，了解存在多少信号、每个信号有多少订阅者？</p>
+</blockquote>
+<p>好抽象，存疑ing……</p>
+<h2 id="promise对象(ES6)">promise对象(ES6)</h2><p>使用promise进行异步编程的优点在于：回调函数变成了链式写法，程序的流程可以看得很清楚，而且有一套完整的配套方法，可以实现很多强大的功能。缺点是编写和理解比较困难。</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>) </span>{
+    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>)</span>{
+        <span class="comment">//f1 的任务代码</span>
+        resolve();
+    });
+}
+f1().then(f2);
+</code></pre><h3 id="promise对象方法">promise对象方法</h3><p>在Promise对象中，有两个重要方法，resolve和reject。resolve方法可以使Promise对象的状态改变为成功，同时传递一个参数用于后续成功后的操作；reject方法则是将Promise对象的状态改变为失败，同时将错误的信息传递到后续错误处理的操作。</p>
+<h3 id="promise对象的状态">promise对象的状态</h3><p>Promise对象中有3种状态：</p>
+<ul>
+<li><p>fulfilld：可以理解为成功</p>
+</li>
+<li><p>rejected：可以理解为失败</p>
+</li>
+<li><p>pending：既不是fulfilld，也不是rejected，可以理解为promise对象实例创建时候的初始状态</p>
+</li>
+</ul>
+<h3 id="then和catch">then和catch</h3><p>then方法有两个参数，onFulfilld和onRejected，catch方法是then方法的简写，<code>catch(fn)</code>等价于<code>then(null, fn)</code>。</p>
+<h1 id="参考文献">参考文献</h1><ol>
+<li><p><a href="http://www.ruanyifeng.com/blog/2012/12/asynchronous%EF%BC%BFjavascript.html" target="_blank" rel="external">阮一峰：Javascript异步编程的4种方法</a></p>
+</li>
+<li><p><a href="http://segmentfault.com/a/1190000002928371" target="_blank" rel="external">谈谈 ES6 的 Promise 对象</a></p>
+</li>
+</ol>
+</span>
       
     </div>
 
@@ -442,7 +330,7 @@ EventUtil.on<span class="params">(nav, <span class="string">"click"</span>, func
           
             <a href="/tags/javascript/" rel="tag">#javascript</a>
           
-            <a href="/tags/mobile-web/" rel="tag">#mobile web</a>
+            <a href="/tags/async/" rel="tag">#异步</a>
           
         </div>
       
@@ -451,13 +339,11 @@ EventUtil.on<span class="params">(nav, <span class="string">"click"</span>, func
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/09/13/从负margin到css盒模型/" rel="prev">从负margin到css盒模型</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/09/05/逻辑面试题/" rel="next">逻辑面试题</a>
+              <a href="/2015/09/26/2016年校招网易360测评题之小明掉头跑/" rel="next">2016年校招网易360测评题之小明掉头跑</a>
             
           </div>
         </div>
@@ -509,8 +395,8 @@ EventUtil.on<span class="params">(nav, <span class="string">"click"</span>, func
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/09/06/移动端事件穿透/"
-                   data-title="移动端事件穿透" data-url="http://www.xiaojunxie.com/2015/09/06/移动端事件穿透/">
+              <div class="ds-thread" data-thread-key="2015/09/26/javascript异步编程/"
+                   data-title="javascript异步编程" data-url="http://www.xiaojunxie.com/2015/09/26/javascript异步编程/">
               </div>
             
           </div>
@@ -606,7 +492,7 @@ EventUtil.on<span class="params">(nav, <span class="string">"click"</span>, func
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#WebApp事件穿透"><span class="nav-number">1.</span> <span class="nav-text">WebApp事件穿透</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Zepto_tap穿透bug"><span class="nav-number">2.</span> <span class="nav-text">Zepto tap穿透bug</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#javascript事件基础"><span class="nav-number">3.</span> <span class="nav-text">javascript事件基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#事件捕获/冒泡"><span class="nav-number">3.1.</span> <span class="nav-text">事件捕获/冒泡</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM2事件模型"><span class="nav-number">3.1.1.</span> <span class="nav-text">DOM2事件模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IE事件模型"><span class="nav-number">3.1.2.</span> <span class="nav-text">IE事件模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#区别"><span class="nav-number">3.1.3.</span> <span class="nav-text">区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件代理"><span class="nav-number">3.2.</span> <span class="nav-text">事件代理</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#javascript单线程"><span class="nav-number">1.</span> <span class="nav-text">javascript单线程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#javascript事件模式"><span class="nav-number">2.</span> <span class="nav-text">javascript事件模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#javascript同步模式"><span class="nav-number">2.1.</span> <span class="nav-text">javascript同步模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#javascript异步模式"><span class="nav-number">2.2.</span> <span class="nav-text">javascript异步模式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#javascript异步模式编程"><span class="nav-number">3.</span> <span class="nav-text">javascript异步模式编程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#回调函数"><span class="nav-number">3.1.</span> <span class="nav-text">回调函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件监听"><span class="nav-number">3.2.</span> <span class="nav-text">事件监听</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发布/订阅"><span class="nav-number">3.3.</span> <span class="nav-text">发布/订阅</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#promise对象(ES6)"><span class="nav-number">3.4.</span> <span class="nav-text">promise对象(ES6)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#promise对象方法"><span class="nav-number">3.4.1.</span> <span class="nav-text">promise对象方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#promise对象的状态"><span class="nav-number">3.4.2.</span> <span class="nav-text">promise对象的状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#then和catch"><span class="nav-number">3.4.3.</span> <span class="nav-text">then和catch</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">4.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

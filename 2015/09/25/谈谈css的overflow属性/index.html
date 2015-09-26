@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="javascript,mobile web," />
+  <meta name="keywords" content="css," />
 
 
 
@@ -37,52 +37,37 @@
   <link rel="shorticon icon" type="image/x-icon" href="/image_16X16.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="WebApp事件穿透在WebApp中，当页面转场或硬切换或弹窗等界面变化的处理中，把初始界面触发界面变化事件的元素btnA相对屏幕的位置标为screenPoint，而切换的目标界面在screenPoint位置也存在一个元素btnB并绑定了事件处理，当btnA被出发时，btnB也会被触发，这里将这种现象称为事件穿透效应。
-测试场景
+<meta name="description" content="overflow属性取值
+visible：内容不会被剪裁，内容超出容器时，可以被渲染到外面
 
+hidden：内容会被剪裁，滚动条也不能展示出被裁减的内容
 
+scroll：内容将被剪裁，但可以使用滚动条来查看被裁掉的内容
 
-btnA事件
-btnB事件
-是否触发透传
-
-
-
-
-touchs">
+auto：内容是否被裁减由浏览器具体实现决定，通常使用scroll">
 <meta property="og:type" content="article">
-<meta property="og:title" content="移动端事件穿透">
-<meta property="og:url" content="http://www.xiaojunxie.com/2015/09/06/移动端事件穿透/index.html">
+<meta property="og:title" content="谈谈css的overflow属性">
+<meta property="og:url" content="http://www.xiaojunxie.com/2015/09/25/谈谈css的overflow属性/index.html">
 <meta property="og:site_name" content="Jennifer's Blog">
-<meta property="og:description" content="WebApp事件穿透在WebApp中，当页面转场或硬切换或弹窗等界面变化的处理中，把初始界面触发界面变化事件的元素btnA相对屏幕的位置标为screenPoint，而切换的目标界面在screenPoint位置也存在一个元素btnB并绑定了事件处理，当btnA被出发时，btnB也会被触发，这里将这种现象称为事件穿透效应。
-测试场景
+<meta property="og:description" content="overflow属性取值
+visible：内容不会被剪裁，内容超出容器时，可以被渲染到外面
 
+hidden：内容会被剪裁，滚动条也不能展示出被裁减的内容
 
+scroll：内容将被剪裁，但可以使用滚动条来查看被裁掉的内容
 
-btnA事件
-btnB事件
-是否触发透传
-
-
-
-
-touchs">
-<meta property="og:updated_time" content="2015-09-24T12:51:10.000Z">
+auto：内容是否被裁减由浏览器具体实现决定，通常使用scroll">
+<meta property="og:updated_time" content="2015-09-26T04:22:13.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="移动端事件穿透">
-<meta name="twitter:description" content="WebApp事件穿透在WebApp中，当页面转场或硬切换或弹窗等界面变化的处理中，把初始界面触发界面变化事件的元素btnA相对屏幕的位置标为screenPoint，而切换的目标界面在screenPoint位置也存在一个元素btnB并绑定了事件处理，当btnA被出发时，btnB也会被触发，这里将这种现象称为事件穿透效应。
-测试场景
+<meta name="twitter:title" content="谈谈css的overflow属性">
+<meta name="twitter:description" content="overflow属性取值
+visible：内容不会被剪裁，内容超出容器时，可以被渲染到外面
 
+hidden：内容会被剪裁，滚动条也不能展示出被裁减的内容
 
+scroll：内容将被剪裁，但可以使用滚动条来查看被裁掉的内容
 
-btnA事件
-btnB事件
-是否触发透传
-
-
-
-
-touchs">
+auto：内容是否被裁减由浏览器具体实现决定，通常使用scroll">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -92,7 +77,7 @@ touchs">
   };
 </script>
 
-  <title> 移动端事件穿透 | Jennifer's Blog </title>
+  <title> 谈谈css的overflow属性 | Jennifer's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -246,7 +231,7 @@ touchs">
           
           
             
-              移动端事件穿透
+              谈谈css的overflow属性
             
           
         </h1>
@@ -255,8 +240,8 @@ touchs">
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-09-06T09:32:11+08:00" content="2015-09-06">
-            2015-09-06
+          <time itemprop="dateCreated" datetime="2015-09-25T22:52:26+08:00" content="2015-09-25">
+            2015-09-25
           </time>
         </span>
 
@@ -281,8 +266,8 @@ touchs">
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/09/06/移动端事件穿透/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/06/移动端事件穿透/" itemprop="commentsCount"></span>
+              <a href="/2015/09/25/谈谈css的overflow属性/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/25/谈谈css的overflow属性/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -296,143 +281,43 @@ touchs">
       
 
       
-        <span itemprop="articleBody"><h1 id="WebApp事件穿透">WebApp事件穿透</h1><p>在WebApp中，当页面转场或硬切换或弹窗等界面变化的处理中，把<strong>初始界面触发界面变化事件的元素btnA</strong>相对屏幕的位置标为screenPoint，而切换的<strong>目标界面在screenPoint位置也存在一个元素btnB</strong>并绑定了事件处理，当btnA被出发时，btnB也会被触发，这里将这种现象称为<em>事件穿透效应</em>。</p>
-<p>测试场景</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">btnA事件</th>
-<th style="text-align:center">btnB事件</th>
-<th>是否触发透传</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">touchstart/touchend</td>
-<td style="text-align:center">touchstart/touchend</td>
-<td>未触发透传</td>
-</tr>
-<tr>
-<td style="text-align:center">touchstart/touchend</td>
-<td style="text-align:center">click</td>
-<td>触发透传</td>
-</tr>
-<tr>
-<td style="text-align:center">touchstart/touchend</td>
-<td style="text-align:center">input</td>
-<td>触发透传</td>
-</tr>
-<tr>
-<td style="text-align:center">click</td>
-<td style="text-align:center">touchstart/touchend</td>
-<td>未触发透传</td>
-</tr>
-<tr>
-<td style="text-align:center">click</td>
-<td style="text-align:center">click</td>
-<td>未触发透传</td>
-</tr>
-</tbody>
-</table>
+        <span itemprop="articleBody"><h1 id="overflow属性取值">overflow属性取值</h1><ol>
+<li><p>visible：内容不会被剪裁，内容超出容器时，可以被渲染到外面</p>
+</li>
+<li><p>hidden：内容会被剪裁，滚动条也不能展示出被裁减的内容</p>
+</li>
+<li><p>scroll：内容将被剪裁，但可以使用滚动条来查看被裁掉的内容</p>
+</li>
+<li><p>auto：内容是否被裁减由浏览器具体实现决定，通常使用scroll</p>
+</li>
+</ol>
 <a id="more"></a>
-<h1 id="Zepto_tap穿透bug">Zepto tap穿透bug</h1><p>当两个层叠加在一起时，使用zepto的tap事件时点击上面一个层时有时会触发下面层的事件，俗称穿透，原因是由于zepto的tap事件是绑定在document上的，由于click300ms延迟（<em>手机要确定是不是双击放大页面内容</em>）和事件冒泡到document上，从而触发了该位置元素的click事件。解决办法是延迟一定时间处理事件或是监听touched事件并在事件中使用preventDefault阻止冒泡，还有人提出来是使用css的<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events" target="_blank" rel="external">pointer-events</a>来避免，当然还可以使用<a href="http://www.cnblogs.com/lilyimage/p/3740668.html" target="_blank" rel="external">fast click</a>库来避免，实在不行的话就用click代替tap有时也能解决此问题。最好是自己通过touch start、touchmove、touchend来模拟tap事件。</p>
-<h1 id="javascript事件基础">javascript事件基础</h1><p>我们的网页之所以丰富多彩并具有交互功能，是因为我们有javascript脚本语言，而javascript与html之间的交互又是通过事件机制实现的。所以，事件是javascript的一大核心，深入了解事件机制在我们遇到困难的时候十分有帮助。所谓事件，就是网页发生的一些瞬间（比如点击、滑动），在这些瞬间我们使用事件监听器，也就是回调函数来订阅（监听）事件，在事件发生时，我们的回调函数就会被触发。<strong>观察者模式</strong>是javascript事件机制的基石，这种异步事件编程模型，就是用户产生特定的操作，浏览器就会产生特定的事件，我们若是订阅了事件，回调就会触发。</p>
-<h2 id="事件捕获/冒泡">事件捕获/冒泡</h2><p>事件捕获会由最先接收到事件的元素然后传向最里边（我们可以将元素想象成一个盒子装一个盒子，而不是一个个积木堆积）</p>
-<p>事件冒泡即由最具体的元素（文档嵌套最深节点）接收，然后逐步上传至document</p>
-<h3 id="DOM2事件模型">DOM2事件模型</h3><ol>
-<li><p>首先它的事件模型中引入了传播过程：1）先由document向目标对象传播称之为：捕获阶段；2）目标对象的事件处理程序运行，3）从目标对象向document起泡。Event.stopPropagation()可以停止传播，preventDefault()可以阻止事件的默认动作（想想以前的return false）。</p>
+<h1 id="W3C标准">W3C标准</h1><p>W3C标准中指明：通常一个盒子的内容是被限制在盒子边界之内的，但有时也会产生溢出，即部分或全部内容跑到盒子边界之外。溢出将在满足下列条件之一时出现：</p>
+<p>   通常一个盒子的内容是被限制在盒子边界之内的。但有时也会产生溢出，即部分或全部内容跑到盒子边界之外。溢出将在满足下列条件之一时出现：</p>
+<ol>
+<li><p>一个不换行的行元素宽度超出了容器盒子宽度。</p>
 </li>
-<li><p>事件处理程序注册：EventTarget.addEventListener(String type,EventListener listener,boolean useCapure)。其中第三个参数决定<strong>注册程序在传播的哪个过程被调用</strong>，true:在捕获阶段调用，false:在后两个阶段被调用</p>
+<li><p>一个宽度固定的块元素放在了比它窄的容器盒子内。</p>
+</li>
+<li><p>一个元素的高度超出了容器盒子的高度。</p>
+</li>
+<li><p>一个子孙元素，由负边距值引起的部分内容在盒子外部。</p>
+</li>
+<li><p>text-indent属性引起的行内元素在盒子的左右边界外。</p>
+</li>
+<li><p>一个绝对定位的子孙元素，部分内容在盒子外。但超出的部分不是总会被剪裁。子孙元素的内容就不会被子孙元素和其包含块之间的祖先元素的overflow的设置所剪裁。</p>
+<p>当溢出发生时，overflow属性约定了容器盒子是否剪裁掉超出其内边界的部分，并且决定是否出现滚动条来访问被剪裁掉的内容。它会影响到元素所有内容的剪裁，但有个例外情况，即上面第6条所提到的：元素的子孙元素的包含块(Containing blocks)是整个视窗(viewport)或是该元素的祖先元素，内容将不会被剪裁。包含块是什么呢？简单的说，就是可以决定一个元素位置和大小的块。通常一个元素的包含块由离它最近的块级祖先元素的内容边界决定。但当元素被设置成绝对定位时，包含块由最近的position不是static的祖先元素决定。</p>
 </li>
 </ol>
-<h3 id="IE事件模型">IE事件模型</h3><ol>
-<li><p>首先执目标元素的处理函数,然后向上传播（冒泡）到达document,ie中只能捕捉鼠标事件,而DOM2中可以捕捉所有的事件</p>
+<h1 id="参考文献">参考文献</h1><ol>
+<li><p><a href="http://blogread.cn/it/article/6180?f=wb" target="_blank" rel="external">overflow:hidden真的失效了吗</a></p>
 </li>
-<li><p>Event对象不是事件处理程序的函数参数，而是window的全局变量</p>
+<li><p><a href="http://www.w3.org/TR/CSS21/visufx.html#overflow" target="_blank" rel="external">W3C标准</a></p>
 </li>
-<li><p>事件注册函数:attachEvent( “eventType”,”handler”) and detachEvent(“eventType”,”handler” ),与dom2不同的是eventType有on前缀</p>
+<li><p><a href="http://www.w3.org/TR/CSS21/visuren.html#containing-block" target="_blank" rel="external">包含块</a></p>
 </li>
 </ol>
-<h3 id="区别">区别</h3><p>IE没有捕捉阶段，只能捕捉鼠标事件，而DOM2事件中所有事件都可以捕捉；event在IE中是window的全局对象，而在DOM中是第一个参数；target在IE中是event.srcElement在DOM中是event.target；IE事件类型有on前缀，DOM中没有；事件注册函数参数不同</p>
-<h2 id="事件代理">事件代理</h2><p>利用了事件冒泡特性，避免了批量绑定事件，提高了网站的性能</p>
-<pre><code>+ preventDefault<span class="params">()</span>    阻止默认行为 →returnValue
-+ stopPropagation<span class="params">()</span>    阻止冒泡    →cancelBubble
-+ return <span class="literal">false</span>        js阻止默认行为，jquery中阻止默认行为&amp;&amp;阻止冒泡
-
-- innerText    FF不支持
-- textContent    W3C标准API（推荐） 文本内容    可以避免XSS攻击
-- innerHTML    HTML内容
-
-var EventUtil = {
-    getEvent: <span class="function"><span class="keyword">function</span><span class="params">(event)</span>{</span>
-        return event || window.event;
-    },
-    getTarget: <span class="function"><span class="keyword">function</span><span class="params">(event)</span>{</span>
-        return event.target || event.srcElement;
-    },
-    on: <span class="function"><span class="keyword">function</span><span class="params">(elem, type, handler)</span>{</span>
-        <span class="keyword">if</span><span class="params">(elem.addEventListener)</span>{
-            elem.addEventListener<span class="params">(type, handler, <span class="literal">false</span>)</span>;
-            return handler;
-        }<span class="keyword">else</span> <span class="keyword">if</span><span class="params">(elem.attachEvent)</span>{
-            fucntion wrapper<span class="params">(event)</span>{
-                return handler.call<span class="params">(elem, event)</span>;
-            }
-            elem.attachEvent<span class="params">(<span class="string">"on"</span> + type, wrapper)</span>;
-            return wrapper;
-        }
-    },
-    off: <span class="function"><span class="keyword">function</span><span class="params">(elem, type, handler)</span>{</span>
-        <span class="keyword">if</span><span class="params">(elem.removeEventListener)</span>{
-            elem.removeEventListener<span class="params">(type, handler, <span class="literal">false</span>)</span>;
-        }<span class="keyword">else</span> <span class="keyword">if</span><span class="params">(elem.detachEvent)</span>{
-            elem.detachEvent<span class="params">(<span class="string">"on"</span> + type, handler)</span>;
-        }
-    },
-    preventDefault: <span class="function"><span class="keyword">function</span><span class="params">(event)</span>{</span>
-        <span class="keyword">if</span><span class="params">(event.preventDefault)</span>{
-            event.preventDefault<span class="params">()</span>;
-        }<span class="keyword">else</span> <span class="keyword">if</span><span class="params">(<span class="string">"returnValue"</span> in event)</span>{
-            event.returnValue = <span class="literal">false</span>;
-        }
-    },
-    stopPropagation: <span class="function"><span class="keyword">function</span><span class="params">(event)</span>{</span>
-        <span class="keyword">if</span><span class="params">(event.stopPropagation)</span>{
-            event.stopPropagation<span class="params">()</span>;
-        }<span class="keyword">else</span> <span class="keyword">if</span><span class="params">(<span class="string">"cancelBubble"</span> in event)</span>{
-            event.cancelBubble = <span class="literal">true</span>;
-        }
-    }
-}
-var DOMUtil = {
-    <span class="built_in">text</span>: <span class="function"><span class="keyword">function</span><span class="params">(elem)</span>{</span>
-        <span class="keyword">if</span><span class="params">(<span class="string">"textContent"</span> in elem)</span>{
-            return elem.textContent;
-        }<span class="keyword">else</span> <span class="keyword">if</span><span class="params">(<span class="string">"innerText"</span> in elem)</span>{
-            return elem.innerText;
-        }
-    },
-    prop: <span class="function"><span class="keyword">function</span><span class="params">(elem, propName)</span>{</span>
-        return elem.getAttribute<span class="params">(propName)</span>;
-    }
-};
-var nav = document.getElementById<span class="params">(<span class="string">"nav"</span>)</span>;
-EventUtil.on<span class="params">(nav, <span class="string">"click"</span>, function<span class="params">(event)</span>{
-    var event = EventUtil.getEvent<span class="params">(event)</span>;
-    var target = EventUtil.getTarget<span class="params">(event)</span>;
-    var children = this.children;
-    var i, len, anchor, obj={};
-    for<span class="params">(i=<span class="number">0</span>, len=children.length; i&lt;len; i++)</span>{
-        if<span class="params">(children[i] === target)</span>{
-            obj.index = i;
-            anchor = target.getElementsByTagName<span class="params">(<span class="string">"a"</span>)</span>[<span class="number">0</span>];
-            obj.name = DOMUtil.text<span class="params">(anchor)</span>;
-            obj.link = DOMUtil.prop<span class="params">(anchor, <span class="string">"href"</span>)</span>;
-            break;
-        }
-    }
-})</span>;
-</code></pre></span>
+</span>
       
     </div>
 
@@ -440,9 +325,7 @@ EventUtil.on<span class="params">(nav, <span class="string">"click"</span>, func
       
         <div class="post-tags">
           
-            <a href="/tags/javascript/" rel="tag">#javascript</a>
-          
-            <a href="/tags/mobile-web/" rel="tag">#mobile web</a>
+            <a href="/tags/css/" rel="tag">#css</a>
           
         </div>
       
@@ -451,13 +334,13 @@ EventUtil.on<span class="params">(nav, <span class="string">"click"</span>, func
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/09/13/从负margin到css盒模型/" rel="prev">从负margin到css盒模型</a>
+              <a href="/2015/09/26/2016年校招网易360测评题之小明掉头跑/" rel="prev">2016年校招网易360测评题之小明掉头跑</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/09/05/逻辑面试题/" rel="next">逻辑面试题</a>
+              <a href="/2015/09/23/todo/" rel="next">todo</a>
             
           </div>
         </div>
@@ -509,8 +392,8 @@ EventUtil.on<span class="params">(nav, <span class="string">"click"</span>, func
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/09/06/移动端事件穿透/"
-                   data-title="移动端事件穿透" data-url="http://www.xiaojunxie.com/2015/09/06/移动端事件穿透/">
+              <div class="ds-thread" data-thread-key="2015/09/25/谈谈css的overflow属性/"
+                   data-title="谈谈css的overflow属性" data-url="http://www.xiaojunxie.com/2015/09/25/谈谈css的overflow属性/">
               </div>
             
           </div>
@@ -606,7 +489,7 @@ EventUtil.on<span class="params">(nav, <span class="string">"click"</span>, func
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#WebApp事件穿透"><span class="nav-number">1.</span> <span class="nav-text">WebApp事件穿透</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Zepto_tap穿透bug"><span class="nav-number">2.</span> <span class="nav-text">Zepto tap穿透bug</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#javascript事件基础"><span class="nav-number">3.</span> <span class="nav-text">javascript事件基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#事件捕获/冒泡"><span class="nav-number">3.1.</span> <span class="nav-text">事件捕获/冒泡</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM2事件模型"><span class="nav-number">3.1.1.</span> <span class="nav-text">DOM2事件模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IE事件模型"><span class="nav-number">3.1.2.</span> <span class="nav-text">IE事件模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#区别"><span class="nav-number">3.1.3.</span> <span class="nav-text">区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件代理"><span class="nav-number">3.2.</span> <span class="nav-text">事件代理</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#overflow属性取值"><span class="nav-number">1.</span> <span class="nav-text">overflow属性取值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#W3C标准"><span class="nav-number">2.</span> <span class="nav-text">W3C标准</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">3.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
