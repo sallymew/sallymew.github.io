@@ -211,6 +211,230 @@
           
           
             
+              <a class="post-title-link" href="/2015/09/13/从负margin到css盒模型/" itemprop="url">
+                从负margin到css盒模型
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-09-13T19:56:41+08:00" content="2015-09-13">
+            2015-09-13
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/frontend/" itemprop="url" rel="index">
+                  <span itemprop="name">前端</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/09/13/从负margin到css盒模型/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/13/从负margin到css盒模型/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <h1 id="缘起">缘起</h1><p>今天在鬼懿IT-成长群（群号：181368696）看到一个关于负margin的问题</p>
+<pre><code><span class="id">#left</span>, <span class="id">#center</span>, <span class="id">#right</span> <span class="rules">{
+    <span class="comment">/*key code*/</span>
+    <span class="rule"><span class="attribute">margin-bottom</span>:<span class="value"> -<span class="number">10000px</span></span></span>;
+    <span class="rule"><span class="attribute">padding-bottom</span>:<span class="value"> <span class="number">10000px</span></span></span>;
+    <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">500px</span></span></span>;
+}</span>
+</code></pre><p>喜欢臭显摆的前端小菜鸟我一眼就看出这个是为了实现<em>多列等高布局</em>，然后，接下来的问题让我有点蒙圈</p>
+<blockquote>
+<p>这样怎么就实现等高的呢？！</p>
+</blockquote>
+<p>矮油，不造啊！_(:з」∠)_于是乎，本着追求真理（闲着也是闲着）的状态果断百度了下，得到如下答案</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/09/13/从负margin到css盒模型/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2015/09/06/移动端事件穿透/" itemprop="url">
+                移动端事件穿透
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-09-06T09:32:11+08:00" content="2015-09-06">
+            2015-09-06
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/frontend/" itemprop="url" rel="index">
+                  <span itemprop="name">前端</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/09/06/移动端事件穿透/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/06/移动端事件穿透/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <h1 id="WebApp事件穿透">WebApp事件穿透</h1><p>在WebApp中，当页面转场或硬切换或弹窗等界面变化的处理中，把<strong>初始界面触发界面变化事件的元素btnA</strong>相对屏幕的位置标为screenPoint，而切换的<strong>目标界面在screenPoint位置也存在一个元素btnB</strong>并绑定了事件处理，当btnA被出发时，btnB也会被触发，这里将这种现象称为<em>事件穿透效应</em>。</p>
+<p>测试场景</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">btnA事件</th>
+<th style="text-align:center">btnB事件</th>
+<th>是否触发透传</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">touchstart/touchend</td>
+<td style="text-align:center">touchstart/touchend</td>
+<td>未触发透传</td>
+</tr>
+<tr>
+<td style="text-align:center">touchstart/touchend</td>
+<td style="text-align:center">click</td>
+<td>触发透传</td>
+</tr>
+<tr>
+<td style="text-align:center">touchstart/touchend</td>
+<td style="text-align:center">input</td>
+<td>触发透传</td>
+</tr>
+<tr>
+<td style="text-align:center">click</td>
+<td style="text-align:center">touchstart/touchend</td>
+<td>未触发透传</td>
+</tr>
+<tr>
+<td style="text-align:center">click</td>
+<td style="text-align:center">click</td>
+<td>未触发透传</td>
+</tr>
+</tbody>
+</table>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/09/06/移动端事件穿透/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/09/05/逻辑面试题/" itemprop="url">
                 逻辑面试题
               </a>
@@ -465,182 +689,6 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/09/03/中文编码如何才能不乱码/" itemprop="url">
-                中文编码如何才能不乱码
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-09-03T19:04:32+08:00" content="2015-09-03">
-            2015-09-03
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/frontend/" itemprop="url" rel="index">
-                  <span itemprop="name">前端</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/09/03/中文编码如何才能不乱码/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/03/中文编码如何才能不乱码/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <h1 id="非原创，仅总结">非原创，仅总结</h1><p>：）</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/09/03/中文编码如何才能不乱码/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/08/30/hello-hexo/" itemprop="url">
-                hello hexo
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-08-30T20:48:03+08:00" content="2015-08-30">
-            2015-08-30
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/blog/" itemprop="url" rel="index">
-                  <span itemprop="name">blog</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/08/30/hello-hexo/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/30/hello-hexo/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <p>第一篇blog–献给自己</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/08/30/hello-hexo/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -679,7 +727,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-count">23</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -693,7 +741,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>

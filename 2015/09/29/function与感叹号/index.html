@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="css," />
+  <meta name="keywords" content="javascript," />
 
 
 
@@ -37,28 +37,16 @@
   <link rel="shorticon icon" type="image/x-icon" href="/image_16X16.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="overflow属性取值
-visible：内容不会被剪裁，内容超出容器时，可以被渲染到外面
-hidden：内容会被剪裁，滚动条也不能展示出被裁减的内容
-scroll：内容将被剪裁，但可以使用滚动条来查看被裁掉的内容
-auto：内容是否被裁减由浏览器具体实现决定">
+<meta name="description" content="前言非原创，仅总结：）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="谈谈css的overflow属性">
-<meta property="og:url" content="http://www.xiaojunxie.com/2015/09/25/谈谈css的overflow属性/index.html">
+<meta property="og:title" content="function与感叹号">
+<meta property="og:url" content="http://www.xiaojunxie.com/2015/09/29/function与感叹号/index.html">
 <meta property="og:site_name" content="Jennifer's Blog">
-<meta property="og:description" content="overflow属性取值
-visible：内容不会被剪裁，内容超出容器时，可以被渲染到外面
-hidden：内容会被剪裁，滚动条也不能展示出被裁减的内容
-scroll：内容将被剪裁，但可以使用滚动条来查看被裁掉的内容
-auto：内容是否被裁减由浏览器具体实现决定">
-<meta property="og:updated_time" content="2015-09-28T05:38:53.000Z">
+<meta property="og:description" content="前言非原创，仅总结：）">
+<meta property="og:updated_time" content="2015-09-29T11:21:25.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="谈谈css的overflow属性">
-<meta name="twitter:description" content="overflow属性取值
-visible：内容不会被剪裁，内容超出容器时，可以被渲染到外面
-hidden：内容会被剪裁，滚动条也不能展示出被裁减的内容
-scroll：内容将被剪裁，但可以使用滚动条来查看被裁掉的内容
-auto：内容是否被裁减由浏览器具体实现决定">
+<meta name="twitter:title" content="function与感叹号">
+<meta name="twitter:description" content="前言非原创，仅总结：）">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -68,7 +56,7 @@ auto：内容是否被裁减由浏览器具体实现决定">
   };
 </script>
 
-  <title> 谈谈css的overflow属性 | Jennifer's Blog </title>
+  <title> function与感叹号 | Jennifer's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -222,7 +210,7 @@ auto：内容是否被裁减由浏览器具体实现决定">
           
           
             
-              谈谈css的overflow属性
+              function与感叹号
             
           
         </h1>
@@ -231,8 +219,8 @@ auto：内容是否被裁减由浏览器具体实现决定">
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-09-25T22:52:26+08:00" content="2015-09-25">
-            2015-09-25
+          <time itemprop="dateCreated" datetime="2015-09-29T18:18:34+08:00" content="2015-09-29">
+            2015-09-29
           </time>
         </span>
 
@@ -257,8 +245,8 @@ auto：内容是否被裁减由浏览器具体实现决定">
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/09/25/谈谈css的overflow属性/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/25/谈谈css的overflow属性/" itemprop="commentsCount"></span>
+              <a href="/2015/09/29/function与感叹号/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/29/function与感叹号/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -272,28 +260,30 @@ auto：内容是否被裁减由浏览器具体实现决定">
       
 
       
-        <span itemprop="articleBody"><h1 id="overflow属性取值">overflow属性取值</h1><ol>
-<li>visible：内容不会被剪裁，内容超出容器时，可以被渲染到外面</li>
-<li>hidden：内容会被剪裁，滚动条也不能展示出被裁减的内容</li>
-<li>scroll：内容将被剪裁，但可以使用滚动条来查看被裁掉的内容</li>
-<li>auto：内容是否被裁减由浏览器具体实现决定</li>
-</ol>
+        <span itemprop="articleBody"><h1 id="前言">前言</h1><p>非原创，仅总结：）</p>
 <a id="more"></a>
-<h1 id="W3C标准">W3C标准</h1><p><strong>W3C标准</strong> 中指明：通常一个盒子的内容是被限制在盒子边界之内的，但有时也会产生溢出，即部分或全部内容跑到盒子边界之外。溢出将在满足下列条件之一时出现：</p>
-<ol>
-<li>一个不换行的块级元素宽度超过了容器盒子的宽度</li>
-<li>一个宽度固定的块级元素放在了比他窄的容器盒子内部</li>
-<li>一个元素的高度超过了容器盒子的高度</li>
-<li>一个子孙元素，由负边距引起的部分内容在盒子的外部</li>
-<li><code>text-indent</code>属性引起的部分内容在盒子外部</li>
-<li>一个绝对定位的子孙元素，部分内容在盒子外部，但是超出部分并不总是会被裁剪</li>
-</ol>
-<h1 id="overflow失效">overflow失效</h1><p>当溢出发生时，overflow属性约束了容器盒子是否剪裁掉超出其内边界的部分，并且决定是否出现滚动条来访问被剪裁掉的内容。他会影响倒元素所有内容的剪裁，但是也有例外情况，即上面第6条所提到的，当子孙元素被绝对定位时，如果没有已定位的祖先元素，那么其 <strong>包含块</strong> 就是视窗，祖先元素的<code>overflow: hidden</code>并没有什么卵用……</p>
-<p>总之，在写CSS时，一定要了解浏览器对盒模型实现的原理，从根本原因入手去解决问题~</p>
+<h1 id="function前添加!会怎样">function前添加!会怎样</h1><pre><code>&gt;<span class="built_in">!</span><span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>console.<span class="built_in">log</span><span class="params">('hello')</span>}<span class="params">()</span>
+hello
+&lt;<span class="literal">true</span>
+</code></pre><p>在控制台运行后得到true，为什么是true很好理解，因为这个匿名函数没有返回值，默认返回undefined，求反的结果自然就是true，所以问题并不在于结果值，而是在于，为什么求反操作能够让一个匿名函数立即执行。一般情况下，匿名函数变身IIFE可以使用以下2种方法：</p>
+<pre><code><span class="number">1.</span> (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{<span class="built_in">console</span>.log(<span class="string">'hello'</span>)}())
+<span class="number">2.</span> (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{<span class="built_in">console</span>.log(<span class="string">'hello'</span>)})()
+</code></pre><p>虽然上面2种方法括号的位置不同，但是效果完全一样。</p>
+<p>那么，是神马好处使得为数不少的人对这种感叹号的方式情有独钟呢？如果只是为了节约一个字符未免太没有必要了。</p>
+<blockquote>
+<p>其实无论是括号，还是感叹号，让整个语句合法做的事情只有一件，就是让一个函数声明语句变成了一个表达式。</p>
+</blockquote>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>{<span class="built_in">console</span>.log(<span class="string">'hello'</span>)} <span class="comment">// undefined</span>
+<span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>{<span class="built_in">console</span>.log(<span class="string">'hello'</span>)} <span class="comment">// SyntaxError: unexpected_token</span>
+</code></pre><p>因为这样的代码混淆了函数声明和函数调用，以这种方式声明的函数a，就应该以a()方式调用。但是括号则不同，它将一个函数声明转化成了一个表达式，解析器不再以函数声明的方式处理函数a，而是作为一个函数表达式处理，也因此只有在程序执行到函数a时它才能被访问。</p>
+<p>所以，任何消除函数声明和函数表达式间歧义的方法，都可以被解析器正确识别，如：</p>
+<pre><code><span class="keyword">var</span> i = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{<span class="keyword">return</span> <span class="number">10</span>}();
+i &amp;&amp; <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{<span class="keyword">return</span> <span class="literal">true</span>;}();
+<span class="number">1</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{<span class="built_in">console</span>.log(<span class="string">'hello'</span>)};
+</code></pre><p><strong>赋值，逻辑，甚至是逗号，各种操作符都可以告诉解析器，这个不是函数声明，它是个函数表达式。并且，对函数的一元运算可以算得上是消除歧义最快的方式，感叹号只是其中之一，如果不在乎返回值，这些医院运算符都是有效的：<code>!+-~</code>。甚至是void/new/delete等关键字也是可以的。</strong></p>
+<p>从参考文献1的性能测试结果看，消除歧义，表现的最好的是括号和加减号。</p>
 <h1 id="参考文献">参考文献</h1><ol>
-<li><a href="http://blogread.cn/it/article/6180?f=wb" target="_blank" rel="external">overflow:hidden真的失效了吗</a></li>
-<li><a href="http://www.w3.org/TR/CSS21/visufx.html#overflow" target="_blank" rel="external">W3C标准</a></li>
-<li><a href="http://www.w3.org/TR/CSS21/visuren.html#containing-block" target="_blank" rel="external">包含块</a></li>
+<li><a href="http://blog.sina.com.cn/s/blog_775f158f01016j12.html" target="_blank" rel="external">function与感叹号(转)</a></li>
 </ol>
 </span>
       
@@ -303,7 +293,7 @@ auto：内容是否被裁减由浏览器具体实现决定">
       
         <div class="post-tags">
           
-            <a href="/tags/css/" rel="tag">#css</a>
+            <a href="/tags/javascript/" rel="tag">#javascript</a>
           
         </div>
       
@@ -312,13 +302,11 @@ auto：内容是否被裁减由浏览器具体实现决定">
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/09/26/2016年校招网易360测评题之小明掉头跑/" rel="prev">2016年校招网易360测评题之小明掉头跑</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/09/23/todo/" rel="next">todo</a>
+              <a href="/2015/09/28/chrome开发者工具/" rel="next">chrome开发者工具</a>
             
           </div>
         </div>
@@ -370,8 +358,8 @@ auto：内容是否被裁减由浏览器具体实现决定">
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/09/25/谈谈css的overflow属性/"
-                   data-title="谈谈css的overflow属性" data-url="http://www.xiaojunxie.com/2015/09/25/谈谈css的overflow属性/">
+              <div class="ds-thread" data-thread-key="2015/09/29/function与感叹号/"
+                   data-title="function与感叹号" data-url="http://www.xiaojunxie.com/2015/09/29/function与感叹号/">
               </div>
             
           </div>
@@ -467,7 +455,7 @@ auto：内容是否被裁减由浏览器具体实现决定">
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#overflow属性取值"><span class="nav-number">1.</span> <span class="nav-text">overflow属性取值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#W3C标准"><span class="nav-number">2.</span> <span class="nav-text">W3C标准</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#overflow失效"><span class="nav-number">3.</span> <span class="nav-text">overflow失效</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">4.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#function前添加!会怎样"><span class="nav-number">2.</span> <span class="nav-text">function前添加!会怎样</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">3.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="css," />
+  <meta name="keywords" content="chrome,工具," />
 
 
 
@@ -37,28 +37,19 @@
   <link rel="shorticon icon" type="image/x-icon" href="/image_16X16.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="overflow属性取值
-visible：内容不会被剪裁，内容超出容器时，可以被渲染到外面
-hidden：内容会被剪裁，滚动条也不能展示出被裁减的内容
-scroll：内容将被剪裁，但可以使用滚动条来查看被裁掉的内容
-auto：内容是否被裁减由浏览器具体实现决定">
+<meta name="description" content="前言
+工欲善其事必先利其器，不擅长使用chrome开发工具调试的FE不是好FE~">
 <meta property="og:type" content="article">
-<meta property="og:title" content="谈谈css的overflow属性">
-<meta property="og:url" content="http://www.xiaojunxie.com/2015/09/25/谈谈css的overflow属性/index.html">
+<meta property="og:title" content="chrome开发者工具">
+<meta property="og:url" content="http://www.xiaojunxie.com/2015/09/28/chrome开发者工具/index.html">
 <meta property="og:site_name" content="Jennifer's Blog">
-<meta property="og:description" content="overflow属性取值
-visible：内容不会被剪裁，内容超出容器时，可以被渲染到外面
-hidden：内容会被剪裁，滚动条也不能展示出被裁减的内容
-scroll：内容将被剪裁，但可以使用滚动条来查看被裁掉的内容
-auto：内容是否被裁减由浏览器具体实现决定">
-<meta property="og:updated_time" content="2015-09-28T05:38:53.000Z">
+<meta property="og:description" content="前言
+工欲善其事必先利其器，不擅长使用chrome开发工具调试的FE不是好FE~">
+<meta property="og:updated_time" content="2015-09-29T14:21:01.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="谈谈css的overflow属性">
-<meta name="twitter:description" content="overflow属性取值
-visible：内容不会被剪裁，内容超出容器时，可以被渲染到外面
-hidden：内容会被剪裁，滚动条也不能展示出被裁减的内容
-scroll：内容将被剪裁，但可以使用滚动条来查看被裁掉的内容
-auto：内容是否被裁减由浏览器具体实现决定">
+<meta name="twitter:title" content="chrome开发者工具">
+<meta name="twitter:description" content="前言
+工欲善其事必先利其器，不擅长使用chrome开发工具调试的FE不是好FE~">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -68,7 +59,7 @@ auto：内容是否被裁减由浏览器具体实现决定">
   };
 </script>
 
-  <title> 谈谈css的overflow属性 | Jennifer's Blog </title>
+  <title> chrome开发者工具 | Jennifer's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -222,7 +213,7 @@ auto：内容是否被裁减由浏览器具体实现决定">
           
           
             
-              谈谈css的overflow属性
+              chrome开发者工具
             
           
         </h1>
@@ -231,8 +222,8 @@ auto：内容是否被裁减由浏览器具体实现决定">
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-09-25T22:52:26+08:00" content="2015-09-25">
-            2015-09-25
+          <time itemprop="dateCreated" datetime="2015-09-28T17:24:50+08:00" content="2015-09-28">
+            2015-09-28
           </time>
         </span>
 
@@ -257,8 +248,8 @@ auto：内容是否被裁减由浏览器具体实现决定">
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/09/25/谈谈css的overflow属性/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/25/谈谈css的overflow属性/" itemprop="commentsCount"></span>
+              <a href="/2015/09/28/chrome开发者工具/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/28/chrome开发者工具/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -272,28 +263,65 @@ auto：内容是否被裁减由浏览器具体实现决定">
       
 
       
-        <span itemprop="articleBody"><h1 id="overflow属性取值">overflow属性取值</h1><ol>
-<li>visible：内容不会被剪裁，内容超出容器时，可以被渲染到外面</li>
-<li>hidden：内容会被剪裁，滚动条也不能展示出被裁减的内容</li>
-<li>scroll：内容将被剪裁，但可以使用滚动条来查看被裁掉的内容</li>
-<li>auto：内容是否被裁减由浏览器具体实现决定</li>
-</ol>
+        <span itemprop="articleBody"><h1 id="前言">前言</h1><blockquote>
+<p>工欲善其事必先利其器，不擅长使用chrome开发工具调试的FE不是好FE~</p>
+</blockquote>
 <a id="more"></a>
-<h1 id="W3C标准">W3C标准</h1><p><strong>W3C标准</strong> 中指明：通常一个盒子的内容是被限制在盒子边界之内的，但有时也会产生溢出，即部分或全部内容跑到盒子边界之外。溢出将在满足下列条件之一时出现：</p>
+<h1 id="chrome开发工具">chrome开发工具</h1><p>顾名思义，chrome开发工具就是一个工具，它允许web开发人员可以通过浏览器应用程序干预和操作web页面，也可以通过这个工具调试和测试web页面或web应用程序，有了这个工具，可以做很多有趣的事情。</p>
+<ul>
+<li>调试界面的问题</li>
+<li>使用断点调试javascript代码</li>
+<li>优化代码</li>
+</ul>
+<h1 id="console大法好">console大法好</h1><ul>
+<li><p>console.log 普通信息 第一个参数前添加<code>%c</code>可以使用css样式</p>
+<pre><code><span class="tag">console</span><span class="class">.log</span>("%<span class="tag">c</span>", "<span class="rule"><span class="attribute">padding</span>:<span class="value"><span class="number">50px</span> <span class="number">300px</span></span></span>;<span class="rule"><span class="attribute">line-height</span>:<span class="value"><span class="number">120px</span></span></span>;<span class="rule"><span class="attribute">background</span>:<span class="value"><span class="function">url</span>(<span class="string">'http://wayou.github.io/2014/09/10/chrome-console-tips-and-tricks/rabbit.gif'</span>) no-repeat</span></span>;");
+</code></pre></li>
+<li>console.info 提示类信息</li>
+<li>console.error 错误信息</li>
+<li>console.warn 警示信息</li>
+<li>console.group&amp;console.groupEnd 分组&amp;分组结束</li>
+<li>console.table 以表格的形式输出数据</li>
+<li>console.assert 代码满足某些条件时才输出信息到控制台</li>
+<li>console.count 输出代码执行次数</li>
+<li>console.dir 将DOM节点以javascript对象的形式输出到控制台，而console.log是直接将该DOM节点以DOM树的结构进行输出</li>
+<li>console.time&amp;console.timeEnd 统计耗时</li>
+<li>console.profile&amp;console.timeLine 对应profile和timeline标签</li>
+<li>console.trace 堆栈跟踪相关</li>
+</ul>
+<h1 id="$真可爱"><code>$</code>真可爱</h1><ul>
+<li>$_ 返回最近一次表达式执行的结果</li>
+<li>$0-$4 最近5个被选择的DOM节点</li>
+<li>$(selector) document.querySelector(selector)</li>
+<li>$$(selector) document.querySelectorAll(selector)</li>
+</ul>
+<h1 id="小东西">小东西</h1><ul>
+<li>copy 将在 <strong>控制台</strong> 获取到的内容复制到剪贴板</li>
+<li>keys(object) values(object)</li>
+<li>monitor&amp;unmonitor 监控函数的执行&amp;停止监听</li>
+<li>debug&amp;undebug 函数打断点</li>
+</ul>
+<h1 id="Sources面板断点调试">Sources面板断点调试</h1><h2 id="Mac_OS调试快捷键">Mac OS调试快捷键</h2><p>断点调试时一般使用的是<code>F8</code>、<code>F10</code>、<code>F11</code>或<code>Shift+F11</code>，但在Mac OS上这些功能键与系统默认快捷键冲突，没有关系，他们分别可以使用<code>Cmd+/</code>、<code>Cmd+&#39;</code>、<code>Cmd+;</code>以及<code>Shift+Cmd+;</code>来代替</p>
+<h1 id="Timeline分析网站性能">Timeline分析网站性能</h1><p>一个网站的性能主要关乎两项，一是加载性能、二是执行性能。第一项可以使用Network面板来分析，建议阅读下《web高性能开发指南》这本书的十四条黄金建议，对理解网站性能的帮助是无法估量的。而第二项性能问题就体现在内存泄露上，需要通过Timeline来分析。</p>
+<p><a href="/works/timeline-demo.html">测试demo</a></p>
+<p><a href="https://developer.chrome.com/devtools/docs/demos/memory" target="_blank" rel="external">官方实例</a></p>
+<h1 id="Profiles面板">Profiles面板</h1><p>Profiles面板功能的作用主要是监控网页中各种方法执行时间和内存的变化，简单来说它就是Timeline的数字化版本。Profiles界面右侧区域有3个选项：</p>
 <ol>
-<li>一个不换行的块级元素宽度超过了容器盒子的宽度</li>
-<li>一个宽度固定的块级元素放在了比他窄的容器盒子内部</li>
-<li>一个元素的高度超过了容器盒子的高度</li>
-<li>一个子孙元素，由负边距引起的部分内容在盒子的外部</li>
-<li><code>text-indent</code>属性引起的部分内容在盒子外部</li>
-<li>一个绝对定位的子孙元素，部分内容在盒子外部，但是超出部分并不总是会被裁剪</li>
+<li>collect javascript CPU profile：监控函数执行期花费的时间</li>
+<li>take heap snapshot：为当前界面拍一个内存快照</li>
+<li>record heap allocation：实时监控记录内存变化</li>
 </ol>
-<h1 id="overflow失效">overflow失效</h1><p>当溢出发生时，overflow属性约束了容器盒子是否剪裁掉超出其内边界的部分，并且决定是否出现滚动条来访问被剪裁掉的内容。他会影响倒元素所有内容的剪裁，但是也有例外情况，即上面第6条所提到的，当子孙元素被绝对定位时，如果没有已定位的祖先元素，那么其 <strong>包含块</strong> 就是视窗，祖先元素的<code>overflow: hidden</code>并没有什么卵用……</p>
-<p>总之，在写CSS时，一定要了解浏览器对盒模型实现的原理，从根本原因入手去解决问题~</p>
+<h1 id="Audits面板">Audits面板</h1><p>雅虎十四条优化建议</p>
 <h1 id="参考文献">参考文献</h1><ol>
-<li><a href="http://blogread.cn/it/article/6180?f=wb" target="_blank" rel="external">overflow:hidden真的失效了吗</a></li>
-<li><a href="http://www.w3.org/TR/CSS21/visufx.html#overflow" target="_blank" rel="external">W3C标准</a></li>
-<li><a href="http://www.w3.org/TR/CSS21/visuren.html#containing-block" target="_blank" rel="external">包含块</a></li>
+<li><a href="http://web.jobbole.com/83571/" target="_blank" rel="external">如何更专业的使用Chrome开发者工具</a></li>
+<li><a href="http://web.jobbole.com/81912/" target="_blank" rel="external">Chrome 控制台不完全指南</a></li>
+<li><a href="http://web.jobbole.com/82558/" target="_blank" rel="external">Chrome开发者工具不完全指南（一、基础功能篇）</a></li>
+<li><a href="http://web.jobbole.com/82562/" target="_blank" rel="external">Chrome开发者工具不完全指南（二、进阶篇）</a></li>
+<li><a href="http://www.jb51.net/article/58570.htm" target="_blank" rel="external">使用Chrome调试JavaScript的断点设置和调试技巧</a></li>
+<li><a href="http://web.jobbole.com/82576/" target="_blank" rel="external">Chrome开发者工具不完全指南：（三、性能篇）</a></li>
+<li><a href="http://web.jobbole.com/82590/" target="_blank" rel="external">Chrome开发者工具不完全指南（四、性能进阶篇）</a></li>
+<li><a href="http://web.jobbole.com/82612/" target="_blank" rel="external">Chrome开发者工具不完全指南（五、移动篇）</a></li>
+<li><a href="http://web.jobbole.com/82701/" target="_blank" rel="external">Chrome开发者工具不完全指南（六、插件篇）</a></li>
 </ol>
 </span>
       
@@ -303,7 +331,9 @@ auto：内容是否被裁减由浏览器具体实现决定">
       
         <div class="post-tags">
           
-            <a href="/tags/css/" rel="tag">#css</a>
+            <a href="/tags/chrome/" rel="tag">#chrome</a>
+          
+            <a href="/tags/tools/" rel="tag">#工具</a>
           
         </div>
       
@@ -312,13 +342,13 @@ auto：内容是否被裁减由浏览器具体实现决定">
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/09/26/2016年校招网易360测评题之小明掉头跑/" rel="prev">2016年校招网易360测评题之小明掉头跑</a>
+              <a href="/2015/09/29/function与感叹号/" rel="prev">function与感叹号</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/09/23/todo/" rel="next">todo</a>
+              <a href="/2015/09/26/javascript异步编程/" rel="next">javascript异步编程</a>
             
           </div>
         </div>
@@ -370,8 +400,8 @@ auto：内容是否被裁减由浏览器具体实现决定">
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/09/25/谈谈css的overflow属性/"
-                   data-title="谈谈css的overflow属性" data-url="http://www.xiaojunxie.com/2015/09/25/谈谈css的overflow属性/">
+              <div class="ds-thread" data-thread-key="2015/09/28/chrome开发者工具/"
+                   data-title="chrome开发者工具" data-url="http://www.xiaojunxie.com/2015/09/28/chrome开发者工具/">
               </div>
             
           </div>
@@ -467,7 +497,7 @@ auto：内容是否被裁减由浏览器具体实现决定">
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#overflow属性取值"><span class="nav-number">1.</span> <span class="nav-text">overflow属性取值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#W3C标准"><span class="nav-number">2.</span> <span class="nav-text">W3C标准</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#overflow失效"><span class="nav-number">3.</span> <span class="nav-text">overflow失效</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">4.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#chrome开发工具"><span class="nav-number">2.</span> <span class="nav-text">chrome开发工具</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#console大法好"><span class="nav-number">3.</span> <span class="nav-text">console大法好</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#$真可爱"><span class="nav-number">4.</span> <span class="nav-text">$真可爱</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#小东西"><span class="nav-number">5.</span> <span class="nav-text">小东西</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Sources面板断点调试"><span class="nav-number">6.</span> <span class="nav-text">Sources面板断点调试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mac_OS调试快捷键"><span class="nav-number">6.1.</span> <span class="nav-text">Mac OS调试快捷键</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Timeline分析网站性能"><span class="nav-number">7.</span> <span class="nav-text">Timeline分析网站性能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Profiles面板"><span class="nav-number">8.</span> <span class="nav-text">Profiles面板</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Audits面板"><span class="nav-number">9.</span> <span class="nav-text">Audits面板</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">10.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
