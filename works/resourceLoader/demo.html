@@ -37,15 +37,67 @@
   <link rel="shorticon icon" type="image/x-icon" href="/image_16X16.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="Good artists copy, best artists steal.">
+<meta name="description" content="&amp;lt;!DOCTYPE html&amp;gt;
+
+
+
+示例页面
+
+
+
+.progress{
+	width: 600px;
+	height: 20px;
+	border:3px solid red;
+	position: absolute;
+	left: 0;top: 0;right: 0;bottom: 0;
+	margin:auto;
+}
+.progressbar{
+	position: absolute;">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Jennifer's Blog">
-<meta property="og:url" content="http://www.xiaojunxie.com/categories/blog/index.html">
+<meta property="og:url" content="http://www.xiaojunxie.com/works/resourceLoader/demo.html">
 <meta property="og:site_name" content="Jennifer's Blog">
-<meta property="og:description" content="Good artists copy, best artists steal.">
+<meta property="og:description" content="&amp;lt;!DOCTYPE html&amp;gt;
+
+
+
+示例页面
+
+
+
+.progress{
+	width: 600px;
+	height: 20px;
+	border:3px solid red;
+	position: absolute;
+	left: 0;top: 0;right: 0;bottom: 0;
+	margin:auto;
+}
+.progressbar{
+	position: absolute;">
+<meta property="og:updated_time" content="2015-10-02T07:05:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Jennifer's Blog">
-<meta name="twitter:description" content="Good artists copy, best artists steal.">
+<meta name="twitter:description" content="&amp;lt;!DOCTYPE html&amp;gt;
+
+
+
+示例页面
+
+
+
+.progress{
+	width: 600px;
+	height: 20px;
+	border:3px solid red;
+	position: absolute;
+	left: 0;top: 0;right: 0;bottom: 0;
+	margin:auto;
+}
+.progressbar{
+	position: absolute;">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -55,7 +107,13 @@
   };
 </script>
 
-  <title> 分类: blog | Jennifer's Blog </title>
+  <title>
+  
+
+  
+     | Jennifer's Blog
+  
+</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -197,45 +255,120 @@
       <div class="main-inner">
         <div id="content" class="content"> 
 
-  <section id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        blog
-        <small>分类</small>
-      </h2>
-    </div>
-
+  <div id="posts" class="posts-expand">
     
-      
-
-  <article class="post post-type-normal"itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2015/08/30/hello-hexo/" itemprop="url">
-              <span itemprop="name">hello hexo</span>
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" datetime="2015-08-30T12:48:03.000Z" itemprop="dateCreated" content="2015-08-30"> 08-30 </time>
-      </div>
-
-    </header>
-  </article>
-
-
     
-  </section>
+      <!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="UTF-8">
+<title>示例页面</title>
+<script src="http://s0.qhimg.com/lib/jquery/183.js"></script>
+<script src="resLoader.js"></script>
+<style>
+.progress{
+	width: 600px;
+	height: 20px;
+	border:3px solid red;
+	position: absolute;
+	left: 0;top: 0;right: 0;bottom: 0;
+	margin:auto;
+}
+.progressbar{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 0;
+	height: 100%;
+	background-color: green;
+	-webkit-transition:width ease-in 200ms;
+}
+.progresstext{
+	position: absolute;
+	top: 30px;
+	right: 0;
+}
+.bg1{
+	width: 100px;
+	height: 100px;
+	background: url(http://p2.qhimg.com/t01ed1438874f940dc0.jpg);
+}
+</style>
+</head>
+<body>
+<div class="progress">
+	<div class="progressbar"></div>
+	<div class="progresstext">
+		<span class="current"></span>/
+		<span class="total"></span>
+	</div>
+</div>
 
-  
+<div class="bg"></div>
+<img class="img1" width="100" height="100">
+<button id="btn">bg1</button>
+<button id="btn2">add img</button>
+<button id="btn3">set src</button>
+
+<script>
+var loader = new resLoader({
+	resources : [
+		'http://p2.qhimg.com/t01ed1438874f940dc0.jpg',
+		'http://p9.qhimg.com/t01b4ff03b72c7dc6c7.jpg',
+		'http://p2.qhimg.com/t01dd90dfbec92074d0.jpg',
+		'http://p7.qhimg.com/t01cfec6d87cde457c5.jpg',
+		'http://p9.qhimg.com/t01943ced462da67833.jpg',
+		'http://p0.qhimg.com/t01943ced462da67833.jpg',
+		'http://p6.qhimg.com/t01aa15a7ba7ccb49a7.jpg',
+		'http://p8.qhimg.com/t010f1e8badf1134376.jpg',
+		'http://p8.qhimg.com/t01cf37ea915533a032.jpg',
+		'http://p3.qhimg.com/t0193d8a3963e1803e9.jpg',
+		'http://p3.qhimg.com/t01cd6a4d4b4bd4457b.jpg'
+	],
+	onStart : function(total){
+		console.log('start:'+total);
+	},
+	onProgress : function(current, total){
+		console.log(current+'/'+total);
+		var percent = current/total*100;
+		$('.progressbar').css('width', percent+'%');
+		$('.progresstext .current').text(current);
+		$('.progresstext .total').text(total);
+	},
+	onComplete : function(total){
+		alert('加载完毕:'+total+'个资源');
+	}
+});
+
+loader.start();
+
+$('#btn').click(function(){
+	$('.bg').addClass('bg1');
+});
+$('#btn2').click(function(){
+	$('body').append('<img src="http://p9.qhimg.com/t01b4ff03b72c7dc6c7.jpg" width=100 height=100 />');
+});
+$('#btn3').click(function(){
+	$('.img1').attr('src', 'http://p2.qhimg.com/t01dd90dfbec92074d0.jpg');
+});
+</script>
+</body>
+</html>
+    
+  </div>
 
  </div>
 
         
 
+        
+          <div class="comments" id="comments">
+            
+              <div class="ds-thread" data-thread-key="works/resourceLoader/demo.html"
+                   data-title="" data-url="http://www.xiaojunxie.com/works/resourceLoader/demo.html">
+              </div>
+            
+          </div>
         
       </div>
 
@@ -359,12 +492,6 @@
 
   
   
-  
-    <script type="text/javascript">
-      postMotionOptions = {stagger: 100, drag: true};
-    </script>
-  
-
   
     
 
