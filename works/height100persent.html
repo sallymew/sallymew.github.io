@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>height100%布局</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			font-size: 100px;
+		}
+		html, body {
+			height: 100%;
+		}
+		header, footer {
+			height: 100px;
+			background-color: blue;
+			text-align: center;
+			width: 100%;
+		}
+		footer {
+			position: absolute;
+			bottom: 0;
+		}
+		#container {
+			position: absolute;
+			top: 100px;
+			bottom: 100px;
+			background-color: green;
+			width: 100%;
+			overflow: hidden;
+		}
+		#left {
+			float: left;
+			width: 200px;
+			margin-right: 10px;
+			height: 100%;
+			background-color: yellow;
+			padding-bottom: 1000px;
+			margin-bottom: -1000px;
+		}
+		#main {
+			overflow: hidden;
+			height: 100%;
+			background-color: pink;
+			padding-bottom: 1000px;
+			margin-bottom: -1000px;
+		}
+		#maincontainer {
+			overflow: scroll;
+			height: 100%;
+			position: relative;
+			/*padding-top: 100px;*/
+		}
+		#head {
+			position: absolute;
+			top: 0;
+			/*top: 100px;*/
+			/*left: 210px;*/
+			width: 100%;
+			text-align: center;
+			background-color: red;
+		}
+		#scroll {
+			margin-top: 100px;
+		}
+	</style>
+</head>
+<body>
+	<header>页面顶部</header>
+	<div id="container">
+		<!-- <div id="left"></div>
+		<div id="main">
+			<div id="maincontainer">
+				<div id="head">主页面顶部</div>
+				<div id="scroll">
+					我很长
+					<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+					我很长
+				</div>
+			</div>		
+		</div> -->
+	</div>
+	<footer>页面底部</footer>
+</body>
+</html>

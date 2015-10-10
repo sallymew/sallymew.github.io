@@ -37,24 +37,30 @@
   <link rel="shorticon icon" type="image/x-icon" href="/image_16X16.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="前言这篇文章是我自己的前端学习笔记，平日学习+面试总结 所得，部分参考">
+<meta name="description" content="前言这篇文章是我自己的前端学习笔记，平日学习+面试总结 所得，部分参考：qiu-deqing收集的前端面试题和答案
+
+前端以提升用户体验为目标写代码就像玩乐高积木一样，可以随心所欲地用千万条语句构建出一个模拟的世界，令人兴奋；写代码又像是在写作，用变量、关键字、函数作文字，用逻辑作线索，成就一片优美大作；写代码还像一个匠人在精雕细琢他的艺术品，用追求完美的情怀、注入心血地给世人解释什么才上真正的艺">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端学习笔记">
 <meta property="og:url" content="http://www.xiaojunxie.com/2015/09/18/前端学习笔记/index.html">
 <meta property="og:site_name" content="Jennifer's Blog">
-<meta property="og:description" content="前言这篇文章是我自己的前端学习笔记，平日学习+面试总结 所得，部分参考">
+<meta property="og:description" content="前言这篇文章是我自己的前端学习笔记，平日学习+面试总结 所得，部分参考：qiu-deqing收集的前端面试题和答案
+
+前端以提升用户体验为目标写代码就像玩乐高积木一样，可以随心所欲地用千万条语句构建出一个模拟的世界，令人兴奋；写代码又像是在写作，用变量、关键字、函数作文字，用逻辑作线索，成就一片优美大作；写代码还像一个匠人在精雕细琢他的艺术品，用追求完美的情怀、注入心血地给世人解释什么才上真正的艺">
 <meta property="og:image" content="http://osmn00.com/d/file/blog/front-end/2010-10-16/23ed2c1db2a91fe6d080f8359b634fac.gif">
 <meta property="og:image" content="http://www.xiaojunxie.com/event.png">
-<meta property="og:updated_time" content="2015-09-30T08:57:09.000Z">
+<meta property="og:updated_time" content="2015-10-10T14:12:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端学习笔记">
-<meta name="twitter:description" content="前言这篇文章是我自己的前端学习笔记，平日学习+面试总结 所得，部分参考">
+<meta name="twitter:description" content="前言这篇文章是我自己的前端学习笔记，平日学习+面试总结 所得，部分参考：qiu-deqing收集的前端面试题和答案
+
+前端以提升用户体验为目标写代码就像玩乐高积木一样，可以随心所欲地用千万条语句构建出一个模拟的世界，令人兴奋；写代码又像是在写作，用变量、关键字、函数作文字，用逻辑作线索，成就一片优美大作；写代码还像一个匠人在精雕细琢他的艺术品，用追求完美的情怀、注入心血地给世人解释什么才上真正的艺">
 
 
 <script type="text/javascript" id="hexo.configuration">
   var CONFIG = {
     scheme: 'Mist',
-    sidebar: 'hide'
+    sidebar: 'post'
   };
 </script>
 
@@ -262,7 +268,10 @@
       
 
       
-        <span itemprop="articleBody"><h1 id="前言">前言</h1><p>这篇文章是我自己的前端学习笔记，平日学习+面试总结 所得，<a href="http://github.com/qiu-deqing/FE-interview" target="_blank" rel="external">部分参考</a></p>
+        <span itemprop="articleBody"><h1 id="前言">前言</h1><p>这篇文章是我自己的前端学习笔记，平日学习+面试总结 所得，部分参考：<a href="http://github.com/qiu-deqing/FE-interview" target="_blank" rel="external">qiu-deqing收集的前端面试题和答案</a></p>
+<blockquote>
+<p>前端以提升用户体验为目标<br>写代码就像玩乐高积木一样，可以随心所欲地用千万条语句构建出一个模拟的世界，令人兴奋；<br>写代码又像是在写作，用变量、关键字、函数作文字，用逻辑作线索，成就一片优美大作；<br>写代码还像一个匠人在精雕细琢他的艺术品，用追求完美的情怀、注入心血地给世人解释什么才上真正的艺术</p>
+</blockquote>
 <a id="more"></a>
 <h1 id="HTML–搭建结构">HTML–搭建结构</h1><h2 id="从地址栏输入URL开始到显示的过程">从地址栏输入URL开始到显示的过程</h2><p>参考<a href="http://www.guokr.com/question/554991/" target="_blank" rel="external">从输入 URL 到页面加载完的过程中都发生了什么事情？</a></p>
 <p>1）把URL分割成几个部分：协议、主机地址、资源路径、查询、hash。其中主机地址指示该连接网络上哪一台计算机，可以是域名或者IP地址，可以包括端口号；<strong>协议是从该计算机获取资源的方式</strong>，常见的是HTTP、FTP，不同协议有不同的通讯内容格式；资源路径指示从服务器上获取哪一项资源。例如：</p>
@@ -278,7 +287,7 @@
 <p>7）如果（6）返回的是一个页面，根据页面里一些外链的URL，例如图片的地址，按照（1）－（6）再次获取。通过cookie里面的session_id建立会话，或者新启动一个session。</p>
 <p>8）根据资源的类型，将资源组织成屏幕上显示的图像，这个过程叫渲染，网页渲染是浏览器最复杂、最核心的功能。下载HTML文件解析成DOM树，CSS文件解析成CSSOM树，进一步结合JS生成Render树，由JS渲染引擎渲染。</p>
 <p>9）将渲染好的页面图像显示出来，并开始响应用户的操作。</p>
-<h2 id="TCP三次握手和四次分手">TCP三次握手和四次分手</h2><p>参考<a href="http://www.cnblogs.com/cy568searchx/p/3711670.html" target="_blank" rel="external">TCP通信的三次握手和四次撒手的详细流程（顿悟）</a></p>
+<h2 id="TCP三次握手和四次分手">TCP三次握手和四次分手</h2><p>参考：<a href="http://www.cnblogs.com/cy568searchx/p/3711670.html" target="_blank" rel="external">TCP通信的三次握手和四次撒手的详细流程（顿悟）</a></p>
 <h3 id="三次握手流程">三次握手流程</h3><p>第一次握手：建立连接时，客户端发送syn包(syn=j)到服务器，并进入SYN_SEND状态，等待服务器确认； </p>
 <p>第二次握手：服务器收到syn包，必须确认客户的SYN（ack=j+1），同时自己也发送一个SYN包（syn=k），即SYN+ACK包，此时服务器进入SYN_RECV状态；</p>
 <p>第三次握手：客户端收到服务器的SYN＋ACK包，向服务器发送确认包ACK(ack=k+1)，此包发送完毕，客户端和服务器进入ESTABLISHED状态，完成三次握手。完成三次握手，客户端与服务器开始传送数据</p>
@@ -291,65 +300,51 @@
 <h3 id="为什么TIME_WAIT状态还需要等2MSL后才能返回到CLOSED状态？">为什么TIME_WAIT状态还需要等2MSL后才能返回到CLOSED状态？</h3><p>这是因为虽然双方都同意关闭连接了，而且握手的4个报文也都协调和发送完毕，按理可以直接回到CLOSED状态（就好比从SYN_SEND状态到ESTABLISH状态那样）；但是因为我们必须要假想网络是不可靠的，你无法保证你最后发送的ACK报文会一定被对方收到，因此对方处于LAST_ACK状态下的SOCKET可能会因为超时未收到ACK报文，而重发FIN报文，所以这个TIME_WAIT状态的作用就是用来重发可能丢失的ACK报文。</p>
 <h2 id="HTTP状态码小结">HTTP状态码小结</h2><p>HTTP1.0和1.1的区别：keepalive，HTTP2.0添加了多路复用、head压缩、服务器推送、优先级请求</p>
 <ul>
-<li><p>1XX 信息</p>
-</li>
-<li><p>2XX 成功：200 ok</p>
-</li>
+<li>1XX 信息</li>
+<li>2XX 成功：200 ok</li>
 <li><p>3XX 重定向：301 永久重定向，302 临时重定向（ajax获取不到，见下面解释部分/HTTP1.1中302为Found，但也是一个别的地址），303 see other，304 not modified（原来缓存的文档还可以继续使用，未过期）</p>
 <p>  在HTTP权威指南中，HTTP1.0客户端发送POST请求时收到302响应不能自动重定向，而是需要向客户确认；而HTTP1.1客户端发送非GET、HEAD请求时收到302响应不能自动重定向，而是需要向客户确认，但是很多浏览器都是直接将POST重定向为GET处理。HTTP1.1中添加了303和307，303是将POST重定向为GET，而307则是POST重定向时请求客户端确认。</p>
 </li>
-<li><p>4XX 客户端错误：400 bad request，401 unauthorized需要用户名和密码，403 forbidden，404 not found</p>
-</li>
-<li><p>5XX 服务器错误：500 Internal Server Error</p>
-</li>
+<li>4XX 客户端错误：400 bad request，401 unauthorized需要用户名和密码，403 forbidden，404 not found</li>
+<li>5XX 服务器错误：500 Internal Server Error</li>
 </ul>
-<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">当服务器将<span class="number">302</span>响应发给浏览器时，浏览器并不是直接进行ajax回调处理，而是先执行<span class="number">302</span>重定向——从Response Headers中读取Location信息，然后向Location中的Url发出请求，在收到这个请求的响应后才会进行ajax回调处理。大致流程如下：</span><br><span class="line">ajax <span class="subst">-&gt; </span>browser <span class="subst">-&gt; </span>server <span class="subst">-&gt; </span><span class="number">302</span> <span class="subst">-&gt; </span>browser(redirect) <span class="subst">-&gt; </span>server <span class="subst">-&gt; </span>browser <span class="subst">-&gt; </span>ajax callback</span><br><span class="line">而在我们的测试程序中，由于<span class="number">302</span>返回的重定向URL在服务器上没有相应的处理程序，所以在ajax回调函数中得到的是<span class="number">404</span>状态码；如果存在对应的URL，得到的状态码就是<span class="number">200</span>。</span><br><span class="line">所以，如果你想在ajax请求中根据<span class="number">302</span>响应通过location<span class="built_in">.</span>href进行重定向是不可行的。</span><br><span class="line"></span><br><span class="line">解决方法如下：</span><br><span class="line"><span class="number">1</span>、修改ajax代码：</span><br><span class="line">$<span class="built_in">.</span>ajax(&#123;</span><br><span class="line">    url: <span class="string">'/oauth/respond'</span>,</span><br><span class="line">    <span class="keyword">type</span>: <span class="string">'post'</span>,</span><br><span class="line">    <span class="built_in">data</span>: <span class="built_in">data</span>,</span><br><span class="line">    dataType: <span class="string">'json'</span>,</span><br><span class="line">    success: function (<span class="built_in">data</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">data</span><span class="built_in">.</span>status == <span class="number">302</span>) &#123;</span><br><span class="line">            location<span class="built_in">.</span>href = <span class="built_in">data</span><span class="built_in">.</span>location;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="number">2</span>、改用form：</span><br><span class="line">&lt;form method=<span class="string">"post"</span> action=<span class="string">"/oauth/respond"</span>&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">当服务器将<span class="number">302</span>响应发给浏览器时，浏览器并不是直接进行ajax回调处理，而是先执行<span class="number">302</span>重定向——从Response Headers中读取Location信息，然后向Location中的Url发出请求，在收到这个请求的响应后才会进行ajax回调处理。大致流程如下：</span><br><span class="line">ajax <span class="subst">-&gt; </span>browser <span class="subst">-&gt; </span>server <span class="subst">-&gt; </span><span class="number">302</span> <span class="subst">-&gt; </span>browser(redirect) <span class="subst">-&gt; </span>server <span class="subst">-&gt; </span>browser <span class="subst">-&gt; </span>ajax callback</span><br><span class="line">而在我们的测试程序中，由于<span class="number">302</span>返回的重定向URL在服务器上没有相应的处理程序，所以在ajax回调函数中得到的是<span class="number">404</span>状态码；如果存在对应的URL，得到的状态码就是<span class="number">200</span>。</span><br><span class="line">所以，如果你想在ajax请求中根据<span class="number">302</span>响应通过location<span class="built_in">.</span>href进行重定向是不可行的。</span><br><span class="line">解决方法如下：</span><br><span class="line"><span class="number">1</span>、修改ajax代码：</span><br><span class="line">$<span class="built_in">.</span>ajax(&#123;</span><br><span class="line">    url: <span class="string">'/oauth/respond'</span>,</span><br><span class="line">    <span class="keyword">type</span>: <span class="string">'post'</span>,</span><br><span class="line">    <span class="built_in">data</span>: <span class="built_in">data</span>,</span><br><span class="line">    dataType: <span class="string">'json'</span>,</span><br><span class="line">    success: function (<span class="built_in">data</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">data</span><span class="built_in">.</span>status == <span class="number">302</span>) &#123;</span><br><span class="line">            location<span class="built_in">.</span>href = <span class="built_in">data</span><span class="built_in">.</span>location;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="number">2</span>、改用form：</span><br><span class="line">&lt;form method=<span class="string">"post"</span> action=<span class="string">"/oauth/respond"</span>&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="HTTP_readystate">HTTP readystate</h2><ol>
-<li><p>0-uninitialized：请求未初始化</p>
-</li>
-<li><p>1-loading：下载</p>
-</li>
-<li><p>2-loaded：下载完成</p>
-</li>
-<li><p>3-interactive：渲染</p>
-</li>
-<li><p>4-complete：所有数据已经准备好</p>
-</li>
+<li>0-uninitialized：请求未初始化  </li>
+<li>1-loading：下载  </li>
+<li>2-loaded：下载完成  </li>
+<li>3-interactive：渲染  </li>
+<li>4-complete：所有数据已经准备好</li>
 </ol>
+<h2 id="RESTful架构">RESTful架构</h2><p>一种互联网软件架构，结构清晰、符合标准、易于理解、扩展方便，核心是远程资源调用，Representational State Transfer<strong>表现层状态转化</strong>。http是无状态的，所以rest操作也是无状态的，不存在context约束，其目的是定义如何正确的使用web标准，优雅的使用HTTP特性。</p>
+<ul>
+<li>每个URI代表一种资源</li>
+<li>客户端和服务器之间传递这种资源的某种表现层</li>
+<li>客户端通过4个HTTP动词：get获取资源，post新建/更新资源，put更新资源，delete删除资源，来对服务器进行操作，实现表现层状态转化</li>
+</ul>
 <h2 id="WEB语义化">WEB语义化</h2><ul>
-<li><p>HTML语义化：使用包含语义的标签（<code>header footer nav main section article</code>等），恰当地表示文档结构，可以方便自动程序的识别</p>
-</li>
-<li><p>CSS语义化：为html添加有意义的id、class等补充未表达的语义</p>
-</li>
+<li>HTML语义化：使用包含语义的标签（<code>header footer nav main section article</code>等），恰当地表示文档结构，可以方便自动程序的识别</li>
+<li>CSS语义化：为html添加有意义的id、class等补充未表达的语义  </li>
 <li><p>web语义化的意义</p>
 <ul>
-<li><p>赋予标签含义，使代码结构更加清晰，尽管在标签上添加class等标在形式上不够直接，还会给代码带来冗余</p>
-</li>
-<li><p>语义化的代码对于搜索引擎优化（SEO）很有帮助，结构良好的网页对于搜索引擎的亲和力是很高的，百度和谷歌也给出了很多网页结构化的建议和规范，方便他们抓取网页           </p>
-</li>
-<li><p>有利于设备解析，如盲人阅读器对于页面的分析</p>
-</li>
-<li><p>便于开发者维护，有利于团队项目的可持续运作与维护</p>
-</li>
+<li>赋予标签含义，使代码结构更加清晰，尽管在标签上添加class等标签在形式上不够直接，还会给代码带来冗余    </li>
+<li>语义化的代码对于搜索引擎优化（SEO）很有帮助，结构良好的网页对于搜索引擎的亲和力是很高的，百度和谷歌也给出了很多网页结构化的建议和规范，方便他们抓取网页</li>
+<li>有利于设备解析，如盲人阅读器对于页面的分析        </li>
+<li>便于开发者维护，有利于团队项目的可持续运作与维护</li>
 </ul>
 </li>
 </ul>
 <h2 id="搜索引擎优化：内部优化，保证链接可跳转，提升用户体验">搜索引擎优化：内部优化，保证链接可跳转，提升用户体验</h2><ul>
-<li><p>合理的title、description、keywords：搜索对这三项的权重逐个减小，title值强调重点即可，重要关键词出现不要超过2次，而且要靠前，不同页面title要有所不同；description把页面内容高度概括，长度合适，不可过分堆砌关键字，不同页面title要有所不同；keywords列举出重要关键词即可</p>
-</li>
-<li><p>语义化的html代码，符合W3C规范：语义化代码让搜索引擎更容易理解网页</p>
-</li>
-<li><p>重要的html代码放在前面：搜索引擎抓HTML顺序是从上往下的，有的搜索引擎对抓取长度有限制，保证重要内容一定会被抓取</p>
-</li>
-<li><p>重要内容不要用js输出：爬虫不会执行js获取内容</p>
-</li>
+<li>合理的title、description、keywords：搜索对这三项的权重逐个减小，title值强调重点即可，重要关键词出现不要超过2次，而且要靠前，不同页面title要有所不同；description把页面内容高度概括，长度合适，不可过分堆砌关键字，不同页面title要有所不同；keywords列举出重要关键词即可     </li>
+<li>语义化的html代码，符合W3C规范：语义化代码让搜索引擎更容易理解网页    </li>
+<li>重要的html代码放在前面：搜索引擎抓HTML顺序是从上往下的，有的搜索引擎对抓取长度有限制，保证重要内容一定会被抓取    </li>
+<li>重要内容不要用js输出：爬虫不会执行js获取内容    </li>
 <li><p>少用iframe：搜索引擎不会抓取iframe中的内容</p>
  <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">iframe通常用于代替长连接（comet），实现跨域通信或者历史记录的管理</span><br><span class="line"><span class="number">1.</span> 沙箱隔离--sandbox(HTML5)</span><br><span class="line">var iframe = document.createElement(<span class="string">"iframe"</span>);</span><br><span class="line">iframe.style.display = <span class="string">"none"</span>;</span><br><span class="line">document.body.appendChild(iframe);</span><br><span class="line">frames[frames.length-<span class="number">1</span>].document.write(</span><br><span class="line">	<span class="string">"&lt;script&gt; parent.Array2 = Array; &lt;\/script&gt;"</span></span><br><span class="line">);</span><br><span class="line"><span class="number">2.</span> 引用第三方内容</span><br><span class="line"><span class="number">3.</span> 独立的带交互内容</span><br><span class="line"><span class="number">4.</span> 保持独立焦点和历史记录管理的子窗口</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>非装饰性图片必须加alt：img的title是一个全局属性，用于给图片添加附加信息，鼠标滑动到图片上时显示；而alt是img的特有属性，是<strong>图片内容的等价描述</strong>，用于图片无法加载时展示、方便读屏器阅读图片，可以提高图片的可访问性，搜索引擎会重点分析</p>
 </li>
-<li><p>提高网站速度：网站速度是搜索引擎排序的一个重要指标，减少reflow和repaint</p>
-</li>
+<li>提高网站速度：网站速度是搜索引擎排序的一个重要指标，减少reflow和repaint</li>
 </ul>
 <h2 id="DOCTYPE">DOCTYPE</h2><p>声明页面文档类型，告诉浏览器使用那种模式渲染，HTML5中<code>&lt;!DOCTYPE html&gt;</code>，无doctype声明在IE下会触发怪异模式</p>
 <h2 id="客户端存储">客户端存储</h2><h3 id="cookie">cookie</h3><p>容量有限，个数有限，会随着HTTP请求发送到服务器，存在安全隐患</p>
@@ -367,34 +362,22 @@
 </ul>
 <h2 id="使用URL拆分出protocol、host、port、query等">使用URL拆分出protocol、host、port、query等</h2><h3 id="定义">定义</h3><p>URL：统一资源定位符，由scheme、host、port、path、query、fragment组成，一个标准的URL的形式为<code>http://www.xiaojunxie.com/2015/09/19/%E5%89%8D%E7%AB%AF%E6%B1%82%E8%81%8C/#美团</code>。</p>
 <h3 id="解释">解释</h3><ul>
-<li><p>scheme是通信协议，常用的有http，https，ftp等</p>
-</li>
-<li><p>host是主机，服务器域名系统（DNS）主机名或者IP地址</p>
-</li>
-<li><p>port是端口号，省略时使用默认端口，http协议的默认端口是80，ftp协议的默认端口是21</p>
-</li>
-<li><p>path是资源存储路径，一般表示主机上的一个目录或者本地文件地址</p>
-</li>
-<li><p>query是查询字符串，可以包含多个key=value对，使用&amp;隔开</p>
-</li>
-<li><p>fragment是锚点，也就是我们在写html时使用的name或者id</p>
-</li>
+<li>scheme是通信协议，常用的有http，https，ftp等  </li>
+<li>host是主机，服务器域名系统（DNS）主机名或者IP地址  </li>
+<li>port是端口号，省略时使用默认端口，http协议的默认端口是80，ftp协议的默认端口是21  </li>
+<li>path是资源存储路径，一般表示主机上的一个目录或者本地文件地址  </li>
+<li>query是查询字符串，可以包含多个key=value对，使用&amp;隔开  </li>
+<li>fragment是锚点，也就是我们在写html时使用的name或者id  </li>
 </ul>
 <h3 id="获取">获取</h3><ul>
-<li><p>整个url: <code>window.location.href</code></p>
-</li>
-<li><p>host: <code>window.location.host</code></p>
-</li>
-<li><p>port: <code>window.location.port</code></p>
-</li>
-<li><p>path: <code>window.location.pathname</code></p>
-</li>
-<li><p>query: <code>window.location.search</code>，获取的包含?哦</p>
-</li>
-<li><p>fragment: <code>window.location.hash</code></p>
-</li>
+<li>整个url: <code>window.location.href</code></li>
+<li>host: <code>window.location.host</code></li>
+<li>port: <code>window.location.port</code></li>
+<li>path: <code>window.location.pathname</code>  </li>
+<li>query: <code>window.location.search</code>，获取的包含<code>?</code>哦  </li>
+<li>fragment: <code>window.location.hash</code></li>
 </ul>
-<h2 id="canvas">canvas</h2><p><a href="http://www.xiaojunxie.com/works/canvas_clock.html">使用html5 canvas绘制时钟</a></p>
+<h2 id="canvas">canvas</h2><p><a href="/works/canvas_clock.html">使用html5 canvas绘制时钟</a></p>
 <pre><code>&lt;<span class="built_in">!</span>DOCTYPE html&gt;
 &lt;html lang=<span class="string">"en"</span>&gt;
 &lt;head&gt;
@@ -491,136 +474,175 @@
     &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</code></pre><h1 id="CSS–设计样式">CSS–设计样式</h1><h2 id="flexbox"><a href="http://www.w3cplus.com/css3/a-visual-guide-to-css3-flexbox-properties.html" target="_blank" rel="external">flexbox</a></h2><p><a href="http://www.xiaojunxie.com/works/two_columns.html">使用css实现两栏布局，左侧宽度固定，右侧自适应</a>，关于使用正padding和负margin对冲实现多列等高布局时，所有列都设置相同的正的上下padding和负的上下margin，并在所有列外面添加一个容器，并设置overflow: hidden把溢出背景切掉。这种方法并不是自适应高度的实现，只是利用了overflow: hidden来隐藏每个列的多余部分。给所有列先设置了一个10000px的空白占位高度，把整个div往上挤了10000px，然后又通过负margin将所有列往下挪了10000px。细节请戳→→<a href="http://www.xiaojunxie.com/2015/09/13/%E4%BB%8E%E8%B4%9Fmargin%E5%88%B0css%E7%9B%92%E6%A8%A1%E5%9E%8B/">从负margin到css盒模型</a></p>
-<h3 id="方法1">方法1</h3><pre><code><span class="class">.parent</span> <span class="rules">{
-    <span class="rule"><span class="attribute">overflow</span>:<span class="value"> hidden</span></span>;
-}</span>
-<span class="class">.left</span> <span class="rules">{
-    <span class="rule"><span class="attribute">float</span>:<span class="value"> left</span></span>;
-    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">200px</span></span></span>;
-    <span class="rule"><span class="attribute">padding-bottom</span>:<span class="value"> <span class="number">10000px</span></span></span>;
-    <span class="rule"><span class="attribute">margin-bottom</span>:<span class="value"> -<span class="number">10000px</span></span></span>;
-}</span>
-<span class="class">.main</span> <span class="rules">{
-    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100%</span></span></span>;
-    <span class="rule"><span class="attribute">margin-left</span>:<span class="value"> <span class="number">210px</span></span></span>;
-    <span class="rule"><span class="attribute">padding-bottom</span>:<span class="value"> <span class="number">10000px</span></span></span>;
-    <span class="rule"><span class="attribute">margin-bottom</span>:<span class="value"> -<span class="number">10000px</span></span></span>;
-}</span>
-</code></pre><h3 id="方法2">方法2</h3><pre><code><span class="class">.parent</span> <span class="rules">{
-    <span class="rule"><span class="attribute">display</span>:<span class="value"> -webkit-box</span></span>;
-    <span class="rule"><span class="attribute">display</span>:<span class="value"> box</span></span>;
-}</span>
-<span class="class">.left</span> <span class="rules">{
-    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">200px</span></span></span>;
-}</span>
-<span class="class">.main</span> <span class="rules">{
-    <span class="rule"><span class="attribute">-webkit-box-flex</span>:<span class="value"> <span class="number">1</span></span></span>;
-    <span class="rule"><span class="attribute">box-flex</span>:<span class="value"> <span class="number">1</span></span></span>;
-    <span class="rule"><span class="attribute">padding-left</span>:<span class="value"> <span class="number">10px</span></span></span>;
-}</span>
-</code></pre><h2 id="CSS_reset">CSS reset</h2><p>CSS reset文件可以重置浏览器对于HTML元素的默认样式，让各个浏览器的CSS样式有一个统一的基准。这是由于PC时代各种浏览器采用不同的标准，造成对于html标签的默认样式不同，样式难以统一。但是在跨入无线web时代后，尽管碎片化问题依然存在，但是无线web上各个厂商对很多规范都进行了支持，不一定需要reset，只需要做一个统一化处理，这就是著名的reset与normalize之争。</p>
-<h2 id="CSS_display、position、float属性">CSS display、position、float属性</h2><h3 id="display属性">display属性</h3><ul>
-<li><p>取值为<code>none block inline-block inline table list-item box</code></p>
+</code></pre><h1 id="CSS–设计样式">CSS–设计样式</h1><h2 id="CSS_布局">CSS 布局</h2><h3 id="相关属性">相关属性</h3><ul>
+<li>display：none/block/inline-block/inline/table/list-item/box<ul>
+<li><code>display: none;</code>和<code>visibility: hidden;</code>区别：前者不会渲染，后者会渲染但是不显示；前者会引起reflow和repaint，后者仅导致repaint</li>
+</ul>
 </li>
-<li><p><code>display: none;</code>和<code>visibility: hidden;</code>区别：前者不会渲染，后者会渲染但是不显示</p>
+<li>position：<ul>
+<li>static：默认样式，不受TRBL影响，不会被特殊定位  </li>
+<li>fixed：节点相对于浏览器窗口固定，即使页面滚动位置也不变，IE6不支持</li>
+<li>relative：节点位置相对于父元素</li>
+<li>absolute：绝对定位，位置计算相对于最近的已定位的祖先元素，没有已定位祖先元素时，同fixed</li>
+</ul>
+</li>
+<li>float: left/right</li>
+</ul>
+<h3 id="盒模型">盒模型</h3><p><img src="http://osmn00.com/d/file/blog/front-end/2010-10-16/23ed2c1db2a91fe6d080f8359b634fac.gif" alt="image"></p>
+<h4 id="strict_mode盒模型">strict mode盒模型</h4><pre><code>元素实际宽度 = <span class="attribute">margin-left</span> + <span class="attribute">border-left</span> + <span class="attribute">padding-left</span> + <span class="attribute">width</span> + <span class="attribute">padding-right</span> + <span class="attribute">border-right</span> + <span class="attribute">margin-right</span>
+内容宽度 = <span class="attribute">width</span>
+</code></pre><h4 id="quirks_mode盒模型">quirks mode盒模型</h4><pre><code>元素实际宽度 = <span class="attribute">margin-left</span> + <span class="attribute">width</span> + <span class="attribute">margin-right</span>
+内容宽度 = <span class="attribute">width</span> - (<span class="attribute">border-left</span> + <span class="attribute">padding-left</span> + <span class="attribute">padding-right</span> + <span class="attribute">border-right</span>)
+</code></pre><h4 id="浏览器识别方法">浏览器识别方法</h4><p>浏览器采用如下判断规则判断CSS解析方式</p>
+<ul>
+<li>没有doctype声明的网页采用quirks mode解析</li>
+<li>声明了doctype的网页，浏览器采用何种模式解析可参考：<a href="https://hsivonen.fi/doctype/" target="_blank" rel="external">http://hsivonen.iki.fi/doctype/</a>，如下有几条简单的规则可用于判断：<ul>
+<li>对于那些浏览器不能识别的doctype声明，浏览器采用strict mode解析</li>
+<li>在doctype声明中，没有使用DTD声明或者使用HTML4以下（不包括HTML4）的DTD声明时，基本所有的浏览器都是使用quirks mode呈现，其他的则使用strict mode解析</li>
+<li>现有有doctype声明的网页，绝大多数是采用strict mode进行解析的</li>
+<li>在ie6中，如果在doctype声明前有一个xml声明(比如:<code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-1&quot;?&gt;</code>)，则采用quirks mode解析</li>
+</ul>
 </li>
 </ul>
-<h3 id="position属性">position属性</h3><ul>
-<li><p>static：默认样式，不受TRBL影响，不会被特殊定位</p>
+<h3 id="css3:_box-sizing">css3: box-sizing</h3><p>CSS3中可以使用box-sizing改变盒模型</p>
+<ul>
+<li>content-box：默认值，这是标准的盒模型，width和height是内容区的宽和高</li>
+<li>padding-box：width和height包括内边距</li>
+<li>border-box：width和height包括内边距和边框，这也是<em>怪异模式</em>使用的盒模型</li>
+</ul>
+<h3 id="包含块">包含块</h3><p>containing block（包含块）是视觉格式化模型的一个重要概念，它与框模型类似，也可以理解为一个矩形，而这个矩形的作用是为他里面包含的元素提供一个参考，<strong>元素的尺寸和位置往往是由该元素所在的包含块决定的</strong>。元素的包含块按照如下方式定义：</p>
+<ul>
+<li>浏览器（用户代理）选择根元素作为初始包含块</li>
+<li>没有绝对定位的元素，其包含块由最近的<strong>块级</strong>祖先元素的内容边界组成</li>
+<li><code>position: fixed</code>的元素，其包含块由视口建立</li>
+<li><code>position: absolute</code>的元素，其包含块由最近的非<code>position: static</code>祖先按照下面步骤建立：  <ul>
+<li>祖先元素为块级元素，包含块为其<strong>padding边界</strong></li>
+<li>祖先元素为行内元素，包含块取决于其祖先的direction属性：<ul>
+<li><code>direction: ltr</code>，祖先产生的第一个盒子的上左内容边界是其包含块的上方和左方，最后一个盒子的下右内容边界是其包含块的下方和右方</li>
+<li><code>direction: rtl</code>，祖先产生的最后一个盒子的下左内容边界是其包含块的下方和左方，第一个盒子的上右右内容边界是其包含块的上方和右方</li>
+</ul>
 </li>
-<li><p>fixed：节点相对于浏览器窗口固定，即使页面滚动位置也不变，IE6不支持</p>
+<li>没有祖先元素，包含块为根元素的内容边界</li>
+</ul>
 </li>
-<li><p>relative：节点位置相对于父元素</p>
-</li>
-<li><p>absolute：绝对定位，位置计算相对于最近的已定位的祖先元素，没有已定位祖先元素时，同fixed</p>
-</li>
-<li><p>使用css实现元素绝对居中</p>
-<pre><code>1. inline元素水平居中为父元素设置text-align: center，垂直居中父元素设置line-height为其高度;
-2. block元素1)元素设置宽度,2)左右margin:auto,3)IE6下父元素设置text-align: center,再给子元素恢复需要的值
-3. float元素1)元素设置宽度,2)position: relative3)浮动偏移量left/right设置为50%4)margin设置为宽度一半乘以-1
-4. absolute元素
-    <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
-        <span class="class">.absolute_center</span><span class="rules">{
-            <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;
-            <span class="rule"><span class="attribute">overflow</span>:<span class="value"> auto</span></span>;
-            <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">800px</span></span></span>;
-            <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">600px</span></span></span>;
-            <span class="comment">/*
-            margin: auto;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            */</span>
-            <span class="rule"><span class="attribute">margin-left</span>:<span class="value"> -<span class="number">400px</span></span></span>;
-            <span class="rule"><span class="attribute">left</span>:<span class="value"> <span class="number">50%</span></span></span>;
-            <span class="rule"><span class="attribute">background</span>:<span class="value">pink <span class="function">url</span>(<span class="string">"background.png"</span>) no-repeat center</span></span>;
-        }</span>
-        <span class="tag">p</span><span class="rules">{
-            <span class="rule"><span class="attribute">color</span>:<span class="value"> white</span></span>;
-            <span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span></span>;
-            <span class="comment">/*vertical-align: center;//针对行内可替换元素*/</span>
-            <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">600px</span></span></span>; 
-        }</span>
-        <span class="pseudo">::selection</span><span class="rules">{
-            <span class="rule"><span class="attribute">color</span>:<span class="value"> red</span></span>;
-        }</span>
-    </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"absolute_center"</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">p</span>&gt;</span>完全居中<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-5. flexbox实现绝对居中
-    .centerbox {
-        width: 350px;
-        height: 95px;
-        font-size: 14px;
-        border: 1px solid #555;
-        background: #CFC;        
-        display: box;
-        box-orient: horizontal;
-        box-pack: center;
-        box-align: center;
-    }
-6. 使用transform属性
-    .center_horizontal {
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    .center_vertical {
-        position: relative;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-7. 固定尺寸的img 在固定尺寸的div中怎么水平居中，竖直居中；引申：不定尺寸的img 在固定尺寸的div中怎么水平居中，竖直居中, 写出img 和 div的css规则
-    div{
-        width: 800px;
-        height: 600px;
-        border: 1px solid red;
-        position: relative;
-    }    
-    img{
-        /*
-        width: 400px;
-        height: 400px;
-        margin-left: 200px;
-        margin-top: 100px;
-        */
-        position: absolute;
-        margin: auto;
-        top: 0;            
-        right: 0;
-        bottom: 0;
-        left: 0;
-    }
+</ul>
+<h3 id="Normal_Flow">Normal Flow</h3><p>normal flow（正常流）是默认的定位方式，任何没有绝对定位（<code>position: absolute</code>或<code>position: fixed</code>）或浮动（<code>float: left/right</code>）的元素都将获得此属性。在这种方式下，块级元素在他们的包含块里一个一个垂直延伸，行内元素在他们的包含块里从左至右的水平排布。</p>
+<h3 id="BFC">BFC</h3><p>BFC：块级格式化上下文，可以看做是隔离了的独立容器，是W3C CSS2.1规范中的一个概念，在CSS3中被修改为flow root</p>
+<ol>
+<li><p>如何创建BFC：</p>
+<ul>
+<li>根元素默认拥有BFC特性    </li>
+<li>浮动元素：<code>float: left | right</code>    </li>
+<li>绝对定位元素：<code>position: absolute | fixed</code>    </li>
+<li>表格的单元格、标题或行内块元素：<code>display: table-cell | table-caption | inline-block</code>    </li>
+<li><p>overflow不为visible的元素：<code>overflow: hidden | auto | scroll</code></p>
+<pre><code>子元素不会溢出：
+&lt;<span class="keyword">div</span> <span class="property">id</span>=<span class="string">"a"</span>&gt;
+    &lt;<span class="keyword">div</span> <span class="property">id</span>=<span class="string">"b"</span>&gt;...&lt;/<span class="keyword">div</span>&gt;
+    ...
+&lt;/<span class="keyword">div</span>&gt;
+<span class="comment">#a{</span>
+    overflow: hidden;
+}
+<span class="comment">#b{</span>
+    max-width: <span class="number">100</span>%;
+}
 </code></pre></li>
 </ul>
-<h3 id="float元素">float元素</h3><ul>
-<li><p>取值为 left/right</p>
 </li>
-<li><p><a href="http://www.xiaojunxie.com/2015/09/18/%E4%BB%8A%E6%97%A5%E5%A4%B4%E6%9D%A1%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AF%95%E9%A2%98/#闭合浮动">解决float元素引起的父元素高度塌陷</a></p>
-<pre><code>/<span class="keyword">*</span><span class="keyword">*</span>
+<li><p>作用：</p>
+<ul>
+<li>阻止父子元素的外边距margin折叠    </li>
+<li>不会重叠浮动元素    </li>
+<li><p>可以包含浮动元素</p>
+<p>通俗的来说，触发了BFC的元素就是一个独立的盒子，里面的子元素不会在布局上影响外面的元素，反之亦然，同时，BFC仍属于普通流</p>
+</li>
+</ul>
+</li>
+<li><p>IE6-7</p>
+<p> 在IE6-7中显示引擎使用的是布局layout这个概念，当我们说一个元素拥有layout的时候，是指其hasLayout属性为true，拥有布局的元素负责本身和其子元素的尺寸设置和定位</p>
+<p> 如何触发hasLayout：</p>
+<ul>
+<li><code>position: absolute</code>    </li>
+<li><code>float: left | right</code>    </li>
+<li><code>display: inline-block</code>    </li>
+<li>width: 除auto以外的任意值    </li>
+<li>height: 除auto以外的任意值，如height: 1%    </li>
+<li>zoom: 除normal以外的任意值    </li>
+<li>IE7中 <code>overflow: hidden | auto | scroll</code></li>
+</ul>
+</li>
+<li><p>行为</p>
+<p> 创建了BFC的元素会按照如下方式对其子元素进行排列：</p>
+<ul>
+<li>在BFC中，盒子从顶端开始垂直地一个接一个地排列，两个盒子之间的垂直的间隙是由他们的margin值所决定的。在一个BFC中，两个相邻的块级盒子的垂直外边距会产生折叠</li>
+<li>在BFC中，<strong>每个盒子的左外边缘<code>margin-left</code>会触碰到容器的左边缘<code>border-left</code></strong>，即使存在浮动也是如此，除非这个子元素本身也创建了一个新的BFC</li>
+</ul>
+</li>
+</ol>
+<h3 id="margin折叠">margin折叠</h3><blockquote>
+<p>外边距重叠是指，<strong>常规流中同一个BFC的两个块级元素上下毗邻且都定义了不为0的外边距值，没有padding和border将他们分开</strong>时，那么这两个元素之间的距离将小于二者外边距的和。</p>
+</blockquote>
+<ul>
+<li>两个或多个毗邻的普通流中的块元素垂直方向上的margin折叠  </li>
+<li>浮动元素/inline-block/绝对定位元素的margin不会和垂直方向上的其他元素折叠  </li>
+<li>创建了BFC的元素不会和他的子元素发生margin折叠  </li>
+<li>元素自身的margin-top和margin-bottom相临时也会折叠</li>
+</ul>
+<h4 id="计算">计算</h4><ul>
+<li>都是正值，取绝对值最大的  </li>
+<li>都是负值，取绝对值最大的  </li>
+<li>有正有负，取绝对值最大的正和绝对值最大的负相加</li>
+</ul>
+<h3 id="元素绝对居中">元素绝对居中</h3><ul>
+<li>float元素：1)元素设置宽度 2)<code>position: relative</code> 3)left/right设置为50% 4)margin设置为宽度一半乘以-1</li>
+<li>absolute元素<ul>
+<li>1)元素设置宽度 2)left/right设置为50% 3)margin设置为宽度一半乘以-1</li>
+<li>1)元素设置宽度 2)<code>top: 0; right: 0; bottom: 0; left: 0;</code> 3)<code>margin: auto;</code></li>
+</ul>
+</li>
+<li>行内元素<ul>
+<li>水平居中：父元素设置<code>text-align: center</code></li>
+<li>单行时垂直居中：行内可替换元素父元素设置<code>vertical-align: center;</code>，否则父元素设置<code>line-height</code>为其高度</li>
+</ul>
+</li>
+<li>块级元素：1)元素设置宽度 2)<code>margin:0 auto</code> 3)IE6下父元素设置<code>text-align: center</code>,再给子元素恢复需要的值</li>
+<li>不设置宽度时：<code>transform: translateX(-50%);</code></li>
+<li><p>使用flexbox</p>
+<pre><code>  <span class="class">.centerbox</span> <span class="rules">{
+    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">350px</span></span></span>;
+    <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">95px</span></span></span>;
+    <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">14px</span></span></span>;
+    <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#555</span></span></span>;
+    <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#CFC</span></span></span>;        
+    <span class="rule"><span class="attribute">display</span>:<span class="value"> box</span></span>;
+    <span class="rule"><span class="attribute">box-orient</span>:<span class="value"> horizontal</span></span>;
+    <span class="rule"><span class="attribute">box-pack</span>:<span class="value"> center</span></span>;
+    <span class="rule"><span class="attribute">box-align</span>:<span class="value"> center</span></span>;
+}</span>
+</code></pre></li>
+</ul>
+<h3 id="固定尺寸的img_在固定尺寸的div中怎么水平居中，竖直居中；引申：不定尺寸的img_在固定尺寸的div中怎么水平居中，竖直居中,_写出img_和_div的css规则">固定尺寸的img 在固定尺寸的div中怎么水平居中，竖直居中；引申：不定尺寸的img 在固定尺寸的div中怎么水平居中，竖直居中, 写出img 和 div的css规则</h3><pre><code><span class="tag">div</span><span class="rules">{
+    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">800px</span></span></span>;
+    <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">600px</span></span></span>;
+    <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1px</span> solid red</span></span>;
+    <span class="rule"><span class="attribute">position</span>:<span class="value"> relative</span></span>;
+}</span>    
+<span class="tag">img</span><span class="rules">{
+    <span class="comment">/*
+    width: 400px;
+    height: 400px;
+    margin-left: 200px;
+    margin-top: 100px;
+    */</span>
+    <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;
+    <span class="rule"><span class="attribute">margin</span>:<span class="value"> auto</span></span>;
+    <span class="rule"><span class="attribute">top</span>:<span class="value"> <span class="number">0</span></span></span>;            
+    <span class="rule"><span class="attribute">right</span>:<span class="value"> <span class="number">0</span></span></span>;
+    <span class="rule"><span class="attribute">bottom</span>:<span class="value"> <span class="number">0</span></span></span>;
+    <span class="rule"><span class="attribute">left</span>:<span class="value"> <span class="number">0</span></span></span>;
+}</span>
+</code></pre><h3 id="解决float元素引起的父元素高度塌陷"><a href="/2015/09/18/%E4%BB%8A%E6%97%A5%E5%A4%B4%E6%9D%A1%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AF%95%E9%A2%98/#闭合浮动">解决float元素引起的父元素高度塌陷</a></h3><pre><code>/<span class="keyword">*</span><span class="keyword">*</span>
 <span class="keyword">*</span> 在标准浏览器下使用
 <span class="keyword">*</span> 1 content内容为空格用于修改opera浏览器下文档中出现contentEditable属性时在清理浮动元素上下的空白
 <span class="keyword">*</span> 2 使用display:table可以防止容器和子元素top-margin折叠，这样能使清理效果与BFC，IE6/7下的zoom：1一致
@@ -640,120 +662,116 @@
 .clearfix {
     <span class="keyword">*</span>zoom: 1;
 }
-</code></pre></li>
-</ul>
-<h2 id="web中的图标">web中的图标</h2><p>随着时代的变迁和技术的不断革新，在当今这个时代，web中的图标不再仅仅是局限于图片，还有雪碧图、字体图标、SVG图标等。对于设计师而言，他们关心的是像素的完美和体验的一致性，而前端开发工程师则更为关心页面的可访问性、性能重构灵活性、可复用性、可维护性等。如何根据不同的DPI展示不同规格的图标素材也是个难题。</p>
+</code></pre><h3 id="flexbox"><a href="http://www.w3cplus.com/css3/a-visual-guide-to-css3-flexbox-properties.html" target="_blank" rel="external">flexbox</a></h3><p><a href="/works/two_columns.html">使用css实现两栏布局，左侧宽度固定，右侧自适应</a>，关于使用正padding和负margin对冲实现多列等高布局时，所有列都设置相同的正的上/下padding和负的上/下margin，并在所有列外面添加一个容器，并设置overflow: hidden把溢出背景切掉。这种方法并不是自适应高度的实现，只是利用了overflow: hidden来隐藏每个列的多余部分。给所有列先设置了一个10000px的空白占位高度，把整个div往上挤了10000px，然后又通过负margin将所有列往下挪了10000px。细节请戳→→<a href="/2015/09/13/%E4%BB%8E%E8%B4%9Fmargin%E5%88%B0css%E7%9B%92%E6%A8%A1%E5%9E%8B/">从负margin到css盒模型</a></p>
+<h4 id="方法1">方法1</h4><pre><code><span class="class">.parent</span> {
+    <span class="attribute">overflow</span>: hidden;
+}
+<span class="class">.left</span> {
+    <span class="attribute">float</span>: left;
+    <span class="attribute">width</span>: <span class="number">200px</span>;
+    <span class="attribute">margin-right</span>: <span class="number">10px</span>;
+    <span class="attribute">padding-bottom</span>: <span class="number">10000px</span>;
+    <span class="attribute">margin-bottom</span>: -<span class="number">10000px</span>;
+}
+<span class="class">.main</span> {
+    <span class="comment">//width: 100%;</span>
+    <span class="comment">//margin-left: 210px;</span>
+    <span class="attribute">overflow</span>: hidden;
+    <span class="attribute">padding-bottom</span>: <span class="number">10000px</span>;
+    <span class="attribute">margin-bottom</span>: -<span class="number">10000px</span>;
+}
+</code></pre><h4 id="方法2">方法2</h4><pre><code><span class="class">.parent</span> <span class="rules">{
+    <span class="rule"><span class="attribute">display</span>:<span class="value"> -webkit-box</span></span>;
+    <span class="rule"><span class="attribute">display</span>:<span class="value"> box</span></span>;
+}</span>
+<span class="class">.left</span> <span class="rules">{
+    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">200px</span></span></span>;
+    <span class="rule"><span class="attribute">margin-right</span>:<span class="value"> <span class="number">10px</span></span></span>;
+}</span>
+<span class="class">.main</span> <span class="rules">{
+    <span class="rule"><span class="attribute">-webkit-box-flex</span>:<span class="value"> <span class="number">1</span></span></span>;
+    <span class="rule"><span class="attribute">box-flex</span>:<span class="value"> <span class="number">1</span></span></span>;
+}</span>
+</code></pre><h2 id="web中的图标">web中的图标</h2><p>随着时代的变迁和技术的不断革新，在当今这个时代，web中的图标不再仅仅是局限于图片，还有雪碧图、字体图标、SVG图标等。对于设计师而言，他们关心的是像素的完美和体验的一致性，而前端开发工程师则更为关心页面的可访问性、性能、重构灵活性、可复用性、可维护性等。如何根据不同的DPI展示不同规格的图标素材也是个难题。</p>
 <h3 id="图片">图片</h3><ul>
 <li><p>优点</p>
 <ol>
-<li><p>更换简单</p>
-</li>
-<li><p>图标大小易掌握</p>
-</li>
+<li>更换简单    </li>
+<li>图标大小易掌握</li>
 </ol>
 </li>
 <li><p>缺点</p>
 <ol>
-<li><p>增加HTTP请求数</p>
-</li>
-<li><p>不易适配各种终端和分辨率，可能会造成图标模糊</p>
-</li>
-<li><p>不易修改图标样式，比如颜色、阴影等</p>
-</li>
-<li><p>不易维护</p>
-</li>
+<li>增加HTTP请求数    </li>
+<li>不易适配各种终端和分辨率，可能会造成图标模糊    </li>
+<li>不易修改图标样式，比如颜色、阴影等    </li>
+<li>不易维护</li>
 </ol>
 </li>
 </ul>
 <h3 id="雪碧图_Sprites">雪碧图 Sprites</h3><ul>
 <li><p>优点</p>
 <ol>
-<li><p>将图标合成，减少HTTP请求数</p>
-</li>
-<li><p>可以是任意图形、任意色彩</p>
-</li>
-<li><p>兼容性好</p>
-</li>
-<li><p>可以使用<code>background-size</code>属性调整图标大小</p>
-</li>
+<li>将图标合成，减少HTTP请求数    </li>
+<li>可以是任意图形、任意色彩    </li>
+<li>兼容性好    </li>
+<li>可以使用<code>background-size</code>属性调整图标大小</li>
 </ol>
 </li>
 <li><p>缺点</p>
 <ol>
-<li><p>增加开发时间，合成需要人工成本</p>
-</li>
-<li><p>增加维护成本</p>
-</li>
+<li>增加开发时间，合成需要人工成本    </li>
+<li>增加维护成本</li>
 </ol>
 </li>
 </ul>
 <h3 id="字体图标_iconfont">字体图标 iconfont</h3><ul>
 <li><p>优点</p>
 <ol>
-<li><p>减少HTTP请求</p>
-</li>
-<li><p>可以使用font属性修改大小、颜色等</p>
-</li>
-<li><p>体积小</p>
-</li>
+<li>减少HTTP请求    </li>
+<li>可以使用font属性修改大小、颜色等        </li>
+<li>体积小</li>
 </ol>
 </li>
 <li><p>缺点</p>
 <ol>
-<li><p>显示位置和大小受限于制作的icon</p>
-</li>
-<li><p>不兼容旧的手机浏览器</p>
-</li>
+<li>显示位置和大小受限于制作的icon    </li>
+<li>不兼容旧的手机浏览器</li>
 </ol>
 </li>
 </ul>
 <h3 id="SVG">SVG</h3><ul>
 <li><p>优点</p>
 <ol>
-<li><p>矢量图形文件，可以随意修改大小，不影响图片质量</p>
-</li>
-<li><p>可以使用CSS样式来定义图标颜色、尺寸等</p>
-</li>
-<li><p>所有的SVG图标在一个SVG文件中，节省HTTP请求</p>
-</li>
-<li><p>支持gzip压缩</p>
-</li>
+<li>矢量图形文件，可以随意修改大小，不影响图片质量    </li>
+<li>可以使用CSS样式来定义图标颜色、尺寸等    </li>
+<li>所有的SVG图标在一个SVG文件中，节省HTTP请求    </li>
+<li>支持gzip压缩</li>
 </ol>
 </li>
 <li><p>缺点</p>
 <ol>
-<li><p>兼容性差</p>
-</li>
-<li><p>需要额外的学习成本</p>
-</li>
+<li>兼容性差    </li>
+<li>需要额外的学习成本</li>
 </ol>
 </li>
 </ul>
 <h3 id="Data_URL">Data URL</h3><ul>
-<li><p>优点：不增加请求数</p>
-</li>
+<li>优点：不增加请求数</li>
 <li><p>缺点</p>
 <ol>
-<li><p>通常比图片大</p>
-</li>
-<li><p>每次加载需要解码</p>
-</li>
-<li><p>难以维护</p>
-</li>
+<li>通常比图片大      </li>
+<li>每次加载需要解码      </li>
+<li>难以维护</li>
 </ol>
 </li>
 </ul>
 <h3 id="选择">选择</h3><ol>
-<li><p>如果需要的是信息丰富的图片，而不仅仅是图标，那么使用 <strong>图片</strong></p>
-</li>
-<li><p>如果不是展示类图形，而是装饰性的图形，一般不随意改动，可以考虑使用 <strong>png 雪碧图</strong></p>
-</li>
-<li><p>如果图标需要适配于高分辨率环境下，可以考虑使用 <strong>SVG 雪碧图</strong></p>
-</li>
-<li><p>仅仅是需要Icon这些小图标，并且可以做一些个性化样式，可以考虑使用 <strong>Icon Font</strong></p>
-</li>
-<li><p>仅仅需要图标更具扩展性，又不希望加载额外的图标，可以考虑在页面中直接使用 SVG代码绘制的矢量图</p>
-</li>
+<li>如果需要的是信息丰富的图片，而不仅仅是图标，那么使用 <strong>图片</strong></li>
+<li>如果不是展示类图形，而是装饰性的图形，一般不随意改动，可以考虑使用 <strong>png 雪碧图</strong></li>
+<li>如果图标需要适配于高分辨率环境下，可以考虑使用 <strong>SVG 雪碧图</strong></li>
+<li>仅仅是需要Icon这些小图标，并且可以做一些个性化样式，可以考虑使用 <strong>Icon Font</strong></li>
+<li>仅仅需要图标更具扩展性，又不希望加载额外的图标，可以考虑在页面中直接使用 SVG代码绘制的矢量图</li>
 </ol>
 <h2 id="使用文字替换图片技术→有利于SEO">使用文字替换图片技术→有利于SEO</h2><pre><code>&lt;h2&gt;&lt;span&gt;Hello world&lt;/span&gt;&lt;/h2&gt;
 h2{
@@ -790,7 +808,51 @@ h2 span{
     width: 100%<span class="comment">;</span>
     height: 100%<span class="comment">;</span>
 }
-</code></pre><h2 id="CSS_hack技术">CSS hack技术</h2><ul>
+</code></pre><h2 id="CSS_选择器">CSS 选择器</h2><h3 id="匹配顺序">匹配顺序</h3><p>从右往左</p>
+<h3 id="匹配规则">匹配规则</h3><p>根据主选择器进行划分，包括ID规则，class规则，标签规则，<code>*</code>规则</p>
+<h3 id="写法">写法</h3><ul>
+<li><p>css 组合选择器</p>
+<ul>
+<li>后代选择器 div p        </li>
+<li>子元素选择器 div&gt;p</li>
+<li>相邻兄弟选择器 div+p 相邻的兄弟</li>
+<li>普通兄弟选择器 div~p 返回一组值</li>
+</ul>
+</li>
+<li><p>css 伪类</p>
+<ul>
+<li>:link :visited :hover :active(顺序很重要)    </li>
+<li>:first-child :nth-child(expression)</li>
+<li>:focus :blur</li>
+<li>:not :have</li>
+</ul>
+</li>
+<li><p>css 伪元素</p>
+<ul>
+<li>:first-letter :first-line        </li>
+<li>:before :after        </li>
+<li><p>::selection 匹配突出显示的文本 只接受2个属性：background和color</p>
+<ol>
+<li>注意伪元素和伪类的区别：first-letter vs first-child</li>
+<li>nth-of-type vs nth-child<br> ele:nth-of-type(n)是指父元素下第n个ele子元素<br> ele:nth-child(n)是指父元素下的第n个子元素，若类型为ele则命中，否则选择失败</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>css 属性选择器</p>
+<ul>
+<li>[attribute]            </li>
+<li>[attribute = value]    </li>
+<li>[attribute ~= value]包含    </li>
+<li>[attribute *= value]包含    </li>
+<li>[attribute |= value]以value开头且必须是一个单词</li>
+<li>[attribute ^= value]以value开头    </li>
+<li>[attribute $= value]以value结尾    </li>
+<li>[:checked] [:selected]</li>
+</ul>
+</li>
+</ul>
+<h2 id="CSS_hack技术">CSS hack技术</h2><ul>
 <li><p>属性前缀法(即类内部Hack)：例如 IE6能识别下划线<code>_</code>和星号<code>*</code>，IE7能识别星号<code>*</code>，但不能识别下划线<code>_</code>，IE6~IE10都认识<code>\9</code>，但firefox上述三个都不认识</p>
 </li>
 <li><p>选择器前缀法(即选择器Hack)：例如 IE6能识别<code>*html .class{}</code>，IE7能识别<code>*+html .class{}或者*:first-child+html .class{}</code></p>
@@ -798,184 +860,20 @@ h2 span{
 <li><p>IE条件注释法(即HTML条件注释Hack)：针对所有IE(注：IE10+已经不再支持条件注释)： <code>&lt;!--[if IE]&gt;IE浏览器显示的内容 &lt;![endif]--&gt;</code>，针对IE6及以下版本：<code>&lt;!--[if lt IE 6]&gt;只在IE6-显示的内容 &lt;![endif]--&gt;</code>。这类Hack不仅对CSS生效，对写在判断语句里面的所有代码都会生效。</p>
 </li>
 </ul>
-<h2 id="CSS_选择器">CSS 选择器</h2><h3 id="匹配顺序">匹配顺序</h3><p>从右往左</p>
-<h3 id="匹配规则">匹配规则</h3><p>根据主选择器进行划分，包括ID规则，class规则，标签规则，<code>*</code>规则</p>
-<h3 id="写法">写法</h3><ul>
-<li><p>css 组合选择器</p>
-<ul>
-<li><p>后代选择器 div p</p>
-</li>
-<li><p>子元素选择器 div&gt;p</p>
-</li>
-<li><p>相邻兄弟选择器 div+p 相邻的兄弟</p>
-</li>
-<li><p>普通兄弟选择器 div~p 返回一组值</p>
-</li>
-</ul>
-</li>
-<li><p>css 伪类</p>
-<ul>
-<li><p>:link :visited :hover :active(顺序很重要)</p>
-</li>
-<li><p>:first-child :nth-child(expression)</p>
-</li>
-<li><p>:focus :blur</p>
-</li>
-<li><p>:not :have</p>
-</li>
-</ul>
-</li>
-<li><p>css 伪元素</p>
-<ul>
-<li><p>:first-letter :first-line</p>
-</li>
-<li><p>:before :after</p>
-</li>
-<li><p>::selection 匹配突出显示的文本 只接受2个属性：background和color</p>
-<ol>
-<li><p>注意伪元素和伪类的区别：first-letter vs first-child</p>
-</li>
-<li><p>nth-of-type vs nth-child<br> ele:nth-of-type(n)是指父元素下第n个ele子元素<br> ele:nth-child(n)是指父元素下的第n个子元素，若类型为ele则命中，否则选择失败</p>
-</li>
-</ol>
-</li>
-</ul>
-</li>
-<li><p>css 属性选择器</p>
-<ul>
-<li><p>[attribute]</p>
-</li>
-<li><p>[attribute = value]</p>
-</li>
-<li><p>[attribute ~= value]包含</p>
-</li>
-<li><p>[attribute *= value]包含</p>
-</li>
-<li><p>[attribute |= value]以value开头且必须是一个单词</p>
-</li>
-<li><p>[attribute ^= value]以value开头</p>
-</li>
-<li><p>[attribute $= value]以value结尾</p>
-</li>
-<li><p>[:checked] [:selected]    </p>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="CSS盒模型">CSS盒模型</h2><p><img src="http://osmn00.com/d/file/blog/front-end/2010-10-16/23ed2c1db2a91fe6d080f8359b634fac.gif" alt="image"></p>
-<h3 id="W3C盒模型">W3C盒模型</h3><pre><code>总宽度 = <span class="attribute">margin-left</span> + <span class="attribute">border-left</span> + <span class="attribute">padding-left</span> + <span class="attribute">width</span> + <span class="attribute">padding-right</span> + <span class="attribute">border-right</span> + <span class="attribute">margin-right</span>
-内容宽度 = <span class="attribute">width</span>
-</code></pre><h3 id="IE_quirks_mode">IE quirks mode</h3><pre><code>总宽度 = <span class="attribute">margin-left</span> + <span class="attribute">width</span> + <span class="attribute">margin-right</span>
-内容宽度 = <span class="attribute">width</span> - (<span class="attribute">border-left</span> + <span class="attribute">padding-left</span> + <span class="attribute">padding-right</span> + <span class="attribute">border-right</span>)
-</code></pre><h3 id="css3:_box-sizing">css3: box-sizing</h3><p>CSS3中可以使用box-sizing改变盒模型</p>
-<ul>
-<li><p>content-box：默认值，这是标准的盒模型，width和height是内容区的宽和高</p>
-</li>
-<li><p>padding-box：width和height包括内边距</p>
-</li>
-<li><p>border-box：width和height包括内边距和边框，这也是<em>IE怪异模式</em>使用的盒模型</p>
-</li>
-</ul>
-<h3 id="margin折叠">margin折叠</h3><blockquote>
-<p>外边距重叠是指，当两个元素上下毗邻且都定义了不为0的外边距值，同时有没有任何内边距、边框等设定，那么这两个元素之间的距离将小于二者外边距的和。</p>
-</blockquote>
-<ul>
-<li><p>两个或多个毗邻的普通流中的块元素垂直方向上的margin折叠</p>
-</li>
-<li><p>浮动元素/inline-block/绝对定位元素的margin不会和垂直方向上的其他元素折叠</p>
-</li>
-<li><p>创建了BFC的元素不会和他的子元素发生margin折叠</p>
-</li>
-<li><p>元素自身的margin-top和margin-bottom相临时也会折叠</p>
-</li>
-</ul>
-<h4 id="计算">计算</h4><ul>
-<li><p>都是正值，取绝对值最大的</p>
-</li>
-<li><p>都是负值，取绝对值最大的</p>
-</li>
-<li><p>有正有负，取绝对值最大的正合绝对值最大的负相加</p>
-</li>
-</ul>
-<h3 id="BFC">BFC</h3><p>BFC：块级格式化上下文，可以看做是隔离了的独立容器</p>
-<ol>
-<li><p>如何触发BFC：</p>
-<ul>
-<li><p>根元素默认拥有BFC特性</p>
-</li>
-<li><p><code>float: left | right</code></p>
-</li>
-<li><p><code>overflow: hidden | auto | scroll</code></p>
-</li>
-<li><p><code>display: table-cell | table-caption | inline-block</code></p>
-</li>
-<li><p><code>position: absolute | fixed</code></p>
-<pre><code>子元素不会溢出：
-&lt;<span class="keyword">div</span> <span class="property">id</span>=<span class="string">"a"</span>&gt;
-    &lt;<span class="keyword">div</span> <span class="property">id</span>=<span class="string">"b"</span>&gt;...&lt;/<span class="keyword">div</span>&gt;
-    ...
-&lt;/<span class="keyword">div</span>&gt;
-<span class="comment">#a{</span>
-    overflow: hidden;
-}
-<span class="comment">#b{</span>
-    max-width: <span class="number">100</span>%;
-}
-</code></pre></li>
-</ul>
-</li>
-<li><p>作用：</p>
-<ul>
-<li><p>阻止父子元素的外边距margin折叠</p>
-</li>
-<li><p>不会重叠浮动元素</p>
-</li>
-<li><p>可以包含浮动元素</p>
-<p>通俗的来说，触发了BFC的元素就是一个独立的盒子，里面的子元素不会在布局上影响外面的元素，反之亦然，同时，BFC仍属于普通流</p>
-</li>
-</ul>
-</li>
-<li><p>IE6-7</p>
-<p> 在IE6-7中显示引擎使用的是布局layout这个概念，当我们说一个元素拥有layout的时候，是指其hasLayout属性为true，拥有布局的元素负责本身和其子元素的尺寸设置和定位</p>
-<p> 如何触发hasLayout：</p>
-<ul>
-<li><p><code>position: absolute</code></p>
-</li>
-<li><p><code>float: left | right</code></p>
-</li>
-<li><p><code>display: inline-block</code></p>
-</li>
-<li><p>width: 除auto以外的任意值</p>
-</li>
-<li><p>height: 除auto以外的任意值，如height: 1%</p>
-</li>
-<li><p>zoom: 除normal以外的任意值</p>
-</li>
-<li><p>IE7中 <code>overflow: hidden | auto | scroll</code></p>
-</li>
-</ul>
-</li>
-</ol>
-<h2 id="无样式内容闪烁_FOUC">无样式内容闪烁 FOUC</h2><h3 id="定义-1">定义</h3><p>使用@import引入CSS样式时，会导致某些页面以无样式显示页面内容的瞬间闪烁，这种现象被称为<em>文档样式短暂失效</em></p>
+<h2 id="无样式内容闪烁_FOUC">无样式内容闪烁 FOUC</h2><h3 id="定义-1">定义</h3><p>IE6使用@import引入CSS样式时，会导致某些页面以无样式显示页面内容的瞬间闪烁，这种现象被称为<em>文档样式短暂失效</em></p>
 <h3 id="如何避免">如何避免</h3><ul>
-<li><p>避免使用@import方式引入css</p>
-</li>
-<li><p>使用link标签将样式文件放到head部分</p>
-</li>
+<li>避免使用@import方式引入css  </li>
+<li>使用link标签将样式文件放到head部分</li>
 </ul>
 <h3 id="link和@import">link和@import</h3><ul>
-<li><p>link是HTML标签，@import是CSS方式</p>
-</li>
-<li><p>link最大限度支持并行下载，而@import过度嵌套会导致FOUC出现</p>
-</li>
-<li><p>link可以通过rel属性指定候选样式</p>
-</li>
-<li><p>浏览器对于link支持早于@import方式</p>
-</li>
+<li>link是HTML标签，@import是CSS方式  </li>
+<li>link最大限度支持并行下载，而@import过度嵌套会导致FOUC出现  </li>
+<li>link可以通过rel属性指定候选样式  </li>
+<li>浏览器对于link支持早于@import方式</li>
 </ul>
 <h2 id="CSS预处理器和CSS后处理器">CSS预处理器和CSS后处理器</h2><p>css作为一门标记型语言，语法相对简单，欠缺逻辑性，不方便维护和扩展，不利于复用。为了写出组织良好且易于维护的css代码，引入了CSS预处理器概念，变量、mixin、运算及函数的引用、嵌套等功能大大简化了CSS的编写，提高代码开发效率。</p>
 <p>CSS后处理器是对CSS进行处理，并最终生成CSS的预处理器，它属于广义上的 CSS 预处理器。我们很久以前就在用CSS后处理器了，最典型的例子是CSS压缩工具（如 clean-css等），还有最近比较火的 <em>Autoprefixer</em>，以 Can I Use 上的 浏览器支持数据为基础，自动处理兼容性问题。</p>
-<p>具体请戳 <a href="http://www.xiaojunxie.com/2015/09/18/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/">前端工具</a></p>
+<p>具体请戳 <a href="/2015/09/18/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/">前端工具</a></p>
 <pre><code><span class="variable">@base:</span> <span class="hexcolor">#f938ab</span>;
 <span class="class">.box-shadow</span>(<span class="variable">@style</span>, <span class="variable">@c</span>) <span class="keyword">when</span> (<span class="function">iscolor</span>(<span class="variable">@c</span>)) {
 <span class="attribute">-webkit-box-shadow</span>: <span class="variable">@style</span> <span class="variable">@c</span>;
@@ -1012,11 +910,9 @@ h2 span{
 </code></pre></li>
 </ul>
 <h2 id="CSS3_动画">CSS3 动画</h2><ul>
-<li><p>transform: translate/rotate/scale/skew/matrix</p>
-</li>
-<li><p>transition: property duration timing-function</p>
-</li>
-<li><p>animation: name duration timing-function delay iteration-count direction play-state</p>
+<li><code>transform: translate/rotate/scale/skew/matrix</code> </li>
+<li><code>transition: property duration timing-function(linear|ease|ease-in|ease-out|ease-in-out|cubic-bezier(a,b,c,d))</code></li>
+<li><p><code>animation: name duration timing-function delay iteration-count direction play-state</code></p>
 <pre><code><span class="class">.cylon_eye</span> <span class="rules">{
   <span class="rule"><span class="attribute">-webkit-animation</span>:<span class="value"> move_eye <span class="number">4s</span> linear <span class="number">0s</span> infinite alternate</span></span>;
      <span class="rule"><span class="attribute">-moz-animation</span>:<span class="value"> move_eye <span class="number">4s</span> linear <span class="number">0s</span> infinite alternate</span></span>;
@@ -1041,12 +937,14 @@ h2 span{
 }
 </code></pre></li>
 </ul>
-<h2 id="使用1、2、3、5个标签画红十字"><a href="http://www.xiaojunxie.com/works/red10.html">使用1、2、3、5个标签画红十字</a></h2><pre><code><span class="doctype">&lt;!DOCTYPE&gt;</span>
-<span class="tag">&lt;<span class="title">html</span>&gt;</span>
+<h2 id="使用1、2、3、5个标签画红十字"><a href="/works/red10.html">使用1、2、3、5个标签画红十字</a></h2><pre><code><span class="doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span>
 <span class="tag">&lt;<span class="title">head</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">style</span> <span class="attribute">type</span>=<span class="value">"text/css"</span>&gt;</span><span class="css">
+    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">title</span>&gt;</span>使用1、2、3、5个标签画红十字<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
         <span class="comment">/**包裹div样式*/</span>
-        <span class="tag">div</span><span class="class">.container</span><span class="rules">{        
+        <span class="class">.container</span><span class="rules">{        
             <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">150px</span></span></span>;        
             <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">150px</span></span></span>;        
             <span class="rule"><span class="attribute">float</span>:<span class="value">left</span></span>;        
@@ -1082,7 +980,7 @@ h2 span{
             <span class="rule"><span class="attribute">content</span>:<span class="value"><span class="string">""</span></span></span>;    
         }    
         <span class="comment">/**用2个div标签实现*/</span>    
-        <span class="tag">div</span><span class="class">.s_first</span><span class="rules">{        
+        <span class="class">.s_first</span><span class="rules">{        
             <span class="rule"><span class="attribute">position</span>:<span class="value">relative</span></span>;        
             <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">50px</span></span></span>;        
             <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">0px</span></span></span>;        
@@ -1090,7 +988,7 @@ h2 span{
             <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">50px</span></span></span>;        
             <span class="rule"><span class="attribute">background</span>:<span class="value">red</span></span>;    
         }</span>    
-        <span class="tag">div</span><span class="class">.s_second</span><span class="rules">{        
+        <span class="class">.s_second</span><span class="rules">{        
             <span class="rule"><span class="attribute">position</span>:<span class="value">relative</span></span>;        
             <span class="rule"><span class="attribute">top</span>:<span class="value">-<span class="number">50px</span></span></span>;        
             <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">50px</span></span></span>;        
@@ -1099,7 +997,7 @@ h2 span{
             <span class="rule"><span class="attribute">background</span>:<span class="value">red</span></span>;    
         }</span>    
         <span class="comment">/**用3个div标签实现*/</span>    
-        <span class="tag">div</span><span class="class">.t_first</span><span class="rules">{        
+        <span class="class">.t_first</span><span class="rules">{        
             <span class="rule"><span class="attribute">position</span>:<span class="value">relative</span></span>;        
             <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">0px</span></span></span>;        
             <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">50px</span></span></span>;        
@@ -1107,7 +1005,7 @@ h2 span{
             <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">150px</span></span></span>;        
             <span class="rule"><span class="attribute">background</span>:<span class="value">red</span></span>;    
         }</span>    
-        <span class="tag">div</span><span class="class">.t_second</span><span class="rules">{        
+        <span class="class">.t_second</span><span class="rules">{        
             <span class="rule"><span class="attribute">position</span>:<span class="value">relative</span></span>;        
             <span class="rule"><span class="attribute">top</span>:<span class="value">-<span class="number">100px</span></span></span>;        
             <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">0px</span></span></span>;        
@@ -1115,7 +1013,7 @@ h2 span{
             <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">50px</span></span></span>;        
             <span class="rule"><span class="attribute">background</span>:<span class="value">red</span></span>;    
         }</span>    
-        <span class="tag">div</span><span class="class">.t_third</span><span class="rules">{        
+        <span class="class">.t_third</span><span class="rules">{        
             <span class="rule"><span class="attribute">position</span>:<span class="value">relative</span></span>;        
             <span class="rule"><span class="attribute">top</span>:<span class="value">-<span class="number">150px</span></span></span>;        
             <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">100px</span></span></span>;        
@@ -1124,7 +1022,7 @@ h2 span{
             <span class="rule"><span class="attribute">background</span>:<span class="value">red</span></span>;    
         }</span>    
         <span class="comment">/**用5个div标签实现*/</span>    
-        <span class="tag">div</span><span class="class">.f_first</span><span class="rules">{        
+        <span class="class">.f_first</span><span class="rules">{        
             <span class="rule"><span class="attribute">position</span>:<span class="value">relative</span></span>;        
             <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">0px</span></span></span>;        
             <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">50px</span></span></span>;        
@@ -1132,7 +1030,7 @@ h2 span{
             <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">50px</span></span></span>;        
             <span class="rule"><span class="attribute">background</span>:<span class="value">red</span></span>;    
         }</span>    
-        <span class="tag">div</span><span class="class">.f_second</span><span class="rules">{        
+        <span class="class">.f_second</span><span class="rules">{        
             <span class="rule"><span class="attribute">position</span>:<span class="value">relative</span></span>;        
             <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">0px</span></span></span>;        
             <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">0px</span></span></span>;        
@@ -1140,7 +1038,7 @@ h2 span{
             <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">50px</span></span></span>;        
             <span class="rule"><span class="attribute">background</span>:<span class="value">red</span></span>;    
         }</span>    
-        <span class="tag">div</span><span class="class">.f_third</span><span class="rules">{        
+        <span class="class">.f_third</span><span class="rules">{        
             <span class="rule"><span class="attribute">position</span>:<span class="value">relative</span></span>;        
             <span class="rule"><span class="attribute">top</span>:<span class="value">-<span class="number">50px</span></span></span>;        
             <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">50px</span></span></span>;        
@@ -1148,7 +1046,7 @@ h2 span{
             <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">50px</span></span></span>;        
             <span class="rule"><span class="attribute">background</span>:<span class="value">red</span></span>;    
         }</span>    
-        <span class="tag">div</span><span class="class">.f_fourth</span><span class="rules">{        
+        <span class="class">.f_fourth</span><span class="rules">{        
             <span class="rule"><span class="attribute">position</span>:<span class="value">relative</span></span>;        
             <span class="rule"><span class="attribute">top</span>:<span class="value">-<span class="number">100px</span></span></span>;        
             <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">100px</span></span></span>;        
@@ -1156,7 +1054,7 @@ h2 span{
             <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">50px</span></span></span>;        
             <span class="rule"><span class="attribute">background</span>:<span class="value">red</span></span>;    
         }</span>    
-        <span class="tag">div</span><span class="class">.f_fifth</span><span class="rules">{        
+        <span class="class">.f_fifth</span><span class="rules">{        
             <span class="rule"><span class="attribute">position</span>:<span class="value">relative</span></span>;        
             <span class="rule"><span class="attribute">top</span>:<span class="value">-<span class="number">100px</span></span></span>;        
             <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">50px</span></span></span>;        
@@ -1167,16 +1065,21 @@ h2 span{
     </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
 <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
 <span class="tag">&lt;<span class="title">body</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"container"</span>&gt;</span>    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cross"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"container"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cross"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+
     <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"container"</span>&gt;</span>    
         <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"s_first"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>    
         <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"s_second"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
     <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+
     <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"container"</span>&gt;</span>    
         <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"t_first"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>    
         <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"t_second"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>    
         <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"t_third"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
     <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+
     <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"container"</span>&gt;</span>    
         <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"f_first"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>    
         <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"f_second"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>    
@@ -1195,7 +1098,7 @@ h2 span{
     <span class="rule"><span class="attribute">border-right</span>:<span class="value"> <span class="number">5px</span> solid transparent</span></span>;
     <span class="rule"><span class="attribute">border-bottom</span>:<span class="value"> <span class="number">5px</span> solid red</span></span>;
 }</span>
-</code></pre><h2 id="CSS+JS制作轮播"><a href="http://www.xiaojunxie.com/works/carousel.html">CSS+JS制作轮播</a></h2><h2 id="bootstrap实现轮播"><a href="http://www.xiaojunxie.com/works/carousel-bootstrap.html">bootstrap实现轮播</a></h2><h2 id="CSS_实现浮层">CSS 实现浮层</h2><pre><code>&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"modal"</span> <span class="property">id</span>=<span class="string">"zero"</span>&gt;
+</code></pre><h2 id="CSS+JS制作轮播"><a href="/works/carousel.html">CSS+JS制作轮播</a></h2><h2 id="bootstrap实现轮播"><a href="/works/carousel-bootstrap.html">bootstrap实现轮播</a></h2><h2 id="CSS_实现浮层">CSS 实现浮层</h2><pre><code>&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"modal"</span> <span class="property">id</span>=<span class="string">"zero"</span>&gt;
    &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"inner_modal"</span>&gt;
      &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"close"</span>&gt;x&lt;/<span class="keyword">div</span>&gt;
      &lt;img src=<span class="string">"images/div_by_zero.jpg"</span>&gt;
@@ -1238,7 +1141,7 @@ h2 span{
 <span class="rule"><span class="attribute">box-orient</span>:<span class="value"> vertical</span></span>;
 <span class="rule"><span class="attribute">-webkit-line-clamp</span>:<span class="value"> <span class="number">2</span></span></span>;
 </code></pre><h2 id="如何让height:100%起作用"><a href="http://www.webhek.com/css-100-percent-height" target="_blank" rel="external">如何让height:100%起作用</a></h2><p>根据W3C的规范，百分比的宽度/高度在设定时需要根据这个元素的父容器的宽度/高度去计算。如果不给宽度设置缺省值，设置<code>width: 100%</code>会占满整个横向宽度。而高度的计算却不是这样，浏览器根本不计算内容区的高度，除非内容超出了视窗范围，导致滚动条出现。换句话说，设置元素<code>height: 100%</code>时，父元素<code>height: auto</code>，计算时只会出现undefined结果，并没有任何卵用。想要使其起作用，就要对其所有的祖先元素设置<code>height: 100%</code>。</p>
-<p>高度自适应：绝对定位+top+<code>bottom:0</code> / IE6：html设置<code>padding-top</code></p>
+<p><a href="/works/height100persent.html">高度自适应：绝对定位+top+<code>bottom:0</code> / IE6：html设置<code>padding-top</code></a></p>
 <pre><code><span class="doctype">&lt;!DOCTYPE html&gt;</span>
 <span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span>
 <span class="tag">&lt;<span class="title">head</span>&gt;</span>
@@ -1288,7 +1191,8 @@ h2 span{
     <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"main"</span>&gt;</span>我是main，高度随浏览器视区大小变化而变化<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
 <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
 <span class="tag">&lt;/<span class="title">html</span>&gt;</span>
-</code></pre><h1 id="Javascript–定义行为">Javascript–定义行为</h1><h2 id="数据">数据</h2><h3 id="javascript数据类型">javascript数据类型</h3><ul>
+</code></pre><h2 id="CSS_reset">CSS reset</h2><p>CSS reset文件可以重置浏览器对于HTML元素的默认样式，让各个浏览器的CSS样式有一个统一的基准。这是由于PC时代各种浏览器采用不同的标准，造成对于html标签的默认样式不同，样式难以统一。但是在跨入无线web时代后，尽管碎片化问题依然存在，但是无线web上各个厂商对很多规范都进行了支持，不一定需要reset，只需要做一个统一化处理，这就是著名的reset与normalize之争。</p>
+<h1 id="Javascript–定义行为">Javascript–定义行为</h1><h2 id="数据">数据</h2><h3 id="javascript数据类型">javascript数据类型</h3><ul>
 <li><p>null：表示对象没有声明，该处不应有值，典型的应用是作为函数的参数或者对象原型链的终点</p>
 </li>
 <li><p>undefined：表示缺少值，包括以下几种情况：</p>
@@ -1354,7 +1258,184 @@ h2 span{
 <span class="keyword">var</span> isString = isType(<span class="string">'String'</span>);
 <span class="keyword">var</span> isArray = isType(<span class="string">'Array'</span>);
 <span class="keyword">var</span> isObject = isType(<span class="string">'Object'</span>);
-</code></pre><h2 id="类和继承">类和继承</h2><h3 id="Javascript类">Javascript类</h3><p>Javascript是一种面向原型的语言，函数是javascript的一等公民。部分参考-&gt;<a href="http://web.jobbole.com/83372/" target="_blank" rel="external">理解Ecmascript 6中的类和继承</a></p>
+</code></pre><h2 id="字符串">字符串</h2><ul>
+<li>length  </li>
+<li>charAt()  </li>
+<li>concat()  </li>
+<li>indexOf()  </li>
+<li>match()：正则匹配，返回数组  </li>
+<li>repeat()  </li>
+<li>replace()：正则替换  </li>
+<li>search()：正则查找，同indexOf  </li>
+<li>slice()  </li>
+<li>split()：字符串-&gt;数组  </li>
+<li>startsWith()  </li>
+<li>substr(pos, length)  </li>
+<li>substring(start, end)  </li>
+<li>toLowerCase()  </li>
+<li>trim()</li>
+</ul>
+<h2 id="数组">数组</h2><ul>
+<li>length </li>
+<li>concat()：合并数组，可以有多个参数  </li>
+<li>join()：数组-&gt;字符串，字符串-&gt;数组：split()  </li>
+<li>pop()：删除最后一个元素  </li>
+<li>shift()：删除第一个元素  </li>
+<li>push()：末尾插入元素  </li>
+<li>unshift()：头部插入元素  </li>
+<li>reverse()：数组逆序  </li>
+<li>slice(start, end)：返回一个[start, end)的新数组，原数组不变  </li>
+<li><p>splice()</p>
+<pre><code>var arr1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];
+var arr2 = arr1.splice(<span class="number">0</span>, <span class="number">3</span>);
+console.<span class="built_in">log</span>(arr1, arr2);    <span class="comment">// [4] [1, 2, 3]</span>
+var arr3 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];
+arr3.splice(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);
+console.<span class="built_in">log</span>(arr3);            <span class="comment">// [0, 1, 2, 3, 4]</span>
+var arr4 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];
+arr4.splice(<span class="number">0</span>, <span class="number">1</span>, <span class="number">5</span>);
+console.<span class="built_in">log</span>(arr4);            <span class="comment">// [5, 2, 3, 4]</span>
+var arr5 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];
+arr5.splice(<span class="number">1</span>, <span class="number">3</span>);
+console.<span class="built_in">log</span>(arr5);            <span class="comment">// [1]</span>
+</code></pre></li>
+<li><p>sort()：排序</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">fillArray</span>(<span class="params">arr, start, end, num</span>) </span>{
+    start = start || <span class="number">1</span>;
+    end = end || <span class="number">100</span>;
+    num = num || <span class="number">10</span>;
+    <span class="keyword">var</span> width = end - start;
+    <span class="keyword">for</span>(<span class="keyword">var</span> i = num; i &gt; <span class="number">0</span>; --i) {
+        arr.push((~~(<span class="built_in">Math</span>.random()*width)+start));
+    }
+    <span class="keyword">return</span> arr;
+}
+<span class="function"><span class="keyword">function</span> <span class="title">normalize</span>(<span class="params">arr</span>) </span>{
+    <span class="keyword">if</span>(arr &amp;&amp; <span class="built_in">Array</span>.isArray(arr)) {
+        <span class="keyword">var</span> map = {};
+        <span class="keyword">for</span>(<span class="keyword">var</span> i = arr.length; i &gt;= <span class="number">0</span>; --i) {
+            <span class="keyword">if</span>(arr[i] <span class="keyword">in</span> map) {
+                arr.splice(i, <span class="number">1</span>);
+            } <span class="keyword">else</span> {
+                map[arr[i]] = <span class="literal">true</span>;
+            }
+        }
+    }
+    <span class="keyword">return</span> arr;
+}
+<span class="keyword">var</span> input = [];
+fillArray(input, <span class="number">1</span>, <span class="number">100</span>, <span class="number">10</span>);
+input.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>{
+    <span class="keyword">return</span> a-b;
+});
+normalize(input);
+</code></pre></li>
+</ul>
+<h2 id="日期">日期</h2><h3 id="创建">创建</h3><pre><code><span class="built_in">var</span> <span class="built_in">date</span> = <span class="literal">new</span> <span class="built_in">Date</span>();
+<span class="built_in">var</span> <span class="built_in">date</span> = <span class="literal">new</span> <span class="built_in">Date</span>(<span class="string">'December 11, 1990 19:30:00'</span>);
+<span class="built_in">var</span> <span class="built_in">date</span> = <span class="literal">new</span> <span class="built_in">Date</span>(<span class="string">'1990-12-11T19:30:00'</span>);
+<span class="built_in">var</span> <span class="built_in">date</span> = <span class="literal">new</span> <span class="built_in">Date</span>(<span class="number">1990</span>, <span class="number">12</span>, <span class="number">11</span>, <span class="number">19</span>, <span class="number">30</span>, <span class="number">0</span>);
+
+<span class="built_in">var</span> unixTimeStamp = <span class="built_in">Date</span><span class="built_in">.</span>now();
+<span class="built_in">var</span> unixTimeStamp = <span class="built_in">Date</span><span class="built_in">.</span>parse(<span class="built_in">date</span>);
+<span class="built_in">var</span> unixTimeStamp = +<span class="built_in">date</span>;
+</code></pre><h3 id="方法">方法</h3><ul>
+<li>getFullYear(): 4位年</li>
+<li>getMonth(): 0-11</li>
+<li>getDate(): 一个月的第几天</li>
+<li>getDay(): 一个星期第几天 1-7</li>
+<li>getHours(): 0-23</li>
+<li>getMinutes(): 0-59  </li>
+<li>getSeconds(): 0-59</li>
+</ul>
+<h2 id="正则">正则</h2><h3 id="创建-1">创建</h3><pre><code><span class="keyword">var</span> patt = <span class="keyword">new</span> <span class="built_in">RegExp</span>(pattern, modifiers);
+<span class="keyword">var</span> patt = <span class="regexp">/pattern/m</span>odifiers;        
+i - 修饰符是用来执行不区分大小写的匹配。
+g - 修饰符是用于执行全文的搜索（而不是在找到第一个就停止查找,而是找到所有的匹配）。
+</code></pre><h3 id="方法-1">方法</h3><ul>
+<li>exec 匹配正则，返回数组，未匹配返回null  </li>
+<li>test 匹配返回true</li>
+</ul>
+<h3 id="特殊字符">特殊字符</h3><pre><code>.    任意单个字符
+<span class="string">\w</span>    查找单词字符
+<span class="string">\W</span>    查找非单词字符
+<span class="string">\d</span>    查找数字
+<span class="string">\D</span>    查找非数字字符
+<span class="string">\s</span>    查找空白字符
+<span class="string">\S</span>    查找非空白字符
+<span class="string">\b</span>    单词边界
+<span class="string">\B</span>    非单词边界
+<span class="string">\0</span>    <span class="literal">null</span>字符
+<span class="string">\n</span>    查找换行符
+<span class="string">\f</span>    换页符
+<span class="string">\r</span>    回车符
+<span class="string">\t</span>    制表符
+<span class="string">\v</span>    垂直制表符
+<span class="string">\xxx</span>    八进制数
+<span class="string">\xdd</span>    <span class="number">16</span>进制数
+<span class="string">\uxxxx</span>    unicode字符
+n?    <span class="number">0</span>次或<span class="number">1</span>次
+?=n    其后紧跟n的字符串
+?!n    没有其后紧跟n的字符串
+?:  匹配pattern，但不捕获匹配结果，用做存在性检查
+</code></pre><h3 id="实例">实例</h3><pre><code>匹配中文字符的正则表达式：<span class="special">[</span><span class="command">\u</span>4e00-<span class="command">\u</span>9fa5<span class="command">\uF</span>900-<span class="command">\uFA</span>2D<span class="special">]</span>
+
+匹配特殊字符：(<span class="special">[</span>.*+?^<span class="formula">$<span class="special">{</span><span class="special">}</span>()|<span class="special">[</span><span class="command">\]</span><span class="command">\/</span><span class="command">\\</span><span class="special">]</span>)
+
+匹配空行的正则表达式：<span class="command">\n</span><span class="special">[</span><span class="command">\s</span>| <span class="special">]</span>*<span class="command">\r</span>
+
+匹配HTML标记的正则表达式：/&lt;(.*)&gt;.*&lt;<span class="command">\/</span>\1&gt;|&lt;(.*) <span class="command">\/</span>?&gt;/ or /^&lt;(<span class="command">\w</span>+)<span class="command">\s*</span><span class="command">\/</span>?&gt;(?:&lt;<span class="command">\/</span>\1&gt;|)$</span>/
+
+匹配首尾空格的正则表达式：(^<span class="command">\s*</span>)|(<span class="command">\s*</span><span class="formula">$)
+
+匹配Email地址的正则表达式：<span class="command">\w</span>+(<span class="special">[</span>-+.<span class="special">]</span><span class="command">\w</span>+)*@<span class="command">\w</span>+(<span class="special">[</span>-.<span class="special">]</span><span class="command">\w</span>+)*<span class="command">\.</span><span class="command">\w</span>+(<span class="special">[</span>-.<span class="special">]</span><span class="command">\w</span>+)*
+
+匹配网址URL的正则表达式：http://(<span class="special">[</span><span class="command">\w</span>-<span class="special">]</span>+<span class="command">\.</span>)+<span class="special">[</span><span class="command">\w</span>-<span class="special">]</span>+(/<span class="special">[</span><span class="command">\w</span>- ./?%<span class="special">&amp;</span>=<span class="special">]</span>*)?
+
+匹配帐号是否合法(字母开头，允许5-16字节，允许字母数字下划线)：^<span class="special">[</span>a-zA-Z<span class="special">]</span><span class="special">[</span>a-zA-Z0-9_<span class="special">]</span><span class="special">{</span>4,15<span class="special">}</span>$</span>
+
+匹配国内电话号码：<span class="command">\d</span><span class="special">{</span>3<span class="special">}</span>-<span class="command">\d</span><span class="special">{</span>8<span class="special">}</span>|<span class="command">\d</span><span class="special">{</span>4<span class="special">}</span>-<span class="command">\d</span><span class="special">{</span>7<span class="special">}</span>
+
+匹配腾讯QQ号：<span class="special">[</span>1-9<span class="special">]</span><span class="special">[</span><span class="command">\d</span><span class="special">]</span><span class="special">{</span>4,<span class="special">}</span>
+
+匹配中国邮政编码：<span class="special">[</span>1-9<span class="special">]</span><span class="command">\d</span><span class="special">{</span>5<span class="special">}</span>(?!<span class="command">\d</span>)
+
+匹配身份证：<span class="command">\d</span><span class="special">{</span>15<span class="special">}</span>|<span class="command">\d</span><span class="special">{</span>18<span class="special">}</span>
+
+匹配ip地址：(<span class="command">\d</span>+).(<span class="command">\d</span>+).(<span class="command">\d</span>+).(<span class="command">\d</span>+)，对<span class="formula">$1$</span>2<span class="formula">$3$</span>4进行分别验证
+
+用正则表达式限制只能输入数字：
+onkeyup="value=value.replace(/<span class="special">[</span>^<span class="command">\d</span><span class="special">]</span>/g,'')"
+onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/<span class="special">[</span>^<span class="command">\d</span><span class="special">]</span>/g,''))"
+
+匹配文件后缀名
+var pos = str.lastIndexOf(".");
+if(pos != -1)<span class="special">{</span>
+    return str.slice(pos+1);
+<span class="special">}</span>
+var pattern = /<span class="special">[</span>^<span class="command">\.</span><span class="special">]</span>*<span class="formula">$/;
+return pattern.exec(str);
+return str.match(pattern);
+
+判断是否是CSS文件
+var isCss = /.*<span class="command">\.</span>css(?=<span class="command">\?</span>|$</span>)/
+</code></pre><h3 id="非捕获型分组">非捕获型分组</h3><p>创建反向引用的分组，一般称为捕获型分组。反之，不会创建反向引用的分组就是非捕获型分组，分组多了会影响效率。</p>
+<pre><code><span class="keyword">var</span> str = <span class="string">"#123456"</span>;
+<span class="keyword">var</span> <span class="keyword">cap</span> = /#(\w+)/<span class="keyword">g</span>;
+<span class="keyword">var</span> nocap = /#(?:\w)/<span class="keyword">g</span>
+console.<span class="literal">log</span>(<span class="keyword">cap</span>.<span class="keyword">test</span>(str));     <span class="comment">// true</span>
+console.<span class="literal">log</span>(RegExp.<span class="label">$1</span>);            <span class="comment">// 123456</span>
+console.<span class="literal">log</span>(nocap.<span class="keyword">test</span>(str));    <span class="comment">// true</span>
+console.<span class="literal">log</span>(RegExp.<span class="label">$1</span>);            <span class="comment">// 空</span>
+</code></pre><h2 id="函数">函数</h2><p>在javascript中，函数是第一等公民，函数可以返回函数，词法上支持闭包。如何有效利用闭包和作用域是成为一个伟大的javascript开发者的关键。</p>
+<h3 id="函数柯里化"><a href="http://www.zhangxinxu.com/wordpress/2013/02/js-currying/" target="_blank" rel="external">函数柯里化</a></h3><p>柯里化是这样的一个转换过程，把接受多个参数的函数变换成接受一个单一参数的函数，如果其他的函数是必要时，返回接受余下的参数且返回结果的新函数。函数柯里化允许和鼓励分隔复杂功能变成更小更容易分析的部分。这些小的逻辑单元显然是更容易理解和测试的，然后你的应用就会变成干净而整洁的组合，由一些小单元组成的组合。</p>
+<ul>
+<li>柯里化是将多个参数合成一个object参数，这个object字段不是固定的，对于同一个函数来说，无论后期参数的顺序、数量、类型如何变化，接口部分是不变的，所以适合作为构造方法来用  </li>
+<li>柯里化可以解决动态参数的问题，在不需要改变接口的情况下可以新增不同特性，且对调用端透明，解决了js里面没有重载带来的一些麻烦  </li>
+<li>柯里化有3个典型应用：参数复用，提前返回、延迟计算  </li>
+<li>柯里化：把参数数组首个砍掉；反柯里化：把某个参数塞到参数数组的第一个。柯里化跟反柯里化都可以返回新函数，相比原函数，他们接受的参数一个是被砍头过的，一个是接头过的</li>
+</ul>
+<h2 id="类和继承">类和继承</h2><h3 id="Javascript类">Javascript类</h3><p>Javascript是一种面向原型的语言，函数是javascript的一等公民。部分参考-&gt;<a href="http://web.jobbole.com/83372/" target="_blank" rel="external">理解Ecmascript 6中的类和继承</a></p>
 <h4 id="ES5_类">ES5 类</h4><p>在ES5中，可以使用函数模拟类的实现。在javascript中，灵活的函数允许我们模拟常用于处理类的封装。通过这个技巧，可以扩展对象的原型。</p>
 <pre><code>function <span class="keyword">Animal</span>(name) {
     this.name = name;
@@ -1479,16 +1560,11 @@ console.<span class="built_in">log</span> <span class="params">(obj2.a)</span>;
 <h4 id="DOM标准事件模型">DOM标准事件模型</h4><p>同时支持上面两种事件模型，从document对象开始捕获事件，直到目标元素，然后再向上冒泡到document对象。（并非所有的事件都会经过冒泡阶段，例如focus事件和blur事件，都不会冒泡）</p>
 <p><img src="/event.png" alt="image"></p>
 <h3 id="标准事件模型和IE事件模型的区别">标准事件模型和IE事件模型的区别</h3><ol>
-<li><p>IE事件模型没有捕获阶段</p>
-</li>
-<li><p>IE事件模型中<code>event</code>是window的全局对象，而在DOM标准事件模型中是事件句柄的第一个参数</p>
-</li>
-<li><p>IE事件模型中<code>target</code>是<code>event.srcElement</code>，在DOM标准事件模型中是<code>event.target</code></p>
-</li>
-<li><p>IE事件模型中点击事件类型为<code>onclick</code>，DOM标准事件模型中是<code>click</code></p>
-</li>
-<li><p>事件监听函数不同：<code>attachEvent(&quot;onClick&quot;, eventListener)</code>和<code>addEventListener(&quot;click&quot;, eventListener, useCapture)</code>，其中第三个参数决定了监听函数执行时间，捕获阶段还是冒泡阶段</p>
-</li>
+<li>IE事件模型没有捕获阶段 </li>
+<li>IE事件模型中<code>event</code>是window的全局对象，而在DOM标准事件模型中是事件句柄的第一个参数 </li>
+<li>IE事件模型中<code>target</code>是<code>event.srcElement</code>，在DOM标准事件模型中是<code>event.target</code> </li>
+<li>IE事件模型中点击事件类型为<code>onclick</code>，DOM标准事件模型中是<code>click</code> </li>
+<li>事件监听函数不同：<code>attachEvent(&quot;onClick&quot;, eventListener)</code>和<code>addEventListener(&quot;click&quot;, eventListener, useCapture)</code>，其中第三个参数决定了监听函数执行时间，捕获阶段还是冒泡阶段</li>
 </ol>
 <h3 id="事件注册跨浏览器版">事件注册跨浏览器版</h3><pre><code>var EventUtil = {
     getEvent: <span class="function"><span class="keyword">function</span><span class="params">(event)</span> {</span>
@@ -1573,7 +1649,7 @@ EventUtil.on(ul, <span class="string">"click"</span>, function(<span class="keyw
 } <span class="keyword">catch</span>(e) {
     闭包
 }
-</code></pre><h3 id="实例">实例</h3><h4 id="计数器">计数器</h4><pre><code><span class="keyword">var</span> Counter = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+</code></pre><h3 id="实例-1">实例</h3><h4 id="计数器">计数器</h4><pre><code><span class="keyword">var</span> Counter = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
     <span class="keyword">var</span> count = <span class="number">0</span>;
     <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
         <span class="keyword">return</span> ++count;
@@ -1628,18 +1704,13 @@ setTimeout(function() {
 答案：<span class="number">12</span>(<span class="number">4</span>*<span class="number">3</span>) <span class="number">9</span>(<span class="number">3</span>*<span class="number">3</span>) <span class="number">6</span>(<span class="number">1</span>+<span class="number">2</span>+<span class="number">3</span>)
 </code></pre><h2 id="this">this</h2><h3 id="javascript中this的处理机制">javascript中this的处理机制</h3><p>javascript中有一套不同于其他语言的this的处理机制，在5种不同的情况下，this的指向各不相同。一般来说，函数在哪里调用this指哪里，唯一需要注意的就是new和call/apply。</p>
 <ol>
-<li><p>全局范围内this指的是window</p>
-</li>
-<li><p>函数调用时，this指的是window</p>
-</li>
-<li><p>方法调用时，this指的是调用此方法的对象</p>
-</li>
-<li><p>使用new调用构造函数创建对象时，函数内部的this指的是新创建的对象</p>
-</li>
-<li><p>使用apply和call显示指定this时，this指的是函数的第一个参数</p>
-</li>
+<li>全局范围内this指的是window  </li>
+<li>函数调用时，this指的是window  </li>
+<li>方法调用时，this指的是调用此方法的对象  </li>
+<li>使用new调用构造函数创建对象时，函数内部的this指的是新创建的对象  </li>
+<li>使用apply和call显示指定this时，this指的是函数的第一个参数</li>
 </ol>
-<h3 id="实例-1">实例</h3><pre><code>var n = <span class="number">0</span>;
+<h3 id="实例-2">实例</h3><pre><code>var n = <span class="number">0</span>;
 <span class="function"><span class="keyword">function</span> <span class="title">output</span><span class="params">()</span>{</span>
     console.<span class="built_in">log</span><span class="params">(this.n)</span>;
 }
@@ -1669,7 +1740,7 @@ var foo = {
 };
 <span class="params">(f=foo.bar)</span><span class="params">()</span>; <span class="comment">// sally</span>
 </code></pre><h2 id="反射">反射</h2><h3 id="定义-3">定义</h3><p>反射是计算机程序在运行时可以访问、修改和检测自身状态或行为的一种能力。在javascript中，反射是指对类的成员进行操作，通过<code>for(key in obj)</code>实现。</p>
-<h3 id="实例-2">实例</h3><pre><code>javascript中没有专门的机制来实现类的继承，但可以通过赋值一个类的<span class="keyword">prototype</span>到另外一个类来实现继承。但是，这种方式并非严格的继承，两个类是同一<span class="keyword">prototype</span>的引用，重写一个类的成员或方法会影响另一个。可以使用反射机制来继承，利用<span class="keyword">for</span>(...in...)语句枚举出所有的基类<span class="keyword">prototype</span>的成员，并将其赋值给<span class="keyword">prototype</span>对象。进一步，可以为每个类添加一个共有的方法用来实现类的继承。
+<h3 id="实例-3">实例</h3><pre><code>javascript中没有专门的机制来实现类的继承，但可以通过赋值一个类的<span class="keyword">prototype</span>到另外一个类来实现继承。但是，这种方式并非严格的继承，两个类是同一<span class="keyword">prototype</span>的引用，重写一个类的成员或方法会影响另一个。可以使用反射机制来继承，利用<span class="keyword">for</span>(...in...)语句枚举出所有的基类<span class="keyword">prototype</span>的成员，并将其赋值给<span class="keyword">prototype</span>对象。进一步，可以为每个类添加一个共有的方法用来实现类的继承。
 
 function.<span class="keyword">prototype</span>.inherit = function(baseClass){
     <span class="keyword">for</span>(var p in baseClass.<span class="keyword">prototype</span>){
@@ -1706,7 +1777,7 @@ xhr.onreadystatechange = <span class="function"><span class="keyword">function</
 };
 xhr.open<span class="params">(<span class="string">"GET"</span>, <span class="string">"script.js"</span>, <span class="literal">true</span>)</span>;
 xhr.send<span class="params">(null)</span>;
-</code></pre><h2 id="跨域&amp;&amp;安全">跨域&amp;&amp;安全</h2><h3 id="javascript同源策略SOP">javascript同源策略SOP</h3><p>同源策略出于安全考虑，限制了一个源中加载文本或脚本与来自其他源中资源的交互方式。同源指的是<em>域名 协议 端口</em>相同。前端只能解决由域名造成的跨域问题，<code>location.protocol</code>和<code>location.host</code>必须相同。</p>
+</code></pre><h2 id="跨域&amp;&amp;安全">跨域&amp;&amp;安全</h2><h3 id="javascript同源策略SOP">javascript同源策略SOP</h3><p>同源策略出于安全考虑，限制了一个源中加载文本或脚本与来自其他源中资源的交互方式。同源指的是<em>域名 协议 端口</em>相同。前端只能解决由域名造成的跨域问题，<code>location.protocol</code>和<code>location.port</code>必须相同。</p>
 <h3 id="跨子域解决方案：document-domain+iframe">跨子域解决方案：document.domain+iframe</h3><pre><code>www.a.com/a.html-&gt;script.a.com/b.html
 a.html:
 <span class="built_in">document</span>.domain = <span class="string">"a.com"</span>; <span class="comment">// 默认等于window.location.host</span>
@@ -1728,24 +1799,7 @@ script.onload = script.onreadystatechange = <span class="function"><span class="
     }
 }
 </code></pre><h3 id="iframe+loaction-hash">iframe+loaction.hash</h3><p>使用location.hash进行数据传递</p>
-<h3 id="JSONP">JSONP</h3><h4 id="JSON">JSON</h4><p>JSON 是javascript对象表示法，与对象很相似，但是JSON中的key必须使用双引号，value可以是数字、字符串、布尔值、数组、对象和null</p>
-<pre><code><span class="built_in">JSON</span>-&gt;<span class="built_in">Object</span>
-<span class="keyword">var</span> jsonStr = <span class="string">'{"name": "sally", "age": 18}'</span>;
-<span class="keyword">var</span> obj1 = <span class="built_in">eval</span>(<span class="string">'('</span>+jsonStr+<span class="string">')'</span>); <span class="comment">// Object {name: "sally", age: 18}</span>
-<span class="keyword">var</span> obj2 = <span class="built_in">JSON</span>.parse(jsonStr);   <span class="comment">// Object {name: "sally", age: 18}</span>
-<span class="built_in">Object</span>-&gt;<span class="built_in">JSON</span>
-<span class="keyword">var</span> obj = {name: <span class="string">"sally"</span>, age: <span class="number">18</span>};
-<span class="keyword">var</span> jsonStr2 = <span class="built_in">JSON</span>.stringify(obj); <span class="comment">// '{"name":"sally","age":18}'</span>
-</code></pre><h4 id="跨域实现">跨域实现</h4><pre><code>$.ajax({
-    url: <span class="string">""</span>,
-    <span class="typedef"><span class="keyword">type</span>: "<span class="type">GET</span>",</span>
-    dataType: <span class="string">"jsonp"</span>,
-    jsonp: callback,
-    success: function(<span class="typedef"><span class="keyword">data</span>) <span class="container">{
-        ...
-    }</span></span>
-});
-</code></pre><h3 id="HTML5_postMessage">HTML5 postMessage</h3><pre><code>//a.com/index.html
+<h3 id="HTML5_postMessage">HTML5 postMessage</h3><pre><code>//a.com/index.html
 <span class="tag">&lt;<span class="title">iframe</span> <span class="attribute">id</span>=<span class="value">"ifr"</span> <span class="attribute">src</span>=<span class="value">"b.com/index.html"</span>&gt;</span><span class="tag">&lt;/<span class="title">iframe</span>&gt;</span>
 <span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">
     <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
@@ -1763,6 +1817,23 @@ script.onload = script.onreadystatechange = <span class="function"><span class="
         }
     });
 </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+</code></pre><h3 id="JSONP">JSONP</h3><h4 id="JSON">JSON</h4><p>JSON 是javascript对象表示法，与对象很相似，但是JSON中的key必须使用双引号，value可以是数字、字符串、布尔值、数组、对象和null</p>
+<pre><code><span class="built_in">JSON</span>-&gt;<span class="built_in">Object</span>
+<span class="keyword">var</span> jsonStr = <span class="string">'{"name": "sally", "age": 18}'</span>;
+<span class="keyword">var</span> obj1 = <span class="built_in">eval</span>(<span class="string">'('</span>+jsonStr+<span class="string">')'</span>); <span class="comment">// Object {name: "sally", age: 18}</span>
+<span class="keyword">var</span> obj2 = <span class="built_in">JSON</span>.parse(jsonStr);   <span class="comment">// Object {name: "sally", age: 18}</span>
+<span class="built_in">Object</span>-&gt;<span class="built_in">JSON</span>
+<span class="keyword">var</span> obj = {name: <span class="string">"sally"</span>, age: <span class="number">18</span>};
+<span class="keyword">var</span> jsonStr2 = <span class="built_in">JSON</span>.stringify(obj); <span class="comment">// '{"name":"sally","age":18}'</span>
+</code></pre><h4 id="跨域实现">跨域实现</h4><pre><code>$.ajax({
+    url: <span class="string">""</span>,
+    <span class="typedef"><span class="keyword">type</span>: "<span class="type">GET</span>",</span>
+    dataType: <span class="string">"jsonp"</span>,
+    jsonp: callback,
+    success: function(<span class="typedef"><span class="keyword">data</span>) <span class="container">{
+        ...
+    }</span></span>
+});
 </code></pre><h3 id="CORS">CORS</h3><pre><code><span class="type">Header</span> <span class="type">set</span> <span class="type">Access</span>-<span class="type">Control</span>-<span class="type">Allow</span>-<span class="type">Origin</span> *
 function createCORSRequest(<span class="keyword">method</span>, url) {
     <span class="keyword">var</span> xhr = new <span class="type">XMLHttpRequest</span>();
@@ -1784,12 +1855,9 @@ function createCORSRequest(<span class="keyword">method</span>, url) {
 }
 <span class="keyword">var</span> xhr = createCORSRequest('<span class="type">GET</span>', url);
 </code></pre><h3 id="JSONP_vs_CORS">JSONP vs CORS</h3><ul>
-<li><p>JSONP只能实现GET请求，而CORS支持所有类型的HTTP请求。</p>
-</li>
-<li><p>使用CORS，开发者可以使用普通的XMLHttpRequest发起请求和获得数据，比起JSONP有更好的错误处理</p>
-</li>
-<li><p>JSONP主要被老的浏览器支持，它们往往不支持CORS，而绝大多数现代浏览器都已经支持了CORS</p>
-</li>
+<li>JSONP只能实现GET请求，而CORS支持所有类型的HTTP请求。  </li>
+<li>使用CORS，开发者可以使用普通的XMLHttpRequest发起请求和获得数据，比起JSONP有更好的错误处理  </li>
+<li>JSONP主要被老的浏览器支持，它们往往不支持CORS，而绝大多数现代浏览器都已经支持了CORS</li>
 </ul>
 <h3 id="安全">安全</h3><p>安全性：永远不要信任用户的输入，对所有提交的信息都进行匹配检查，在需要的地方做校验检验，避免XSS漏洞（trim→stripslashes→htmlspecialchars）。</p>
 <pre><code>CSRF实现机制：跨站请求伪造，修改用户密码，解决方式有验证码等
@@ -1803,220 +1871,40 @@ XSS是指攻击者利用网站程序对用户输入过滤不足，输入可以�
 <span class="number">3.</span> session会在一定时间内保存到服务器上，当访问增多时，会比较占用服务器的性能，考虑到性能的时候，应该使用cookie
 <span class="number">4.</span> cookie保存的数据不能超过<span class="number">4</span>K，很多浏览器都限制一个站点最多保存<span class="number">20</span>个cookie
 <span class="number">5.</span> 登陆信息等安全性要求高的存放为session，个人样式、偏好设置等信息可以放在cookie中
-</code></pre><h2 id="数组">数组</h2><ul>
-<li><p>length</p>
-</li>
-<li><p>concat()：合并数组，可以有多个参数</p>
-</li>
-<li><p>join()：数组-&gt;字符串，字符串-&gt;数组：split()</p>
-</li>
-<li><p>pop()：删除最后一个元素</p>
-</li>
-<li><p>shift()：删除第一个元素</p>
-</li>
-<li><p>push()：末尾插入元素</p>
-</li>
-<li><p>unshift()：头部插入元素</p>
-</li>
-<li><p>reverse()：数组逆序</p>
-</li>
-<li><p>slice(start, end)：返回一个[start, end)的新数组，原数组不变</p>
-</li>
-<li><p>splice()</p>
-<pre><code>var arr1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];
-var arr2 = arr1.splice(<span class="number">0</span>, <span class="number">3</span>);
-console.<span class="built_in">log</span>(arr1, arr2);    <span class="comment">// [4] [1, 2, 3]</span>
-var arr3 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];
-arr3.splice(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);
-console.<span class="built_in">log</span>(arr3);            <span class="comment">// [0, 1, 2, 3, 4]</span>
-var arr4 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];
-arr4.splice(<span class="number">0</span>, <span class="number">1</span>, <span class="number">5</span>);
-console.<span class="built_in">log</span>(arr4);            <span class="comment">// [5, 2, 3, 4]</span>
-var arr5 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];
-arr5.splice(<span class="number">1</span>, <span class="number">3</span>);
-console.<span class="built_in">log</span>(arr5);            <span class="comment">// [5, 2, 3, 4]</span>
-</code></pre></li>
-<li><p>sort()：排序</p>
-<pre><code><span class="function"><span class="keyword">function</span> <span class="title">fillArray</span>(<span class="params">arr, start, end, num</span>) </span>{
-    start = start || <span class="number">1</span>;
-    end = end || <span class="number">100</span>;
-    num = num || <span class="number">10</span>;
-    <span class="keyword">var</span> width = end - start;
-    <span class="keyword">for</span>(<span class="keyword">var</span> i = num; i &gt; <span class="number">0</span>; --i) {
-        arr.push((~~(<span class="built_in">Math</span>.random()*width)+start));
-    }
-    <span class="keyword">return</span> arr;
-}
-<span class="function"><span class="keyword">function</span> <span class="title">normalize</span>(<span class="params">arr</span>) </span>{
-    <span class="keyword">if</span>(arr &amp;&amp; <span class="built_in">Array</span>.isArray(arr)) {
-        <span class="keyword">var</span> map = {};
-        <span class="keyword">for</span>(<span class="keyword">var</span> i = arr.length; i &gt;= <span class="number">0</span>; --i) {
-            <span class="keyword">if</span>(arr[i] <span class="keyword">in</span> map) {
-                arr.splice(i, <span class="number">1</span>);
-            } <span class="keyword">else</span> {
-                map[arr[i]] = <span class="literal">true</span>;
-            }
-        }
-    }
-    <span class="keyword">return</span> arr;
-}
-<span class="keyword">var</span> input = [];
-fillArray(input, <span class="number">1</span>, <span class="number">100</span>, <span class="number">10</span>);
-input.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>{
-    <span class="keyword">return</span> a-b;
+</code></pre><h2 id="模块化">模块化</h2><h3 id="起源">起源</h3><p>恼人的命名冲突+繁琐的文件依赖</p>
+<h3 id="重点">重点</h3><p>定义封装的模块，引入依赖，提供引入支持</p>
+<h3 id="几种规范">几种规范</h3><h4 id="commonjs">commonjs</h4><p>require()引入外部模块，exports对象用于导出当前模块的方法或变量，module对象表示模块本身，是一种<em>同步</em>加载方式，不适合浏览器环境→nodejs</p>
+<pre><code>var <span class="built_in">math</span> = <span class="built_in">require</span>(<span class="string">"math"</span>);
+<span class="built_in">math</span>.add(<span class="number">2</span>, <span class="number">3</span>);//<span class="built_in">math</span>模块加载完毕才能执行
+</code></pre><h4 id="AMD">AMD</h4><p><em>异步</em>模块定义，<code>define(id?,dependencies?,factory)</code>→requirejs，<em>依赖前置</em>–require是一个全局函数，所有的 require 都提前了，所有依赖这个模块的语句，都定义在一个回调函数中，等到加载完成之后，这个回调函数才会运行。</p>
+<pre><code>define(<span class="string">"alpha"</span>, [<span class="string">"require"</span>, <span class="string">"exports"</span>, <span class="string">"beta"</span>], funtion(<span class="built_in">require</span>, exports, beta){
+    exports.verb = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+        <span class="comment">//return beta.verb();</span>
+        <span class="keyword">return</span> <span class="built_in">require</span>(<span class="string">"beta"</span>).verb();
+    };
 });
-normalize(input);
-</code></pre></li>
-</ul>
-<h2 id="字符串">字符串</h2><ul>
-<li><p>length</p>
-</li>
-<li><p>charAt()</p>
-</li>
-<li><p>concat()</p>
-</li>
-<li><p>indexOf()</p>
-</li>
-<li><p>match()：正则匹配</p>
-</li>
-<li><p>repeat()</p>
-</li>
-<li><p>replact()：正则替换</p>
-</li>
-<li><p>search()：正则查找，同indexOf</p>
-</li>
-<li><p>slice()</p>
-</li>
-<li><p>split()：字符串-&gt;数组</p>
-</li>
-<li><p>startsWith()</p>
-</li>
-<li><p>substr(pos, length)</p>
-</li>
-<li><p>substring(start, end)</p>
-</li>
-<li><p>toLowerCase()</p>
-</li>
-<li><p>trim()</p>
-</li>
-</ul>
-<h2 id="日期">日期</h2><h3 id="创建">创建</h3><pre><code><span class="built_in">var</span> <span class="built_in">date</span> = <span class="literal">new</span> <span class="built_in">Date</span>();
-<span class="built_in">var</span> <span class="built_in">date</span> = <span class="literal">new</span> <span class="built_in">Date</span>(<span class="string">'December 11, 1990 19:30:00'</span>);
-<span class="built_in">var</span> <span class="built_in">date</span> = <span class="literal">new</span> <span class="built_in">Date</span>(<span class="string">'1990-12-11T19:30:00'</span>);
-<span class="built_in">var</span> <span class="built_in">date</span> = <span class="literal">new</span> <span class="built_in">Date</span>(<span class="number">1990</span>, <span class="number">12</span>, <span class="number">11</span>, <span class="number">19</span>, <span class="number">30</span>, <span class="number">0</span>);
-
-<span class="built_in">var</span> unixTimeStamp = <span class="built_in">Date</span><span class="built_in">.</span>now();
-<span class="built_in">var</span> unixTimeStamp = <span class="built_in">Date</span><span class="built_in">.</span>parse(<span class="built_in">date</span>);
-<span class="built_in">var</span> unixTimeStamp = +<span class="built_in">date</span>;
-</code></pre><h3 id="方法">方法</h3><ul>
-<li><p>getDate(): 一个月的第几天</p>
-</li>
-<li><p>getDay(): 一个星期第几天 0-6</p>
-</li>
-<li><p>getFullYear(): 4位年</p>
-</li>
-<li><p>getHours(): 0-23</p>
-</li>
-<li><p>getMinutes(): 0-59</p>
-</li>
-<li><p>getMonth(): 0-11</p>
-</li>
-<li><p>getSeconds(): 0-59</p>
-</li>
-</ul>
-<h2 id="正则">正则</h2><h3 id="创建-1">创建</h3><pre><code><span class="keyword">var</span> patt = <span class="keyword">new</span> <span class="built_in">RegExp</span>(pattern, modifiers);
-<span class="keyword">var</span> patt = <span class="regexp">/pattern/m</span>odifiers;        
-i - 修饰符是用来执行不区分大小写的匹配。
-g - 修饰符是用于执行全文的搜索（而不是在找到第一个就停止查找,而是找到所有的匹配）。
-</code></pre><h3 id="方法-1">方法</h3><ul>
-<li><p>exec 匹配正则，返回数组，未匹配返回null</p>
-</li>
-<li><p>test 匹配返回true</p>
-</li>
-</ul>
-<h3 id="特殊字符">特殊字符</h3><pre><code>.    任意单个字符
-<span class="string">\w</span>    查找单词字符
-<span class="string">\W</span>    查找非单词字符
-<span class="string">\d</span>    查找数字
-<span class="string">\D</span>    查找非数字字符
-<span class="string">\s</span>    查找空白字符
-<span class="string">\S</span>    查找非空白字符
-<span class="string">\b</span>    单词边界
-<span class="string">\B</span>    非单词边界
-<span class="string">\0</span>    <span class="literal">null</span>字符
-<span class="string">\n</span>    查找换行符
-<span class="string">\f</span>    换页符
-<span class="string">\r</span>    回车符
-<span class="string">\t</span>    制表符
-<span class="string">\v</span>    垂直制表符
-<span class="string">\xxx</span>    八进制数
-<span class="string">\xdd</span>    <span class="number">16</span>进制数
-<span class="string">\uxxxx</span>    unicode字符
-n?    <span class="number">0</span>次或<span class="number">1</span>次
-?=n    其后紧跟n的字符串
-?!n    没有其后紧跟n的字符串
-?:匹配pattern，但不捕获匹配结果，用做存在性检查
-</code></pre><h3 id="实例-3">实例</h3><pre><code>匹配中文字符的正则表达式：<span class="special">[</span><span class="command">\u</span>4e00-<span class="command">\u</span>9fa5<span class="command">\uF</span>900-<span class="command">\uFA</span>2D<span class="special">]</span>
-
-匹配特殊字符：(<span class="special">[</span>.*+?^<span class="formula">$<span class="special">{</span><span class="special">}</span>()|<span class="special">[</span><span class="command">\]</span><span class="command">\/</span><span class="command">\\</span><span class="special">]</span>)
-
-匹配空行的正则表达式：<span class="command">\n</span><span class="special">[</span><span class="command">\s</span>| <span class="special">]</span>*<span class="command">\r</span>
-
-匹配HTML标记的正则表达式：/&lt;(.*)&gt;.*&lt;<span class="command">\/</span>\1&gt;|&lt;(.*) <span class="command">\/</span>?&gt;/ or /^&lt;(<span class="command">\w</span>+)<span class="command">\s*</span><span class="command">\/</span>?&gt;(?:&lt;<span class="command">\/</span>\1&gt;|)$</span>/
-
-匹配首尾空格的正则表达式：(^<span class="command">\s*</span>)|(<span class="command">\s*</span><span class="formula">$)
-
-匹配Email地址的正则表达式：<span class="command">\w</span>+(<span class="special">[</span>-+.<span class="special">]</span><span class="command">\w</span>+)*@<span class="command">\w</span>+(<span class="special">[</span>-.<span class="special">]</span><span class="command">\w</span>+)*<span class="command">\.</span><span class="command">\w</span>+(<span class="special">[</span>-.<span class="special">]</span><span class="command">\w</span>+)*
-
-匹配网址URL的正则表达式：http://(<span class="special">[</span><span class="command">\w</span>-<span class="special">]</span>+<span class="command">\.</span>)+<span class="special">[</span><span class="command">\w</span>-<span class="special">]</span>+(/<span class="special">[</span><span class="command">\w</span>- ./?%<span class="special">&amp;</span>=<span class="special">]</span>*)?
-
-匹配帐号是否合法(字母开头，允许5-16字节，允许字母数字下划线)：^<span class="special">[</span>a-zA-Z<span class="special">]</span><span class="special">[</span>a-zA-Z0-9_<span class="special">]</span><span class="special">{</span>4,15<span class="special">}</span>$</span>
-
-匹配国内电话号码：<span class="command">\d</span><span class="special">{</span>3<span class="special">}</span>-<span class="command">\d</span><span class="special">{</span>8<span class="special">}</span>|<span class="command">\d</span><span class="special">{</span>4<span class="special">}</span>-<span class="command">\d</span><span class="special">{</span>7<span class="special">}</span>
-
-匹配腾讯QQ号：<span class="special">[</span>1-9<span class="special">]</span><span class="special">[</span><span class="command">\d</span><span class="special">]</span><span class="special">{</span>4,<span class="special">}</span>
-
-匹配中国邮政编码：<span class="special">[</span>1-9<span class="special">]</span><span class="command">\d</span><span class="special">{</span>5<span class="special">}</span>(?!<span class="command">\d</span>)
-
-匹配身份证：<span class="command">\d</span><span class="special">{</span>15<span class="special">}</span>|<span class="command">\d</span><span class="special">{</span>18<span class="special">}</span>
-
-匹配ip地址：(<span class="command">\d</span>+).(<span class="command">\d</span>+).(<span class="command">\d</span>+).(<span class="command">\d</span>+)，对<span class="formula">$1$</span>2<span class="formula">$3$</span>4进行分别验证
-
-用正则表达式限制只能输入数字：
-onkeyup="value=value.replace(/<span class="special">[</span>^<span class="command">\d</span><span class="special">]</span>/g,'')"
-onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/<span class="special">[</span>^<span class="command">\d</span><span class="special">]</span>/g,''))"
-
-匹配文件后缀名
-var pos = str.lastIndexOf(".");
-if(pos != -1)<span class="special">{</span>
-    return str.slice(pos+1);
-<span class="special">}</span>
-var pattern = /<span class="special">[</span>^<span class="command">\.</span><span class="special">]</span>*<span class="formula">$/;
-return pattern.exec(str);
-return str.match(pattern);
-
-判断是否是CSS文件
-var isCss = /.*<span class="command">\.</span>css(?=<span class="command">\?</span>|$</span>)/
-</code></pre><h3 id="非捕获型分组">非捕获型分组</h3><p>创建反向引用的分组，一般称为捕获型分组。反之，不会创建反向引用的分组就是非捕获型分组，分组多了会影响效率。</p>
-<pre><code><span class="keyword">var</span> str = <span class="string">"#123456"</span>;
-<span class="keyword">var</span> <span class="keyword">cap</span> = /#(\w+)/<span class="keyword">g</span>;
-<span class="keyword">var</span> nocap = /#(?:\w)/<span class="keyword">g</span>
-console.<span class="literal">log</span>(<span class="keyword">cap</span>.<span class="keyword">test</span>(str));     <span class="comment">// true</span>
-console.<span class="literal">log</span>(RegExp.<span class="label">$1</span>);            <span class="comment">// 123456</span>
-console.<span class="literal">log</span>(nocap.<span class="keyword">test</span>(str));    <span class="comment">// true</span>
-console.<span class="literal">log</span>(RegExp.<span class="label">$1</span>);            <span class="comment">// 空</span>
-</code></pre><h2 id="函数">函数</h2><p>在javascript中，函数是第一等公民，函数可以返回函数，词法上支持闭包。如何有效利用闭包和作用域是成为一个伟大的javascript开发者的关键。</p>
-<h3 id="函数柯里化"><a href="http://www.zhangxinxu.com/wordpress/2013/02/js-currying/" target="_blank" rel="external">函数柯里化</a></h3><p>柯里化是这样的一个转换过程，把接受多个参数的函数变换成接受一个单一参数的函数，如果其他的函数是必要时，返回接受余下的参数且返回结果的新函数。函数柯里化允许和鼓励分隔复杂功能变成更小更容易分析的部分。这些小的逻辑单元显然是更容易理解和测试的，然后你的应用就会变成干净而整洁的组合，由一些小单元组成的组合。</p>
-<ul>
-<li><p>柯里化是将多个参数合成一个object参数，这个object字段不是固定的，对于同一个函数来说，无论后期参数的顺序、数量、类型如何变化，接口部分是不变的，所以适合作为构造方法来用</p>
-</li>
-<li><p>柯里化可以解决动态参数的问题，在不需要改变接口的情况下可以新增不同特性，且对调用端透明，解决了js里面没有重载带来的一些麻烦</p>
-</li>
-<li><p>柯里化有3个典型应用：参数复用，提前返回、延迟计算</p>
-</li>
-<li><p>柯里化：把参数数组首个砍掉；反柯里化：把某个参数塞到参数数组的第一个。柯里化跟反柯里化都可以返回新函数，相比原函数，他们接受的参数一个是被砍头过的，一个是接头过的</p>
-</li>
-</ul>
+</code></pre><h4 id="CMD">CMD</h4><p><code>define(function(**require,exports,module**){...})</code>→seajs，<em>依赖就近</em>–没有全局 require，想什么时候 require 就什么时候加载，实现了 <strong>懒加载</strong>，延迟执行 (as lazy as possible)</p>
+<h5 id="seajs">seajs</h5><p>seajs–为前端开发提供简单、极致的模块化开发体验的一个<strong>模块加载器</strong></p>
+<ol>
+<li>通过exports暴露接口，这意味着不需要命名空间了，更不需要全局变量，这是一种彻底的命名冲突解决方案</li>
+<li>通过require引入依赖，可以让依赖内置，开发者只需要关心当前模块的依赖，其他事情seajs都会自动处理好，对模块开发者来说，这是一种很好的关注度分离，能让程序媛更多地享受编码的乐趣</li>
+<li>模块的版本管理，通过别名等配置，配合构建工具，可以比较轻松地实现模块的版本管理</li>
+<li>提高可维护性，模块化可以让每个文件的职责单一，非常有利于代码的维护，seajs还提供了nocache、debug等插件，拥有在线调试等功能，能比较明显地提升效率。</li>
+<li>前端性能优化，seaj通过异步加载模块，这对页面性能非常有益，seajs还提供了combo、flush等插件，配合服务端，可以很好地对页面性能进行调优</li>
+<li>跨环境共享模块，CMD模块定义规范与nodejs的模块规范非常相近，通过seajs的nodejs版本，可以很方便地实现模块的跨服务器和浏览器共享</li>
+</ol>
+<h5 id="实例-4">实例</h5><pre><code>define(id?, reps?, factory)
+                       |
+            <span class="built_in">require</span>, exports, <span class="built_in">module</span>
+define(funtion(<span class="built_in">require</span>, exports, <span class="built_in">module</span>){
+    <span class="keyword">var</span> verb = <span class="built_in">require</span>(<span class="string">"verb"</span>);
+    <span class="built_in">module</span>.eports.verb = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+        <span class="comment">//return beta.verb();</span>
+        <span class="keyword">return</span> <span class="built_in">require</span>(<span class="string">"beta"</span>).verb();
+    }
+});
+</code></pre><h2 id="javascript模板">javascript模板</h2><h3 id="定义-5">定义</h3><p>模板是一种语义化的、可读的、简练的视图结构表达，其作用是提高代码的编写效率、增强代码的可维护性。</p>
+<h3 id="种类">种类</h3><p>ejs/jade/<a href="http://juicer.name/" target="_blank" rel="external">jucier</a>，<a href="http://garann.github.io/template-chooser/" target="_blank" rel="external">如何选择js模板引擎</a></p>
 <h2 id="声明提升">声明提升</h2><p>变量声明提升，<em>定义还在原来的地方</em>，函数声明提前，变量声明提前，但是函数优先级高，同名时意义为函数-&gt;<strong>javascript中变量的作用域由函数决定</strong></p>
 <pre><code><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>{
     <span class="built_in">console</span>.log(a);            <span class="comment">//undefined</span>
@@ -2086,14 +1974,10 @@ stringconcat.merge = <span class="function"><span class="keyword">function</span
 <span class="keyword">var</span> repeatFun = repeat(alert, <span class="number">4</span>, <span class="number">3000</span>);
 repeatFun(<span class="string">"helloword"</span>);
 </code></pre><h2 id="小知识">小知识</h2><h3 id="javascript和css属性对照">javascript和css属性对照</h3><ul>
-<li><p>-webkit-column-count webkitColumnCount/-moz-column-count MozColumnCount/-ms-transform msTransform</p>
-</li>
-<li><p>不变：border clear margin padding background color display font</p>
-</li>
-<li><p>不一致：float→floatStyle</p>
-</li>
-<li><p>驼峰：含有-的        </p>
-</li>
+<li>特殊：-webkit-column-count webkitColumnCount/-moz-column-count MozColumnCount/-ms-transform msTransform  </li>
+<li>不变：border clear margin padding background color display font  </li>
+<li>不一致：float→floatStyle  </li>
+<li>驼峰：含有-的        </li>
 </ul>
 <h3 id="href=&quot;#&quot;和href=&quot;javascript:_void(0)&quot;区别"><code>href=&quot;#&quot;</code>和<code>href=&quot;javascript: void(0)&quot;</code>区别</h3><p>前者是位置信息，后者是一个死链**</p>
 <h3 id="===和==">===和==</h3><h4 id="===比较过程">===比较过程</h4><ol>
@@ -2114,24 +1998,18 @@ repeatFun(<span class="string">"helloword"</span>);
 </ol>
 <h3 id="ToPrimitive">ToPrimitive</h3><p>在javascript中，一共有2种数据类型：原始值和对象值，原始值又包括undefined，null，boolean、number和string，其他所有都是对象值，包括array和function</p>
 <ol>
-<li><p>如果输入值是原始值，则返回自身</p>
-</li>
+<li>如果输入值是原始值，则返回自身</li>
 <li><p>调用对象转数字过程(undefined=&gt;NaN)</p>
 <ol>
-<li><p>valueOf 返回值作数字</p>
-</li>
-<li><p>toString返回原始值，用结果作数字</p>
-</li>
-<li><p>throw a TypeError</p>
-</li>
+<li>valueOf 返回值作数字    </li>
+<li>toString返回原始值，用结果作数字    </li>
+<li>throw a TypeError</li>
 </ol>
 </li>
 <li><p>调用对象转字符串过程</p>
 <ol>
-<li><p>toSting 若返回原始值，则用结果作字符串</p>
-</li>
-<li><p>没有toSting或返回值不是原始值，调用valueOf方法</p>
-</li>
+<li>toSting 若返回原始值，则用结果作字符串    </li>
+<li>没有toSting或返回值不是原始值，调用valueOf方法</li>
 <li><p>throw a TypeError</p>
 <pre><code>计算value1+value2时
 <span class="number">1.</span> 执行ToPrimitive过程
@@ -2161,57 +2039,205 @@ repeatFun(<span class="string">"helloword"</span>);
 * clientWidth: content+padding
 * scrollWidth: content+padding+溢出尺寸==就是真实的width
 </code></pre><h3 id="创建节点">创建节点</h3><ul>
-<li><p>createElement(tagName)</p>
-</li>
-<li><p>createTextNode(text)包含文本的文本节点</p>
-</li>
-<li><p>createDocumentFragment()文档碎片节点</p>
-</li>
+<li>createElement(tagName)  </li>
+<li>createTextNode(text)包含文本的文本节点  </li>
+<li>createDocumentFragment()文档碎片节点</li>
 </ul>
 <h3 id="中文排序">中文排序</h3><pre><code>var<span class="instruction"> array </span>= <span class="keyword">[</span>'一', '二', '三', '四, '五'];
 var<span class="instruction"> cmp </span>=<span class="function"> function(</span>a, b<span class="function">)</span> {
    <span class="instruction"> return </span>a.localeCompare(b<span class="function">)</span>;
 };
 console.log(array.sort(cmp<span class="function">)</span><span class="function">)</span>;
-</code></pre><h2 id="模块化">模块化</h2><h2 id="起源">起源</h2><p>恼人的命名冲突+繁琐的文件依赖</p>
-<h2 id="重点">重点</h2><p>定义封装的模块，引入依赖，提供引入支持</p>
-<h2 id="几种规范">几种规范</h2><h3 id="commonjs">commonjs</h3><p>require()引入外部模块，exports对象用于导出当前模块的方法或变量，module对象表示模块本身，是一种<em>同步</em>加载方式，不适合浏览器环境→nodejs</p>
-<pre><code>var <span class="built_in">math</span> = <span class="built_in">require</span>(<span class="string">"math"</span>);
-<span class="built_in">math</span>.add(<span class="number">2</span>, <span class="number">3</span>);//<span class="built_in">math</span>模块加载完毕才能执行
-</code></pre><h3 id="AMD">AMD</h3><p><em>异步</em>模块定义，<code>define(id?,dependencies?,factory)</code>→requirejs，<em>依赖前置</em>–require是一个全局函数，所有的 require 都提前了，所有依赖这个模块的语句，都定义在一个回调函数中，等到加载完成之后，这个回调函数才会运行。</p>
-<pre><code>define(<span class="string">"alpha"</span>, [<span class="string">"require"</span>, <span class="string">"exports"</span>, <span class="string">"beta"</span>], funtion(<span class="built_in">require</span>, exports, beta){
-    exports.verb = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-        <span class="comment">//return beta.verb();</span>
-        <span class="keyword">return</span> <span class="built_in">require</span>(<span class="string">"beta"</span>).verb();
-    };
-});
-</code></pre><h3 id="CMD">CMD</h3><p><code>define(function(**require,exports,module**){...})</code>→seajs，<em>依赖就近</em>–没有全局 require，想什么时候 require 就什么时候加载，实现了 <strong>懒加载</strong>，延迟执行 (as lazy as possible)</p>
-<h4 id="seajs">seajs</h4><p>seajs–为前端开发提供简单、极致的模块化开发体验的一个<strong>模块加载器</strong></p>
-<ol>
-<li><p>通过exports暴露接口，这意味着不需要命名空间了，更不需要全局变量，这是一种彻底的命名冲突解决方案</p>
+</code></pre><h2 id="JQuery">JQuery</h2><h3 id="事件绑定">事件绑定</h3><ul>
+<li>bind()：将事件处理函数绑定到元素上</li>
+<li>live()：将事件处理函数绑定到指定的父元素上，<code>$(&#39;td&#39;, $(&#39;table&#39;)).live(&#39;hover&#39;, handler);</code></li>
+<li>delegate()：同live，<code>$(&#39;table&#39;).delegate(&#39;td&#39;, &#39;hover&#39;, handler);</code></li>
+<li>on()：对以上三种方式的替代，推荐使用</li>
+</ul>
+<h3 id="window-onload和$(document)-ready区别"><code>window.onload</code>和<code>$(document).ready</code>区别</h3><p>ready表示文档的dom已经加载完毕，但不包括图片、视频等资源，而onload事件是在DOM树创建完毕并且网页所依赖的资源都加载完成后发生，ready发生在onload之前。两者最显著的区别是当页面上有一个需要加载很久的资源时，onload需要在图片加载完成之后执行，而ready不必等图片加载完成。</p>
+<h3 id="一些好用的代码段">一些好用的代码段</h3><ul>
+<li>has检查是否包含某个类或元素</li>
+<li>使用jquery切换样式表（<strong>响应式布局</strong>）：<code>$(&quot;link[media=&#39;screen&#39;]&quot;).attr(&quot;href&quot;, &quot;other.css&quot;)</code></li>
+<li>使用toggleClass进行类切换，代替addClass和removeClass</li>
+<li>检测浏览器<ul>
+<li>IE：<code>$.browser.msie</code></li>
+<li>safari：<code>$.browser.safari</code></li>
+<li>firefox：<code>$.browser.mozilla</code></li>
+<li>版本：<code>$.browser.version</code></li>
+</ul>
 </li>
-<li><p>通过require引入依赖，可以让依赖内置，开发者只需要关心当前模块的依赖，其他事情seajs都会自动处理好，对模块开发者来说，这是一种很好的关注度分离，能让程序媛更多地享受编码的乐趣</p>
-</li>
-<li><p>模块的版本管理，通过别名等配置，配合构建工具，可以比较轻松地实现模块的版本管理</p>
-</li>
-<li><p>提高可维护性，模块化可以让每个文件的职责单一，非常有利于代码的维护，seajs还提供了nocache、debug等插件，拥有在线调试等功能，能比较明显地提升效率。</p>
-</li>
-<li><p>前端性能优化，seaj通过异步加载模块，这对页面性能非常有益，seajs还提供了combo、flush等插件，配合服务端，可以很好地对页面性能进行调优</p>
-</li>
-<li><p>跨环境共享模块，CMD模块定义规范与nodejs的模块规范非常相近，通过seajs的nodejs版本，可以很方便地实现模块的跨服务器和浏览器共享</p>
-</li>
-</ol>
-<h4 id="实例-4">实例</h4><pre><code>define(id?, reps?, factory)
-                       |
-            <span class="built_in">require</span>, exports, <span class="built_in">module</span>
-define(funtion(<span class="built_in">require</span>, exports, <span class="built_in">module</span>){
-    <span class="keyword">var</span> verb = <span class="built_in">require</span>(<span class="string">"verb"</span>);
-    <span class="built_in">module</span>.eports.verb = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-        <span class="comment">//return beta.verb();</span>
-        <span class="keyword">return</span> <span class="built_in">require</span>(<span class="string">"beta"</span>).verb();
+<li>replaceWith函数</li>
+<li>元素是否为空：<code>$(&quot;#id&quot;).html() == null</code></li>
+<li><p>从一个未排序的集合中找出某个元素的索引号</p>
+<pre><code>$(<span class="string">"ul &gt; li"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>))</span>{
+    <span class="keyword">var</span> index = $(<span class="keyword">this</span>).prevAll().length;
+}
+</code></pre></li>
+<li><code>option:selected</code> <code>radio:checked</code></li>
+<li>隐藏包含某个值的文本的元素$(“p.value.<strong>cantains</strong>(‘xxx’)”).hide();</li>
+<li><p>自动滚屏</p>
+<pre><code>jQuery.fn.autoScroll = <span class="function"><span class="keyword">function</span><span class="params">(selector)</span>{</span>
+    $<span class="params">(<span class="string">"html, body"</span>)</span>.animate<span class="params">(
+        {scrollTop: $<span class="params">(selector)</span>.offset<span class="params">()</span>.top},
+        <span class="number">500</span>
+    )</span>
+};
+$<span class="params">('.area_name')</span>.autoScroll<span class="params">()</span>;
+</code></pre></li>
+<li><p>禁止右键单击上下文菜单</p>
+<pre><code>$(<span class="built_in">document</span>).bind(<span class="string">"context menu"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>{<span class="keyword">return</span> <span class="literal">false</span>; });
+</code></pre></li>
+<li><p>使用jquery检测右键和左键鼠标单击情况</p>
+<pre><code>$(<span class="string">"#someelement"</span>).live(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>{
+    <span class="keyword">if</span>((!$.browser.msie &amp;&amp; e.buton == <span class="number">0</span>) || (!$.browser.msie &amp;&amp; e.buton == <span class="number">1</span>)){
+        <span class="comment">//left</span>
+    }
+    <span class="keyword">else</span> <span class="keyword">if</span>(e.button == <span class="number">2</span>){
+        <span class="comment">//right</span>
     }
 });
-</code></pre></span>
+</code></pre></li>
+<li><p>input域默认值动态显示</p>
+<pre><code>swap_val = [];
+$(<span class="string">".swap"</span>).each(<span class="function"><span class="keyword">function</span>(<span class="params">i</span>)</span>{
+    swap_val[i] = $(<span class="keyword">this</span>).val();
+    $(<span class="keyword">this</span>).focusin(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+        <span class="keyword">if</span>($(<span class="keyword">this</span>).val() == swap_val[i]){
+            $(<span class="keyword">this</span>).val() = <span class="string">""</span>;
+        }
+    }).focusout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+        <span class="keyword">if</span>($(<span class="keyword">this</span>).val() == <span class="string">""</span>){
+            $(<span class="keyword">this</span>).val() = swap_val[i];
+        }
+    });
+});
+</code></pre></li>
+<li>测试元素是否可见<code>.is(&quot;:visible&quot;) == true</code></li>
+<li><p>元素置于中心位置</p>
+<pre><code>jQuery.fn.center = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+    <span class="keyword">this</span>.css(<span class="string">"position"</span>, <span class="string">"absolute"</span>);
+    <span class="keyword">this</span>.css(<span class="string">"top"</span>, ($(<span class="built_in">window</span>).height()-<span class="keyword">this</span>.height()) + $(<span class="built_in">window</span>).scrollTop() + <span class="string">"px"</span>);
+    <span class="keyword">this</span>.css(<span class="string">"left"</span>, ($(<span class="built_in">window</span>).width()-<span class="keyword">this</span>.width()) / <span class="number">2</span> + $(<span class="built_in">window</span>).scrollLeft() + <span class="string">"px"</span>);
+    <span class="keyword">return</span> <span class="keyword">this</span>;
+}
+</code></pre></li>
+<li><p>在弹出框打开链接</p>
+<pre><code>jQuery(<span class="string">".popup"</span>).delegate(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+    newwindow = <span class="built_in">window</span>.open($(<span class="keyword">this</span>).attr(<span class="string">"href"</span>), <span class="string">""</span>, <span class="string">"height=200,width=150"</span>);
+    <span class="keyword">if</span>(<span class="built_in">window</span>.focus){
+        newwindow.focus();
+    }
+    <span class="keyword">return</span> <span class="literal">false</span>;
+});
+</code></pre></li>
+<li><p>在新的选项卡打开链接</p>
+<pre><code>jQuery(<span class="string">".newTab"</span>).delegate(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+    newwindow = <span class="built_in">window</span>.open($(<span class="keyword">this</span>).attr(<span class="string">"href"</span>));
+    jQuery(<span class="keyword">this</span>).target = <span class="string">"_blank"</span>;
+    <span class="keyword">return</span> <span class="literal">false</span>;
+});
+</code></pre></li>
+<li><p>遍历</p>
+<ul>
+<li>closest 选择最近的元素</li>
+<li><p>siblings 选择兄弟元素</p>
+<pre><code>$<span class="params">(<span class="string">"nav li"</span>)</span>.click<span class="params">(function<span class="params">()</span>{
+    $<span class="params">(this)</span>.addClass<span class="params">(<span class="string">"active"</span>)</span>.siblings<span class="params">()</span>.removeClass<span class="params">(<span class="string">"active"</span>)</span>;
+})</span>
+</code></pre></li>
+</ul>
+</li>
+<li><p>检查是否启用cookie</p>
+<pre><code><span class="keyword">var</span> dt = <span class="keyword">new</span> <span class="built_in">Date</span>();
+dt.setSeconds(dt.getSeconds() + <span class="number">60</span>);
+<span class="built_in">document</span>.cookie = <span class="string">"cookietest=1; expires="</span> + dt.toGMTString();
+<span class="keyword">var</span> cookieEnabled = <span class="built_in">document</span>.cookie.indexOf(<span class="string">"cookietest="</span>) != -<span class="number">1</span>;
+</code></pre></li>
+</ul>
+<h3 id="jquery中attr和prop"><a href="http://www.cnblogs.com/Showshare/p/different-between-attr-and-prop.html" target="_blank" rel="external">jquery中attr和prop</a></h3><p>在jQuery中，attr()和prop()都可以用来设置或获取指定的属性，它们的参数和用法也几乎完全相同。但不得不说的是，这两个函数的用处却并大不相同。下面我们来详细介绍这两个函数之间的区别。</p>
+<ul>
+<li><p>操作对象不同</p>
+<p> 很明显，attr和prop分别是单词attribute和property的缩写，并且它们均表示”属性”的意思。不过，在jQuery中，attribute和property却是两个不同的概念。attribute表示HTML文档节点的属性，property表示javascript对象的属性。</p>
+<p> attr()依赖的是Element对象的<code>element.getAttribute(attribute)</code> 和 <code>element.setAttribute(attribute, value)</code>；prop()依赖的是JS原生的 <code>element[property]</code> 和 <code>element[property] = value;</code></p>
+<p> 虽然prop()针对的是DOM元素的property，而不是元素节点的attribute。不过DOM元素某些属性的更改也会影响到元素节点上对应的属性。例如，property的id对应attribute的id，property的className对应attribute的class。</p>
+<pre><code>&lt;div id=<span class="string">"message"</span> class=<span class="string">"test"</span> data_id=<span class="string">"123"</span>&gt;&lt;/div&gt;
+&lt;script type=<span class="string">"text/javascript"</span>&gt;
+    var msg = document.getElementById(<span class="string">"message"</span>);
+    var <span class="variable">$msg</span> = $(msg);        
+    document.writeln( <span class="variable">$msg</span>.attr(<span class="string">"class"</span>) ); // test
+    <span class="variable">$msg</span>.prop(<span class="string">"className"</span>, <span class="string">"newTest"</span>);
+    // 修改className(property)导致class(attitude)也随之更改
+    document.writeln( <span class="variable">$msg</span>.attr(<span class="string">"class"</span>) ); // newTest
+&lt;/script&gt;
+</code></pre></li>
+<li><p>应用版本不同</p>
+<p>attr()是jQuery 1.0版本就有的函数，prop()是jQuery 1.6版本新增的函数。毫无疑问，在1.6之前，你只能使用attr()函数；1.6及以后版本，你可以根据实际需要选择对应的函数。</p>
+</li>
+<li><p>用于设置的属性值类型不同</p>
+<p>由于attr()函数操作的是文档节点的属性，因此设置的属性值只能是字符串类型，如果不是字符串类型，也会调用其toString()方法，将其转为字符串类型。prop()函数操作的是JS对象的属性，因此设置的属性值可以为包括数组和对象在内的任意类型。</p>
+</li>
+<li><p>其他细节问题</p>
+<p>对于表单元素的checked、selected、disabled等属性，在jQuery 1.6之前，attr()获取这些属性的返回值为Boolean类型：如果被选中(或禁用)就返回true，否则返回false。    但是从1.6开始，使用attr()获取这些属性的返回值为String类型，如果被选中(或禁用)就返回checked、selected或disabled，否则(即元素节点没有该属性)返回undefined。并且，在某些版本中，这些属性值表示文档加载时的初始状态值，即使之后更改了这些元素的选中(或禁用)状态，对应的属性值也不会发生改变。因为jQuery认为：attribute的checked、selected、disabled就是表示该属性初始状态的值，property的checked、selected、disabled才表示该属性实时状态的值(值为true或false)。因此，在jQuery 1.6及以后版本中，请使用prop()函数来设置或获取checked、selected、disabled等属性。对于其它能够用prop()实现的操作，也尽量使用prop()函数。</p>
+<pre><code>&lt;input id=<span class="string">"uid"</span> type=<span class="string">"checkbox"</span> checked=<span class="string">"checked"</span> <span class="keyword">value</span>=<span class="string">"1"</span>&gt;
+
+&lt;script type=<span class="string">"text/javascript"</span>&gt;
+// 当前jQuery版本为<span class="number">1.11</span>.<span class="number">1</span>
+var uid = document.getElementById(<span class="string">"uid"</span>);
+var <span class="variable">$uid</span> = $(uid);
+
+document.writeln( <span class="variable">$uid</span>.attr(<span class="string">"checked"</span>) ); // checked
+document.writeln( <span class="variable">$uid</span>.prop(<span class="string">"checked"</span>) ); // <span class="literal">true</span>
+
+// 取消复选框uid的选中(将其设为<span class="literal">false</span>即可)
+// 相当于 uid.checked = <span class="literal">false</span>;
+<span class="variable">$uid</span>.prop(<span class="string">"checked"</span>, <span class="literal">false</span>);
+
+// attr()获取的是初始状态的值，即使取消了选中，也不会改变
+document.writeln( <span class="variable">$uid</span>.attr(<span class="string">"checked"</span>) ); // checked
+// prop()获取的值已经发生变化
+document.writeln( <span class="variable">$uid</span>.prop(<span class="string">"checked"</span>) ); // <span class="literal">false</span>
+&lt;/script&gt;
+</code></pre></li>
+</ul>
+<h2 id="移动端开发技巧">移动端开发技巧</h2><h3 id="无线web开发">无线web开发</h3><p>无线web开发是基于智能手机上的浏览器进行的web开发，现在智能手机主要有android和ios两种操作系统，而这两者的浏览器引擎是基于webkit的，因此，基于手机上的web开发，主要是基于webkit的浏览器开发，而且他们都是按照H5规范开发，因此对H5特性的支持都比较好。不同的是，Android厂商碎片化比较严重，加上webkit的开源特性，市面上有很多修改版的webkit浏览器，而且不同厂商对H5的实现不同，Android的碎片化也比较严重；而ios由于其封闭特性，苹果公司是严格按照H5标准去实现的，对于H5的规范性较好；ios和Android对于界面层和交互层的实现是不同的，在日常开发中要非常注意。</p>
+<h3 id="开发技巧">开发技巧</h3><ol>
+<li>ios如何区分web和Native，上拉到头看是否可行</li>
+<li>移动浏览器触摸事件的响应顺序是ontouchstart→ontouchmove→ontouchend→onclick（阻止300ms延迟可以通过在ontouchend上绑定事件处理）</li>
+<li>使用click出现绑定区域点击闪一下的情况，给元素添加样式：<code>-webkit-tap-highlight-color:rgba(0,0,0,0)</code></li>
+<li>一个div设置了<code>height: 200px; overflow: auto;</code>可以滚动但是完全没有滚动效果，如何解决→<code>body{-webkit-overflow-scrolling: touch;}</code></li>
+<li>锁定viewport，任何屏幕操作不移动用户界面<code>ontouchmove=&quot;event.preventDefault()&quot;</code></li>
+<li>rem使用：<code>html {font-size: 62.5%;} body {font-size: 1.4rem;}</code> //14px</li>
+<li>阻止屏幕旋转时字体自动调整：<code>html, body, form, fieldset, p, div, h1, h2, h3, h4, h5, h6 {-webkit-text-size-adjust: none;}</code></li>
+<li><a href="http://wo.poco.cn/manson/post/id/268780" target="_blank" rel="external">对touch事件封装</a></li>
+<li><p>引导用户安装并打开APP</p>
+<pre><code>goToNative: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+    <span class="keyword">if</span>(!body) {
+        setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+            <span class="built_in">document</span>.body.appendChild(iframe);
+        }, <span class="number">0</span>);
+    } <span class="keyword">else</span> {
+        body.appendChild(iframe);
+    }
+    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+        <span class="built_in">document</span>.body.removeChild(iframe);
+        gotoDownload(startTime);
+    }, <span class="number">800</span>)
+}
+
+某些情况下iframe不会发起src请求，可通过：<span class="built_in">window</span>.location = <span class="string">'intent://'</span> + schemeUrl + <span class="string">'#Intent:scheme='</span> + scheme + <span class="string">';package='</span> + self.package + <span class="string">';end'</span>;
+
+在iOS中，需要调起一个app可以使用schema协议，这是ios原生支持的
+
+meta标签，name=apple-itunes-app content=app-id offiliate-data app-argument
+</code></pre></li>
+<li><p>拍照上传：input type=file accept=”video/* image/*“</p>
+</li>
+</ol>
+<h3 id="参考">参考</h3><ul>
+<li><a href="https://github.com/tgideas/mtips" target="_blank" rel="external">移动端web开发常见坑和填坑技巧</a></li>
+<li><a href="https://github.com/doyoe/trip" target="_blank" rel="external">移动端经验速递</a></li>
+</ul>
+</span>
       
     </div>
 
@@ -2387,7 +2413,7 @@ define(funtion(<span class="built_in">require</span>, exports, <span class="buil
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML–搭建结构"><span class="nav-number">2.</span> <span class="nav-text">HTML–搭建结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#从地址栏输入URL开始到显示的过程"><span class="nav-number">2.1.</span> <span class="nav-text">从地址栏输入URL开始到显示的过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP三次握手和四次分手"><span class="nav-number">2.2.</span> <span class="nav-text">TCP三次握手和四次分手</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三次握手流程"><span class="nav-number">2.2.1.</span> <span class="nav-text">三次握手流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四次分手流程"><span class="nav-number">2.2.2.</span> <span class="nav-text">四次分手流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么建立连接协议是三次握手，而关闭连接却是四次握手呢？"><span class="nav-number">2.2.3.</span> <span class="nav-text">为什么建立连接协议是三次握手，而关闭连接却是四次握手呢？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么TIME_WAIT状态还需要等2MSL后才能返回到CLOSED状态？"><span class="nav-number">2.2.4.</span> <span class="nav-text">为什么TIME_WAIT状态还需要等2MSL后才能返回到CLOSED状态？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP状态码小结"><span class="nav-number">2.3.</span> <span class="nav-text">HTTP状态码小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP_readystate"><span class="nav-number">2.4.</span> <span class="nav-text">HTTP readystate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WEB语义化"><span class="nav-number">2.5.</span> <span class="nav-text">WEB语义化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搜索引擎优化：内部优化，保证链接可跳转，提升用户体验"><span class="nav-number">2.6.</span> <span class="nav-text">搜索引擎优化：内部优化，保证链接可跳转，提升用户体验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOCTYPE"><span class="nav-number">2.7.</span> <span class="nav-text">DOCTYPE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#客户端存储"><span class="nav-number">2.8.</span> <span class="nav-text">客户端存储</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cookie"><span class="nav-number">2.8.1.</span> <span class="nav-text">cookie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sessionStorage"><span class="nav-number">2.8.2.</span> <span class="nav-text">sessionStorage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#localStorage"><span class="nav-number">2.8.3.</span> <span class="nav-text">localStorage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#websql_database"><span class="nav-number">2.8.4.</span> <span class="nav-text">websql database</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cookie和session"><span class="nav-number">2.9.</span> <span class="nav-text">cookie和session</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是cookie"><span class="nav-number">2.9.1.</span> <span class="nav-text">什么是cookie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是session"><span class="nav-number">2.9.2.</span> <span class="nav-text">什么是session</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#session和cookie谁更安全"><span class="nav-number">2.9.3.</span> <span class="nav-text">session和cookie谁更安全</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP_method：POST_和_GET"><span class="nav-number">2.10.</span> <span class="nav-text">HTTP method：POST 和 GET</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用URL拆分出protocol、host、port、query等"><span class="nav-number">2.11.</span> <span class="nav-text">使用URL拆分出protocol、host、port、query等</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">2.11.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解释"><span class="nav-number">2.11.2.</span> <span class="nav-text">解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取"><span class="nav-number">2.11.3.</span> <span class="nav-text">获取</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#canvas"><span class="nav-number">2.12.</span> <span class="nav-text">canvas</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS–设计样式"><span class="nav-number">3.</span> <span class="nav-text">CSS–设计样式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#flexbox"><span class="nav-number">3.1.</span> <span class="nav-text">flexbox</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法1"><span class="nav-number">3.1.1.</span> <span class="nav-text">方法1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法2"><span class="nav-number">3.1.2.</span> <span class="nav-text">方法2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_reset"><span class="nav-number">3.2.</span> <span class="nav-text">CSS reset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_display、position、float属性"><span class="nav-number">3.3.</span> <span class="nav-text">CSS display、position、float属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#display属性"><span class="nav-number">3.3.1.</span> <span class="nav-text">display属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#position属性"><span class="nav-number">3.3.2.</span> <span class="nav-text">position属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#float元素"><span class="nav-number">3.3.3.</span> <span class="nav-text">float元素</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web中的图标"><span class="nav-number">3.4.</span> <span class="nav-text">web中的图标</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#图片"><span class="nav-number">3.4.1.</span> <span class="nav-text">图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#雪碧图_Sprites"><span class="nav-number">3.4.2.</span> <span class="nav-text">雪碧图 Sprites</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字体图标_iconfont"><span class="nav-number">3.4.3.</span> <span class="nav-text">字体图标 iconfont</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SVG"><span class="nav-number">3.4.4.</span> <span class="nav-text">SVG</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Data_URL"><span class="nav-number">3.4.5.</span> <span class="nav-text">Data URL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择"><span class="nav-number">3.4.6.</span> <span class="nav-text">选择</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用文字替换图片技术→有利于SEO"><span class="nav-number">3.5.</span> <span class="nav-text">使用文字替换图片技术→有利于SEO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_hack技术"><span class="nav-number">3.6.</span> <span class="nav-text">CSS hack技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_选择器"><span class="nav-number">3.7.</span> <span class="nav-text">CSS 选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#匹配顺序"><span class="nav-number">3.7.1.</span> <span class="nav-text">匹配顺序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#匹配规则"><span class="nav-number">3.7.2.</span> <span class="nav-text">匹配规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写法"><span class="nav-number">3.7.3.</span> <span class="nav-text">写法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS盒模型"><span class="nav-number">3.8.</span> <span class="nav-text">CSS盒模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#W3C盒模型"><span class="nav-number">3.8.1.</span> <span class="nav-text">W3C盒模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IE_quirks_mode"><span class="nav-number">3.8.2.</span> <span class="nav-text">IE quirks mode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css3:_box-sizing"><span class="nav-number">3.8.3.</span> <span class="nav-text">css3: box-sizing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#margin折叠"><span class="nav-number">3.8.4.</span> <span class="nav-text">margin折叠</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#计算"><span class="nav-number">3.8.4.1.</span> <span class="nav-text">计算</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BFC"><span class="nav-number">3.8.5.</span> <span class="nav-text">BFC</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#无样式内容闪烁_FOUC"><span class="nav-number">3.9.</span> <span class="nav-text">无样式内容闪烁 FOUC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-1"><span class="nav-number">3.9.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何避免"><span class="nav-number">3.9.2.</span> <span class="nav-text">如何避免</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#link和@import"><span class="nav-number">3.9.3.</span> <span class="nav-text">link和@import</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS预处理器和CSS后处理器"><span class="nav-number">3.10.</span> <span class="nav-text">CSS预处理器和CSS后处理器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_hyphens实现英文单词完美展示"><span class="nav-number">3.11.</span> <span class="nav-text">CSS hyphens实现英文单词完美展示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS3_动画"><span class="nav-number">3.12.</span> <span class="nav-text">CSS3 动画</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用1、2、3、5个标签画红十字"><span class="nav-number">3.13.</span> <span class="nav-text">使用1、2、3、5个标签画红十字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_绘制箭头"><span class="nav-number">3.14.</span> <span class="nav-text">CSS 绘制箭头</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS+JS制作轮播"><span class="nav-number">3.15.</span> <span class="nav-text">CSS+JS制作轮播</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bootstrap实现轮播"><span class="nav-number">3.16.</span> <span class="nav-text">bootstrap实现轮播</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_实现浮层"><span class="nav-number">3.17.</span> <span class="nav-text">CSS 实现浮层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_文本溢出显示"><span class="nav-number">3.18.</span> <span class="nav-text">CSS 文本溢出显示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单行文本"><span class="nav-number">3.18.1.</span> <span class="nav-text">单行文本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多行文本"><span class="nav-number">3.18.2.</span> <span class="nav-text">多行文本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何让height:100%起作用"><span class="nav-number">3.19.</span> <span class="nav-text">如何让height:100%起作用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Javascript–定义行为"><span class="nav-number">4.</span> <span class="nav-text">Javascript–定义行为</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据"><span class="nav-number">4.1.</span> <span class="nav-text">数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#javascript数据类型"><span class="nav-number">4.1.1.</span> <span class="nav-text">javascript数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#判断数据类型"><span class="nav-number">4.1.2.</span> <span class="nav-text">判断数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#typeof"><span class="nav-number">4.1.2.1.</span> <span class="nav-text">typeof</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#instanceof"><span class="nav-number">4.1.2.2.</span> <span class="nav-text">instanceof</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判断一个对象是否为数组"><span class="nav-number">4.1.2.3.</span> <span class="nav-text">判断一个对象是否为数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判断一个对象是否为函数"><span class="nav-number">4.1.2.4.</span> <span class="nav-text">判断一个对象是否为函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通用代码"><span class="nav-number">4.1.2.5.</span> <span class="nav-text">通用代码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类和继承"><span class="nav-number">4.2.</span> <span class="nav-text">类和继承</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Javascript类"><span class="nav-number">4.2.1.</span> <span class="nav-text">Javascript类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ES5_类"><span class="nav-number">4.2.1.1.</span> <span class="nav-text">ES5 类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ES6_类"><span class="nav-number">4.2.1.2.</span> <span class="nav-text">ES6 类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ES6类包含私有属性–Symbol"><span class="nav-number">4.2.1.3.</span> <span class="nav-text">ES6类包含私有属性–Symbol</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#比较"><span class="nav-number">4.2.1.4.</span> <span class="nav-text">比较</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Javascript继承"><span class="nav-number">4.2.2.</span> <span class="nav-text">Javascript继承</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ES5_继承"><span class="nav-number">4.2.2.1.</span> <span class="nav-text">ES5 继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ES6_继承"><span class="nav-number">4.2.2.2.</span> <span class="nav-text">ES6 继承</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相关题目"><span class="nav-number">4.2.3.</span> <span class="nav-text">相关题目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性查找"><span class="nav-number">4.2.3.1.</span> <span class="nav-text">属性查找</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实例化对象"><span class="nav-number">4.2.3.2.</span> <span class="nav-text">实例化对象</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ES6新增功能"><span class="nav-number">4.2.4.</span> <span class="nav-text">ES6新增功能</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件模型"><span class="nav-number">4.3.</span> <span class="nav-text">事件模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM事件"><span class="nav-number">4.3.1.</span> <span class="nav-text">DOM事件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#冒泡型事件"><span class="nav-number">4.3.1.1.</span> <span class="nav-text">冒泡型事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#捕获型事件"><span class="nav-number">4.3.1.2.</span> <span class="nav-text">捕获型事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DOM标准事件模型"><span class="nav-number">4.3.1.3.</span> <span class="nav-text">DOM标准事件模型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标准事件模型和IE事件模型的区别"><span class="nav-number">4.3.2.</span> <span class="nav-text">标准事件模型和IE事件模型的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件注册跨浏览器版"><span class="nav-number">4.3.3.</span> <span class="nav-text">事件注册跨浏览器版</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件代理"><span class="nav-number">4.3.4.</span> <span class="nav-text">事件代理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#闭包"><span class="nav-number">4.4.</span> <span class="nav-text">闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-2"><span class="nav-number">4.4.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作用"><span class="nav-number">4.4.2.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建方法"><span class="nav-number">4.4.3.</span> <span class="nav-text">创建方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例"><span class="nav-number">4.4.4.</span> <span class="nav-text">实例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#计数器"><span class="nav-number">4.4.4.1.</span> <span class="nav-text">计数器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现数字到英文转换，0->zero"><span class="nav-number">4.4.4.2.</span> <span class="nav-text">实现数字到英文转换，0->zero</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#点击button，打印编号"><span class="nav-number">4.4.4.3.</span> <span class="nav-text">点击button，打印编号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#看代码写结果"><span class="nav-number">4.4.4.4.</span> <span class="nav-text">看代码写结果</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#this"><span class="nav-number">4.5.</span> <span class="nav-text">this</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#javascript中this的处理机制"><span class="nav-number">4.5.1.</span> <span class="nav-text">javascript中this的处理机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-1"><span class="nav-number">4.5.2.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反射"><span class="nav-number">4.6.</span> <span class="nav-text">反射</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-3"><span class="nav-number">4.6.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-2"><span class="nav-number">4.6.2.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AJAX"><span class="nav-number">4.7.</span> <span class="nav-text">AJAX</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-4"><span class="nav-number">4.7.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原生js实现ajax"><span class="nav-number">4.7.2.</span> <span class="nav-text">原生js实现ajax</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异步加载js并执行回调函数"><span class="nav-number">4.7.3.</span> <span class="nav-text">异步加载js并执行回调函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跨域&&安全"><span class="nav-number">4.8.</span> <span class="nav-text">跨域&&安全</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#javascript同源策略SOP"><span class="nav-number">4.8.1.</span> <span class="nav-text">javascript同源策略SOP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#跨子域解决方案：document-domain+iframe"><span class="nav-number">4.8.2.</span> <span class="nav-text">跨子域解决方案：document.domain+iframe</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态创建script"><span class="nav-number">4.8.3.</span> <span class="nav-text">动态创建script</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iframe+loaction-hash"><span class="nav-number">4.8.4.</span> <span class="nav-text">iframe+loaction.hash</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSONP"><span class="nav-number">4.8.5.</span> <span class="nav-text">JSONP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JSON"><span class="nav-number">4.8.5.1.</span> <span class="nav-text">JSON</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#跨域实现"><span class="nav-number">4.8.5.2.</span> <span class="nav-text">跨域实现</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML5_postMessage"><span class="nav-number">4.8.6.</span> <span class="nav-text">HTML5 postMessage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CORS"><span class="nav-number">4.8.7.</span> <span class="nav-text">CORS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSONP_vs_CORS"><span class="nav-number">4.8.8.</span> <span class="nav-text">JSONP vs CORS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安全"><span class="nav-number">4.8.9.</span> <span class="nav-text">安全</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组"><span class="nav-number">4.9.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串"><span class="nav-number">4.10.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#日期"><span class="nav-number">4.11.</span> <span class="nav-text">日期</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建"><span class="nav-number">4.11.1.</span> <span class="nav-text">创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法"><span class="nav-number">4.11.2.</span> <span class="nav-text">方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则"><span class="nav-number">4.12.</span> <span class="nav-text">正则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建-1"><span class="nav-number">4.12.1.</span> <span class="nav-text">创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法-1"><span class="nav-number">4.12.2.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特殊字符"><span class="nav-number">4.12.3.</span> <span class="nav-text">特殊字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-3"><span class="nav-number">4.12.4.</span> <span class="nav-text">实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#非捕获型分组"><span class="nav-number">4.12.5.</span> <span class="nav-text">非捕获型分组</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">4.13.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数柯里化"><span class="nav-number">4.13.1.</span> <span class="nav-text">函数柯里化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#声明提升"><span class="nav-number">4.14.</span> <span class="nav-text">声明提升</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重写javascript内置代码"><span class="nav-number">4.15.</span> <span class="nav-text">重写javascript内置代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小知识"><span class="nav-number">4.16.</span> <span class="nav-text">小知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#javascript和css属性对照"><span class="nav-number">4.16.1.</span> <span class="nav-text">javascript和css属性对照</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#href="#"和href="javascript:_void(0)"区别"><span class="nav-number">4.16.2.</span> <span class="nav-text">href="#"和href="javascript: void(0)"区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#===和=="><span class="nav-number">4.16.3.</span> <span class="nav-text">===和==</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#===比较过程"><span class="nav-number">4.16.3.1.</span> <span class="nav-text">===比较过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#==比较过程"><span class="nav-number">4.16.3.2.</span> <span class="nav-text">==比较过程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ToPrimitive"><span class="nav-number">4.16.4.</span> <span class="nav-text">ToPrimitive</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getViewportSize"><span class="nav-number">4.16.5.</span> <span class="nav-text">getViewportSize</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建节点"><span class="nav-number">4.16.6.</span> <span class="nav-text">创建节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中文排序"><span class="nav-number">4.16.7.</span> <span class="nav-text">中文排序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模块化"><span class="nav-number">4.17.</span> <span class="nav-text">模块化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#起源"><span class="nav-number">4.18.</span> <span class="nav-text">起源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重点"><span class="nav-number">4.19.</span> <span class="nav-text">重点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#几种规范"><span class="nav-number">4.20.</span> <span class="nav-text">几种规范</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#commonjs"><span class="nav-number">4.20.1.</span> <span class="nav-text">commonjs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AMD"><span class="nav-number">4.20.2.</span> <span class="nav-text">AMD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CMD"><span class="nav-number">4.20.3.</span> <span class="nav-text">CMD</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#seajs"><span class="nav-number">4.20.3.1.</span> <span class="nav-text">seajs</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实例-4"><span class="nav-number">4.20.3.2.</span> <span class="nav-text">实例</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML–搭建结构"><span class="nav-number">2.</span> <span class="nav-text">HTML–搭建结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#从地址栏输入URL开始到显示的过程"><span class="nav-number">2.1.</span> <span class="nav-text">从地址栏输入URL开始到显示的过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP三次握手和四次分手"><span class="nav-number">2.2.</span> <span class="nav-text">TCP三次握手和四次分手</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三次握手流程"><span class="nav-number">2.2.1.</span> <span class="nav-text">三次握手流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四次分手流程"><span class="nav-number">2.2.2.</span> <span class="nav-text">四次分手流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么建立连接协议是三次握手，而关闭连接却是四次握手呢？"><span class="nav-number">2.2.3.</span> <span class="nav-text">为什么建立连接协议是三次握手，而关闭连接却是四次握手呢？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么TIME_WAIT状态还需要等2MSL后才能返回到CLOSED状态？"><span class="nav-number">2.2.4.</span> <span class="nav-text">为什么TIME_WAIT状态还需要等2MSL后才能返回到CLOSED状态？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP状态码小结"><span class="nav-number">2.3.</span> <span class="nav-text">HTTP状态码小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP_readystate"><span class="nav-number">2.4.</span> <span class="nav-text">HTTP readystate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RESTful架构"><span class="nav-number">2.5.</span> <span class="nav-text">RESTful架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WEB语义化"><span class="nav-number">2.6.</span> <span class="nav-text">WEB语义化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搜索引擎优化：内部优化，保证链接可跳转，提升用户体验"><span class="nav-number">2.7.</span> <span class="nav-text">搜索引擎优化：内部优化，保证链接可跳转，提升用户体验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOCTYPE"><span class="nav-number">2.8.</span> <span class="nav-text">DOCTYPE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#客户端存储"><span class="nav-number">2.9.</span> <span class="nav-text">客户端存储</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cookie"><span class="nav-number">2.9.1.</span> <span class="nav-text">cookie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sessionStorage"><span class="nav-number">2.9.2.</span> <span class="nav-text">sessionStorage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#localStorage"><span class="nav-number">2.9.3.</span> <span class="nav-text">localStorage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#websql_database"><span class="nav-number">2.9.4.</span> <span class="nav-text">websql database</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cookie和session"><span class="nav-number">2.10.</span> <span class="nav-text">cookie和session</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是cookie"><span class="nav-number">2.10.1.</span> <span class="nav-text">什么是cookie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是session"><span class="nav-number">2.10.2.</span> <span class="nav-text">什么是session</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#session和cookie谁更安全"><span class="nav-number">2.10.3.</span> <span class="nav-text">session和cookie谁更安全</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP_method：POST_和_GET"><span class="nav-number">2.11.</span> <span class="nav-text">HTTP method：POST 和 GET</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用URL拆分出protocol、host、port、query等"><span class="nav-number">2.12.</span> <span class="nav-text">使用URL拆分出protocol、host、port、query等</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">2.12.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解释"><span class="nav-number">2.12.2.</span> <span class="nav-text">解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取"><span class="nav-number">2.12.3.</span> <span class="nav-text">获取</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#canvas"><span class="nav-number">2.13.</span> <span class="nav-text">canvas</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS–设计样式"><span class="nav-number">3.</span> <span class="nav-text">CSS–设计样式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_布局"><span class="nav-number">3.1.</span> <span class="nav-text">CSS 布局</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#相关属性"><span class="nav-number">3.1.1.</span> <span class="nav-text">相关属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#盒模型"><span class="nav-number">3.1.2.</span> <span class="nav-text">盒模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#strict_mode盒模型"><span class="nav-number">3.1.2.1.</span> <span class="nav-text">strict mode盒模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#quirks_mode盒模型"><span class="nav-number">3.1.2.2.</span> <span class="nav-text">quirks mode盒模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浏览器识别方法"><span class="nav-number">3.1.2.3.</span> <span class="nav-text">浏览器识别方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css3:_box-sizing"><span class="nav-number">3.1.3.</span> <span class="nav-text">css3: box-sizing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#包含块"><span class="nav-number">3.1.4.</span> <span class="nav-text">包含块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Normal_Flow"><span class="nav-number">3.1.5.</span> <span class="nav-text">Normal Flow</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BFC"><span class="nav-number">3.1.6.</span> <span class="nav-text">BFC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#margin折叠"><span class="nav-number">3.1.7.</span> <span class="nav-text">margin折叠</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#计算"><span class="nav-number">3.1.7.1.</span> <span class="nav-text">计算</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#元素绝对居中"><span class="nav-number">3.1.8.</span> <span class="nav-text">元素绝对居中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#固定尺寸的img_在固定尺寸的div中怎么水平居中，竖直居中；引申：不定尺寸的img_在固定尺寸的div中怎么水平居中，竖直居中,_写出img_和_div的css规则"><span class="nav-number">3.1.9.</span> <span class="nav-text">固定尺寸的img 在固定尺寸的div中怎么水平居中，竖直居中；引申：不定尺寸的img 在固定尺寸的div中怎么水平居中，竖直居中, 写出img 和 div的css规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决float元素引起的父元素高度塌陷"><span class="nav-number">3.1.10.</span> <span class="nav-text">解决float元素引起的父元素高度塌陷</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flexbox"><span class="nav-number">3.1.11.</span> <span class="nav-text">flexbox</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法1"><span class="nav-number">3.1.11.1.</span> <span class="nav-text">方法1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法2"><span class="nav-number">3.1.11.2.</span> <span class="nav-text">方法2</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web中的图标"><span class="nav-number">3.2.</span> <span class="nav-text">web中的图标</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#图片"><span class="nav-number">3.2.1.</span> <span class="nav-text">图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#雪碧图_Sprites"><span class="nav-number">3.2.2.</span> <span class="nav-text">雪碧图 Sprites</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字体图标_iconfont"><span class="nav-number">3.2.3.</span> <span class="nav-text">字体图标 iconfont</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SVG"><span class="nav-number">3.2.4.</span> <span class="nav-text">SVG</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Data_URL"><span class="nav-number">3.2.5.</span> <span class="nav-text">Data URL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择"><span class="nav-number">3.2.6.</span> <span class="nav-text">选择</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用文字替换图片技术→有利于SEO"><span class="nav-number">3.3.</span> <span class="nav-text">使用文字替换图片技术→有利于SEO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_选择器"><span class="nav-number">3.4.</span> <span class="nav-text">CSS 选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#匹配顺序"><span class="nav-number">3.4.1.</span> <span class="nav-text">匹配顺序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#匹配规则"><span class="nav-number">3.4.2.</span> <span class="nav-text">匹配规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写法"><span class="nav-number">3.4.3.</span> <span class="nav-text">写法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_hack技术"><span class="nav-number">3.5.</span> <span class="nav-text">CSS hack技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#无样式内容闪烁_FOUC"><span class="nav-number">3.6.</span> <span class="nav-text">无样式内容闪烁 FOUC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-1"><span class="nav-number">3.6.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何避免"><span class="nav-number">3.6.2.</span> <span class="nav-text">如何避免</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#link和@import"><span class="nav-number">3.6.3.</span> <span class="nav-text">link和@import</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS预处理器和CSS后处理器"><span class="nav-number">3.7.</span> <span class="nav-text">CSS预处理器和CSS后处理器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_hyphens实现英文单词完美展示"><span class="nav-number">3.8.</span> <span class="nav-text">CSS hyphens实现英文单词完美展示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS3_动画"><span class="nav-number">3.9.</span> <span class="nav-text">CSS3 动画</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用1、2、3、5个标签画红十字"><span class="nav-number">3.10.</span> <span class="nav-text">使用1、2、3、5个标签画红十字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_绘制箭头"><span class="nav-number">3.11.</span> <span class="nav-text">CSS 绘制箭头</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS+JS制作轮播"><span class="nav-number">3.12.</span> <span class="nav-text">CSS+JS制作轮播</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bootstrap实现轮播"><span class="nav-number">3.13.</span> <span class="nav-text">bootstrap实现轮播</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_实现浮层"><span class="nav-number">3.14.</span> <span class="nav-text">CSS 实现浮层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_文本溢出显示"><span class="nav-number">3.15.</span> <span class="nav-text">CSS 文本溢出显示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单行文本"><span class="nav-number">3.15.1.</span> <span class="nav-text">单行文本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多行文本"><span class="nav-number">3.15.2.</span> <span class="nav-text">多行文本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何让height:100%起作用"><span class="nav-number">3.16.</span> <span class="nav-text">如何让height:100%起作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_reset"><span class="nav-number">3.17.</span> <span class="nav-text">CSS reset</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Javascript–定义行为"><span class="nav-number">4.</span> <span class="nav-text">Javascript–定义行为</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据"><span class="nav-number">4.1.</span> <span class="nav-text">数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#javascript数据类型"><span class="nav-number">4.1.1.</span> <span class="nav-text">javascript数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#判断数据类型"><span class="nav-number">4.1.2.</span> <span class="nav-text">判断数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#typeof"><span class="nav-number">4.1.2.1.</span> <span class="nav-text">typeof</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#instanceof"><span class="nav-number">4.1.2.2.</span> <span class="nav-text">instanceof</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判断一个对象是否为数组"><span class="nav-number">4.1.2.3.</span> <span class="nav-text">判断一个对象是否为数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判断一个对象是否为函数"><span class="nav-number">4.1.2.4.</span> <span class="nav-text">判断一个对象是否为函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通用代码"><span class="nav-number">4.1.2.5.</span> <span class="nav-text">通用代码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串"><span class="nav-number">4.2.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组"><span class="nav-number">4.3.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#日期"><span class="nav-number">4.4.</span> <span class="nav-text">日期</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建"><span class="nav-number">4.4.1.</span> <span class="nav-text">创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法"><span class="nav-number">4.4.2.</span> <span class="nav-text">方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则"><span class="nav-number">4.5.</span> <span class="nav-text">正则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建-1"><span class="nav-number">4.5.1.</span> <span class="nav-text">创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法-1"><span class="nav-number">4.5.2.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特殊字符"><span class="nav-number">4.5.3.</span> <span class="nav-text">特殊字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例"><span class="nav-number">4.5.4.</span> <span class="nav-text">实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#非捕获型分组"><span class="nav-number">4.5.5.</span> <span class="nav-text">非捕获型分组</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">4.6.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数柯里化"><span class="nav-number">4.6.1.</span> <span class="nav-text">函数柯里化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类和继承"><span class="nav-number">4.7.</span> <span class="nav-text">类和继承</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Javascript类"><span class="nav-number">4.7.1.</span> <span class="nav-text">Javascript类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ES5_类"><span class="nav-number">4.7.1.1.</span> <span class="nav-text">ES5 类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ES6_类"><span class="nav-number">4.7.1.2.</span> <span class="nav-text">ES6 类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ES6类包含私有属性–Symbol"><span class="nav-number">4.7.1.3.</span> <span class="nav-text">ES6类包含私有属性–Symbol</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#比较"><span class="nav-number">4.7.1.4.</span> <span class="nav-text">比较</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Javascript继承"><span class="nav-number">4.7.2.</span> <span class="nav-text">Javascript继承</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ES5_继承"><span class="nav-number">4.7.2.1.</span> <span class="nav-text">ES5 继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ES6_继承"><span class="nav-number">4.7.2.2.</span> <span class="nav-text">ES6 继承</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相关题目"><span class="nav-number">4.7.3.</span> <span class="nav-text">相关题目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性查找"><span class="nav-number">4.7.3.1.</span> <span class="nav-text">属性查找</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实例化对象"><span class="nav-number">4.7.3.2.</span> <span class="nav-text">实例化对象</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ES6新增功能"><span class="nav-number">4.7.4.</span> <span class="nav-text">ES6新增功能</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件模型"><span class="nav-number">4.8.</span> <span class="nav-text">事件模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM事件"><span class="nav-number">4.8.1.</span> <span class="nav-text">DOM事件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#冒泡型事件"><span class="nav-number">4.8.1.1.</span> <span class="nav-text">冒泡型事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#捕获型事件"><span class="nav-number">4.8.1.2.</span> <span class="nav-text">捕获型事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DOM标准事件模型"><span class="nav-number">4.8.1.3.</span> <span class="nav-text">DOM标准事件模型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标准事件模型和IE事件模型的区别"><span class="nav-number">4.8.2.</span> <span class="nav-text">标准事件模型和IE事件模型的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件注册跨浏览器版"><span class="nav-number">4.8.3.</span> <span class="nav-text">事件注册跨浏览器版</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件代理"><span class="nav-number">4.8.4.</span> <span class="nav-text">事件代理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#闭包"><span class="nav-number">4.9.</span> <span class="nav-text">闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-2"><span class="nav-number">4.9.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作用"><span class="nav-number">4.9.2.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建方法"><span class="nav-number">4.9.3.</span> <span class="nav-text">创建方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-1"><span class="nav-number">4.9.4.</span> <span class="nav-text">实例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#计数器"><span class="nav-number">4.9.4.1.</span> <span class="nav-text">计数器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现数字到英文转换，0->zero"><span class="nav-number">4.9.4.2.</span> <span class="nav-text">实现数字到英文转换，0->zero</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#点击button，打印编号"><span class="nav-number">4.9.4.3.</span> <span class="nav-text">点击button，打印编号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#看代码写结果"><span class="nav-number">4.9.4.4.</span> <span class="nav-text">看代码写结果</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#this"><span class="nav-number">4.10.</span> <span class="nav-text">this</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#javascript中this的处理机制"><span class="nav-number">4.10.1.</span> <span class="nav-text">javascript中this的处理机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-2"><span class="nav-number">4.10.2.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反射"><span class="nav-number">4.11.</span> <span class="nav-text">反射</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-3"><span class="nav-number">4.11.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-3"><span class="nav-number">4.11.2.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AJAX"><span class="nav-number">4.12.</span> <span class="nav-text">AJAX</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-4"><span class="nav-number">4.12.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原生js实现ajax"><span class="nav-number">4.12.2.</span> <span class="nav-text">原生js实现ajax</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异步加载js并执行回调函数"><span class="nav-number">4.12.3.</span> <span class="nav-text">异步加载js并执行回调函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跨域&&安全"><span class="nav-number">4.13.</span> <span class="nav-text">跨域&&安全</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#javascript同源策略SOP"><span class="nav-number">4.13.1.</span> <span class="nav-text">javascript同源策略SOP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#跨子域解决方案：document-domain+iframe"><span class="nav-number">4.13.2.</span> <span class="nav-text">跨子域解决方案：document.domain+iframe</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态创建script"><span class="nav-number">4.13.3.</span> <span class="nav-text">动态创建script</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iframe+loaction-hash"><span class="nav-number">4.13.4.</span> <span class="nav-text">iframe+loaction.hash</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML5_postMessage"><span class="nav-number">4.13.5.</span> <span class="nav-text">HTML5 postMessage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSONP"><span class="nav-number">4.13.6.</span> <span class="nav-text">JSONP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JSON"><span class="nav-number">4.13.6.1.</span> <span class="nav-text">JSON</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#跨域实现"><span class="nav-number">4.13.6.2.</span> <span class="nav-text">跨域实现</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CORS"><span class="nav-number">4.13.7.</span> <span class="nav-text">CORS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSONP_vs_CORS"><span class="nav-number">4.13.8.</span> <span class="nav-text">JSONP vs CORS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安全"><span class="nav-number">4.13.9.</span> <span class="nav-text">安全</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模块化"><span class="nav-number">4.14.</span> <span class="nav-text">模块化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#起源"><span class="nav-number">4.14.1.</span> <span class="nav-text">起源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重点"><span class="nav-number">4.14.2.</span> <span class="nav-text">重点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#几种规范"><span class="nav-number">4.14.3.</span> <span class="nav-text">几种规范</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#commonjs"><span class="nav-number">4.14.3.1.</span> <span class="nav-text">commonjs</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AMD"><span class="nav-number">4.14.3.2.</span> <span class="nav-text">AMD</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CMD"><span class="nav-number">4.14.3.3.</span> <span class="nav-text">CMD</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#seajs"><span class="nav-number">4.14.3.3.1.</span> <span class="nav-text">seajs</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#实例-4"><span class="nav-number">4.14.3.3.2.</span> <span class="nav-text">实例</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#javascript模板"><span class="nav-number">4.15.</span> <span class="nav-text">javascript模板</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-5"><span class="nav-number">4.15.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#种类"><span class="nav-number">4.15.2.</span> <span class="nav-text">种类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#声明提升"><span class="nav-number">4.16.</span> <span class="nav-text">声明提升</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重写javascript内置代码"><span class="nav-number">4.17.</span> <span class="nav-text">重写javascript内置代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小知识"><span class="nav-number">4.18.</span> <span class="nav-text">小知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#javascript和css属性对照"><span class="nav-number">4.18.1.</span> <span class="nav-text">javascript和css属性对照</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#href="#"和href="javascript:_void(0)"区别"><span class="nav-number">4.18.2.</span> <span class="nav-text">href="#"和href="javascript: void(0)"区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#===和=="><span class="nav-number">4.18.3.</span> <span class="nav-text">===和==</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#===比较过程"><span class="nav-number">4.18.3.1.</span> <span class="nav-text">===比较过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#==比较过程"><span class="nav-number">4.18.3.2.</span> <span class="nav-text">==比较过程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ToPrimitive"><span class="nav-number">4.18.4.</span> <span class="nav-text">ToPrimitive</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getViewportSize"><span class="nav-number">4.18.5.</span> <span class="nav-text">getViewportSize</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建节点"><span class="nav-number">4.18.6.</span> <span class="nav-text">创建节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中文排序"><span class="nav-number">4.18.7.</span> <span class="nav-text">中文排序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JQuery"><span class="nav-number">4.19.</span> <span class="nav-text">JQuery</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#事件绑定"><span class="nav-number">4.19.1.</span> <span class="nav-text">事件绑定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#window-onload和$(document)-ready区别"><span class="nav-number">4.19.2.</span> <span class="nav-text">window.onload和$(document).ready区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一些好用的代码段"><span class="nav-number">4.19.3.</span> <span class="nav-text">一些好用的代码段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jquery中attr和prop"><span class="nav-number">4.19.4.</span> <span class="nav-text">jquery中attr和prop</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#移动端开发技巧"><span class="nav-number">4.20.</span> <span class="nav-text">移动端开发技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#无线web开发"><span class="nav-number">4.20.1.</span> <span class="nav-text">无线web开发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开发技巧"><span class="nav-number">4.20.2.</span> <span class="nav-text">开发技巧</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">4.20.3.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
