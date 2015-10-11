@@ -37,20 +37,20 @@
   <link rel="shorticon icon" type="image/x-icon" href="/image_16X16.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="TST腾讯地图1面CDN如何实现资源同步CDN加速技术是通过缓存技术，将网站文字、图片等静态资源（CDN对实时性要求不高，动态资源经常变化，不建议使用CDN加速策略）分部到各地的节点服务器上，通过DNS解析CNAME到节点控制页面，通过CDN控制自动分辨用户所在地区和网络实现终端用户就近访问，从而提高访问速度。
+<meta name="description" content="TST腾讯地图1面CDN如何实现资源同步CDN加速技术是通过缓存技术，将网站文字、图片等静态资源（CDN对实时性要求不高，动态资源经常变化，不建议使用CDN加速策略）分布到各地的节点服务器上，通过DNS解析CNAME到节点控制页面，通过CDN控制自动分辨用户所在地区和网络实现终端用户就近访问，从而提高访问速度。
 好处是：分布式架构减轻源站点负载，提高网站响应速度，可以轻松应对突发流量。
 CDN如何">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2015腾讯暑期实习前端面经">
 <meta property="og:url" content="http://www.xiaojunxie.com/2015/04/22/2015腾讯暑期实习前端面经/index.html">
 <meta property="og:site_name" content="Jennifer's Blog">
-<meta property="og:description" content="TST腾讯地图1面CDN如何实现资源同步CDN加速技术是通过缓存技术，将网站文字、图片等静态资源（CDN对实时性要求不高，动态资源经常变化，不建议使用CDN加速策略）分部到各地的节点服务器上，通过DNS解析CNAME到节点控制页面，通过CDN控制自动分辨用户所在地区和网络实现终端用户就近访问，从而提高访问速度。
+<meta property="og:description" content="TST腾讯地图1面CDN如何实现资源同步CDN加速技术是通过缓存技术，将网站文字、图片等静态资源（CDN对实时性要求不高，动态资源经常变化，不建议使用CDN加速策略）分布到各地的节点服务器上，通过DNS解析CNAME到节点控制页面，通过CDN控制自动分辨用户所在地区和网络实现终端用户就近访问，从而提高访问速度。
 好处是：分布式架构减轻源站点负载，提高网站响应速度，可以轻松应对突发流量。
 CDN如何">
-<meta property="og:updated_time" content="2015-09-23T13:07:37.000Z">
+<meta property="og:updated_time" content="2015-10-11T04:06:45.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2015腾讯暑期实习前端面经">
-<meta name="twitter:description" content="TST腾讯地图1面CDN如何实现资源同步CDN加速技术是通过缓存技术，将网站文字、图片等静态资源（CDN对实时性要求不高，动态资源经常变化，不建议使用CDN加速策略）分部到各地的节点服务器上，通过DNS解析CNAME到节点控制页面，通过CDN控制自动分辨用户所在地区和网络实现终端用户就近访问，从而提高访问速度。
+<meta name="twitter:description" content="TST腾讯地图1面CDN如何实现资源同步CDN加速技术是通过缓存技术，将网站文字、图片等静态资源（CDN对实时性要求不高，动态资源经常变化，不建议使用CDN加速策略）分布到各地的节点服务器上，通过DNS解析CNAME到节点控制页面，通过CDN控制自动分辨用户所在地区和网络实现终端用户就近访问，从而提高访问速度。
 好处是：分布式架构减轻源站点负载，提高网站响应速度，可以轻松应对突发流量。
 CDN如何">
 
@@ -266,7 +266,7 @@ CDN如何">
       
 
       
-        <span itemprop="articleBody"><h1 id="TST腾讯地图1面">TST腾讯地图1面</h1><h2 id="CDN如何实现资源同步">CDN如何实现资源同步</h2><p>CDN加速技术是通过缓存技术，将网站文字、图片等静态资源（CDN对实时性要求不高，动态资源经常变化，不建议使用CDN加速策略）分部到各地的节点服务器上，通过DNS解析CNAME到节点控制页面，通过CDN控制自动分辨用户所在地区和网络实现终端用户就近访问，从而提高访问速度。</p>
+        <span itemprop="articleBody"><h1 id="TST腾讯地图1面">TST腾讯地图1面</h1><h2 id="CDN如何实现资源同步">CDN如何实现资源同步</h2><p>CDN加速技术是通过缓存技术，将网站文字、图片等静态资源（CDN对实时性要求不高，动态资源经常变化，不建议使用CDN加速策略）分布到各地的节点服务器上，通过DNS解析CNAME到节点控制页面，通过CDN控制自动分辨用户所在地区和网络实现终端用户就近访问，从而提高访问速度。</p>
 <p>好处是：分布式架构减轻源站点负载，提高网站响应速度，可以轻松应对突发流量。</p>
 <p>CDN如何实现内容的更新和同步：在CDN服务中，节点上的内容和源网站内容的同步主要是靠<strong>设置刷新时间</strong>策略来实现的。针对不同的内容设置不同的刷新时间，可以根据内容的更新程度，也可以按照目录设置，也可以根据具体的url来设置。</p>
 <h2 id="SPA有哪些优缺点">SPA有哪些优缺点</h2><p>什么是单页应用：单页应用是指在浏览器中运行的应用，他所有的活动局限于一个web页面中，仅在该web页面初始化时加载相应的html、js、css等，一旦页面加载完成，<strong>在使用期间不会重新加载页面</strong>，页面只需要加载一次，取而代之的是利用js动态地变换html的内容，从而实现UI和用户的交互。像所有应用一样，他旨在帮助用户完成任务，比如编写文档或者管理web服务器，可以认为单页应用是一种从web服务器加载的富客户端。</p>

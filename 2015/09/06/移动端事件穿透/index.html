@@ -67,7 +67,7 @@ btnB事件
 
 
 touchs">
-<meta property="og:updated_time" content="2015-09-24T12:51:10.000Z">
+<meta property="og:updated_time" content="2015-10-11T03:57:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="移动端事件穿透">
 <meta name="twitter:description" content="WebApp事件穿透在WebApp中，当页面转场或硬切换或弹窗等界面变化的处理中，把初始界面触发界面变化事件的元素btnA相对屏幕的位置标为screenPoint，而切换的目标界面在screenPoint位置也存在一个元素btnB并绑定了事件处理，当btnA被出发时，btnB也会被触发，这里将这种现象称为事件穿透效应。
@@ -335,7 +335,7 @@ touchs">
 </tbody>
 </table>
 <a id="more"></a>
-<h1 id="Zepto_tap穿透bug">Zepto tap穿透bug</h1><p>当两个层叠加在一起时，使用zepto的tap事件时点击上面一个层时有时会触发下面层的事件，俗称穿透，原因是由于zepto的tap事件是绑定在document上的，由于click300ms延迟（<em>手机要确定是不是双击放大页面内容</em>）和事件冒泡到document上，从而触发了该位置元素的click事件。解决办法是延迟一定时间处理事件或是监听touched事件并在事件中使用preventDefault阻止冒泡，还有人提出来是使用css的<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events" target="_blank" rel="external">pointer-events</a>来避免，当然还可以使用<a href="http://www.cnblogs.com/lilyimage/p/3740668.html" target="_blank" rel="external">fast click</a>库来避免，实在不行的话就用click代替tap有时也能解决此问题。最好是自己通过touch start、touchmove、touchend来模拟tap事件。</p>
+<h1 id="Zepto_tap穿透bug">Zepto tap穿透bug</h1><p>当两个层叠加在一起时，使用zepto的tap事件时点击上面一个层时有时会触发下面层的事件，俗称穿透，原因是由于zepto的tap事件是绑定在document上的，由于click300ms延迟（<em>手机要确定是不是双击放大页面内容</em>）和事件冒泡到document上，从而触发了该位置元素的click事件。解决办法是延迟一定时间处理事件或是监听touched事件并在事件中使用preventDefault阻止冒泡，还有人提出来是使用css的<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events" target="_blank" rel="external">pointer-events</a>来避免，当然还可以使用<a href="http://www.cnblogs.com/lilyimage/p/3740668.html" target="_blank" rel="external">fast click</a>库来避免，实在不行的话就用click代替tap有时也能解决此问题。最好是自己通过touchstart、touchmove、touchend来模拟tap事件。</p>
 <h1 id="javascript事件基础">javascript事件基础</h1><p>我们的网页之所以丰富多彩并具有交互功能，是因为我们有javascript脚本语言，而javascript与html之间的交互又是通过事件机制实现的。所以，事件是javascript的一大核心，深入了解事件机制在我们遇到困难的时候十分有帮助。所谓事件，就是网页发生的一些瞬间（比如点击、滑动），在这些瞬间我们使用事件监听器，也就是回调函数来订阅（监听）事件，在事件发生时，我们的回调函数就会被触发。<strong>观察者模式</strong>是javascript事件机制的基石，这种异步事件编程模型，就是用户产生特定的操作，浏览器就会产生特定的事件，我们若是订阅了事件，回调就会触发。</p>
 <h2 id="事件捕获/冒泡">事件捕获/冒泡</h2><p>事件捕获会由最先接收到事件的元素然后传向最里边（我们可以将元素想象成一个盒子装一个盒子，而不是一个个积木堆积）</p>
 <p>事件冒泡即由最具体的元素（文档嵌套最深节点）接收，然后逐步上传至document</p>
