@@ -211,6 +211,94 @@
           
           
             
+              <a class="post-title-link" href="/2015/10/12/2016百度校招前端面经/" itemprop="url">
+                2016百度校招前端面经
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-10-12T10:00:53+08:00" content="2015-10-12">
+            2015-10-12
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/frontend/" itemprop="url" rel="index">
+                  <span itemprop="name">前端</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/10/12/2016百度校招前端面经/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/12/2016百度校招前端面经/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <h1 id="javascript继承">javascript继承</h1><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createObject</span>(<span class="params">proto, constructor</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> newProto;</span><br><span class="line">	<span class="keyword">if</span>(<span class="built_in">Object</span>.create) &#123;</span><br><span class="line">		newProto = <span class="built_in">Object</span>.create(proto);</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		Empty.prototype = proto;</span><br><span class="line">		newProto = <span class="keyword">new</span> Empty();</span><br><span class="line">	&#125;</span><br><span class="line">	newProto.constructor = <span class="constructor"><span class="keyword">constructor</span>;</span><br><span class="line">	return newProto;</span><br><span class="line">&#125;</span><br><span class="line">function extend(r, s, px, sx) </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(!s || !r) &#123;</span><br><span class="line">		<span class="keyword">return</span> r;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">var</span> sp = s.prototype, rp;</span><br><span class="line">	rp = createObject(sp, r);</span><br><span class="line">	r.prototype = <span class="keyword">this</span>.mix(rp, r.prototype);</span><br><span class="line">	r.superclass = createObject(sp, s);</span><br><span class="line">	<span class="keyword">if</span>(px) &#123;</span><br><span class="line">		<span class="keyword">this</span>.mix(rp, px);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(sx) &#123;</span><br><span class="line">		<span class="keyword">this</span>.mix(r, sx);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> r;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/10/12/2016百度校招前端面经/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/10/02/百度线上笔试之计算器/" itemprop="url">
                 百度线上笔试之计算器
               </a>
@@ -555,94 +643,6 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/09/30/节点的nodeType/" itemprop="url">
-                节点的nodeType
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-09-30T10:22:18+08:00" content="2015-09-30">
-            2015-09-30
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/frontend/" itemprop="url" rel="index">
-                  <span itemprop="name">前端</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/09/30/节点的nodeType/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/30/节点的nodeType/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <h1 id="Node-nodeType">Node.nodeType</h1><p>Node.nodeType是一个只读属性，表示节点类型</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/09/30/节点的nodeType/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -681,7 +681,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">28</span>
+              <span class="site-state-item-count">29</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
