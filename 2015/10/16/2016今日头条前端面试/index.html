@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="javascript,react," />
+  <meta name="keywords" content="面试," />
 
 
 
@@ -37,16 +37,16 @@
   <link rel="shorticon icon" type="image/x-icon" href="/image_16X16.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="初识作为当下的新宠，React似乎已经成为了web前端的黎明，其组件化特性和虚拟dom操作吸引了越来越多的前端乃至开发人员对其趋之若鹜。伴随而来的项目如雨后春笋，不少建立在框架自身之上，就是基于框架延伸出的思想。而ReactNative更是夯到爆~作为一只与时俱进的小前端，我也开启了我的react学习之路。">
+<meta name="description" content="一面安全/htmlentities">
 <meta property="og:type" content="article">
-<meta property="og:title" content="react学习之路">
-<meta property="og:url" content="http://www.xiaojunxie.com/2015/09/30/react学习之路/index.html">
+<meta property="og:title" content="2016今日头条前端面试">
+<meta property="og:url" content="http://www.xiaojunxie.com/2015/10/16/2016今日头条前端面试/index.html">
 <meta property="og:site_name" content="Jennifer's Blog">
-<meta property="og:description" content="初识作为当下的新宠，React似乎已经成为了web前端的黎明，其组件化特性和虚拟dom操作吸引了越来越多的前端乃至开发人员对其趋之若鹜。伴随而来的项目如雨后春笋，不少建立在框架自身之上，就是基于框架延伸出的思想。而ReactNative更是夯到爆~作为一只与时俱进的小前端，我也开启了我的react学习之路。">
-<meta property="og:updated_time" content="2015-10-10T13:36:07.000Z">
+<meta property="og:description" content="一面安全/htmlentities">
+<meta property="og:updated_time" content="2015-10-18T14:33:44.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="react学习之路">
-<meta name="twitter:description" content="初识作为当下的新宠，React似乎已经成为了web前端的黎明，其组件化特性和虚拟dom操作吸引了越来越多的前端乃至开发人员对其趋之若鹜。伴随而来的项目如雨后春笋，不少建立在框架自身之上，就是基于框架延伸出的思想。而ReactNative更是夯到爆~作为一只与时俱进的小前端，我也开启了我的react学习之路。">
+<meta name="twitter:title" content="2016今日头条前端面试">
+<meta name="twitter:description" content="一面安全/htmlentities">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -56,7 +56,7 @@
   };
 </script>
 
-  <title> react学习之路 | Jennifer's Blog </title>
+  <title> 2016今日头条前端面试 | Jennifer's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -210,7 +210,7 @@
           
           
             
-              react学习之路
+              2016今日头条前端面试
             
           
         </h1>
@@ -219,8 +219,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-09-30T16:37:39+08:00" content="2015-09-30">
-            2015-09-30
+          <time itemprop="dateCreated" datetime="2015-10-16T16:48:50+08:00" content="2015-10-16">
+            2015-10-16
           </time>
         </span>
 
@@ -245,8 +245,8 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/09/30/react学习之路/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/30/react学习之路/" itemprop="commentsCount"></span>
+              <a href="/2015/10/16/2016今日头条前端面试/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/16/2016今日头条前端面试/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -260,23 +260,8 @@
       
 
       
-        <span itemprop="articleBody"><h1 id="初识">初识</h1><p>作为当下的新宠，React似乎已经成为了web前端的黎明，其组件化特性和虚拟dom操作吸引了越来越多的前端乃至开发人员对其趋之若鹜。伴随而来的项目如雨后春笋，不少建立在框架自身之上，就是基于框架延伸出的思想。而ReactNative更是夯到爆~作为一只与时俱进的小前端，我也开启了我的react学习之路。</p>
-<a id="more"></a>
-<ol>
-<li><p>React：是一种组件式开发框架，其中视图的构建十分重要，但react没有使用传统模板的方式，而是创造出了JSX，把模板的强表达能力直接拿过来，又有着模板引擎没有的能力。JSX比模板语言有更多的便利，可直接使用当前组件作用域this，还可以实现较为复杂的逻辑等。不过，这里要注意的是JSX产生的是ReactElement，也就是Virtual DOM。</p>
-</li>
-<li><p>React的核心思想是：封装组件，各个组件维护自己的状态和UI，当状态变更，自动重新渲染整个组件。</p>
-</li>
-</ol>
-<h1 id="React">React</h1><p>React最大的特点就是轻，再加上虚拟dom这个很好的idea让React非常非常快，与angular一个很大的不同就是react采用的是one-way data flow。React本身只是一个简短有力的library，只是一个V而已，如果是大型项目想要一套完整的框架的话，还需要引入flux和routing相关的东西。react的伟大之处在于衍生出了react Native，有可能统一web/native开发。</p>
-<p>未完待续……</p>
-<!--
-# react
-
-react最引人瞩目的莫过于
-
-# 参考文献
---></span>
+        <span itemprop="articleBody"><h1 id="一面">一面</h1><h2 id="安全/htmlentities">安全/htmlentities</h2><a id="more"></a>
+<h2 id="doctype">doctype</h2><h2 id="三栏布局/响应式布局">三栏布局/响应式布局</h2><h2 id="实现一个淡入淡出的dialog模块">实现一个淡入淡出的dialog模块</h2><h2 id="JSONP_vs_AJAX">JSONP vs AJAX</h2><h2 id="性能优化">性能优化</h2><h3 id="getElementByTagName_vs_querySelectorAll">getElementByTagName vs querySelectorAll</h3><h1 id="二面">二面</h1><h2 id="xscroll存在的意义和瓦片地图">xscroll存在的意义和瓦片地图</h2><h2 id="手写hammerjs">手写hammerjs</h2></span>
       
     </div>
 
@@ -284,9 +269,7 @@ react最引人瞩目的莫过于
       
         <div class="post-tags">
           
-            <a href="/tags/javascript/" rel="tag">#javascript</a>
-          
-            <a href="/tags/react/" rel="tag">#react</a>
+            <a href="/tags/interview/" rel="tag">#面试</a>
           
         </div>
       
@@ -295,13 +278,13 @@ react最引人瞩目的莫过于
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/10/01/面试中常见的问题/" rel="prev">面试中常见的问题</a>
+              <a href="/2015/10/18/2016网易游戏校招前端面经/" rel="prev">2016网易游戏校招前端面经</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/09/30/节点的nodeType/" rel="next">节点的nodeType</a>
+              <a href="/2015/10/12/2016百度校招前端面经/" rel="next">2016百度校招前端面经</a>
             
           </div>
         </div>
@@ -353,8 +336,8 @@ react最引人瞩目的莫过于
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/09/30/react学习之路/"
-                   data-title="react学习之路" data-url="http://www.xiaojunxie.com/2015/09/30/react学习之路/">
+              <div class="ds-thread" data-thread-key="2015/10/16/2016今日头条前端面试/"
+                   data-title="2016今日头条前端面试" data-url="http://www.xiaojunxie.com/2015/10/16/2016今日头条前端面试/">
               </div>
             
           </div>
@@ -450,7 +433,7 @@ react最引人瞩目的莫过于
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#初识"><span class="nav-number">1.</span> <span class="nav-text">初识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#React"><span class="nav-number">2.</span> <span class="nav-text">React</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一面"><span class="nav-number">1.</span> <span class="nav-text">一面</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安全/htmlentities"><span class="nav-number">1.1.</span> <span class="nav-text">安全/htmlentities</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#doctype"><span class="nav-number">1.2.</span> <span class="nav-text">doctype</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三栏布局/响应式布局"><span class="nav-number">1.3.</span> <span class="nav-text">三栏布局/响应式布局</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现一个淡入淡出的dialog模块"><span class="nav-number">1.4.</span> <span class="nav-text">实现一个淡入淡出的dialog模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSONP_vs_AJAX"><span class="nav-number">1.5.</span> <span class="nav-text">JSONP vs AJAX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#性能优化"><span class="nav-number">1.6.</span> <span class="nav-text">性能优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#getElementByTagName_vs_querySelectorAll"><span class="nav-number">1.6.1.</span> <span class="nav-text">getElementByTagName vs querySelectorAll</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二面"><span class="nav-number">2.</span> <span class="nav-text">二面</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#xscroll存在的意义和瓦片地图"><span class="nav-number">2.1.</span> <span class="nav-text">xscroll存在的意义和瓦片地图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#手写hammerjs"><span class="nav-number">2.2.</span> <span class="nav-text">手写hammerjs</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
