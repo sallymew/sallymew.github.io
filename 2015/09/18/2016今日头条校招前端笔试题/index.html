@@ -37,16 +37,43 @@
   <link rel="shorticon icon" type="image/x-icon" href="/image_16X16.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="javascript中判断数据类型typeoftypeof 是一个一元运算符，放在一个运算数之前，运算数可以任意类型，返回值是一个字符串，说明运算数的类型，包括undefined boolean number string function object，对于array类型会返回object，null类型会返回undefined。我们可以使用typeof来判断对象是否存在，即typeof a !=">
+<meta name="description" content="javascript中判断数据类型闭包细节参考：前端学习笔记    
+实例var createCounter = function(){
+    var count = 0;
+    /*这是一个闭包函数*/
+    return function(){
+        return ++count;
+    };
+};
+var counter1 = createCounter();
+consol">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2016今日头条校招前端笔试题">
 <meta property="og:url" content="http://www.xiaojunxie.com/2015/09/18/2016今日头条校招前端笔试题/index.html">
 <meta property="og:site_name" content="Jennifer's Blog">
-<meta property="og:description" content="javascript中判断数据类型typeoftypeof 是一个一元运算符，放在一个运算数之前，运算数可以任意类型，返回值是一个字符串，说明运算数的类型，包括undefined boolean number string function object，对于array类型会返回object，null类型会返回undefined。我们可以使用typeof来判断对象是否存在，即typeof a !=">
-<meta property="og:updated_time" content="2015-09-23T05:17:03.000Z">
+<meta property="og:description" content="javascript中判断数据类型闭包细节参考：前端学习笔记    
+实例var createCounter = function(){
+    var count = 0;
+    /*这是一个闭包函数*/
+    return function(){
+        return ++count;
+    };
+};
+var counter1 = createCounter();
+consol">
+<meta property="og:updated_time" content="2015-11-11T15:07:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2016今日头条校招前端笔试题">
-<meta name="twitter:description" content="javascript中判断数据类型typeoftypeof 是一个一元运算符，放在一个运算数之前，运算数可以任意类型，返回值是一个字符串，说明运算数的类型，包括undefined boolean number string function object，对于array类型会返回object，null类型会返回undefined。我们可以使用typeof来判断对象是否存在，即typeof a !=">
+<meta name="twitter:description" content="javascript中判断数据类型闭包细节参考：前端学习笔记    
+实例var createCounter = function(){
+    var count = 0;
+    /*这是一个闭包函数*/
+    return function(){
+        return ++count;
+    };
+};
+var counter1 = createCounter();
+consol">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -260,33 +287,8 @@
       
 
       
-        <span itemprop="articleBody"><h1 id="javascript中判断数据类型">javascript中判断数据类型</h1><h2 id="typeof">typeof</h2><p>typeof 是一个一元运算符，放在一个运算数之前，运算数可以任意类型，返回值是一个字符串，说明运算数的类型，包括<code>undefined boolean number string function object</code>，对于array类型会返回<code>object</code>，null类型会返回<code>undefined</code>。我们可以使用typeof来判断对象是否存在，即<code>typeof a !== &#39;undefined&#39;</code></p>
-<h2 id="instanceof">instanceof</h2><p>instanceof 是用来判断对象是否是另一个对象的实例（function参数arguments是一个伪数组，需要使用<code>Array.prototype.slice.call(arguments)</code>转换成标准数组才能使用数组的一些函数）</p>
-<h2 id="判断一个对象是否为数组">判断一个对象是否为数组</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isArray</span>(<span class="params">arg</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(<span class="keyword">typeof</span> arg === <span class="string">"object"</span>) &#123;</span><br><span class="line"> 		<span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(arg) === <span class="string">"[object Array]"</span>;</span><br><span class="line"> 	&#125;</span><br><span class="line"> 	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="判断一个对象是否为函数">判断一个对象是否为函数</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isFunction</span>(<span class="params">arg</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(arg) &#123;</span><br><span class="line">		<span class="keyword">if</span>(<span class="keyword">typeof</span>(<span class="string">'/./'</span>) !== <span class="string">'function'</span>) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">typeof</span> arg === <span class="string">'function'</span>;</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(arg) === <span class="string">'[object Function]'</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="通用代码">通用代码</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isType</span>(<span class="params">type</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(obj) === <span class="string">'[object '</span> + type + <span class="string">']'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> isString = isType(<span class="string">'String'</span>);</span><br><span class="line"><span class="keyword">var</span> isArray = isType(<span class="string">'Array'</span>);</span><br><span class="line"><span class="keyword">var</span> isObject = isType(<span class="string">'Object'</span>);</span><br></pre></td></tr></table></figure>
-<h1 id="闭包">闭包</h1><h2 id="定义">定义</h2><p>闭包就是由函数创造的一个词法作用域，里面创建的变量被引用后，可以在这个词法环境之外自由使用。简单来说，闭包就是能够读取其他函数内部变量的函数。在javascript语言中，只有父函数内部的子函数可以读取父函数的局部变量。因此可以把闭包简单理解成–定义在一个函数内部的函数。在本质上，闭包就是将函数内部和函数外部连接起来的一座桥梁。这就是javascript语言特有的<em>链式作用域</em>结构，子对象会一级一级地向上寻找所有父对象的变量。所以，父对象的所有变量，对子对象都是可见的，反之则不成立。内部函数一直拥有从父函数作用域取得的变量，这些值不会随着父函数的执行完成而被销毁。<a href="http://segmentfault.com/a/1190000002778015" target="_blank" rel="external">Segment Fault上关于闭包的总结</a></p>
-<h2 id="作用">作用</h2><p><em>闭包通常被用来创建内部变量，使得这些变量不能被外部对象随意修改，同时又可以通过指定的函数接口来操作</em></p>
-<h2 id="特点">特点</h2><ol>
-<li><p>作为一个函数变量的一个引用，当函数返回时，其处于激活状态</p>
-</li>
-<li><p>一个闭包就是当一个函数返回时，一个没有释放资源的栈区</p>
-</li>
-</ol>
-<h2 id="创建方法">创建方法</h2><pre><code><span class="keyword">with</span>(obj){
-    <span class="comment">//对象闭包</span>
-}
-
-(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
-    <span class="comment">//函数闭包--匿名函数--可以立即执行，IIFE-Immediately Invoked Function Expression，可以用作回调函数执行，可以防止全局变量污染，是闭包的一种形式。-&gt; javascript防止全局变量污染可以通过命名空间或者IIFE来实现</span>
-})()
-
-<span class="keyword">try</span>{
-<span class="comment">//</span>
-}<span class="keyword">catch</span>(e){
-<span class="comment">//catch闭包，IE中不行</span>
-}
-</code></pre><h2 id="实例">实例</h2><pre><code><span class="keyword">var</span> createCounter = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+        <span itemprop="articleBody"><h1 id="javascript中判断数据类型"><a href="/2015/09/18/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#数据">javascript中判断数据类型</a></h1><h1 id="闭包">闭包</h1><p>细节参考：<a href="=/2015/09/18/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#闭包">前端学习笔记</a>    </p>
+<h2 id="实例">实例</h2><pre><code><span class="keyword">var</span> createCounter = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
     <span class="keyword">var</span> count = <span class="number">0</span>;
     <span class="comment">/*这是一个闭包函数*/</span>
     <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
@@ -388,57 +390,11 @@ $是封装好的jquery类，是jquery函数的别称，$.fn是$.prototype的简�
     };
 }(jQuery));
 </code></pre><h2 id="原题">原题</h2><figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span><span class="params">()</span><span class="comment">&#123;</span><br><span class="line">	var a = b = 3;</span><br><span class="line">&#125;</span>)<span class="params">()</span></span><br><span class="line"><span class="title">console</span>.<span class="title">log</span><span class="params">(a, b)</span>;</span>		</span><br><span class="line">答案：</span><br><span class="line">a是局部变量，b是全局变量，所以结果是 a是ReferenceError，b输出<span class="number">3</span></span><br></pre></td></tr></table></figure>
-<h1 id="闭合浮动">闭合浮动</h1><p>如何消除子元素浮动带来的父元素的高度塌陷–这是一个典型的闭合浮动的问题。清除浮动对应着CSS中的属性是 <code>clear：none|left|right|both</code> ，而闭合浮动是使浮动元素闭合，从而减少浮动带来的影响。</p>
+<h1 id="闭合浮动">闭合浮动</h1><p>如何消除子元素浮动带来的父元素的高度塌陷–这是一个典型的闭合浮动的问题。清除浮动对应着CSS中的属性是 <code>clear：none|left|right|both</code> ，而闭合浮动是使浮动元素闭合，从而减少浮动带来的影响。细节参考：<a href="/2015/09/18/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#CSS_布局">前端学习笔记</a></p>
 <h2 id="清除浮动的2种方法：">清除浮动的2种方法：</h2><ol>
 <li><p>在浮动元素末尾添加空元素，设置clear: both</p>
 </li>
 <li><p>触发BFC，IE下还要触发hasLayout</p>
-</li>
-</ol>
-<h2 id="BFC">BFC</h2><p>块级格式化上下文，可以看做是隔离了的独立容器</p>
-<ol>
-<li><p>如何触发BFC：</p>
-<ol>
-<li><p>根元素默认拥有BFC特性</p>
-</li>
-<li><p><code>float: left|right</code></p>
-</li>
-<li><p>overflow不为visible: <code>overflow: hidden|auto|scroll</code></p>
-</li>
-<li><p><code>display: table-cell|table-caption|inline-block</code></p>
-</li>
-<li><p><code>position: absolute|fixed</code></p>
-</li>
-</ol>
-</li>
-<li><p>作用：</p>
-<ul>
-<li><p>阻止父子元素的外边距margin折叠</p>
-</li>
-<li><p>不会重叠浮动元素</p>
-</li>
-<li><p>可以包含浮动元素</p>
-</li>
-</ul>
-</li>
-<li><p>通俗的来说，触发了BFC的元素就是一个独立的盒子，里面的子元素不会在布局上影响外面的元素，反之亦然，同时，BFC仍属于普通流</p>
-</li>
-</ol>
-<h2 id="hasLayout">hasLayout</h2><p>在IE6-7中显示引擎使用的是布局layout这个概念，当外面说一个元素拥有layout的时候，是指其hasLayout属性为true，拥有布局的元素负责本身和其子元素的尺寸设置和定位</p>
-<ol>
-<li><p><code>position: absolute</code></p>
-</li>
-<li><p><code>float: left|right</code></p>
-</li>
-<li><p><code>display: inline-block</code></p>
-</li>
-<li><p>width除auto以外的任意值</p>
-</li>
-<li><p>height除auto以外的任意值，如height: 1%</p>
-</li>
-<li><p>zoom除normal以外的任意值</p>
-</li>
-<li><p>IE7中设置 <code>overflow: hidden|auto|scroll</code></p>
 </li>
 </ol>
 <h2 id="清除浮动的代码">清除浮动的代码</h2><pre><code>方法<span class="tag">1</span>
@@ -478,30 +434,7 @@ $是封装好的jquery类，是jquery函数的别称，$.fn是$.prototype的简�
 }
 </code></pre><h1 id="手写js代码">手写js代码</h1><p>使用原生JS或Jquery实现一个下拉菜单，输入是一个数组，每个元素是一个包含name和id的object，下拉菜单显示的文本是name，点击后弹窗id</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> lists = [&#123;name: <span class="string">'sally'</span>, id: <span class="number">1</span>&#125;, &#123;name: <span class="string">'wlan'</span>, id: <span class="number">2</span>&#125;];</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">generateSelect</span>(<span class="params">lists</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> select = <span class="built_in">document</span>.createElement(<span class="string">"select"</span>);</span><br><span class="line">	<span class="keyword">var</span> html = <span class="string">''</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>, len = lists.length; i &lt; len; ++i) &#123;</span><br><span class="line">		html += <span class="string">'&lt;option id='</span> + lists[i].id + <span class="string">'&gt;'</span> + lists[i].name + <span class="string">'&lt;/option&gt;'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	select.innerHTML = html;</span><br><span class="line">	select.onchange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		alert(select.options[select.selectedIndex].id);</span><br><span class="line">	&#125;;</span><br><span class="line">	<span class="built_in">document</span>.body.appendChild(select);</span><br><span class="line">&#125;</span><br><span class="line">generateSelect(lists);</span><br></pre></td></tr></table></figure>
-<h1 id="基本原理考察">基本原理考察</h1><h2 id="从输入URL到整个网页加载完毕及显示在屏幕上的整个流程">从输入URL到整个网页加载完毕及显示在屏幕上的整个流程</h2><ol>
-<li><p>浏览器检测缓存，若缓存存在且足够新鲜则提供给客户端，否则组装一个HTTP报文</p>
-</li>
-<li><p>浏览器会利用DNS服务器查询到URL域名对应的IP地址，然后通过三次握手建立TCP连接之后，浏览器作为连接的发起方，会用服务器发送一个HTTP请求报文</p>
-</li>
-<li><p>服务器会一直监听HTTP所在的80号端口，在发现上面的请求之后，首先检测是否需要验证，无需验证或验证完毕后便会向浏览器发送HTTP响应报文，内容是URL对应的资源内容</p>
-</li>
-<li><p>浏览器收到来自服务器的响应之后，会根据不同的响应状态码（200 ok，403 forbidden， 404 not found）做出不同的处理，会使用渲染引擎将HTML页面、CSS源代码生成展示页面，同时下载页面中的JS、图片等文件并解析</p>
-</li>
-</ol>
-<h2 id="HTTP状态码小结">HTTP状态码小结</h2><p>HTTP1.0和1.1的区别：keepalive</p>
-<ul>
-<li><p>1XX 信息</p>
-</li>
-<li><p>2XX 成功：200 ok</p>
-</li>
-<li><p>3XX 重定向：301 永久重定向，302 临时重定向（ajax获取不到，见下面解释部分/HTTP1.1中302为Found，但也是一个别的地址），303 see other，304 not modified，原来缓存的文档还可以继续使用，未过期</p>
-</li>
-<li><p>4XX 客户端错误：400 bad request，401 unauthorized需要用户名和密码，403 forbidden，404 not found</p>
-</li>
-<li><p>5XX 服务器错误：500 Internal Server Error</p>
-</li>
-</ul>
-<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">当服务器将<span class="number">302</span>响应发给浏览器时，浏览器并不是直接进行ajax回调处理，而是先执行<span class="number">302</span>重定向——从Response Headers中读取Location信息，然后向Location中的Url发出请求，在收到这个请求的响应后才会进行ajax回调处理。大致流程如下：</span><br><span class="line">ajax <span class="subst">-&gt; </span>browser <span class="subst">-&gt; </span>server <span class="subst">-&gt; </span><span class="number">302</span> <span class="subst">-&gt; </span>browser(redirect) <span class="subst">-&gt; </span>server <span class="subst">-&gt; </span>browser <span class="subst">-&gt; </span>ajax callback</span><br><span class="line">而在我们的测试程序中，由于<span class="number">302</span>返回的重定向URL在服务器上没有相应的处理程序，所以在ajax回调函数中得到的是<span class="number">404</span>状态码；如果存在对应的URL，得到的状态码就是<span class="number">200</span>。</span><br><span class="line">所以，如果你想在ajax请求中根据<span class="number">302</span>响应通过location<span class="built_in">.</span>href进行重定向是不可行的。</span><br><span class="line"></span><br><span class="line">解决方法如下：</span><br><span class="line"><span class="number">1</span>、修改ajax代码：</span><br><span class="line">$<span class="built_in">.</span>ajax(&#123;</span><br><span class="line">    url: <span class="string">'/oauth/respond'</span>,</span><br><span class="line">    <span class="keyword">type</span>: <span class="string">'post'</span>,</span><br><span class="line">    <span class="built_in">data</span>: <span class="built_in">data</span>,</span><br><span class="line">    dataType: <span class="string">'json'</span>,</span><br><span class="line">    success: function (<span class="built_in">data</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">data</span><span class="built_in">.</span>status == <span class="number">302</span>) &#123;</span><br><span class="line">            location<span class="built_in">.</span>href = <span class="built_in">data</span><span class="built_in">.</span>location;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="number">2</span>、改用form：</span><br><span class="line">&lt;form method=<span class="string">"post"</span> action=<span class="string">"/oauth/respond"</span>&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure></span>
+<h1 id="基本原理考察">基本原理考察</h1><h2 id="从输入URL到整个网页加载完毕及显示在屏幕上的整个流程"><a href="/2015/09/18/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#从地址栏输入URL开始到显示的过程">从输入URL到整个网页加载完毕及显示在屏幕上的整个流程</a></h2><h2 id="HTTP状态码小结"><a href="/2015/09/18/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#HTTP状态码小结">HTTP状态码小结</a></h2></span>
       
     </div>
 
@@ -677,7 +610,7 @@ $是封装好的jquery类，是jquery函数的别称，$.fn是$.prototype的简�
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#javascript中判断数据类型"><span class="nav-number">1.</span> <span class="nav-text">javascript中判断数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#typeof"><span class="nav-number">1.1.</span> <span class="nav-text">typeof</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#instanceof"><span class="nav-number">1.2.</span> <span class="nav-text">instanceof</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#判断一个对象是否为数组"><span class="nav-number">1.3.</span> <span class="nav-text">判断一个对象是否为数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#判断一个对象是否为函数"><span class="nav-number">1.4.</span> <span class="nav-text">判断一个对象是否为函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通用代码"><span class="nav-number">1.5.</span> <span class="nav-text">通用代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#闭包"><span class="nav-number">2.</span> <span class="nav-text">闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">2.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作用"><span class="nav-number">2.2.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特点"><span class="nav-number">2.3.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建方法"><span class="nav-number">2.4.</span> <span class="nav-text">创建方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实例"><span class="nav-number">2.5.</span> <span class="nav-text">实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原题"><span class="nav-number">2.6.</span> <span class="nav-text">原题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#闭合浮动"><span class="nav-number">3.</span> <span class="nav-text">闭合浮动</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#清除浮动的2种方法："><span class="nav-number">3.1.</span> <span class="nav-text">清除浮动的2种方法：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BFC"><span class="nav-number">3.2.</span> <span class="nav-text">BFC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hasLayout"><span class="nav-number">3.3.</span> <span class="nav-text">hasLayout</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#清除浮动的代码"><span class="nav-number">3.4.</span> <span class="nav-text">清除浮动的代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#手写js代码"><span class="nav-number">4.</span> <span class="nav-text">手写js代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本原理考察"><span class="nav-number">5.</span> <span class="nav-text">基本原理考察</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#从输入URL到整个网页加载完毕及显示在屏幕上的整个流程"><span class="nav-number">5.1.</span> <span class="nav-text">从输入URL到整个网页加载完毕及显示在屏幕上的整个流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP状态码小结"><span class="nav-number">5.2.</span> <span class="nav-text">HTTP状态码小结</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#javascript中判断数据类型"><span class="nav-number">1.</span> <span class="nav-text">javascript中判断数据类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#闭包"><span class="nav-number">2.</span> <span class="nav-text">闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#实例"><span class="nav-number">2.1.</span> <span class="nav-text">实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原题"><span class="nav-number">2.2.</span> <span class="nav-text">原题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#闭合浮动"><span class="nav-number">3.</span> <span class="nav-text">闭合浮动</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#清除浮动的2种方法："><span class="nav-number">3.1.</span> <span class="nav-text">清除浮动的2种方法：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#清除浮动的代码"><span class="nav-number">3.2.</span> <span class="nav-text">清除浮动的代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#手写js代码"><span class="nav-number">4.</span> <span class="nav-text">手写js代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本原理考察"><span class="nav-number">5.</span> <span class="nav-text">基本原理考察</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#从输入URL到整个网页加载完毕及显示在屏幕上的整个流程"><span class="nav-number">5.1.</span> <span class="nav-text">从输入URL到整个网页加载完毕及显示在屏幕上的整个流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP状态码小结"><span class="nav-number">5.2.</span> <span class="nav-text">HTTP状态码小结</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

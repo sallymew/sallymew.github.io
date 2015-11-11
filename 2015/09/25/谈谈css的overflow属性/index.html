@@ -51,7 +51,7 @@ visible：内容不会被剪裁，内容超出容器时，可以被渲染到外�
 hidden：内容会被剪裁，滚动条也不能展示出被裁减的内容
 scroll：内容将被剪裁，但可以使用滚动条来查看被裁掉的内容
 auto：内容是否被裁减由浏览器具体实现决定">
-<meta property="og:updated_time" content="2015-09-28T05:38:54.000Z">
+<meta property="og:updated_time" content="2015-11-11T14:50:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="谈谈css的overflow属性">
 <meta name="twitter:description" content="overflow属性取值
@@ -288,7 +288,7 @@ auto：内容是否被裁减由浏览器具体实现决定">
 <li><code>text-indent</code>属性引起的部分内容在盒子外部</li>
 <li>一个绝对定位的子孙元素，部分内容在盒子外部，但是超出部分并不总是会被裁剪</li>
 </ol>
-<h1 id="overflow失效">overflow失效</h1><p>当溢出发生时，overflow属性约束了容器盒子是否剪裁掉超出其内边界的部分，并且决定是否出现滚动条来访问被剪裁掉的内容。他会影响倒元素所有内容的剪裁，但是也有例外情况，即上面第6条所提到的，当子孙元素被绝对定位时，如果没有已定位的祖先元素，那么其 <strong>包含块</strong> 就是视窗，祖先元素的<code>overflow: hidden</code>并没有什么卵用……</p>
+<h1 id="overflow失效">overflow失效</h1><p>当溢出发生时，overflow属性约束了容器盒子是否剪裁掉超出其内边界的部分，并且决定是否出现滚动条来访问被剪裁掉的内容。他会影响倒元素所有内容的剪裁，但是也有例外情况，即上面第6条所提到的，当子孙元素被绝对定位时，如果没有已定位的祖先元素，那么其 <strong><a href="/2015/09/18/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#包含块">包含块</a></strong> 就是视窗，祖先元素的<code>overflow: hidden</code>并没有什么卵用……</p>
 <p>总之，在写CSS时，一定要了解浏览器对盒模型实现的原理，从根本原因入手去解决问题~</p>
 <h1 id="参考文献">参考文献</h1><ol>
 <li><a href="http://blogread.cn/it/article/6180?f=wb" target="_blank" rel="external">overflow:hidden真的失效了吗</a></li>

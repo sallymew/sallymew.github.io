@@ -266,7 +266,12 @@
         
           <span itemprop="articleBody">
             
-            javascript中判断数据类型typeoftypeof 是一个一元运算符，放在一个运算数之前，运算数可以任意类型，返回值是一个字符串，说明运算数的类型，包括undefined boolean number string function object，对于array类型会返回object，nul
+            javascript中判断数据类型闭包细节参考：前端学习笔记    
+实例var createCounter = function(){
+    var count = 0;
+    /*这是一个闭包函数*/
+    return function(){
+        return ++count
             ...
           </span>
           <div class="post-more-link text-center">
