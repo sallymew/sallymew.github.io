@@ -43,7 +43,7 @@
 <meta property="og:url" content="http://www.xiaojunxie.com/2015/10/16/2016今日头条前端面试/index.html">
 <meta property="og:site_name" content="Jennifer's Blog">
 <meta property="og:description" content="一面安全/htmlentities">
-<meta property="og:updated_time" content="2015-10-20T14:00:06.000Z">
+<meta property="og:updated_time" content="2015-11-11T06:24:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2016今日头条前端面试">
 <meta name="twitter:description" content="一面安全/htmlentities">
@@ -261,7 +261,35 @@
 
       
         <span itemprop="articleBody"><h1 id="一面">一面</h1><h2 id="安全/htmlentities">安全/htmlentities</h2><a id="more"></a>
-<h2 id="doctype">doctype</h2><h2 id="三栏布局/响应式布局">三栏布局/响应式布局</h2><h2 id="实现一个淡入淡出的dialog模块">实现一个淡入淡出的dialog模块</h2><h2 id="JSONP_vs_AJAX">JSONP vs AJAX</h2><h2 id="性能优化">性能优化</h2><h2 id="getElementByTagName_vs_querySelectorAll">getElementByTagName vs querySelectorAll</h2><h1 id="二面">二面</h1><h2 id="xscroll存在的意义和瓦片地图">xscroll存在的意义和瓦片地图</h2><h2 id="手写hammerjs">手写hammerjs</h2></span>
+<h2 id="doctype">doctype</h2><h2 id="三栏布局/响应式布局">三栏布局/响应式布局</h2><h2 id="实现一个淡入淡出的dialog模块">实现一个淡入淡出的dialog模块</h2><h2 id="JSONP_vs_AJAX">JSONP vs AJAX</h2><h2 id="性能优化">性能优化</h2><h2 id="getElementByTagName_vs_querySelectorAll">getElementByTagName vs querySelectorAll</h2><h3 id="querySelector和querySelectorAll"><a href="http://www.zhangxinxu.com/wordpress/2015/11/know-dom-queryselectorall/" target="_blank" rel="external">querySelector和querySelectorAll</a></h3><p>都是IE8+浏览器支持，前者返回单个DOM元素，后者返回的是NodeList。一般情况下，我们使用<code>document.querySelectorAll</code>，实际上，也可以<code>dom.querySelectorAll</code>。</p>
+<pre><code><span class="doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span>
+<span class="tag">&lt;<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">title</span>&gt;</span>test<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+<span class="tag">&lt;<span class="title">body</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">img</span> <span class="attribute">id</span>=<span class="value">"outside"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"my-id"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">img</span> <span class="attribute">id</span>=<span class="value">"inside"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"lonely"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"outer"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"inner"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</code></pre><p>针对这一的dom结构，<code>document.querySelectorAll(&#39;#my-id div div&#39;)</code>和<code>document.querySelector(&#39;#my-id&#39;).querySelectorAll(&#39;div div&#39;)</code>的结果会有什么不同呢？</p>
+<pre><code>document.<span class="function"><span class="title">querySelectorAll</span><span class="params">(<span class="string">'#my-id div div'</span>)</span></span><span class="class">.length</span> ---&gt; <span class="number">1</span>
+document.<span class="function"><span class="title">querySelector</span><span class="params">(<span class="string">'#my-id'</span>)</span></span>.<span class="function"><span class="title">querySelectorAll</span><span class="params">(<span class="string">'div div'</span>)</span></span><span class="class">.length</span> ---&gt; <span class="number">3</span>
+</code></pre><p><strong>为什么会这样呢！！！</strong></p>
+<blockquote>
+<blockquote>
+<p>CSS选择器是独立于整个页面的！CSS选择器是独立于整个页面的！CSS选择器是独立于整个页面的！</p>
+</blockquote>
+</blockquote>
+<p><code>querySelectorAll</code>里面的选择器同样具有</p>
+<h1 id="二面">二面</h1><h2 id="xscroll存在的意义和瓦片地图">xscroll存在的意义和瓦片地图</h2><h2 id="手写hammerjs">手写hammerjs</h2></span>
       
     </div>
 
@@ -433,7 +461,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一面"><span class="nav-number">1.</span> <span class="nav-text">一面</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安全/htmlentities"><span class="nav-number">1.1.</span> <span class="nav-text">安全/htmlentities</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#doctype"><span class="nav-number">1.2.</span> <span class="nav-text">doctype</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三栏布局/响应式布局"><span class="nav-number">1.3.</span> <span class="nav-text">三栏布局/响应式布局</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现一个淡入淡出的dialog模块"><span class="nav-number">1.4.</span> <span class="nav-text">实现一个淡入淡出的dialog模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSONP_vs_AJAX"><span class="nav-number">1.5.</span> <span class="nav-text">JSONP vs AJAX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#性能优化"><span class="nav-number">1.6.</span> <span class="nav-text">性能优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#getElementByTagName_vs_querySelectorAll"><span class="nav-number">1.7.</span> <span class="nav-text">getElementByTagName vs querySelectorAll</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二面"><span class="nav-number">2.</span> <span class="nav-text">二面</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#xscroll存在的意义和瓦片地图"><span class="nav-number">2.1.</span> <span class="nav-text">xscroll存在的意义和瓦片地图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#手写hammerjs"><span class="nav-number">2.2.</span> <span class="nav-text">手写hammerjs</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一面"><span class="nav-number">1.</span> <span class="nav-text">一面</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安全/htmlentities"><span class="nav-number">1.1.</span> <span class="nav-text">安全/htmlentities</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#doctype"><span class="nav-number">1.2.</span> <span class="nav-text">doctype</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三栏布局/响应式布局"><span class="nav-number">1.3.</span> <span class="nav-text">三栏布局/响应式布局</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现一个淡入淡出的dialog模块"><span class="nav-number">1.4.</span> <span class="nav-text">实现一个淡入淡出的dialog模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSONP_vs_AJAX"><span class="nav-number">1.5.</span> <span class="nav-text">JSONP vs AJAX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#性能优化"><span class="nav-number">1.6.</span> <span class="nav-text">性能优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#getElementByTagName_vs_querySelectorAll"><span class="nav-number">1.7.</span> <span class="nav-text">getElementByTagName vs querySelectorAll</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#querySelector和querySelectorAll"><span class="nav-number">1.7.1.</span> <span class="nav-text">querySelector和querySelectorAll</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二面"><span class="nav-number">2.</span> <span class="nav-text">二面</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#xscroll存在的意义和瓦片地图"><span class="nav-number">2.1.</span> <span class="nav-text">xscroll存在的意义和瓦片地图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#手写hammerjs"><span class="nav-number">2.2.</span> <span class="nav-text">手写hammerjs</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
