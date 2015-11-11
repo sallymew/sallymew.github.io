@@ -24,7 +24,7 @@
 <link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
 
 
-    <meta name="description" content="「认认真真搞前端，踏踏实实码代码」by前端小白" />
+    <meta name="description" content="「认认真真搞前端，踏踏实实敲代码」by前端小白" />
 
 
 
@@ -43,7 +43,7 @@
 <meta property="og:url" content="http://www.xiaojunxie.com/2015/10/12/2016百度校招前端面经/index.html">
 <meta property="og:site_name" content="Jennifer's Blog">
 <meta property="og:description" content="javascript继承123456789101112131415161718192021222324252627function createObject(proto, constructor) &amp;#123;	var newProto;	if(Object.create) &amp;#123;		newProto = Object.create(proto);	&amp;#125; else &amp;#123;		E">
-<meta property="og:updated_time" content="2015-10-12T02:46:19.000Z">
+<meta property="og:updated_time" content="2015-11-11T11:07:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2016百度校招前端面经">
 <meta name="twitter:description" content="javascript继承123456789101112131415161718192021222324252627function createObject(proto, constructor) &amp;#123;	var newProto;	if(Object.create) &amp;#123;		newProto = Object.create(proto);	&amp;#125; else &amp;#123;		E">
@@ -266,25 +266,7 @@
 <blockquote>
 <p>eval在安全和性能上存在问题，不推荐使用</p>
 </blockquote>
-<h1 id="客户端存储">客户端存储</h1><ul>
-<li>cookie：setCookie/getCookie<ul>
-<li>优点：兼容性好</li>
-<li>缺点：操作繁琐，只能存储简单的数据，还会过期，站点设置httponly的话，js就无法操作cookie</li>
-</ul>
-</li>
-<li>webStorage：setItem/getItem<ul>
-<li>优点：使用简单方便</li>
-<li>缺点：IE某些版本不支持，不能存复杂的对象，必须先转化成JSON字符串，没有索引搜索效率不高，只能同步读写操作，当写入的数据比较大时可能导致js引擎堵塞</li>
-</ul>
-</li>
-<li><p>IndexedDB：基于javascript对象继承的数据库，支持事务，同时支持异步和同步读写。</p>
-<pre><code><span class="keyword">var</span> indexedDB = <span class="built_in">window</span>.indexedDB || <span class="built_in">window</span>.webkitIndexedDB || <span class="built_in">window</span>.msIndexedDB || <span class="built_in">window</span>.mozIndexedDB;
-<span class="keyword">var</span> request = indexedDB.open(<span class="string">"MyTestDB"</span>);
-request.onsuccess = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>{
-    <span class="keyword">var</span> db = event.result;
-}
-</code></pre></li>
-</ul>
+<h1 id="客户端存储">客户端存储</h1><p>参考：<a href="/2015/09/18/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#客户端存储">前端学习笔记-客户端存储</a>          </p>
 <h1 id="浏览器缓存">浏览器缓存</h1><p>通过在http回应中添加特定的头部说明来指定浏览器的缓存策略，添加头部说明可以通过页面指令声明设置，也可以通过编程方式设置。</p>
 <h2 id="html文件head中缓存设置">html文件head中缓存设置</h2><pre><code><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"pragma"</span> <span class="attribute">content</span>=<span class="value">"no-cache"</span>/&gt;</span>
 <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"Cache-Control"</span> <span class="attribute">content</span>=<span class="value">"no-cache"</span>/&gt;</span>
@@ -410,7 +392,7 @@ request.onsuccess = <span class="function"><span class="keyword">function</span>
           <img class="site-author-image" src="/images/image_128X128.ico" alt="谢晓君" itemprop="image"/>
           <p class="site-author-name" itemprop="name">谢晓君</p>
         </div>
-        <p class="site-description motion-element" itemprop="description">「认认真真搞前端，踏踏实实码代码」by前端小白</p>
+        <p class="site-description motion-element" itemprop="description">「认认真真搞前端，踏踏实实敲代码」by前端小白</p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
