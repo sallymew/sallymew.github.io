@@ -47,7 +47,7 @@ CDN如何">
 <meta property="og:description" content="TST腾讯地图1面CDN如何实现资源同步CDN加速技术是通过缓存技术，将网站文字、图片等静态资源（CDN对实时性要求不高，动态资源经常变化，不建议使用CDN加速策略）分布到各地的节点服务器上，通过DNS解析CNAME到节点控制页面，通过CDN控制自动分辨用户所在地区和网络实现终端用户就近访问，从而提高访问速度。
 好处是：分布式架构减轻源站点负载，提高网站响应速度，可以轻松应对突发流量。
 CDN如何">
-<meta property="og:updated_time" content="2015-10-11T04:09:39.000Z">
+<meta property="og:updated_time" content="2015-11-12T02:28:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2015腾讯暑期实习前端面经">
 <meta name="twitter:description" content="TST腾讯地图1面CDN如何实现资源同步CDN加速技术是通过缓存技术，将网站文字、图片等静态资源（CDN对实时性要求不高，动态资源经常变化，不建议使用CDN加速策略）分布到各地的节点服务器上，通过DNS解析CNAME到节点控制页面，通过CDN控制自动分辨用户所在地区和网络实现终端用户就近访问，从而提高访问速度。
@@ -648,10 +648,9 @@ se.src = <span class="string">'XXXXXX.js'</span>;
 } 
 &lt;body onload=<span class="string">"iememery()"</span>&gt; 
 </code></pre><p>可以使用chrome开发者工具的profiles来进行内存泄露检测</p>
-<h2 id="chrome检查网站性能">chrome检查网站性能</h2><pre><code>[<span class="link_label">YSlow</span>](<span class="link_url">http://lusongsong.com/reed/362.html</span>)？雅虎黄金14条。
-
-Yslow是雅虎开发的基于网页性能分析的浏览器插件。
-</code></pre><h2 id="如何解决js到处callback的问题">如何解决js到处callback的问题</h2><p>defer技术</p>
+<h2 id="chrome检查网站性能">chrome检查网站性能</h2><p><a href="http://lusongsong.com/reed/362.html" target="_blank" rel="external">YSlow</a>？雅虎黄金14条。</p>
+<p>Yslow是雅虎开发的基于网页性能分析的浏览器插件。</p>
+<h2 id="如何解决js到处callback的问题">如何解决js到处callback的问题</h2><p>defer技术</p>
 <p>promise技术</p>
 <p>deferreds：是jquery回调函数的解决方案，他解决了如何处理耗时操作的问题，对那些操作提供了很好的控制，以及统一的编程接口</p>
 <p>这两种技术的最大意义在于将嵌套的回调变成了链式调用</p>
