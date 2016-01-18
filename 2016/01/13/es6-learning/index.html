@@ -44,7 +44,7 @@
 <meta property="og:site_name" content="Jennifer's Blog">
 <meta property="og:description" content="前言ECMAScript 6（以下简称ES6）是javascript语言的下一代标准，已经在2015年6月正式发布了。他的目标是使得javascript语言可以用来编写复杂的大型应用程序，成为企业级开发语言。因为这个版本是2015年发布的，因此也成为ECMAScript 2015。">
 <meta property="og:image" content="http://www.xiaojunxie.com/img/es6-node.png">
-<meta property="og:updated_time" content="2016-01-18T09:27:57.000Z">
+<meta property="og:updated_time" content="2016-01-18T09:30:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="es6-learning">
 <meta name="twitter:description" content="前言ECMAScript 6（以下简称ES6）是javascript语言的下一代标准，已经在2015年6月正式发布了。他的目标是使得javascript语言可以用来编写复杂的大型应用程序，成为企业级开发语言。因为这个版本是2015年发布的，因此也成为ECMAScript 2015。">
@@ -336,9 +336,10 @@
 <h3 id="提取json数据">提取json数据</h3><p>类似对象解构赋值</p>
 <h3 id="函数参数的默认值">函数参数的默认值</h3><h3 id="遍历map结构">遍历map结构</h3><p>任何部署了Iterator接口的对象，都可以使用for…of循环遍历，map结构原生支持Iterator接口，配合变量的解构赋值，获取键名和键值就非常方便。</p>
 <figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var <span class="built_in">map</span> = <span class="keyword">new</span> Map();</span><br><span class="line"><span class="built_in">map</span>.<span class="built_in">set</span>(<span class="string">'first'</span>, <span class="string">'Hello'</span>);</span><br><span class="line"><span class="built_in">map</span>.<span class="built_in">set</span>(<span class="string">'second'</span>, <span class="string">'ECMAScript2015'</span>);</span><br><span class="line"><span class="keyword">for</span>(let [<span class="variable">key</span>, value] of <span class="built_in">map</span>) &#123;</span><br><span class="line">    console.<span class="built_in">log</span>(<span class="variable">key</span> + <span class="string">" is "</span> + value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="模块载入时指定输入哪些方法">模块载入时指定输入哪些方法</h3><h1 id="最后">最后</h1><p>终于，趁着实习期间做分享，把ES6系统地学习了下，希望</p>
+<h3 id="模块载入时指定输入哪些方法">模块载入时指定输入哪些方法</h3><h1 id="最后">最后</h1><p>终于，趁着实习期间做分享，把ES6系统地学习了下，希望以后能多多使用起来~~~</p>
 <h1 id="参考文献">参考文献</h1><ol>
 <li><a href="http://es6.ruanyifeng.com/" target="_blank" rel="external">阮一峰ECMAScript6入门</a></li>
+<li><a href="http://stackoverflow.com/questions/24008366/using-ecmascript-6" target="_blank" rel="external">Using ECMAScript 6 in stack overflow</a></li>
 <li><a href="http://www.tuicool.com/articles/qmY32q" target="_blank" rel="external">和谐(harmony)模式的NodeJS</a></li>
 <li><a href="https://nodejs.org/en/docs/es6/" target="_blank" rel="external">ECMAScript 2015 (ES6) in Node.js</a></li>
 <li><a href="http://www.tuicool.com/articles/26bAzmm" target="_blank" rel="external">妙用ES6解构和扩展运算符让你的代码更优雅</a></li>
