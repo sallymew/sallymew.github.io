@@ -20,7 +20,7 @@
 			<div class="footnote">by 谢晓君</div>
 		</div>
 		<div class="step" data-x="1500" data-y="0">
-			<h1>主要内容：</h1>
+			<h1>主要内容</h1>
 			<ul>
 				<li>使用ES6</li>
 				<li>变量声明</li>
@@ -28,58 +28,61 @@
 			</ul>
 		</div>
 		<div class="step" data-x="3000" data-y="0">
-			<h2>使用ES6：</h2>
+			<h2>使用ES6</h2>
 			<ol>
 				<li>
 					浏览器-chrome：<a href="chrome://flags/#enable-javascript-harmony" target="_blank" rel="external">启用实验性javascript</a>
 				</li>
 				<li>转码器-babel：使用npm安装babel-cli和babel-preset-es2015包</li>
-				<li>node：<b>使用node运行ES6代码时，有时需要使用严格模式，具体可以参考：<a href="https://nodejs.org/en/docs/es6/" target="_blank" rel="external">ECMAScript 2015 (ES6) in Node.js</a></b></li>
+				<li>node：使用node运行ES6代码时，有时需要使用严格模式，具体可以参考：<a href="https://nodejs.org/en/docs/es6/" target="_blank" rel="external">ECMAScript 2015 (ES6) in Node.js</a></li>
 			</ol>
 		</div>
 		<div class="step" data-x="3000" data-y="1500" data-rotate="90">
-			<h2>变量声明--let命令：</h2>
+			<h2>变量声明--let命令</h2>
 			<p>ES6新增let命令用来声明变量，但是声明的变量只在let命令所在的代码块内有效。</p>
-			<p>let命令特点：</p>
+			<div class="img-wrapper">
+				<img src="img/es6-let.png" alt="使用let声明变量">
+			</div>
+		</div>
+		<div class="step" data-x="3000" data-y="3000" data-rotate="90">
 			<ul>
 				<li>块级作用域</li>
 				<li>不存在变量提升</li>
 				<li>不允许重复声明</li>
 			</ul>
 		</div>
-		<div class="step" data-x="3000" data-y="3000" data-rotate="90">
-			<h3>块级作用域：</h3>
+		<div class="step" data-x="3000" data-y="4500" data-rotate="90">
+			<h3>块级作用域</h3>
 			<table>
 				<tr>
 					<td><img src="img/scope-var.png" alt="var全局作用域"></td>
 					<td><img src="img/scope-let.png" alt="let块级作用域"></td>
 				</tr>
 			</table>
-			<p>有了块级作用域，外层作用域无法读取内层作用域的变量，内层作用域可以定义外层作用域的同名变量。</p>
 		</div>
-		<div class="step" data-x="3000" data-y="4500" data-rotate="90" data-scale="10">
-			<h3>不存在变量提升：</h3>
-			<p>let不像var会发生变量提升现象，所以，使用let声明的变量一定要先声明后使用，否则报错。特殊的，在区块中使用let命令声明变量时，它声明的变量就绑定了这个区域，不再受外部的影响。在语法上，称为 暂时性死区（Temporal dead zone，简称TDZ）。</p>
+		<div class="step" data-x="3000" data-y="6000" data-rotate="90">
+			<h3>不存在变量提升</h3>
+			<p>let不像var会发生变量提升现象，所以，使用let声明的变量一定要先声明后使用，否则报错。</p>
+			<div class="img-wrapper">
+				<img src="img/variable-enhance.png" alt="不存在变量提升">
+			</div>
+		</div>
+		<div class="step" data-x="3000" data-y="7500" data-rotate="90">
+			<p>特殊的，在区块中使用let命令声明变量时，它声明的变量就绑定了这个区域，不再受外部的影响。在语法上，称为 暂时性死区（Temporal dead zone，简称TDZ）。</p>
 			<div class="img-wrapper">
 				<img src="img/tdz.png" alt="暂时性死区">
 			</div>
 		</div>
-		<div class="step" data-x="3000" data-y="6000" data-rotate="90">
-			<h3>不允许重复声明：</h3>
+		<div class="step" data-x="3000" data-y="9000" data-rotate="90">
+			<h3>不允许重复声明</h3>
 			<div class="img-wrapper">
 				<img src="img/duplicate-declare.png" alt="不允许重复声明">
 			</div>
 		</div>
-		<div class="step" data-x="3500" data-y="2100" data-rotate="180" data-scale="6">
+		<div class="step" data-x="0" data-y="-3000" data-z="-3000" data-rotate="300" data-scale="1">
 			<h2>变量声明--const命令：</h2>
 			<p>ES6新增const命令用于声明常量，一旦声明，常量的值就不能被改变。</p>
 			<p>常规模式下，const常量赋值虽然无效但是不会报错；严格模式下会报错。</p>
-		</div>
-		<div class="step" data-x="2825" data-y="2325" data-z="-3000" data-rotate="300" data-scale="1">
-		</div>
-		<div class="step" data-x="0" data-y="-3000" data-z="-3000" data-rotate="300" data-scale="1">
-			<h2>ES6声明-const命令</h2>
-			<p>const命令用于声明常量，一旦声明，常量的值就不能被修改，所以在声明时就必须进行初始化</p>
 		</div>
 		<div class="step" data-x="-2825" data-y="2325" data-z="-3000" data-rotate="300" data-scale="1">
 			<h2>ES6声明-const命令-复合变量</h2>
