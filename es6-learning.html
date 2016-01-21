@@ -57,10 +57,9 @@
 			</table>
 			<p>有了块级作用域，外层作用域无法读取内层作用域的变量，内层作用域可以定义外层作用域的同名变量。</p>
 		</div>
-		<div class="step" data-x="3000" data-y="4500" data-rotate="90">
+		<div class="step" data-x="3000" data-y="4500" data-rotate="90" data-scale="10">
 			<h3>不存在变量提升：</h3>
-			<p>let不像var会发生变量提升现象，所以，使用let声明的变量一定要先声明后使用，否则报错。</p>
-			<p>特殊的，在区块中使用let命令声明变量时，它声明的变量就绑定了这个区域，不再受外部的影响。在语法上，称为 暂时性死区（Temporal dead zone，简称TDZ）。</p>
+			<p>let不像var会发生变量提升现象，所以，使用let声明的变量一定要先声明后使用，否则报错。特殊的，在区块中使用let命令声明变量时，它声明的变量就绑定了这个区域，不再受外部的影响。在语法上，称为 暂时性死区（Temporal dead zone，简称TDZ）。</p>
 			<div class="img-wrapper">
 				<img src="img/tdz.png" alt="暂时性死区">
 			</div>
