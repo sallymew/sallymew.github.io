@@ -138,6 +138,7 @@ ul {
 
 img {
     max-width: 900px;
+    min-width: 600px;
 }
 th {
     text-align: center;
@@ -151,6 +152,7 @@ td {
 
 td img {
     max-width: 550px;
+    min-width: 300px;
     vertical-align: middle;
 }
 /*
