@@ -149,9 +149,17 @@ th {
     font-weight: bold;
 }
 td {
-    width: 600px;
-    padding: 5px 0;
-    text-align: center;
+    width: 550px;
+    padding: 30px;
+    /*text-align: center;*/
+}
+
+td:first-child {
+    text-align: right;
+}
+
+td:last-child {
+    text-align: left;
 }
 
 td img {
