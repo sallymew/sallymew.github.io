@@ -151,14 +151,6 @@ th {
 td {
     width: 550px;
     padding: 30px;
-    /*text-align: center;*/
-}
-
-td:first-child {
-    text-align: right;
-}
-
-td:last-child {
     text-align: left;
 }
 
