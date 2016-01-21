@@ -43,7 +43,7 @@
 				<img src="img/example-let-1.png" alt="">
 			</div>
 		</div>
-		<div class="step" data-x="3000" data-y="-2000">
+		<div class="step" data-x="3000" data-y="-2000" data-rotate="90">
 			<h3>let声明特点</h3>
 			<ul>
 				<li>块级作用域</li>
@@ -52,13 +52,13 @@
 				<li>不允许重复声明</li>
 			</ul>
 		</div>
-		<div class="step" data-x="6000" data-y="-9000">
+		<div class="step" data-x="3000" data-y="-3000" data-rotate="90">
 			<h4>ES5-没有块级作用域</h4>
 			<div class="img-wrapper">
 				<img src="img/es5-scope.png" alt="">
 			</div>
 		</div>
-		<div class="step" data-x="6000" data-y="-12000" data-rotate="90" data-scale="5">
+		<div class="step" data-x="3000" data-y="-4000" data-rotate="90">
 			<h4>ES6-块级作用域</h4>
 			<table>
 				<tr>
@@ -68,122 +68,6 @@
 				</tr>
 			</table>
 		</div>
-		<div class="step" data-x="3500" data-y="2100" data-rotate="180" data-scale="6">
-			<h4>ES6-块级作用域-IIFE</h4>
-			<div class="img-wrapper">
-				<img src="img/IIFE.png" alt="">
-			</div>
-		</div>
-		<div class="step" data-x="2825" data-y="2325" data-z="-3000" data-rotate="300" data-scale="1">
-			<h4>暂时性死区</h4>
-			<div class="img-wrapper">
-				<img src="img/tdz.png" alt="">
-			</div>
-		</div>
-		<div class="step" data-x="0" data-y="-3000" data-z="-3000" data-rotate="300" data-scale="1">
-			<h2>ES6声明-const命令</h2>
-			<p>const命令用于声明常量，一旦声明，常量的值就不能被修改，所以在声明时就必须进行初始化</p>
-			<table>
-				<tr>
-					<td><img src="img/example-const-1.png" alt=""></td>
-					<td><img src="img/example-const-2.png" alt=""></td>
-				</tr>
-			</table>
-		</div>
-		<div class="step" data-x="-2825" data-y="2325" data-z="-3000" data-rotate="300" data-scale="1">
-			<h2>ES6声明-const命令-复合变量</h2>
-			<p>对于复合类型的变量，变量名不指向数据，而是指向数据所在的地址。const命令只是保证变量名的地址不变，但是并不能保证该地址的数据不变</p>
-			<div class="img-wrapper">
-				<img src="img/example-const-3.png" alt="">
-			</div>
-		</div>
-		<div class="step" data-x="-15000" data-y="850" data-rotate="30" data-scale="6">
-			<h2>ES6赋值-解构赋值</h2>
-			<p>ES6允许按照一定模式，从数组和对象中提取值，按照对应位置，对变量进行赋值</p>
-			<div class="img-wrapper">
-				<img src="img/example-destructuring-0.png" alt="">
-			</div>
-		</div>
-		<div class="step" data-x="0" data-y="850" data-rotate="270" data-scale="6">
-			<h3>ES6解构赋值-数组</h3>
-			<div class="img-wrapper">
-				<img src="img/example-destructuring-1.png" alt="">
-			</div>
-		</div>
-		<div class="step" data-x="3000" data-y="-850" data-rotate="60" data-scale="6">
-			<h3>ES6...操作</h3>
-			<table>
-				<tr>
-					<th>rest</th>
-					<th>spread</th>
-				</tr>
-				<tr>
-					<td>把逗号隔开的值序列组合成一个数组</td>
-					<td>把数组或类数组对象展开成一系列用逗号隔开的值</td>
-				</tr>
-				<tr>
-					<td><img src="img/example-rest.png" alt=""></td>
-					<td><img src="img/example-spread.png" alt=""></td>
-				</tr>
-			</table>
-		</div>
-		<div class="step" data-x="0" data-y="-6000" data-rotate="30" data-scale="6">
-			<h3>ES6解构赋值-对象</h3>
-			<div class="img-wrapper">
-				<img src="img/example-destructuring-2.png" alt="">
-			</div>
-		</div>
-		<div class="step" data-x="15000" data-y="-1300" data-scale="4">
-			<h3>ES6解构赋值-字符串</h3>
-			<div class="img-wrapper">
-				<img src="img/example-destructuring-3.png" alt="">
-			</div>
-		</div>
-		<div class="step" data-x="3000" data-y="5000" data-scale="6">
-			<h3>ES6解构赋值-数字和布尔值</h3>
-			<p>解构赋值的规则是：只要等号右边的值不是对象，就先将其转为对象</p>
-			<div class="img-wrapper">
-				<img src="img/example-destructuring-4.png" alt="">
-			</div>
-		</div>
-		<div class="step" data-x="-1300" data-y="-1000" data-rotate="80" data-scale="0.5">
-			<h3>ES6解构赋值-null和undefined</h3>
-			<p>由于undefined和null无法转为对象，所以对它们进行解构赋值时，都会报错</p>
-			<div class="img-wrapper">
-				<img src="img/example-destructuring-5.png" alt="">
-			</div>
-		</div>
-		<div class="step" data-x="6300" data-y="2000" data-rotate="20" data-scale="4">
-			<h3>ES6解构赋值-可遍历结构</h3>
-			<p>对于具有Iterator接口的数据结构，都可以采用数组形式的解构赋值。</p>
-			<div class="img-wrapper">
-				<img src="img/example-destructuring-6.png" alt="">
-			</div>
-		</div>
-		<div class="step" data-x="6200" data-y="4300" data-z="-100" data-rotate-x="-40" data-rotate-y="10" data-scale="2">
-			<h3>ES6解构赋值-用途</h3>
-			<table>
-				<tr>
-					<td>变量交换</td>
-					<td>
-						<img src="img/example-destructuring-8.png" alt="">
-					</td>
-				</tr>
-				<tr>
-					<td>函数</td>
-					<td>
-						<img src="img/example-destructuring-9.png" alt="">
-					</td>
-				</tr>
-				<tr>
-					<td>模块</td>
-					<td>
-						<img src="img/example-destructuring-10.png" alt="">
-					</td>
-				</tr>
-			</table>
-		</div>
-		<div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10"></div>
 	</div>
     <script src="http://impress.github.io/impress.js/js/impress.js"></script>
     <script>impress().init();</script>
