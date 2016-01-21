@@ -68,33 +68,33 @@
 				<img src="img/variable-enhance.png" alt="不存在变量提升">
 			</div>
 		</div>
-		<div class="step" data-x="3000" data-y="7500" data-rotate="90">
+		<div class="step" data-x="4500" data-y="6000" data-rotate="90">
 			<p>特殊的，在区块中使用let命令声明变量时，它声明的变量就绑定了这个区域，不再受外部的影响。在语法上，称为 暂时性死区（Temporal dead zone，简称TDZ）。</p>
 			<div class="img-wrapper">
 				<img src="img/tdz.png" alt="暂时性死区">
 			</div>
 		</div>
-		<div class="step" data-x="3000" data-y="9000" data-rotate="90">
+		<div class="step" data-x="3000" data-y="7500" data-rotate="90">
 			<h3>不允许重复声明</h3>
 			<div class="img-wrapper">
 				<img src="img/duplicate-declare.png" alt="不允许重复声明">
 			</div>
 		</div>
-		<div class="step" data-x="1500" data-y="9000" data-rotate="180">
+		<div class="step" data-x="1500" data-y="7500" data-rotate="180">
 			<h2>变量声明--const命令</h2>
 			<p>ES6新增const命令用于声明常量，一旦声明，常量的值就不能被改变。常规模式下，const常量赋值虽然无效但是不会报错；严格模式下会报错。</p>
 			<div class="img-wrapper">
 				<img src="img/es6-const.png" alt="使用const声明变量">
 			</div>
 		</div>
-		<div class="step" data-x="0" data-y="9000" data-rotate="180">
+		<div class="step" data-x="0" data-y="7500" data-rotate="180">
 			<h3>复合型const变量</h3>
 			<p>对于复合类型的变量，由于变量名不指向数据，而是指向数据所在的地址。const命令只是保证变量名的地址不变，但是并不能保证该地址的数据不变</p>
 			<div class="img-wrapper">
 				<img src="img/complex-const.png" alt="复合型常量">
 			</div>
 		</div>
-		<div class="step" data-x="-1500" data-y="9000" data-rotate="180">
+		<div class="step" data-x="-1500" data-y="7500" data-rotate="180">
 			<h3>const命令特性</h3>
 			<ul>
 				<li>只在声明所在块级作用域内有效</li>
@@ -102,14 +102,14 @@
 				<li>不可重复声明</li>
 			</ul>
 		</div>
-		<div class="step" data-x="-1500" data-y="7500" data-rotate="270">
+		<div class="step" data-x="-1500" data-y="6000" data-rotate="270">
 			<h2>解构赋值</h2>
 			<p>解构赋值（destructuring assignment）句法是一个Javascript表达式，通过这个表达式，就可以从array或者object中通过一种句法来提取数据。这个句法与array的构造和object的字面定义对应。</p>
 			<div class="img-wrapper">
 				<img src="img/es6-destructuring.png" alt="解构赋值">
 			</div>
 		</div>
-		<div class="step" data-x="-1500" data-y="6000" data-rotate="270">
+		<div class="step" data-x="-1500" data-y="4500" data-rotate="270">
 			<h3>解构赋值类型</h3>
 			<ol>
 				<li>解构数组</li>
@@ -119,48 +119,48 @@
 				<li>其他</li>
 			</ol>
 		</div>
-		<div class="step" data-x="-1500" data-y="4500" data-rotate="270">
+		<div class="step" data-x="-1500" data-y="3000" data-rotate="270">
 			<h3>1、解构数组</h3>
 			<div class="img-wrapper">
 				<img src="img/destructuring-array.png" alt="解构数组">
 			</div>
 		</div>
-		<div class="step" data-x="-3000" data-y="4500" data-rotate="270">
+		<div class="step" data-x="-3000" data-y="3000" data-rotate="270">
 			<h3>2、解构对象</h3>
 			<p>与解构数组不同的是，数组的元素是按照次序排列的，变量的取值由他们的位置决定，而对象的属性没有次序。</p>
 			<div class="img-wrapper">
 				<img src="img/destructuring-object.png" alt="解构对象">
 			</div>
 		</div>
-		<div class="step" data-x="-4500" data-y="4500" data-rotate="270">
+		<div class="step" data-x="-4500" data-y="3000" data-rotate="270">
 			<h3>3、解构字符串</h3>
 			<div class="img-wrapper">
 				<img src="img/destructuring-string.png" alt="解构字符串">
 			</div>
 		</div>
-		<div class="step" data-x="-6000" data-y="4500" data-rotate="270">
+		<div class="step" data-x="-6000" data-y="3000" data-rotate="270">
 			<h3>4、可遍历结构</h3>
 			<p>具有Iterator接口的数据解构，也可以使用解构赋值。</p>
 			<div class="img-wrapper">
 				<img src="img/destructuring-structure-Iterator.png" alt="可遍历结构">
 			</div>
 		</div>
-		<div class="step" data-x="-7500" data-y="4500" data-rotate="270">
+		<div class="step" data-x="-7500" data-y="3000" data-rotate="270">
 			<h3>5、其他</h3>
 			<div class="img-wrapper">
 				<img src="img/destructuring-other.png" alt="其他">
 			</div>
 		</div>
-		<div class="step" data-x="-7500" data-y="3000" data-rotate="270">
+		<div class="step" data-x="-7500" data-y="1500" data-rotate="270">
 			<h3>特殊解构</h3>
 			<p>本质上，解构赋值这种写法属于模式匹配，只要等号两边的模式相同，左边的变量就会被赋予相应的值。当等号左边的模式只匹配一部分的等号右边的模式，这种情况下解构依然成功。如果解构不成功，等号左边变量的值为undefined。</p>
 		</div>
-		<div class="step" data-x="-6000" data-y="3000" data-rotate="270">
+		<div class="step" data-x="-6000" data-y="1500" data-rotate="270">
 			<div class="img-wrapper">
 				<img src="img/destructuring-special.png" alt="特殊解构">
 			</div>
 		</div>
-		<div class="step" data-x="-4500" data-y="3000" data-rotate="270">
+		<div class="step" data-x="-4500" data-y="1500" data-rotate="270">
 			<h3>解构用途</h3>
 			<table>
 				<tr>
@@ -173,7 +173,7 @@
 				</tr>
 			</table>
 		</div>
-		<div class="step" data-x="-1500" data-y="3000" data-rotate="270">
+		<div class="step" data-x="-1500" data-y="1500" data-rotate="270">
 			<h3>解构用途</h3>
 			<table>
 				<tr>
@@ -186,7 +186,7 @@
 				</tr>
 			</table>
 		</div>
-		<div id="overview" class="step" data-x="1500" data-y="4500" data-scale="10"></div>
+		<div id="overview" class="step" data-x="1500" data-y="4000" data-scale="10"></div>
 	</div>
     <script src="http://impress.github.io/impress.js/js/impress.js"></script>
     <script>impress().init();</script>
