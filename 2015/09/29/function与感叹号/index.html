@@ -43,7 +43,7 @@
 <meta property="og:url" content="http://www.xiaojunxie.com/2015/09/29/function与感叹号/index.html">
 <meta property="og:site_name" content="Jennifer's Blog">
 <meta property="og:description" content="前言非原创，仅总结：）参考：function与感叹号(转)">
-<meta property="og:updated_time" content="2015-11-11T14:48:05.000Z">
+<meta property="og:updated_time" content="2016-01-25T03:33:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="function与感叹号">
 <meta name="twitter:description" content="前言非原创，仅总结：）参考：function与感叹号(转)">
@@ -271,7 +271,7 @@ hello
 </code></pre><p>虽然上面2种方法括号的位置不同，但是效果完全一样。</p>
 <p>那么，是神马好处使得为数不少的人对这种感叹号的方式情有独钟呢？如果只是为了节约一个字符未免太没有必要了。</p>
 <blockquote>
-<p>其实无论是括号，还是感叹号，让整个语句合法做的事情只有一件，就是让一个函数声明语句变成了一个表达式。</p>
+<p>其实无论是括号，还是感叹号，让整个语句合法做的事情只有一件，就是让一个函数声明语句变成了一个表达式。括号的其中一个作用就是强制执行。</p>
 </blockquote>
 <pre><code><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>{<span class="built_in">console</span>.log(<span class="string">'hello'</span>)} <span class="comment">// undefined</span>
 <span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>{<span class="built_in">console</span>.log(<span class="string">'hello'</span>)} <span class="comment">// SyntaxError: unexpected_token</span>
@@ -281,6 +281,9 @@ hello
 i &amp;&amp; <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{<span class="keyword">return</span> <span class="literal">true</span>;}();
 <span class="number">1</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{<span class="built_in">console</span>.log(<span class="string">'hello'</span>)};
 </code></pre><p><strong>赋值，逻辑，甚至是逗号，各种操作符都可以告诉解析器，这个不是函数声明，它是个函数表达式。并且，对函数的一元运算可以算得上是消除歧义最快的方式，感叹号只是其中之一，如果不在乎返回值，这些医院运算符都是有效的：<code>!+-~</code>。甚至是void/new/delete等关键字也是可以的。</strong></p>
+<blockquote>
+<p>JavaScript中，void操作符指定要计算一个表达式但是不返回值。</p>
+</blockquote>
 <p>从参考文献的性能测试结果看，消除歧义，表现的最好的是括号和加减号。</p>
 </span>
       
